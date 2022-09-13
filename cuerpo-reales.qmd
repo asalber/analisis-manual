@@ -1,0 +1,378 @@
+---
+lang: es
+---
+
+::: {.content-visible unless-format="pdf"}
+{{< include macros.qmd >}}
+:::
+
+# El sistema de los números reales
+
+En este capítulo se estudia el conjunto de los números reales $\mathbb{R}$ ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus propiedades.
+
+## Construcción de los números reales
+
+Antes de presentar el conjunto de los números reales se presentan otros subconjuntos suyos más elementales que suelen introducirse antes. Iremos ampliando sucesivamente estos conjuntos para dotarlos de nuevas propiedades hasta llegar al conjunto de los números reales.
+
+### El conjunto de los números naturales $\mathbb{N}$.
+
+El primer conjunto de números que tradicionalmente suele estudiarse en el colegio son los números _naturales_ $\mathbb{N}$, ya que sirven para contar.
+
+En los números naturales se define una relación de orden $<$ ($1 < 2 < 3 < \cdots$), y dos operaciones binarias, la suma ($+$) y el producto ($\cdot$), con una serie de propiedades que dotan al conjunto de una estructura de _semianillo unitario conmutativo bien ordenado_:
+
+a. Propiedad de cierre de la suma: $a+b\in \mathbb{N}\ \forall a, b\in \mathbb{N}$. 
+b. Propiedad asociativa de la suma: $(a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{N}$.
+c. Propiedad conmutativa de la suma: $a+b = b+a\ \forall a, b\in \mathbb{N}$.
+d.Propiedad de cierre del producto: $a\cdot b\in \mathbb{N}\ \forall a, b\in \mathbb{N}$.
+e. Propiedad asociativa del producto: $(a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{N}$.
+f. Propiedad conmutativa del producto: $a\cdot b = b\cdot a\ \forall a, b\in \mathbb{N}$.
+g. Elemento neutro del producto: $1\cdot a = a\ \forall a \in \mathbb{N}$.
+h. Propiedad distributiva del producto sobre la suma: 
+$a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{N}$.
+
+En el conjunto de los números naturales todo número tiene un posterior, pero no un anterior.
+
+### El conjunto de los números enteros $\mathbb{Z}$.
+
+Los números naturales no tienen simétrico (opuesto) para la suma, de manera que no puede definirse la resta. Para ello es necesario extender el conjunto de los naturales con los números negativos ($-1, -2, -3,\ldots$), y el cero ($0$). 
+
+Extendiendo el orden y las operaciones de los naturales a estos números se obtiene el conjunto de los números _enteros_ $\mathbb{Z}$ con las siguientes propiedades que lo dotan de estructura de _anillo conmutativo unitario y totalmente ordenado_:
+
+a. Propiedad de cierre de la suma: $a+b\in \mathbb{Z}\ \forall a, b\in \mathbb{Z}$. 
+b. Propiedad asociativa de la suma: $(a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{Z}$.
+c. Propiedad conmutativa de la suma: $a+b = b+a\ \forall a, b\in \mathbb{Z}$.
+d. Elemento neutro de la suma: $0+a=a\ \forall a \in \mathbb{Z}$.
+e. Elemento simétrico (u opuesto) de la suma: $a + (-a)=0\ \forall a \in \mathbb{Z}$.
+f. Propiedad de cierre del producto: $a\cdot b\in \mathbb{Z}\ \forall a, b\in \mathbb{Z}$.
+g. Propiedad asociativa del producto: $(a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{Z}$.
+h. Propiedad conmutativa del producto: $a\cdot b = b\cdot a\ \forall a, b\in \mathbb{Z}$.
+i. Elemento neutro del producto: $1\cdot a = a\ \forall a \in \mathbb{Z}$.
+j. Propiedad distributiva del producto sobre la suma: 
+$a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Z}$.
+
+Al introducir el opuesto de la suma, se puede definir bien la resta como $a-b=a+(-b)\ \forall a, b \in \mathbb{Z}$.
+
+En el conjunto de los enteros todo número tiene un anterior y un posterior.
+
+### El conjunto de los números racionales $\mathbb{Q}$
+
+Los números enteros (salvo el -1 y 1) no tienen elemento simétrico (inverso) para el producto, de manera que no puede definirse la división. Para ello es necesario extender el conjunto de los enteros con los números fraccionarios, que se definen de la forma $a/b$ donde el numerador $a$ y el denominador $b$ son números enteros primos entre si (por ejemplo $1/2$ o $-5/3$).
+
+Extendiendo el orden y las operaciones de los enteros a estos números se obtiene el conjunto de los números _racionales_ $\mathbb{Q}$ con las siguientes propiedades que lo dotan de estructura de _cuerpo conmutativo totalmente ordenado_:
+
+a. Propiedad de cierre de la suma: $a+b\in \mathbb{Q}\ \forall a, b\in \mathbb{Q}$. 
+b. Propiedad asociativa de la suma: $(a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{Q}$.
+c. Propiedad conmutativa de la suma: $a+b = b+a\ \forall a, b\in \mathbb{Q}$.
+d. Elemento neutro de la suma: $0+a=a\ \forall a \in \mathbb{Q}$.
+e. Elemento simétrico (u opuesto) de la suma: $a + (-a)=0\ \forall a \in \mathbb{Q}$.
+f. Propiedad de cierre del producto: $a\cdot b\in \mathbb{Q}\ \forall a, b\in \mathbb{Q}$.
+g. Propiedad asociativa del producto: $(a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{Q}$.
+h. Propiedad conmutativa del producto: $a\cdot b = b\cdot a\ \forall a, b\in \mathbb{Q}$.
+i. Elemento neutro del producto: $1\cdot a = a\ \forall a \in \mathbb{Q}$.
+j. Elemento simétrico (inverso) del producto: $a\cdot a^{-1}=1\ \forall a\neq 0 \in \mathbb{Q}$.
+k. Propiedad distributiva del producto sobre la suma: 
+$a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Q}$.
+
+Al introducir el inverso del producto, se puede definir la división como $a/b = a\cdot b^{-1}\ \forall a, b \in \mathbb{Q}$.
+
+A diferencia de los enteros, aunque los racionales también tienen un orden total, el orden es _denso_, es decir, entre dos números racionales cualesquiera siempre existe otro número racional (en realidad infinitos), por lo que no existe el anterior y el posterior de cualquier número racional.
+
+### El conjunto de los números irracionales
+
+Muy pronto los griegos se dieron cuenta de que había otra clase de números que no podían representarse como cociente de números enteros y por tanto no pertenecían al conjunto de los números racionales, de manera que este conjunto es incompleto. El ejemplo clásico es el número $\sqrt{2}$ que se obtiene al aplicar el teorema de Pitágoras para calcular la longitud de la hipotenusa de un triángulo rectángulo con ambos lados de longitud 1. 
+
+::: {#thm-irracionalidad-raiz-2}
+## Irracionalidad de $\sqrt{2}$
+
+El número $\sqrt{2}$ no es racional.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Probar que $\sqrt{2}$ no es racional es equivalente a probar que no existe un número racional $m/n$ tal que $(m/n)^2 = 2$. La demostración de este último resultado es sencilla por reducción al absurdo. 
+
+Supongamos que existe un número $m/n$ con $n,m\in\mathbb{Z}$ primos entre si, tal que $(m/n)^2 = 2$, o lo que es lo mismo,
+
+$$m^2 = 2n^2.$$
+
+De aquí se puede deducir que $m^2$ es par, lo que implica que $m$ también es par, pues si $m$ fuese impar, su cuadrado también sería impar. En tal caso, $m$ podría escribirse como $m=2k$ con $k\in\mathbb{Z}$ y se tendría $m^2=4k^2$. Sustituyendo ahora en la ecuación inicial se tiene $4k^2 = 2n^2$, lo que implica que $2k^2 = n^2$. Siguiendo el mismo razonamiento anterior, se tendría que $n$ también sería un número par, por lo se obtiene un absurdo ya que partimos de que $m$ y $n$ eran primos entre sí.
+:::
+:::
+
+Estos números que no son racionales se denominan _irracionales_, y, al igual que los números racionales, es un conjunto denso.
+
+:::{#thm-densidad-irracionales}
+Entre dos números racionales siempre existe un número irracional.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Tomemos para empezar un número irracional entre 0 y 1, como por ejemplo, $1/\sqrt{2}=0.7071\ldots$, y consideremos dos números racionales cualesquiera $a,b\in\mathbb{Q}$, tales que $a<b$. Como $0<1/\sqrt{2}<1$ y $b-a>0$, se tiene que 
+
+$$ 0(b-a)<\frac{b-a}{\sqrt{2}}< 1(b-a),$$
+
+o lo que es lo mismo, simplificando
+
+$$ 0<\frac{b-a}{\sqrt{2}}< (b-a).$$
+
+Si ahora sumamos $a$ a cada término de la desigualdad se tiene
+
+$$ a<a+\frac{b-a}{\sqrt{2}}< b,$$
+
+de manera que el número $a+\frac{b-a}{\sqrt{2}}$ está entre $a$ y $b$, pero además, se trata de un número irracional, ya que es el producto de un número irracional $1/\sqrt{2}$ por un racional $b-a$ y más otro racional $a$.
+:::
+:::
+
+En realidad, se puede probar que entre dos números racionales no solo existe un número irracional, sino una infinidad de ellos. Y del mismo modo, se puede probar que entre dos números irracionales existe una infinidad de números racionales.
+
+### El conjunto de los números reales 
+
+La extensión de los números racionales con los irracionales da lugar al conjunto de los números _reales_. Su construcción formal puede realizarse de distintas maneras ([cortaduras de Dedekind](https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_cortaduras_de_Dedekind) o [sucesiones de Cauchy](https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_sucesiones_de_Cauchy)), pero todas ellas satisfacen la siguiente definición axiomática:
+
+::: {#def-reales}
+## Números reales
+
+El sistema de los números _reales_ $(\mathbb{R}, +, \cdot, <)$ está formado por un conjunto no vacío de números $\mathbb{R}$, sobre los que se definen dos operaciones binarias, suma ($+$) y producto ($\cdot$), que satisfacen los siguientes axiomas:
+
+**Axiomas de cuerpo algebraico**$. (\mathbb{R}, +, \cdot)$ es un cuerpo abeliano:
+
+- _Axioma 1_. Propiedad de cierre de la suma: $\forall a, b\in \mathbb{R}$, $a+b\in \mathbb{R}$.
+- _Axioma 2_. Propiedad asociativa de la suma: $\forall a, b, c \in \mathbb{R}$, $(a+b)+c = a+(b+c)$.
+- _Axioma 3_. Propiedad conmutativa de la suma: $\forall a, b\in \mathbb{R}$, $a+b = b+a$.
+- _Axioma 4_. Elemento neutro de la suma: $\forall a \in \mathbb{R}$, existe un elemento $0\in \mathbb{R}$, tal que $0+a=a$.
+- _Axioma 5_. Elemento simétrico (u opuesto) de la suma: $\forall a \in \mathbb{R}$, existe un número $-a\in \mathbb{R}$, tal que $a + (-a) = 0$. 
+- _Axioma 6_. Propiedad de cierre del producto: $\forall a, b\in \mathbb{R}$, $a\cdot b\in \mathbb{R}$.
+- _Axioma 7_. Propiedad asociativa del producto: $\forall a, b, c \in \mathbb{R}$, $(a\cdot b)\cdot c = a\cdot (b\cdot c)$.
+- _Axioma 8_. Propiedad conmutativa del producto: $\forall a, b\in \mathbb{R}$, $a\cdot b = b\cdot a$.
+- _Axioma 9_. Elemento neutro del producto: $\forall a \in \mathbb{R}$, existe un número $1\in \mathbb{R}\setminus\{0\}$, tal que  $1 \cdot a = a$.
+- _Axioma 10_. Elemento simétrico (o inverso) del producto: $\forall a \in \mathbb{R}\setminus\{0\}$, existe un número  $a^{-1}\in \mathbb{R}$, tal que $a\cdot a^{-1}=1$.
+- _Axioma 11_. Propiedad distributiva del producto sobre la suma: $\forall a, b, c \in \mathbb{R}$, 
+$a\cdot (b+c) = (a\cdot b) + (a\cdot c)$. 
+
+**Axiomas de orden**. 
+Existe un subconjunto no vacío $\mathbb{R}^+\subset\mathbb{R}$, llamado el conjunto de los _números reales positivos_, que verifica los siguientes axiomas: 
+
+- _Axioma 12_. Cierre del la suma en los reales positivos: $\forall a,b\in\mathbb{R}^+$, $a+b\in\mathbb{R}^+$.
+- _Axioma 13_. Cierre del producto en los reales positivos: $\forall a,b\in\mathbb{R}^+$, $a\cdot b\in\mathbb{R}^+$.
+- _Axioma 14_. Propiedad de tricotomía: $\forall a,b\in \mathbb{R}$, una y solo una de las siguientes alternativas es cierta: $a\in \mathbb{R}^+$, $a=0$ o $-a\in \mathbb{R}^+$.
+
+**Axioma de completitud**
+
+- _Axioma 15_. Axioma del supremo: Si un subconjunto no vacío $A\subset \mathbb{R}$ tiene una cota superior, entonces tiene un supremo $\sup(A)\in \mathbb{R}$.
+:::
+
+El último axioma es el que diferencia el conjunto de los números reales de otros cuerpos totalmente ordenados como los racionales.
+
+A partir de las propiedades de las suma y el producto se pueden definir nos nuevas operaciones en $\mathbb{R}$.
+
+:::{#def-resta}
+## Resta
+Dados dos números reales $a,b\in \mathbb{R}$, se define la _resta_ de $a$ y $b$, y se denota $a-b$, como la suma de $a$ y el opuesto de $b$,
+
+$$a-b = a + (-b).$$
+:::
+
+:::{#def-division}
+## División
+Dados dos números reales $a,b\in \mathbb{R}$ tal que $b\neq 0$, se define la _división_ de $a$ y $b$, y se denota $a/b$, como el producto de $a$ y el inverso de $b$,
+
+$$\frac{a}{b} = a\cdot b^{-1}.$$
+:::
+
+:::{#prp-propiedades-axiomas-cuerpo}
+De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes consecuencias: 
+
+a. El elemento neutro de la suma ($0$) es único: $\forall a,b\in \mathbb{R}$, si $a+b=a$, entonces $b=0$.
+a. El elemento neutro del producto ($1$) es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b = a$, entonces $b=1$.
+a. El elemento opuesto de un número real es único: $\forall a,b\in \mathbb{R}$, si $a+b=0$, entonces $b=-a$.
+a. El elemento inverso de un número real es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b=0$, entonces $b=a^{-1}$.
+a. El producto de cualquier número real por el elemento neutro de la suma, es el elemento neutro de la suma: $\forall a\in\mathbb{R}$, $a\cdot 0 = 0$.
+a. El producto de cualquier número real por el opuesto de $1$ es el opuesto del número: $\forall a\in\mathbb{R}$ $(-1)\cdot a = -a$.
+a. El opuesto del opuesto de un número real es el propio número: $\forall a\in\mathbb{R}$, $-(-a)=a$.
+a. El producto de los opestos de dos números reales es igual al producto de los números: $\forall a,b\in\mathbb{R}$, $(-a) \cdot (-b) = a\cdot b$.
+a. El inverso de un número real distinto de $0$ también es distinto de $0$: $\forall a,\in\mathbb{R}$, si $a\neq 0$, entonces $a^{-1}\neq 0$.
+a. El inverso del inverso de un número real distinto de 0 es el propio número: $\forall a\in\mathbb{R}$, si $a\neq 0$, entonces $(a^{-1})^{-1}=a$.
+a. $\forall a,b,c\in \mathbb{R}$, si $a\cdot b=a\cdot c$ y $a\neq 0$, entonces $b=c$.
+a. Si el producto de dos números reales es $0$, entonces alguno de los dos números es $0$: $\forall a,b\in\mathbb{R}$, si $a\cdot b=0$, entonces $a=0$ o $b=0$. 
+f. El inverso del producto de dos números distintos de $0$ es el producto de los inversos: $\forall a,b\in \mathbb{R}$, si $a\neq 0$ y $b\neq 0, entonces $(a\cdot b)^{-1} = a^{-1}\cdot b^{-1}$.
+:::
+
+A partir del axioma de tricotomía se puede descomponer el conjunto de los números reales en tres conjuntos disjuntos, los positivos $\mathbb{R}^+$, $\{0\}$ y los negativos $\mathbb{R}^-$.
+
+:::{#def-positivos-negativos}
+## Números reales positivos y negativos
+Dado un número $a\in\mathbb{R}$, se dice que:
+
+- $a$ es _estríctamente positivo_, y lo notamos $a>0$, si $a\in \mathbb{R}⁺$.
+- $a$ es _positivo_, y lo notamos $a\geq 0$, si $a\in \mathbb{R}⁺$ o $a=0$.
+- $a$ es _estríctamente negativo_, y lo notamos $a<0$, si $-a\in \mathbb{R}⁺$.
+- $a$ es _negativo_, y lo notamos $a\leq 0$, si $-a\in \mathbb{R}⁺$ o $-a=0$.
+:::
+
+También se puede definir la siguiente relación que permite comparar dos números.
+
+:::{#def-relación-orden}
+## Relaciones de comparación
+Dados dos números $a,b\in\mathbb{R}$, se dice que:
+
+- $a$ es _menor_ que $b$, y lo notamos $a<b$, si $b-a\in \mathbb{R}⁺$.
+- $a$ es _menor o igual_ que $b$, y lo notamos $a\leq b$, si $b-a\in \mathbb{R}⁺$ o $b-a=0$.
+- $a$ es _mayor_ que $b$, y lo notamos $a>b$, si $a-b\in \mathbb{R}⁺$.
+- $a$ es _mayor o igual_ que $b$, y lo notamos $a\geq b$, si $a-b\in \mathbb{R}⁺$ o $a-b=0$.
+:::
+
+De esta definición y los axiomas de orden de los números reales se deduce que la relación $\leq$ es una relación de orden.
+
+:::{#prp-relacion-orden}
+La relación _menor o igual_ $\leq$ es una relación de orden, es decir, cumple las propiedades
+
+a. _Reflexiva_: $\forall a\in\mathbb{R}$, $a\leq a$.
+a. _Antisimétrica_: $\forall a,b\in\mathbb{R}$, si $a\leq b$ y $b\leq a$, entonces $a=b$.
+a. _Transitiva_: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $b\leq c$, entonces $a\leq c$.
+:::
+
+:::{#prp-propiedades-axiomas-orden}
+De los axiomas de orden de los números reales se deducen las siguientes propiedades:
+
+a. El cuadrado de cualquier número real distinto de $0$ es positivo: $\forall a\in\mathbb{R}$, si $a\neq 0$, entonces $a^2>0$.
+a. El elemento neutro de la suma es menor que el elemento neutro del producto: $0<1$.
+a. Cualquier número natural es positivo: $\forall a\in\mathbb{N}$, $0<a$.
+a. La suma preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$, entonces $a+c\leq b+c$.
+a. $\forall a,b,c,d\in\mathbb{R}$, si $a\leq b$ y $c\leq d$, entonces $a+c\leq b+d$.
+a. El producto por un número real positivo preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $c>0$, entonces $a\cdot c\leq b\cdot c$.
+a. El producto por un número real negativo invierte el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $c<0$, entonces $a\cdot c\geq b\cdot c$.
+a. Si el producto de dos números reales es positivo, entonces o bien los dos números son positivos, o bien los dos números son negativos: $\forall a,b\in\mathbb{R}$, si $a\cdot b>0$, entonces $a>0$ y $b>0$, o $a<0$ y $b<0$.
+a. Si el producto de dos números reales es negativo, entonces uno de los números es positivo y el otro negativo: $\forall a,b\in\mathbb{R}$, si $a\cdot b<0$, entonces $a>0$ y $b<0$, o $a<0$ y $b>0$.
+a. El inverso de un número real positivo es positivo y el de un número real negativo es negativo: $\forall a\in\mathbb{R}$, si $a>0$, entonces $a^{-1}>0$, y si $a<0$, entonces $a^{-1}<0$.
+a. $\forall a,b\in\mathbb{R}$, si $a<b$, entonces $a<\dfrac{a+b}{2}< b$.
+a. Cualquier número no negativo que es menor que cualquier número positivo es $0$: $\forall a,b\in\mathbb{R}$, si $0\leq a<b$ y $b>0$, entonces $a=0$.
+:::
+
+A partir del axioma de tricotomía también se puede deducir el valor absoluto de un número real.
+
+:::{#def-valor-absoluto}
+## Valor absoluto
+Dado un número $a\in\mathbb{R}$, se define el _valor absoluto_ de $a$, y se denota $|a|$, como
+
+$$|a|=\begin{cases}
+a & \mbox{si } a\geq 0,\\
+-a & \mbox{si } a<0.
+\end{cases}
+$$
+:::
+
+**Ejemplo**. $|1.5|=1.5$ y $|-1/2|=1/2$.
+
+Como se verá en el próximo capítulo, el valor absoluto permite calcular la distancia entre dos números reales en la recta real.
+
+:::{prp-propiedades-valor-absoluto}
+Se cumplen las siguientes propiedades del valor absoluto:
+
+a. El valor absoluto de un número real y de su opuesto es el mismo: $\forall a\in\mathbb{R}$, $|a|=|-a|$.
+a. $\forall a,b\in\mathbb{R}$, $|a-b| = |b-a|$.
+a. El valor absoluto del producto de dos números reales es igual que el producto de los valores absolutos de los números: $\forall a,b\in\mathbb{R}$, $|a\cdot b|=|a|\cdot |b|$.
+a. $\forall a,b\in\mathbb{R}$, si $b>0$ y $|a|<b$, entonces $-b<a<b$.
+a. Desigualdad del triángulo: $\forall a,b\in\mathbb{R}$, $|a+b|\leq |a|+|b|$.
+:::
+
+Veremos ahora una serie de consecuencias del axioma de completitud. 
+
+
+
+:::{#prp-propiedad-infimo}
+Si un subconjunto no vacío $A\subset \mathbb{R}$ tiene una cota inferior, entonces tiene un ínfimo $m\in \mathbb{R}$.
+:::
+
+<!-- TODO: Demostración propiedad ínfimo -->
+
+:::{#thm-propiedad-arquimediana}
+## Propiedad arquimediana
+Dado un número real $a\in \mathbb{R}$ con $a>0$, existe un número natural $n\in \mathbb{N}$ tal que $a<n$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe $n\in\mathbb{N}$ tal que $x<n$. Entonces, $x$ es una cota superior de $\mathbb{N}$. Por tanto, por el axioma del supremo existe un número $s=\sup(\mathbb{N})$. Por ser supremo, se cumple que existe un número natural $m\in\mathbb{N}$ tal que $s-1<m$, pero entonces se tiene que $s<m+1$, y como $m\in\mathbb{N}$ también $n+1\in\mathbb{N}$, lo que contradice que $s$ sea cota superior de $\mathbb{N}$. 
+:::
+:::
+
+:::{#cor-consecuencias-arquimedianas}
+De la propiedad arquimediana se deducen las siguientes consencuencias:
+a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $0<\frac{1}{n}<n$.
+a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $n-1\leq a<n$.
+:::
+
+:::{#thm-raiz-cuadrada}
+## Raíz cuadrada
+Dado un número real $a\in\mathbb{R}$ con $a>0$, existe un número real $x\in\mathbb{R}$ tal que $x>0$ y $x^2=a$. A este número se le llama _raíz cuadrada_ de $a$ y se denota por $\sqrt{a}$ o $a^{1/2}$.
+:::
+
+<!-- TODO: Demostración teorema raíz cuadrada -->
+
+Del mismo modo se puede probar que para cualquier número real $a\in\mathbb{R}$ con $a>0$ y para cualquier número natural $n\in\mathbb{N}$ existe un número real $x\in\mathbb{R}$ tal que $x>0$ y $x^n=a$. A este número se le llama _raíz $n$-ésima_ de $a$.
+
+:::{#thm-densidad-racionales}
+## Densidad de los números racionales
+Dados dos números reales $a,b\in \mathbb{R}$ con $a<b$, existe un número racional $q\in \mathbb{Q}$ tal que $a<q<b$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $a<b$ se tiene que $b-a>0$, de manera que por la propiedad arquimediana existe un número natural $n\in\mathbb{N}$ tal que $\frac{1}{n}<b-a$. 
+Por otro lado, como $a>0$ también $na$>0, y de nuevo por la propiedad arquimediana existe otro número real $m\in \mathbb{N}$ tal que $m-1\leq a<m$, de donde se deduce que $\frac{m-1}\leq a< \frac{m}{n}$. 
+
+Consideremos ahora el número racional $q=\frac{m}{n}$. Acabamos de ver que $a<q$, por lo que solo falta probar que $q<b$. Para ello, volviendo de nuevo a que $\frac{1}{n}< b-a$, se tiene que
+
+$$
+\frac{1}{n}< b-a \Rightarrow 1<nb-na \Rightarrow 1+na<nb
+$$
+pero como habíamos visto que $m-1\leq na$ se deduce que $1+m-1<nb$, es decir $m<nb$, y de aquí se concluye que $q=\frac{m}{n}<b$.
+:::
+:::
+
+:::{#cor-densidad-irracionales}
+## Densidad de los números irracionales
+Dados dos números reales $a,b\in \mathbb{R}$ con $a<b$, existe un número irracional $p\in \mathbb{R}\setminus \mathbb{Q}$ tal que $a<p<b$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sabemos que $\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}$ y que $\sqrt{2}>0$, por lo que al aplicar el teorema anterior a los números reales $\frac{a}{\sqrt{2}}$ y $\frac{b}{\sqrt{2}}$ se tiene que existe un número racional $q\in\mathbb{Q}$ tal que $\frac{a}{\sqrt{2}}<q<\frac{b}{\sqrt{2}}$, lo que implica que $a<q\sqrt{2}<b$. Finalmente, si tomamos $p=q\sqrt{2}$, tenemos que es un número irracional que cumple que $a<p<q$.
+:::
+:::
+
+
+### Clasificación de los conjuntos numéricos
+
+Con estas extensiones se obtiene la siguiente clasificación de los conjuntos numéricos (se ha incluido también el conjunto de los números complejos $\mathbb{C}$ que no se verán en este manual.)
+
+$$
+\mbox{Complejos } \mathbb{C}
+    \begin{cases}
+    \mbox{Reales } \mathbb{R}
+    \begin{cases}
+        \mbox{Racionales } \mathbb{Q}
+        \begin{cases}
+            \mbox{Enteros } \mathbb{Z}
+            \begin{cases}
+                \mbox{Naturales } \mathbb{N} \\
+                \mbox{Cero } 0\\
+                \mbox{Enteros negativos}
+                \end{cases}\\
+            \mbox{Fraccionarios}
+        \end{cases}\\
+        \mbox{Irracionales}
+    \end{cases}\\
+    \mbox{Imaginarios}
+    \end{cases}
+$$
+
+En particular se cumple que $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.
+
+
+

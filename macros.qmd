@@ -1,0 +1,14 @@
+::: {.hidden}
+$$
+\newcommand{\mathbb{N}}{\mathbb{N}}
+\newcommand{\mathbb{Z}}{\mathbb{Z}}
+\newcommand{\mathbb{Q}}{\mathbb{Q}}
+\newcommand{\mathbb{R}}{\mathbb{R}}
+\newcommand{\mathbb{C}}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+$$
+:::

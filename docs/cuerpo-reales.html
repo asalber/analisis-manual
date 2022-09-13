@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual de Análisis Matemático Real - 2&nbsp; El sistema de los números reales</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./topologia-reales.html" rel="next">
+<link href="./teoria-conjuntos.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Manual de Análisis Matemático Real - 2&nbsp; El sistema de los números reales">
+<meta property="og:description" content="En este capítulo se estudia el conjunto de los números reales \(\mathbb{R}\) ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus…">
+<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta name="twitter:title" content="Manual de Análisis Matemático Real - 2&nbsp; El sistema de los números reales">
+<meta name="twitter:description" content="En este capítulo se estudia el conjunto de los números reales \(\mathbb{R}\) ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus…">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual de Análisis Matemático Real</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cuerpo-reales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#construcción-de-los-números-reales" id="toc-construcción-de-los-números-reales" class="nav-link active" data-scroll-target="#construcción-de-los-números-reales"><span class="toc-section-number">2.1</span>  Construcción de los números reales</a>
+  <ul class="collapse">
+  <li><a href="#el-conjunto-de-los-números-naturales-mathbbn." id="toc-el-conjunto-de-los-números-naturales-mathbbn." class="nav-link" data-scroll-target="#el-conjunto-de-los-números-naturales-mathbbn."><span class="toc-section-number">2.1.1</span>  El conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</a></li>
+  <li><a href="#el-conjunto-de-los-números-enteros-mathbbz." id="toc-el-conjunto-de-los-números-enteros-mathbbz." class="nav-link" data-scroll-target="#el-conjunto-de-los-números-enteros-mathbbz."><span class="toc-section-number">2.1.2</span>  El conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span>.</a></li>
+  <li><a href="#el-conjunto-de-los-números-racionales-mathbbq" id="toc-el-conjunto-de-los-números-racionales-mathbbq" class="nav-link" data-scroll-target="#el-conjunto-de-los-números-racionales-mathbbq"><span class="toc-section-number">2.1.3</span>  El conjunto de los números racionales <span class="math inline">\(\mathbb{Q}\)</span></a></li>
+  <li><a href="#el-conjunto-de-los-números-irracionales" id="toc-el-conjunto-de-los-números-irracionales" class="nav-link" data-scroll-target="#el-conjunto-de-los-números-irracionales"><span class="toc-section-number">2.1.4</span>  El conjunto de los números irracionales</a></li>
+  <li><a href="#el-conjunto-de-los-números-reales" id="toc-el-conjunto-de-los-números-reales" class="nav-link" data-scroll-target="#el-conjunto-de-los-números-reales"><span class="toc-section-number">2.1.5</span>  El conjunto de los números reales</a></li>
+  <li><a href="#clasificación-de-los-conjuntos-numéricos" id="toc-clasificación-de-los-conjuntos-numéricos" class="nav-link" data-scroll-target="#clasificación-de-los-conjuntos-numéricos"><span class="toc-section-number">2.1.6</span>  Clasificación de los conjuntos numéricos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\mathbb{N}}{\mathbb{N}}
+\newcommand{\mathbb{Z}}{\mathbb{Z}}
+\newcommand{\mathbb{Q}}{\mathbb{Q}}
+\newcommand{\mathbb{R}}{\mathbb{R}}
+\newcommand{\mathbb{C}}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\]</span></p>
+</div>
+</div>
+<p>En este capítulo se estudia el conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span> ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus propiedades.</p>
+<section id="construcción-de-los-números-reales" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="construcción-de-los-números-reales"><span class="header-section-number">2.1</span> Construcción de los números reales</h2>
+<p>Antes de presentar el conjunto de los números reales se presentan otros subconjuntos suyos más elementales que suelen introducirse antes. Iremos ampliando sucesivamente estos conjuntos para dotarlos de nuevas propiedades hasta llegar al conjunto de los números reales.</p>
+<section id="el-conjunto-de-los-números-naturales-mathbbn." class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="el-conjunto-de-los-números-naturales-mathbbn."><span class="header-section-number">2.1.1</span> El conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</h3>
+<p>El primer conjunto de números que tradicionalmente suele estudiarse en el colegio son los números <em>naturales</em> <span class="math inline">\(\mathbb{N}\)</span>, ya que sirven para contar.</p>
+<p>En los números naturales se define una relación de orden <span class="math inline">\(&lt;\)</span> (<span class="math inline">\(1 &lt; 2 &lt; 3 &lt; \cdots\)</span>), y dos operaciones binarias, la suma (<span class="math inline">\(+\)</span>) y el producto (<span class="math inline">\(\cdot\)</span>), con una serie de propiedades que dotan al conjunto de una estructura de <em>semianillo unitario conmutativo bien ordenado</em>:</p>
+<ol type="a">
+<li>Propiedad de cierre de la suma: <span class="math inline">\(a+b\in \mathbb{N}\ \forall a, b\in \mathbb{N}\)</span>.</li>
+<li>Propiedad asociativa de la suma: <span class="math inline">\((a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{N}\)</span>.</li>
+<li>Propiedad conmutativa de la suma: <span class="math inline">\(a+b = b+a\ \forall a, b\in \mathbb{N}\)</span>. d.Propiedad de cierre del producto: <span class="math inline">\(a\cdot b\in \mathbb{N}\ \forall a, b\in \mathbb{N}\)</span>.</li>
+<li>Propiedad asociativa del producto: <span class="math inline">\((a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{N}\)</span>.</li>
+<li>Propiedad conmutativa del producto: <span class="math inline">\(a\cdot b = b\cdot a\ \forall a, b\in \mathbb{N}\)</span>.</li>
+<li>Elemento neutro del producto: <span class="math inline">\(1\cdot a = a\ \forall a \in \mathbb{N}\)</span>.</li>
+<li>Propiedad distributiva del producto sobre la suma: <span class="math inline">\(a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{N}\)</span>.</li>
+</ol>
+<p>En el conjunto de los números naturales todo número tiene un posterior, pero no un anterior.</p>
+</section>
+<section id="el-conjunto-de-los-números-enteros-mathbbz." class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="el-conjunto-de-los-números-enteros-mathbbz."><span class="header-section-number">2.1.2</span> El conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span>.</h3>
+<p>Los números naturales no tienen simétrico (opuesto) para la suma, de manera que no puede definirse la resta. Para ello es necesario extender el conjunto de los naturales con los números negativos (<span class="math inline">\(-1, -2, -3,\ldots\)</span>), y el cero (<span class="math inline">\(0\)</span>).</p>
+<p>Extendiendo el orden y las operaciones de los naturales a estos números se obtiene el conjunto de los números <em>enteros</em> <span class="math inline">\(\mathbb{Z}\)</span> con las siguientes propiedades que lo dotan de estructura de <em>anillo conmutativo unitario y totalmente ordenado</em>:</p>
+<ol type="a">
+<li>Propiedad de cierre de la suma: <span class="math inline">\(a+b\in \mathbb{Z}\ \forall a, b\in \mathbb{Z}\)</span>.</li>
+<li>Propiedad asociativa de la suma: <span class="math inline">\((a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{Z}\)</span>.</li>
+<li>Propiedad conmutativa de la suma: <span class="math inline">\(a+b = b+a\ \forall a, b\in \mathbb{Z}\)</span>.</li>
+<li>Elemento neutro de la suma: <span class="math inline">\(0+a=a\ \forall a \in \mathbb{Z}\)</span>.</li>
+<li>Elemento simétrico (u opuesto) de la suma: <span class="math inline">\(a + (-a)=0\ \forall a \in \mathbb{Z}\)</span>.</li>
+<li>Propiedad de cierre del producto: <span class="math inline">\(a\cdot b\in \mathbb{Z}\ \forall a, b\in \mathbb{Z}\)</span>.</li>
+<li>Propiedad asociativa del producto: <span class="math inline">\((a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{Z}\)</span>.</li>
+<li>Propiedad conmutativa del producto: <span class="math inline">\(a\cdot b = b\cdot a\ \forall a, b\in \mathbb{Z}\)</span>.</li>
+<li>Elemento neutro del producto: <span class="math inline">\(1\cdot a = a\ \forall a \in \mathbb{Z}\)</span>.</li>
+<li>Propiedad distributiva del producto sobre la suma: <span class="math inline">\(a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Z}\)</span>.</li>
+</ol>
+<p>Al introducir el opuesto de la suma, se puede definir bien la resta como <span class="math inline">\(a-b=a+(-b)\ \forall a, b \in \mathbb{Z}\)</span>.</p>
+<p>En el conjunto de los enteros todo número tiene un anterior y un posterior.</p>
+</section>
+<section id="el-conjunto-de-los-números-racionales-mathbbq" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="el-conjunto-de-los-números-racionales-mathbbq"><span class="header-section-number">2.1.3</span> El conjunto de los números racionales <span class="math inline">\(\mathbb{Q}\)</span></h3>
+<p>Los números enteros (salvo el -1 y 1) no tienen elemento simétrico (inverso) para el producto, de manera que no puede definirse la división. Para ello es necesario extender el conjunto de los enteros con los números fraccionarios, que se definen de la forma <span class="math inline">\(a/b\)</span> donde el numerador <span class="math inline">\(a\)</span> y el denominador <span class="math inline">\(b\)</span> son números enteros primos entre si (por ejemplo <span class="math inline">\(1/2\)</span> o <span class="math inline">\(-5/3\)</span>).</p>
+<p>Extendiendo el orden y las operaciones de los enteros a estos números se obtiene el conjunto de los números <em>racionales</em> <span class="math inline">\(\mathbb{Q}\)</span> con las siguientes propiedades que lo dotan de estructura de <em>cuerpo conmutativo totalmente ordenado</em>:</p>
+<ol type="a">
+<li>Propiedad de cierre de la suma: <span class="math inline">\(a+b\in \mathbb{Q}\ \forall a, b\in \mathbb{Q}\)</span>.</li>
+<li>Propiedad asociativa de la suma: <span class="math inline">\((a+b)+c = a+(b+c)\ \forall a, b, c \in \mathbb{Q}\)</span>.</li>
+<li>Propiedad conmutativa de la suma: <span class="math inline">\(a+b = b+a\ \forall a, b\in \mathbb{Q}\)</span>.</li>
+<li>Elemento neutro de la suma: <span class="math inline">\(0+a=a\ \forall a \in \mathbb{Q}\)</span>.</li>
+<li>Elemento simétrico (u opuesto) de la suma: <span class="math inline">\(a + (-a)=0\ \forall a \in \mathbb{Q}\)</span>.</li>
+<li>Propiedad de cierre del producto: <span class="math inline">\(a\cdot b\in \mathbb{Q}\ \forall a, b\in \mathbb{Q}\)</span>.</li>
+<li>Propiedad asociativa del producto: <span class="math inline">\((a\cdot b)\cdot c = a\cdot (b\cdot c)\ \forall a, b, c \in \mathbb{Q}\)</span>.</li>
+<li>Propiedad conmutativa del producto: <span class="math inline">\(a\cdot b = b\cdot a\ \forall a, b\in \mathbb{Q}\)</span>.</li>
+<li>Elemento neutro del producto: <span class="math inline">\(1\cdot a = a\ \forall a \in \mathbb{Q}\)</span>.</li>
+<li>Elemento simétrico (inverso) del producto: <span class="math inline">\(a\cdot a^{-1}=1\ \forall a\neq 0 \in \mathbb{Q}\)</span>.</li>
+<li>Propiedad distributiva del producto sobre la suma: <span class="math inline">\(a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Q}\)</span>.</li>
+</ol>
+<p>Al introducir el inverso del producto, se puede definir la división como <span class="math inline">\(a/b = a\cdot b^{-1}\ \forall a, b \in \mathbb{Q}\)</span>.</p>
+<p>A diferencia de los enteros, aunque los racionales también tienen un orden total, el orden es <em>denso</em>, es decir, entre dos números racionales cualesquiera siempre existe otro número racional (en realidad infinitos), por lo que no existe el anterior y el posterior de cualquier número racional.</p>
+</section>
+<section id="el-conjunto-de-los-números-irracionales" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="el-conjunto-de-los-números-irracionales"><span class="header-section-number">2.1.4</span> El conjunto de los números irracionales</h3>
+<p>Muy pronto los griegos se dieron cuenta de que había otra clase de números que no podían representarse como cociente de números enteros y por tanto no pertenecían al conjunto de los números racionales, de manera que este conjunto es incompleto. El ejemplo clásico es el número <span class="math inline">\(\sqrt{2}\)</span> que se obtiene al aplicar el teorema de Pitágoras para calcular la longitud de la hipotenusa de un triángulo rectángulo con ambos lados de longitud 1.</p>
+<div id="thm-irracionalidad-raiz-2" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.1 (Irracionalidad de <span class="math inline">\(\sqrt{2}\)</span>) </strong></span>El número <span class="math inline">\(\sqrt{2}\)</span> no es racional.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Probar que <span class="math inline">\(\sqrt{2}\)</span> no es racional es equivalente a probar que no existe un número racional <span class="math inline">\(m/n\)</span> tal que <span class="math inline">\((m/n)^2 = 2\)</span>. La demostración de este último resultado es sencilla por reducción al absurdo.</p>
+<p>Supongamos que existe un número <span class="math inline">\(m/n\)</span> con <span class="math inline">\(n,m\in\mathbb{Z}\)</span> primos entre si, tal que <span class="math inline">\((m/n)^2 = 2\)</span>, o lo que es lo mismo,</p>
+<p><span class="math display">\[m^2 = 2n^2.\]</span></p>
+<p>De aquí se puede deducir que <span class="math inline">\(m^2\)</span> es par, lo que implica que <span class="math inline">\(m\)</span> también es par, pues si <span class="math inline">\(m\)</span> fuese impar, su cuadrado también sería impar. En tal caso, <span class="math inline">\(m\)</span> podría escribirse como <span class="math inline">\(m=2k\)</span> con <span class="math inline">\(k\in\mathbb{Z}\)</span> y se tendría <span class="math inline">\(m^2=4k^2\)</span>. Sustituyendo ahora en la ecuación inicial se tiene <span class="math inline">\(4k^2 = 2n^2\)</span>, lo que implica que <span class="math inline">\(2k^2 = n^2\)</span>. Siguiendo el mismo razonamiento anterior, se tendría que <span class="math inline">\(n\)</span> también sería un número par, por lo se obtiene un absurdo ya que partimos de que <span class="math inline">\(m\)</span> y <span class="math inline">\(n\)</span> eran primos entre sí.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Estos números que no son racionales se denominan <em>irracionales</em>, y, al igual que los números racionales, es un conjunto denso.</p>
+<div id="thm-densidad-irracionales" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.2 </strong></span>Entre dos números racionales siempre existe un número irracional.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Tomemos para empezar un número irracional entre 0 y 1, como por ejemplo, <span class="math inline">\(1/\sqrt{2}=0.7071\ldots\)</span>, y consideremos dos números racionales cualesquiera <span class="math inline">\(a,b\in\mathbb{Q}\)</span>, tales que <span class="math inline">\(a&lt;b\)</span>. Como <span class="math inline">\(0&lt;1/\sqrt{2}&lt;1\)</span> y <span class="math inline">\(b-a&gt;0\)</span>, se tiene que</p>
+<p><span class="math display">\[ 0(b-a)&lt;\frac{b-a}{\sqrt{2}}&lt; 1(b-a),\]</span></p>
+<p>o lo que es lo mismo, simplificando</p>
+<p><span class="math display">\[ 0&lt;\frac{b-a}{\sqrt{2}}&lt; (b-a).\]</span></p>
+<p>Si ahora sumamos <span class="math inline">\(a\)</span> a cada término de la desigualdad se tiene</p>
+<p><span class="math display">\[ a&lt;a+\frac{b-a}{\sqrt{2}}&lt; b,\]</span></p>
+<p>de manera que el número <span class="math inline">\(a+\frac{b-a}{\sqrt{2}}\)</span> está entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, pero además, se trata de un número irracional, ya que es el producto de un número irracional <span class="math inline">\(1/\sqrt{2}\)</span> por un racional <span class="math inline">\(b-a\)</span> y más otro racional <span class="math inline">\(a\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>En realidad, se puede probar que entre dos números racionales no solo existe un número irracional, sino una infinidad de ellos. Y del mismo modo, se puede probar que entre dos números irracionales existe una infinidad de números racionales.</p>
+</section>
+<section id="el-conjunto-de-los-números-reales" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="el-conjunto-de-los-números-reales"><span class="header-section-number">2.1.5</span> El conjunto de los números reales</h3>
+<p>La extensión de los números racionales con los irracionales da lugar al conjunto de los números <em>reales</em>. Su construcción formal puede realizarse de distintas maneras (<a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_cortaduras_de_Dedekind">cortaduras de Dedekind</a> o <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_sucesiones_de_Cauchy">sucesiones de Cauchy</a>), pero todas ellas satisfacen la siguiente definición axiomática:</p>
+<div id="def-reales" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.1 (Números reales) </strong></span>El sistema de los números <em>reales</em> <span class="math inline">\((\mathbb{R}, +, \cdot, &lt;)\)</span> está formado por un conjunto no vacío de números <span class="math inline">\(\mathbb{R}\)</span>, sobre los que se definen dos operaciones binarias, suma (<span class="math inline">\(+\)</span>) y producto (<span class="math inline">\(\cdot\)</span>), que satisfacen los siguientes axiomas:</p>
+<p><strong>Axiomas de cuerpo algebraico</strong><span class="math inline">\(. (\mathbb{R}, +, \cdot)\)</span> es un cuerpo abeliano:</p>
+<ul>
+<li><em>Axioma 1</em>. Propiedad de cierre de la suma: <span class="math inline">\(\forall a, b\in \mathbb{R}\)</span>, <span class="math inline">\(a+b\in \mathbb{R}\)</span>.</li>
+<li><em>Axioma 2</em>. Propiedad asociativa de la suma: <span class="math inline">\(\forall a, b, c \in \mathbb{R}\)</span>, <span class="math inline">\((a+b)+c = a+(b+c)\)</span>.</li>
+<li><em>Axioma 3</em>. Propiedad conmutativa de la suma: <span class="math inline">\(\forall a, b\in \mathbb{R}\)</span>, <span class="math inline">\(a+b = b+a\)</span>.</li>
+<li><em>Axioma 4</em>. Elemento neutro de la suma: <span class="math inline">\(\forall a \in \mathbb{R}\)</span>, existe un elemento <span class="math inline">\(0\in \mathbb{R}\)</span>, tal que <span class="math inline">\(0+a=a\)</span>.</li>
+<li><em>Axioma 5</em>. Elemento simétrico (u opuesto) de la suma: <span class="math inline">\(\forall a \in \mathbb{R}\)</span>, existe un número <span class="math inline">\(-a\in \mathbb{R}\)</span>, tal que <span class="math inline">\(a + (-a) = 0\)</span>.</li>
+<li><em>Axioma 6</em>. Propiedad de cierre del producto: <span class="math inline">\(\forall a, b\in \mathbb{R}\)</span>, <span class="math inline">\(a\cdot b\in \mathbb{R}\)</span>.</li>
+<li><em>Axioma 7</em>. Propiedad asociativa del producto: <span class="math inline">\(\forall a, b, c \in \mathbb{R}\)</span>, <span class="math inline">\((a\cdot b)\cdot c = a\cdot (b\cdot c)\)</span>.</li>
+<li><em>Axioma 8</em>. Propiedad conmutativa del producto: <span class="math inline">\(\forall a, b\in \mathbb{R}\)</span>, <span class="math inline">\(a\cdot b = b\cdot a\)</span>.</li>
+<li><em>Axioma 9</em>. Elemento neutro del producto: <span class="math inline">\(\forall a \in \mathbb{R}\)</span>, existe un número <span class="math inline">\(1\in \mathbb{R}\setminus\{0\}\)</span>, tal que <span class="math inline">\(1 \cdot a = a\)</span>.</li>
+<li><em>Axioma 10</em>. Elemento simétrico (o inverso) del producto: <span class="math inline">\(\forall a \in \mathbb{R}\setminus\{0\}\)</span>, existe un número <span class="math inline">\(a^{-1}\in \mathbb{R}\)</span>, tal que <span class="math inline">\(a\cdot a^{-1}=1\)</span>.</li>
+<li><em>Axioma 11</em>. Propiedad distributiva del producto sobre la suma: <span class="math inline">\(\forall a, b, c \in \mathbb{R}\)</span>, <span class="math inline">\(a\cdot (b+c) = (a\cdot b) + (a\cdot c)\)</span>.</li>
+</ul>
+<p><strong>Axiomas de orden</strong>. Existe un subconjunto no vacío <span class="math inline">\(\mathbb{R}^+\subset\mathbb{R}\)</span>, llamado el conjunto de los <em>números reales positivos</em>, que verifica los siguientes axiomas:</p>
+<ul>
+<li><em>Axioma 12</em>. Cierre del la suma en los reales positivos: <span class="math inline">\(\forall a,b\in\mathbb{R}^+\)</span>, <span class="math inline">\(a+b\in\mathbb{R}^+\)</span>.</li>
+<li><em>Axioma 13</em>. Cierre del producto en los reales positivos: <span class="math inline">\(\forall a,b\in\mathbb{R}^+\)</span>, <span class="math inline">\(a\cdot b\in\mathbb{R}^+\)</span>.</li>
+<li><em>Axioma 14</em>. Propiedad de tricotomía: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, una y solo una de las siguientes alternativas es cierta: <span class="math inline">\(a\in \mathbb{R}^+\)</span>, <span class="math inline">\(a=0\)</span> o <span class="math inline">\(-a\in \mathbb{R}^+\)</span>.</li>
+</ul>
+<p><strong>Axioma de completitud</strong></p>
+<ul>
+<li><em>Axioma 15</em>. Axioma del supremo: Si un subconjunto no vacío <span class="math inline">\(A\subset \mathbb{R}\)</span> tiene una cota superior, entonces tiene un supremo <span class="math inline">\(\sup(A)\in \mathbb{R}\)</span>.</li>
+</ul>
+</div>
+<p>El último axioma es el que diferencia el conjunto de los números reales de otros cuerpos totalmente ordenados como los racionales.</p>
+<p>A partir de las propiedades de las suma y el producto se pueden definir nos nuevas operaciones en <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div id="def-resta" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.2 (Resta) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span>, se define la <em>resta</em> de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\(a-b\)</span>, como la suma de <span class="math inline">\(a\)</span> y el opuesto de <span class="math inline">\(b\)</span>,</p>
+<p><span class="math display">\[a-b = a + (-b).\]</span></p>
+</div>
+<div id="def-division" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.3 (División) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> tal que <span class="math inline">\(b\neq 0\)</span>, se define la <em>división</em> de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\(a/b\)</span>, como el producto de <span class="math inline">\(a\)</span> y el inverso de <span class="math inline">\(b\)</span>,</p>
+<p><span class="math display">\[\frac{a}{b} = a\cdot b^{-1}.\]</span></p>
+</div>
+<div id="prp-propiedades-axiomas-cuerpo" class="theorem proposition">
+<p><span class="theorem-title"><strong>Propocición 2.1 </strong></span>De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes consecuencias:</p>
+<ol type="a">
+<li>El elemento neutro de la suma (<span class="math inline">\(0\)</span>) es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a+b=a\)</span>, entonces <span class="math inline">\(b=0\)</span>.</li>
+<li>El elemento neutro del producto (<span class="math inline">\(1\)</span>) es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b = a\)</span>, entonces <span class="math inline">\(b=1\)</span>.</li>
+<li>El elemento opuesto de un número real es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a+b=0\)</span>, entonces <span class="math inline">\(b=-a\)</span>.</li>
+<li>El elemento inverso de un número real es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b=0\)</span>, entonces <span class="math inline">\(b=a^{-1}\)</span>.</li>
+<li>El producto de cualquier número real por el elemento neutro de la suma, es el elemento neutro de la suma: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(a\cdot 0 = 0\)</span>.</li>
+<li>El producto de cualquier número real por el opuesto de <span class="math inline">\(1\)</span> es el opuesto del número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span> <span class="math inline">\((-1)\cdot a = -a\)</span>.</li>
+<li>El opuesto del opuesto de un número real es el propio número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(-(-a)=a\)</span>.</li>
+<li>El producto de los opestos de dos números reales es igual al producto de los números: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\((-a) \cdot (-b) = a\cdot b\)</span>.</li>
+<li>El inverso de un número real distinto de <span class="math inline">\(0\)</span> también es distinto de <span class="math inline">\(0\)</span>: <span class="math inline">\(\forall a,\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(a^{-1}\neq 0\)</span>.</li>
+<li>El inverso del inverso de un número real distinto de 0 es el propio número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\((a^{-1})^{-1}=a\)</span>.</li>
+<li><span class="math inline">\(\forall a,b,c\in \mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b=a\cdot c\)</span> y <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(b=c\)</span>.</li>
+<li>Si el producto de dos números reales es <span class="math inline">\(0\)</span>, entonces alguno de los dos números es <span class="math inline">\(0\)</span>: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b=0\)</span>, entonces <span class="math inline">\(a=0\)</span> o <span class="math inline">\(b=0\)</span>.</li>
+<li>El inverso del producto de dos números distintos de <span class="math inline">\(0\)</span> es el producto de los inversos: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span> y $b, entonces <span class="math inline">\((a\cdot b)^{-1} = a^{-1}\cdot b^{-1}\)</span>.</li>
+</ol>
+</div>
+<p>A partir del axioma de tricotomía se puede descomponer el conjunto de los números reales en tres conjuntos disjuntos, los positivos <span class="math inline">\(\mathbb{R}^+\)</span>, <span class="math inline">\(\{0\}\)</span> y los negativos <span class="math inline">\(\mathbb{R}^-\)</span>.</p>
+<div id="def-positivos-negativos" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.4 (Números reales positivos y negativos) </strong></span>Dado un número <span class="math inline">\(a\in\mathbb{R}\)</span>, se dice que:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> es <em>estríctamente positivo</em>, y lo notamos <span class="math inline">\(a&gt;0\)</span>, si <span class="math inline">\(a\in \mathbb{R}⁺\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>positivo</em>, y lo notamos <span class="math inline">\(a\geq 0\)</span>, si <span class="math inline">\(a\in \mathbb{R}⁺\)</span> o <span class="math inline">\(a=0\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>estríctamente negativo</em>, y lo notamos <span class="math inline">\(a&lt;0\)</span>, si <span class="math inline">\(-a\in \mathbb{R}⁺\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>negativo</em>, y lo notamos <span class="math inline">\(a\leq 0\)</span>, si <span class="math inline">\(-a\in \mathbb{R}⁺\)</span> o <span class="math inline">\(-a=0\)</span>.</li>
+</ul>
+</div>
+<p>También se puede definir la siguiente relación que permite comparar dos números.</p>
+<div id="def-relación-orden" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.5 (Relaciones de comparación) </strong></span>Dados dos números <span class="math inline">\(a,b\in\mathbb{R}\)</span>, se dice que:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> es <em>menor</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a&lt;b\)</span>, si <span class="math inline">\(b-a\in \mathbb{R}⁺\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>menor o igual</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a\leq b\)</span>, si <span class="math inline">\(b-a\in \mathbb{R}⁺\)</span> o <span class="math inline">\(b-a=0\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>mayor</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a&gt;b\)</span>, si <span class="math inline">\(a-b\in \mathbb{R}⁺\)</span>.</li>
+<li><span class="math inline">\(a\)</span> es <em>mayor o igual</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a\geq b\)</span>, si <span class="math inline">\(a-b\in \mathbb{R}⁺\)</span> o <span class="math inline">\(a-b=0\)</span>.</li>
+</ul>
+</div>
+<p>De esta definición y los axiomas de orden de los números reales se deduce que la relación <span class="math inline">\(\leq\)</span> es una relación de orden.</p>
+<div id="prp-relacion-orden" class="theorem proposition">
+<p><span class="theorem-title"><strong>Propocición 2.2 </strong></span>La relación <em>menor o igual</em> <span class="math inline">\(\leq\)</span> es una relación de orden, es decir, cumple las propiedades</p>
+<ol type="a">
+<li><em>Reflexiva</em>: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(a\leq a\)</span>.</li>
+<li><em>Antisimétrica</em>: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(b\leq a\)</span>, entonces <span class="math inline">\(a=b\)</span>.</li>
+<li><em>Transitiva</em>: <span class="math inline">\(\forall a,b,c\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(b\leq c\)</span>, entonces <span class="math inline">\(a\leq c\)</span>.</li>
+</ol>
+</div>
+<div id="prp-propiedades-axiomas-orden" class="theorem proposition">
+<p><span class="theorem-title"><strong>Propocición 2.3 </strong></span>De los axiomas de orden de los números reales se deducen las siguientes propiedades:</p>
+<ol type="a">
+<li>El cuadrado de cualquier número real distinto de <span class="math inline">\(0\)</span> es positivo: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(a^2&gt;0\)</span>.</li>
+<li>El elemento neutro de la suma es menor que el elemento neutro del producto: <span class="math inline">\(0&lt;1\)</span>.</li>
+<li>Cualquier número natural es positivo: <span class="math inline">\(\forall a\in\mathbb{N}\)</span>, <span class="math inline">\(0&lt;a\)</span>.</li>
+<li>La suma preserva el orden: <span class="math inline">\(\forall a,b,c\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span>, entonces <span class="math inline">\(a+c\leq b+c\)</span>.</li>
+<li><span class="math inline">\(\forall a,b,c,d\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(c\leq d\)</span>, entonces <span class="math inline">\(a+c\leq b+d\)</span>.</li>
+<li>El producto por un número real positivo preserva el orden: <span class="math inline">\(\forall a,b,c\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(c&gt;0\)</span>, entonces <span class="math inline">\(a\cdot c\leq b\cdot c\)</span>.</li>
+<li>El producto por un número real negativo invierte el orden: <span class="math inline">\(\forall a,b,c\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(c&lt;0\)</span>, entonces <span class="math inline">\(a\cdot c\geq b\cdot c\)</span>.</li>
+<li>Si el producto de dos números reales es positivo, entonces o bien los dos números son positivos, o bien los dos números son negativos: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b&gt;0\)</span>, entonces <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(b&gt;0\)</span>, o <span class="math inline">\(a&lt;0\)</span> y <span class="math inline">\(b&lt;0\)</span>.</li>
+<li>Si el producto de dos números reales es negativo, entonces uno de los números es positivo y el otro negativo: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b&lt;0\)</span>, entonces <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(b&lt;0\)</span>, o <span class="math inline">\(a&lt;0\)</span> y <span class="math inline">\(b&gt;0\)</span>.</li>
+<li>El inverso de un número real positivo es positivo y el de un número real negativo es negativo: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, si <span class="math inline">\(a&gt;0\)</span>, entonces <span class="math inline">\(a^{-1}&gt;0\)</span>, y si <span class="math inline">\(a&lt;0\)</span>, entonces <span class="math inline">\(a^{-1}&lt;0\)</span>.</li>
+<li><span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a&lt;b\)</span>, entonces <span class="math inline">\(a&lt;\dfrac{a+b}{2}&lt; b\)</span>.</li>
+<li>Cualquier número no negativo que es menor que cualquier número positivo es <span class="math inline">\(0\)</span>: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(0\leq a&lt;b\)</span> y <span class="math inline">\(b&gt;0\)</span>, entonces <span class="math inline">\(a=0\)</span>.</li>
+</ol>
+</div>
+<p>A partir del axioma de tricotomía también se puede deducir el valor absoluto de un número real.</p>
+<div id="def-valor-absoluto" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2.6 (Valor absoluto) </strong></span>Dado un número <span class="math inline">\(a\in\mathbb{R}\)</span>, se define el <em>valor absoluto</em> de <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(|a|\)</span>, como</p>
+<p><span class="math display">\[|a|=\begin{cases}
+a &amp; \mbox{si } a\geq 0,\\
+-a &amp; \mbox{si } a&lt;0.
+\end{cases}
+\]</span></p>
+</div>
+<p><strong>Ejemplo</strong>. <span class="math inline">\(|1.5|=1.5\)</span> y <span class="math inline">\(|-1/2|=1/2\)</span>.</p>
+<p>Como se verá en el próximo capítulo, el valor absoluto permite calcular la distancia entre dos números reales en la recta real.</p>
+<div class="{prp-propiedades-valor-absoluto}">
+<p>Se cumplen las siguientes propiedades del valor absoluto:</p>
+<ol type="a">
+<li>El valor absoluto de un número real y de su opuesto es el mismo: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(|a|=|-a|\)</span>.</li>
+<li><span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\(|a-b| = |b-a|\)</span>.</li>
+<li>El valor absoluto del producto de dos números reales es igual que el producto de los valores absolutos de los números: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\(|a\cdot b|=|a|\cdot |b|\)</span>.</li>
+<li><span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(b&gt;0\)</span> y <span class="math inline">\(|a|&lt;b\)</span>, entonces <span class="math inline">\(-b&lt;a&lt;b\)</span>.</li>
+<li>Desigualdad del triángulo: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\(|a+b|\leq |a|+|b|\)</span>.</li>
+</ol>
+</div>
+<p>Veremos ahora una serie de consecuencias del axioma de completitud.</p>
+<div id="prp-propiedad-infimo" class="theorem proposition">
+<p><span class="theorem-title"><strong>Propocición 2.4 </strong></span>Si un subconjunto no vacío <span class="math inline">\(A\subset \mathbb{R}\)</span> tiene una cota inferior, entonces tiene un ínfimo <span class="math inline">\(m\in \mathbb{R}\)</span>.</p>
+</div>
+<!-- TODO: Demostración propiedad ínfimo -->
+<div id="thm-propiedad-arquimediana" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.3 (Propiedad arquimediana) </strong></span>Dado un número real <span class="math inline">\(a\in \mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número natural <span class="math inline">\(n\in \mathbb{N}\)</span> tal que <span class="math inline">\(a&lt;n\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(x&lt;n\)</span>. Entonces, <span class="math inline">\(x\)</span> es una cota superior de <span class="math inline">\(\mathbb{N}\)</span>. Por tanto, por el axioma del supremo existe un número <span class="math inline">\(s=\sup(\mathbb{N})\)</span>. Por ser supremo, se cumple que existe un número natural <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(s-1&lt;m\)</span>, pero entonces se tiene que <span class="math inline">\(s&lt;m+1\)</span>, y como <span class="math inline">\(m\in\mathbb{N}\)</span> también <span class="math inline">\(n+1\in\mathbb{N}\)</span>, lo que contradice que <span class="math inline">\(s\)</span> sea cota superior de <span class="math inline">\(\mathbb{N}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-consecuencias-arquimedianas" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 2.1 </strong></span>De la propiedad arquimediana se deducen las siguientes consencuencias: a. Si <span class="math inline">\(a&gt;0\in \mathbb{R}\)</span>, entonces <span class="math inline">\(\exists n\in \mathbb{N}\)</span> tal que <span class="math inline">\(0&lt;\frac{1}{n}&lt;n\)</span>. a. Si <span class="math inline">\(a&gt;0\in \mathbb{R}\)</span>, entonces <span class="math inline">\(\exists n\in \mathbb{N}\)</span> tal que <span class="math inline">\(n-1\leq a&lt;n\)</span>.</p>
+</div>
+<div id="thm-raiz-cuadrada" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.4 (Raíz cuadrada) </strong></span>Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^2=a\)</span>. A este número se le llama <em>raíz cuadrada</em> de <span class="math inline">\(a\)</span> y se denota por <span class="math inline">\(\sqrt{a}\)</span> o <span class="math inline">\(a^{1/2}\)</span>.</p>
+</div>
+<!-- TODO: Demostración teorema raíz cuadrada -->
+<p>Del mismo modo se puede probar que para cualquier número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span> y para cualquier número natural <span class="math inline">\(n\in\mathbb{N}\)</span> existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^n=a\)</span>. A este número se le llama <em>raíz <span class="math inline">\(n\)</span>-ésima</em> de <span class="math inline">\(a\)</span>.</p>
+<div id="thm-densidad-racionales" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.5 (Densidad de los números racionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número racional <span class="math inline">\(q\in \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;q&lt;b\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(a&lt;b\)</span> se tiene que <span class="math inline">\(b-a&gt;0\)</span>, de manera que por la propiedad arquimediana existe un número natural <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;b-a\)</span>. Por otro lado, como <span class="math inline">\(a&gt;0\)</span> también <span class="math inline">\(na\)</span>&gt;0, y de nuevo por la propiedad arquimediana existe otro número real <span class="math inline">\(m\in \mathbb{N}\)</span> tal que <span class="math inline">\(m-1\leq a&lt;m\)</span>, de donde se deduce que <span class="math inline">\(\frac{m-1}\leq a&lt; \frac{m}{n}\)</span>.</p>
+<p>Consideremos ahora el número racional <span class="math inline">\(q=\frac{m}{n}\)</span>. Acabamos de ver que <span class="math inline">\(a&lt;q\)</span>, por lo que solo falta probar que <span class="math inline">\(q&lt;b\)</span>. Para ello, volviendo de nuevo a que <span class="math inline">\(\frac{1}{n}&lt; b-a\)</span>, se tiene que</p>
+<p><span class="math display">\[
+\frac{1}{n}&lt; b-a \Rightarrow 1&lt;nb-na \Rightarrow 1+na&lt;nb
+\]</span> pero como habíamos visto que <span class="math inline">\(m-1\leq na\)</span> se deduce que <span class="math inline">\(1+m-1&lt;nb\)</span>, es decir <span class="math inline">\(m&lt;nb\)</span>, y de aquí se concluye que <span class="math inline">\(q=\frac{m}{n}&lt;b\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-densidad-irracionales" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 2.2 (Densidad de los números irracionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número irracional <span class="math inline">\(p\in \mathbb{R}\setminus \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;p&lt;b\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sabemos que <span class="math inline">\(\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}\)</span> y que <span class="math inline">\(\sqrt{2}&gt;0\)</span>, por lo que al aplicar el teorema anterior a los números reales <span class="math inline">\(\frac{a}{\sqrt{2}}\)</span> y <span class="math inline">\(\frac{b}{\sqrt{2}}\)</span> se tiene que existe un número racional <span class="math inline">\(q\in\mathbb{Q}\)</span> tal que <span class="math inline">\(\frac{a}{\sqrt{2}}&lt;q&lt;\frac{b}{\sqrt{2}}\)</span>, lo que implica que <span class="math inline">\(a&lt;q\sqrt{2}&lt;b\)</span>. Finalmente, si tomamos <span class="math inline">\(p=q\sqrt{2}\)</span>, tenemos que es un número irracional que cumple que <span class="math inline">\(a&lt;p&lt;q\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="clasificación-de-los-conjuntos-numéricos" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="clasificación-de-los-conjuntos-numéricos"><span class="header-section-number">2.1.6</span> Clasificación de los conjuntos numéricos</h3>
+<p>Con estas extensiones se obtiene la siguiente clasificación de los conjuntos numéricos (se ha incluido también el conjunto de los números complejos <span class="math inline">\(\mathbb{C}\)</span> que no se verán en este manual.)</p>
+<p><span class="math display">\[
+\mbox{Complejos } \mathbb{C}
+    \begin{cases}
+    \mbox{Reales } \mathbb{R}
+    \begin{cases}
+        \mbox{Racionales } \mathbb{Q}
+        \begin{cases}
+            \mbox{Enteros } \mathbb{Z}
+            \begin{cases}
+                \mbox{Naturales } \mathbb{N} \\
+                \mbox{Cero } 0\\
+                \mbox{Enteros negativos}
+                \end{cases}\\
+            \mbox{Fraccionarios}
+        \end{cases}\\
+        \mbox{Irracionales}
+    \end{cases}\\
+    \mbox{Imaginarios}
+    \end{cases}
+\]</span></p>
+<p>En particular se cumple que <span class="math inline">\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\)</span>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./teoria-conjuntos.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./topologia-reales.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

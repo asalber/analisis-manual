@@ -1,2 +1,2 @@
-# analisis
-Manual de Análisis Matemático de variable Real.
+# analisis-manual
+Manual de introducción al Análisis Matemático Real.
