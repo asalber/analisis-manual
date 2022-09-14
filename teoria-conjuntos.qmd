@@ -62,9 +62,9 @@ Conviene remarcar que en un conjunto no puede haber elementos repetidos y tampoc
 :::{#prp-igualdad-relacion-equivalencia}
 La igualdad de conjuntos es una _relación de equivalencia_, es decir, satisface las propiedades:
 
-1. **Reflexiva**: $A = A$.
-2. **Simétrica**: Si $A = B$ entonces $B = A$.
-3. **Transitiva**: $A = B$ y $B = C$, entonces $A = C$. 
+1. _Reflexiva_: $A = A$.
+2. _Simétrica_: Si $A = B$ entonces $B = A$.
+3. _Transitiva_: $A = B$ y $B = C$, entonces $A = C$. 
 :::
 
 :::{#def-subconjunto}
@@ -82,9 +82,9 @@ Cuando $A\subseteq B$ pero $A\neq B$ se dice que $A$ está _estríctamente inclu
 :::{#prp-inclusion-relacion-orden-parcial}
 La inclusión de conjuntos es una _relación de orden parcial_, es decir, satisface las propiedades:
 
-1. **Reflexiva**: $A \subseteq A$.
-2. **Antisimétrica**: Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
-3. **Transitiva**: $A = B$ y $B = C$, entonces $A \subseteq C$. 
+1. _Reflexiva_: $A \subseteq A$.
+2. _Antisimétrica_: Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
+3. _Transitiva_: $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$. 
 :::
 
 :::{#def-conjunto-vacio}
@@ -129,7 +129,7 @@ $$\overline A = \{x\in \Omega\,:\, x\not\in A\}.$$
 ## Diferencia
 Dados dos conjuntos $A$ y $B$, se llama _diferencia_ de $A$ y $B$, y se denota $A-B$, al conjunto formado por los elementos de $A$ que no pertenecen a $B$, es decir,
 
-$$A-B = \{x\,|\, x\in A\mbox{ y }x\not\in B\}.$$
+$$A-B = \{x\,:\, x\in A\mbox{ y }x\not\in B\}.$$
 :::
 
 ![Diferencia de conjuntos](img/teoria-conjuntos/diferencia.png){width=6cm}
@@ -176,7 +176,7 @@ Dado un conjunto universo $\Omega$ y los conjuntos $A,B,C\subseteq \Omega$, se c
 13. $\overline \Omega = \emptyset$ y $\overline \emptyset = \Omega$.
 :::
 
-:::{def-conjuntos-disjuntos}
+:::{#def-conjuntos-disjuntos}
 ## Conjuntos disjuntos
 Dados dos conjuntos $A$ y $B$, se dice que son _disjuntos_ si no tienen ningún elemento en común, es decir, $A\cap B=\emptyset$.
 :::
