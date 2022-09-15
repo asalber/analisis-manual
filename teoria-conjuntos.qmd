@@ -373,7 +373,7 @@ Es habitual representar los pares de una función con la notación $y=f(x)$ dond
 :::
 :::
 
-::: {.content-visible when-format="html"}
+::: {.content-visible unless-format="html"}
 :::{layout-ncol="2"}
 ![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
 
@@ -400,11 +400,6 @@ $$\operatorname{Im}(f) = \{b\in B: \exists a\in A, (a,b)\in f\}$$
 Dada una función $f:A\rightarrow B$, se dice que $f$ es _inyectiva_ si no existen dos elementos de $A$ con la misma imagen, es decir,
 
 $$\forall a_1, a_2 \in A, \mbox{ si } f(a_1) = f(a_2), \mbox{ entonces } a_1 = a_2.$$
-:::
-
-::: {.content-hidden when-format="html"}
-
-
 :::
 
 :::{#def-funcion-sobreyectiva}
