@@ -62,9 +62,9 @@ Conviene remarcar que en un conjunto no puede haber elementos repetidos y tampoc
 :::{#prp-igualdad-relacion-equivalencia}
 La igualdad de conjuntos es una _relación de equivalencia_, es decir, satisface las propiedades:
 
-1. _Reflexiva_: $A = A$.
-2. _Simétrica_: Si $A = B$ entonces $B = A$.
-3. _Transitiva_: $A = B$ y $B = C$, entonces $A = C$. 
+1. _Reflexiva:_ $A = A$.
+2. _Simétrica:_ Si $A = B$ entonces $B = A$.
+3. _Transitiva:_ $A = B$ y $B = C$, entonces $A = C$. 
 :::
 
 :::{#def-subconjunto}
@@ -82,9 +82,9 @@ Cuando $A\subseteq B$ pero $A\neq B$ se dice que $A$ está _estríctamente inclu
 :::{#prp-inclusion-relacion-orden-parcial}
 La inclusión de conjuntos es una _relación de orden parcial_, es decir, satisface las propiedades:
 
-1. _Reflexiva_: $A \subseteq A$.
-2. _Antisimétrica_: Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
-3. _Transitiva_: $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$. 
+1. _Reflexiva:_ $A \subseteq A$.
+2. _Antisimétrica:_ Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
+3. _Transitiva:_ $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$. 
 :::
 
 :::{#def-conjunto-vacio}
@@ -241,9 +241,9 @@ Dependiendo de las propiedades que cumpla una relación tenemos los siguientes t
 ## Relación de equivalencia
 Dado un conjunto $A$ y una relación homogénea $R \subseteq A \times A$, se dice que $R$ es una _relación de equivalencia_, y se denota $(A, \sim)$, si es que cumple que $R$ es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades
 
-- _Reflexiva_: $\forall a \in A, a \sim a$.
-- _Simétrica_: $\forall a, b \in A$, si $a\sim b$ entonces $b\sim a$.
-- _Transitiva_: $\forall a, b, c \in A$, si $a\sim b$ y $b\sim c$, entonces $a\sim c$.
+- _Reflexiva:_ $\forall a \in A, a \sim a$.
+- _Simétrica:_ $\forall a, b \in A$, si $a\sim b$ entonces $b\sim a$.
+- _Transitiva:_ $\forall a, b, c \in A$, si $a\sim b$ y $b\sim c$, entonces $a\sim c$.
 :::
 
 **Ejemplo**. Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.
@@ -252,9 +252,9 @@ Dado un conjunto $A$ y una relación homogénea $R \subseteq A \times A$, se dic
 ## Relación de orden
 Dado un conjunto $A$ y una relación homogénea $\preceq \subseteq A \times A$, se dice que $\preceq$ es una _relación de orden_, si es una relación reflexiva, antisimétrica y transitiva, es decir, si cumple las propiedades
 
-- _Reflexiva_: $\forall a \in A, a \preceq a$.
-- _Antisimétrica_: $\forall a, b \in A$, si $a\preceq b$ y $b\preceq a$, entonces $a \sim b$.
-- _Transitiva_: $\forall a, b, c \in A$, si $a\preceq b$ y $b\preceq c$, entonces $a\preceq c$.
+- _Reflexiva:_ $\forall a \in A, a \preceq a$.
+- _Antisimétrica:_ $\forall a, b \in A$, si $a\preceq b$ y $b\preceq a$, entonces $a = b$.
+- _Transitiva:_ $\forall a, b, c \in A$, si $a\preceq b$ y $b\preceq c$, entonces $a\preceq c$.
 :::
 
 :::{#def-relacion-orden-parcial}
@@ -365,46 +365,21 @@ Es habitual representar los pares de una función con la notación $y=f(x)$ dond
 
 **Ejemplo** La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
 
-<!--
-De forma más gráfica, una función se vería así
-\[
-    \left.
-        \begin{tikzpicture}
-            \node (A) {$A$};
-            \node (B) [right=of A] {$B$};
-            
-            \node (a1) [below = 0.5cm of A] {$a_1$};
-            \node (a2) [below = 0.5cm of a1] {$a_2$};
-            \node (a3) [below = 0.5cm of a2] {$a_3$};
-            \node (b1) [below = 0.5cm of B] {$b_1$};
-            \node (b2) [below = 0.5cm of b1] {$b_2$};
-            \node (b3) [below = 0.5cm of b2] {$b_3$};
-            \draw[-stealth] (a1) -- (b1);
-            \draw[-stealth] (a2) -- (b2);
-            \draw[-stealth] (a3) -- (b3);
-        \end{tikzpicture}
-    \right.
-        \hspace{3em}\raisebox{9em}{$f_1: A \rightarrow B$}
-\]
-Por otro lado, estas cosas no serían funciones
-\[
-    \begin{tikzpicture}
-        \node (A) {$A$};
-        \node (B) [right=of A] {$B$};
-        
-        \node (a1) [below = 0.5cm of A] {$a_1$};
-        \node (a2) [below = 0.5cm of a1] {$a_2$};
-        \node (a3) [below = 0.5cm of a2] {$a_3$};
-        \node (b1) [below = 0.5cm of B] {$b_1$};
-        \node (b2) [below = 0.5cm of b1] {$b_2$};
-        \node (b3) [below = 0.5cm of b2] {$b_3$};
-        \draw[-stealth, red] (a1) -- (b1);
-        \draw[-stealth, red] (a1) -- (b2);
-        \draw[-stealth, blue] (a2) -- (b2);
-        \draw[-stealth, blue] (a3) -- (b1);
-    \end{tikzpicture}
-\]
--->
+::: {.content-visible when-format="html"}
+:::{layout-ncol="2"}
+![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
+
+![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.png)
+:::
+:::
+
+::: {.content-visible when-format="html"}
+:::{layout-ncol="2"}
+![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
+
+![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.tex)
+:::
+:::
 
 :::{#def-dominio-funcion}
 ## Dominio
@@ -427,6 +402,11 @@ Dada una función $f:A\rightarrow B$, se dice que $f$ es _inyectiva_ si no exist
 $$\forall a_1, a_2 \in A, \mbox{ si } f(a_1) = f(a_2), \mbox{ entonces } a_1 = a_2.$$
 :::
 
+::: {.content-hidden when-format="html"}
+
+
+:::
+
 :::{#def-funcion-sobreyectiva}
 ## Función sobreyectiva
 Dada una función $f:A\rightarrow B$, se dice que $f$ es _sobreyectiva_ si todo elemento de $B$ tiene una preimagen (está relacionado con algún elemento de $A$ mediante $f$), es decir,
@@ -437,6 +417,30 @@ $$\forall b \in B, \exists a\in A, f(a) = b.$$
 :::{#def-funcion-biyectiva}
 ## Función biyectiva
 Dada una función $f:A\rightarrow B$, se dice que $f$ es _biyectiva_, si $f$ es, a la vez, inyectiva y sobreyectiva.
+:::
+
+::: {.content-visible when-format="html"}
+:::{layout-ncol="2"}
+![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.png)
+
+![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.png)
+
+![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.png)
+
+![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+:::{layout-ncol="2"}
+![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.tex)
+
+![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.tex)
+
+![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.tex)
+
+![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
+:::
 :::
 
 :::{#def-funcion-identidad}
@@ -465,7 +469,7 @@ $$g\circ f(a) = g(f(a)), \forall a\in A.$$
 :::
 
 :::{#prp-composicion-inversa}
-Dada una función $f:A\rightarrow B$, se cumple que $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
+Dada una función $f:A\rightarrow B$, si existe $^{-1}, entonces $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
 :::
 
 ## Cardinalidad de un conjunto 
@@ -511,12 +515,12 @@ Dos conjuntos $A$ y $B$ son equipotentes si y solo si cada elemento de $A$ puede
 :::{#prp-equipotencia-relacion-equivalencia}
 La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:
 
-- Reflexiva: $A\approx A$ para todo conjunto $A$.
-- Simétrica: Si $A\approx B$, entonces $B\approx A$, para cualesquiera conjuntos $A$ y $B$.
-- Transitiva: Si $A\approx B$ y $B\approx C$, entonces $A\approx C$ para cualesquiera conjuntos $A$, $B$ y $C$.
+- _Reflexiva:_ $A\approx A$ para todo conjunto $A$.
+- _Simétrica:_ Si $A\approx B$, entonces $B\approx A$, para cualesquiera conjuntos $A$ y $B$.
+- _Transitiva:_ Si $A\approx B$ y $B\approx C$, entonces $A\approx C$ para cualesquiera conjuntos $A$, $B$ y $C$.
 :::
 
-De igual modo se puede definir una relación que capture la noción del que un conjunto es de menor tamaño que otro.
+De igual modo se puede definir una relación que capture la noción de que un conjunto es de menor tamaño que otro.
 
 :::{#def-conjuntos-minuspotentes}
 ## Conjunto minuspotente
@@ -551,7 +555,7 @@ Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia qu
 
 Por otro lado, el conjunto de los números naturales $\mathbb{N}$ es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto $\{1,2,\ldots,n\}$ para ningún $n\in\mathbb{N}$, y por tanto, $|\mathbb{N}|=\infty$.
 
-Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la @prp-equipotencia-relacion-equivalencia.
+Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la @prp-biyeccion-conjuntos-equipotentes.
 
 **Ejemplo**. El conjunto de los números naturales pares $P$ es infinito y también lo es el conjunto de los números naturales $\mathbb{N}$. Además ambos son equipotentes pues se puede definir una aplicación biyectiva $f(n) = 2n$ $\forall n\in\mathbb{N}$, de manera que $\mathbb{N}\approx P$. 
 

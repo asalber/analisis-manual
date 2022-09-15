@@ -2,6 +2,7 @@ project:
   type: book
   output-dir: "docs"
 
+
 website:
   favicon: img/logos/favicon.ico
   reader-mode: true
