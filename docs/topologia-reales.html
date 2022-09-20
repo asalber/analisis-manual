@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./sucesiones.html" rel="next">
 <link href="./cuerpo-reales.html" rel="prev">
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -156,6 +157,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./topologia-reales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -247,7 +253,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="def-intervalos-anidados" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.6 (Intervalos anidados) </strong></span>Se dice que una sucesión de intervalos <span class="math inline">\(I_n\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span> es una <em>sucesión de intervalos anidados</em> si se cumple que <span class="math inline">\(I_{n+1}\subseteq I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong>. La sucesión de intervalos <span class="math inline">\(I_n=[0,\frac{1}{n}]\)</span>, <span class="math inline">\(\forall n\in\mathbb{N}\)</span> es una sucesión de intervalos anidados, ya que para cada <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(n&lt;n+1\)</span> y por tanto <span class="math inline">\(\frac{1}{n}&gt;\frac{1}{n+1}\)</span>, de manera que <span class="math inline">\(I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n\)</span>.</p>
+<div id="exm-sucesion-intervalos-anidados" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.1 </strong></span>La sucesión de intervalos <span class="math inline">\(I_n=[0,\frac{1}{n}]\)</span>, <span class="math inline">\(\forall n\in\mathbb{N}\)</span> es una sucesión de intervalos anidados, ya que para cada <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(n&lt;n+1\)</span> y por tanto <span class="math inline">\(\frac{1}{n}&gt;\frac{1}{n+1}\)</span>, de manera que <span class="math inline">\(I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n\)</span>.</p>
+</div>
 <div id="thm-intervalos-anidados" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 3.1 (Intervalos anidados) </strong></span>Dada una sucesión de intervalos cerrados y anidados <span class="math inline">\(I_n=[a_n,b_n]\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>, existe un número <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(a\in I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Además, si el ínfimo de las longitudes <span class="math inline">\(\{b_n-a_n: n\in \mathbb{N}\}\)</span> es <span class="math inline">\(0\)</span>, entonces <span class="math inline">\(a\)</span> es único, es decir, <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
 </div>
@@ -266,21 +274,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Aunque la definición no lo hace explícito, es evidente que si <span class="math inline">\(a\)</span> es un punto interior de <span class="math inline">\(A\)</span> entonces <span class="math inline">\(a\in A\)</span>.</p>
 <p>Intuitivamente, un punto interior de un conjunto es un punto que no está en el borde del conjunto, es decir, que está rodeado por puntos del conjunto, y por tanto, podemos movernos un poco hacia la izquierda o hacia la derecha del punto sin salirnos del conjunto.</p>
-<p><strong>Ejemplo</strong> <span class="math inline">\(0.9\)</span> es un punto interior del intervalo <span class="math inline">\((0,1)\)</span> ya que podemos tomar <span class="math inline">\(\varepsilon = 0.01\)</span> tal que el entorno <span class="math inline">\((0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)\)</span>.</p>
+<div id="exm-punto-interior" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.2 </strong></span><span class="math inline">\(0.9\)</span> es un punto interior del intervalo <span class="math inline">\((0,1)\)</span> ya que podemos tomar <span class="math inline">\(\varepsilon = 0.01\)</span> tal que el entorno <span class="math inline">\((0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)\)</span>.</p>
 <p>Sin embargo, <span class="math inline">\(1\)</span> no es un punto interior del intervalo <span class="math inline">\([1,\infty)\)</span>, porque por muy pequeño que tomemos <span class="math inline">\(\varepsilon&gt;0\)</span>, <span class="math inline">\(1-\varepsilon &lt; 1\)</span> y, por tanto, el entorno <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\)</span> siempre tendrá valores menores que 1, de manera que <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)\)</span>.</p>
+</div>
 <div id="def-punto-exterior" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.9 (Punto exterior) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto exterior</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si existe un entorno de <span class="math inline">\(a\)</span> contenido en el complementario de <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((x-\varepsilon, x+\varepsilon) \subseteq \overline A\)</span>.</p>
 <p>El conjunto de los puntos exteriores de <span class="math inline">\(A\)</span> se llama <em>exterior</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Ext}(A)\)</span>.</p>
 </div>
 <p>Una definición equivalente es que un punto es punto exterior de un conjunto si es un punto interior de su complementario.</p>
-<p><strong>Ejemplo</strong> <span class="math inline">\(1.01\)</span> es un punto exterior del conjunto <span class="math inline">\((-\infty, 1)\)</span> ya que tomando <span class="math inline">\(\varepsilon=0.001\)</span> el entorno <span class="math inline">\((1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
+<div id="exm-punto-exterior" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.3 </strong></span><span class="math inline">\(1.01\)</span> es un punto exterior del conjunto <span class="math inline">\((-\infty, 1)\)</span> ya que tomando <span class="math inline">\(\varepsilon=0.001\)</span> el entorno <span class="math inline">\((1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
 <p>Sin embargo, el punto <span class="math inline">\(1\)</span> no es un punto exterior del intervalo <span class="math inline">\((-\infty, 1)\)</span>, ya que, como se ha visto en el ejemplo anterior, no es un punto interior del intervalo <span class="math inline">\(\overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
+</div>
 <div id="def-punto-frontera" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.10 (Punto frontera) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto frontera</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span> y de su complementario.</p>
 <p>El conjunto de los puntos frontera de <span class="math inline">\(A\)</span> se llama <em>frontera</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Fr}(A)\)</span>.</p>
 </div>
 <p>Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior del conjunto ni de su complementario.</p>
-<p><strong>Ejemplo</strong> <span class="math inline">\(1\)</span> es un punto frontera del intervalo <span class="math inline">\([1,\infty)\)</span> ya que no es un punto interior de <span class="math inline">\([1,\infty)\)</span> ni de su complementario <span class="math inline">\((-\infty,1)\)</span>.</p>
+<div id="exm-punto-frontera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.4 </strong></span><span class="math inline">\(1\)</span> es un punto frontera del intervalo <span class="math inline">\([1,\infty)\)</span> ya que no es un punto interior de <span class="math inline">\([1,\infty)\)</span> ni de su complementario <span class="math inline">\((-\infty,1)\)</span>.</p>
+</div>
 <div id="prp-interior-intervalo-abierto" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 3.1 </strong></span>Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto <span class="math inline">\((a,b)\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>.</p>
 </div>
@@ -370,12 +384,14 @@ Demostración
 <div id="def-conjunto-abierto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.14 (Conjunto abierto) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>abierto</em> cuando para cada <span class="math inline">\(a\in A\)</span> existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon)\subset A\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong>. Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>.</p>
+<p>:::{#exm-intervalo-abierto-conjunto-abierto}. Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>. :::</p>
 <p>Una colección de conjuntos abiertos se llama <em>topología</em> y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama <em>propiedad topológica</em>.</p>
 <div id="def-conjunto-cerrado" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.15 (Conjunto cerrado) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>cerrado</em> cuando su complementario <span class="math inline">\(\overline A =\mathbb{R}\setminus A\)</span> es abierto.</p>
 </div>
-<p><strong>Ejemplo</strong>. Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
+<div id="exm-intervalo-cerrado-conjunto-cerrado" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.5 </strong></span>Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
+</div>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -587,6 +603,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./sucesiones.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

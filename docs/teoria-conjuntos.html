@@ -157,6 +157,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -169,9 +174,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link active" data-scroll-target="#conjuntos"><span class="toc-section-number">1.1</span>  Conjuntos</a></li>
   <li><a href="#álgebra-de-conjuntos" id="toc-álgebra-de-conjuntos" class="nav-link" data-scroll-target="#álgebra-de-conjuntos"><span class="toc-section-number">1.2</span>  Álgebra de conjuntos</a></li>
   <li><a href="#relaciones-entre-conjuntos" id="toc-relaciones-entre-conjuntos" class="nav-link" data-scroll-target="#relaciones-entre-conjuntos"><span class="toc-section-number">1.3</span>  Relaciones entre conjuntos</a></li>
-  <li><a href="#cotas-y-extremos" id="toc-cotas-y-extremos" class="nav-link" data-scroll-target="#cotas-y-extremos"><span class="toc-section-number">1.4</span>  Cotas y extremos</a></li>
-  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="toc-section-number">1.5</span>  Funciones</a></li>
-  <li><a href="#cardinalidad-de-un-conjunto" id="toc-cardinalidad-de-un-conjunto" class="nav-link" data-scroll-target="#cardinalidad-de-un-conjunto"><span class="toc-section-number">1.6</span>  Cardinalidad de un conjunto</a></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="toc-section-number">1.4</span>  Funciones</a></li>
+  <li><a href="#cardinalidad-de-un-conjunto" id="toc-cardinalidad-de-un-conjunto" class="nav-link" data-scroll-target="#cardinalidad-de-un-conjunto"><span class="toc-section-number">1.5</span>  Cardinalidad de un conjunto</a></li>
   </ul>
 </nav>
     </div>
@@ -195,9 +199,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!-- LTeX: language = es-ES -->
-<div class="hidden">
-
-</div>
 <p>Los conjuntos son entes matemáticos que se usan habitualmente para modelar situaciones reales en las que aparecen colecciones de objetos de cualquier naturaleza, así como las relaciones entre ellos, y por tanto, aparecen en la mayor parte de los problemas de Ciencia o Ingeniería.</p>
 <p>Al mismo tiempo, los conjuntos son una de las estructuras matemáticas más básicas sobre las que se construyen la mayoría de las teorías matemáticas.</p>
 <p>En este capítulo se estudia el concepto de <em>conjunto</em> y sus principales propiedades y relaciones.</p>
@@ -206,13 +207,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="def-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.1 (Conjunto) </strong></span>Un <em>conjunto</em> es a una colección o agrupación bien definida de objetos que puede considerarse en sí misma otro objeto. Para representar un conjunto se indican sus elementos entre llaves y normalmente se utilizarán letras mayúsculas para referirse a ellos.</p>
 </div>
-<p><strong>Ejemplo</strong></p>
+<div id="exm-conjuntos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.1 </strong></span>Algunos ejemplos de conjuntos son:</p>
 <ul>
 <li>El conjunto de los días de la semana es <span class="math inline">\(A = \{\mbox{L, M, X, J, V, S, D}\}\)</span>.</li>
 <li>El conjunto de los colores básicos es <span class="math inline">\(B = \{\mbox{rojo, verde, azul}\}\)</span>.</li>
 <li>El conjunto de los puntos de un dado <span class="math inline">\(C = \{ 1, 2, 3, 4, 5, 6 \}\)</span>.</li>
 <li>El conjunto de los números naturales pares: <span class="math inline">\(D = \{2, 4, 6, \ldots \}\)</span>.</li>
 </ul>
+</div>
 <div id="def-elemento-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.2 (Elementos) </strong></span>Los objetos que componen un conjunto se llaman <em>elementos</em> o miembros del conjunto.</p>
 </div>
@@ -222,12 +225,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="def-pertenencia" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.3 (Pertenencia) </strong></span>Si <span class="math inline">\(a\)</span> es un elemento de un conjunto <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(a\)</span> <em>pertenence</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\in A\)</span>. Por el contrario, si <span class="math inline">\(a\)</span> no es un elemento del conjunto <span class="math inline">\(A\)</span>, se dice que <em>no pertenece</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\not \in A\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong> Si <span class="math inline">\(A\)</span> es el conjunto de los números naturales pares, <span class="math inline">\(2\in A\)</span>, pero <span class="math inline">\(1\not \in A\)</span>.</p>
+<div id="exm-pertencia-conjuntos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.2 </strong></span>Si <span class="math inline">\(A\)</span> es el conjunto de los números naturales pares, <span class="math inline">\(2\in A\)</span>, pero <span class="math inline">\(1\not \in A\)</span>.</p>
+</div>
 <div id="def-igualdad" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.4 (Igualdad) </strong></span>Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son iguales, y se denota <span class="math inline">\(A=B\)</span>, si tienen exactamente los mismos elementos. En caso contrario se escribe <span class="math inline">\(A\neq B\)</span>.</p>
 </div>
 <p>Conviene remarcar que en un conjunto no puede haber elementos repetidos y tampoco importa el orden en que se listan los elementos.</p>
-<p><strong>Ejemplo</strong>. <span class="math inline">\(\{1, 2, 3\} = \{3, 1, 2\}\)</span>.</p>
+<div id="exm-igualdad-conjuntos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.3 </strong></span><span class="math inline">\(\{1, 2, 3\} = \{3, 1, 2\}\)</span>.</p>
+</div>
 <div id="prp-igualdad-relacion-equivalencia" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.1 </strong></span>La igualdad de conjuntos es una <em>relación de equivalencia</em>, es decir, satisface las propiedades:</p>
 <ol type="1">
@@ -242,7 +249,9 @@ ul.task-list li input[type="checkbox"] {
 \]</span></p>
 <p>Cuando <span class="math inline">\(A\subseteq B\)</span> pero <span class="math inline">\(A\neq B\)</span> se dice que <span class="math inline">\(A\)</span> está <em>estríctamente incluido</em> en <span class="math inline">\(B\)</span> o que <span class="math inline">\(A\)</span> es un <em>subconjunto propio</em> de <span class="math inline">\(B\)</span> y se escribe <span class="math inline">\(A\subsetneq B\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong>. <span class="math inline">\(\{1, 2, 3\} \subseteq \{3, 1, 2\}\)</span> y <span class="math inline">\(\{1, 3\} \subsetneq \{3, 1, 2\}\)</span>.</p>
+<div id="exm-inclusion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.4 </strong></span><span class="math inline">\(\{1, 2, 3\} \subseteq \{3, 1, 2\}\)</span> y <span class="math inline">\(\{1, 3\} \subsetneq \{3, 1, 2\}\)</span>.</p>
+</div>
 <div id="prp-inclusion-relacion-orden-parcial" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.2 </strong></span>La inclusión de conjuntos es una <em>relación de orden parcial</em>, es decir, satisface las propiedades:</p>
 <ol type="1">
@@ -314,7 +323,8 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <p></p><figcaption class="figure-caption">Diferencia simétrica de conjuntos</figcaption><p></p>
 </figure>
 </div>
-<p><strong>Ejemplo</strong>. Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,</p>
+<div id="exm-operaciones-conjuntos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.5 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,</p>
 <ul>
 <li>La unión de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cup B=\{1,2,3,4,6\}\)</span>.</li>
 <li>La intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cap B=\{2,4\}\)</span>.</li>
@@ -322,6 +332,7 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <li>La diferencia de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A-B=\{6\}\)</span>, y la diferencia de <span class="math inline">\(B\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(B-A=\{1,3\}\)</span>.</li>
 <li>La diferencia simétrica de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\triangle B = \{1, 3, 6\}\)</span>.</li>
 </ul>
+</div>
 <div id="prp-propiedades-conjuntos" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.3 </strong></span>Dado un conjunto universo <span class="math inline">\(\Omega\)</span> y los conjuntos <span class="math inline">\(A,B,C\subseteq \Omega\)</span>, se cumplen las siguientes propiedades:</p>
 <ol type="1">
@@ -348,7 +359,9 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <p><span class="theorem-title"><strong>Definición 1.13 (Conjunto potencia) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>conjunto potencia</em> o <em>conjunto de las partes</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\mathcal{P}(A)\)</span>, al conjunto de todos los subconjuntos de <span class="math inline">\(A\)</span>, es decir,</p>
 <p><span class="math display">\[\mathcal{P}(A) = \{ X \, : \,  X \subseteq A \}\]</span></p>
 </div>
-<p><strong>Ejemplo</strong>. El conjunto potencia del conjunto <span class="math inline">\(A=\{1, 2, 3\}\)</span> es</p>
+<div id="exm-conjunto-potencia" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.6 </strong></span>El conjunto potencia del conjunto <span class="math inline">\(A=\{1, 2, 3\}\)</span> es</p>
+</div>
 <p><span class="math display">\[\mathcal{P}(A)=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}\]</span></p>
 </section>
 <section id="relaciones-entre-conjuntos" class="level2" data-number="1.3">
@@ -387,7 +400,9 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <li><em>Transitiva:</em> <span class="math inline">\(\forall a, b, c \in A\)</span>, si <span class="math inline">\(a\sim b\)</span> y <span class="math inline">\(b\sim c\)</span>, entonces <span class="math inline">\(a\sim c\)</span>.</li>
 </ul>
 </div>
-<p><strong>Ejemplo</strong>. Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.</p>
+<div id="exm-relacion-equivalencia" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.7 </strong></span>Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.</p>
+</div>
 <div id="def-relacion-orden" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.18 (Relación de orden) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden</em>, si es una relación reflexiva, antisimétrica y transitiva, es decir, si cumple las propiedades</p>
 <ul>
@@ -401,16 +416,18 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <p><span class="math display">\[\exists x, y\in A,\ x\preceq y \mbox{ o } y\preceq x.\]</span></p>
 <p>Al conjunto <span class="math inline">\(A\)</span> con la relación de orden parcial <span class="math inline">\(\preceq\)</span> se le llama <em>conjunto parcialmente ordenado</em>, y se denota <span class="math inline">\((A,\preceq)\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong>. El conjunto potencia de un conjunto <span class="math inline">\(A\)</span> con la relación de inclusión es un conjunto parcialmente ordenado <span class="math inline">\((\mathcal{P}(A),\subseteq)\)</span>.</p>
+<div id="exm-relacion-orden-parcial" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.8 </strong></span>El conjunto potencia de un conjunto <span class="math inline">\(A\)</span> con la relación de inclusión es un conjunto parcialmente ordenado <span class="math inline">\((\mathcal{P}(A),\subseteq)\)</span>.</p>
+</div>
 <div id="def-relacion-orden-total" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.20 (Relación de orden total) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden total</em>, si es una relación de orden y todos los elementos de <span class="math inline">\(A\)</span> se relacionan entre sí mediante <span class="math inline">\(\preceq\)</span>, es decir,</p>
 <p><span class="math display">\[\forall x, y\in A,\ x\preceq y \mbox{ o } y \preceq x.\]</span></p>
 <p>Al conjunto <span class="math inline">\(A\)</span> con la relación de orden total <span class="math inline">\(\preceq\)</span> se le llama <em>conjunto totalmente ordenado</em>, y se denota <span class="math inline">\((A,\preceq)\)</span>.</p>
 </div>
-<p><strong>Ejemplo</strong>. La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden parcialmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>.</p>
-</section>
-<section id="cotas-y-extremos" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="cotas-y-extremos"><span class="header-section-number">1.4</span> Cotas y extremos</h2>
+<div id="exm-relacion-orden-total" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.9 </strong></span>La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden parcialmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>. ::</p>
+<section id="cotas-y-extremos" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="cotas-y-extremos">Cotas y extremos</h2>
 <div id="def-cota-superior-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.21 (Cota superior) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota superior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son menores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in B, x\preceq c.\]</span></p>
@@ -460,19 +477,23 @@ Demostración
 <p><span class="theorem-title"><strong>Definición 1.26 (Ínfimo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>ínfimo</em> de <span class="math inline">\(B\)</span> y se denota <span class="math inline">\(\inf(B)\)</span> a la mayor de las cotas inferiores de <span class="math inline">\(B\)</span>.</p>
 </div>
 <p>Obsérvese que un conjunto puede no tener supremo o ínfimo.</p>
-<p><strong>Ejemplo</strong>. Si se toma el conjunto de los números naturales con la relación de orden total <span class="math inline">\((\mathbb{N},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{1, 2, 3\}\subseteq \mathbb{N}\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{N}\)</span> tal que <span class="math inline">\(3\leq x\)</span> es una cota superior de <span class="math inline">\(B\)</span>, por tanto <span class="math inline">\(3\)</span> es el supremo de <span class="math inline">\(B\)</span>, y además es un máximo puesto que <span class="math inline">\(3\in B\)</span>.</p>
+<p>:::{#exm-supremo-infimo-maximo-minimo}. Si se toma el conjunto de los números naturales con la relación de orden total <span class="math inline">\((\mathbb{N},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{1, 2, 3\}\subseteq \mathbb{N}\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{N}\)</span> tal que <span class="math inline">\(3\leq x\)</span> es una cota superior de <span class="math inline">\(B\)</span>, por tanto <span class="math inline">\(3\)</span> es el supremo de <span class="math inline">\(B\)</span>, y además es un máximo puesto que <span class="math inline">\(3\in B\)</span>.</p>
 <p>Por otro lado, si se considera el conjunto de los números reales con la relación de orden total <span class="math inline">\((\mathbb{R},\leq)\)</span>, para el intervalo <span class="math inline">\((0,1)\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x\leq 0\)</span> es una cota inferior y <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(1\leq x\)</span> es una cota superior, de modo que <span class="math inline">\(0\)</span> es el ínfimo y <span class="math inline">\(1\)</span> el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que <span class="math inline">\(0\not\in (0,1)\)</span> y <span class="math inline">\(1\not\in (0,1)\)</span>.</p>
 <p>Finalmente, si se considera el conjunto de los números enteros con la relación de orden total <span class="math inline">\((\mathbb{Z},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo.</p>
 </section>
-<section id="funciones" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.5</span> Funciones</h2>
+</div>
+</section>
+<section id="funciones" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.4</span> Funciones</h2>
 <p>El concepto de función es uno de los más importantes en el Análisis Matemático, ya que muchos de los fenómenos naturales en los que una magnitud depende de otra se modelizan mediante funciones.</p>
 <div id="def-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.27 (Función) </strong></span>Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacios, es una <em>función</em> o <em>aplicación</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
 <p><span class="math display">\[\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.\]</span></p>
 </div>
 <p>Es habitual representar los pares de una función con la notación <span class="math inline">\(y=f(x)\)</span> donde <span class="math inline">\(x\)</span> es la primera componente del par e <span class="math inline">\(y\)</span> la segunda.</p>
-<p><strong>Ejemplo</strong> La relación binaria <span class="math inline">\(f=\{(1,a), (2,c), (3,c), (4,b)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,a), (2,c), (3,c), (2,b)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(2\)</span>. Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
+<div id="exm-funcion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.10 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,a), (2,c), (3,c), (4,b)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,a), (2,c), (3,c), (2,b)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(2\)</span>. Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
+</div>
 <div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -572,13 +593,15 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 1.4 </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, si existe $^{-1}, entonces <span class="math inline">\(f\circ f^{-1} = \operatorname{id}_A\)</span> y <span class="math inline">\(f^{-1}\circ f = \operatorname{id}_B\)</span>.</p>
 </div>
 </section>
-<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.6</span> Cardinalidad de un conjunto</h2>
+<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.5</span> Cardinalidad de un conjunto</h2>
 <div id="def-cardinal-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.36 (Cardinal) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
 </div>
-<p>De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.</p>
-<p><strong>Ejemplo</strong>. El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
+<p>De manera informal, se puede decir Que el cardinal de un conjunto es su tamaño.</p>
+<div id="exm-cardinal" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.11 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
+</div>
 <div id="prp-cardinal-conjunto-potencia" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.5 </strong></span>El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
 </div>
@@ -640,10 +663,12 @@ Demostración
 <p><span class="theorem-title"><strong>Definición 1.40 (Conjunto infinito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>infinito</em> si no es finito. En tal caso su cardinal se denota <span class="math inline">\(|A|=\infty\)</span>.</p>
 </div>
 <p>Hay que dejar claro que el símbolo <span class="math inline">\(\infty\)</span> es una notación de conveniencia que no es ningún número.</p>
-<p><strong>Ejemplo</strong>. El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
-<p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>.</p>
+<p>:::{#exm-conjunto-finito-infinito}. El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
+<p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>. :::</p>
 <p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
-<p><strong>Ejemplo</strong>. El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
+<div id="exm-conjunto-pares-equipotente-naturales" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.12 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
+</div>
 <p>Sin embargo, como se verá más adelante, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> no es equipotente al conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>, sino minuspotente. Por tanto, existen conjuntos infinitos de distintos tamaños. Para demostrarlo se necesita introducir un nuevo concepto.</p>
 <div id="def-conjuntos-numerables" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.41 (Conjunto numerable) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>numerable</em> si tiene el mismo cardinal que el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
@@ -653,9 +678,11 @@ Demostración
 </div>
 <p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
 <p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
-<p><strong>Ejemplo</strong>. En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
+<div id="exm-enteros-equipotentes-naturales" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.13 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
 <p>Del mismo modo se puede probar que el conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span> también es numerable, pues se puede definir una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow \mathbb{Z}\)</span> de la siguiente manera</p>
 <p><span class="math inline">\(f(n)= \begin{cases} (n-1)/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\ -n/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es par}. \end{cases}\)</span></p>
+</div>
 <p>Sin embargo, existen conjuntos infinitos que no son numerables, como por ejemplo el conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <p><a href="https://es.wikipedia.org/wiki/David_Hilbert">David Hilbert</a>, propuso una interesante paradoja para probar este hecho, conocida como <a href="https://www.youtube.com/watch?v=4c8vG-mxuao">la paradoja del hotel infinito</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Georg_Cantor">Georg Cantor</a> dio una prueba formal de esto mediante el siguiente teorema.</p>

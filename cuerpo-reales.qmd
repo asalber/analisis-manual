@@ -187,7 +187,7 @@ De los axiomas de cuerpo algebraico de los números reales se deducen las siguie
 a. El elemento neutro de la suma ($0$) es único: $\forall a,b\in \mathbb{R}$, si $a+b=a$, entonces $b=0$.
 a. El elemento neutro del producto ($1$) es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b = a$, entonces $b=1$.
 a. El elemento opuesto de un número real es único: $\forall a,b\in \mathbb{R}$, si $a+b=0$, entonces $b=-a$.
-a. El elemento inverso de un número real es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b=0$, entonces $b=a^{-1}$.
+a. El elemento inverso de un número real es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b=1$, entonces $b=a^{-1}$.
 a. El producto de cualquier número real por el elemento neutro de la suma, es el elemento neutro de la suma: $\forall a\in\mathbb{R}$, $a\cdot 0 = 0$.
 a. El producto de cualquier número real por el opuesto de $1$ es el opuesto del número: $\forall a\in\mathbb{R}$ $(-1)\cdot a = -a$.
 a. El opuesto del opuesto de un número real es el propio número: $\forall a\in\mathbb{R}$, $-(-a)=a$.
@@ -197,6 +197,33 @@ a. El inverso del inverso de un número real distinto de 0 es el propio número:
 a. $\forall a,b,c\in \mathbb{R}$, si $a\cdot b=a\cdot c$ y $a\neq 0$, entonces $b=c$.
 a. Si el producto de dos números reales es $0$, entonces alguno de los dos números es $0$: $\forall a,b\in\mathbb{R}$, si $a\cdot b=0$, entonces $a=0$ o $b=0$. 
 f. El inverso del producto de dos números distintos de $0$ es el producto de los inversos: $\forall a,b\in \mathbb{R}$, si $a\neq 0$ y $b\neq 0, entonces $(a\cdot b)^{-1} = a^{-1}\cdot b^{-1}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof} 
+Veamos la prueba de cada propiedad.
+
+a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces $b+a+(-a)=a+(-a)$, y por el axioma 5 se tiene $b + 0 = 0$, de donde se deduce por el axioma 4 que $b=0$.
+
+a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces $b\cdot a\cdot a^{-1}=a\cdot a^{-1}$, y por el axioma 10 se tiene $b \cdot 1= 1$, de donde se deduce por el axioma 9 que $b=1$.
+
+a. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces $(-a)+a+b=(-a)+0$, y por los axiomas 4 y 5 se tiene $b=-a$.
+
+a. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces $(a^{-1})\cdot a\cdot b=a^{-1}\cdot 1$, y por los axiomas 9 y 10 se tiene $b=a^{-1}$.
+
+a. Para cualquier $a\in\mathbb{R}$, usando los axiomas 4 y 11 se cumple $a\cdot 0= a\cdot (0+0)=(a\cdot 0)+(a\cdot 0)$. Si se suma ahora $-(a\cdot 0)$ a ambos lados de la igualdad y usando el axioma 5 se tiene
+
+    $$
+    0 =-(a\cdot 0)+(a\cdot 0) = -(a\cdot 0)+(a\cdot 0)+(a\cdot 0) = 0 + (a\cdot 0) = (a\cdot 0)
+    $$
+
+a. Para cualquier $a\in\mathbb{R}$, usando los axiomas 9, 10 y 11, se tiene $a+(-1)\cdot a = 1\cdot a + (-1)\cdot a = (1+(-1))\cdot a = 0\cdot a$. Usando ahora el resultado anterior $0\cdot a = 0$ de manera que $a+(-1)\cdot a = 0$, y por el axioma 5 se cumple que $(-1)\cdot a = -a$.
+
+a. Para cualquier $a\in\mathbb{R}$, usando el axioma 5 se tiene $a+(-a)=0$ y por el axioma 3 $a+(-a)=(-a)+a=0$, de manera que usando de nuevo el axioma 5 se tiene $a=-(-a)$.
+
+a. Para cualesquiera $a,b\in\mathbb{R}$, por la propiedad f se tiene $(-a)\cdot (-b)=(-1)\cdot a\cdot (-1)\cdot b = (-1)(-1)\cdot a\cdot  b= -(-1)\cdot a\cdot b$. Como $-(-1)=1$ según la propiedad anterior, aplicando el axioma 9 se tiene $(-a)\cdot(-b)=1\cdot a \cdot b=a\cdot b$. 
+:::
 :::
 
 A partir del axioma de tricotomía se puede descomponer el conjunto de los números reales en tres conjuntos disjuntos, los positivos $\mathbb{R}^+$, $\{0\}$ y los negativos $\mathbb{R}^-$.
@@ -250,6 +277,20 @@ a. $\forall a,b\in\mathbb{R}$, si $a<b$, entonces $a<\dfrac{a+b}{2}< b$.
 a. Cualquier número no negativo que es menor que cualquier número positivo es $0$: $\forall a,b\in\mathbb{R}$, si $0\leq a<b$ y $b>0$, entonces $a=0$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces $b+a+(-a)=a+(-a)$, y por el axioma 5 se tiene $b + 0 = 0$, de donde se deduce por el axioma 4 que $b=0$.
+
+b. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces $b\cdot a\cdot a^{-1}=a\cdot a^{-1}$, y por el axioma 10 se tiene $b \cdot 1= 1$, de donde se deduce por el axioma 9 que $b=1$.
+
+c. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces $(-a)+a+b=(-a)+0$, y por los axiomas 4 y 5 se tiene $b=-a$.
+
+d. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces $(a^{-1})\cdot a\cdot b=a^{-1}\cdot 1$, y por los axiomas 9 y 10 se tiene $b=a^{-1}$.
+
+e. 
+:::
+
 A partir del axioma de tricotomía también se puede deducir el valor absoluto de un número real.
 
 :::{#def-valor-absoluto}
@@ -263,11 +304,13 @@ a & \mbox{si } a\geq 0,\\
 $$
 :::
 
-**Ejemplo**. $|1.5|=1.5$ y $|-1/2|=1/2$.
+:::{#exm-valor-absoluto} 
+$|1.5|=1.5$ y $|-1/2|=1/2$.
+:::
 
 Como se verá en el próximo capítulo, el valor absoluto permite calcular la distancia entre dos números reales en la recta real.
 
-:::{prp-propiedades-valor-absoluto}
+:::{#prp-propiedades-valor-absoluto}
 Se cumplen las siguientes propiedades del valor absoluto:
 
 a. El valor absoluto de un número real y de su opuesto es el mismo: $\forall a\in\mathbb{R}$, $|a|=|-a|$.

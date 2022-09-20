@@ -34,7 +34,7 @@ book:
     - teoria-conjuntos.qmd
     - cuerpo-reales.qmd
     - topologia-reales.qmd
-    #- sucesiones.qmd
+    - sucesiones.qmd
     #- limites.qmd
     
 #bibliography: references.bib

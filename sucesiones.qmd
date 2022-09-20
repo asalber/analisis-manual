@@ -1,0 +1,29 @@
+---
+lang: es
+---
+<!-- LTeX: language = es-ES -->
+
+# Sucesiones de números reales
+
+Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático. En este capítulo se presenta el concepto de sucesión de números reales, el concepto de límite y algunos resultados importantes sobre la convergencia de sucesiones.
+
+## Concepto de sucesión
+
+:::{#def-sucesion}
+## Sucesión de números reales
+Una _sucesión de números reales_ es una aplicación $x:\mathbb{N}\to \mathbb{R}$ que asigna a cada número natural un número real, conocido como _término de la sucesión_.
+:::
+
+Es habitual referirse a una sucesión con la notación $(x_n)_{n=1}^\infty$, donde $x_n=x(n)$ con $n\in\mathbb{N}$.
+
+:::{#exm-sucesion1}
+La sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ está formada por los términos $\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots$.
+:::
+
+:::{.callout-caution}
+No hay que confundir los términos de una sucesión $(x_n)_{n=1}^\infty$, que tienen orden, con el conjunto de los valores de la sucesión $\{x_n:n\in\mathbb{N}\}$ que no tiene orden.
+:::
+
+:::{#exm-sucesion2}
+La sucesión $\left((-1)^n\right)_{n=1}^\infty$ está formada por los términos $-1,1,-1,1,\ldots$, mientras que $\{x_n:n\in\mathbb{N}\}=\{-1,1\}$.
+:::

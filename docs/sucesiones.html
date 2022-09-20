@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alfredo Sánchez Alberca">
 
-<title>Manual de Análisis Matemático Real</title>
+<title>Manual de Análisis Matemático Real - 4&nbsp; Sucesiones de números reales</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./teoria-conjuntos.html" rel="next">
+<link href="./topologia-reales.html" rel="prev">
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -62,12 +61,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Manual de Análisis Matemático Real">
-<meta property="og:description" content="¡Bienvenida/os al manual de Análisis Matemático de variable real!">
+<meta property="og:title" content="Manual de Análisis Matemático Real - 4&nbsp; Sucesiones de números reales">
+<meta property="og:description" content="Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático.">
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
-<meta name="twitter:title" content="Manual de Análisis Matemático Real">
-<meta name="twitter:description" content="¡Bienvenida/os al manual de Análisis Matemático de variable real!">
+<meta name="twitter:title" content="Manual de Análisis Matemático Real - 4&nbsp; Sucesiones de números reales">
+<meta name="twitter:description" content="Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Manual de Análisis Matemático Real</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Prefacio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
   </div>
 </li>
     </ul>
@@ -170,10 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a>
-  <ul class="collapse">
-  <li><a href="#licencia" id="toc-licencia" class="nav-link" data-scroll-target="#licencia">Licencia</a></li>
-  </ul></li>
+  <li><a href="#concepto-de-sucesión" id="toc-concepto-de-sucesión" class="nav-link active" data-scroll-target="#concepto-de-sucesión"><span class="toc-section-number">4.1</span>  Concepto de sucesión</a></li>
   </ul>
 </nav>
     </div>
@@ -182,58 +179,49 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Manual de Análisis Matemático Real</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alfredo Sánchez Alberca </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de Publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">6 de enero de 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
+<!-- LTeX: language = es-ES -->
+<p>Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático. En este capítulo se presenta el concepto de sucesión de números reales, el concepto de límite y algunos resultados importantes sobre la convergencia de sucesiones.</p>
+<section id="concepto-de-sucesión" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="concepto-de-sucesión"><span class="header-section-number">4.1</span> Concepto de sucesión</h2>
+<div id="def-sucesion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.1 (Sucesión de números reales) </strong></span>Una <em>sucesión de números reales</em> es una aplicación <span class="math inline">\(x:\mathbb{N}\to \mathbb{R}\)</span> que asigna a cada número natural un número real, conocido como <em>término de la sucesión</em>.</p>
+</div>
+<p>Es habitual referirse a una sucesión con la notación <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, donde <span class="math inline">\(x_n=x(n)\)</span> con <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<div id="exm-sucesion1" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.1 </strong></span>La sucesión <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span> está formada por los términos <span class="math inline">\(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\)</span>.</p>
+</div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No hay que confundir los términos de una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, que tienen orden, con el conjunto de los valores de la sucesión <span class="math inline">\(\{x_n:n\in\mathbb{N}\}\)</span> que no tiene orden.</p>
+</div>
+</div>
+<div id="exm-sucesion2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.2 </strong></span>La sucesión <span class="math inline">\(\left((-1)^n\right)_{n=1}^\infty\)</span> está formada por los términos <span class="math inline">\(-1,1,-1,1,\ldots\)</span>, mientras que <span class="math inline">\(\{x_n:n\in\mathbb{N}\}=\{-1,1\}\)</span>.</p>
+</div>
 
-<section id="prefacio" class="level1 unnumbered">
-<p><img src="img/logos/pi.jpg" title="Manual de Análisis Matemático Real" class="quarto-cover-image img-fluid"></p><h1 class="unnumbered">Prefacio</h1>
-<p>¡Bienvenida/os al manual de Análisis Matemático de variable real!</p>
-<p>Este libro es una introducción al Análisis Matemático de variable real y cubre los contenidos típicos de un grado en Matemáticas o Ingeniería Matemática.</p>
-<p>Este libro se acompaña de una <a href="https://aprendeconalf.es/analisis-ejercicios/">colección de problemas resueltos</a>.</p>
-<section id="licencia" class="level2">
-<h2 class="anchored" data-anchor-id="licencia">Licencia</h2>
-<p>Esta obra está bajo una licencia Reconocimiento – No comercial – Compartir bajo la misma licencia 3.0 España de Creative Commons. Para ver una copia de esta licencia, visite <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/">https://creativecommons.org/licenses/by-nc-sa/3.0/es/</a>.</p>
-<p>Con esta licencia eres libre de:</p>
-<ul>
-<li>Copiar, distribuir y mostrar este trabajo.</li>
-<li>Realizar modificaciones de este trabajo.</li>
-</ul>
-<p>Bajo las siguientes condiciones:</p>
-<ul>
-<li><p><strong>Reconocimiento</strong>. Debe reconocer los créditos de la obra de la manera especificada por el autor o el licenciador (pero no de una manera que sugiera que tiene su apoyo o apoyan el uso que hace de su obra).</p></li>
-<li><p><strong>No comercial</strong>. No puede utilizar esta obra para fines comerciales.</p></li>
-<li><p><strong>Compartir bajo la misma licencia</strong>. Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta.</p></li>
-</ul>
-<p>Al reutilizar o distribuir la obra, tiene que dejar bien claro los términos de la licencia de esta obra.</p>
-<p>Estas condiciones pueden no aplicarse si se obtiene el permiso del titular de los derechos de autor.</p>
-<p>Nada en esta licencia menoscaba o restringe los derechos morales del autor.</p>
 
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -337,11 +325,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./topologia-reales.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./teoria-conjuntos.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

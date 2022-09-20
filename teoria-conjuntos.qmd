@@ -3,11 +3,6 @@ lang: es
 ---
 <!-- LTeX: language = es-ES -->
 
-::: {.hidden}
-
-:::
-
-
 # Teoría de conjuntos
 
 Los conjuntos son entes matemáticos que se usan habitualmente para modelar situaciones reales en las que aparecen colecciones de objetos de cualquier naturaleza, así como las relaciones entre ellos, y por tanto, aparecen en la mayor parte de los problemas de Ciencia o Ingeniería. 
@@ -23,12 +18,14 @@ En este capítulo se estudia el concepto de _conjunto_ y sus principales propied
 Un _conjunto_ es a una colección o agrupación bien definida de objetos que puede considerarse en sí misma otro objeto. Para representar un conjunto se indican sus elementos entre llaves y normalmente se utilizarán letras mayúsculas para referirse a ellos.
 :::
 
-**Ejemplo**
+:::{#exm-conjuntos}
+Algunos ejemplos de conjuntos son:
 
 - El conjunto de los días de la semana es $A = \{\mbox{L, M, X, J, V, S, D}\}$.
 - El conjunto de los colores básicos es $B = \{\mbox{rojo, verde, azul}\}$.
 - El conjunto de los puntos de un dado $C = \{ 1, 2, 3, 4, 5, 6 \}$.
 - El conjunto de los números naturales pares: $D = \{2, 4, 6, \ldots \}$.
+:::
 
 :::{#def-elemento-conjunto}
 ## Elementos
@@ -47,8 +44,9 @@ Mientras que las definiciones por extensión no presentan problemas, hay que ten
 Si $a$ es un elemento de un conjunto $A$, se dice que $a$ _pertenence_ a $A$ y se denota $a\in A$. Por el contrario, si $a$ no es un elemento del conjunto $A$, se dice que _no pertenece_ a $A$ y se denota $a\not \in A$.
 :::
 
-**Ejemplo**
+:::{#exm-pertencia-conjuntos}
 Si $A$ es el conjunto de los números naturales pares, $2\in A$, pero $1\not \in A$.
+:::
 
 :::{#def-igualdad}
 ## Igualdad
@@ -57,7 +55,9 @@ Se dice que dos conjuntos $A$ y $B$ son iguales, y se denota $A=B$, si tienen ex
 
 Conviene remarcar que en un conjunto no puede haber elementos repetidos y tampoco importa el orden en que se listan los elementos.
 
-**Ejemplo**. $\{1, 2, 3\} = \{3, 1, 2\}$.
+:::{#exm-igualdad-conjuntos}
+$\{1, 2, 3\} = \{3, 1, 2\}$.
+:::
 
 :::{#prp-igualdad-relacion-equivalencia}
 La igualdad de conjuntos es una _relación de equivalencia_, es decir, satisface las propiedades:
@@ -77,7 +77,9 @@ $$
 Cuando $A\subseteq B$ pero $A\neq B$ se dice que $A$ está _estríctamente incluido_ en $B$ o que $A$ es un _subconjunto propio_ de $B$ y se escribe $A\subsetneq B$.
 :::
 
-**Ejemplo**.  $\{1, 2, 3\} \subseteq \{3, 1, 2\}$ y $\{1, 3\} \subsetneq \{3, 1, 2\}$.
+:::{#exm-inclusion}
+$\{1, 2, 3\} \subseteq \{3, 1, 2\}$ y $\{1, 3\} \subsetneq \{3, 1, 2\}$.
+:::
 
 :::{#prp-inclusion-relacion-orden-parcial}
 La inclusión de conjuntos es una _relación de orden parcial_, es decir, satisface las propiedades:
@@ -148,7 +150,8 @@ $$
 
 ![Diferencia simétrica de conjuntos](img/teoria-conjuntos/diferencia-simetrica.png){width=6cm}
 
-**Ejemplo**. Dado el conjunto de los números que contiene un dado,
+:::{#exm-operaciones-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
 $\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,
 
 - La unión de $A$ y $B$ es $A\cup B=\{1,2,3,4,6\}$.
@@ -156,6 +159,7 @@ $\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,
 - El contrario de $A$ con respecto a $\Omega$ es $\overline A=\{1,3,5\}$.
 - La diferencia de $A$ y $B$ es $A-B=\{6\}$, y la diferencia de $B$ y $A$ es $B-A=\{1,3\}$.
 - La diferencia simétrica de $A$ y $B$ es $A\triangle B = \{1, 3, 6\}$.
+:::
 
 :::{#prp-propiedades-conjuntos}
 Dado un conjunto universo $\Omega$ y los conjuntos $A,B,C\subseteq \Omega$, se cumplen las siguientes propiedades:
@@ -188,7 +192,9 @@ Dado un conjunto $A$, se llama _conjunto potencia_ o _conjunto de  las partes_ d
 $$\mathcal{P}(A) = \{ X \, : \,  X \subseteq A \}$$
 :::
 
-**Ejemplo**. El conjunto potencia del conjunto $A=\{1, 2, 3\}$ es
+:::{#exm-conjunto-potencia}
+El conjunto potencia del conjunto $A=\{1, 2, 3\}$ es
+:::
 
 $$\mathcal{P}(A)=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}$$
 
@@ -246,7 +252,9 @@ Dado un conjunto $A$ y una relación homogénea $R \subseteq A \times A$, se dic
 - _Transitiva:_ $\forall a, b, c \in A$, si $a\sim b$ y $b\sim c$, entonces $a\sim c$.
 :::
 
-**Ejemplo**. Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.
+:::{#exm-relacion-equivalencia} 
+Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.
+:::
 
 :::{#def-relacion-orden}
 ## Relación de orden
@@ -266,7 +274,9 @@ $$\exists x, y\in A,\ x\preceq y \mbox{ o } y\preceq x.$$
 Al conjunto $A$ con la relación de orden parcial $\preceq$ se le llama _conjunto parcialmente ordenado_, y se denota $(A,\preceq)$.
 :::
 
-**Ejemplo**. El conjunto potencia de un conjunto $A$ con la relación de inclusión es un conjunto parcialmente ordenado $(\mathcal{P}(A),\subseteq)$.
+:::{#exm-relacion-orden-parcial}
+El conjunto potencia de un conjunto $A$ con la relación de inclusión es un conjunto parcialmente ordenado $(\mathcal{P}(A),\subseteq)$.
+:::
 
 :::{#def-relacion-orden-total}
 ## Relación de orden total
@@ -277,7 +287,9 @@ $$\forall x, y\in A,\ x\preceq y \mbox{ o } y \preceq x.$$
 Al conjunto $A$ con la relación de orden total $\preceq$ se le llama _conjunto totalmente ordenado_, y se denota $(A,\preceq)$.
 :::
 
-**Ejemplo**. La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto $A$ ($\mathcal{P}(A),\subseteq$) no es un orden parcialmente ordenado, ya que dados dos elementos $a\neq b$ de $A$, se cumple que $\{a\}\subsetneq \{b\}$ y $\{b\}\subsetneq \{a\}$.
+:::{#exm-relacion-orden-total} 
+La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto $A$ ($\mathcal{P}(A),\subseteq$) no es un orden parcialmente ordenado, ya que dados dos elementos $a\neq b$ de $A$, se cumple que $\{a\}\subsetneq \{b\}$ y $\{b\}\subsetneq \{a\}$.
+::
 
 ## Cotas y extremos
 
@@ -343,11 +355,13 @@ Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subcon
 
 Obsérvese que un conjunto puede no tener supremo o ínfimo. 
 
-**Ejemplo**. Si se toma el conjunto de los números naturales con la relación de orden total $(\mathbb{N},\leq)$, para el conjunto $B=\{1, 2, 3\}\subseteq \mathbb{N}$ se tiene que cualquier $x\in\mathbb{N}$ tal que $3\leq x$ es una cota superior de $B$, por tanto $3$ es el supremo de $B$, y además es un máximo puesto que $3\in B$.
+:::{#exm-supremo-infimo-maximo-minimo}. 
+Si se toma el conjunto de los números naturales con la relación de orden total $(\mathbb{N},\leq)$, para el conjunto $B=\{1, 2, 3\}\subseteq \mathbb{N}$ se tiene que cualquier $x\in\mathbb{N}$ tal que $3\leq x$ es una cota superior de $B$, por tanto $3$ es el supremo de $B$, y además es un máximo puesto que $3\in B$.
 
 Por otro lado, si se considera el conjunto de los números reales con la relación de orden total $(\mathbb{R},\leq)$, para el intervalo $(0,1)$ se tiene que cualquier $x\in\mathbb{R}$ tal que $x\leq 0$ es una cota inferior y $x\in\mathbb{R}$ tal que $1\leq x$ es una cota superior, de modo que $0$ es el ínfimo y $1$ el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que $0\not\in (0,1)$ y $1\not\in (0,1)$. 
 
 Finalmente, si se considera el conjunto de los números enteros con la relación de orden total $(\mathbb{Z},\leq)$, para el conjunto $B=\{x\in\mathbb{Z}: x \mbox{ es par}\}$, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo.
+:::
 
 ## Funciones
 
@@ -363,7 +377,9 @@ $$\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } 
 Es habitual representar los pares de una función con la notación $y=f(x)$ donde $x$ es la primera componente del par e $y$ la segunda.
 
 
-**Ejemplo** La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
+:::{#exm-funcion} 
+La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
+:::
 
 ::: {.content-visible when-format="html"}
 :::{layout-ncol="2"}
@@ -474,9 +490,11 @@ Dada una función $f:A\rightarrow B$, si existe $^{-1}, entonces $f\circ f^{-1} 
 Dado un conjunto $A$, se llama _cardinal_ de $A$, y se denota $|A|$, al número de elementos de $A$.
 :::
 
-De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.
+De manera informal, se puede decir Que el cardinal de un conjunto es su tamaño.
 
-**Ejemplo**. El cardinal del conjunto $A=\{a, b, c\}$ es $|A|=3$.
+:::{#exm-cardinal}
+El cardinal del conjunto $A=\{a, b, c\}$ es $|A|=3$.
+:::
 
 :::{#prp-cardinal-conjunto-potencia}
 El cardinal del conjunto potencia de un conjunto $A$ es $|\mathcal{P}(A)| = 2^{|A|}$.
@@ -546,13 +564,17 @@ Se dice que un conjunto $A$ es _infinito_ si no es finito. En tal caso su cardin
 
 Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia que no es ningún número.
 
-**Ejemplo**. El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 
+:::{#exm-conjunto-finito-infinito}. 
+El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 
 
 Por otro lado, el conjunto de los números naturales $\mathbb{N}$ es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto $\{1,2,\ldots,n\}$ para ningún $n\in\mathbb{N}$, y por tanto, $|\mathbb{N}|=\infty$.
+:::
 
 Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la @prp-biyeccion-conjuntos-equipotentes.
 
-**Ejemplo**. El conjunto de los números naturales pares $P$ es infinito y también lo es el conjunto de los números naturales $\mathbb{N}$. Además ambos son equipotentes pues se puede definir una aplicación biyectiva $f(n) = 2n$ $\forall n\in\mathbb{N}$, de manera que $\mathbb{N}\approx P$. 
+:::{#exm-conjunto-pares-equipotente-naturales} 
+El conjunto de los números naturales pares $P$ es infinito y también lo es el conjunto de los números naturales $\mathbb{N}$. Además ambos son equipotentes pues se puede definir una aplicación biyectiva $f(n) = 2n$ $\forall n\in\mathbb{N}$, de manera que $\mathbb{N}\approx P$. 
+:::
 
 Sin embargo, como se verá más adelante, el conjunto de los números naturales $\mathbb{N}$ no es equipotente al conjunto de los números reales $\mathbb{R}$, sino minuspotente. Por tanto, existen conjuntos infinitos de distintos tamaños. Para demostrarlo se necesita introducir un nuevo concepto.
 
@@ -569,7 +591,8 @@ En otras palabras, un conjunto es infinito numerable si tiene correspondencia un
 
 La prueba de este resultado es inmediata aplicando la @prp-biyeccion-conjuntos-equipotentes.
 
-**Ejemplo**. En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y  por consiguiente, es numerable.
+:::{#exm-enteros-equipotentes-naturales} 
+En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y  por consiguiente, es numerable.
 
 Del mismo modo se puede probar que el conjunto de los números enteros $\mathbb{Z}$ también es numerable, pues se puede definir una aplicación biyectiva $f:\mathbb{N}\rightarrow \mathbb{Z}$ de la siguiente manera
 
@@ -578,6 +601,7 @@ $f(n)=
 (n-1)/2 &\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\
 -n/2 &\mbox{si } n\in \mathbb{N} \mbox{ es par}.
 \end{cases}$
+:::
 
 Sin embargo, existen conjuntos infinitos que no son numerables, como por ejemplo el conjunto de los números reales $\mathbb{R}$.
 

@@ -67,7 +67,9 @@ $$
 Se dice que una sucesión de intervalos $I_n$, $n\in\mathbb{N}$ es una _sucesión de intervalos anidados_ si se cumple que $I_{n+1}\subseteq I_n$ $\forall n\in\mathbb{N}$.
 :::
 
-**Ejemplo**. La sucesión de intervalos $I_n=[0,\frac{1}{n}]$, $\forall n\in\mathbb{N}$ es una sucesión de intervalos anidados, ya que para cada $n\in\mathbb{N}$ se cumple que $n<n+1$ y por tanto $\frac{1}{n}>\frac{1}{n+1}$, de manera que $I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n$.
+:::{#exm-sucesion-intervalos-anidados}
+La sucesión de intervalos $I_n=[0,\frac{1}{n}]$, $\forall n\in\mathbb{N}$ es una sucesión de intervalos anidados, ya que para cada $n\in\mathbb{N}$ se cumple que $n<n+1$ y por tanto $\frac{1}{n}>\frac{1}{n+1}$, de manera que $I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n$.
+:::
 
 :::{#thm-intervalos-anidados}
 ## Intervalos anidados
@@ -98,9 +100,11 @@ Aunque la definición no lo hace explícito, es evidente que si $a$ es un punto 
 
 Intuitivamente, un punto interior de un conjunto es un punto que no está en el borde del conjunto, es decir, que está rodeado por puntos del conjunto, y por tanto, podemos movernos un poco hacia la izquierda o hacia la derecha del punto sin salirnos del conjunto.
 
-**Ejemplo** $0.9$ es un punto interior del intervalo $(0,1)$ ya que podemos tomar $\varepsilon = 0.01$ tal que el entorno $(0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)$.
+:::{#exm-punto-interior} 
+$0.9$ es un punto interior del intervalo $(0,1)$ ya que podemos tomar $\varepsilon = 0.01$ tal que el entorno $(0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)$.
 
 Sin embargo, $1$ no es un punto interior del intervalo $[1,\infty)$, porque por muy pequeño que tomemos $\varepsilon>0$, $1-\varepsilon < 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
+:::
 
 :::{#def-punto-exterior}
 ## Punto exterior
@@ -111,9 +115,11 @@ El conjunto de los puntos exteriores de $A$ se llama _exterior_ de $A$ y se deno
 
 Una definición equivalente es que un punto es punto exterior de un conjunto si es un punto interior de su complementario.
 
-**Ejemplo** $1.01$ es un punto exterior del conjunto $(-\infty, 1)$ ya que tomando $\varepsilon=0.001$ el entorno $(1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)$.
+:::{#exm-punto-exterior} 
+$1.01$ es un punto exterior del conjunto $(-\infty, 1)$ ya que tomando $\varepsilon=0.001$ el entorno $(1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)$.
 
 Sin embargo, el punto $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que, como se ha visto en el ejemplo anterior, no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$.
+:::
 
 :::{#def-punto-frontera}
 ## Punto frontera
@@ -124,7 +130,9 @@ El conjunto de los puntos frontera de $A$ se llama _frontera_ de $A$ y se denota
 
 Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior del conjunto ni de su complementario.
 
-**Ejemplo** $1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
+:::{#exm-punto-frontera} 
+$1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
+:::
 
 :::{#prp-interior-intervalo-abierto}
 Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto $(a,b)\subseteq \mathbb{R}$, se cumple que $\operatorname{Int}((a,b)) = (a,b)$.
@@ -198,7 +206,9 @@ Se dice que $a\in \mathbb{R}$ es un _punto de aislado_ de un conjunto $A\subsete
 Se dice que un conjunto $A\subset \mathbb{R}$ es _abierto_ cuando para cada $a\in A$ existe un entorno de $a$ contenido en $A$, es decir, existe $\varepsilon>0$ tal que $(a-\varepsilon, a+\varepsilon)\subset A$.
 :::
 
-**Ejemplo**. Cualquier intervalo abierto $(a,b)$ es un conjunto abierto. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
+:::{#exm-intervalo-abierto-conjunto-abierto}. 
+Cualquier intervalo abierto $(a,b)$ es un conjunto abierto. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
+:::
 
 Una colección de conjuntos abiertos se llama _topología_ y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama _propiedad topológica_.
 
@@ -207,7 +217,9 @@ Una colección de conjuntos abiertos se llama _topología_ y cualquier propiedad
 Se dice que un conjunto $A\subset \mathbb{R}$ es _cerrado_ cuando su complementario $\overline A =\mathbb{R}\setminus A$ es abierto.
 :::
 
-**Ejemplo**. Todo intervalo cerrado $[a,b]$ es cerrado, pues su complementario $(-\infty,a)\cup (b,\infty)$ es abierto.
+:::{#exm-intervalo-cerrado-conjunto-cerrado} 
+Todo intervalo cerrado $[a,b]$ es cerrado, pues su complementario $(-\infty,a)\cup (b,\infty)$ es abierto.
+:::
 
 :::{.callout-warning}
 Un subconjunto puede ser abierto y cerrado a la vez, como $\emptyset$ y $\mathbb{R}$, y también puede no ser abierto ni cerrado, como por ejemplo $(a,b]$. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.
