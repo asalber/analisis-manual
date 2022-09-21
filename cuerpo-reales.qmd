@@ -218,43 +218,43 @@ Veamos la prueba de cada propiedad.
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
     \begin{align}
-    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \Leftrightarrow \tag{Axioma 5}\\
-    & \Leftrightarrow b+0 = 0 \Leftrightarrow \tag{Axioma 4}\\
+    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \tag{Axioma 5}\\
+    & \Leftrightarrow b+0 = 0 \tag{Axioma 4}\\
     &\Leftrightarrow b=0
     \end{align}
 
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
     \begin{align}
-    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \Leftrightarrow \tag{Axioma 10}\\
-    & \Leftrightarrow b\cdot 1 = 1 \Leftrightarrow \tag{Axioma 9}\\
+    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \tag{Axioma 10}\\
+    & \Leftrightarrow b\cdot 1 = 1 \tag{Axioma 9}\\
     &\Leftrightarrow b=1
     \end{align}
 
 a. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces 
 
     \begin{align}
-    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \Leftrightarrow \tag{Axioma 4}\\
-    &\Leftrightarrow (-a)+a+b = -a \Leftrightarrow \tag{Axioma 5} \\
-    & \Leftrightarrow 0+b=-a \Leftrightarrow \tag{Axioma 4}\\ 
+    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \tag{Axioma 4}\\
+    &\Leftrightarrow (-a)+a+b = -a \tag{Axioma 5} \\
+    & \Leftrightarrow 0+b=-a \tag{Axioma 4}\\ 
     & \Leftrightarrow b = -a
     \end{align}
 
 a. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces 
 
     \begin{align}
-    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \Leftrightarrow \tag{Axioma 9}\\
-    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}  \Leftrightarrow \tag{Axioma 10} \\
-    & \Leftrightarrow 1\cdot b=a^{-1} \Leftrightarrow \tag{Axioma 9}\\ 
+    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \tag{Axioma 9}\\
+    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}  \tag{Axioma 10} \\
+    & \Leftrightarrow 1\cdot b=a^{-1} \tag{Axioma 9}\\ 
     & \Leftrightarrow b = a^{-1}
     \end{align}
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene
 
     \begin{align}
-    a &= a\cdot 1 = \tag{Axioma 9}\\
-    &= a\cdot (1+0) = \tag{Axioma 4}\\
-    &= (a\cdot 1) + (a\cdot 0) = \tag{Axioma 11}\\
+    a &= a\cdot 1 \tag{Axioma 9}\\
+    &= a\cdot (1+0) \tag{Axioma 4}\\
+    &= (a\cdot 1) + (a\cdot 0) \tag{Axioma 11}\\
     &= a + (a\cdot 0) \tag{Axioma 9}
     \end{align}
 
@@ -264,8 +264,8 @@ a. Para cualquier $a\in\mathbb{R}$, se tiene
 a. Para cualquier $a\in\mathbb{R}$, se tiene
 
     \begin{align}
-    a+(-1)\cdot a &= 1\cdot a + (-1)\cdot a = \tag{Axioma 9} \\ 
-    &= (1+(-1))\cdot a = \tag{Axioma 11}\\ 
+    a+(-1)\cdot a &= 1\cdot a + (-1)\cdot a \tag{Axioma 9} \\ 
+    &= (1+(-1))\cdot a \tag{Axioma 11}\\ 
     &= 0\cdot a \tag{Axioma 5}\\ 
     &= 0 \tag{Propiedad e}
     \end{align}
@@ -275,16 +275,16 @@ a. Para cualquier $a\in\mathbb{R}$, se tiene
 a. Para cualquier $a\in\mathbb{R}$, se tiene 
 
     \begin{align}
-    a+(-a)=0 &\Leftrightarrow \tag{Axioma 5}\\ 
-    &\Leftrightarrow (-a)+a=0 \Leftrightarrow \tag{axioma 3} \\ 
+    a+(-a)=0 & \Leftrightarrow \tag{Axioma 5}\\ 
+    &\Leftrightarrow (-a)+a=0 \tag{axioma 3} \\ 
     &\Leftrightarrow a=-(-a)\tag{Propiedad c}
     \end{align}
 
 a. Para cualesquiera $a,b\in\mathbb{R}$,se tiene
 
     \begin{align}
-    (-a)\cdot (-b)&=(-1)\cdot a\cdot (-1)\cdot b = \tag{Propiedad f}\\ 
-    &= (-1)(-1)\cdot a\cdot  b= \tag{Axioma 7}\\ 
+    (-a)\cdot (-b)&=(-1)\cdot a\cdot (-1)\cdot b \tag{Propiedad f}\\ 
+    &= (-1)(-1)\cdot a\cdot  b\tag{Axioma 7}\\ 
     &= -(-1)\cdot a\cdot b \tag{Propiedad f}\\ 
     &= 1\cdot a\cdot b \tag{Propiedad g} \\
     &= a\cdot b \tag{Axioma 9}
@@ -306,41 +306,41 @@ a. Para cualquier $a\in\mathbb{R}$, se tiene
 
     \begin{align}
     a\cdot a^{-1}=1 &\Leftrightarrow \tag{Axioma 10}\\ 
-    &\Leftrightarrow a^{-1}\cdot a=1 \Leftrightarrow \tag{Axioma 8} \\ 
+    &\Leftrightarrow a^{-1}\cdot a=1 \tag{Axioma 8} \\ 
     &\Leftrightarrow a=(a^{-1})^{-1}\tag{Propiedad d}
     \end{align}
 
 a. Sean $a,b,c\in\mathbb{R}$ tales que $a\cdot b=a\cdot c$ y $a\neq 0$. Entonces se tiene
 
     \begin{align}
-    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\Leftrightarrow \tag{Axioma 7}\\ 
-    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c\Leftrightarrow \tag{Axioma 10}\\
-    &\Leftrightarrow 1\cdot b = 1\cdot c\Leftrightarrow \tag{Axioma 9}\\
+    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c\tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot b = 1\cdot c\tag{Axioma 9}\\
     &\Leftrightarrow b = c
     \end{align}
 
 a. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b=0$. Supongamos que $a\neq 0$, entonces se tiene
 
     \begin{align}
-    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\Leftrightarrow \tag{Propiedad e}\\ 
-    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0\Leftrightarrow \tag{Axioma 7}\\ 
-    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0\Leftrightarrow \tag{Axioma 10}\\
-    &\Leftrightarrow 1\cdot b = 0\Leftrightarrow \tag{Axioma 9}\\
+    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\tag{Propiedad e}\\ 
+    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0\tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0\tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot b = 0\tag{Axioma 9}\\
     &\Leftrightarrow b = 0
     \end{align}
 
 a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la propiedad l se tiene $a\cdot b\neq 0$, y se tiene
 
     \begin{align}
-    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \Leftrightarrow \tag{Axioma 9}\\ 
-    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \Leftrightarrow \tag{Axioma 7}\\ 
-    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \Leftrightarrow \tag{Axioma 10}\\
-    &\Leftrightarrow 1 \cdot b\cdot (a\cdot b)^{-1} = a^{-1} \Leftrightarrow \tag{Axioma 9}\\ 
+    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \tag{Axioma 9}\\ 
+    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \tag{Axioma 10}\\
+    &\Leftrightarrow 1 \cdot b\cdot (a\cdot b)^{-1} = a^{-1} \tag{Axioma 9}\\ 
     &\Leftrightarrow b\cdot (a\cdot b)^{-1} = a^{-1}\Leftrightarrow \\
-    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = b^{-1}a^{-1}\Leftrightarrow \tag{Axioma 8}\\
-    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 7}\\ 
-    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 10}\\
-    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 9}\\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = b^{-1}a^{-1}\tag{Axioma 8}\\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{Axioma 7}\\ 
+    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{Axioma 9}\\
     & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1}
     \end{align}
 :::
@@ -380,19 +380,41 @@ a. _Antisimétrica_: $\forall a,b\in\mathbb{R}$, si $a\leq b$ y $b\leq a$, enton
 a. _Transitiva_: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $b\leq c$, entonces $a\leq c$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veamos que la relación $\leq$ cumple las propiedades reflexiva, antisimétrica y transitiva.
+
+a. Propiedad reflexiva: Para cualquier $a\in\mathbb{R}$ se cumple que $a-a=0$, luego $a\leq a$.
+
+b. Propiedad antisimétrica: Para cualesquiera $a,b\in\mathbb{R}$, si $a\leq b$ y $b\leq a$, se tiene que $b-a\geq 0$ y $-(b-a)\geq 0$, de donde se deduce, por el axioma de tricotomía, que $a-b=0$, y aplicando los axiomas 4 y 5 se llega a $a=b$.
+
+c. Propiedad transitiva: Para cualesquiera $a,b,c\in\mathbb{R}$, tales que $a\leq b$ y $b\leq c$, se tiene que $b-a\geq 0$ y $c-b\geq 0$. Supongamos que $b-a> 0$ y $c-b>0$. Entonces, por el axioma 12 se tiene
+
+    \begin{align}
+    (b-a)+(c-b)>0 &\tag{Axioma 2}\\
+    &\Leftrightarrow (b-b)+(c-a)>0 &\tag{Axioma 5}\\
+    &\Leftrightarrow 0+(c-a)>0 &\tag{Axioma 4}\\
+    &\Leftrightarrow c-a>0 \Leftrightarrow a\leq c.
+    \end{align}
+
+    Si $b-a=0$, entonces $a=b$ y como $b\leq c$ resulta evidente que $a\leq c$. El mismo razonamiento puede aplicarse si $c-b=0$.
+:::
+:::
+
 :::{#prp-propiedades-axiomas-orden}
 De los axiomas de orden de los números reales se deducen las siguientes propiedades:
 
 a. El cuadrado de cualquier número real distinto de $0$ es positivo: $\forall a\in\mathbb{R}$, si $a\neq 0$, entonces $a^2>0$.
 a. El elemento neutro de la suma es menor que el elemento neutro del producto: $0<1$.
-a. Cualquier número natural es positivo: $\forall a\in\mathbb{N}$, $0<a$.
-a. La suma preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$, entonces $a+c\leq b+c$.
-a. $\forall a,b,c,d\in\mathbb{R}$, si $a\leq b$ y $c\leq d$, entonces $a+c\leq b+d$.
-a. El producto por un número real positivo preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $c>0$, entonces $a\cdot c\leq b\cdot c$.
-a. El producto por un número real negativo invierte el orden: $\forall a,b,c\in\mathbb{R}$, si $a\leq b$ y $c<0$, entonces $a\cdot c\geq b\cdot c$.
+a. Cualquier número natural es positivo: $\forall n\in\mathbb{N}$, $0<n$.
+a. La suma preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a< b$, entonces $a+c< b+c$.
+a. $\forall a,b,c,d\in\mathbb{R}$, si $a<b$ y $c<d$, entonces $a+c<b+d$.
+a. El producto por un número real positivo preserva el orden: $\forall a,b,c\in\mathbb{R}$, si $a<b$ y $c>0$, entonces $a\cdot c< b\cdot c$.
+a. El producto por un número real negativo invierte el orden: $\forall a,b,c\in\mathbb{R}$, si $a<b$ y $c<0$, entonces $a\cdot c>b\cdot c$.
+a. El inverso de un número real positivo es positivo y el de un número real negativo es negativo: $\forall a\in\mathbb{R}$, si $a>0$, entonces $a^{-1}>0$, y si $a<0$, entonces $a^{-1}<0$.
 a. Si el producto de dos números reales es positivo, entonces o bien los dos números son positivos, o bien los dos números son negativos: $\forall a,b\in\mathbb{R}$, si $a\cdot b>0$, entonces $a>0$ y $b>0$, o $a<0$ y $b<0$.
 a. Si el producto de dos números reales es negativo, entonces uno de los números es positivo y el otro negativo: $\forall a,b\in\mathbb{R}$, si $a\cdot b<0$, entonces $a>0$ y $b<0$, o $a<0$ y $b>0$.
-a. El inverso de un número real positivo es positivo y el de un número real negativo es negativo: $\forall a\in\mathbb{R}$, si $a>0$, entonces $a^{-1}>0$, y si $a<0$, entonces $a^{-1}<0$.
 a. $\forall a,b\in\mathbb{R}$, si $a<b$, entonces $a<\dfrac{a+b}{2}< b$.
 a. Cualquier número no negativo que es menor que cualquier número positivo es $0$: $\forall a,b\in\mathbb{R}$, si $0\leq a<b$ y $b>0$, entonces $a=0$.
 :::
@@ -404,23 +426,125 @@ Veamos la prueba de cada propiedad.
 
 a. Sea $a\in\mathbb{R}$ con $a\neq 0$. Entonces, por la propiedad de tricotomía se tiene que $a\in \mathbb{R}^+$ o $-a\in \mathbb{R}^+$.
 
-Si $a\in \mathbb{R}^+$, entonces, por el axioma 13, se tiene $a\cdot a\in\mathbb{R}^+$, y por tanto $a^2\in \mathbb{R}^+$, de manera que $a^2>0$.
+    Si $a\in \mathbb{R}^+$, entonces, por el axioma 13, se tiene $a\cdot a\in\mathbb{R}^+$, y por tanto $a^2\in \mathbb{R}^+$, de manera que $a^2>0$.
 
-Si $-a\in \mathbb{R}^+$, entonces, de nuevo por el axioma 13, se tiene 
+    Si $-a\in \mathbb{R}^+$, entonces, de nuevo por el axioma 13, se tiene 
 
-\begin{align}
--a\in \mathbb{R}^+ &\Leftrightarrow (-a)\cdot (-a)\in\mathbb{R}^+ \Leftrightarrow\tag{Axioma 13}\\ 
-&\Leftrightarrow (-1)\cdot a\cdot (-1)\cdot a\in\mathbb{R}^+ \Leftrightarrow\tag{Propiedad f}\\
-&\Leftrightarrow (-1)\cdot (-1)\cdot a\cdot a\in\mathbb{R}^+ \Leftrightarrow\tag{Axioma 7}\\
-&\Leftrightarrow 1\cdot a^2 \in\mathbb{R}^+ \Leftrightarrow\tag{Propiedad h}\\
-&\Leftrightarrow a^2\in\mathbb{R}^+ \tag{Axioma 9}
-\end{align}
+    \begin{align}
+    -a\in \mathbb{R}^+ &\Leftrightarrow (-a)\cdot (-a)\in\mathbb{R}^+ \tag{Axioma 13}\\ 
+    &\Leftrightarrow (-1)\cdot a\cdot (-1)\cdot a\in\mathbb{R}^+ \tag{Propiedad f}\\
+    &\Leftrightarrow (-1)\cdot (-1)\cdot a\cdot a\in\mathbb{R}^+ \tag{Axioma 7}\\
+    &\Leftrightarrow 1\cdot a^2 \in\mathbb{R}^+ \tag{Propiedad h}\\
+    &\Leftrightarrow a^2\in\mathbb{R}^+ \tag{Axioma 9}
+    \end{align}
 
-y se concluye de nuevo que $a^2>0$.
+    y se concluye de nuevo que $a^2>0$.
+
+a. Por el axioma 9 se tiene que $1=1\cdot 1=1^2$, y por la propiedad anterior se tiene que $1^2>0$, con lo que $1>0$.
+
+a. Haremos la prueba por inducción. Para $n=1$ ya hemos visto en resultado anterior que $1>0$. Supongamos ahora que para cualquier $n\in\mathbb{N}$ se cumple que $n-1>0$. Entonces, como $1>0$, por el axioma 12 se tiene que $n-1+1>0$, de lo que se deduce, por los axiomas 5 y 4 que $n>0$.
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a> 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$ se cumple que
+
+    \begin{align}
+    b-a > 0 &\Leftrightarrow b+0-a > 0 \tag{Axioma 4}\\ 
+    &\Leftrightarrow b+(c-c)-a > 0  \tag{Axioma 5}\\
+    &\Leftrightarrow (b+c)-(a+c) > 0 \tag{Axioma 2}\\ 
+    &\Leftrightarrow a+c < b+c.
+    \end{align}
+
+a. Sean $a,b,c,d\in\mathbb{R}$ tales que $a < b$ y $c < d$. Entonces se tiene
+
+    \begin{align}
+    b-a > 0 \mbox{ y } d-c > 0 &\Leftrightarrow (b-a)+(d-c)> 0 \tag{Axioma 12}\\ 
+    &\Leftrightarrow (b+d)-a-c > 0 \tag{Axioma 12}\\ 
+    &\Leftrightarrow (b+d)-(a+c) > 0 \tag{Propiedad f}\\
+    &\Leftrightarrow a+c < b+d.
+    \end{align}
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a > 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$  con $c>0$, se cumple que
+
+    \begin{align}
+    b-a > 0 \mbox{ y } c > 0 &\Leftrightarrow (b-a)\cdot c > 0 \tag{Axioma 13}\\ 
+    &\Leftrightarrow (b\cdot c)-(a\cdot c) > 0  \tag{Axioma 11}\\
+    &\Leftrightarrow a\cdot c < b\cdot c.
+    \end{align}
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a > 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$  con $c<0$, entonces $-c>0$ y se cumple que
+
+    \begin{align}
+    b-a < 0 \mbox{ y } -c > 0 &\Leftrightarrow (b-a)\cdot (-c) > 0 \tag{Axioma 13}\\ 
+    &\Leftrightarrow (b\cdot (-c))-(a\cdot (-c)) > 0 \tag{Axioma 11}\\
+    &\Leftrightarrow -(b\cdot c)+(a\cdot c) > 0 \tag{Propiedad f}\\
+    &\Leftrightarrow (a\cdot c)-(b\cdot c) > 0 \tag{Axioma 3}\\
+    &\Leftrightarrow a\cdot c > b\cdot c.
+    \end{align}
+
+a. Sea $a\in\mathbb{R}$ tal que $a>0$. Entonces, por la propiedad de tricotomía, $a\neq 0$ y, por la propiedad algebraica i, $a^{-1}\neq 0$. Supongamos que $a^{-1}<0$. Entonces, se tiene
+
+    \begin{align}
+    a>0 \mbox{ y } a^{-1}<0 & \Leftrightarrow  a\cdot a^{-1} < a\cdot 0 \tag{Propiedad de orden f}\\
+    &\Leftrightarrow a\cdot a^{-1} < 0 \tag{Propiedad algebraica 6}\\ 
+    &\Leftrightarrow a\cdot a^{-1} \neq 1 \tag{Propiedad orden 2}
+    \end{align}
+
+    De esta manera llegamos a una contradicción y por consiguiente, $a^{-1}>0$.
+
+    De forma similar se prueba que si $a<0$, $a^{-1}<0$.
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b>0$. Entonces, por la propiedad algebraica e se tiene $a\neq 0$ y $b\neq 0$, y por la propiedad de tricotomía se tiene que $a>0$ o $a<0$. 
+
+    Si $a>0$, entonces se tiene
+
+    \begin{align}
+    b &= 1\cdot b \tag{Axioma 9}\\
+    &= (a^{-1}\cdot a)\cdot b \tag{Axioma 10}\\ 
+    &= a^{-1}\cdot (a\cdot b) \tag{Axioma 7}\\ 
+    &> 0 \tag{Propiedad orden h}
+    \end{align} 
+
+    Y si $a<0$, entonces se tiene
+
+    \begin{align}
+    b &= 1\cdot b \tag{Axioma 9}\\
+    &= (a^{-1}\cdot a)\cdot b \tag{Axioma 10}\\ 
+    &= a^{-1}\cdot (a\cdot b) \tag{Axioma 7}\\ 
+    &< 0 \tag{Propiedad orden h}
+    \end{align} 
+
+a. Se demuestra de forma análoga a la propiedad anterior.
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces se tiene
+
+    \begin{align}
+    2\cdot a & = (1+1)\cdot a = (1\cdot a)+(1\cdot a) \tag{Axioma 11}\\ 
+    &= a + a \tag{Axioma 9}\\ 
+    &< a + b \tag{Propiedad orden d}
+    \end{align}
+
+    Por otro lado, 
+
+    \begin{align}
+    2\cdot b & = (1+1)\cdot b = (1\cdot b)+(1\cdot b) \tag{Axioma 11}\\ 
+    &= b + b \tag{Axioma 9}\\ 
+    &> a + b \tag{Propiedad orden d}
+    \end{align}
+
+    Así pues, se puede concluir que $2\cdot a < a+b < 2\cdot b$ y ahora se tiene
+
+    \begin{align}
+    2\cdot a < a+b < 2\cdot b & \Leftrightarrow 2^{-1}\cdot (2\cdot a) < 2^{-1}\cdot (a+b) < 2^{-1}\cdot (2\cdot b) \tag{Propiedad orden f}\\ 
+    & \Leftrightarrow (2^{-1}\cdot 2)\cdot a < 2^{-1}\cdot (a+b) < (2^{-1}\cdot 2)\cdot b \tag{Axioma 7}\\ 
+    & \Leftrightarrow 1 \cdot a < 2^{-1}\cdot (a+b) < 1\cdot b \tag{Axioma 10}\\ 
+    & \Leftrightarrow a < 2^{-1}\cdot (a+b) < b \tag{Axioma 9} \\
+    & \Leftrightarrow a < \frac{a+b}{2} < b. 
+    \end{align}
+
+a. Sea $a\in\mathbb{R}$ tal que $0\leq a <b$ $\forall b\in\mathbb{R}$ con $b>0$. Como $a\geq 0$ se tiene que $a>0$ o $a=0$. Si $a>0$, por la propiedad anterior se tiene $0<\frac{a}{2}<a$. Si ahora tomamos $b=\frac{a}{2}>0$ se tiene que $a<\frac{a}{2}$, lo cual es absurdo, y, por tanto, debe ser $a=0$.
 :::
 :::
 
-A partir del axioma de tricotomía también se puede deducir el valor absoluto de un número real.
+A partir del axioma de tricotomía también se puede definir el valor absoluto de un número real.
 
 :::{#def-valor-absoluto}
 ## Valor absoluto
@@ -447,6 +571,17 @@ a. $\forall a,b\in\mathbb{R}$, $|a-b| = |b-a|$.
 a. El valor absoluto del producto de dos números reales es igual que el producto de los valores absolutos de los números: $\forall a,b\in\mathbb{R}$, $|a\cdot b|=|a|\cdot |b|$.
 a. $\forall a,b\in\mathbb{R}$, si $b>0$ y $|a|<b$, entonces $-b<a<b$.
 a. Desigualdad del triángulo: $\forall a,b\in\mathbb{R}$, $|a+b|\leq |a|+|b|$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+a. Sea $a\in\mathbb{R}$. Si $a=0$ entonces |0|=0=|-0|. 
+
+Si $a>0$ entonces $-a<0$, de modo que por la propiedad alebraica g se tiene $|a|= a = -(-a) = |-a|.
+
+Y si $a<0$ entonces $-a>0$, de modo que $|a| = -a = |-a|$.
+:::
 :::
 
 Veremos ahora una serie de consecuencias del axioma de completitud. 
