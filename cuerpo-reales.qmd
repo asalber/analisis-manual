@@ -181,8 +181,19 @@ Dados dos números reales $a,b\in \mathbb{R}$ tal que $b\neq 0$, se define la _d
 $$\frac{a}{b} = a\cdot b^{-1}.$$
 :::
 
+:::{#def-potencia}
+## Potencia
+Dado un número reale $a\in \mathbb{R}$ y un número $n\in\mathbb{N}$, se define la _potencia_ de $a$ elevado a $n$, y se denota $a^n$, como el producto de $a$ por sí mismo $n$ veces,
+
+$$a^n = a\cdot \stackrel{n}{\cdots} \cdot a.$$
+
+A $a$ se le llama la _base_ y a $n$ el _exponente_ de la potencia. 
+
+$$\frac{a}{b} = a\cdot b^{-1}.$$
+:::
+
 :::{#prp-propiedades-axiomas-cuerpo}
-De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes consecuencias: 
+De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes propiedades: 
 
 a. El elemento neutro de la suma ($0$) es único: $\forall a,b\in \mathbb{R}$, si $a+b=a$, entonces $b=0$.
 a. El elemento neutro del producto ($1$) es único: $\forall a,b\in \mathbb{R}$, si $a\cdot b = a$, entonces $b=1$.
@@ -196,7 +207,7 @@ a. El inverso de un número real distinto de $0$ también es distinto de $0$: $\
 a. El inverso del inverso de un número real distinto de 0 es el propio número: $\forall a\in\mathbb{R}$, si $a\neq 0$, entonces $(a^{-1})^{-1}=a$.
 a. $\forall a,b,c\in \mathbb{R}$, si $a\cdot b=a\cdot c$ y $a\neq 0$, entonces $b=c$.
 a. Si el producto de dos números reales es $0$, entonces alguno de los dos números es $0$: $\forall a,b\in\mathbb{R}$, si $a\cdot b=0$, entonces $a=0$ o $b=0$. 
-f. El inverso del producto de dos números distintos de $0$ es el producto de los inversos: $\forall a,b\in \mathbb{R}$, si $a\neq 0$ y $b\neq 0, entonces $(a\cdot b)^{-1} = a^{-1}\cdot b^{-1}$.
+f. El inverso del producto de dos números distintos de $0$ es el producto de los inversos: $\forall a,b\in \mathbb{R}$, si $a\neq 0$ y $b\neq 0$, entonces $(a\cdot b)^{-1} = a^{-1}\cdot b^{-1}$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -204,25 +215,134 @@ f. El inverso del producto de dos números distintos de $0$ es el producto de lo
 :::{.proof} 
 Veamos la prueba de cada propiedad.
 
-a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces $b+a+(-a)=a+(-a)$, y por el axioma 5 se tiene $b + 0 = 0$, de donde se deduce por el axioma 4 que $b=0$.
+a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
-a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces $b\cdot a\cdot a^{-1}=a\cdot a^{-1}$, y por el axioma 10 se tiene $b \cdot 1= 1$, de donde se deduce por el axioma 9 que $b=1$.
+    \begin{align}
+    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \Leftrightarrow \tag{Axioma 5}\\
+    & \Leftrightarrow b+0 = 0 \Leftrightarrow \tag{Axioma 4}\\
+    &\Leftrightarrow b=0
+    \end{align}
 
-a. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces $(-a)+a+b=(-a)+0$, y por los axiomas 4 y 5 se tiene $b=-a$.
+a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
-a. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces $(a^{-1})\cdot a\cdot b=a^{-1}\cdot 1$, y por los axiomas 9 y 10 se tiene $b=a^{-1}$.
+    \begin{align}
+    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \Leftrightarrow \tag{Axioma 10}\\
+    & \Leftrightarrow b\cdot 1 = 1 \Leftrightarrow \tag{Axioma 9}\\
+    &\Leftrightarrow b=1
+    \end{align}
 
-a. Para cualquier $a\in\mathbb{R}$, usando los axiomas 4 y 11 se cumple $a\cdot 0= a\cdot (0+0)=(a\cdot 0)+(a\cdot 0)$. Si se suma ahora $-(a\cdot 0)$ a ambos lados de la igualdad y usando el axioma 5 se tiene
+a. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces 
 
-    $$
-    0 =-(a\cdot 0)+(a\cdot 0) = -(a\cdot 0)+(a\cdot 0)+(a\cdot 0) = 0 + (a\cdot 0) = (a\cdot 0)
-    $$
+    \begin{align}
+    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \Leftrightarrow \tag{Axioma 4}\\
+    &\Leftrightarrow (-a)+a+b = -a \Leftrightarrow \tag{Axioma 5} \\
+    & \Leftrightarrow 0+b=-a \Leftrightarrow \tag{Axioma 4}\\ 
+    & \Leftrightarrow b = -a
+    \end{align}
 
-a. Para cualquier $a\in\mathbb{R}$, usando los axiomas 9, 10 y 11, se tiene $a+(-1)\cdot a = 1\cdot a + (-1)\cdot a = (1+(-1))\cdot a = 0\cdot a$. Usando ahora el resultado anterior $0\cdot a = 0$ de manera que $a+(-1)\cdot a = 0$, y por el axioma 5 se cumple que $(-1)\cdot a = -a$.
+a. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces 
 
-a. Para cualquier $a\in\mathbb{R}$, usando el axioma 5 se tiene $a+(-a)=0$ y por el axioma 3 $a+(-a)=(-a)+a=0$, de manera que usando de nuevo el axioma 5 se tiene $a=-(-a)$.
+    \begin{align}
+    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \Leftrightarrow \tag{Axioma 9}\\
+    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}  \Leftrightarrow \tag{Axioma 10} \\
+    & \Leftrightarrow 1\cdot b=a^{-1} \Leftrightarrow \tag{Axioma 9}\\ 
+    & \Leftrightarrow b = a^{-1}
+    \end{align}
 
-a. Para cualesquiera $a,b\in\mathbb{R}$, por la propiedad f se tiene $(-a)\cdot (-b)=(-1)\cdot a\cdot (-1)\cdot b = (-1)(-1)\cdot a\cdot  b= -(-1)\cdot a\cdot b$. Como $-(-1)=1$ según la propiedad anterior, aplicando el axioma 9 se tiene $(-a)\cdot(-b)=1\cdot a \cdot b=a\cdot b$. 
+a. Para cualquier $a\in\mathbb{R}$, se tiene
+
+    \begin{align}
+    a &= a\cdot 1 = \tag{Axioma 9}\\
+    &= a\cdot (1+0) = \tag{Axioma 4}\\
+    &= (a\cdot 1) + (a\cdot 0) = \tag{Axioma 11}\\
+    &= a + (a\cdot 0) \tag{Axioma 9}
+    \end{align}
+
+    Así pues, por la propiedad (a) se tiene que $a\cdot 0 =0$.
+
+
+a. Para cualquier $a\in\mathbb{R}$, se tiene
+
+    \begin{align}
+    a+(-1)\cdot a &= 1\cdot a + (-1)\cdot a = \tag{Axioma 9} \\ 
+    &= (1+(-1))\cdot a = \tag{Axioma 11}\\ 
+    &= 0\cdot a \tag{Axioma 5}\\ 
+    &= 0 \tag{Propiedad e}
+    \end{align}
+
+    Como $a+(-1)\cdot a=0$, aplicando la propiedad c se tiene $(-1)\cdot a = -a$.
+
+a. Para cualquier $a\in\mathbb{R}$, se tiene 
+
+    \begin{align}
+    a+(-a)=0 &\Leftrightarrow \tag{Axioma 5}\\ 
+    &\Leftrightarrow (-a)+a=0 \Leftrightarrow \tag{axioma 3} \\ 
+    &\Leftrightarrow a=-(-a)\tag{Propiedad c}
+    \end{align}
+
+a. Para cualesquiera $a,b\in\mathbb{R}$,se tiene
+
+    \begin{align}
+    (-a)\cdot (-b)&=(-1)\cdot a\cdot (-1)\cdot b = \tag{Propiedad f}\\ 
+    &= (-1)(-1)\cdot a\cdot  b= \tag{Axioma 7}\\ 
+    &= -(-1)\cdot a\cdot b \tag{Propiedad f}\\ 
+    &= 1\cdot a\cdot b \tag{Propiedad g} \\
+    &= a\cdot b \tag{Axioma 9}
+    \end{align}
+
+a. Para cualquier $a\in \mathbb{R}$ con $a\neq 0$. Entonces según el axioma 10 $a\cdot a^{-1} = 1$. 
+
+    Supongamos ahora que $a^{-1}=0$. Entonces, 
+
+    \begin{align}
+    0 &= a\cdot 0 \tag{Propiedad e}\\ 
+    &= a\cdot a^{-1} \\
+    &= 1 \tag{Axioma 10}
+    \end{align}
+
+    Así pues, llegamos a que $0=1$, lo cual es absurdo, por lo que $a^{-1}\neq 0$.
+
+a. Para cualquier $a\in\mathbb{R}$, se tiene 
+
+    \begin{align}
+    a\cdot a^{-1}=1 &\Leftrightarrow \tag{Axioma 10}\\ 
+    &\Leftrightarrow a^{-1}\cdot a=1 \Leftrightarrow \tag{Axioma 8} \\ 
+    &\Leftrightarrow a=(a^{-1})^{-1}\tag{Propiedad d}
+    \end{align}
+
+a. Sean $a,b,c\in\mathbb{R}$ tales que $a\cdot b=a\cdot c$ y $a\neq 0$. Entonces se tiene
+
+    \begin{align}
+    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\Leftrightarrow \tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c\Leftrightarrow \tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot b = 1\cdot c\Leftrightarrow \tag{Axioma 9}\\
+    &\Leftrightarrow b = c
+    \end{align}
+
+a. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b=0$. Supongamos que $a\neq 0$, entonces se tiene
+
+    \begin{align}
+    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\Leftrightarrow \tag{Propiedad e}\\ 
+    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0\Leftrightarrow \tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0\Leftrightarrow \tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot b = 0\Leftrightarrow \tag{Axioma 9}\\
+    &\Leftrightarrow b = 0
+    \end{align}
+
+a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la propiedad l se tiene $a\cdot b\neq 0$, y se tiene
+
+    \begin{align}
+    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \Leftrightarrow \tag{Axioma 9}\\ 
+    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \Leftrightarrow \tag{Axioma 7}\\ 
+    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \Leftrightarrow \tag{Axioma 10}\\
+    &\Leftrightarrow 1 \cdot b\cdot (a\cdot b)^{-1} = a^{-1} \Leftrightarrow \tag{Axioma 9}\\ 
+    &\Leftrightarrow b\cdot (a\cdot b)^{-1} = a^{-1}\Leftrightarrow \\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = b^{-1}a^{-1}\Leftrightarrow \tag{Axioma 8}\\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 7}\\ 
+    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 10}\\
+    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\Leftrightarrow \tag{Axioma 9}\\
+    & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1}
+    \end{align}
 :::
 :::
 
@@ -280,15 +400,24 @@ a. Cualquier número no negativo que es menor que cualquier número positivo es 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces $b+a+(-a)=a+(-a)$, y por el axioma 5 se tiene $b + 0 = 0$, de donde se deduce por el axioma 4 que $b=0$.
+Veamos la prueba de cada propiedad.
 
-b. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces $b\cdot a\cdot a^{-1}=a\cdot a^{-1}$, y por el axioma 10 se tiene $b \cdot 1= 1$, de donde se deduce por el axioma 9 que $b=1$.
+a. Sea $a\in\mathbb{R}$ con $a\neq 0$. Entonces, por la propiedad de tricotomía se tiene que $a\in \mathbb{R}^+$ o $-a\in \mathbb{R}^+$.
 
-c. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces $(-a)+a+b=(-a)+0$, y por los axiomas 4 y 5 se tiene $b=-a$.
+Si $a\in \mathbb{R}^+$, entonces, por el axioma 13, se tiene $a\cdot a\in\mathbb{R}^+$, y por tanto $a^2\in \mathbb{R}^+$, de manera que $a^2>0$.
 
-d. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces $(a^{-1})\cdot a\cdot b=a^{-1}\cdot 1$, y por los axiomas 9 y 10 se tiene $b=a^{-1}$.
+Si $-a\in \mathbb{R}^+$, entonces, de nuevo por el axioma 13, se tiene 
 
-e. 
+\begin{align}
+-a\in \mathbb{R}^+ &\Leftrightarrow (-a)\cdot (-a)\in\mathbb{R}^+ \Leftrightarrow\tag{Axioma 13}\\ 
+&\Leftrightarrow (-1)\cdot a\cdot (-1)\cdot a\in\mathbb{R}^+ \Leftrightarrow\tag{Propiedad f}\\
+&\Leftrightarrow (-1)\cdot (-1)\cdot a\cdot a\in\mathbb{R}^+ \Leftrightarrow\tag{Axioma 7}\\
+&\Leftrightarrow 1\cdot a^2 \in\mathbb{R}^+ \Leftrightarrow\tag{Propiedad h}\\
+&\Leftrightarrow a^2\in\mathbb{R}^+ \tag{Axioma 9}
+\end{align}
+
+y se concluye de nuevo que $a^2>0$.
+:::
 :::
 
 A partir del axioma de tricotomía también se puede deducir el valor absoluto de un número real.
@@ -322,13 +451,16 @@ a. Desigualdad del triángulo: $\forall a,b\in\mathbb{R}$, $|a+b|\leq |a|+|b|$.
 
 Veremos ahora una serie de consecuencias del axioma de completitud. 
 
-
-
 :::{#prp-propiedad-infimo}
 Si un subconjunto no vacío $A\subset \mathbb{R}$ tiene una cota inferior, entonces tiene un ínfimo $m\in \mathbb{R}$.
 :::
 
-<!-- TODO: Demostración propiedad ínfimo -->
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
 
 :::{#thm-propiedad-arquimediana}
 ## Propiedad arquimediana
@@ -343,8 +475,9 @@ Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe $n\in\ma
 :::
 
 :::{#cor-consecuencias-arquimedianas}
-De la propiedad arquimediana se deducen las siguientes consencuencias:
-a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $0<\frac{1}{n}<n$.
+De la propiedad arquimediana se deducen las siguientes consecuencias:
+
+a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $0<\frac{1}{n}<a$.
 a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $n-1\leq a<n$.
 :::
 
@@ -353,7 +486,36 @@ a. Si $a>0\in \mathbb{R}$, entonces $\exists n\in \mathbb{N}$ tal que $n-1\leq a
 Dado un número real $a\in\mathbb{R}$ con $a>0$, existe un número real $x\in\mathbb{R}$ tal que $x>0$ y $x^2=a$. A este número se le llama _raíz cuadrada_ de $a$ y se denota por $\sqrt{a}$ o $a^{1/2}$.
 :::
 
-<!-- TODO: Demostración teorema raíz cuadrada -->
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $A=\{y\in\mathbb{R}: y>0, y^2<a\}$. $A$ está acotado superiormente ya que si $a>1$, el propio $a$ es una cota superior y si no $1$ es una cota superior. Por tanto, según el axioma del supremo, existe $x\in \mathbb{R}$ tal que $x=\sup(A)>0$.
+Vamos a probar que $x^2=a$.
+
+Supongamos primero que $x^2<a$. Entonces $a-x^2>0$ y $\frac{a-x^2}{2x+1}>0$ ya que $2x+1>0$ al ser $x>0$. Por el @cor-consecuencias-arquimedianas se tiene que existe $n\in\mathbb{N}$ tal que $\frac{1}{n}<\frac{a-x^2}{2x+1}>0$. 
+
+Por otro lado, se tiene
+
+\begin{align}
+\left(x+\frac{1}{n}\right)^2 &= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) <\\ 
+&< \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
+\end{align}
+
+Por tanto, $x+\frac{1}{n}\in A$, pero $x+\frac{1}{n}>x$ lo que contradice que $x$ sea cota superior de $A$.
+
+Supongamos ahora que $x^2>a$. Entonces $x^2-a>0$ y $\frac{x^2-a}{2x}>0$ al ser $x>0$. Aplicando de nuevo el @cor-consecuencias-arquimedianas se tiene que existe $m\in\mathbb{N}$ tal que $\frac{1}{m}<\frac{x^2-a}{2x}$ y por tanto $\frac{2x}{m}<x^2-a$.
+
+Por otro lado, se tiene
+
+\begin{align}
+\left(x-\frac{1}{m}\right)^2 &= x^2 + \frac{1}{m^2}-\frac{2x}{m} > x^2 - \frac{2x}{m} > x^2 -(x^2-a) = a.
+\end{align}
+
+Por tanto, $x-\frac{1}{m}$ es una cota superior de $A$, pero $x>x-\frac{1}{m}$, lo que contradice que $x=\sup(A)$.
+
+Así pues, $x^2\not < a$ y $x^2\not >a$, por lo que tiene que ser $x^2=a$.
+:::
+:::
 
 Del mismo modo se puede probar que para cualquier número real $a\in\mathbb{R}$ con $a>0$ y para cualquier número natural $n\in\mathbb{N}$ existe un número real $x\in\mathbb{R}$ tal que $x>0$ y $x^n=a$. A este número se le llama _raíz $n$-ésima_ de $a$.
 
