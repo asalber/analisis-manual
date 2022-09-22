@@ -10,11 +10,9 @@ lang: es
 
 En este capítulo se estudia el conjunto de los números reales $\mathbb{R}$ ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus propiedades.
 
-## Construcción de los números reales
-
 Antes de presentar el conjunto de los números reales se presentan otros subconjuntos suyos más elementales que suelen introducirse antes. Iremos ampliando sucesivamente estos conjuntos para dotarlos de nuevas propiedades hasta llegar al conjunto de los números reales.
 
-### El conjunto de los números naturales $\mathbb{N}$.
+## El conjunto de los números naturales $\mathbb{N}$.
 
 El primer conjunto de números que tradicionalmente suele estudiarse en el colegio son los números _naturales_ $\mathbb{N}$, ya que sirven para contar.
 
@@ -32,7 +30,7 @@ $a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{N}$.
 
 En el conjunto de los números naturales todo número tiene un posterior, pero no un anterior.
 
-### El conjunto de los números enteros $\mathbb{Z}$.
+## El conjunto de los números enteros $\mathbb{Z}$.
 
 Los números naturales no tienen simétrico (opuesto) para la suma, de manera que no puede definirse la resta. Para ello es necesario extender el conjunto de los naturales con los números negativos ($-1, -2, -3,\ldots$), y el cero ($0$). 
 
@@ -54,7 +52,7 @@ Al introducir el opuesto de la suma, se puede definir bien la resta como $a-b=a+
 
 En el conjunto de los enteros todo número tiene un anterior y un posterior.
 
-### El conjunto de los números racionales $\mathbb{Q}$
+## El conjunto de los números racionales $\mathbb{Q}$
 
 Los números enteros (salvo el -1 y 1) no tienen elemento simétrico (inverso) para el producto, de manera que no puede definirse la división. Para ello es necesario extender el conjunto de los enteros con los números fraccionarios, que se definen de la forma $a/b$ donde el numerador $a$ y el denominador $b$ son números enteros primos entre si (por ejemplo $1/2$ o $-5/3$).
 
@@ -77,7 +75,7 @@ Al introducir el inverso del producto, se puede definir la división como $a/b =
 
 A diferencia de los enteros, aunque los racionales también tienen un orden total, el orden es _denso_, es decir, entre dos números racionales cualesquiera siempre existe otro número racional (en realidad infinitos), por lo que no existe el anterior y el posterior de cualquier número racional.
 
-### El conjunto de los números irracionales
+## El conjunto de los números irracionales
 
 Muy pronto los griegos se dieron cuenta de que había otra clase de números que no podían representarse como cociente de números enteros y por tanto no pertenecían al conjunto de los números racionales, de manera que este conjunto es incompleto. El ejemplo clásico es el número $\sqrt{2}$ que se obtiene al aplicar el teorema de Pitágoras para calcular la longitud de la hipotenusa de un triángulo rectángulo con ambos lados de longitud 1. 
 
@@ -127,7 +125,7 @@ de manera que el número $a+\frac{b-a}{\sqrt{2}}$ está entre $a$ y $b$, pero ad
 
 En realidad, se puede probar que entre dos números racionales no solo existe un número irracional, sino una infinidad de ellos. Y del mismo modo, se puede probar que entre dos números irracionales existe una infinidad de números racionales.
 
-### El conjunto de los números reales 
+## El conjunto de los números reales 
 
 La extensión de los números racionales con los irracionales da lugar al conjunto de los números _reales_. Su construcción formal puede realizarse de distintas maneras ([cortaduras de Dedekind](https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_cortaduras_de_Dedekind) o [sucesiones de Cauchy](https://es.wikipedia.org/wiki/N%C3%BAmero_real#Construcci%C3%B3n_por_sucesiones_de_Cauchy)), pero todas ellas satisfacen la siguiente definición axiomática:
 
@@ -802,7 +800,7 @@ Sabemos que $\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}$ y que $\sqrt{2}>0$, por 
 :::
 
 
-### Clasificación de los conjuntos numéricos
+## Clasificación de los conjuntos numéricos
 
 Con estas extensiones se obtiene la siguiente clasificación de los conjuntos numéricos (se ha incluido también el conjunto de los números complejos $\mathbb{C}$ que no se verán en este manual.)
 

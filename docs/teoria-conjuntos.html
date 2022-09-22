@@ -174,8 +174,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link active" data-scroll-target="#conjuntos"><span class="toc-section-number">1.1</span>  Conjuntos</a></li>
   <li><a href="#álgebra-de-conjuntos" id="toc-álgebra-de-conjuntos" class="nav-link" data-scroll-target="#álgebra-de-conjuntos"><span class="toc-section-number">1.2</span>  Álgebra de conjuntos</a></li>
   <li><a href="#relaciones-entre-conjuntos" id="toc-relaciones-entre-conjuntos" class="nav-link" data-scroll-target="#relaciones-entre-conjuntos"><span class="toc-section-number">1.3</span>  Relaciones entre conjuntos</a></li>
-  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="toc-section-number">1.4</span>  Funciones</a></li>
-  <li><a href="#cardinalidad-de-un-conjunto" id="toc-cardinalidad-de-un-conjunto" class="nav-link" data-scroll-target="#cardinalidad-de-un-conjunto"><span class="toc-section-number">1.5</span>  Cardinalidad de un conjunto</a></li>
+  <li><a href="#cotas-y-extremos" id="toc-cotas-y-extremos" class="nav-link" data-scroll-target="#cotas-y-extremos"><span class="toc-section-number">1.4</span>  Cotas y extremos</a></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="toc-section-number">1.5</span>  Funciones</a></li>
+  <li><a href="#cardinalidad-de-un-conjunto" id="toc-cardinalidad-de-un-conjunto" class="nav-link" data-scroll-target="#cardinalidad-de-un-conjunto"><span class="toc-section-number">1.6</span>  Cardinalidad de un conjunto</a></li>
   </ul>
 </nav>
     </div>
@@ -425,9 +426,11 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <p>Al conjunto <span class="math inline">\(A\)</span> con la relación de orden total <span class="math inline">\(\preceq\)</span> se le llama <em>conjunto totalmente ordenado</em>, y se denota <span class="math inline">\((A,\preceq)\)</span>.</p>
 </div>
 <div id="exm-relacion-orden-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.9 </strong></span>La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden parcialmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>. ::</p>
-<section id="cotas-y-extremos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="cotas-y-extremos">Cotas y extremos</h2>
+<p><span class="theorem-title"><strong>Ejemplo 1.9 </strong></span>La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden parcialmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>.</p>
+</div>
+</section>
+<section id="cotas-y-extremos" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="cotas-y-extremos"><span class="header-section-number">1.4</span> Cotas y extremos</h2>
 <div id="def-cota-superior-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.21 (Cota superior) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota superior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son menores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in B, x\preceq c.\]</span></p>
@@ -479,12 +482,10 @@ Demostración
 <p>Obsérvese que un conjunto puede no tener supremo o ínfimo.</p>
 <p>:::{#exm-supremo-infimo-maximo-minimo}. Si se toma el conjunto de los números naturales con la relación de orden total <span class="math inline">\((\mathbb{N},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{1, 2, 3\}\subseteq \mathbb{N}\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{N}\)</span> tal que <span class="math inline">\(3\leq x\)</span> es una cota superior de <span class="math inline">\(B\)</span>, por tanto <span class="math inline">\(3\)</span> es el supremo de <span class="math inline">\(B\)</span>, y además es un máximo puesto que <span class="math inline">\(3\in B\)</span>.</p>
 <p>Por otro lado, si se considera el conjunto de los números reales con la relación de orden total <span class="math inline">\((\mathbb{R},\leq)\)</span>, para el intervalo <span class="math inline">\((0,1)\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x\leq 0\)</span> es una cota inferior y <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(1\leq x\)</span> es una cota superior, de modo que <span class="math inline">\(0\)</span> es el ínfimo y <span class="math inline">\(1\)</span> el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que <span class="math inline">\(0\not\in (0,1)\)</span> y <span class="math inline">\(1\not\in (0,1)\)</span>.</p>
-<p>Finalmente, si se considera el conjunto de los números enteros con la relación de orden total <span class="math inline">\((\mathbb{Z},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo.</p>
+<p>Finalmente, si se considera el conjunto de los números enteros con la relación de orden total <span class="math inline">\((\mathbb{Z},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo. :::</p>
 </section>
-</div>
-</section>
-<section id="funciones" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.4</span> Funciones</h2>
+<section id="funciones" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.5</span> Funciones</h2>
 <p>El concepto de función es uno de los más importantes en el Análisis Matemático, ya que muchos de los fenómenos naturales en los que una magnitud depende de otra se modelizan mediante funciones.</p>
 <div id="def-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.27 (Función) </strong></span>Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacios, es una <em>función</em> o <em>aplicación</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
@@ -593,8 +594,8 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 1.4 </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, si existe $^{-1}, entonces <span class="math inline">\(f\circ f^{-1} = \operatorname{id}_A\)</span> y <span class="math inline">\(f^{-1}\circ f = \operatorname{id}_B\)</span>.</p>
 </div>
 </section>
-<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.5</span> Cardinalidad de un conjunto</h2>
+<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.6</span> Cardinalidad de un conjunto</h2>
 <div id="def-cardinal-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.36 (Cardinal) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
 </div>
