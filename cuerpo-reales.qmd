@@ -242,35 +242,35 @@ Veamos la prueba de cada propiedad.
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
     \begin{align}
-    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \tag{\small{axioma 5}}\\
-    & \Leftrightarrow b+0 = 0 \tag{\small{axioma 4}}\\
-    &\Leftrightarrow b=0
+    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \\
+    & \Leftrightarrow b+0 = 0 \tag{\small{axioma 5}}\\
+    &\Leftrightarrow b=0 \tag{\small{axioma 4}}
     \end{align}
 
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
     \begin{align}
-    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \tag{\small{axioma 10}}\\
-    & \Leftrightarrow b\cdot 1 = 1 \tag{\small{axioma 9}}\\
-    &\Leftrightarrow b=1
+    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \\
+    & \Leftrightarrow b\cdot 1 = 1 \tag{\small{axioma 10}}\\
+    &\Leftrightarrow b=1 \tag{\small{axioma 9}}
     \end{align}
 
-a. Sea $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces 
+a. Sean $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces 
 
     \begin{align}
-    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \tag{\small{axioma 4}}\\
-    &\Leftrightarrow (-a)+a+b = -a \tag{\small{axioma 5}} \\
-    & \Leftrightarrow 0+b=-a \tag{\small{axioma 4}}\\ 
-    & \Leftrightarrow b = -a
+    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \\
+    &\Leftrightarrow (-a)+a+b = -a  \tag{\small{axioma 4}}\\
+    & \Leftrightarrow 0+b=-a \tag{\small{axioma 5}}\\ 
+    & \Leftrightarrow b = -a \tag{\small{axioma 4}}
     \end{align}
 
-a. Sea $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces 
+a. Sean $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces 
 
     \begin{align}
-    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \tag{\small{axioma 9}}\\
-    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}  \tag{\small{axioma 10}} \\
-    & \Leftrightarrow 1\cdot b=a^{-1} \tag{\small{axioma 9}}\\ 
-    & \Leftrightarrow b = a^{-1}
+    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \\
+    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1} \tag{\small{axioma 9}} \\
+    & \Leftrightarrow 1\cdot b=a^{-1} \tag{\small{axioma 10}}\\ 
+    & \Leftrightarrow b = a^{-1} \tag{\small{axioma 9}}
     \end{align}
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene
@@ -294,29 +294,26 @@ a. Para cualquier $a\in\mathbb{R}$, se tiene
     &= 0 \tag{\small{prop. e}}
     \end{align}
 
-    Como $a+(-1)\cdot a=0$, aplicando la propiedad c se tiene $(-1)\cdot a = -a$.
+    Como $a+(-1)\cdot a=0$, aplicando la propiedad (c) se tiene $(-1)\cdot a = -a$.
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene 
 
     \begin{align}
-    a+(-a)=0 & \Leftrightarrow \tag{\small{axioma 5}}\\ 
-    &\Leftrightarrow (-a)+a=0 \tag{\small{axioma 3}} \\ 
+    a+(-a)=0 & \Leftrightarrow (-a)+a=0 \tag{\small{axiomas 5 y 3}} \\ 
     &\Leftrightarrow a=-(-a)\tag{\small{prop. c}}
     \end{align}
 
 a. Para cualesquiera $a,b\in\mathbb{R}$,se tiene
 
     \begin{align}
-    (-a)\cdot (-b)&=(-1)\cdot a\cdot (-1)\cdot b \tag{\small{prop. f}}\\ 
-    &= (-1)(-1)\cdot a\cdot  b\tag{\small{axioma 7}}\\ 
+    (-a)\cdot (-b)&=((-1)\cdot a)\cdot ((-1)\cdot b) \tag{\small{prop. f}}\\ 
+    &= ((-1)\cdot(-1))\cdot a\cdot  b\tag{\small{axioma 7}}\\ 
     &= -(-1)\cdot a\cdot b \tag{\small{prop. f}}\\ 
     &= 1\cdot a\cdot b \tag{\small{prop. g}} \\
     &= a\cdot b \tag{\small{axioma 9}}
     \end{align}
 
-a. Para cualquier $a\in \mathbb{R}$ con $a\neq 0$. Entonces según el axioma 10 $a\cdot a^{-1} = 1$. 
-
-    Supongamos ahora que $a^{-1}=0$. Entonces, 
+a. Sea $a\in \mathbb{R}$ con $a\neq 0$. Supongamos ahora que $a^{-1}=0$. Entonces, 
 
     \begin{align}
     0 &= a\cdot 0 \tag{\small{prop. e}}\\ 
@@ -329,43 +326,42 @@ a. Para cualquier $a\in \mathbb{R}$ con $a\neq 0$. Entonces según el axioma 10 
 a. Para cualquier $a\in\mathbb{R}$, se tiene 
 
     \begin{align}
-    a\cdot a^{-1}=1 &\Leftrightarrow \tag{\small{axioma 10}}\\ 
-    &\Leftrightarrow a^{-1}\cdot a=1 \tag{\small{axioma 8}} \\ 
+    a\cdot a^{-1}=1 &\Leftrightarrow a^{-1}\cdot a=1 \tag{\small{axiomas 10 y 8}} \\ 
     &\Leftrightarrow a=(a^{-1})^{-1}\tag{\small{prop. d}}
     \end{align}
 
 a. Sean $a,b,c\in\mathbb{R}$ tales que $a\cdot b=a\cdot c$ y $a\neq 0$. Entonces se tiene
 
     \begin{align}
-    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\tag{\small{axioma 7}}\\ 
-    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c\tag{\small{axioma 10}}\\
-    &\Leftrightarrow 1\cdot b = 1\cdot c\tag{\small{axioma 9}}\\
-    &\Leftrightarrow b = c
+    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c \tag{\small{axioma 7}}\\
+    &\Leftrightarrow 1\cdot b = 1\cdot c \tag{\small{axioma 10}}\\
+    &\Leftrightarrow b = c \tag{\small{axioma 9}}
     \end{align}
 
 a. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b=0$. Supongamos que $a\neq 0$, entonces se tiene
 
     \begin{align}
-    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\tag{\small{prop. e}}\\ 
-    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0\tag{\small{axioma 7}}\\ 
-    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0\tag{\small{axioma 10}}\\
-    &\Leftrightarrow 1\cdot b = 0\tag{\small{axioma 9}}\\
-    &\Leftrightarrow b = 0
+    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\\ 
+    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0 \tag{\small{prop. e}}\\ 
+    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0 \tag{\small{axioma 7}}\\
+    &\Leftrightarrow 1\cdot b = 0 \tag{\small{axioma 10}}\\
+    &\Leftrightarrow b = 0 \tag{\small{axioma 9}}
     \end{align}
 
-a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la propiedad l se tiene $a\cdot b\neq 0$, y se tiene
+a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la propiedad (l) se tiene $a\cdot b\neq 0$, y se tiene
 
     \begin{align}
-    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \tag{\small{axioma 9}}\\ 
-    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 7}}\\ 
-    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \tag{\small{axioma 10}}\\
-    &\Leftrightarrow 1 \cdot b\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 9}}\\ 
-    &\Leftrightarrow b\cdot (a\cdot b)^{-1} = a^{-1}\Leftrightarrow \\
-    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = b^{-1}a^{-1}\tag{\small{axioma 8}}\\
-    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{\small{axioma 7}}\\ 
-    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{\small{axioma 10}}\\
-    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1}\tag{\small{axioma 9}}\\
-    & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1}
+    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \\ 
+    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 9}}\\ 
+    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \tag{\small{axioma 7}}\\
+    &\Leftrightarrow 1 \cdot b\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 10}}\\ 
+    &\Leftrightarrow b\cdot (a\cdot b)^{-1} = a^{-1}\Leftrightarrow \tag{\small{axioma 9}}\\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = b^{-1}a^{-1}\\
+    &\Leftrightarrow b^{-1}\cdot  b\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 8}}\\ 
+    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 7}}\\
+    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 10}}\\
+    & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 9}}
     \end{align}
 :::
 :::
@@ -615,7 +611,7 @@ b. $\forall a,b\in\mathbb{R}$, $|a-b| = |b-a|$.
 
 c. El valor absoluto del producto de dos números reales es igual que el producto de los valores absolutos de los números: $\forall a,b\in\mathbb{R}$, $|a\cdot b|=|a|\cdot |b|$.
 
-d. $\forall a,b\in\mathbb{R}$, si $b>0$ entonces $|a|<b$ si y solo si $-b<a<b$.
+d. $\forall a,b\in\mathbb{R}$, si $b>0$ entonces $|a|\leq b$ si y solo si $-b\leq a\leq b$.
 
 e. $\forall a\in\mathbb{R}$, $|-a|\leq a\leq |a|$.
 
@@ -669,7 +665,7 @@ c. Para cualesquiera $a,b\in \mathbb{R}$, se pueden dar varios casos:
         \end{align}
     - $a=0$ o $b=0$, entonces por la propiedad algebraica e $a\cdot b=0$ y es evidente que $|a\cdot b|=0=|a|\cdot |b|.
 
-d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|<b$, entonces $a<b$ y $-a<b$, y para esta última desigualdad se tiene
+d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|\leq b$, entonces $a\leq b$ y $-a\leq b$, y para esta última desigualdad, si $-a<b$ se tiene
 
     \begin{align}
     -a<b &\Rightarrow (-1)\cdot (-a)>(-1)\cdot b \tag{\small{prop. orden g}}\\ 
@@ -677,9 +673,9 @@ d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|<b$, entonces $a<b$ y $-a<b$,
     &\Rightarrow a > -b \tag{\small{prop. algebraica g}}
     \end{align}
 
-    Por tanto, se concluye que $-b<a<b$.
+    Y si $-a=b$ entonces $a=-b$, por lo que $a\geq -b$, y se concluye que $-b\leq a\leq b$.
 
-    Para probar la otra implicación supongamos que $-b<a<b$, entonces $a<b$ y por otro lado $a>-b$, de donde se tiene
+    Para probar la otra implicación supongamos que $-b\leq a\leq b$, entonces $a\leq b$ y por otro lado $a\geq -b$, de donde se tiene, si $a>-b$
 
     \begin{align}
     a>-b &\Rightarrow (-1)\cdot a<(-1)\cdot (-b) \tag{\small{prop. orden g}}\\ 
@@ -687,7 +683,7 @@ d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|<b$, entonces $a<b$ y $-a<b$,
     &\Rightarrow -a < b \tag{\small{prop. algebraica g}}.
     \end{align}
 
-    Como $b>0$ se puede concluir que $|a|<b$.
+    Y si $a=-b$ entonces $-a=b$, por lo que $-a\leq b$, y como $b>0$ se puede concluir que $|a|<b$.
 
 e. Sea $a\in\mathbb{R}$. Como $|a|\leq |a|$, si $|a|>0$, por la propiedad anterior, se tiene que $-|a|\leq a\leq |a|$, y si $|a|=0$, entonces $a=0$ y $-|0|\leq 0\leq |0|$.
 
@@ -752,7 +748,7 @@ Por otro lado, se tiene
 
 \begin{align}
 \left(x+\frac{1}{n}\right)^2 &= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) <\\ 
-&< \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
+&< x^2 + \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
 \end{align}
 
 Por tanto, $x+\frac{1}{n}\in A$, pero $x+\frac{1}{n}>x$ lo que contradice que $x$ sea cota superior de $A$.
