@@ -370,10 +370,10 @@ A partir del axioma de tricotomía se puede descomponer el conjunto de los núme
 ## Números reales positivos y negativos
 Dado un número $a\in\mathbb{R}$, se dice que:
 
-- $a$ es _estríctamente positivo_, y lo notamos $a>0$, si $a\in \mathbb{R}⁺$.
-- $a$ es _positivo_, y lo notamos $a\geq 0$, si $a\in \mathbb{R}⁺$ o $a=0$.
-- $a$ es _estríctamente negativo_, y lo notamos $a<0$, si $-a\in \mathbb{R}⁺$.
-- $a$ es _negativo_, y lo notamos $a\leq 0$, si $-a\in \mathbb{R}⁺$ o $-a=0$.
+- $a$ es _estríctamente positivo_, y lo notamos $a>0$, si $a\in \mathbb{R}^+$.
+- $a$ es _positivo_, y lo notamos $a\geq 0$, si $a\in \mathbb{R}^+$ o $a=0$.
+- $a$ es _estríctamente negativo_, y lo notamos $a<0$, si $-a\in \mathbb{R}^+$.
+- $a$ es _negativo_, y lo notamos $a\leq 0$, si $-a\in \mathbb{R}^+$ o $-a=0$.
 :::
 
 También se puede definir la siguiente relación que permite comparar dos números.
@@ -382,10 +382,10 @@ También se puede definir la siguiente relación que permite comparar dos númer
 ## Relaciones de comparación
 Dados dos números $a,b\in\mathbb{R}$, se dice que:
 
-- $a$ es _menor_ que $b$, y lo notamos $a<b$, si $b-a\in \mathbb{R}⁺$.
-- $a$ es _menor o igual_ que $b$, y lo notamos $a\leq b$, si $b-a\in \mathbb{R}⁺$ o $b-a=0$.
-- $a$ es _mayor_ que $b$, y lo notamos $a>b$, si $a-b\in \mathbb{R}⁺$.
-- $a$ es _mayor o igual_ que $b$, y lo notamos $a\geq b$, si $a-b\in \mathbb{R}⁺$ o $a-b=0$.
+- $a$ es _menor_ que $b$, y lo notamos $a<b$, si $b-a\in \mathbb{R}^+$.
+- $a$ es _menor o igual_ que $b$, y lo notamos $a\leq b$, si $b-a\in \mathbb{R}^+$ o $b-a=0$.
+- $a$ es _mayor_ que $b$, y lo notamos $a>b$, si $a-b\in \mathbb{R}^+$.
+- $a$ es _mayor o igual_ que $b$, y lo notamos $a\geq b$, si $a-b\in \mathbb{R}^+$ o $a-b=0$.
 :::
 
 De esta definición y los axiomas de orden de los números reales se deduce que la relación $\leq$ es una relación de orden.
@@ -639,7 +639,7 @@ b. Para cualesquiera $a,b\in\mathbb{R}$ se tiene
 
 c. Para cualesquiera $a,b\in \mathbb{R}$, se pueden dar varios casos:
 
-    - Si $a>0$ y $b>0$, entonces, por el axioma 12, $a\cdot b > 0$ y $|a\cdot b| = a\cdot b = |a|\cdot |b|.
+    - Si $a>0$ y $b>0$, entonces, por el axioma 12, $a\cdot b > 0$ y $|a\cdot b| = a\cdot b = |a|\cdot |b|$.
     - Si $a>0$ y $b<0$, entonces, por la propiedad de orden j, $a\cdot b < 0$, y se tiene
     
         \begin{align}
@@ -661,7 +661,7 @@ c. Para cualesquiera $a,b\in \mathbb{R}$, se pueden dar varios casos:
         &= -a\cdot -b \tag{\small{prop. algebraica f}}\\
         &= |a|\cdot |b|.
         \end{align}
-    - $a=0$ o $b=0$, entonces por la propiedad algebraica e $a\cdot b=0$ y es evidente que $|a\cdot b|=0=|a|\cdot |b|.
+    - $a=0$ o $b=0$, entonces por la propiedad algebraica e $a\cdot b=0$ y es evidente que $|a\cdot b|=0=|a|\cdot |b|$.
 
 d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|\leq b$, entonces $a\leq b$ y $-a\leq b$, y para esta última desigualdad, si $-a<b$ se tiene
 

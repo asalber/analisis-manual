@@ -13,6 +13,7 @@ website:
 
 book:
   title: "Manual de Análisis Matemático Real"
+  subtitle: "para Ciencias e Ingenierías"
   author: "Alfredo Sánchez Alberca"
   date: "1/6/2022"
   output-file: "manual-analisis"
@@ -47,8 +48,23 @@ format:
     light: flatly
   pdf:
     documentclass: scrreport
+    papersize: a4
+    template-partials:
+      - before-body.tex
+    titlegraphic: img/logos/pi.png
+    institution: CEU San Pablo
+    email: asalber@ceu.es
+    web: https://aprendeconalf.es
+    logo: img/logos/aprendeconalf.png
     include-in-header:
+      - preamble.tex
       - macros.tex
+    keep-tex: true
+    #mainfont: TeX Gyre Termes
+    #mainfontoptions:
+    #  - Numbers=Lowercase
+    #  - Numbers=Proportional    
+    
   epub:
     cover-image: img/logos/pi.jpg
 
