@@ -14,7 +14,7 @@ Las sucesiones de números reales son claves para comprender el concepto de lím
 Una _sucesión de números reales_ es una aplicación $x:\mathbb{N}\to \mathbb{R}$ que asigna a cada número natural un número real, conocido como _término de la sucesión_.
 :::
 
-Es habitual referirse a una sucesión con la notación $(x_n)_{n=1}^\infty$, donde $x_n=x(n)$ con $n\in\mathbb{N}$.
+Es habitual referirse a una sucesión con la notación $(x_n)_{n=1}^\infty$, donde $x_n=x(n)$ con $n\in\mathbb{N}$, o simplemente con $x_n$.
 
 :::{#exm-sucesion1}
 La sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ está formada por los términos $\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots$.
@@ -27,3 +27,79 @@ No hay que confundir los términos de una sucesión $(x_n)_{n=1}^\infty$, que ti
 :::{#exm-sucesion2}
 La sucesión $\left((-1)^n\right)_{n=1}^\infty$ está formada por los términos $-1,1,-1,1,\ldots$, mientras que $\{x_n:n\in\mathbb{N}\}=\{-1,1\}$.
 :::
+
+Las operaciones aritméticas de los números reales se pueden extrapolar a las sucesiones aplicándolas término a término. 
+
+:::{#def-operaciones-sucesiones}
+## Operaciones con sucesiones
+Dadas dos sucesiones de números reales $(x_n)_{n=1}^\infty$ e $(y_n)_{n=1}^\infty$, se definen las siguientes operaciones:
+
+- _Suma:_ $(x_n)_{n=1}^\infty + (y_n)_{n=1}^\infty = (x_n+y_n)_{n=1}^\infty$.
+
+- _Diferencia:_ $(x_n)_{n=1}^\infty - (y_n)_{n=1}^\infty = (x_n-y_n)_{n=1}^\infty$.
+
+- _Producto:_ $(x_n)_{n=1}^\infty (y_n)_{n=1}^\infty = (x_ny_n)_{n=1}^\infty$.
+
+- _División:_ $\dfrac{(x_n)_{n=1}^\infty}{(y_n)_{n=1}^\infty} = \left(\dfrac{x_n}{y_n}\right)_{n=1}^\infty$, siempre y cuando $y_n\neq 0$ $\forall n\in\mathbb{N}$.
+
+- _Producto por escalar:_ $c(x_n)_{n=1}^\infty = (cx_n)_{n=1}^\infty$.
+
+:::
+
+:::{#exm-operaciones-sucesiones}
+Dadas las sucesiones $(n)_{n=1}^\infty$ y $((-1)^n)_{n=1}^\infty$ se tiene:
+
+\begin{align}
+(n)_{n=1}^\infty + ((-1)^n)_{n=1}^\infty &= (n + (-1)^n)_{n=1}^\infty = (0, 3, 2, 5, 4, \ldots)\\
+(n)_{n=1}^\infty ((-1)^n)_{n=1}^\infty &= (n (-1)^n)_{n=1}^\infty = (-1, 2, -3, 4, -5, \ldots)
+\end{align}
+:::
+
+## Límite de una sucesión
+
+:::{#def-limite-sucesion}
+## Límite de una sucesión
+Dada una sucesión $(x_n)_{n=1}^\infty$, se dice que un número $x\in\mathbb{R}$ es el _límite de la sucesión_, si para cada $\varepsilon>0$ existe un $k\in\mathbb{N}$ a partir del cuál todos los términos de la sucesión caen en el entorno $(x-\varepsilon, x+\varepsilon)$, es decir, $|x_n-x|<\varepsilon$ $\forall n\geq k$.
+
+Si $x$ es el límite de la sucesión, se dice que la suceción _converge_ a $x$, y se denota $\lim_{n\to\infty}x_n = x$.
+:::
+
+Si una sucesión tiene límite se dice que es _convergente_, y en caso contrario se dice que es _divergente_.
+
+:::{#exm-limite-sucesion}
+La sucesión $(\frac{1}{n})_{n=1}^\infty$ es convergente y $\lim_{n\to\infty}\frac{1}{n} = 0$, ya que para cualquier $\varepsilon>0$, por la @thm-propiedad-arquimediana, se tiene que existe un $k\in\mathbb{N}, tal que $\frac{1}{k}<\varepsilon$, de manera que para cualquier $n>k$, se tiene $|\frac{1}{n}-0| = \frac{1}{n} <\frac{1}{k}<\varepsilon$.
+
+Sin embargo, la sucesión $(n)_{n=1}^\infty$ diverge.
+:::
+
+
+:::{#thm-unicidad-limite-sucesion}
+Una sucesión de números reales puede tener a lo sumo un límite.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Lo probaremos por reducción al absurdo. Supongamos que $(x_n)_{n=1}^\infty$ converge a $x$ e $y$ con $x\neq y$.
+Entonces existe un $\varepsilon>0$ tal que los entornos $(x-\varepsilon,x+\varepsilon)$ e $(y-\varepsilon,y+\varepsilon)$ son disjuntos. Ahora bien, por ser $\lim_{n\to\infty}x_n = x$ existe un $k_1\in\mathbb{N}$ tal que $x_n\in(x-\varepsilon,x+\varepsilon)$ $\forall n\geq k_1$, y por ser $\lim_{n\to\infty}y_n = y$ existe un $k_2\in\mathbb{N}$ tal que $x_n\in(y-\varepsilon,y+\varepsilon)$ $\forall n\geq k_2$. Basta tomar $k=\max(k_1,k_2)$ para ver que $x_k$ pertenece a ambos entornos, lo cual contradice que sean disjuntos. Por tanto, debe ser $x=y$.
+:::
+:::
+
+:::{#def-cola-sucesion}
+## Cola de una sucesión
+Dada una sucesión de números reales $(x_n)_{n=1}^\infty$ y $m\in\mathbb{N}$, se define la _cola_ $m$ de la sucesión, como la sucesión $(x_{m+n})_{n=1}^\infty = (x_{m+1}, x_{m+2},\ldots)$.
+:::
+
+:::{#prp-convergencia-cola-sucesion}
+Dada una sucesión de números reales $(x_n)_{n=1}^\infty$ y $m\in\mathbb{N}$, la cola $(x_{m+n})_{n=1}^\infty$ converge si y solo si $(x_n)_{n=1}^\infty$ converge, y en tal caso, $\lim_{n\to\infty}x_n=\lim_{n\to\infty}x_{m+n}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que la cola $(x_{m+n})_{n=1}^\infty$ converge a $x$. Entonces, para cada $\varepsilon>0$, existe un $k_1\in\mathbb{N}$ tal que $|x_{m+n}-x|<\varepsilon$ $\forall n\geq k_1$. Tomando ahora $k=k_1+m\in\mathbb{N}$ se tiene que para cualquier $l\geq k$ $|x_l-x| = |x_{l-m+m}-x| = |x_{m+n}-x| < \varepsilon$ siendo $n=l-m$, ya que $l\geq k_1+m$ y $l-m\geq k_1$. Por tanto, $(x_n)_{n=1}^\infty$ converge a $x$.
+
+Para probar la otra implicación, supongamos ahora que $(x_n)_{n=1}^\infty$ converge a $x$. Entonces, para cada $\varepsilon>0$, existe un $k\in\mathbb{N}$ tal que $|x_n-x|<\varepsilon$ $\forall n\geq k$. Pero como $m\in\mathbb{N}$, si $n\geq k$ también $m+n\geq k$, con lo que $|x_{m+n}-x|<\varepsilon$, y por consiguiente, $(x_{m+n})_{n=1}^\infty$ converge a $x$.
+:::
+:::
+

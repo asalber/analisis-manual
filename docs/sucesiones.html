@@ -171,6 +171,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#concepto-de-sucesión" id="toc-concepto-de-sucesión" class="nav-link active" data-scroll-target="#concepto-de-sucesión"><span class="toc-section-number">4.1</span>  Concepto de sucesión</a></li>
+  <li><a href="#límite-de-una-sucesión" id="toc-límite-de-una-sucesión" class="nav-link" data-scroll-target="#límite-de-una-sucesión"><span class="toc-section-number">4.2</span>  Límite de una sucesión</a></li>
   </ul>
 </nav>
     </div>
@@ -200,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="def-sucesion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 4.1 (Sucesión de números reales) </strong></span>Una <em>sucesión de números reales</em> es una aplicación <span class="math inline">\(x:\mathbb{N}\to \mathbb{R}\)</span> que asigna a cada número natural un número real, conocido como <em>término de la sucesión</em>.</p>
 </div>
-<p>Es habitual referirse a una sucesión con la notación <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, donde <span class="math inline">\(x_n=x(n)\)</span> con <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p>Es habitual referirse a una sucesión con la notación <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, donde <span class="math inline">\(x_n=x(n)\)</span> con <span class="math inline">\(n\in\mathbb{N}\)</span>, o simplemente con <span class="math inline">\(x_n\)</span>.</p>
 <div id="exm-sucesion1" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.1 </strong></span>La sucesión <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span> está formada por los términos <span class="math inline">\(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\)</span>.</p>
 </div>
@@ -219,6 +220,82 @@ Precaución
 </div>
 <div id="exm-sucesion2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.2 </strong></span>La sucesión <span class="math inline">\(\left((-1)^n\right)_{n=1}^\infty\)</span> está formada por los términos <span class="math inline">\(-1,1,-1,1,\ldots\)</span>, mientras que <span class="math inline">\(\{x_n:n\in\mathbb{N}\}=\{-1,1\}\)</span>.</p>
+</div>
+<p>Las operaciones aritméticas de los números reales se pueden extrapolar a las sucesiones aplicándolas término a término.</p>
+<div id="def-operaciones-sucesiones" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.2 (Operaciones con sucesiones) </strong></span>Dadas dos sucesiones de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span> e <span class="math inline">\((y_n)_{n=1}^\infty\)</span>, se definen las siguientes operaciones:</p>
+<ul>
+<li><p><em>Suma:</em> <span class="math inline">\((x_n)_{n=1}^\infty + (y_n)_{n=1}^\infty = (x_n+y_n)_{n=1}^\infty\)</span>.</p></li>
+<li><p><em>Diferencia:</em> <span class="math inline">\((x_n)_{n=1}^\infty - (y_n)_{n=1}^\infty = (x_n-y_n)_{n=1}^\infty\)</span>.</p></li>
+<li><p><em>Producto:</em> <span class="math inline">\((x_n)_{n=1}^\infty (y_n)_{n=1}^\infty = (x_ny_n)_{n=1}^\infty\)</span>.</p></li>
+<li><p><em>División:</em> <span class="math inline">\(\dfrac{(x_n)_{n=1}^\infty}{(y_n)_{n=1}^\infty} = \left(\dfrac{x_n}{y_n}\right)_{n=1}^\infty\)</span>, siempre y cuando <span class="math inline">\(y_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p></li>
+<li><p><em>Producto por escalar:</em> <span class="math inline">\(c(x_n)_{n=1}^\infty = (cx_n)_{n=1}^\infty\)</span>.</p></li>
+</ul>
+</div>
+<div id="exm-operaciones-sucesiones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.3 </strong></span>Dadas las sucesiones <span class="math inline">\((n)_{n=1}^\infty\)</span> y <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span> se tiene:</p>
+<p><span class="math display">\[\begin{align}
+(n)_{n=1}^\infty + ((-1)^n)_{n=1}^\infty &amp;= (n + (-1)^n)_{n=1}^\infty = (0, 3, 2, 5, 4, \ldots)\\
+(n)_{n=1}^\infty ((-1)^n)_{n=1}^\infty &amp;= (n (-1)^n)_{n=1}^\infty = (-1, 2, -3, 4, -5, \ldots)
+\end{align}\]</span></p>
+</div>
+</section>
+<section id="límite-de-una-sucesión" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="límite-de-una-sucesión"><span class="header-section-number">4.2</span> Límite de una sucesión</h2>
+<div id="def-limite-sucesion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.3 (Límite de una sucesión) </strong></span>Dada una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, se dice que un número <span class="math inline">\(x\in\mathbb{R}\)</span> es el <em>límite de la sucesión</em>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> a partir del cuál todos los términos de la sucesión caen en el entorno <span class="math inline">\((x-\varepsilon, x+\varepsilon)\)</span>, es decir, <span class="math inline">\(|x_n-x|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Si <span class="math inline">\(x\)</span> es el límite de la sucesión, se dice que la suceción <em>converge</em> a <span class="math inline">\(x\)</span>, y se denota <span class="math inline">\(\lim_{n\to\infty}x_n = x\)</span>.</p>
+</div>
+<p>Si una sucesión tiene límite se dice que es <em>convergente</em>, y en caso contrario se dice que es <em>divergente</em>.</p>
+<div id="exm-limite-sucesion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="cuerpo-reales.html#thm-propiedad-arquimediana">Teorema&nbsp;<span>2.3</span></a>, se tiene que existe un $k, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
+<p>Sin embargo, la sucesión <span class="math inline">\((n)_{n=1}^\infty\)</span> diverge.</p>
+</div>
+<div id="thm-unicidad-limite-sucesion" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.1 </strong></span>Una sucesión de números reales puede tener a lo sumo un límite.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Lo probaremos por reducción al absurdo. Supongamos que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> con <span class="math inline">\(x\neq y\)</span>. Entonces existe un <span class="math inline">\(\varepsilon&gt;0\)</span> tal que los entornos <span class="math inline">\((x-\varepsilon,x+\varepsilon)\)</span> e <span class="math inline">\((y-\varepsilon,y+\varepsilon)\)</span> son disjuntos. Ahora bien, por ser <span class="math inline">\(\lim_{n\to\infty}x_n = x\)</span> existe un <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n\in(x-\varepsilon,x+\varepsilon)\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>, y por ser <span class="math inline">\(\lim_{n\to\infty}y_n = y\)</span> existe un <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n\in(y-\varepsilon,y+\varepsilon)\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>. Basta tomar <span class="math inline">\(k=\max(k_1,k_2)\)</span> para ver que <span class="math inline">\(x_k\)</span> pertenece a ambos entornos, lo cual contradice que sean disjuntos. Por tanto, debe ser <span class="math inline">\(x=y\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="def-cola-sucesion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.4 (Cola de una sucesión) </strong></span>Dada una sucesión de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\(m\in\mathbb{N}\)</span>, se define la <em>cola</em> <span class="math inline">\(m\)</span> de la sucesión, como la sucesión <span class="math inline">\((x_{m+n})_{n=1}^\infty = (x_{m+1}, x_{m+2},\ldots)\)</span>.</p>
+</div>
+<div id="prp-convergencia-cola-sucesion" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.1 </strong></span>Dada una sucesión de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\(m\in\mathbb{N}\)</span>, la cola <span class="math inline">\((x_{m+n})_{n=1}^\infty\)</span> converge si y solo si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge, y en tal caso, <span class="math inline">\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}x_{m+n}\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que la cola <span class="math inline">\((x_{m+n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>. Entonces, para cada <span class="math inline">\(\varepsilon&gt;0\)</span>, existe un <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_{m+n}-x|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>. Tomando ahora <span class="math inline">\(k=k_1+m\in\mathbb{N}\)</span> se tiene que para cualquier <span class="math inline">\(l\geq k\)</span> <span class="math inline">\(|x_l-x| = |x_{l-m+m}-x| = |x_{m+n}-x| &lt; \varepsilon\)</span> siendo <span class="math inline">\(n=l-m\)</span>, ya que <span class="math inline">\(l\geq k_1+m\)</span> y <span class="math inline">\(l-m\geq k_1\)</span>. Por tanto, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+<p>Para probar la otra implicación, supongamos ahora que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>. Entonces, para cada <span class="math inline">\(\varepsilon&gt;0\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Pero como <span class="math inline">\(m\in\mathbb{N}\)</span>, si <span class="math inline">\(n\geq k\)</span> también <span class="math inline">\(m+n\geq k\)</span>, con lo que <span class="math inline">\(|x_{m+n}-x|&lt;\varepsilon\)</span>, y por consiguiente, <span class="math inline">\((x_{m+n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 
 
