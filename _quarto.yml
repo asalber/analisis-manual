@@ -46,6 +46,7 @@ format:
     theme: cosmo
     dark: darkly
     light: flatly
+    html-math-method: mathjax
   pdf:
     documentclass: scrreport
     papersize: a4

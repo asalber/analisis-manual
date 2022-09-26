@@ -10,5 +10,6 @@ $$
 \DeclareMathOperator{\operatorname{Fr}}{Fr}
 \DeclareMathOperator{\Adh}{Adh}
 \DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
 $$
 :::

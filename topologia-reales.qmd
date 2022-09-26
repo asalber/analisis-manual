@@ -10,7 +10,7 @@ lang: es
 
 En este capítulo presentamos, sin profundizar demasiado, los principales conceptos topológicos del conjunto de los números reales, que se serán necesarios en futuros capítulos.
 
-Los números reales pueden representarse geométricamente como puntos de una línea recta que se conoce como la _recta real_. Existe una biyección entre los puntos de una recta y el conjunto $\mathbb{R}$  de los números reales, de modo que a cada número real le corresponde un solo punto, y a cada punto, exactamente un número real. Para establecer esta correspondencia se fija un punto $O$ en la recta correspondiente al número real $0$ y otro punto $A$ a la derecha de $0$, correspondiente al número real $1$, de manera que se dice que la _abscisa_ de $U$ es $1$ y se denota $A(1)$. A partir de estos dos puntos, hy considerando la distancia entre $O$ y $A$ como unidad de medida,  se pueden representar cualquier otro punto $B$ correspondiente al número real $x$, dibujando a $B$ a la derecha de $O$ si $x>0$ y a la izquierda si $x<0$, a una distancia $|x|$ de $O$.
+Los números reales pueden representarse geométricamente como puntos de una línea recta que se conoce como la _recta real_. Existe una biyección entre los puntos de una recta y el conjunto $\mathbb{R}$  de los números reales, de modo que a cada número real le corresponde un solo punto, y a cada punto, exactamente un número real. Para establecer esta correspondencia se fija un punto $O$ en la recta correspondiente al número real $0$ y otro punto $A$ a la derecha de $0$, correspondiente al número real $1$, de manera que se dice que la _abscisa_ de $A$ es $1$ y se denota $A(1)$. A partir de estos dos puntos, hy considerando la distancia entre $O$ y $A$ como unidad de medida,  se pueden representar cualquier otro punto $B$ correspondiente al número real $x$, dibujando a $B$ a la derecha de $O$ si $x>0$ y a la izquierda si $x<0$, a una distancia $|x|$ de $O$.
 
 ![La recta real](img/topologia-reales/recta-real.png)
 
@@ -18,7 +18,7 @@ Los números reales pueden representarse geométricamente como puntos de una lí
 
 :::{#def-intervalo-abierto}
 ## Intervalo abierto
-Dados dos números reales tales que $a<b$, se llama _intervalo abierto_ de extremos $a$ y $b$, y se denota $(a,b)$ al conjunto de números reales comprendidos entre $a$ y $b$
+Dados dos números reales tales que $a\leq b$, se llama _intervalo abierto_ de extremos $a$ y $b$, y se denota $(a,b)$ al conjunto de números reales comprendidos entre $a$ y $b$
 $$
 (a,b) = \{x\in \mathbb{R}: a<x<b\}.
 $$
@@ -26,10 +26,14 @@ $$
 
 :::{#def-intervalo-cerrado}
 ## Intervalo cerrado
-Dados dos números reales tales que $a<b$, se llama _intervalo cerrado_ de extremos $a$ y $b$, y se denota $[a,b]$ al conjunto de números reales que son mayores o iguales que $a$ y menores o iguales que $b$
+Dados dos números reales tales que $a\leq b$, se llama _intervalo cerrado_ de extremos $a$ y $b$, y se denota $[a,b]$ al conjunto de números reales que son mayores o iguales que $a$ y menores o iguales que $b$
 $$
 [a,b] = \{x\in \mathbb{R}: a\leq x\leq b\}.
 $$
+:::
+
+:::{.callout-warning}
+Obsérvese que si $a=b$, $(a,a)=\emptyset$ y $[a,a]=\{a\}$.
 :::
 
 Los intervalos también pueden ser abiertos por un lado y cerrados por el otro.
@@ -42,7 +46,7 @@ $$
 $$
 :::
 
-Obsérvese que si $a=b$, $(a,a)=\emptyset$ y $[a,a]=\{a\}$.
+
 
 Estos intervalos están _acotados_ ya que $a$ es una cota inferior y $b$ una cota superior, pero también existen intervalos no acotados.
 
@@ -131,7 +135,7 @@ El conjunto de los puntos frontera de $A$ se llama _frontera_ de $A$ y se denota
 Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior del conjunto ni de su complementario.
 
 :::{#exm-punto-frontera} 
-$1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
+El punto $1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
 :::
 
 :::{#prp-interior-intervalo-abierto}
@@ -141,7 +145,7 @@ Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Tomemos cualquier punto in (a,b)$, entonces se puede tomar $\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}$ de manera que el entorno $(x-\varepsilon, x+\varepsilon)\subseteq (a,b)$.
+Tomemos cualquier punto in $(a,b)$, entonces se puede tomar $\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}$ de manera que el entorno $(x-\varepsilon, x+\varepsilon)\subseteq (a,b)$.
 :::
 :::
 
@@ -206,8 +210,12 @@ Se dice que $a\in \mathbb{R}$ es un _punto de aislado_ de un conjunto $A\subsete
 Se dice que un conjunto $A\subset \mathbb{R}$ es _abierto_ cuando para cada $a\in A$ existe un entorno de $a$ contenido en $A$, es decir, existe $\varepsilon>0$ tal que $(a-\varepsilon, a+\varepsilon)\subset A$.
 :::
 
-:::{#exm-intervalo-abierto-conjunto-abierto}. 
+:::{#exm-intervalo-abierto-conjunto-abierto} 
 Cualquier intervalo abierto $(a,b)$ es un conjunto abierto. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
+:::
+
+:::{.callout-important}
+Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
 :::
 
 Una colección de conjuntos abiertos se llama _topología_ y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama _propiedad topológica_.

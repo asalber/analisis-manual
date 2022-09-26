@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  23 SEP 2022 02:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  26 SEP 2022 07:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex
-(/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex
+**/run/media/alf/datos/misrepositorios/docencia/analisis-manual/index.tex
+(/run/media/alf/datos/misrepositorios/docencia/analisis-manual/index.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-08-30> (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrreport.cls
 Document Class: scrreport 2022/07/04 v3.37 KOMA-Script document class (report)
@@ -370,40 +370,10 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@height=\dimen168
 \Gin@req@width=\dimen169
 )
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:77: Undefined control sequence.
-l.77 \newfontfamily
-                   \Ubuntu[Mapping=tex-text]{Ubuntu}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:77: Undefined control sequence.
-l.77 \newfontfamily\Ubuntu
-                          [Mapping=tex-text]{Ubuntu}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:77: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.77 \newfontfamily\Ubuntu[
-                           Mapping=tex-text]{Ubuntu}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \operatorname{Int} on input line 83.
 LaTeX Info: Redefining \operatorname{Ext} on input line 84.
 LaTeX Info: Redefining \operatorname{Fr} on input line 85.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2022/06/24 version 5.1.1 text color boxes
  (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks28
@@ -808,11 +778,11 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@proposition=\count334
-\c@theorem=\count335
-\c@example=\count336
-\c@definition=\count337
-\c@corollary=\count338
+\c@example=\count334
+\c@definition=\count335
+\c@theorem=\count336
+\c@corollary=\count337
+\c@proposition=\count338
  (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count339
@@ -834,46 +804,46 @@ Language: nil 2022/09/17 3.80 Nil language
 \everypar=\toks51
  (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex)
 Package babel Info: Importing data for spanish
-(babel)             from babel-es.ini. Reported on input line 177.
+(babel)             from babel-es.ini. Reported on input line 178.
 Package babel Info: Hyphen rules for 'spanish' set to \l@spanish
-(babel)             (\language7). Reported on input line 177.
+(babel)             (\language7). Reported on input line 178.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 196.
- (./manual-analisis.aux)
-\openout1 = `manual-analisis.aux'.
+Package hyperref Info: Option `colorlinks' set `true' on input line 197.
+ (./index.aux)
+\openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Info: Redefining \microtypecontext on input line 209.
-Package microtype Info: Applying patch `item' on input line 209.
-Package microtype Info: Applying patch `toc' on input line 209.
-Package microtype Info: Applying patch `eqnum' on input line 209.
-Package microtype Info: Applying patch `footnote' on input line 209.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Info: Redefining \microtypecontext on input line 210.
+Package microtype Info: Applying patch `item' on input line 210.
+Package microtype Info: Applying patch `toc' on input line 210.
+Package microtype Info: Applying patch `eqnum' on input line 210.
+Package microtype Info: Applying patch `footnote' on input line 210.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 209.
+LaTeX Info: Redefining \showhyphens on input line 210.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -898,99 +868,78 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 209.
+Package hyperref Info: Link coloring ON on input line 210.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- [1
-
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:215: Undefined control sequence.
-l.215 {\Ubuntu
-               \textbf{Manual de Análisis Matemático Real}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:219: Undefined control sequence.
-l.219 {\Ubuntu
-               \textbf{para Ciencias e Ingenierías}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-<img/logos/pi.png, id=13, 441.54pt x 426.69pt>
+<img/logos/pi.png, id=7, 441.54pt x 426.69pt>
 File: img/logos/pi.png Graphic file (type png)
 <use img/logos/pi.png>
-Package pdftex.def Info: img/logos/pi.png  used on input line 223.
+Package pdftex.def Info: img/logos/pi.png  used on input line 226.
 (pdftex.def)             Requested size: 167.30185pt x 161.6751pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 229.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 232.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 229.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 229.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 229.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 229.
+(Font)              <10.95> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 229.
+(Font)              <8> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 229.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 229.
+(Font)              <6> on input line 232.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 229.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<img/logos/aprendeconalf.png, id=15, 100.12407pt x 119.69719pt>
+<img/logos/aprendeconalf.png, id=9, 100.12407pt x 119.69719pt>
 File: img/logos/aprendeconalf.png Graphic file (type png)
 <use img/logos/aprendeconalf.png>
-Package pdftex.def Info: img/logos/aprendeconalf.png  used on input line 230.
+Package pdftex.def Info: img/logos/aprendeconalf.png  used on input line 233.
 (pdftex.def)             Requested size: 41.82875pt x 50.0058pt.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 232.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 235.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2
+) [1
 
 
- <./img/logos/pi.png> <./img/logos/aprendeconalf.png>]
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/logos/pi.png> <./img/logos/aprendeconalf.png>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package tocbasic Info: character protrusion at toc deactivated on input line 241.
-
-No file manual-analisis.toc.
+Package tocbasic Info: character protrusion at toc deactivated on input line 244.
+ (./index.toc)
 \tf@toc=\write4
-\openout4 = `manual-analisis.toc'.
+\openout4 = `index.toc'.
 
-[3
+ [2
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 273.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 276.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4
+) [3
 
 ]
 chapter 1.
@@ -1009,109 +958,77 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface.
 
-[5
+[4
 
-] [6]
-<./img/teoria-conjuntos/union.png, id=79, 300.53745pt x 233.55548pt>
+] [5]
+<./img/teoria-conjuntos/union.png, id=118, 300.53745pt x 233.55548pt>
 File: ./img/teoria-conjuntos/union.png Graphic file (type png)
 <use ./img/teoria-conjuntos/union.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/union.png  used on input line 513.
+Package pdftex.def Info: ./img/teoria-conjuntos/union.png  used on input line 516.
 (pdftex.def)             Requested size: 170.71654pt x 132.66827pt.
- [7]
-<./img/teoria-conjuntos/interseccion.png, id=102, 301.125pt x 201.05885pt>
+ [6]
+<./img/teoria-conjuntos/interseccion.png, id=138, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/interseccion.png Graphic file (type png)
 <use ./img/teoria-conjuntos/interseccion.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/interseccion.png  used on input line 534.
+Package pdftex.def Info: ./img/teoria-conjuntos/interseccion.png  used on input line 537.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
-<./img/teoria-conjuntos/complemento.png, id=103, 302.97807pt x 206.61807pt>
+<./img/teoria-conjuntos/complemento.png, id=139, 302.97807pt x 206.61807pt>
 File: ./img/teoria-conjuntos/complemento.png Graphic file (type png)
 <use ./img/teoria-conjuntos/complemento.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/complemento.png  used on input line 555.
+Package pdftex.def Info: ./img/teoria-conjuntos/complemento.png  used on input line 558.
 (pdftex.def)             Requested size: 199.17097pt x 135.82607pt.
- [8 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
-<./img/teoria-conjuntos/diferencia.png, id=117, 300.05772pt x 200.34341pt>
+ [7 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
+<./img/teoria-conjuntos/diferencia.png, id=155, 300.05772pt x 200.34341pt>
 File: ./img/teoria-conjuntos/diferencia.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/diferencia.png  used on input line 576.
+Package pdftex.def Info: ./img/teoria-conjuntos/diferencia.png  used on input line 579.
 (pdftex.def)             Requested size: 170.71875pt x 113.986pt.
-<./img/teoria-conjuntos/diferencia-simetrica.png, id=118, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/diferencia-simetrica.png, id=156, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/diferencia-simetrica.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia-simetrica.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 604.
+Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 607.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
- [9 <./img/teoria-conjuntos/complemento.png> <./img/teoria-conjuntos/diferencia.png>] [10 <./img/teoria-conjuntos/diferencia-simetrica.png>] [11] [12] [13]
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 957.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [14] [15] (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) (././img/teoria-conjuntos/no-funcion.tex) [16] (././img/teoria-conjuntos/funcion-inyectiva.tex) (././img/teoria-conjuntos/funcion-sobreyectiva.tex) (././img/teoria-conjuntos/funcion-biyectiva.tex) (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) [17] [18] [19] [20]
-
-LaTeX Warning: Reference `prp-biyeccion-conjuntos-equipotentes' on page 21 undefined on input line 1435.
-
-
-LaTeX Warning: Reference `prp-biyeccion-conjuntos-equipotentes' on page 21 undefined on input line 1475.
-
-[21] [22]
-
-LaTeX Warning: Reference `thm-cantor' on page 23 undefined on input line 1588.
-
-[23] [24]
+ [8 <./img/teoria-conjuntos/complemento.png> <./img/teoria-conjuntos/diferencia.png>] [9 <./img/teoria-conjuntos/diferencia-simetrica.png>] [10] [11] [12]
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 960.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [13] [14] (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) (././img/teoria-conjuntos/no-funcion.tex) [15] (././img/teoria-conjuntos/funcion-inyectiva.tex) (././img/teoria-conjuntos/funcion-sobreyectiva.tex) (././img/teoria-conjuntos/funcion-biyectiva.tex) (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) [16] [17] [18] [19] [20] [21] [22] [23]
 chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 1635.
+(Font)              <14.4> on input line 1638.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1635.
+(Font)              <10> on input line 1638.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1635.
-[25
+(Font)              <7> on input line 1638.
+[24
 
-] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40
+] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39
 
-] [41] [42]
-
-LaTeX Warning: Reference `cor-consecuencias-arquimedianas' on page 43 undefined on input line 2819.
-
-
-LaTeX Warning: Reference `cor-consecuencias-arquimedianas' on page 43 undefined on input line 2834.
-
-[43] [44] [45]
+] [40] [41] [42] [43] [44]
 chapter 3.
-<./img/topologia-reales/recta-real.png, id=705, 551.43pt x 180.18pt>
+<./img/topologia-reales/recta-real.png, id=736, 551.43pt x 180.18pt>
 File: ./img/topologia-reales/recta-real.png Graphic file (type png)
 <use ./img/topologia-reales/recta-real.png>
-Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 2979.
+Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 2982.
 (pdftex.def)             Requested size: 418.26656pt x 136.66876pt.
-[46
+[45
 
- <./img/topologia-reales/recta-real.png>] [47] [48] [49] [50] [51]
-
-LaTeX Warning: Reference `thm-intervalos-anidados' on page 52 undefined on input line 3433.
-
-
-LaTeX Warning: Reference `thm-intervalos-anidados' on page 52 undefined on input line 3451.
-
-[52] [53]
+ <./img/topologia-reales/recta-real.png>] [46] [47] [48] [49] [50] [51] [52] [53]
 chapter 4.
 [54
 
-] (./manual-analisis.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] [55] [56] [57] [58] [59] [60] (./index.aux) ) 
 Here is how much of TeX's memory you used:
- 38053 strings out of 476932
- 773369 string characters out of 5824858
- 1292926 words of memory out of 5000000
- 57687 multiletter control sequences out of 15000+600000
- 552664 words of font info for 243 fonts, out of 8000000 for 9000
+ 38172 strings out of 476932
+ 775354 string characters out of 5824858
+ 1302035 words of memory out of 5000000
+ 57724 multiletter control sequences out of 15000+600000
+ 553195 words of font info for 248 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 122i,25n,120p,10682b,1051s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,25n,120p,10672b,1051s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/home/alf/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/home/alf/texmf/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</home/alf/texmf/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx12.pfb></home/alf/texmf/fonts/type1/public/lm/lmex10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi6.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi8.pfb></home/alf/texmf/fonts/type1/public/lm/lmr10.pfb></home/alf/texmf/fonts/type1/public/lm/lmr6.pfb></home/alf/texmf/fonts/type1/public/lm/lmr8.pfb></home/alf/texmf/fonts/type1/public/lm/lmri10.pfb></home/alf/texmf/fonts/type1/public/lm/lmss12.pfb></home/alf/texmf/fonts/type1/public/lm/lmssbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb></home/alf/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manual-analisis.pdf (54 pages, 520313 bytes).
+Output written on index.pdf (60 pages, 554050 bytes).
 PDF statistics:
- 1100 PDF objects out of 1200 (max. 8388607)
- 982 compressed objects within 10 object streams
- 595 named destinations out of 1000 (max. 500000)
- 43237 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1242 PDF objects out of 1440 (max. 8388607)
+ 1116 compressed objects within 12 object streams
+ 666 named destinations out of 1000 (max. 500000)
+ 43245 words of extra memory for PDF output out of 51595 (max. 10000000)
 

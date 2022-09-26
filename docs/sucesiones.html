@@ -195,6 +195,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!-- LTeX: language = es-ES -->
+<div>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\mathbb{N}}{\mathbb{N}}
+\newcommand{\mathbb{Z}}{\mathbb{Z}}
+\newcommand{\mathbb{Q}}{\mathbb{Q}}
+\newcommand{\mathbb{R}}{\mathbb{R}}
+\newcommand{\mathbb{C}}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
+\]</span></p>
+</div>
+</div>
 <p>Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático. En este capítulo se presenta el concepto de sucesión de números reales, el concepto de límite y algunos resultados importantes sobre la convergencia de sucesiones.</p>
 <section id="concepto-de-sucesión" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="concepto-de-sucesión"><span class="header-section-number">4.1</span> Concepto de sucesión</h2>
@@ -248,7 +265,7 @@ Precaución
 </div>
 <p>Si una sucesión tiene límite se dice que es <em>convergente</em>, y en caso contrario se dice que es <em>divergente</em>.</p>
 <div id="exm-limite-sucesion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="cuerpo-reales.html#thm-propiedad-arquimediana">Teorema&nbsp;<span>2.3</span></a>, se tiene que existe un $k, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="#thm-propiedad-arquimediana">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-propiedad-arquimediana</span></a>, se tiene que existe un <span class="math inline">\(k\in\mathbb{N}\)</span>, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
 <p>Sin embargo, la sucesión <span class="math inline">\((n)_{n=1}^\infty\)</span> diverge.</p>
 </div>
 <div id="thm-unicidad-limite-sucesion" class="theorem">
@@ -296,6 +313,190 @@ Demostración
 </div>
 </div>
 </div>
+</div>
+<div id="prp-convergencia-sucesion-acotada" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.2 </strong></span>Sean <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((y_n)_{n=1}^\infty\)</span> dos sucesiones de números reales tales que <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a 0. Si existe <span class="math inline">\(x, c\in\mathbb{R}\)</span> con <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|x_n-x| &lt; c|y_n|\)</span> <span class="math inline">\(\forall n\in \mathbb{N}\)</span>, entonces <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(\varepsilon'=\frac{\varepsilon}{c}&gt;0\)</span>. Como <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a 0, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|y_n-0|=|y_n|&lt;\varepsilon'\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Así pues, <span class="math inline">\(\forall n\geq k\)</span> se tiene que <span class="math inline">\(|x_n-x|&lt;c|y_n|&lt;c\varepsilon'=c\frac{\varepsilon}{c}=\varepsilon\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-convergencia-sucesion-acotada" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.5 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{2^n}\right)_{n=1}^\infty\)</span> converge a 0. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(0&lt;n&lt;2^n\)</span>, de donde se deduce <span class="math inline">\(0&lt;\frac{1}{2^n}&lt;\frac{1}{n}\)</span>, lo que equivale a <span class="math inline">\(|\frac{1}{2^n}-0|&lt;\frac{1}{n}\)</span>. Así pues, aplicando el teorema anterior, se concluye que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{2^n}=0\)</span>.</p>
+<p>Veamos ahora que <span class="math inline">\(\lim_{n\to\infty}n^{1/n}=1\)</span>. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>, con <span class="math inline">\(n&gt;1\)</span>, se cumple que <span class="math inline">\(n^{1/n}&gt;1\)</span>, de manera que se puede escribir <span class="math inline">\(n^{1/n} = 1+k_n\)</span>, donde <span class="math inline">\(k_n=n^{1/n}-1\)</span>. Aplicando ahora el teorema del binomio, se tiene que <span class="math inline">\(0&lt;k_n&lt;\sqrt{2/n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Por tanto, <span class="math inline">\(|n^{1/n}-1| = k_n &lt; \sqrt{2/n}=\sqrt{2}\frac{1}{\sqrt{n}}\)</span>, y como <span class="math inline">\(\sqrt{2}&gt;0\)</span> y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0\)</span>, por el teorema anterior se tiene que <span class="math inline">\(\lim_{n\to\infty} n^{1/n} = 1\)</span>.</p>
+</div>
+<div id="def-sucesion-acotada" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.5 (Sucesión acotada) </strong></span>Se dice que una sucesión de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está <em>acotada</em> si existe <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|x_n|\leq c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+</div>
+<div id="thm-convergencia-sucesion-acotada" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.2 </strong></span>Toda sucesión de números reales convergente está acotada.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión convergente a <span class="math inline">\(x\)</span>. Entonces, si tomamos <span class="math inline">\(\varepsilon=1\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;1\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Por la desigualdad triangular (<a href="#prp-propiedades-valor-absoluto">Proposición&nbsp;<span class="quarto-unresolved-ref">prp-propiedades-valor-absoluto</span></a>) se tiene que <span class="math inline">\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|&lt;1 + |x|\)</span>, de donde se deduce que <span class="math inline">\(|x_n|&lt;|x|+1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Si se toma <span class="math inline">\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\)</span> se tiene que si <span class="math inline">\(n&lt;k\)</span> entonces <span class="math inline">\(|x_n|\leq c\)</span> y si <span class="math inline">\(n\geq k\)</span> entonces <span class="math inline">\(|x_n| &lt;|x|+1\leq c\)</span>, de modo que <span class="math inline">\(\forall n\in\mathbb{N}\)</span> <span class="math inline">\(|x_n|\leq c\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está acotada.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-sucesion-acotada" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.6 </strong></span>La sucesión <span class="math inline">\((n)_{n=1}^\infty\)</span> diverge ya que no está acotada. Si estuviese acotada existiría un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|n|\leq c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, lo que infringe la propiedad arquimediana.</p>
+</div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El otro sentido de la implicación no se cumple, es decir, no toda sucesión acotada es convergente. Por ejemplo, la sucesión <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span>.</p>
+</div>
+</div>
+<div id="prp-algebra-limites-sucesiones" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.3 </strong></span>Sean <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((y_n)_{n=1}^\infty\)</span> dos sucesiones de números reales tales que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span> e <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(y\)</span>. Entonces se cumple:</p>
+<ol type="a">
+<li><p><span class="math inline">\((x_n)_{n=1}^\infty\)</span> + <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x+y\)</span>.</p></li>
+<li><p><span class="math inline">\((x_n)_{n=1}^\infty\)</span> - <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x-y\)</span>.</p></li>
+<li><p><span class="math inline">\((x_n)_{n=1}^\infty\)</span> <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(xy\)</span>.</p></li>
+<li><p><span class="math inline">\(c(x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(cx\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(y_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> e <span class="math inline">\(y\neq 0\)</span>, <span class="math inline">\(\frac{(x_n)_{n=1}^\infty}{(y_n)_{n=1}^\infty}\)</span> converge a <span class="math inline">\(\frac{x}{y}\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-algebra-limites-sucesiones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.7 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{2n+1}{n+3}\right)_{n=1}^\infty\)</span> converge a 2.</p>
+<p><span class="math display">\[\begin{align}
+\lim_{n\to\infty}\frac{2n+1}{n+3} &amp;=  \lim_{n\to\infty}\frac{2+\frac{1}{n}}{1+\frac{3}{n}} = \frac{\lim_{n\to\infty}2+\frac{1}{n}}{\lim_{n\to\infty}1+\frac{3}{n}} = \\
+&amp;=\frac{\lim_{n\to\infty} 2 + \lim_{n\to\infty}\frac{1}{n}}{\lim_{n\to\infty} 1 + \lim_{n\to\infty}\frac{3}{n}} = \frac{2+0}{1+0} = 2.
+\end{align}\]</span></p>
+</div>
+<div id="thm-compresion-sucesiones" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.3 (Compresión de sucesiones convergentes) </strong></span>Dadas tres sucesiones de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span>, tales que <span class="math inline">\(x_n\leq y_n\leq z_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span> convergen a <span class="math inline">\(x\)</span>, entonces <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\lim_{n\to\infty} x_n = \lim_{n\to\infty} z_n=x\)</span> y sea <span class="math inline">\(\varepsilon&gt;0\)</span>. Si tomamos <span class="math inline">\(\varepsilon_1=\frac{\varepsilon}{4}&gt;0\)</span>, como <span class="math inline">\((z_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, existe <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|z_n-x|&lt;\varepsilon_1\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>. Y si tomamos <span class="math inline">\(\varepsilon_2 = \frac{\varepsilon}{2}&gt;0\)</span>, como <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, existe <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon_2\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>. Entonces, si se toma <span class="math inline">\(k=\max(k_1,k_2)\)</span>, se cumple que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
+<p><span class="math display">\[\begin{align}
+|y_n-x| &amp;= |y_n-z_n+z_n-x| \\
+&amp;\leq |y_n-z_n|+|z_n-x| \tag{prop.2.4 (f)}\\
+&amp;= z_n-y_n+|z_n-x| \\
+&amp;\leq z_n-x_n+|z_n-x| \\
+&amp;= |z_n-x_n|+|z_n-x| \\
+&amp;= |z_n-x+x-x_n|+|z_n-x| \\
+&amp;\leq |z_n-x|+|x-x_n|+|z_n-x| \\
+&amp;= 2|z_n-x|+|x-x_n| \tag{prop.2.4 (f)}\\
+&amp;= 2|z_n-x|+|x_n-x| \tag{prop.2.4 (b)}\\
+&amp;&lt; 2\varepsilon_1+\varepsilon_2 = 2\frac{\varepsilon}{4}+\frac{\varepsilon}{2}=\varepsilon.
+\end{align}\]</span></p>
+<p>Por tanto, <span class="math inline">\(\lim_{n\to\infty} y_n=x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-compresion-sucesiones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.8 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{2n}{n^2+1}\right)_{n=1}^\infty\)</span> converge a 0. Para ello basta con ver que</p>
+<p><span class="math display">\[
+0\leq \frac{2n}{n^2+1} \leq \frac{2n}{n^2}\leq \frac{2}{n}\ \forall n\in\mathbb{N}
+\]</span></p>
+<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{2}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{2n}{n^2+1}=0\)</span>.</p>
+<p>Veamos ahora que la sucesión <span class="math inline">\(\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty\)</span> también converge a 0. De nuevo basta con ver que</p>
+<p><span class="math display">\[
+0\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
+\]</span></p>
+<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{\operatorname{sen}}{n}=0\)</span>.</p>
+</div>
+<div id="prp-limite-cociente-sucesiones" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.4 </strong></span>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de números reales estrictamente positivos tal que la sucesión <span class="math inline">\(\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty\)</span> converge a <span class="math inline">\(l&lt;1\)</span>, entonces <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a 0.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(y\)</span> tal que <span class="math inline">\(l&lt;y&lt;1\)</span> y tomemos <span class="math inline">\(\varepsilon=y-l&gt;0\)</span>. Como <span class="math inline">\(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=l\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, se tiene que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
+<p><span class="math display">\[\begin{align}
+|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon &amp;\Rightarrow
+-\varepsilon&lt;\frac{x_{n+1}}{x_n}-l\leq \varepsilon\\
+&amp;\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\
+&amp;\Rightarrow x_{n+1}&lt;yx_n.
+\end{align}\]</span></p>
+<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-compresion-sucesiones</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-limite-cociente-sucesiones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.9 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{n}{2^n}\right)_{n=1}^\infty\)</span> converge a 0.</p>
+<p><span class="math display">\[\begin{align}
+\lim_{n\to\infty}\frac{x_{n+1}}{x_n} &amp;= \lim_{n\to\infty}\frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}} = \lim_{n\to\infty}\frac{1}{2}\frac{n+1}{n} \\
+&amp;= \lim_{n\to\infty} \frac{1}{2}\left(\frac{1}{n}+1\right) = \lim_{n\to\infty} \frac{1}{2}+\frac{1}{2n} \\
+&amp;= \lim_{n\to\infty} \frac{1}{2} + \lim_{n\to\infty} \frac{1}{2n} = \frac{1}{2}&lt;1.
+\end{align}\]</span></p>
+<p>Así pues, por la proposición anterior, <span class="math inline">\(\lim_{n\to\infty}\frac{n}{2^n} = 0\)</span>.</p>
 </div>
 
 

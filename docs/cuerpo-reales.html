@@ -212,6 +212,7 @@ ul.task-list li input[type="checkbox"] {
 \DeclareMathOperator{\operatorname{Fr}}{Fr}
 \DeclareMathOperator{\Adh}{Adh}
 \DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
 \]</span></p>
 </div>
 </div>
@@ -859,14 +860,14 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A=\{y\in\mathbb{R}: y&gt;0, y^2&lt;a\}\)</span>. <span class="math inline">\(A\)</span> está acotado superiormente ya que si <span class="math inline">\(a&gt;1\)</span>, el propio <span class="math inline">\(a\)</span> es una cota superior y si no <span class="math inline">\(1\)</span> es una cota superior. Por tanto, según el axioma del supremo, existe <span class="math inline">\(x\in \mathbb{R}\)</span> tal que <span class="math inline">\(x=\sup(A)&gt;0\)</span>. Vamos a probar que <span class="math inline">\(x^2=a\)</span>.</p>
-<p>Supongamos primero que <span class="math inline">\(x^2&lt;a\)</span>. Entonces <span class="math inline">\(a-x^2&gt;0\)</span> y <span class="math inline">\(\frac{a-x^2}{2x+1}&gt;0\)</span> ya que <span class="math inline">\(2x+1&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Por el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span>2.1</span></a> se tiene que existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;\frac{a-x^2}{2x+1}&gt;0\)</span>.</p>
+<p>Supongamos primero que <span class="math inline">\(x^2&lt;a\)</span>. Entonces <span class="math inline">\(a-x^2&gt;0\)</span> y <span class="math inline">\(\frac{a-x^2}{2x+1}&gt;0\)</span> ya que <span class="math inline">\(2x+1&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Por el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span class="quarto-unresolved-ref">cor-consecuencias-arquimedianas</span></a> se tiene que existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;\frac{a-x^2}{2x+1}&gt;0\)</span>.</p>
 <p>Por otro lado, se tiene</p>
 <p><span class="math display">\[\begin{align}
 \left(x+\frac{1}{n}\right)^2 &amp;= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) &lt;\\
 &amp;&lt; x^2 + \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
 \end{align}\]</span></p>
 <p>Por tanto, <span class="math inline">\(x+\frac{1}{n}\in A\)</span>, pero <span class="math inline">\(x+\frac{1}{n}&gt;x\)</span> lo que contradice que <span class="math inline">\(x\)</span> sea cota superior de <span class="math inline">\(A\)</span>.</p>
-<p>Supongamos ahora que <span class="math inline">\(x^2&gt;a\)</span>. Entonces <span class="math inline">\(x^2-a&gt;0\)</span> y <span class="math inline">\(\frac{x^2-a}{2x}&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Aplicando de nuevo el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span>2.1</span></a> se tiene que existe <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{m}&lt;\frac{x^2-a}{2x}\)</span> y por tanto <span class="math inline">\(\frac{2x}{m}&lt;x^2-a\)</span>.</p>
+<p>Supongamos ahora que <span class="math inline">\(x^2&gt;a\)</span>. Entonces <span class="math inline">\(x^2-a&gt;0\)</span> y <span class="math inline">\(\frac{x^2-a}{2x}&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Aplicando de nuevo el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span class="quarto-unresolved-ref">cor-consecuencias-arquimedianas</span></a> se tiene que existe <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{m}&lt;\frac{x^2-a}{2x}\)</span> y por tanto <span class="math inline">\(\frac{2x}{m}&lt;x^2-a\)</span>.</p>
 <p>Por otro lado, se tiene</p>
 <p><span class="math display">\[\begin{align}
 \left(x-\frac{1}{m}\right)^2 &amp;= x^2 + \frac{1}{m^2}-\frac{2x}{m} &gt; x^2 - \frac{2x}{m} &gt; x^2 -(x^2-a) = a.
