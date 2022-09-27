@@ -251,10 +251,10 @@ Precaución
 </div>
 <div id="exm-operaciones-sucesiones" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.3 </strong></span>Dadas las sucesiones <span class="math inline">\((n)_{n=1}^\infty\)</span> y <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span> se tiene:</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{align*}
 (n)_{n=1}^\infty + ((-1)^n)_{n=1}^\infty &amp;= (n + (-1)^n)_{n=1}^\infty = (0, 3, 2, 5, 4, \ldots)\\
 (n)_{n=1}^\infty ((-1)^n)_{n=1}^\infty &amp;= (n (-1)^n)_{n=1}^\infty = (-1, 2, -3, 4, -5, \ldots)
-\end{align}\]</span></p>
+\end{align*}\]</span></p>
 </div>
 </section>
 <section id="límite-de-una-sucesión" class="level2" data-number="4.2">
@@ -265,7 +265,7 @@ Precaución
 </div>
 <p>Si una sucesión tiene límite se dice que es <em>convergente</em>, y en caso contrario se dice que es <em>divergente</em>.</p>
 <div id="exm-limite-sucesion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="#thm-propiedad-arquimediana">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-propiedad-arquimediana</span></a>, se tiene que existe un <span class="math inline">\(k\in\mathbb{N}\)</span>, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="cuerpo-reales.html#thm-propiedad-arquimediana">Teorema&nbsp;<span>2.3</span></a>, se tiene que existe un <span class="math inline">\(k\in\mathbb{N}\)</span>, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
 <p>Sin embargo, la sucesión <span class="math inline">\((n)_{n=1}^\infty\)</span> diverge.</p>
 </div>
 <div id="thm-unicidad-limite-sucesion" class="theorem">
@@ -359,7 +359,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión convergente a <span class="math inline">\(x\)</span>. Entonces, si tomamos <span class="math inline">\(\varepsilon=1\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;1\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
-<p>Por la desigualdad triangular (<a href="#prp-propiedades-valor-absoluto">Proposición&nbsp;<span class="quarto-unresolved-ref">prp-propiedades-valor-absoluto</span></a>) se tiene que <span class="math inline">\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|&lt;1 + |x|\)</span>, de donde se deduce que <span class="math inline">\(|x_n|&lt;|x|+1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Si se toma <span class="math inline">\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\)</span> se tiene que si <span class="math inline">\(n&lt;k\)</span> entonces <span class="math inline">\(|x_n|\leq c\)</span> y si <span class="math inline">\(n\geq k\)</span> entonces <span class="math inline">\(|x_n| &lt;|x|+1\leq c\)</span>, de modo que <span class="math inline">\(\forall n\in\mathbb{N}\)</span> <span class="math inline">\(|x_n|\leq c\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está acotada.</p>
+<p>Por la desigualdad triangular (<a href="cuerpo-reales.html#prp-propiedades-valor-absoluto">Proposición&nbsp;<span>2.4</span></a>) se tiene que <span class="math inline">\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|&lt;1 + |x|\)</span>, de donde se deduce que <span class="math inline">\(|x_n|&lt;|x|+1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Si se toma <span class="math inline">\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\)</span> se tiene que si <span class="math inline">\(n&lt;k\)</span> entonces <span class="math inline">\(|x_n|\leq c\)</span> y si <span class="math inline">\(n\geq k\)</span> entonces <span class="math inline">\(|x_n| &lt;|x|+1\leq c\)</span>, de modo que <span class="math inline">\(\forall n\in\mathbb{N}\)</span> <span class="math inline">\(|x_n|\leq c\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está acotada.</p>
 </div>
 </div>
 </div>
@@ -410,10 +410,10 @@ Demostración
 </div>
 <div id="exm-algebra-limites-sucesiones" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.7 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{2n+1}{n+3}\right)_{n=1}^\infty\)</span> converge a 2.</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{align*}
 \lim_{n\to\infty}\frac{2n+1}{n+3} &amp;=  \lim_{n\to\infty}\frac{2+\frac{1}{n}}{1+\frac{3}{n}} = \frac{\lim_{n\to\infty}2+\frac{1}{n}}{\lim_{n\to\infty}1+\frac{3}{n}} = \\
 &amp;=\frac{\lim_{n\to\infty} 2 + \lim_{n\to\infty}\frac{1}{n}}{\lim_{n\to\infty} 1 + \lim_{n\to\infty}\frac{3}{n}} = \frac{2+0}{1+0} = 2.
-\end{align}\]</span></p>
+\end{align*}\]</span></p>
 </div>
 <div id="thm-compresion-sucesiones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 4.3 (Compresión de sucesiones convergentes) </strong></span>Dadas tres sucesiones de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span>, tales que <span class="math inline">\(x_n\leq y_n\leq z_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span> convergen a <span class="math inline">\(x\)</span>, entonces <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
@@ -432,7 +432,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\lim_{n\to\infty} x_n = \lim_{n\to\infty} z_n=x\)</span> y sea <span class="math inline">\(\varepsilon&gt;0\)</span>. Si tomamos <span class="math inline">\(\varepsilon_1=\frac{\varepsilon}{4}&gt;0\)</span>, como <span class="math inline">\((z_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, existe <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|z_n-x|&lt;\varepsilon_1\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>. Y si tomamos <span class="math inline">\(\varepsilon_2 = \frac{\varepsilon}{2}&gt;0\)</span>, como <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, existe <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon_2\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>. Entonces, si se toma <span class="math inline">\(k=\max(k_1,k_2)\)</span>, se cumple que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{align*}
 |y_n-x| &amp;= |y_n-z_n+z_n-x| \\
 &amp;\leq |y_n-z_n|+|z_n-x| \tag{prop.2.4 (f)}\\
 &amp;= z_n-y_n+|z_n-x| \\
@@ -443,7 +443,7 @@ Demostración
 &amp;= 2|z_n-x|+|x-x_n| \tag{prop.2.4 (f)}\\
 &amp;= 2|z_n-x|+|x_n-x| \tag{prop.2.4 (b)}\\
 &amp;&lt; 2\varepsilon_1+\varepsilon_2 = 2\frac{\varepsilon}{4}+\frac{\varepsilon}{2}=\varepsilon.
-\end{align}\]</span></p>
+\end{align*}\]</span></p>
 <p>Por tanto, <span class="math inline">\(\lim_{n\to\infty} y_n=x\)</span>.</p>
 </div>
 </div>
@@ -459,7 +459,7 @@ Demostración
 <p><span class="math display">\[
 0\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
 \]</span></p>
-<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{\operatorname{sen}}{n}=0\)</span>.</p>
+<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0\)</span>.</p>
 </div>
 <div id="prp-limite-cociente-sucesiones" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 4.4 </strong></span>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de números reales estrictamente positivos tal que la sucesión <span class="math inline">\(\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty\)</span> converge a <span class="math inline">\(l&lt;1\)</span>, entonces <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a 0.</p>
@@ -478,24 +478,24 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(y\)</span> tal que <span class="math inline">\(l&lt;y&lt;1\)</span> y tomemos <span class="math inline">\(\varepsilon=y-l&gt;0\)</span>. Como <span class="math inline">\(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=l\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, se tiene que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{align*}
 |\frac{x_{n+1}}{x_n}-l|\leq \varepsilon &amp;\Rightarrow
 -\varepsilon&lt;\frac{x_{n+1}}{x_n}-l\leq \varepsilon\\
 &amp;\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\
 &amp;\Rightarrow x_{n+1}&lt;yx_n.
-\end{align}\]</span></p>
-<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-compresion-sucesiones</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
+\end{align*}\]</span></p>
+<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones">Teorema&nbsp;<span>4.3</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="exm-limite-cociente-sucesiones" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.9 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{n}{2^n}\right)_{n=1}^\infty\)</span> converge a 0.</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{align*}
 \lim_{n\to\infty}\frac{x_{n+1}}{x_n} &amp;= \lim_{n\to\infty}\frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}} = \lim_{n\to\infty}\frac{1}{2}\frac{n+1}{n} \\
 &amp;= \lim_{n\to\infty} \frac{1}{2}\left(\frac{1}{n}+1\right) = \lim_{n\to\infty} \frac{1}{2}+\frac{1}{2n} \\
 &amp;= \lim_{n\to\infty} \frac{1}{2} + \lim_{n\to\infty} \frac{1}{2n} = \frac{1}{2}&lt;1.
-\end{align}\]</span></p>
+\end{align*}\]</span></p>
 <p>Así pues, por la proposición anterior, <span class="math inline">\(\lim_{n\to\infty}\frac{n}{2^n} = 0\)</span>.</p>
 </div>
 

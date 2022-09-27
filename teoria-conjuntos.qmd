@@ -140,12 +140,10 @@ $$A-B = \{x\,:\, x\in A\mbox{ y }x\not\in B\}.$$
 ## Diferencia simétrica
 Dados dos conjuntos $A$ y $B$, se llama _diferencia simétrica_ de $A$ y $B$, y se denota $A\triangle B$, al conjunto formado por los elementos que pertenecen a $A$ o $B$, pero no a ambos a la vez, es decir,
 
-$$
-\begin{aligned}
+\begin{align*}
 A\triangle B &= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\ 
 &= (A-B) \cup (B-A) = (A\cup B)-(A\cap B)
-\end{aligned}
-$$
+\end{align*}
 :::
 
 ![Diferencia simétrica de conjuntos](img/teoria-conjuntos/diferencia-simetrica.png){width=6cm}

@@ -74,7 +74,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\newfontfamily\Ubuntu[Mapping=tex-text]{Ubuntu}
+%\newfontfamily\Ubuntu[Mapping=tex-text]{Ubuntu}
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\QQ}{\mathbb{Q}}
@@ -85,6 +85,7 @@
 \DeclareMathOperator{\operatorname{Fr}}{Fr}
 \DeclareMathOperator{\Adh}{Adh}
 \DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -142,16 +143,16 @@
 \floatname{codelisting}{Listado}
 \newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
 \usepackage{amsthm}
-\theoremstyle{plain}
-\newtheorem{proposition}{Proposición}[chapter]
-\theoremstyle{plain}
-\newtheorem{theorem}{Teorema}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Ejemplo}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definición}[chapter]
 \theoremstyle{plain}
 \newtheorem{corollary}{Corolario}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Ejemplo}[chapter]
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposición}[chapter]
 \theoremstyle{remark}
 \renewcommand*{\proofname}{Prueba}
 \newtheorem*{remark}{Observación}
@@ -208,19 +209,21 @@
 
 \begin{document}
 \begin{titlepage}
+
+%\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.8]{img/background2}}} % Imagen de fondo, requiere el paquete eso-pic.
 \begin{center}
 \vspace*{5cm}
 
 \Huge
-{\Ubuntu \textbf{Manual de Análisis Matemático Real}}
+{\textbf{\textsf{Manual de Análisis Matemático Real}}}
 
 \vspace{0.5cm}
 \LARGE
-{\Ubuntu \textbf{para Ciencias e Ingenierías}}
+{\textbf{\textsf{para Ciencias e Ingenierías}}}
 
 \vspace{1.5cm}
 
-\includegraphics[width=0.4\textwidth]{img/logos/pi.png}
+\includegraphics[width=0.4\textwidth]{img/logos/infinito.png}
 \end{center}
 
 \vfill
@@ -232,7 +235,7 @@ Sánchez
 Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \end{tabular}
 \end{flushleft}
-\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, interior hidden, boxrule=0pt, enhanced, breakable]}{\end{tcolorbox}}\fi
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, frame hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Indice de contenidos}
 {
@@ -590,12 +593,10 @@ de \(A\) y \(B\), y se denota \(A\triangle B\), al conjunto formado por
 los elementos que pertenecen a \(A\) o \(B\), pero no a ambos a la vez,
 es decir,
 
-\[
-\begin{aligned}
+\begin{align*}
 A\triangle B &= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\ 
 &= (A-B) \cup (B-A) = (A\cup B)-(A\cap B)
-\end{aligned}
-\]
+\end{align*}
 
 \end{definition}
 
@@ -954,7 +955,7 @@ mínimo.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -1296,7 +1297,7 @@ El cardinal del conjunto potencia de un conjunto \(A\) es
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -1510,7 +1511,7 @@ estrictamente mayor que el cardinal de \(A\), es decir,
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -1559,7 +1560,7 @@ al del conjunto potencia del conjunto de los números naturales
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -1810,7 +1811,7 @@ El número \(\sqrt{2}\) no es racional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -1847,7 +1848,7 @@ Entre dos números racionales siempre existe un número irracional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2080,7 +2081,7 @@ siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2092,123 +2093,123 @@ Veamos la prueba de cada propiedad.
   Supongamos que existe \(b\in\mathbb{R}\) tal que \(b+a=a\)
   \(\forall a\in\mathbb{R}\). Entonces
 
-  \begin{align}
+  \begin{align*}
    b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \\
    & \Leftrightarrow b+0 = 0 \tag{\small{axioma 5}}\\
    &\Leftrightarrow b=0 \tag{\small{axioma 4}}
-   \end{align}
+   \end{align*}
 \item
   Supongamos que existe \(b\in\mathbb{R}\) tal que \(b\cdot a=a\)
   \(\forall a\in\mathbb{R}\). Entonces
 
-  \begin{align}
+  \begin{align*}
    b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \\
    & \Leftrightarrow b\cdot 1 = 1 \tag{\small{axioma 10}}\\
    &\Leftrightarrow b=1 \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in \mathbb{R}\) tales que \(a+b=0\). Entonces
 
-  \begin{align}
+  \begin{align*}
    a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \\
    &\Leftrightarrow (-a)+a+b = -a  \tag{\small{axioma 4}}\\
    & \Leftrightarrow 0+b=-a \tag{\small{axioma 5}}\\ 
    & \Leftrightarrow b = -a \tag{\small{axioma 4}}
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in \mathbb{R}\) tales que \(a\cdot b=1\). Entonces
 
-  \begin{align}
+  \begin{align*}
    a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \\
    &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1} \tag{\small{axioma 9}} \\
    & \Leftrightarrow 1\cdot b=a^{-1} \tag{\small{axioma 10}}\\ 
    & \Leftrightarrow b = a^{-1} \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \item
   Para cualquier \(a\in\mathbb{R}\), se tiene
 
-  \begin{align}
+  \begin{align*}
    a &= a\cdot 1 \tag{\small{axioma 9}}\\
    &= a\cdot (1+0) \tag{\small{axioma 4}}\\
    &= (a\cdot 1) + (a\cdot 0) \tag{\small{axioma 11}}\\
    &= a + (a\cdot 0) \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 
   Así pues, por la propiedad (a) se tiene que \(a\cdot 0 =0\).
 \item
   Para cualquier \(a\in\mathbb{R}\), se tiene
 
-  \begin{align}
+  \begin{align*}
    a+(-1)\cdot a &= 1\cdot a + (-1)\cdot a \tag{\small{axioma 9}} \\ 
    &= (1+(-1))\cdot a \tag{\small{axioma 11}}\\ 
    &= 0\cdot a \tag{\small{axioma 5}}\\ 
    &= 0 \tag{\small{prop. e}}
-   \end{align}
+   \end{align*}
 
   Como \(a+(-1)\cdot a=0\), aplicando la propiedad (c) se tiene
   \((-1)\cdot a = -a\).
 \item
   Para cualquier \(a\in\mathbb{R}\), se tiene
 
-  \begin{align}
+  \begin{align*}
    a+(-a)=0 & \Leftrightarrow (-a)+a=0 \tag{\small{axiomas 5 y 3}} \\ 
    &\Leftrightarrow a=-(-a)\tag{\small{prop. c}}
-   \end{align}
+   \end{align*}
 \item
   Para cualesquiera \(a,b\in\mathbb{R}\),se tiene
 
-  \begin{align}
+  \begin{align*}
    (-a)\cdot (-b)&=((-1)\cdot a)\cdot ((-1)\cdot b) \tag{\small{prop. f}}\\ 
    &= ((-1)\cdot(-1))\cdot a\cdot  b\tag{\small{axioma 7}}\\ 
    &= -(-1)\cdot a\cdot b \tag{\small{prop. f}}\\ 
    &= 1\cdot a\cdot b \tag{\small{prop. g}} \\
    &= a\cdot b \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \item
   Sea \(a\in \mathbb{R}\) con \(a\neq 0\). Supongamos ahora que
   \(a^{-1}=0\). Entonces,
 
-  \begin{align}
+  \begin{align*}
    0 &= a\cdot 0 \tag{\small{prop. e}}\\ 
    &= a\cdot a^{-1} \\
    &= 1 \tag{\small{axioma 10}}
-   \end{align}
+   \end{align*}
 
   Así pues, llegamos a que \(0=1\), lo cual es absurdo, por lo que
   \(a^{-1}\neq 0\).
 \item
   Para cualquier \(a\in\mathbb{R}\), se tiene
 
-  \begin{align}
+  \begin{align*}
    a\cdot a^{-1}=1 &\Leftrightarrow a^{-1}\cdot a=1 \tag{\small{axiomas 10 y 8}} \\ 
    &\Leftrightarrow a=(a^{-1})^{-1}\tag{\small{prop. d}}
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b,c\in\mathbb{R}\) tales que \(a\cdot b=a\cdot c\) y
   \(a\neq 0\). Entonces se tiene
 
-  \begin{align}
+  \begin{align*}
    a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\\ 
    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c \tag{\small{axioma 7}}\\
    &\Leftrightarrow 1\cdot b = 1\cdot c \tag{\small{axioma 10}}\\
    &\Leftrightarrow b = c \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in\mathbb{R}\) tales que \(a\cdot b=0\). Supongamos que
   \(a\neq 0\), entonces se tiene
 
-  \begin{align}
+  \begin{align*}
    a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\\ 
    &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0 \tag{\small{prop. e}}\\ 
    &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0 \tag{\small{axioma 7}}\\
    &\Leftrightarrow 1\cdot b = 0 \tag{\small{axioma 10}}\\
    &\Leftrightarrow b = 0 \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in \mathbb{R}\), tales que \(a\neq 0\) y \(b\neq 0\).
   Entonces, por la propiedad (l) se tiene \(a\cdot b\neq 0\), y se tiene
 
-  \begin{align}
+  \begin{align*}
    (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \\ 
    &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 9}}\\ 
    &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \tag{\small{axioma 7}}\\
@@ -2219,7 +2220,7 @@ Veamos la prueba de cada propiedad.
    &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 7}}\\
    &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 10}}\\
    & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 \end{enumerate}
 
 \end{proof}
@@ -2304,7 +2305,7 @@ decir, cumple las propiedades
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2327,12 +2328,12 @@ antisimétrica y transitiva.
   \(c-b\geq 0\). Supongamos que \(b-a> 0\) y \(c-b>0\). Entonces, por el
   axioma 12 se tiene
 
-  \begin{align}
+  \begin{align*}
    (b-a)+(c-b)>0 &\tag{\small{axioma 2}}\\
    &\Leftrightarrow (b-b)+(c-a)>0 &\tag{\small{axioma 5}}\\
    &\Leftrightarrow 0+(c-a)>0 &\tag{\small{axioma 4}}\\
    &\Leftrightarrow c-a>0 \Leftrightarrow a\leq c.
-   \end{align}
+   \end{align*}
 
   Si \(b-a=0\), entonces \(a=b\) y como \(b\leq c\) resulta evidente que
   \(a\leq c\). El mismo razonamiento puede aplicarse si \(c-b=0\).
@@ -2398,7 +2399,7 @@ propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2418,13 +2419,13 @@ Veamos la prueba de cada propiedad.
   Si \(-a\in \mathbb{R}^+\), entonces, de nuevo por el axioma 13, se
   tiene
 
-  \begin{align}
+  \begin{align*}
    -a\in \mathbb{R}^+ &\Leftrightarrow (-a)\cdot (-a)\in\mathbb{R}^+ \tag{\small{axioma 13}}\\ 
    &\Leftrightarrow (-1)\cdot a\cdot (-1)\cdot a\in\mathbb{R}^+ \tag{\small{prop. f}}\\
    &\Leftrightarrow (-1)\cdot (-1)\cdot a\cdot a\in\mathbb{R}^+ \tag{\small{axioma 7}}\\
    &\Leftrightarrow 1\cdot a^2 \in\mathbb{R}^+ \tag{\small{prop. h}}\\
    &\Leftrightarrow a^2\in\mathbb{R}^+ \tag{\small{axioma 9}}
-   \end{align}
+   \end{align*}
 
   y se concluye de nuevo que \(a^2>0\).
 \item
@@ -2440,53 +2441,53 @@ Veamos la prueba de cada propiedad.
   Sean \(a,b\in\mathbb{R}\) tales que \(a<b\). Entonces \(b-a> 0\). Si
   tomamos ahora cualquier \(c\in\mathbb{R}\) se cumple que
 
-  \begin{align}
+  \begin{align*}
    b-a > 0 &\Leftrightarrow b+0-a > 0 \tag{\small{axioma 4}}\\ 
    &\Leftrightarrow b+(c-c)-a > 0  \tag{\small{axioma 5}}\\
    &\Leftrightarrow (b+c)-(a+c) > 0 \tag{\small{axioma 2}}\\ 
    &\Leftrightarrow a+c < b+c.
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b,c,d\in\mathbb{R}\) tales que \(a < b\) y \(c < d\).
   Entonces se tiene
 
-  \begin{align}
+  \begin{align*}
    b-a > 0 \mbox{ y } d-c > 0 &\Leftrightarrow (b-a)+(d-c)> 0 \tag{\small{axioma 12}}\\ 
    &\Leftrightarrow (b+d)-a-c > 0 \tag{\small{axioma 12}}\\ 
    &\Leftrightarrow (b+d)-(a+c) > 0 \tag{\small{prop. f}}\\
    &\Leftrightarrow a+c < b+d.
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in\mathbb{R}\) tales que \(a<b\). Entonces \(b-a > 0\). Si
   tomamos ahora cualquier \(c\in\mathbb{R}\) con \(c>0\), se cumple que
 
-  \begin{align}
+  \begin{align*}
    b-a > 0 \mbox{ y } c > 0 &\Leftrightarrow (b-a)\cdot c > 0 \tag{\small{axioma 13}}\\ 
    &\Leftrightarrow (b\cdot c)-(a\cdot c) > 0  \tag{\small{axioma 11}}\\
    &\Leftrightarrow a\cdot c < b\cdot c.
-   \end{align}
+   \end{align*}
 \item
   Sean \(a,b\in\mathbb{R}\) tales que \(a<b\). Entonces \(b-a > 0\). Si
   tomamos ahora cualquier \(c\in\mathbb{R}\) con \(c<0\), entonces
   \(-c>0\) y se cumple que
 
-  \begin{align}
+  \begin{align*}
    b-a < 0 \mbox{ y } -c > 0 &\Leftrightarrow (b-a)\cdot (-c) > 0 \tag{\small{axioma 13}}\\ 
    &\Leftrightarrow (b\cdot (-c))-(a\cdot (-c)) > 0 \tag{\small{axioma 11}}\\
    &\Leftrightarrow -(b\cdot c)+(a\cdot c) > 0 \tag{\small{prop. f}}\\
    &\Leftrightarrow (a\cdot c)-(b\cdot c) > 0 \tag{\small{axioma 3}}\\
    &\Leftrightarrow a\cdot c > b\cdot c.
-   \end{align}
+   \end{align*}
 \item
   Sea \(a\in\mathbb{R}\) tal que \(a>0\). Entonces, por la propiedad de
   tricotomía, \(a\neq 0\) y, por la propiedad algebraica i,
   \(a^{-1}\neq 0\). Supongamos que \(a^{-1}<0\). Entonces, se tiene
 
-  \begin{align}
+  \begin{align*}
    a>0 \mbox{ y } a^{-1}<0 & \Leftrightarrow  a\cdot a^{-1} < a\cdot 0 \tag{\small{prop. de orden f}}\\
    &\Leftrightarrow a\cdot a^{-1} < 0 \tag{\small{prop. algebraica e}}\\ 
    &\Leftrightarrow a\cdot a^{-1} \neq 1 \tag{\small{prop. orden b}}
-   \end{align}
+   \end{align*}
 
   De esta manera llegamos a una contradicción y por consiguiente,
   \(a^{-1}>0\).
@@ -2500,59 +2501,59 @@ Veamos la prueba de cada propiedad.
   Si \(a>0\), entonces por la propiedad anterior, \(a^{-1}>0\), y se
   tiene
 
-  \begin{align}
+  \begin{align*}
    a^{-1}>0 \mbox{ y } a\cdot b>0 &\Rightarrow a^{-1}\cdot (a\cdot b) > 0 \tag{\small{axioma 13}}\\ 
    & \Rightarrow (a^{-1}\cdot a)\cdot b > 0 \tag{\small{axioma 7}}\\
    & \Rightarrow b > 0 \tag{\small{axioma 10}}
-   \end{align}
+   \end{align*}
 
   Y si \(a<0\), entonces, por la propiedad anterior, \(a^{-1}<0\), y se
   tiene
 
-  \begin{align}
+  \begin{align*}
    a^{-1}<0 \mbox{ y } a\cdot b>0 &\Rightarrow a^{-1}\cdot (a\cdot b) < a^{-1}\cdot 0 \tag{\small{prop. orden g}}\\ 
    & \Rightarrow a^{-1}\cdot (a\cdot b) < 0 \tag{\small{prop. algebraica e}}\\ 
    & \Rightarrow (a^{-1}\cdot a)\cdot b < 0 \tag{\small{axioma 7}}\\
    & \Rightarrow b < 0 \tag{\small{axioma 10}}
-   \end{align}
+   \end{align*}
 
   Para probar la otra implicación, si \(a>0\) y \(b>0\), por el axioma
   13 se tiene que \(a\cdot b>0\), y si \(a<0\) y \(b<0\) entonces se
   tiene
 
-  \begin{align}
+  \begin{align*}
    a<0 \mbox{ y } b<0 &\Rightarrow  a\cdot b > a\cdot 0\tag{\small{prop. orden g}}\\
    &\Rightarrow  a\cdot b > 0\tag{\small{prop. algebraica e}}\\
-   \end{align}
+   \end{align*}
 \item
   Se demuestra de forma análoga a la propiedad anterior.
 \item
   Sean \(a,b\in\mathbb{R}\) tales que \(a<b\). Entonces se tiene
 
-  \begin{align}
+  \begin{align*}
    2\cdot a & = (1+1)\cdot a = (1\cdot a)+(1\cdot a) \tag{\small{axioma 11}}\\ 
    &= a + a \tag{\small{axioma 9}}\\ 
    &< a + b \tag{\small{prop. orden d}}
-   \end{align}
+   \end{align*}
 
   Por otro lado,
 
-  \begin{align}
+  \begin{align*}
    2\cdot b & = (1+1)\cdot b = (1\cdot b)+(1\cdot b) \tag{\small{axioma 11}}\\ 
    &= b + b \tag{\small{axioma 9}}\\ 
    &> a + b \tag{\small{prop. orden d}}
-   \end{align}
+   \end{align*}
 
   Así pues, se puede concluir que \(2\cdot a < a+b < 2\cdot b\) y ahora
   se tiene
 
-  \begin{align}
+  \begin{align*}
    2\cdot a < a+b < 2\cdot b & \Leftrightarrow 2^{-1}\cdot (2\cdot a) < 2^{-1}\cdot (a+b) < 2^{-1}\cdot (2\cdot b) \tag{\small{prop. orden f}}\\ 
    & \Leftrightarrow (2^{-1}\cdot 2)\cdot a < 2^{-1}\cdot (a+b) < (2^{-1}\cdot 2)\cdot b \tag{\small{axioma 7}}\\ 
    & \Leftrightarrow 1 \cdot a < 2^{-1}\cdot (a+b) < 1\cdot b \tag{\small{axioma 10}}\\ 
    & \Leftrightarrow a < 2^{-1}\cdot (a+b) < b \tag{\small{axioma 9}} \\
    & \Leftrightarrow a < \frac{a+b}{2} < b. 
-   \end{align}
+   \end{align*}
 \item
   Sea \(a\in\mathbb{R}\) tal que \(0\leq a <b\)
   \(\forall b\in\mathbb{R}\) con \(b>0\). Como \(a\geq 0\) se tiene que
@@ -2621,7 +2622,7 @@ Se cumplen las siguientes propiedades del valor absoluto:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2638,14 +2639,14 @@ Veamos la prueba de cada propiedad.
 
   Y si \(a<0\) entonces \(-a>0\), de modo que \(|a| = -a = |-a|\).
 \item
-  Para cualesquiera \(a,b\in\mathbb{R}\) se tiene \begin{align}
+  Para cualesquiera \(a,b\in\mathbb{R}\) se tiene \begin{align*}
    |a-b| &= |-(a-b)| \tag{\small{prop. valor absoluto a}}\\
    &= |(-1)(a-b)| \tag{\small{prop. algebraica f}}\\ 
    &= |((-1)\cdot a)+ ((-1)\cdot(-b))| \tag{\small{axioma 11}}\\
    &= |-a + -(-b)| \tag{\small{prop. algebraica f}}\\ 
    &= |-a + b| \tag{\small{prop. algebraica g}}\\ 
    &= |b-a| \tag{\small{axioma 3}}
-   \end{align}
+   \end{align*}
 \item
   Para cualesquiera \(a,b\in \mathbb{R}\), se pueden dar varios casos:
 
@@ -2657,20 +2658,20 @@ Veamos la prueba de cada propiedad.
     Si \(a>0\) y \(b<0\), entonces, por la propiedad de orden j,
     \(a\cdot b < 0\), y se tiene
 
-    \begin{align}
+    \begin{align*}
       |a\cdot b| &= -(a\cdot b)\\
       &= (-1)\cdot (a\cdot b) \tag{\small{prop. algebraica f}}\\ 
       &= a\cdot ((-1)\cdot b) \tag{\small{axioma 7}}\\ 
       &= a\cdot -b \tag{\small{prop. algebraica f}}\\
       &= |a|\cdot |b|.
-      \end{align}
+      \end{align*}
   \item
     Si \(a<0\) y \(b>0\), la prueba es similar al caso anterior.
   \item
     Si \(a<0\) y \(b<0\), entonces por la propiedad de orden i,
     \(a\cdot b > 0\), y se tiene
 
-    \begin{align}
+    \begin{align*}
       |a\cdot b| &= (a\cdot b)\\
       &= 1\cdot (a\cdot b) \tag{\small{axioma 9}}\\ 
       &= -(-1)\cdot (a\cdot b) \tag{\small{prop. algebraica g}}\\ 
@@ -2678,7 +2679,7 @@ Veamos la prueba de cada propiedad.
       &= ((-1)\cdot a)\cdot ((-1)\cdot b) \tag{\small{axioma 7}}\\ 
       &= -a\cdot -b \tag{\small{prop. algebraica f}}\\
       &= |a|\cdot |b|.
-      \end{align}
+      \end{align*}
   \item
     \(a=0\) o \(b=0\), entonces por la propiedad algebraica e
     \(a\cdot b=0\) y es evidente que \(|a\cdot b|=0=|a|\cdot |b|\).
@@ -2688,11 +2689,11 @@ Veamos la prueba de cada propiedad.
   entonces \(a\leq b\) y \(-a\leq b\), y para esta última desigualdad,
   si \(-a<b\) se tiene
 
-  \begin{align}
+  \begin{align*}
    -a<b &\Rightarrow (-1)\cdot (-a)>(-1)\cdot b \tag{\small{prop. orden g}}\\ 
    &\Rightarrow -(-a) > -b \tag{\small{prop. algebraica f}}\\ 
    &\Rightarrow a > -b \tag{\small{prop. algebraica g}}
-   \end{align}
+   \end{align*}
 
   Y si \(-a=b\) entonces \(a=-b\), por lo que \(a\geq -b\), y se
   concluye que \(-b\leq a\leq b\).
@@ -2701,11 +2702,11 @@ Veamos la prueba de cada propiedad.
   entonces \(a\leq b\) y por otro lado \(a\geq -b\), de donde se tiene,
   si \(a>-b\)
 
-  \begin{align}
+  \begin{align*}
    a>-b &\Rightarrow (-1)\cdot a<(-1)\cdot (-b) \tag{\small{prop. orden g}}\\ 
    &\Rightarrow -a < -(-b) \tag{\small{prop. algebraica f}}\\ 
    &\Rightarrow -a < b \tag{\small{prop. algebraica g}}.
-   \end{align}
+   \end{align*}
 
   Y si \(a=-b\) entonces \(-a=b\), por lo que \(-a\leq b\), y como
   \(b>0\) se puede concluir que \(|a|<b\).
@@ -2741,7 +2742,7 @@ inferior, entonces tiene un ínfimo \(m\in \mathbb{R}\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2760,7 +2761,7 @@ natural \(n\in \mathbb{N}\) tal que \(a<n\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2769,7 +2770,7 @@ Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe
 de \(\mathbb{N}\). Por tanto, por el axioma del supremo existe un número
 \(s=\sup(\mathbb{N})\). Por ser supremo, se cumple que existe un número
 natural \(m\in\mathbb{N}\) tal que \(s-1<m\), pero entonces se tiene que
-\(s<m+1\), y como \(m\in\mathbb{N}\) también \(n+1\in\mathbb{N}\), lo
+\(s<m+1\), y como \(m\in\mathbb{N}\) también \(m+1\in\mathbb{N}\), lo
 que contradice que \(s\) sea cota superior de \(\mathbb{N}\).
 
 \end{proof}
@@ -2804,7 +2805,7 @@ llama \emph{raíz cuadrada} de \(a\) y se denota por \(\sqrt{a}\) o
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2821,10 +2822,10 @@ Corolario~\ref{cor-consecuencias-arquimedianas} se tiene que existe
 
 Por otro lado, se tiene
 
-\begin{align}
+\begin{align*}
 \left(x+\frac{1}{n}\right)^2 &= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) <\\ 
 &< x^2 + \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
-\end{align}
+\end{align*}
 
 Por tanto, \(x+\frac{1}{n}\in A\), pero \(x+\frac{1}{n}>x\) lo que
 contradice que \(x\) sea cota superior de \(A\).
@@ -2837,9 +2838,9 @@ Corolario~\ref{cor-consecuencias-arquimedianas} se tiene que existe
 
 Por otro lado, se tiene
 
-\begin{align}
+\begin{align*}
 \left(x-\frac{1}{m}\right)^2 &= x^2 + \frac{1}{m^2}-\frac{2x}{m} > x^2 - \frac{2x}{m} > x^2 -(x^2-a) = a.
-\end{align}
+\end{align*}
 
 Por tanto, \(x-\frac{1}{m}\) es una cota superior de \(A\), pero
 \(x>x-\frac{1}{m}\), lo que contradice que \(x=\sup(A)\).
@@ -2866,7 +2867,7 @@ número racional \(q\in \mathbb{Q}\) tal que \(a<q<b\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2901,7 +2902,7 @@ número irracional \(p\in \mathbb{R}\setminus \mathbb{Q}\) tal que
 
 \end{corollary}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -2967,7 +2968,7 @@ solo punto, y a cada punto, exactamente un número real. Para establecer
 esta correspondencia se fija un punto \(O\) en la recta correspondiente
 al número real \(0\) y otro punto \(A\) a la derecha de \(0\),
 correspondiente al número real \(1\), de manera que se dice que la
-\emph{abscisa} de \(U\) es \(1\) y se denota \(A(1)\). A partir de estos
+\emph{abscisa} de \(A\) es \(1\) y se denota \(A(1)\). A partir de estos
 dos puntos, hy considerando la distancia entre \(O\) y \(A\) como unidad
 de medida, se pueden representar cualquier otro punto \(B\)
 correspondiente al número real \(x\), dibujando a \(B\) a la derecha de
@@ -2990,7 +2991,7 @@ correspondiente al número real \(x\), dibujando a \(B\) a la derecha de
 \leavevmode\vadjust pre{\hypertarget{def-intervalo-abierto}{}}%
 \begin{definition}[Intervalo abierto]\label{def-intervalo-abierto}
 
-Dados dos números reales tales que \(a<b\), se llama \emph{intervalo
+Dados dos números reales tales que \(a\leq b\), se llama \emph{intervalo
 abierto} de extremos \(a\) y \(b\), y se denota \((a,b)\) al conjunto de
 números reales comprendidos entre \(a\) y \(b\) \[
 (a,b) = \{x\in \mathbb{R}: a<x<b\}.
@@ -3001,7 +3002,7 @@ números reales comprendidos entre \(a\) y \(b\) \[
 \leavevmode\vadjust pre{\hypertarget{def-intervalo-cerrado}{}}%
 \begin{definition}[Intervalo cerrado]\label{def-intervalo-cerrado}
 
-Dados dos números reales tales que \(a<b\), se llama \emph{intervalo
+Dados dos números reales tales que \(a\leq b\), se llama \emph{intervalo
 cerrado} de extremos \(a\) y \(b\), y se denota \([a,b]\) al conjunto de
 números reales que son mayores o iguales que \(a\) y menores o iguales
 que \(b\) \[
@@ -3009,6 +3010,10 @@ que \(b\) \[
 \]
 
 \end{definition}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+Obsérvese que si \(a=b\), \((a,a)=\emptyset\) y \([a,a]=\{a\}\).
+\end{tcolorbox}
 
 Los intervalos también pueden ser abiertos por un lado y cerrados por el
 otro.
@@ -3024,8 +3029,6 @@ Dados dos números reales tales que \(a<b\), se definen los
 \]
 
 \end{definition}
-
-Obsérvese que si \(a=b\), \((a,a)=\emptyset\) y \([a,a]=\{a\}\).
 
 Estos intervalos están \emph{acotados} ya que \(a\) es una cota inferior
 y \(b\) una cota superior, pero también existen intervalos no acotados.
@@ -3190,8 +3193,8 @@ complementario.
 \leavevmode\vadjust pre{\hypertarget{exm-punto-frontera}{}}%
 \begin{example}[]\label{exm-punto-frontera}
 
-\(1\) es un punto frontera del intervalo \([1,\infty)\) ya que no es un
-punto interior de \([1,\infty)\) ni de su complementario
+El punto \(1\) es un punto frontera del intervalo \([1,\infty)\) ya que
+no es un punto interior de \([1,\infty)\) ni de su complementario
 \((-\infty,1)\).
 
 \end{example}
@@ -3205,11 +3208,11 @@ cumple que \(\operatorname{Int}((a,b)) = (a,b)\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
-Tomemos cualquier punto in (a,b)\$, entonces se puede tomar
+Tomemos cualquier punto in \((a,b)\), entonces se puede tomar
 \(\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}\) de manera que el entorno
 \((x-\varepsilon, x+\varepsilon)\subseteq (a,b)\).
 
@@ -3227,7 +3230,7 @@ puntos interiores suyos, es decir, dado un intervalo cerrado
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -3272,7 +3275,7 @@ decir,
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -3339,10 +3342,18 @@ decir, existe \(\varepsilon>0\) tal que
 
 \end{definition}
 
-:::\{\#exm-intervalo-abierto-conjunto-abierto\}. Cualquier intervalo
-abierto \((a,b)\) es un conjunto abierto. Por otro lado, un intervalo
-cerrado \([a,b]\) no es un conjunto abierto pues cualquier entorno de
-\(a\) o \(b\) no está contenido en \([a,b]\). :::
+\leavevmode\vadjust pre{\hypertarget{exm-intervalo-abierto-conjunto-abierto}{}}%
+\begin{example}[]\label{exm-intervalo-abierto-conjunto-abierto}
+
+Cualquier intervalo abierto \((a,b)\) es un conjunto abierto. Por otro
+lado, un intervalo cerrado \([a,b]\) no es un conjunto abierto pues
+cualquier entorno de \(a\) o \(b\) no está contenido en \([a,b]\).
+
+\end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
+\end{tcolorbox}
 
 Una colección de conjuntos abiertos se llama \emph{topología} y
 cualquier propiedad que pueda definirse en términos de conjuntos
@@ -3364,7 +3375,7 @@ Todo intervalo cerrado \([a,b]\) es cerrado, pues su complementario
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 Un subconjunto puede ser abierto y cerrado a la vez, como \(\emptyset\)
 y \(\mathbb{R}\), y también puede no ser abierto ni cerrado, como por
 ejemplo \((a,b]\). Por tanto, no abierto no implica cerrado y no cerrado
@@ -3394,7 +3405,7 @@ Se cumplen las siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -3404,7 +3415,7 @@ Se deja como ejercicio.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 La intersección de una colección infinita de conjuntos abiertos puede no
 ser un conjunto abierto, como por ejemplo la colección de conjuntos
 \(I_n=(0,1+\frac{1}{n})\), \(n\in\mathbb{N}\), ya que
@@ -3424,7 +3435,7 @@ punto de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -3473,7 +3484,7 @@ contiene a todos sus puntos de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 
 \begin{proof}
 
@@ -3526,7 +3537,8 @@ número real, conocido como \emph{término de la sucesión}.
 \end{definition}
 
 Es habitual referirse a una sucesión con la notación
-\((x_n)_{n=1}^\infty\), donde \(x_n=x(n)\) con \(n\in\mathbb{N}\).
+\((x_n)_{n=1}^\infty\), donde \(x_n=x(n)\) con \(n\in\mathbb{N}\), o
+simplemente con \(x_n\).
 
 \leavevmode\vadjust pre{\hypertarget{exm-sucesion1}{}}%
 \begin{example}[]\label{exm-sucesion1}
@@ -3536,7 +3548,7 @@ los términos \(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\).
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-caution-color-frame, coltitle=black, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, breakable, toptitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
 No hay que confundir los términos de una sucesión
 \((x_n)_{n=1}^\infty\), que tienen orden, con el conjunto de los valores
 de la sucesión \(\{x_n:n\in\mathbb{N}\}\) que no tiene orden.
@@ -3548,6 +3560,430 @@ de la sucesión \(\{x_n:n\in\mathbb{N}\}\) que no tiene orden.
 La sucesión \(\left((-1)^n\right)_{n=1}^\infty\) está formada por los
 términos \(-1,1,-1,1,\ldots\), mientras que
 \(\{x_n:n\in\mathbb{N}\}=\{-1,1\}\).
+
+\end{example}
+
+Las operaciones aritméticas de los números reales se pueden extrapolar a
+las sucesiones aplicándolas término a término.
+
+\leavevmode\vadjust pre{\hypertarget{def-operaciones-sucesiones}{}}%
+\begin{definition}[Operaciones con
+sucesiones]\label{def-operaciones-sucesiones}
+
+Dadas dos sucesiones de números reales \((x_n)_{n=1}^\infty\) e
+\((y_n)_{n=1}^\infty\), se definen las siguientes operaciones:
+
+\begin{itemize}
+\item
+  \emph{Suma:}
+  \((x_n)_{n=1}^\infty + (y_n)_{n=1}^\infty = (x_n+y_n)_{n=1}^\infty\).
+\item
+  \emph{Diferencia:}
+  \((x_n)_{n=1}^\infty - (y_n)_{n=1}^\infty = (x_n-y_n)_{n=1}^\infty\).
+\item
+  \emph{Producto:}
+  \((x_n)_{n=1}^\infty (y_n)_{n=1}^\infty = (x_ny_n)_{n=1}^\infty\).
+\item
+  \emph{División:}
+  \(\dfrac{(x_n)_{n=1}^\infty}{(y_n)_{n=1}^\infty} = \left(\dfrac{x_n}{y_n}\right)_{n=1}^\infty\),
+  siempre y cuando \(y_n\neq 0\) \(\forall n\in\mathbb{N}\).
+\item
+  \emph{Producto por escalar:}
+  \(c(x_n)_{n=1}^\infty = (cx_n)_{n=1}^\infty\).
+\end{itemize}
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-operaciones-sucesiones}{}}%
+\begin{example}[]\label{exm-operaciones-sucesiones}
+
+Dadas las sucesiones \((n)_{n=1}^\infty\) y \(((-1)^n)_{n=1}^\infty\) se
+tiene:
+
+\begin{align*}
+(n)_{n=1}^\infty + ((-1)^n)_{n=1}^\infty &= (n + (-1)^n)_{n=1}^\infty = (0, 3, 2, 5, 4, \ldots)\\
+(n)_{n=1}^\infty ((-1)^n)_{n=1}^\infty &= (n (-1)^n)_{n=1}^\infty = (-1, 2, -3, 4, -5, \ldots)
+\end{align*}
+
+\end{example}
+
+\hypertarget{luxedmite-de-una-sucesiuxf3n}{%
+\section{Límite de una sucesión}\label{luxedmite-de-una-sucesiuxf3n}}
+
+\leavevmode\vadjust pre{\hypertarget{def-limite-sucesion}{}}%
+\begin{definition}[Límite de una sucesión]\label{def-limite-sucesion}
+
+Dada una sucesión \((x_n)_{n=1}^\infty\), se dice que un número
+\(x\in\mathbb{R}\) es el \emph{límite de la sucesión}, si para cada
+\(\varepsilon>0\) existe un \(k\in\mathbb{N}\) a partir del cuál todos
+los términos de la sucesión caen en el entorno
+\((x-\varepsilon, x+\varepsilon)\), es decir, \(|x_n-x|<\varepsilon\)
+\(\forall n\geq k\).
+
+Si \(x\) es el límite de la sucesión, se dice que la suceción
+\emph{converge} a \(x\), y se denota \(\lim_{n\to\infty}x_n = x\).
+
+\end{definition}
+
+Si una sucesión tiene límite se dice que es \emph{convergente}, y en
+caso contrario se dice que es \emph{divergente}.
+
+\leavevmode\vadjust pre{\hypertarget{exm-limite-sucesion}{}}%
+\begin{example}[]\label{exm-limite-sucesion}
+
+La sucesión \((\frac{1}{n})_{n=1}^\infty\) es convergente y
+\(\lim_{n\to\infty}\frac{1}{n} = 0\), ya que para cualquier
+\(\varepsilon>0\), por la Teorema~\ref{thm-propiedad-arquimediana}, se
+tiene que existe un \(k\in\mathbb{N}\), tal que
+\(\frac{1}{k}<\varepsilon\), de manera que para cualquier \(n>k\), se
+tiene \(|\frac{1}{n}-0| = \frac{1}{n} <\frac{1}{k}<\varepsilon\).
+
+Sin embargo, la sucesión \((n)_{n=1}^\infty\) diverge.
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{thm-unicidad-limite-sucesion}{}}%
+\begin{theorem}[]\label{thm-unicidad-limite-sucesion}
+
+Una sucesión de números reales puede tener a lo sumo un límite.
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Lo probaremos por reducción al absurdo. Supongamos que
+\((x_n)_{n=1}^\infty\) converge a \(x\) e \(y\) con \(x\neq y\).
+Entonces existe un \(\varepsilon>0\) tal que los entornos
+\((x-\varepsilon,x+\varepsilon)\) e \((y-\varepsilon,y+\varepsilon)\)
+son disjuntos. Ahora bien, por ser \(\lim_{n\to\infty}x_n = x\) existe
+un \(k_1\in\mathbb{N}\) tal que \(x_n\in(x-\varepsilon,x+\varepsilon)\)
+\(\forall n\geq k_1\), y por ser \(\lim_{n\to\infty}y_n = y\) existe un
+\(k_2\in\mathbb{N}\) tal que \(x_n\in(y-\varepsilon,y+\varepsilon)\)
+\(\forall n\geq k_2\). Basta tomar \(k=\max(k_1,k_2)\) para ver que
+\(x_k\) pertenece a ambos entornos, lo cual contradice que sean
+disjuntos. Por tanto, debe ser \(x=y\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{def-cola-sucesion}{}}%
+\begin{definition}[Cola de una sucesión]\label{def-cola-sucesion}
+
+Dada una sucesión de números reales \((x_n)_{n=1}^\infty\) y
+\(m\in\mathbb{N}\), se define la \emph{cola} \(m\) de la sucesión, como
+la sucesión \((x_{m+n})_{n=1}^\infty = (x_{m+1}, x_{m+2},\ldots)\).
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{prp-convergencia-cola-sucesion}{}}%
+\begin{proposition}[]\label{prp-convergencia-cola-sucesion}
+
+Dada una sucesión de números reales \((x_n)_{n=1}^\infty\) y
+\(m\in\mathbb{N}\), la cola \((x_{m+n})_{n=1}^\infty\) converge si y
+solo si \((x_n)_{n=1}^\infty\) converge, y en tal caso,
+\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}x_{m+n}\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Supongamos que la cola \((x_{m+n})_{n=1}^\infty\) converge a \(x\).
+Entonces, para cada \(\varepsilon>0\), existe un \(k_1\in\mathbb{N}\)
+tal que \(|x_{m+n}-x|<\varepsilon\) \(\forall n\geq k_1\). Tomando ahora
+\(k=k_1+m\in\mathbb{N}\) se tiene que para cualquier \(l\geq k\)
+\(|x_l-x| = |x_{l-m+m}-x| = |x_{m+n}-x| < \varepsilon\) siendo
+\(n=l-m\), ya que \(l\geq k_1+m\) y \(l-m\geq k_1\). Por tanto,
+\((x_n)_{n=1}^\infty\) converge a \(x\).
+
+Para probar la otra implicación, supongamos ahora que
+\((x_n)_{n=1}^\infty\) converge a \(x\). Entonces, para cada
+\(\varepsilon>0\), existe un \(k\in\mathbb{N}\) tal que
+\(|x_n-x|<\varepsilon\) \(\forall n\geq k\). Pero como
+\(m\in\mathbb{N}\), si \(n\geq k\) también \(m+n\geq k\), con lo que
+\(|x_{m+n}-x|<\varepsilon\), y por consiguiente,
+\((x_{m+n})_{n=1}^\infty\) converge a \(x\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-convergencia-sucesion-acotada}{}}%
+\begin{proposition}[]\label{prp-convergencia-sucesion-acotada}
+
+Sean \((x_n)_{n=1}^\infty\) y \((y_n)_{n=1}^\infty\) dos sucesiones de
+números reales tales que \((y_n)_{n=1}^\infty\) converge a 0. Si existe
+\(x, c\in\mathbb{R}\) con \(c>0\) tal que \(|x_n-x| < c|y_n|\)
+\(\forall n\in \mathbb{N}\), entonces \((x_n)_{n=1}^\infty\) converge a
+\(x\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Dado \(\varepsilon>0\), sea \(\varepsilon'=\frac{\varepsilon}{c}>0\).
+Como \((y_n)_{n=1}^\infty\) converge a 0, existe \(k\in\mathbb{N}\) tal
+que \(|y_n-0|=|y_n|<\varepsilon'\) \(\forall n\geq k\). Así pues,
+\(\forall n\geq k\) se tiene que
+\(|x_n-x|<c|y_n|<c\varepsilon'=c\frac{\varepsilon}{c}=\varepsilon\), por
+lo que \((x_n)_{n=1}^\infty\) converge a \(x\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-convergencia-sucesion-acotada}{}}%
+\begin{example}[]\label{exm-convergencia-sucesion-acotada}
+
+Veamos que la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\)
+converge a 0. Para cualquier \(n\in\mathbb{N}\) se cumple que
+\(0<n<2^n\), de donde se deduce \(0<\frac{1}{2^n}<\frac{1}{n}\), lo que
+equivale a \(|\frac{1}{2^n}-0|<\frac{1}{n}\). Así pues, aplicando el
+teorema anterior, se concluye que \(\lim_{n\to\infty}\frac{1}{2^n}=0\).
+
+Veamos ahora que \(\lim_{n\to\infty}n^{1/n}=1\). Para cualquier
+\(n\in\mathbb{N}\), con \(n>1\), se cumple que \(n^{1/n}>1\), de manera
+que se puede escribir \(n^{1/n} = 1+k_n\), donde \(k_n=n^{1/n}-1\).
+Aplicando ahora el teorema del binomio, se tiene que
+\(0<k_n<\sqrt{2/n}\) \(\forall n\in\mathbb{N}\). Por tanto,
+\(|n^{1/n}-1| = k_n < \sqrt{2/n}=\sqrt{2}\frac{1}{\sqrt{n}}\), y como
+\(\sqrt{2}>0\) y \(\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0\), por el
+teorema anterior se tiene que \(\lim_{n\to\infty} n^{1/n} = 1\).
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{def-sucesion-acotada}{}}%
+\begin{definition}[Sucesión acotada]\label{def-sucesion-acotada}
+
+Se dice que una sucesión de números reales \((x_n)_{n=1}^\infty\) está
+\emph{acotada} si existe \(c>0\) tal que \(|x_n|\leq c\)
+\(\forall n\in\mathbb{N}\).
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{thm-convergencia-sucesion-acotada}{}}%
+\begin{theorem}[]\label{thm-convergencia-sucesion-acotada}
+
+Toda sucesión de números reales convergente está acotada.
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Sea \((x_n)_{n=1}^\infty\) una sucesión convergente a \(x\). Entonces,
+si tomamos \(\varepsilon=1\) existe un \(k\in\mathbb{N}\) tal que
+\(|x_n-x|<1\) \(\forall n\geq k\).
+
+Por la desigualdad triangular
+(Proposición~\ref{prp-propiedades-valor-absoluto}) se tiene que
+\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|<1 + |x|\), de donde se deduce que
+\(|x_n|<|x|+1\) \(\forall n\geq k\). Si se toma
+\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\) se tiene que si \(n<k\)
+entonces \(|x_n|\leq c\) y si \(n\geq k\) entonces
+\(|x_n| <|x|+1\leq c\), de modo que \(\forall n\in\mathbb{N}\)
+\(|x_n|\leq c\), por lo que \((x_n)_{n=1}^\infty\) está acotada.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-sucesion-acotada}{}}%
+\begin{example}[]\label{exm-sucesion-acotada}
+
+La sucesión \((n)_{n=1}^\infty\) diverge ya que no está acotada. Si
+estuviese acotada existiría un \(c>0\) tal que \(|n|\leq c\)
+\(\forall n\in\mathbb{N}\), lo que infringe la propiedad arquimediana.
+
+\end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+El otro sentido de la implicación no se cumple, es decir, no toda
+sucesión acotada es convergente. Por ejemplo, la sucesión
+\(((-1)^n)_{n=1}^\infty\).
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-algebra-limites-sucesiones}{}}%
+\begin{proposition}[]\label{prp-algebra-limites-sucesiones}
+
+Sean \((x_n)_{n=1}^\infty\) y \((y_n)_{n=1}^\infty\) dos sucesiones de
+números reales tales que \((x_n)_{n=1}^\infty\) converge a \(x\) e
+\((y_n)_{n=1}^\infty\) converge a \(y\). Entonces se cumple:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \((x_n)_{n=1}^\infty\) + \((y_n)_{n=1}^\infty\) converge a \(x+y\).
+\item
+  \((x_n)_{n=1}^\infty\) - \((y_n)_{n=1}^\infty\) converge a \(x-y\).
+\item
+  \((x_n)_{n=1}^\infty\) \((y_n)_{n=1}^\infty\) converge a \(xy\).
+\item
+  \(c(x_n)_{n=1}^\infty\) converge a \(cx\).
+\item
+  Si \(y_n\neq 0\) \(\forall n\in\mathbb{N}\) e \(y\neq 0\),
+  \(\frac{(x_n)_{n=1}^\infty}{(y_n)_{n=1}^\infty}\) converge a
+  \(\frac{x}{y}\).
+\end{enumerate}
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-algebra-limites-sucesiones}{}}%
+\begin{example}[]\label{exm-algebra-limites-sucesiones}
+
+Veamos que la sucesión \(\left(\frac{2n+1}{n+3}\right)_{n=1}^\infty\)
+converge a 2.
+
+\begin{align*}
+\lim_{n\to\infty}\frac{2n+1}{n+3} &=  \lim_{n\to\infty}\frac{2+\frac{1}{n}}{1+\frac{3}{n}} = \frac{\lim_{n\to\infty}2+\frac{1}{n}}{\lim_{n\to\infty}1+\frac{3}{n}} = \\ 
+&=\frac{\lim_{n\to\infty} 2 + \lim_{n\to\infty}\frac{1}{n}}{\lim_{n\to\infty} 1 + \lim_{n\to\infty}\frac{3}{n}} = \frac{2+0}{1+0} = 2.
+\end{align*}
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{thm-compresion-sucesiones}{}}%
+\begin{theorem}[Compresión de sucesiones
+convergentes]\label{thm-compresion-sucesiones}
+
+Dadas tres sucesiones de números reales \((x_n)_{n=1}^\infty\),
+\((y_n)_{n=1}^\infty\) y \((z_n)_{n=1}^\infty\), tales que
+\(x_n\leq y_n\leq z_n\) \(\forall n\in\mathbb{N}\), si
+\((x_n)_{n=1}^\infty\) y \((z_n)_{n=1}^\infty\) convergen a \(x\),
+entonces \((y_n)_{n=1}^\infty\) converge a \(x\).
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Supongamos que \(\lim_{n\to\infty} x_n = \lim_{n\to\infty} z_n=x\) y sea
+\(\varepsilon>0\). Si tomamos \(\varepsilon_1=\frac{\varepsilon}{4}>0\),
+como \((z_n)_{n=1}^\infty\) converge a \(x\), existe
+\(k_1\in\mathbb{N}\) tal que \(|z_n-x|<\varepsilon_1\)
+\(\forall n\geq k_1\). Y si tomamos
+\(\varepsilon_2 = \frac{\varepsilon}{2}>0\), como \((x_n)_{n=1}^\infty\)
+converge a \(x\), existe \(k_2\in\mathbb{N}\) tal que
+\(|x_n-x|<\varepsilon_2\) \(\forall n\geq k_2\). Entonces, si se toma
+\(k=\max(k_1,k_2)\), se cumple que para cualquier \(n\geq k\),
+
+\begin{align*}
+|y_n-x| &= |y_n-z_n+z_n-x| \\
+&\leq |y_n-z_n|+|z_n-x| \tag{prop.2.4 (f)}\\
+&= z_n-y_n+|z_n-x| \\
+&\leq z_n-x_n+|z_n-x| \\
+&= |z_n-x_n|+|z_n-x| \\
+&= |z_n-x+x-x_n|+|z_n-x| \\
+&\leq |z_n-x|+|x-x_n|+|z_n-x| \\
+&= 2|z_n-x|+|x-x_n| \tag{prop.2.4 (f)}\\
+&= 2|z_n-x|+|x_n-x| \tag{prop.2.4 (b)}\\ 
+&< 2\varepsilon_1+\varepsilon_2 = 2\frac{\varepsilon}{4}+\frac{\varepsilon}{2}=\varepsilon.
+\end{align*}
+
+Por tanto, \(\lim_{n\to\infty} y_n=x\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-compresion-sucesiones}{}}%
+\begin{example}[]\label{exm-compresion-sucesiones}
+
+Veamos que la sucesión \(\left(\frac{2n}{n^2+1}\right)_{n=1}^\infty\)
+converge a 0. Para ello basta con ver que
+
+\[
+0\leq \frac{2n}{n^2+1} \leq \frac{2n}{n^2}\leq \frac{2}{n}\ \forall n\in\mathbb{N}
+\]
+
+y que \(\lim_{n\to\infty} \frac{2}{n}=\lim_{n\to\infty} 0 = 0\), de
+manera que aplicando el teorema anterior de compresión se tiene que
+\(\lim_{n\to\infty} \frac{2n}{n^2+1}=0\).
+
+Veamos ahora que la sucesión
+\(\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty\) también
+converge a 0. De nuevo basta con ver que
+
+\[
+0\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
+\]
+
+y que \(\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0\), de
+manera que aplicando el teorema anterior de compresión se tiene que
+\(\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0\).
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-cociente-sucesiones}{}}%
+\begin{proposition}[]\label{prp-limite-cociente-sucesiones}
+
+Si \((x_n)_{n=1}^\infty\) es una sucesión de números reales
+estrictamente positivos tal que la sucesión
+\(\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty\) converge a \(l<1\),
+entonces \((x_n)_{n=1}^\infty\) converge a 0.
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, titlerule=0mm, colback=white, toptitle=1mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, arc=.35mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, toprule=.15mm, breakable]
+
+\begin{proof}
+
+Sea \(y\) tal que \(l<y<1\) y tomemos \(\varepsilon=y-l>0\). Como
+\(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=l\), existe un \(k\in\mathbb{N}\)
+tal que \(|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon\) \(\forall n\geq k\),
+y por tanto, se tiene que para cualquier \(n\geq k\),
+
+\begin{align*}
+|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon &\Rightarrow
+-\varepsilon<\frac{x_{n+1}}{x_n}-l\leq \varepsilon\\ 
+&\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\ 
+&\Rightarrow x_{n+1}<yx_n.
+\end{align*}
+
+Por consiguiente, si \(m\in\mathbb{N}\) se cumple que
+\(x_{k+m}<yx_{k+m-1}<r^2x_{k+m-2}<\cdots<r^mx_k\), de manera que
+\(0<x_{k+m}<r^mx_k\) \(\forall m\in\mathbb{N}\). Como \(r<1\),
+\(\lim_{m\to\infty}y^m=0\) y \(\lim_{m\to\infty}r^mx_k=0\), y por el
+teorema de compresión (Teorema~\ref{thm-compresion-sucesiones})
+\(\lim_{m\to\infty}x_{k+m}=0\). Finalmente, como
+\((x_{k+m})_{m=1}^\infty\) es una cola de la sucesión
+\((x_n)_{n=1}^\infty\) se tiene que \(\lim_{n\to\infty}x_n=0\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-limite-cociente-sucesiones}{}}%
+\begin{example}[]\label{exm-limite-cociente-sucesiones}
+
+Veamos que la sucesión \(\left(\frac{n}{2^n}\right)_{n=1}^\infty\)
+converge a 0.
+
+\begin{align*}
+\lim_{n\to\infty}\frac{x_{n+1}}{x_n} &= \lim_{n\to\infty}\frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}} = \lim_{n\to\infty}\frac{1}{2}\frac{n+1}{n} \\ 
+&= \lim_{n\to\infty} \frac{1}{2}\left(\frac{1}{n}+1\right) = \lim_{n\to\infty} \frac{1}{2}+\frac{1}{2n} \\
+&= \lim_{n\to\infty} \frac{1}{2} + \lim_{n\to\infty} \frac{1}{2n} = \frac{1}{2}<1.
+\end{align*}
+
+Así pues, por la proposición anterior,
+\(\lim_{n\to\infty}\frac{n}{2^n} = 0\).
 
 \end{example}
 

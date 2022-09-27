@@ -239,117 +239,117 @@ Veamos la prueba de cada propiedad.
 
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b+a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
-    \begin{align}
+    \begin{align*}
     b+a = a &\Leftrightarrow b+a+(-a)=a+(-a) \\
     & \Leftrightarrow b+0 = 0 \tag{\small{axioma 5}}\\
     &\Leftrightarrow b=0 \tag{\small{axioma 4}}
-    \end{align}
+    \end{align*}
 
 a. Supongamos que existe $b\in\mathbb{R}$ tal que $b\cdot a=a$ $\forall a\in\mathbb{R}$. Entonces 
 
-    \begin{align}
+    \begin{align*}
     b\cdot a = a &\Leftrightarrow b\cdot a\cdot a^{-1}=a\cdot a^{-1} \\
     & \Leftrightarrow b\cdot 1 = 1 \tag{\small{axioma 10}}\\
     &\Leftrightarrow b=1 \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
 a. Sean $a,b\in \mathbb{R}$ tales que $a+b=0$. Entonces 
 
-    \begin{align}
+    \begin{align*}
     a+b=0 &\Leftrightarrow (-a)+a+b = (-a)+0 \\
     &\Leftrightarrow (-a)+a+b = -a  \tag{\small{axioma 4}}\\
     & \Leftrightarrow 0+b=-a \tag{\small{axioma 5}}\\ 
     & \Leftrightarrow b = -a \tag{\small{axioma 4}}
-    \end{align}
+    \end{align*}
 
 a. Sean $a,b\in \mathbb{R}$ tales que $a\cdot b=1$. Entonces 
 
-    \begin{align}
+    \begin{align*}
     a\cdot b=1 &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1}\cdot 1 \\
     &\Leftrightarrow a^{-1}\cdot a\cdot b = a^{-1} \tag{\small{axioma 9}} \\
     & \Leftrightarrow 1\cdot b=a^{-1} \tag{\small{axioma 10}}\\ 
     & \Leftrightarrow b = a^{-1} \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene
 
-    \begin{align}
+    \begin{align*}
     a &= a\cdot 1 \tag{\small{axioma 9}}\\
     &= a\cdot (1+0) \tag{\small{axioma 4}}\\
     &= (a\cdot 1) + (a\cdot 0) \tag{\small{axioma 11}}\\
     &= a + (a\cdot 0) \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
     Así pues, por la propiedad (a) se tiene que $a\cdot 0 =0$.
 
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene
 
-    \begin{align}
+    \begin{align*}
     a+(-1)\cdot a &= 1\cdot a + (-1)\cdot a \tag{\small{axioma 9}} \\ 
     &= (1+(-1))\cdot a \tag{\small{axioma 11}}\\ 
     &= 0\cdot a \tag{\small{axioma 5}}\\ 
     &= 0 \tag{\small{prop. e}}
-    \end{align}
+    \end{align*}
 
     Como $a+(-1)\cdot a=0$, aplicando la propiedad (c) se tiene $(-1)\cdot a = -a$.
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene 
 
-    \begin{align}
+    \begin{align*}
     a+(-a)=0 & \Leftrightarrow (-a)+a=0 \tag{\small{axiomas 5 y 3}} \\ 
     &\Leftrightarrow a=-(-a)\tag{\small{prop. c}}
-    \end{align}
+    \end{align*}
 
 a. Para cualesquiera $a,b\in\mathbb{R}$,se tiene
 
-    \begin{align}
+    \begin{align*}
     (-a)\cdot (-b)&=((-1)\cdot a)\cdot ((-1)\cdot b) \tag{\small{prop. f}}\\ 
     &= ((-1)\cdot(-1))\cdot a\cdot  b\tag{\small{axioma 7}}\\ 
     &= -(-1)\cdot a\cdot b \tag{\small{prop. f}}\\ 
     &= 1\cdot a\cdot b \tag{\small{prop. g}} \\
     &= a\cdot b \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
 a. Sea $a\in \mathbb{R}$ con $a\neq 0$. Supongamos ahora que $a^{-1}=0$. Entonces, 
 
-    \begin{align}
+    \begin{align*}
     0 &= a\cdot 0 \tag{\small{prop. e}}\\ 
     &= a\cdot a^{-1} \\
     &= 1 \tag{\small{axioma 10}}
-    \end{align}
+    \end{align*}
 
     Así pues, llegamos a que $0=1$, lo cual es absurdo, por lo que $a^{-1}\neq 0$.
 
 a. Para cualquier $a\in\mathbb{R}$, se tiene 
 
-    \begin{align}
+    \begin{align*}
     a\cdot a^{-1}=1 &\Leftrightarrow a^{-1}\cdot a=1 \tag{\small{axiomas 10 y 8}} \\ 
     &\Leftrightarrow a=(a^{-1})^{-1}\tag{\small{prop. d}}
-    \end{align}
+    \end{align*}
 
 a. Sean $a,b,c\in\mathbb{R}$ tales que $a\cdot b=a\cdot c$ y $a\neq 0$. Entonces se tiene
 
-    \begin{align}
+    \begin{align*}
     a\cdot b = a\cdot c &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot (a \cdot c)\\ 
     &\Leftrightarrow (a^{-1}\cdot a)\cdot b = (a^{-1}\cdot a) \cdot c \tag{\small{axioma 7}}\\
     &\Leftrightarrow 1\cdot b = 1\cdot c \tag{\small{axioma 10}}\\
     &\Leftrightarrow b = c \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
 a. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b=0$. Supongamos que $a\neq 0$, entonces se tiene
 
-    \begin{align}
+    \begin{align*}
     a\cdot b = 0 &\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\\ 
     &\Leftrightarrow a^{-1}\cdot (a\cdot b) = 0 \tag{\small{prop. e}}\\ 
     &\Leftrightarrow (a^{-1}\cdot a)\cdot b = 0 \tag{\small{axioma 7}}\\
     &\Leftrightarrow 1\cdot b = 0 \tag{\small{axioma 10}}\\
     &\Leftrightarrow b = 0 \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
 a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la propiedad (l) se tiene $a\cdot b\neq 0$, y se tiene
 
-    \begin{align}
+    \begin{align*}
     (a\cdot b)\cdot (a\cdot b)^{-1} = 1 &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1}\cdot 1 \\ 
     &\Leftrightarrow a^{-1} \cdot (a\cdot b)\cdot (a\cdot b)^{-1} = a^{-1} \tag{\small{axioma 9}}\\ 
     &\Leftrightarrow (a^{-1} \cdot a)\cdot b\cdot (a\cdot b)^{-1} = 1 \tag{\small{axioma 7}}\\
@@ -360,7 +360,7 @@ a. Sean $a,b\in \mathbb{R}$, tales que $a\neq 0$ y $b\neq 0$. Entonces, por la p
     &\Leftrightarrow (b^{-1}\cdot  b)\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 7}}\\
     &\Leftrightarrow 1\cdot (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 10}}\\
     & \Leftrightarrow (a\cdot b)^{-1} = a^{-1}b^{-1} \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 :::
 :::
 
@@ -409,12 +409,12 @@ b. Propiedad antisimétrica: Para cualesquiera $a,b\in\mathbb{R}$, si $a\leq b$ 
 
 c. Propiedad transitiva: Para cualesquiera $a,b,c\in\mathbb{R}$, tales que $a\leq b$ y $b\leq c$, se tiene que $b-a\geq 0$ y $c-b\geq 0$. Supongamos que $b-a> 0$ y $c-b>0$. Entonces, por el axioma 12 se tiene
 
-    \begin{align}
+    \begin{align*}
     (b-a)+(c-b)>0 &\tag{\small{axioma 2}}\\
     &\Leftrightarrow (b-b)+(c-a)>0 &\tag{\small{axioma 5}}\\
     &\Leftrightarrow 0+(c-a)>0 &\tag{\small{axioma 4}}\\
     &\Leftrightarrow c-a>0 \Leftrightarrow a\leq c.
-    \end{align}
+    \end{align*}
 
     Si $b-a=0$, entonces $a=b$ y como $b\leq c$ resulta evidente que $a\leq c$. El mismo razonamiento puede aplicarse si $c-b=0$.
 :::
@@ -460,13 +460,13 @@ a. Sea $a\in\mathbb{R}$ con $a\neq 0$. Entonces, por la propiedad de tricotomía
 
     Si $-a\in \mathbb{R}^+$, entonces, de nuevo por el axioma 13, se tiene 
 
-    \begin{align}
+    \begin{align*}
     -a\in \mathbb{R}^+ &\Leftrightarrow (-a)\cdot (-a)\in\mathbb{R}^+ \tag{\small{axioma 13}}\\ 
     &\Leftrightarrow (-1)\cdot a\cdot (-1)\cdot a\in\mathbb{R}^+ \tag{\small{prop. f}}\\
     &\Leftrightarrow (-1)\cdot (-1)\cdot a\cdot a\in\mathbb{R}^+ \tag{\small{axioma 7}}\\
     &\Leftrightarrow 1\cdot a^2 \in\mathbb{R}^+ \tag{\small{prop. h}}\\
     &\Leftrightarrow a^2\in\mathbb{R}^+ \tag{\small{axioma 9}}
-    \end{align}
+    \end{align*}
 
     y se concluye de nuevo que $a^2>0$.
 
@@ -476,47 +476,47 @@ c. Haremos la prueba por inducción. Para $n=1$ ya hemos visto en resultado ante
 
 d. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a> 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$ se cumple que
 
-    \begin{align}
+    \begin{align*}
     b-a > 0 &\Leftrightarrow b+0-a > 0 \tag{\small{axioma 4}}\\ 
     &\Leftrightarrow b+(c-c)-a > 0  \tag{\small{axioma 5}}\\
     &\Leftrightarrow (b+c)-(a+c) > 0 \tag{\small{axioma 2}}\\ 
     &\Leftrightarrow a+c < b+c.
-    \end{align}
+    \end{align*}
 
 e. Sean $a,b,c,d\in\mathbb{R}$ tales que $a < b$ y $c < d$. Entonces se tiene
 
-    \begin{align}
+    \begin{align*}
     b-a > 0 \mbox{ y } d-c > 0 &\Leftrightarrow (b-a)+(d-c)> 0 \tag{\small{axioma 12}}\\ 
     &\Leftrightarrow (b+d)-a-c > 0 \tag{\small{axioma 12}}\\ 
     &\Leftrightarrow (b+d)-(a+c) > 0 \tag{\small{prop. f}}\\
     &\Leftrightarrow a+c < b+d.
-    \end{align}
+    \end{align*}
 
 f. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a > 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$  con $c>0$, se cumple que
 
-    \begin{align}
+    \begin{align*}
     b-a > 0 \mbox{ y } c > 0 &\Leftrightarrow (b-a)\cdot c > 0 \tag{\small{axioma 13}}\\ 
     &\Leftrightarrow (b\cdot c)-(a\cdot c) > 0  \tag{\small{axioma 11}}\\
     &\Leftrightarrow a\cdot c < b\cdot c.
-    \end{align}
+    \end{align*}
 
 g. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces $b-a > 0$. Si tomamos ahora cualquier $c\in\mathbb{R}$  con $c<0$, entonces $-c>0$ y se cumple que
 
-    \begin{align}
+    \begin{align*}
     b-a < 0 \mbox{ y } -c > 0 &\Leftrightarrow (b-a)\cdot (-c) > 0 \tag{\small{axioma 13}}\\ 
     &\Leftrightarrow (b\cdot (-c))-(a\cdot (-c)) > 0 \tag{\small{axioma 11}}\\
     &\Leftrightarrow -(b\cdot c)+(a\cdot c) > 0 \tag{\small{prop. f}}\\
     &\Leftrightarrow (a\cdot c)-(b\cdot c) > 0 \tag{\small{axioma 3}}\\
     &\Leftrightarrow a\cdot c > b\cdot c.
-    \end{align}
+    \end{align*}
 
 h. Sea $a\in\mathbb{R}$ tal que $a>0$. Entonces, por la propiedad de tricotomía, $a\neq 0$ y, por la propiedad algebraica i, $a^{-1}\neq 0$. Supongamos que $a^{-1}<0$. Entonces, se tiene
 
-    \begin{align}
+    \begin{align*}
     a>0 \mbox{ y } a^{-1}<0 & \Leftrightarrow  a\cdot a^{-1} < a\cdot 0 \tag{\small{prop. de orden f}}\\
     &\Leftrightarrow a\cdot a^{-1} < 0 \tag{\small{prop. algebraica e}}\\ 
     &\Leftrightarrow a\cdot a^{-1} \neq 1 \tag{\small{prop. orden b}}
-    \end{align}
+    \end{align*}
 
     De esta manera llegamos a una contradicción y por consiguiente, $a^{-1}>0$.
 
@@ -526,55 +526,55 @@ i. Sean $a,b\in\mathbb{R}$ tales que $a\cdot b>0$. Entonces, por la propiedad al
 
     Si $a>0$, entonces por la propiedad anterior, $a^{-1}>0$, y se tiene
 
-    \begin{align}
+    \begin{align*}
     a^{-1}>0 \mbox{ y } a\cdot b>0 &\Rightarrow a^{-1}\cdot (a\cdot b) > 0 \tag{\small{axioma 13}}\\ 
     & \Rightarrow (a^{-1}\cdot a)\cdot b > 0 \tag{\small{axioma 7}}\\
     & \Rightarrow b > 0 \tag{\small{axioma 10}}
-    \end{align} 
+    \end{align*} 
 
     Y si $a<0$, entonces, por la propiedad anterior, $a^{-1}<0$, y se tiene
 
-    \begin{align}
+    \begin{align*}
     a^{-1}<0 \mbox{ y } a\cdot b>0 &\Rightarrow a^{-1}\cdot (a\cdot b) < a^{-1}\cdot 0 \tag{\small{prop. orden g}}\\ 
     & \Rightarrow a^{-1}\cdot (a\cdot b) < 0 \tag{\small{prop. algebraica e}}\\ 
     & \Rightarrow (a^{-1}\cdot a)\cdot b < 0 \tag{\small{axioma 7}}\\
     & \Rightarrow b < 0 \tag{\small{axioma 10}}
-    \end{align} 
+    \end{align*} 
 
     Para probar la otra implicación, si $a>0$ y $b>0$, por el axioma 13 se tiene que $a\cdot b>0$, y si $a<0$ y $b<0$ entonces se tiene
 
-    \begin{align}
+    \begin{align*}
     a<0 \mbox{ y } b<0 &\Rightarrow  a\cdot b > a\cdot 0\tag{\small{prop. orden g}}\\
     &\Rightarrow  a\cdot b > 0\tag{\small{prop. algebraica e}}\\
-    \end{align} 
+    \end{align*} 
 
 j. Se demuestra de forma análoga a la propiedad anterior.
 
 k. Sean $a,b\in\mathbb{R}$ tales que $a<b$. Entonces se tiene
 
-    \begin{align}
+    \begin{align*}
     2\cdot a & = (1+1)\cdot a = (1\cdot a)+(1\cdot a) \tag{\small{axioma 11}}\\ 
     &= a + a \tag{\small{axioma 9}}\\ 
     &< a + b \tag{\small{prop. orden d}}
-    \end{align}
+    \end{align*}
 
     Por otro lado, 
 
-    \begin{align}
+    \begin{align*}
     2\cdot b & = (1+1)\cdot b = (1\cdot b)+(1\cdot b) \tag{\small{axioma 11}}\\ 
     &= b + b \tag{\small{axioma 9}}\\ 
     &> a + b \tag{\small{prop. orden d}}
-    \end{align}
+    \end{align*}
 
     Así pues, se puede concluir que $2\cdot a < a+b < 2\cdot b$ y ahora se tiene
 
-    \begin{align}
+    \begin{align*}
     2\cdot a < a+b < 2\cdot b & \Leftrightarrow 2^{-1}\cdot (2\cdot a) < 2^{-1}\cdot (a+b) < 2^{-1}\cdot (2\cdot b) \tag{\small{prop. orden f}}\\ 
     & \Leftrightarrow (2^{-1}\cdot 2)\cdot a < 2^{-1}\cdot (a+b) < (2^{-1}\cdot 2)\cdot b \tag{\small{axioma 7}}\\ 
     & \Leftrightarrow 1 \cdot a < 2^{-1}\cdot (a+b) < 1\cdot b \tag{\small{axioma 10}}\\ 
     & \Leftrightarrow a < 2^{-1}\cdot (a+b) < b \tag{\small{axioma 9}} \\
     & \Leftrightarrow a < \frac{a+b}{2} < b. 
-    \end{align}
+    \end{align*}
 
 l. Sea $a\in\mathbb{R}$ tal que $0\leq a <b$ $\forall b\in\mathbb{R}$ con $b>0$. Como $a\geq 0$ se tiene que $a>0$ o $a=0$. Si $a>0$, por la propiedad anterior se tiene $0<\frac{a}{2}<a$. Si ahora tomamos $b=\frac{a}{2}>0$ se tiene que $a<\frac{a}{2}$, lo cual es absurdo, y, por tanto, debe ser $a=0$.
 :::
@@ -628,31 +628,31 @@ a. Sea $a\in\mathbb{R}$. Si $a=0$ entonces |0|=0=|-0|.
     Y si $a<0$ entonces $-a>0$, de modo que $|a| = -a = |-a|$.
 
 b. Para cualesquiera $a,b\in\mathbb{R}$ se tiene
-    \begin{align}
+    \begin{align*}
     |a-b| &= |-(a-b)| \tag{\small{prop. valor absoluto a}}\\
     &= |(-1)(a-b)| \tag{\small{prop. algebraica f}}\\ 
     &= |((-1)\cdot a)+ ((-1)\cdot(-b))| \tag{\small{axioma 11}}\\
     &= |-a + -(-b)| \tag{\small{prop. algebraica f}}\\ 
     &= |-a + b| \tag{\small{prop. algebraica g}}\\ 
     &= |b-a| \tag{\small{axioma 3}}
-    \end{align}
+    \end{align*}
 
 c. Para cualesquiera $a,b\in \mathbb{R}$, se pueden dar varios casos:
 
     - Si $a>0$ y $b>0$, entonces, por el axioma 12, $a\cdot b > 0$ y $|a\cdot b| = a\cdot b = |a|\cdot |b|$.
     - Si $a>0$ y $b<0$, entonces, por la propiedad de orden j, $a\cdot b < 0$, y se tiene
     
-        \begin{align}
+        \begin{align*}
         |a\cdot b| &= -(a\cdot b)\\
         &= (-1)\cdot (a\cdot b) \tag{\small{prop. algebraica f}}\\ 
         &= a\cdot ((-1)\cdot b) \tag{\small{axioma 7}}\\ 
         &= a\cdot -b \tag{\small{prop. algebraica f}}\\
         &= |a|\cdot |b|.
-        \end{align}
+        \end{align*}
     - Si $a<0$ y $b>0$, la prueba es similar al caso anterior.
     - Si $a<0$ y $b<0$, entonces por la propiedad de orden i, $a\cdot b > 0$, y se tiene
         
-        \begin{align}
+        \begin{align*}
         |a\cdot b| &= (a\cdot b)\\
         &= 1\cdot (a\cdot b) \tag{\small{axioma 9}}\\ 
         &= -(-1)\cdot (a\cdot b) \tag{\small{prop. algebraica g}}\\ 
@@ -660,26 +660,26 @@ c. Para cualesquiera $a,b\in \mathbb{R}$, se pueden dar varios casos:
         &= ((-1)\cdot a)\cdot ((-1)\cdot b) \tag{\small{axioma 7}}\\ 
         &= -a\cdot -b \tag{\small{prop. algebraica f}}\\
         &= |a|\cdot |b|.
-        \end{align}
+        \end{align*}
     - $a=0$ o $b=0$, entonces por la propiedad algebraica e $a\cdot b=0$ y es evidente que $|a\cdot b|=0=|a|\cdot |b|$.
 
 d. Sean $a,b\in\mathbb{R}$ tales que $b>0$. Si $|a|\leq b$, entonces $a\leq b$ y $-a\leq b$, y para esta última desigualdad, si $-a<b$ se tiene
 
-    \begin{align}
+    \begin{align*}
     -a<b &\Rightarrow (-1)\cdot (-a)>(-1)\cdot b \tag{\small{prop. orden g}}\\ 
     &\Rightarrow -(-a) > -b \tag{\small{prop. algebraica f}}\\ 
     &\Rightarrow a > -b \tag{\small{prop. algebraica g}}
-    \end{align}
+    \end{align*}
 
     Y si $-a=b$ entonces $a=-b$, por lo que $a\geq -b$, y se concluye que $-b\leq a\leq b$.
 
     Para probar la otra implicación supongamos que $-b\leq a\leq b$, entonces $a\leq b$ y por otro lado $a\geq -b$, de donde se tiene, si $a>-b$
 
-    \begin{align}
+    \begin{align*}
     a>-b &\Rightarrow (-1)\cdot a<(-1)\cdot (-b) \tag{\small{prop. orden g}}\\ 
     &\Rightarrow -a < -(-b) \tag{\small{prop. algebraica f}}\\ 
     &\Rightarrow -a < b \tag{\small{prop. algebraica g}}.
-    \end{align}
+    \end{align*}
 
     Y si $a=-b$ entonces $-a=b$, por lo que $-a\leq b$, y como $b>0$ se puede concluir que $|a|<b$.
 
@@ -718,7 +718,7 @@ Dado un número real $a\in \mathbb{R}$ con $a>0$, existe un número natural $n\i
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe $n\in\mathbb{N}$ tal que $x<n$. Entonces, $x$ es una cota superior de $\mathbb{N}$. Por tanto, por el axioma del supremo existe un número $s=\sup(\mathbb{N})$. Por ser supremo, se cumple que existe un número natural $m\in\mathbb{N}$ tal que $s-1<m$, pero entonces se tiene que $s<m+1$, y como $m\in\mathbb{N}$ también $n+1\in\mathbb{N}$, lo que contradice que $s$ sea cota superior de $\mathbb{N}$. 
+Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe $n\in\mathbb{N}$ tal que $x<n$. Entonces, $x$ es una cota superior de $\mathbb{N}$. Por tanto, por el axioma del supremo existe un número $s=\sup(\mathbb{N})$. Por ser supremo, se cumple que existe un número natural $m\in\mathbb{N}$ tal que $s-1<m$, pero entonces se tiene que $s<m+1$, y como $m\in\mathbb{N}$ también $m+1\in\mathbb{N}$, lo que contradice que $s$ sea cota superior de $\mathbb{N}$. 
 :::
 :::
 
@@ -744,10 +744,10 @@ Supongamos primero que $x^2<a$. Entonces $a-x^2>0$ y $\frac{a-x^2}{2x+1}>0$ ya q
 
 Por otro lado, se tiene
 
-\begin{align}
+\begin{align*}
 \left(x+\frac{1}{n}\right)^2 &= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) <\\ 
 &< x^2 + \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
-\end{align}
+\end{align*}
 
 Por tanto, $x+\frac{1}{n}\in A$, pero $x+\frac{1}{n}>x$ lo que contradice que $x$ sea cota superior de $A$.
 
@@ -755,9 +755,9 @@ Supongamos ahora que $x^2>a$. Entonces $x^2-a>0$ y $\frac{x^2-a}{2x}>0$ al ser $
 
 Por otro lado, se tiene
 
-\begin{align}
+\begin{align*}
 \left(x-\frac{1}{m}\right)^2 &= x^2 + \frac{1}{m^2}-\frac{2x}{m} > x^2 - \frac{2x}{m} > x^2 -(x^2-a) = a.
-\end{align}
+\end{align*}
 
 Por tanto, $x-\frac{1}{m}$ es una cota superior de $A$, pero $x>x-\frac{1}{m}$, lo que contradice que $x=\sup(A)$.
 

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  26 SEP 2022 07:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  27 SEP 2022 10:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/run/media/alf/datos/misrepositorios/docencia/analisis-manual/index.tex
-(/run/media/alf/datos/misrepositorios/docencia/analisis-manual/index.tex
+**/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex
+(/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-08-30> (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrreport.cls
 Document Class: scrreport 2022/07/04 v3.37 KOMA-Script document class (report)
@@ -778,10 +778,10 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@example=\count334
-\c@definition=\count335
+\c@definition=\count334
+\c@corollary=\count335
 \c@theorem=\count336
-\c@corollary=\count337
+\c@example=\count337
 \c@proposition=\count338
  (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
@@ -811,8 +811,8 @@ Package babel Info: Hyphen rules for 'spanish' set to \l@spanish
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 197.
- (./index.aux)
-\openout1 = `index.aux'.
+ (./manual-analisis.aux)
+\openout1 = `manual-analisis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
 LaTeX Font Info:    ... okay on input line 210.
@@ -872,11 +872,15 @@ Package hyperref Info: Link coloring ON on input line 210.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<img/logos/pi.png, id=7, 441.54pt x 426.69pt>
-File: img/logos/pi.png Graphic file (type png)
-<use img/logos/pi.png>
-Package pdftex.def Info: img/logos/pi.png  used on input line 226.
-(pdftex.def)             Requested size: 167.30185pt x 161.6751pt.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 218.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<img/logos/infinito.png, id=7, 416.50342pt x 187.33145pt>
+File: img/logos/infinito.png Graphic file (type png)
+<use img/logos/infinito.png>
+Package pdftex.def Info: img/logos/infinito.png  used on input line 226.
+(pdftex.def)             Requested size: 167.2975pt x 75.24567pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 232.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -916,22 +920,19 @@ File: img/logos/aprendeconalf.png Graphic file (type png)
 <use img/logos/aprendeconalf.png>
 Package pdftex.def Info: img/logos/aprendeconalf.png  used on input line 233.
 (pdftex.def)             Requested size: 41.82875pt x 50.0058pt.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 235.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+ [1
 
 
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/logos/pi.png> <./img/logos/aprendeconalf.png>]
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/logos/infinito.png> <./img/logos/aprendeconalf.png>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package tocbasic Info: character protrusion at toc deactivated on input line 244.
- (./index.toc)
+ (./manual-analisis.toc)
 \tf@toc=\write4
-\openout4 = `index.toc'.
+\openout4 = `manual-analisis.toc'.
 
  [2
 
@@ -961,53 +962,53 @@ Class scrreprt Warning: \float@addtolists detected!
 [4
 
 ] [5]
-<./img/teoria-conjuntos/union.png, id=118, 300.53745pt x 233.55548pt>
+<./img/teoria-conjuntos/union.png, id=117, 300.53745pt x 233.55548pt>
 File: ./img/teoria-conjuntos/union.png Graphic file (type png)
 <use ./img/teoria-conjuntos/union.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/union.png  used on input line 516.
 (pdftex.def)             Requested size: 170.71654pt x 132.66827pt.
  [6]
-<./img/teoria-conjuntos/interseccion.png, id=138, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/interseccion.png, id=137, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/interseccion.png Graphic file (type png)
 <use ./img/teoria-conjuntos/interseccion.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/interseccion.png  used on input line 537.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
-<./img/teoria-conjuntos/complemento.png, id=139, 302.97807pt x 206.61807pt>
+<./img/teoria-conjuntos/complemento.png, id=138, 302.97807pt x 206.61807pt>
 File: ./img/teoria-conjuntos/complemento.png Graphic file (type png)
 <use ./img/teoria-conjuntos/complemento.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/complemento.png  used on input line 558.
 (pdftex.def)             Requested size: 199.17097pt x 135.82607pt.
  [7 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
-<./img/teoria-conjuntos/diferencia.png, id=155, 300.05772pt x 200.34341pt>
+<./img/teoria-conjuntos/diferencia.png, id=154, 300.05772pt x 200.34341pt>
 File: ./img/teoria-conjuntos/diferencia.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/diferencia.png  used on input line 579.
 (pdftex.def)             Requested size: 170.71875pt x 113.986pt.
-<./img/teoria-conjuntos/diferencia-simetrica.png, id=156, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/diferencia-simetrica.png, id=155, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/diferencia-simetrica.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia-simetrica.png>
-Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 607.
+Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 605.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
  [8 <./img/teoria-conjuntos/complemento.png> <./img/teoria-conjuntos/diferencia.png>] [9 <./img/teoria-conjuntos/diferencia-simetrica.png>] [10] [11] [12]
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 960.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 958.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [13] [14] (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) (././img/teoria-conjuntos/no-funcion.tex) [15] (././img/teoria-conjuntos/funcion-inyectiva.tex) (././img/teoria-conjuntos/funcion-sobreyectiva.tex) (././img/teoria-conjuntos/funcion-biyectiva.tex) (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) [16] [17] [18] [19] [20] [21] [22] [23]
 chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 1638.
+(Font)              <14.4> on input line 1636.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1638.
+(Font)              <10> on input line 1636.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1638.
+(Font)              <7> on input line 1636.
 [24
 
 ] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39
 
 ] [40] [41] [42] [43] [44]
 chapter 3.
-<./img/topologia-reales/recta-real.png, id=736, 551.43pt x 180.18pt>
+<./img/topologia-reales/recta-real.png, id=712, 551.43pt x 180.18pt>
 File: ./img/topologia-reales/recta-real.png Graphic file (type png)
 <use ./img/topologia-reales/recta-real.png>
-Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 2982.
+Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 2980.
 (pdftex.def)             Requested size: 418.26656pt x 136.66876pt.
 [45
 
@@ -1015,20 +1016,20 @@ Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input li
 chapter 4.
 [54
 
-] [55] [56] [57] [58] [59] [60] (./index.aux) ) 
+] [55] [56] [57] [58] [59] [60] (./manual-analisis.aux) ) 
 Here is how much of TeX's memory you used:
- 38172 strings out of 476932
- 775354 string characters out of 5824858
- 1302035 words of memory out of 5000000
- 57724 multiletter control sequences out of 15000+600000
- 553195 words of font info for 248 fonts, out of 8000000 for 9000
+ 38148 strings out of 476932
+ 775199 string characters out of 5824858
+ 1301086 words of memory out of 5000000
+ 57728 multiletter control sequences out of 15000+600000
+ 559236 words of font info for 255 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 122i,25n,120p,10672b,1051s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/home/alf/texmf/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</home/alf/texmf/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx12.pfb></home/alf/texmf/fonts/type1/public/lm/lmex10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi6.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi8.pfb></home/alf/texmf/fonts/type1/public/lm/lmr10.pfb></home/alf/texmf/fonts/type1/public/lm/lmr6.pfb></home/alf/texmf/fonts/type1/public/lm/lmr8.pfb></home/alf/texmf/fonts/type1/public/lm/lmri10.pfb></home/alf/texmf/fonts/type1/public/lm/lmss12.pfb></home/alf/texmf/fonts/type1/public/lm/lmssbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb></home/alf/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on index.pdf (60 pages, 554050 bytes).
+ 122i,25n,120p,10682b,1051s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/home/alf/texmf/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</home/alf/texmf/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmex10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi6.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi8.pfb></home/alf/texmf/fonts/type1/public/lm/lmr10.pfb></home/alf/texmf/fonts/type1/public/lm/lmr6.pfb></home/alf/texmf/fonts/type1/public/lm/lmr8.pfb></home/alf/texmf/fonts/type1/public/lm/lmri10.pfb></home/alf/texmf/fonts/type1/public/lm/lmss12.pfb></home/alf/texmf/fonts/type1/public/lm/lmssbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb></home/alf/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on manual-analisis.pdf (60 pages, 527917 bytes).
 PDF statistics:
- 1242 PDF objects out of 1440 (max. 8388607)
- 1116 compressed objects within 12 object streams
- 666 named destinations out of 1000 (max. 500000)
- 43245 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1188 PDF objects out of 1200 (max. 8388607)
+ 1065 compressed objects within 11 object streams
+ 626 named destinations out of 1000 (max. 500000)
+ 47341 words of extra memory for PDF output out of 51595 (max. 10000000)
 
