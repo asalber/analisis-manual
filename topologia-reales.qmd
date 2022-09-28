@@ -107,7 +107,7 @@ Intuitivamente, un punto interior de un conjunto es un punto que no está en el 
 :::{#exm-punto-interior} 
 $0.9$ es un punto interior del intervalo $(0,1)$ ya que podemos tomar $\varepsilon = 0.01$ tal que el entorno $(0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)$.
 
-Sin embargo, $1$ no es un punto interior del intervalo $[1,\infty)$, porque por muy pequeño que tomemos $\varepsilon>0$, $1-\varepsilon < 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
+Sin embargo, $1$ no es un punto interior del intervalo $(0,1)$ ya que por muy pequeño que tomemos $\varepsilon>0$, $1+\varepsilon > 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores mayores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq (0,1)$.
 :::
 
 :::{#def-punto-exterior}
@@ -122,8 +122,11 @@ Una definición equivalente es que un punto es punto exterior de un conjunto si 
 :::{#exm-punto-exterior} 
 $1.01$ es un punto exterior del conjunto $(-\infty, 1)$ ya que tomando $\varepsilon=0.001$ el entorno $(1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)$.
 
-Sin embargo, el punto $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que, como se ha visto en el ejemplo anterior, no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$.
+Sin embargo, $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$, porque por muy pequeño que tomemos $\varepsilon>0$, $1-\varepsilon < 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
 :::
+
+:::{.callout-warning}
+El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)
 
 :::{#def-punto-frontera}
 ## Punto frontera
@@ -132,7 +135,7 @@ Se dice que $a\in \mathbb{R}$ es un _punto frontera_ de un conjunto $A\subseteq 
 El conjunto de los puntos frontera de $A$ se llama _frontera_ de $A$ y se denota por $\operatorname{Fr}(A)$.
 :::
 
-Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior del conjunto ni de su complementario.
+Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior ni exterior del conjunto.
 
 :::{#exm-punto-frontera} 
 El punto $1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
@@ -145,7 +148,7 @@ Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Tomemos cualquier punto in $(a,b)$, entonces se puede tomar $\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}$ de manera que el entorno $(x-\varepsilon, x+\varepsilon)\subseteq (a,b)$.
+Tomemos cualquier punto $x\in (a,b)$, entonces se puede tomar $\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}$ de manera que el entorno $(x-\varepsilon, x+\varepsilon)\subseteq (a,b)$.
 :::
 :::
 
@@ -187,7 +190,7 @@ Se dice que $a\in \mathbb{R}$ es un _punto adherente_ de un conjunto $A\subseteq
 El conjunto de los puntos adherentes de $A$ se llama _adherencia_ de $A$ y se denota por $\operatorname{Adh}(A)$.
 :::
 
-Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente.
+Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente.
 
 :::{#def-punto-acumulacion}
 ## Punto de acumulacion
@@ -268,7 +271,7 @@ Todo subconjunto infinito de $\mathbb{R}$ acotado tiene al menos un punto de acu
 :::{.proof}
 Para demostrar el teorema construiremos una sucesión de intervalos cerrados y anidados y aplicaremos el @thm-intervalos-anidados.
 
-Sea $A\subset \mathbb{R}$ un subconjunto finito y acotado. Como $A$ está acotado, existe un intervalo cerrado tal que $A\subset I_1=[a_1,b_1]$. Si $I_1$ se divide en dos intervalos $[a_1, \frac{a_1+b_1}{2}]$ y $[\frac{a_1+b_1}{2}, b_1]$, al menos uno de estos intervalos tendrá infinitos puntos de $A$, ya que de lo contrario $A$ sería finito. Sea $I_2=[a_2,b_2]$ cualquiera de los dos intervalos que tenga infinitos puntos de $A$. Si $I_2$ se divide en dos intervalos $[a_2, \frac{a_2+b_2}{2}]$ y $[\frac{a_2+b_2}{2}, b_2]$, al menos uno de estos intervalos tendrá infinitos puntos de $A$, ya que de lo contrario $A$ sería finito. Sea $I_3=[a_3,b_3]$ cualquiera de los dos intervalos que tenga infinitos puntos de $A$. Siguiendo la misma lógica, se puede construir una sucesión de intervalos anidados $I_1\supset I_2\supset I_3 \supset \cdots$, con tamaños $\frac{b_1-a_1}{2^{n-1}}$. Como $\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0$, aplicando el @thm-intervalos-anidados, existe un único $a\in\mathbb{R}$ tal que $\cap_{n=1}^\infty I_n=\{a\}$.
+Sea $A\subset \mathbb{R}$ un subconjunto infinito y acotado. Como $A$ está acotado, existe un intervalo cerrado tal que $A\subset I_1=[a_1,b_1]$. Si $I_1$ se divide en dos intervalos $[a_1, \frac{a_1+b_1}{2}]$ y $[\frac{a_1+b_1}{2}, b_1]$, al menos uno de estos intervalos tendrá infinitos puntos de $A$, ya que de lo contrario $A$ sería finito. Sea $I_2=[a_2,b_2]$ cualquiera de los dos intervalos que tenga infinitos puntos de $A$. Si $I_2$ se divide en dos intervalos $[a_2, \frac{a_2+b_2}{2}]$ y $[\frac{a_2+b_2}{2}, b_2]$, al menos uno de estos intervalos tendrá infinitos puntos de $A$, ya que de lo contrario $A$ sería finito. Sea $I_3=[a_3,b_3]$ cualquiera de los dos intervalos que tenga infinitos puntos de $A$. Siguiendo la misma lógica, se puede construir una sucesión de intervalos anidados $I_1\supset I_2\supset I_3 \supset \cdots$, con tamaños $\frac{b_1-a_1}{2^{n-1}}$. Como $\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0$, aplicando el @thm-intervalos-anidados, existe un único $a\in\mathbb{R}$ tal que $\cap_{n=1}^\infty I_n=\{a\}$.
 
 Veremos ahora que $a$ es un punto de acumulación de $A$. Para cualquier $\varepsilon>0$, considérese el entorno reducido de $a$ $(a-\varepsilon, a+\varepsilon)\setminus\{a\}$. Como $\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0$, existe $m\in\mathbb{N}$ tal que $\frac{b_1-a_1}{2^{m-1}}<\varepsilon$, y por tanto $I_m\subset (a-\varepsilon, a+\varepsilon)$, y como $I_m$ contiene infinitos puntos de $A$, el entorno reducido $a$ también contiene puntos de $A$, por lo que $a$ es un punto de acumulación de $A$.
 :::

@@ -178,8 +178,6 @@ Veamos que la sucesión $\left(\frac{2n+1}{n+3}\right)_{n=1}^\infty$ converge a 
 \lim_{n\to\infty}\frac{2n+1}{n+3} &=  \lim_{n\to\infty}\frac{2+\frac{1}{n}}{1+\frac{3}{n}} = \frac{\lim_{n\to\infty}2+\frac{1}{n}}{\lim_{n\to\infty}1+\frac{3}{n}} = \\ 
 &=\frac{\lim_{n\to\infty} 2 + \lim_{n\to\infty}\frac{1}{n}}{\lim_{n\to\infty} 1 + \lim_{n\to\infty}\frac{3}{n}} = \frac{2+0}{1+0} = 2.
 \end{align*}
-
-
 :::
 
 :::{#thm-compresion-sucesiones}
@@ -258,3 +256,53 @@ Veamos que la sucesión $\left(\frac{n}{2^n}\right)_{n=1}^\infty$ converge a 0.
 
 Así pues, por la proposición anterior, $\lim_{n\to\infty}\frac{n}{2^n} = 0$.
 :::
+
+## Sucesiones monótonas
+
+Veremos a continuación un tipo particular de sucesiones, cuyos términos siempre crecen o decrecen. Estas sucesiones son de especial importancia en aplicaciones del Análisis Matemático.
+
+:::{#def-sucesion-monotona}
+## Sucesión monónota
+Dada una sucesión de números reales $(x_n)_{n=1}^\infty$: 
+
+- Se dice que es una _sucesión creciente_, si $x_n\leq x_{n+1}$ $\forall n\in\mathbb{N}$, y se dice que es _estrictamente creciente_ si $x_n< x_{n+1}$ $\forall n\in\mathbb{N}$.
+- Se dice que es una _sucesión decreciente_, si $x_n\geq x_{n+1}$ $\forall n\in\mathbb{N}$, y se dice que es _estrictamente decreciente_ si $x_n>x_{n+1}$ $\forall n\in\mathbb{N}$.
+- Se dice que es una _sucesión monótona_, si es creciente o decreciente.
+:::
+
+:::{#exm-sucesiones-monotonas}
+Las sucesiones $(2n)_{n=1}^\infty$ y $(n^2)_{n=1}^\infty$ son estrictamente crecientes y la sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ es estrictamente decreciente.
+
+La sucesión $(a^n)_{n=1}^\infty$ es estrictamente creciente si $a>1$ y estrictamente decreciente si $0<a<1$. Si $a=1$ la sucesión es, a la vez, creciente y decreciente, ya que en realidad es constante.
+
+Sin embargo, la sucesión $((-2)^n)_{n=1}^\infty$ no es monótona.
+:::
+
+:::{#thm-convergencia-monotona}
+## Convergencia de una sucesión monótona
+Una sucesión de números reales monótona $(x_n)_{n=1}^\infty$ converge si y solo si está acotada. Además se cumple que:
+
+- Si $(x_n)_{n=1}^\infty$ es una sucesión creciente y acotada, entonces $\lim_{n\to\infty}x_n = \sup(\{x_n:n\in\mathbb{N}\})$.
+- Si $(x_n)_{n=1}^\infty$ es una sucesión decreciente y acotada, entonces $\lim_{n\to\infty}x_n = \inf(\{x_n:n\in\mathbb{N}\})$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Por el @thm-convergencia-sucesion-acotada ya se vio que toda sucesión convergente está acotada. Veamos ahora que si $(x_n)_{n=1}^\infty$ es una sucesión monótona acotada, entonces converge. 
+
+Sea $(x_n)_{n=1}^\infty$ una sucesión creciente y acotada, entonces el conjunto de los términos de la sucesión $A=\{x_n:n\in\mathbb{N}\}$ no está vacío y está acotado, y por el axioma del supremo, existe $s=\sup(A)$. Para ver que $(x_n)_{n=1}^\infty$ converge a $s$, tomemos cualquier $\varepsilon>0$. Como $s$ es el supremo de $A$, $s-\varepsilon$ no es cota superior de $A$ de manera que existe $k\in\mathbb{N}$ tal que $x_k>s-\varepsilon$. Si tomamos ahora cualquier $n\geq k$, por ser la sucesión monótona, se tiene que $x_k\leq x_n$, y al mismo tiempo $x_n<s$ por ser $s$ una cota superior de la sucesión. Por tanto, para cualquier $n\geq k$ se cumple
+
+$$
+s-\varepsilon \leq x_k\leq x_n\leq s< s+\varepsilon \Rightarrow -\varepsilon < x_n-s <\varepsilon \Rightarrow |x_n-s|<\varepsilon,
+$$
+
+lo que prueba que $\lim_{n\to\infty}x_n = s$.
+
+De forma similar se puede probar que si $(x_n)_{n=1}^\infty$ una sucesión decreciente y acotada, entonces $\lim_{n\to\infty}x_n = \inf(\{x_n:n\in\mathbb{N}\})$.
+:::
+:::
+
+
+
+

@@ -172,6 +172,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#concepto-de-sucesión" id="toc-concepto-de-sucesión" class="nav-link active" data-scroll-target="#concepto-de-sucesión"><span class="toc-section-number">4.1</span>  Concepto de sucesión</a></li>
   <li><a href="#límite-de-una-sucesión" id="toc-límite-de-una-sucesión" class="nav-link" data-scroll-target="#límite-de-una-sucesión"><span class="toc-section-number">4.2</span>  Límite de una sucesión</a></li>
+  <li><a href="#sucesiones-monótonas" id="toc-sucesiones-monótonas" class="nav-link" data-scroll-target="#sucesiones-monótonas"><span class="toc-section-number">4.3</span>  Sucesiones monótonas</a></li>
   </ul>
 </nav>
     </div>
@@ -497,6 +498,54 @@ Demostración
 &amp;= \lim_{n\to\infty} \frac{1}{2} + \lim_{n\to\infty} \frac{1}{2n} = \frac{1}{2}&lt;1.
 \end{align*}\]</span></p>
 <p>Así pues, por la proposición anterior, <span class="math inline">\(\lim_{n\to\infty}\frac{n}{2^n} = 0\)</span>.</p>
+</div>
+</section>
+<section id="sucesiones-monótonas" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sucesiones-monótonas"><span class="header-section-number">4.3</span> Sucesiones monótonas</h2>
+<p>Veremos a continuación un tipo particular de sucesiones, cuyos términos siempre crecen o decrecen. Estas sucesiones son de especial importancia en aplicaciones del Análisis Matemático.</p>
+<div id="def-sucesion-monotona" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.6 (Sucesión monónota) </strong></span>Dada una sucesión de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span>:</p>
+<ul>
+<li>Se dice que es una <em>sucesión creciente</em>, si <span class="math inline">\(x_n\leq x_{n+1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y se dice que es <em>estrictamente creciente</em> si <span class="math inline">\(x_n&lt; x_{n+1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</li>
+<li>Se dice que es una <em>sucesión decreciente</em>, si <span class="math inline">\(x_n\geq x_{n+1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y se dice que es <em>estrictamente decreciente</em> si <span class="math inline">\(x_n&gt;x_{n+1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</li>
+<li>Se dice que es una <em>sucesión monótona</em>, si es creciente o decreciente.</li>
+</ul>
+</div>
+<div id="exm-sucesiones-monotonas" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.10 </strong></span>Las sucesiones <span class="math inline">\((2n)_{n=1}^\infty\)</span> y <span class="math inline">\((n^2)_{n=1}^\infty\)</span> son estrictamente crecientes y la sucesión <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span> es estrictamente decreciente.</p>
+<p>La sucesión <span class="math inline">\((a^n)_{n=1}^\infty\)</span> es estrictamente creciente si <span class="math inline">\(a&gt;1\)</span> y estrictamente decreciente si <span class="math inline">\(0&lt;a&lt;1\)</span>. Si <span class="math inline">\(a=1\)</span> la sucesión es, a la vez, creciente y decreciente, ya que en realidad es constante.</p>
+<p>Sin embargo, la sucesión <span class="math inline">\(((-2)^n)_{n=1}^\infty\)</span> no es monótona.</p>
+</div>
+<div id="thm-convergencia-monotona" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.4 (Convergencia de una sucesión monótona) </strong></span>Una sucesión de números reales monótona <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge si y solo si está acotada. Además se cumple que:</p>
+<ul>
+<li>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión creciente y acotada, entonces <span class="math inline">\(\lim_{n\to\infty}x_n = \sup(\{x_n:n\in\mathbb{N}\})\)</span>.</li>
+<li>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión decreciente y acotada, entonces <span class="math inline">\(\lim_{n\to\infty}x_n = \inf(\{x_n:n\in\mathbb{N}\})\)</span>.</li>
+</ul>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Por el <a href="#thm-convergencia-sucesion-acotada">Teorema&nbsp;<span>4.2</span></a> ya se vio que toda sucesión convergente está acotada. Veamos ahora que si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión monótona acotada, entonces converge.</p>
+<p>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión creciente y acotada, entonces el conjunto de los términos de la sucesión <span class="math inline">\(A=\{x_n:n\in\mathbb{N}\}\)</span> no está vacío y está acotado, y por el axioma del supremo, existe <span class="math inline">\(s=\sup(A)\)</span>. Para ver que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(s\)</span>, tomemos cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>. Como <span class="math inline">\(s\)</span> es el supremo de <span class="math inline">\(A\)</span>, <span class="math inline">\(s-\varepsilon\)</span> no es cota superior de <span class="math inline">\(A\)</span> de manera que existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_k&gt;s-\varepsilon\)</span>. Si tomamos ahora cualquier <span class="math inline">\(n\geq k\)</span>, por ser la sucesión monótona, se tiene que <span class="math inline">\(x_k\leq x_n\)</span>, y al mismo tiempo <span class="math inline">\(x_n&lt;s\)</span> por ser <span class="math inline">\(s\)</span> una cota superior de la sucesión. Por tanto, para cualquier <span class="math inline">\(n\geq k\)</span> se cumple</p>
+<p><span class="math display">\[
+s-\varepsilon \leq x_k\leq x_n\leq s&lt; s+\varepsilon \Rightarrow -\varepsilon &lt; x_n-s &lt;\varepsilon \Rightarrow |x_n-s|&lt;\varepsilon,
+\]</span></p>
+<p>lo que prueba que <span class="math inline">\(\lim_{n\to\infty}x_n = s\)</span>.</p>
+<p>De forma similar se puede probar que si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión decreciente y acotada, entonces <span class="math inline">\(\lim_{n\to\infty}x_n = \inf(\{x_n:n\in\mathbb{N}\})\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 
 
