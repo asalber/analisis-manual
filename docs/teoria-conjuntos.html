@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cuerpo-reales.html" rel="next">
+<link href="./reales.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cuerpo-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -478,9 +478,11 @@ Demostración
 <p><span class="theorem-title"><strong>Definición 1.26 (Ínfimo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>ínfimo</em> de <span class="math inline">\(B\)</span> y se denota <span class="math inline">\(\inf(B)\)</span> a la mayor de las cotas inferiores de <span class="math inline">\(B\)</span>.</p>
 </div>
 <p>Obsérvese que un conjunto puede no tener supremo o ínfimo.</p>
-<p>:::{#exm-supremo-infimo-maximo-minimo}. Si se toma el conjunto de los números naturales con la relación de orden total <span class="math inline">\((\mathbb{N},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{1, 2, 3\}\subseteq \mathbb{N}\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{N}\)</span> tal que <span class="math inline">\(3\leq x\)</span> es una cota superior de <span class="math inline">\(B\)</span>, por tanto <span class="math inline">\(3\)</span> es el supremo de <span class="math inline">\(B\)</span>, y además es un máximo puesto que <span class="math inline">\(3\in B\)</span>.</p>
+<div id="exm-supremo-infimo-maximo-minimo" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.10 </strong></span>Si se toma el conjunto de los números naturales con la relación de orden total <span class="math inline">\((\mathbb{N},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{1, 2, 3\}\subseteq \mathbb{N}\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{N}\)</span> tal que <span class="math inline">\(3\leq x\)</span> es una cota superior de <span class="math inline">\(B\)</span>, por tanto <span class="math inline">\(3\)</span> es el supremo de <span class="math inline">\(B\)</span>, y además es un máximo puesto que <span class="math inline">\(3\in B\)</span>.</p>
 <p>Por otro lado, si se considera el conjunto de los números reales con la relación de orden total <span class="math inline">\((\mathbb{R},\leq)\)</span>, para el intervalo <span class="math inline">\((0,1)\)</span> se tiene que cualquier <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x\leq 0\)</span> es una cota inferior y <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(1\leq x\)</span> es una cota superior, de modo que <span class="math inline">\(0\)</span> es el ínfimo y <span class="math inline">\(1\)</span> el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que <span class="math inline">\(0\not\in (0,1)\)</span> y <span class="math inline">\(1\not\in (0,1)\)</span>.</p>
-<p>Finalmente, si se considera el conjunto de los números enteros con la relación de orden total <span class="math inline">\((\mathbb{Z},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo. :::</p>
+<p>Finalmente, si se considera el conjunto de los números enteros con la relación de orden total <span class="math inline">\((\mathbb{Z},\leq)\)</span>, para el conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo.</p>
+</div>
 </section>
 <section id="funciones" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.5</span> Funciones</h2>
@@ -491,7 +493,7 @@ Demostración
 </div>
 <p>Es habitual representar los pares de una función con la notación <span class="math inline">\(y=f(x)\)</span> donde <span class="math inline">\(x\)</span> es la primera componente del par e <span class="math inline">\(y\)</span> la segunda.</p>
 <div id="exm-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.10 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,a), (2,c), (3,c), (4,b)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,a), (2,c), (3,c), (2,b)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(2\)</span>. Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.11 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,a), (2,c), (3,c), (4,b)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,a), (2,c), (3,c), (2,b)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(2\)</span>. Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
 </div>
 <div>
 <div class="quarto-layout-panel">
@@ -599,7 +601,7 @@ Demostración
 </div>
 <p>De manera informal, se puede decir Que el cardinal de un conjunto es su tamaño.</p>
 <div id="exm-cardinal" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.11 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.12 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
 </div>
 <div id="prp-cardinal-conjunto-potencia" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.5 </strong></span>El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
@@ -662,11 +664,13 @@ Demostración
 <p><span class="theorem-title"><strong>Definición 1.40 (Conjunto infinito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>infinito</em> si no es finito. En tal caso su cardinal se denota <span class="math inline">\(|A|=\infty\)</span>.</p>
 </div>
 <p>Hay que dejar claro que el símbolo <span class="math inline">\(\infty\)</span> es una notación de conveniencia que no es ningún número.</p>
-<p>:::{#exm-conjunto-finito-infinito}. El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
-<p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>. :::</p>
+<div id="exm-conjunto-finito-infinito" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.13 </strong></span>El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
+<p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>.</p>
+</div>
 <p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-conjunto-pares-equipotente-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.12 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.14 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
 </div>
 <p>Sin embargo, como se verá más adelante, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> no es equipotente al conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>, sino minuspotente. Por tanto, existen conjuntos infinitos de distintos tamaños. Para demostrarlo se necesita introducir un nuevo concepto.</p>
 <div id="def-conjuntos-numerables" class="theorem definition">
@@ -678,7 +682,7 @@ Demostración
 <p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
 <p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-enteros-equipotentes-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.13 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.15 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
 <p>Del mismo modo se puede probar que el conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span> también es numerable, pues se puede definir una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow \mathbb{Z}\)</span> de la siguiente manera</p>
 <p><span class="math inline">\(f(n)= \begin{cases} (n-1)/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\ -n/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es par}. \end{cases}\)</span></p>
 </div>
@@ -858,7 +862,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cuerpo-reales.html" class="pagination-link">
+      <a href="./reales.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

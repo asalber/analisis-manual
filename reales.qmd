@@ -12,7 +12,7 @@ En este capítulo se estudia el conjunto de los números reales $\mathbb{R}$ ya 
 
 Antes de presentar el conjunto de los números reales se presentan otros subconjuntos suyos más elementales que suelen introducirse antes. Iremos ampliando sucesivamente estos conjuntos para dotarlos de nuevas propiedades hasta llegar al conjunto de los números reales.
 
-## El conjunto de los números naturales $\mathbb{N}$.
+## El conjunto de los números naturales $\mathbb{N}$
 
 El primer conjunto de números que tradicionalmente suele estudiarse en el colegio son los números _naturales_ $\mathbb{N}$, ya que sirven para contar.
 
@@ -30,7 +30,7 @@ $a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{N}$.
 
 En el conjunto de los números naturales todo número tiene un posterior, pero no un anterior.
 
-## El conjunto de los números enteros $\mathbb{Z}$.
+## El conjunto de los números enteros $\mathbb{Z}$
 
 Los números naturales no tienen simétrico (opuesto) para la suma, de manera que no puede definirse la resta. Para ello es necesario extender el conjunto de los naturales con los números negativos ($-1, -2, -3,\ldots$), y el cero ($0$). 
 
@@ -825,7 +825,7 @@ $$
     \end{cases}
 $$
 
-En particular se cumple que $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.
+En particular se cumple que $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.
 
 
 

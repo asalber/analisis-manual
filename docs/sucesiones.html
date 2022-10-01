@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cuerpo-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -266,7 +266,7 @@ Precaución
 </div>
 <p>Si una sucesión tiene límite se dice que es <em>convergente</em>, y en caso contrario se dice que es <em>divergente</em>.</p>
 <div id="exm-limite-sucesion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="cuerpo-reales.html#thm-propiedad-arquimediana">Teorema&nbsp;<span>2.3</span></a>, se tiene que existe un <span class="math inline">\(k\in\mathbb{N}\)</span>, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 4.4 </strong></span>La sucesión <span class="math inline">\((\frac{1}{n})_{n=1}^\infty\)</span> es convergente y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n} = 0\)</span>, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por la <a href="reales.html#thm-propiedad-arquimediana">Teorema&nbsp;<span>2.3</span></a>, se tiene que existe un <span class="math inline">\(k\in\mathbb{N}\)</span>, tal que <span class="math inline">\(\frac{1}{k}&lt;\varepsilon\)</span>, de manera que para cualquier <span class="math inline">\(n&gt;k\)</span>, se tiene <span class="math inline">\(|\frac{1}{n}-0| = \frac{1}{n} &lt;\frac{1}{k}&lt;\varepsilon\)</span>.</p>
 <p>Sin embargo, la sucesión <span class="math inline">\((n)_{n=1}^\infty\)</span> diverge.</p>
 </div>
 <div id="thm-unicidad-limite-sucesion" class="theorem">
@@ -360,7 +360,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión convergente a <span class="math inline">\(x\)</span>. Entonces, si tomamos <span class="math inline">\(\varepsilon=1\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;1\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
-<p>Por la desigualdad triangular (<a href="cuerpo-reales.html#prp-propiedades-valor-absoluto">Proposición&nbsp;<span>2.4</span></a>) se tiene que <span class="math inline">\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|&lt;1 + |x|\)</span>, de donde se deduce que <span class="math inline">\(|x_n|&lt;|x|+1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Si se toma <span class="math inline">\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\)</span> se tiene que si <span class="math inline">\(n&lt;k\)</span> entonces <span class="math inline">\(|x_n|\leq c\)</span> y si <span class="math inline">\(n\geq k\)</span> entonces <span class="math inline">\(|x_n| &lt;|x|+1\leq c\)</span>, de modo que <span class="math inline">\(\forall n\in\mathbb{N}\)</span> <span class="math inline">\(|x_n|\leq c\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está acotada.</p>
+<p>Por la desigualdad triangular (<a href="reales.html#prp-propiedades-valor-absoluto">Proposición&nbsp;<span>2.4</span></a>) se tiene que <span class="math inline">\(|x_n|=|x_n-x+x|\leq |x_n-x|+|x|&lt;1 + |x|\)</span>, de donde se deduce que <span class="math inline">\(|x_n|&lt;|x|+1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Si se toma <span class="math inline">\(c=\max\{|x_1|,\ldots, |x_{k-1}|, |x|+1\}\)</span> se tiene que si <span class="math inline">\(n&lt;k\)</span> entonces <span class="math inline">\(|x_n|\leq c\)</span> y si <span class="math inline">\(n\geq k\)</span> entonces <span class="math inline">\(|x_n| &lt;|x|+1\leq c\)</span>, de modo que <span class="math inline">\(\forall n\in\mathbb{N}\)</span> <span class="math inline">\(|x_n|\leq c\)</span>, por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> está acotada.</p>
 </div>
 </div>
 </div>

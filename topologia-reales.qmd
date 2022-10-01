@@ -80,7 +80,18 @@ La sucesión de intervalos $I_n=[0,\frac{1}{n}]$, $\forall n\in\mathbb{N}$ es un
 Dada una sucesión de intervalos cerrados y anidados $I_n=[a_n,b_n]$, $n\in\mathbb{N}$, existe un número $a\in\mathbb{R}$ tal que $a\in I_n$ $\forall n\in\mathbb{N}$. Además, si el ínfimo de las longitudes $\{b_n-a_n: n\in \mathbb{N}\}$ es $0$, entonces $a$ es único, es decir, $\cap_{n=1}^\infty I_n=\{a\}$.
 :::
 
-<!-- TODO: Demostración teorema intervalos anidados -->
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $A=\{a_n: n\in\mathbb{N}\}$ y $B=\{b_n: n\in\mathbb{N}\}$. Puesto que los intervalos están anidados, $A$ está acotado superiormente por $b_1$ ya que $a_n\leq b_n\leq b_1$ $\forall n\in \mathbb{N}$, y $B$ está acotado inferiormente por $a_1$ ya que $a_1\leq a_n\leq b_n$ $\forall n\in \mathbb{N}$. Así pues, como $A$ está acotado superiormente, por el axioma del supremo, existe $a=\sup(A)$, y como $B$ está acotado inferiormente, existe $b=\inf(B)$.
+
+Veamos ahora que $a\leq b$. Para ello basta probar que $a$ es cota inferior de $B$. Para cualquier $n\in\mathbb{N}$ se cumple que si $k\geq n$ entonces $a_k\leq b_k\leq b_n$ pues $I_n\subseteq I_k$, y si $k<n$, entonces $a_k\leq a_n\leq b_n$, pues $I_n\subseteq I_k$. Luego $b_n$ es una cota superior de $A$, y por tanto, $a\leq b_n$ $\forall n\in\mathbb{N}$, de manera que $a$ es cota inferior de $B$. Así pues, como $a$ es cota superior de $A$ e inferior de $B$, se tiene que $a_n\leq a\leq b_n$ $\forall n\in\mathbb{N}$, de manera que $a\in \cap_{n=1}^\infty I_n$. 
+
+De forma similar se puede probar que $b\in \cap_{n=1}^\infty I_n$, por lo que $\cap_{n=1}^\infty I_n = [a,b]$.
+
+Finalmente, veamos que si $\inf(\{b_n-a_n: n\in \mathbb{N}\})=0$ entonces $a=b$. Para ello, dado $\varepsilon>0$, como $\inf(\{b_n-a_n: n\in \mathbb{N}\})=0$, existe $k\in\mathbb{N}$ tal que $0\leq b_k-a_k < \varepsilon$. Como $b\leq b_k$ y $a\geq a_k$, se tiene que $0\leq b-a\leq b_k-a_k < \varepsilon$, de donde se deduce que $b-a=0$ y por tanto $a=b$, así que $\cap_{n=1}^\infty I_n = [a,a]=\{a\}$.
+:::
+:::
 
 :::{#def-entorno}
 ## Entorno
@@ -122,11 +133,12 @@ Una definición equivalente es que un punto es punto exterior de un conjunto si 
 :::{#exm-punto-exterior} 
 $1.01$ es un punto exterior del conjunto $(-\infty, 1)$ ya que tomando $\varepsilon=0.001$ el entorno $(1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)$.
 
-Sin embargo, $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$, porque por muy pequeño que tomemos $\varepsilon>0$, $1-\varepsilon < 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
+Sin embargo, $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$, ya que $1-\varepsilon < 1$ $\forall \varepsilon>0$, y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
 :::
 
 :::{.callout-warning}
-El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)
+El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)$, y tampoco de su complementario $\overline{(0,1)}=(-\infty, 0]\cup[ñ1,\infty)$.
+:::
 
 :::{#def-punto-frontera}
 ## Punto frontera
@@ -190,7 +202,7 @@ Se dice que $a\in \mathbb{R}$ es un _punto adherente_ de un conjunto $A\subseteq
 El conjunto de los puntos adherentes de $A$ se llama _adherencia_ de $A$ y se denota por $\operatorname{Adh}(A)$.
 :::
 
-Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente.
+Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente. Resulta evidente también que cualquier punto de un conjunto es un punto adherente, de manera que para cualquier conjunto $A$ se tiene $A\subseteq\operatorname{Adh}(A)$.
 
 :::{#def-punto-acumulacion}
 ## Punto de acumulacion
@@ -199,26 +211,64 @@ Se dice que $a\in \mathbb{R}$ es un _punto de acumulación_ de un conjunto $A\su
 El conjunto de los puntos de acumulación de $A$ se llama _conjunto derivado_ de $A$ y se denota por $\operatorname{Ac}(A)$.
 :::
 
+:::{.callout-warning}
+Resulta obvio de la definición que cualquier punto de acumulación es también un punto de adherencia, es decir,  $\operatorname{Ac}(A)\subseteq  \operatorname{Adh}(A)$ para cualquier conjunto $A\subset \mathbb{R}$. Sin embargo no todo punto de adherencia es un punto de acumulación.
+:::
+
 Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conjunto y otros que no.
+
+:::{#exm-puntos-adherentes-acumulacion}
+Dado el conjunto $A=(0,1) \cup \{2\}$, se tiene que $2$ es un punto de adherencia de $A$, pues para cualquier $\varepsilon>0$ el entorno $(2-\varepsilon,2+\varepsilon)$ contiene al propio $2$ que es un punto de $A$. Sin embargo, $2$ no es un punto de acumulación, porque para $\varepsilon=0.5$, por ejemplo, el entorno reducido $(2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)$ no contiene puntos de $A$.
+
+En cambio el punto $0.5$ es tanto un punto de adherencia como un punto de acumulación de $A$ porque para cualquier $\varepsilon>0$ el entorno reducido $(0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}$ siempre contiene puntos de $A$. De hecho, para cualquier $x\in(a,b)$ y para cualquier $\varepsilon>0$, el intervalo $(x-\varepsilon,x+\varepsilon)\setminus \{x\}$ contiene puntos de $A$, y lo mismo ocurre para $a$ y $b$ al ser puntos frontera, de manera que $\operatorname{Ac}(A)=[0,1]$, mientras que $\operatorname{Adh}(A)=[0,1]\cup\{2\}$.
+:::
+
+Intuitivamente, un punto de acumulación de un conjunto $A$ es un punto para el que podemos encontrar puntos de $A$, distintos de él mismo, tan próximos a él como queramos. Un punto de acumulación se diferencia de un punto de adherencia en que siempre está rodeado por puntos de $A$, mientras que un punto de adherencia puede estar aislado de los demás puntos de $A$.
 
 :::{#def-punto-aislado}
 ## Punto aislado
 Se dice que $a\in \mathbb{R}$ es un _punto de aislado_ de un conjunto $A\subseteq \mathbb{R}$, si es un punto adherente de $A$, pero no de acumulación.
 :::
 
+:::{#prp-punto-adherente-acumulacion}
+Para cualquier intervalo abierto $(a,b)$ se tiene que $\operatorname{Adh}((a,b))=\operatorname{Ac}((a,b))=[a,b]$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Todos los puntos de $(a,b)$ son interiores y, por tanto, para cualquier $x\in (a,b)$, existe un $\varepsilon>0$ tal que $(x-\varepsilon,x+\varepsilon)\subseteq (a,b)$. Si ahora tomamos cualquier otro $\varepsilon'>0$, se tiene que $(x-\varepsilon',x+\varepsilon')\setminus \{x\}\cap(x-\varepsilon,x+\varepsilon)\neq \emptyset$, pero como $(x-\varepsilon,x+\varepsilon)\subseteq (a,b)$, se concluye que $(x-\varepsilon',x+\varepsilon')\setminus \{x\}\cap (a,b)\neq \emptyset$, por lo que $x$ es un punto de acumulación de $(a,b)$. Por otro lado, como $a$ y $b$ son puntos frontera, también se tiene que para cualquier $\varepsilon>0$, $(a-\varepsilon,a+\varepsilon)\cap (a,b)\neq \emptyset$ y $(b-\varepsilon,b+\varepsilon)\cap (a,b)\neq \emptyset$ de manera que $[a,b]\subseteq \operatorname{Ac}((a,b))\subseteq \operatorname{Adh}((a,b))$. Sea ahora cualquier $x>b$, y tomemos $\varepsilon=\frac{|x-b|}{2}$, entonces $(x-\varepsilon, x+\varepsilon)\cap (a,b)=\emptyset$, de manera que $x$ no es un punto de adherencia de $(a,b)$. Del mismo modo se puede probar que si $x<a$, entonces $x$ tampoco es un punto de adherencia de $(a,b)$, por lo que $\operatorname{Adh}((a,b))=[a,b]$ y como $\operatorname{Ac}((a,b))\subseteq \operatorname{Adh}((a,b))$, también se concluye que $\operatorname{Ac}((a,b))=[a,b]$.
+:::
+:::
+
+:::{#prp-adherencia-conjunto-mas-acumulacion}
+Para cualquier conjunto $A\subseteq \mathbb{R}$, se tiene que $\operatorname{Adh}(A)=A\cup \operatorname{Ac}(A)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Ya se ha visto que $A\subseteq \operatorname{Adh}(A)$ y también $\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)$, por lo que $A\cup \operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)$. 
+
+Veamos ahora que $\operatorname{Adh}(A)\subseteq A\cup \operatorname{Ac}(A)$. Sea $x$ un punto de adherencia de $A$. Si $x\in A$ es obvio que $x\in A\cup \operatorname{Ac}(A)$, y si $x\not\in A$, entonces $x\in \operatorname{Ac}(A)$, ya que, por ser $x$ punto de adherencia de $A$, para cualquier $\varepsilon>0$, $(x-\varepsilon,x+\varepsilon)\cap A\neq \emptyset$, pero como además $x\not\in A$, también se cumple que el entorno reducido  $(x-\varepsilon,x+\varepsilon)\setminus\{x\}$ contiene puntos de $A$. Así pues, $x\in A\cup \operatorname{Ac}(A)$, y por tanto $\operatorname{Adh}(A)\subseteq A\cup \operatorname{Ac}(A)$.
+:::
+:::
+
 ## Conjuntos abiertos y cerrados
+
+A continuación se generaliza la característica que diferencia los intervalos abiertos y cerrados, a cualquier conjunto.
 
 :::{#def-conjunto-abierto}
 ## Conjunto abierto
 Se dice que un conjunto $A\subset \mathbb{R}$ es _abierto_ cuando para cada $a\in A$ existe un entorno de $a$ contenido en $A$, es decir, existe $\varepsilon>0$ tal que $(a-\varepsilon, a+\varepsilon)\subset A$.
 :::
 
-:::{#exm-intervalo-abierto-conjunto-abierto} 
-Cualquier intervalo abierto $(a,b)$ es un conjunto abierto. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
-:::
-
 :::{.callout-important}
 Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
+:::
+
+:::{#exm-intervalo-abierto-conjunto-abierto} 
+Cualquier intervalo abierto $(a,b)$ es un conjunto abierto, ya que según se vio en la @prp-interior-intervalo-abierto $\operatorname{Int}((a,b)) = (a,b)$. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
 :::
 
 Una colección de conjuntos abiertos se llama _topología_ y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama _propiedad topológica_.
@@ -233,7 +283,9 @@ Todo intervalo cerrado $[a,b]$ es cerrado, pues su complementario $(-\infty,a)\c
 :::
 
 :::{.callout-warning}
-Un subconjunto puede ser abierto y cerrado a la vez, como $\emptyset$ y $\mathbb{R}$, y también puede no ser abierto ni cerrado, como por ejemplo $(a,b]$. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.
+Un subconjunto puede ser abierto y cerrado a la vez, como por ejemplo $\mathbb{R}$ y $\emptyset$. $\mathbb{R}$ es abierto ya que todos sus puntos son interiores, y por tanto $\overline{\mathbb{R}}=\emptyset$ es cerrado. Pero, también $\emptyset$ es abierto, ya que para que un conjunto no sea abierto, al menos uno de sus puntos no debe ser interior, y en consecuencia $\overline{\emptyset}=\mathbb{R}$ es también cerrado.
+
+Un subconjunto también puede no ser abierto ni cerrado, como por ejemplo $(a,b]$, ya que $b$ no es un punto interior de $(a,b]$, y $a$ no es un punto interior de $\overline{(a,b]}=(-\infty,a]\cup (b,\infty)$. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.
 :::
 
 :::{#prp-union-interseccion-conjuntos-abiertos-cerrados}
@@ -244,8 +296,6 @@ Se cumplen las siguientes propiedades:
 1. La intersección de una colección de conjuntos cerrados es cerrada.
 1. La unión de una colección finita de conjuntos cerrados es un conjunto cerrado.
 :::
-
-<!-- TODO: Demostración unión intersección conjuntos abiertos y cerrados -->
 
 :::{.callout-note collapse="true"}
 ## Demostración
@@ -260,6 +310,19 @@ La intersección de una colección infinita de conjuntos abiertos puede no ser u
 Y la unión de una colección infinita de conjuntos cerrados puede no ser cerrada, como por ejemplo la colección de conjuntos $J_n=[\frac{1}{n},1]$, $n\in\mathbb{N}$, ya que $\cup_{n=1}^\infty J_n=(0,1]$.
 :::
 
+:::{#thm-existencia-maximo-minimo}
+## Existencia del máximo y mínimo
+Cualquier conjunto no-vacío, cerrado y acotado superiormente tiene un máximo, y cualquier conjunto no-vacío, cerrado y acotado inferiormente tiene un mínimo.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $A$ un conjunto no vacío, cerrado y acotado superiormente. Como $A$ está acotado superiormente, por el axioma del supremo, existe $s=\sup(A)$. Probaremos que $s\in A$ por reducción al absurdo. Supongamos que $s\not\in A$, entonces $s\in\overline{A}$, y como $\overline{A}$ es abierto al ser $A$ cerrado, existe un $\varepsilon>0$ tal que $(s-\varepsilon, s+\varepsilon)\subseteq \overline{A}$. Como ningún elemento de $A$ puede ser mayor que $s$ y $(s-\varepsilon, s+\varepsilon)\not\subseteq A$, se tiene que $s-\varepsilon$ es también una cota superior de $A$, pero $s-\varepsilon <s$, lo que contradice que $s$ sea el supremo de $A$. Así, pues $s\in A$, y por tanto es el máximo de $A$.
+
+De manera análoga se prueba que si $A$ un conjunto no vacío, cerrado y acotado inferiormente, $A$ tiene mínimo.
+:::
+:::
 
 :::{#thm-bolzano-weierstrass}
 ## Bolzano-Weierstrass
@@ -278,7 +341,7 @@ Veremos ahora que $a$ es un punto de acumulación de $A$. Para cualquier $\varep
 :::
 
 :::{#thm-conjunto-cerrado-puntos-acumulacion}
-Un subconjunto real $A\subset \mathbb{R}$ es cerrado si y sólo si contiene a todos sus puntos de acumulación.
+Cualquier subconjunto de $\mathbb{R}$ es cerrado si y sólo si contiene a todos sus puntos de acumulación.
 :::
 
 :::{.callout-note collapse="true"}

@@ -353,7 +353,7 @@ Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subcon
 
 Obsérvese que un conjunto puede no tener supremo o ínfimo. 
 
-:::{#exm-supremo-infimo-maximo-minimo}. 
+:::{#exm-supremo-infimo-maximo-minimo}
 Si se toma el conjunto de los números naturales con la relación de orden total $(\mathbb{N},\leq)$, para el conjunto $B=\{1, 2, 3\}\subseteq \mathbb{N}$ se tiene que cualquier $x\in\mathbb{N}$ tal que $3\leq x$ es una cota superior de $B$, por tanto $3$ es el supremo de $B$, y además es un máximo puesto que $3\in B$.
 
 Por otro lado, si se considera el conjunto de los números reales con la relación de orden total $(\mathbb{R},\leq)$, para el intervalo $(0,1)$ se tiene que cualquier $x\in\mathbb{R}$ tal que $x\leq 0$ es una cota inferior y $x\in\mathbb{R}$ tal que $1\leq x$ es una cota superior, de modo que $0$ es el ínfimo y $1$ el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que $0\not\in (0,1)$ y $1\not\in (0,1)$. 
@@ -562,7 +562,7 @@ Se dice que un conjunto $A$ es _infinito_ si no es finito. En tal caso su cardin
 
 Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia que no es ningún número.
 
-:::{#exm-conjunto-finito-infinito}. 
+:::{#exm-conjunto-finito-infinito}
 El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 
 
 Por otro lado, el conjunto de los números naturales $\mathbb{N}$ es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto $\{1,2,\ldots,n\}$ para ningún $n\in\mathbb{N}$, y por tanto, $|\mathbb{N}|=\infty$.

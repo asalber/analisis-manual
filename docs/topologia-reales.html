@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./sucesiones.html" rel="next">
-<link href="./cuerpo-reales.html" rel="prev">
+<link href="./reales.html" rel="prev">
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cuerpo-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +272,27 @@ Advertencia
 <div id="thm-intervalos-anidados" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 3.1 (Intervalos anidados) </strong></span>Dada una sucesión de intervalos cerrados y anidados <span class="math inline">\(I_n=[a_n,b_n]\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>, existe un número <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(a\in I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Además, si el ínfimo de las longitudes <span class="math inline">\(\{b_n-a_n: n\in \mathbb{N}\}\)</span> es <span class="math inline">\(0\)</span>, entonces <span class="math inline">\(a\)</span> es único, es decir, <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
 </div>
-<!-- TODO: Demostración teorema intervalos anidados -->
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A=\{a_n: n\in\mathbb{N}\}\)</span> y <span class="math inline">\(B=\{b_n: n\in\mathbb{N}\}\)</span>. Puesto que los intervalos están anidados, <span class="math inline">\(A\)</span> está acotado superiormente por <span class="math inline">\(b_1\)</span> ya que <span class="math inline">\(a_n\leq b_n\leq b_1\)</span> <span class="math inline">\(\forall n\in \mathbb{N}\)</span>, y <span class="math inline">\(B\)</span> está acotado inferiormente por <span class="math inline">\(a_1\)</span> ya que <span class="math inline">\(a_1\leq a_n\leq b_n\)</span> <span class="math inline">\(\forall n\in \mathbb{N}\)</span>. Así pues, como <span class="math inline">\(A\)</span> está acotado superiormente, por el axioma del supremo, existe <span class="math inline">\(a=\sup(A)\)</span>, y como <span class="math inline">\(B\)</span> está acotado inferiormente, existe <span class="math inline">\(b=\inf(B)\)</span>.</p>
+<p>Veamos ahora que <span class="math inline">\(a\leq b\)</span>. Para ello basta probar que <span class="math inline">\(a\)</span> es cota inferior de <span class="math inline">\(B\)</span>. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que si <span class="math inline">\(k\geq n\)</span> entonces <span class="math inline">\(a_k\leq b_k\leq b_n\)</span> pues <span class="math inline">\(I_n\subseteq I_k\)</span>, y si <span class="math inline">\(k&lt;n\)</span>, entonces <span class="math inline">\(a_k\leq a_n\leq b_n\)</span>, pues <span class="math inline">\(I_n\subseteq I_k\)</span>. Luego <span class="math inline">\(b_n\)</span> es una cota superior de <span class="math inline">\(A\)</span>, y por tanto, <span class="math inline">\(a\leq b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(a\)</span> es cota inferior de <span class="math inline">\(B\)</span>. Así pues, como <span class="math inline">\(a\)</span> es cota superior de <span class="math inline">\(A\)</span> e inferior de <span class="math inline">\(B\)</span>, se tiene que <span class="math inline">\(a_n\leq a\leq b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(a\in \cap_{n=1}^\infty I_n\)</span>.</p>
+<p>De forma similar se puede probar que <span class="math inline">\(b\in \cap_{n=1}^\infty I_n\)</span>, por lo que <span class="math inline">\(\cap_{n=1}^\infty I_n = [a,b]\)</span>.</p>
+<p>Finalmente, veamos que si <span class="math inline">\(\inf(\{b_n-a_n: n\in \mathbb{N}\})=0\)</span> entonces <span class="math inline">\(a=b\)</span>. Para ello, dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(\inf(\{b_n-a_n: n\in \mathbb{N}\})=0\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(0\leq b_k-a_k &lt; \varepsilon\)</span>. Como <span class="math inline">\(b\leq b_k\)</span> y <span class="math inline">\(a\geq a_k\)</span>, se tiene que <span class="math inline">\(0\leq b-a\leq b_k-a_k &lt; \varepsilon\)</span>, de donde se deduce que <span class="math inline">\(b-a=0\)</span> y por tanto <span class="math inline">\(a=b\)</span>, así que <span class="math inline">\(\cap_{n=1}^\infty I_n = [a,a]=\{a\}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="def-entorno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.7 (Entorno) </strong></span>Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se llama <em>entorno</em> de <span class="math inline">\(a\)</span> a cualquier intervalo abierto <span class="math inline">\((a-\varepsilon, a+\varepsilon)\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
 <p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\((a-\varepsilon, a+\varepsilon)\setminus \{a\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\(a\)</span>.</p>
@@ -298,9 +318,21 @@ Advertencia
 <p>Una definición equivalente es que un punto es punto exterior de un conjunto si es un punto interior de su complementario.</p>
 <div id="exm-punto-exterior" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3.3 </strong></span><span class="math inline">\(1.01\)</span> es un punto exterior del conjunto <span class="math inline">\((-\infty, 1)\)</span> ya que tomando <span class="math inline">\(\varepsilon=0.001\)</span> el entorno <span class="math inline">\((1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
-<p>Sin embargo, <span class="math inline">\(1\)</span> no es un punto exterior del intervalo <span class="math inline">\((-\infty, 1)\)</span>, ya que no es un punto interior del intervalo <span class="math inline">\(\overline{(-\infty, 1)}=[1,\infty)\)</span>, porque por muy pequeño que tomemos <span class="math inline">\(\varepsilon&gt;0\)</span>, <span class="math inline">\(1-\varepsilon &lt; 1\)</span> y, por tanto, el entorno <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\)</span> siempre tendrá valores menores que 1, de manera que <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)\)</span>.</p>
+<p>Sin embargo, <span class="math inline">\(1\)</span> no es un punto exterior del intervalo <span class="math inline">\((-\infty, 1)\)</span>, ya que no es un punto interior del intervalo <span class="math inline">\(\overline{(-\infty, 1)}=[1,\infty)\)</span>, ya que <span class="math inline">\(1-\varepsilon &lt; 1\)</span> <span class="math inline">\(\forall \varepsilon&gt;0\)</span>, y, por tanto, el entorno <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\)</span> siempre tendrá valores menores que 1, de manera que <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)\)</span>.</p>
 </div>
-<p>:::{.callout-warning} El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, <span class="math inline">\(1\)</span> no es un punto interior del intervalo $(0,1)</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, <span class="math inline">\(1\)</span> no es un punto interior del intervalo <span class="math inline">\((0,1)\)</span>, y tampoco de su complementario <span class="math inline">\(\overline{(0,1)}=(-\infty, 0]\cup[ñ1,\infty)\)</span>.</p>
+</div>
+</div>
 <div id="def-punto-frontera" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.10 (Punto frontera) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto frontera</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span> y de su complementario.</p>
 <p>El conjunto de los puntos frontera de <span class="math inline">\(A\)</span> se llama <em>frontera</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Fr}(A)\)</span>.</p>
@@ -313,7 +345,7 @@ Advertencia
 <p><span class="theorem-title"><strong>Proposición 3.1 </strong></span>Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto <span class="math inline">\((a,b)\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -322,7 +354,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Tomemos cualquier punto <span class="math inline">\(x\in (a,b)\)</span>, entonces se puede tomar <span class="math inline">\(\varepsilon = \frac{\min\{|x-a|,|x-b\}}{2}\)</span> de manera que el entorno <span class="math inline">\((x-\varepsilon, x+\varepsilon)\subseteq (a,b)\)</span>.</p>
@@ -334,7 +366,7 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 3.2 </strong></span>Todos los puntos de un intervalo cerrado, excepto sus extremos, son puntos interiores suyos, es decir, dado un intervalo cerrado <span class="math inline">\([a,b]\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}([a,b]) = (a,b)\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -343,7 +375,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Par ver que <span class="math inline">\(a\)</span> no es un punto interior de <span class="math inline">\([a,b]\)</span>, basta con ver que <span class="math inline">\(a-\varepsilon &lt; a\)</span> para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, por lo que el intervalo <span class="math inline">\((a-\varepsilon,a+\varepsilon)\)</span> irremediablemente contendrá puntos menores que <span class="math inline">\(a\)</span> y, por tanto, <span class="math inline">\((a-\varepsilon,a+\varepsilon)\not \subseteq [a,b]\)</span>.</p>
@@ -361,7 +393,7 @@ Demostración
 </ol>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -370,7 +402,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
@@ -383,23 +415,82 @@ Demostración
 <p><span class="theorem-title"><strong>Definición 3.11 (Punto adherente) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto adherente</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
 <p>El conjunto de los puntos adherentes de <span class="math inline">\(A\)</span> se llama <em>adherencia</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Adh}(A)\)</span>.</p>
 </div>
-<p>Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente.</p>
+<p>Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente. Resulta evidente también que cualquier punto de un conjunto es un punto adherente, de manera que para cualquier conjunto <span class="math inline">\(A\)</span> se tiene <span class="math inline">\(A\subseteq\operatorname{Adh}(A)\)</span>.</p>
 <div id="def-punto-acumulacion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.12 (Punto de acumulacion) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de acumulación</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno reducido de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
 <p>El conjunto de los puntos de acumulación de <span class="math inline">\(A\)</span> se llama <em>conjunto derivado</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Ac}(A)\)</span>.</p>
 </div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Resulta obvio de la definición que cualquier punto de acumulación es también un punto de adherencia, es decir, <span class="math inline">\(\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\)</span> para cualquier conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span>. Sin embargo no todo punto de adherencia es un punto de acumulación.</p>
+</div>
+</div>
 <p>Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conjunto y otros que no.</p>
+<div id="exm-puntos-adherentes-acumulacion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.5 </strong></span>Dado el conjunto <span class="math inline">\(A=(0,1) \cup \{2\}\)</span>, se tiene que <span class="math inline">\(2\)</span> es un punto de adherencia de <span class="math inline">\(A\)</span>, pues para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno <span class="math inline">\((2-\varepsilon,2+\varepsilon)\)</span> contiene al propio <span class="math inline">\(2\)</span> que es un punto de <span class="math inline">\(A\)</span>. Sin embargo, <span class="math inline">\(2\)</span> no es un punto de acumulación, porque para <span class="math inline">\(\varepsilon=0.5\)</span>, por ejemplo, el entorno reducido <span class="math inline">\((2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)\)</span> no contiene puntos de <span class="math inline">\(A\)</span>.</p>
+<p>En cambio el punto <span class="math inline">\(0.5\)</span> es tanto un punto de adherencia como un punto de acumulación de <span class="math inline">\(A\)</span> porque para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno reducido <span class="math inline">\((0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}\)</span> siempre contiene puntos de <span class="math inline">\(A\)</span>. De hecho, para cualquier <span class="math inline">\(x\in(a,b)\)</span> y para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, el intervalo <span class="math inline">\((x-\varepsilon,x+\varepsilon)\setminus \{x\}\)</span> contiene puntos de <span class="math inline">\(A\)</span>, y lo mismo ocurre para <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> al ser puntos frontera, de manera que <span class="math inline">\(\operatorname{Ac}(A)=[0,1]\)</span>, mientras que <span class="math inline">\(\operatorname{Adh}(A)=[0,1]\cup\{2\}\)</span>.</p>
+</div>
+<p>Intuitivamente, un punto de acumulación de un conjunto <span class="math inline">\(A\)</span> es un punto para el que podemos encontrar puntos de <span class="math inline">\(A\)</span>, distintos de él mismo, tan próximos a él como queramos. Un punto de acumulación se diferencia de un punto de adherencia en que siempre está rodeado por puntos de <span class="math inline">\(A\)</span>, mientras que un punto de adherencia puede estar aislado de los demás puntos de <span class="math inline">\(A\)</span>.</p>
 <div id="def-punto-aislado" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.13 (Punto aislado) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de aislado</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si es un punto adherente de <span class="math inline">\(A\)</span>, pero no de acumulación.</p>
+</div>
+<div id="prp-punto-adherente-acumulacion" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 3.4 </strong></span>Para cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> se tiene que <span class="math inline">\(\operatorname{Adh}((a,b))=\operatorname{Ac}((a,b))=[a,b]\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Todos los puntos de <span class="math inline">\((a,b)\)</span> son interiores y, por tanto, para cualquier <span class="math inline">\(x\in (a,b)\)</span>, existe un <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subseteq (a,b)\)</span>. Si ahora tomamos cualquier otro <span class="math inline">\(\varepsilon'&gt;0\)</span>, se tiene que <span class="math inline">\((x-\varepsilon',x+\varepsilon')\setminus \{x\}\cap(x-\varepsilon,x+\varepsilon)\neq \emptyset\)</span>, pero como <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subseteq (a,b)\)</span>, se concluye que <span class="math inline">\((x-\varepsilon',x+\varepsilon')\setminus \{x\}\cap (a,b)\neq \emptyset\)</span>, por lo que <span class="math inline">\(x\)</span> es un punto de acumulación de <span class="math inline">\((a,b)\)</span>. Por otro lado, como <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son puntos frontera, también se tiene que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, <span class="math inline">\((a-\varepsilon,a+\varepsilon)\cap (a,b)\neq \emptyset\)</span> y <span class="math inline">\((b-\varepsilon,b+\varepsilon)\cap (a,b)\neq \emptyset\)</span> de manera que <span class="math inline">\([a,b]\subseteq \operatorname{Ac}((a,b))\subseteq \operatorname{Adh}((a,b))\)</span>. Sea ahora cualquier <span class="math inline">\(x&gt;b\)</span>, y tomemos <span class="math inline">\(\varepsilon=\frac{|x-b|}{2}\)</span>, entonces <span class="math inline">\((x-\varepsilon, x+\varepsilon)\cap (a,b)=\emptyset\)</span>, de manera que <span class="math inline">\(x\)</span> no es un punto de adherencia de <span class="math inline">\((a,b)\)</span>. Del mismo modo se puede probar que si <span class="math inline">\(x&lt;a\)</span>, entonces <span class="math inline">\(x\)</span> tampoco es un punto de adherencia de <span class="math inline">\((a,b)\)</span>, por lo que <span class="math inline">\(\operatorname{Adh}((a,b))=[a,b]\)</span> y como <span class="math inline">\(\operatorname{Ac}((a,b))\subseteq \operatorname{Adh}((a,b))\)</span>, también se concluye que <span class="math inline">\(\operatorname{Ac}((a,b))=[a,b]\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-adherencia-conjunto-mas-acumulacion" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 3.5 </strong></span>Para cualquier conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, se tiene que <span class="math inline">\(\operatorname{Adh}(A)=A\cup \operatorname{Ac}(A)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Ya se ha visto que <span class="math inline">\(A\subseteq \operatorname{Adh}(A)\)</span> y también <span class="math inline">\(\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\)</span>, por lo que <span class="math inline">\(A\cup \operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\)</span>.</p>
+<p>Veamos ahora que <span class="math inline">\(\operatorname{Adh}(A)\subseteq A\cup \operatorname{Ac}(A)\)</span>. Sea <span class="math inline">\(x\)</span> un punto de adherencia de <span class="math inline">\(A\)</span>. Si <span class="math inline">\(x\in A\)</span> es obvio que <span class="math inline">\(x\in A\cup \operatorname{Ac}(A)\)</span>, y si <span class="math inline">\(x\not\in A\)</span>, entonces <span class="math inline">\(x\in \operatorname{Ac}(A)\)</span>, ya que, por ser <span class="math inline">\(x\)</span> punto de adherencia de <span class="math inline">\(A\)</span>, para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, <span class="math inline">\((x-\varepsilon,x+\varepsilon)\cap A\neq \emptyset\)</span>, pero como además <span class="math inline">\(x\not\in A\)</span>, también se cumple que el entorno reducido <span class="math inline">\((x-\varepsilon,x+\varepsilon)\setminus\{x\}\)</span> contiene puntos de <span class="math inline">\(A\)</span>. Así pues, <span class="math inline">\(x\in A\cup \operatorname{Ac}(A)\)</span>, y por tanto <span class="math inline">\(\operatorname{Adh}(A)\subseteq A\cup \operatorname{Ac}(A)\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="conjuntos-abiertos-y-cerrados" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="conjuntos-abiertos-y-cerrados"><span class="header-section-number">3.3</span> Conjuntos abiertos y cerrados</h2>
+<p>A continuación se generaliza la característica que diferencia los intervalos abiertos y cerrados, a cualquier conjunto.</p>
 <div id="def-conjunto-abierto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.14 (Conjunto abierto) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>abierto</em> cuando para cada <span class="math inline">\(a\in A\)</span> existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon)\subset A\)</span>.</p>
-</div>
-<div id="exm-intervalo-abierto-conjunto-abierto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.5 </strong></span>Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>.</p>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -414,12 +505,15 @@ Importante
 <p>Obsérvese que un conjunto es abierto si todos sus puntos son interiores.</p>
 </div>
 </div>
+<div id="exm-intervalo-abierto-conjunto-abierto" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.6 </strong></span>Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto, ya que según se vio en la <a href="#prp-interior-intervalo-abierto">Proposición&nbsp;<span>3.1</span></a> <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>.</p>
+</div>
 <p>Una colección de conjuntos abiertos se llama <em>topología</em> y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama <em>propiedad topológica</em>.</p>
 <div id="def-conjunto-cerrado" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3.15 (Conjunto cerrado) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>cerrado</em> cuando su complementario <span class="math inline">\(\overline A =\mathbb{R}\setminus A\)</span> es abierto.</p>
 </div>
 <div id="exm-intervalo-cerrado-conjunto-cerrado" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.6 </strong></span>Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.7 </strong></span>Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
 </div>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -431,11 +525,12 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un subconjunto puede ser abierto y cerrado a la vez, como <span class="math inline">\(\emptyset\)</span> y <span class="math inline">\(\mathbb{R}\)</span>, y también puede no ser abierto ni cerrado, como por ejemplo <span class="math inline">\((a,b]\)</span>. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.</p>
+<p>Un subconjunto puede ser abierto y cerrado a la vez, como por ejemplo <span class="math inline">\(\mathbb{R}\)</span> y <span class="math inline">\(\emptyset\)</span>. <span class="math inline">\(\mathbb{R}\)</span> es abierto ya que todos sus puntos son interiores, y por tanto <span class="math inline">\(\overline{\mathbb{R}}=\emptyset\)</span> es cerrado. Pero, también <span class="math inline">\(\emptyset\)</span> es abierto, ya que para que un conjunto no sea abierto, al menos uno de sus puntos no debe ser interior, y en consecuencia <span class="math inline">\(\overline{\emptyset}=\mathbb{R}\)</span> es también cerrado.</p>
+<p>Un subconjunto también puede no ser abierto ni cerrado, como por ejemplo <span class="math inline">\((a,b]\)</span>, ya que <span class="math inline">\(b\)</span> no es un punto interior de <span class="math inline">\((a,b]\)</span>, y <span class="math inline">\(a\)</span> no es un punto interior de <span class="math inline">\(\overline{(a,b]}=(-\infty,a]\cup (b,\infty)\)</span>. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.</p>
 </div>
 </div>
 <div id="prp-union-interseccion-conjuntos-abiertos-cerrados" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.4 </strong></span>Se cumplen las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 3.6 </strong></span>Se cumplen las siguientes propiedades:</p>
 <ol type="1">
 <li>La unión de una colección de conjuntos abiertos es un conjunto abierto.</li>
 <li>La intersección de una colección finita de conjuntos abiertos es un conjunto abierto.</li>
@@ -443,9 +538,8 @@ Advertencia
 <li>La unión de una colección finita de conjuntos cerrados es un conjunto cerrado.</li>
 </ol>
 </div>
-<!-- TODO: Demostración unión intersección conjuntos abiertos y cerrados -->
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -454,7 +548,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
@@ -476,11 +570,11 @@ Advertencia
 <p>Y la unión de una colección infinita de conjuntos cerrados puede no ser cerrada, como por ejemplo la colección de conjuntos <span class="math inline">\(J_n=[\frac{1}{n},1]\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>, ya que <span class="math inline">\(\cup_{n=1}^\infty J_n=(0,1]\)</span>.</p>
 </div>
 </div>
-<div id="thm-bolzano-weierstrass" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.2 (Bolzano-Weierstrass) </strong></span>Todo subconjunto infinito de <span class="math inline">\(\mathbb{R}\)</span> acotado tiene al menos un punto de acumulación.</p>
+<div id="thm-existencia-maximo-minimo" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 3.2 (Existencia del máximo y mínimo) </strong></span>Cualquier conjunto no-vacío, cerrado y acotado superiormente tiene un máximo, y cualquier conjunto no-vacío, cerrado y acotado inferiormente tiene un mínimo.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -489,7 +583,29 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A\)</span> un conjunto no vacío, cerrado y acotado superiormente. Como <span class="math inline">\(A\)</span> está acotado superiormente, por el axioma del supremo, existe <span class="math inline">\(s=\sup(A)\)</span>. Probaremos que <span class="math inline">\(s\in A\)</span> por reducción al absurdo. Supongamos que <span class="math inline">\(s\not\in A\)</span>, entonces <span class="math inline">\(s\in\overline{A}\)</span>, y como <span class="math inline">\(\overline{A}\)</span> es abierto al ser <span class="math inline">\(A\)</span> cerrado, existe un <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((s-\varepsilon, s+\varepsilon)\subseteq \overline{A}\)</span>. Como ningún elemento de <span class="math inline">\(A\)</span> puede ser mayor que <span class="math inline">\(s\)</span> y <span class="math inline">\((s-\varepsilon, s+\varepsilon)\not\subseteq A\)</span>, se tiene que <span class="math inline">\(s-\varepsilon\)</span> es también una cota superior de <span class="math inline">\(A\)</span>, pero <span class="math inline">\(s-\varepsilon &lt;s\)</span>, lo que contradice que <span class="math inline">\(s\)</span> sea el supremo de <span class="math inline">\(A\)</span>. Así, pues <span class="math inline">\(s\in A\)</span>, y por tanto es el máximo de <span class="math inline">\(A\)</span>.</p>
+<p>De manera análoga se prueba que si <span class="math inline">\(A\)</span> un conjunto no vacío, cerrado y acotado inferiormente, <span class="math inline">\(A\)</span> tiene mínimo.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-bolzano-weierstrass" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 3.3 (Bolzano-Weierstrass) </strong></span>Todo subconjunto infinito de <span class="math inline">\(\mathbb{R}\)</span> acotado tiene al menos un punto de acumulación.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Para demostrar el teorema construiremos una sucesión de intervalos cerrados y anidados y aplicaremos el <a href="#thm-intervalos-anidados">Teorema&nbsp;<span>3.1</span></a>.</p>
@@ -500,10 +616,10 @@ Demostración
 </div>
 </div>
 <div id="thm-conjunto-cerrado-puntos-acumulacion" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.3 </strong></span>Un subconjunto real <span class="math inline">\(A\subset \mathbb{R}\)</span> es cerrado si y sólo si contiene a todos sus puntos de acumulación.</p>
+<p><span class="theorem-title"><strong>Teorema 3.4 </strong></span>Cualquier subconjunto de <span class="math inline">\(\mathbb{R}\)</span> es cerrado si y sólo si contiene a todos sus puntos de acumulación.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -512,7 +628,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A\subset \mathbb{R}\)</span> un conjunto cerrado y sea <span class="math inline">\(a\in\mathbb{R}\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>. Veamos por reducción al absurdo que <span class="math inline">\(a\in A\)</span>.</p>
@@ -627,7 +743,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./cuerpo-reales.html" class="pagination-link">
+      <a href="./reales.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span>
       </a>          
   </div>
