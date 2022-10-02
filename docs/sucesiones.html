@@ -173,6 +173,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#concepto-de-sucesión" id="toc-concepto-de-sucesión" class="nav-link active" data-scroll-target="#concepto-de-sucesión"><span class="toc-section-number">4.1</span>  Concepto de sucesión</a></li>
   <li><a href="#límite-de-una-sucesión" id="toc-límite-de-una-sucesión" class="nav-link" data-scroll-target="#límite-de-una-sucesión"><span class="toc-section-number">4.2</span>  Límite de una sucesión</a></li>
   <li><a href="#sucesiones-monótonas" id="toc-sucesiones-monótonas" class="nav-link" data-scroll-target="#sucesiones-monótonas"><span class="toc-section-number">4.3</span>  Sucesiones monótonas</a></li>
+  <li><a href="#subsucesiones" id="toc-subsucesiones" class="nav-link" data-scroll-target="#subsucesiones"><span class="toc-section-number">4.4</span>  Subsucesiones</a></li>
+  <li><a href="#sucesiones-propiamente-divergentes" id="toc-sucesiones-propiamente-divergentes" class="nav-link" data-scroll-target="#sucesiones-propiamente-divergentes"><span class="toc-section-number">4.5</span>  Sucesiones propiamente divergentes</a></li>
+  <li><a href="#sucesiones-de-cauchy" id="toc-sucesiones-de-cauchy" class="nav-link" data-scroll-target="#sucesiones-de-cauchy"><span class="toc-section-number">4.6</span>  Sucesiones de Cauchy</a></li>
   </ul>
 </nav>
     </div>
@@ -416,7 +419,7 @@ Demostración
 &amp;=\frac{\lim_{n\to\infty} 2 + \lim_{n\to\infty}\frac{1}{n}}{\lim_{n\to\infty} 1 + \lim_{n\to\infty}\frac{3}{n}} = \frac{2+0}{1+0} = 2.
 \end{align*}\]</span></p>
 </div>
-<div id="thm-compresion-sucesiones" class="theorem">
+<div id="thm-compresion-sucesiones-convergentes" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 4.3 (Compresión de sucesiones convergentes) </strong></span>Dadas tres sucesiones de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span>, tales que <span class="math inline">\(x_n\leq y_n\leq z_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((z_n)_{n=1}^\infty\)</span> convergen a <span class="math inline">\(x\)</span>, entonces <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -485,7 +488,7 @@ Demostración
 &amp;\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\
 &amp;\Rightarrow x_{n+1}&lt;yx_n.
 \end{align*}\]</span></p>
-<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones">Teorema&nbsp;<span>4.3</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
+<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones-convergentes">Teorema&nbsp;<span>4.3</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -546,6 +549,292 @@ s-\varepsilon \leq x_k\leq x_n\leq s&lt; s+\varepsilon \Rightarrow -\varepsilon 
 </div>
 </div>
 </div>
+</div>
+<div id="exm-sucesiones-monotonas-convergentes-1" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.11 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{\sqrt{n}}\right)_{n=1}^\infty\)</span> converge a 0. La sucesión es decreciente ya que para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se tiene que <span class="math inline">\(n&lt;n+1 \Rightarrow \sqrt{n}&lt; \sqrt{n+1} \Rightarrow \frac{1}{\sqrt{n}}&gt; \frac{1}{\sqrt{n+1}}\)</span>. Como además está acotada inferiormente por el <span class="math inline">\(0\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}} = \inf\left(\left\{\frac{1}{\sqrt{n}}\right\}\right)= 0\)</span>.</p>
+</div>
+<div id="exm-sucesiones-monotonas-convergentes-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.12 </strong></span>Sea la sucesion definida recursivamente de la siguiente manera: <span class="math inline">\(x_1=1\)</span> y <span class="math inline">\(x_{n+1}= \sqrt{2x_n}\)</span>. Veamos que converge a <span class="math inline">\(2\)</span>.</p>
+<p>En primer lugar, veremos que es una sucesión creciente por inducción. Para <span class="math inline">\(n=1\)</span> se tiene que <span class="math inline">\(x_1=1&lt;\sqrt{2}=x_2\)</span>. Supongamos ahora que <span class="math inline">\(x_n&lt;x_{n+1}\)</span>. Entonces, <span class="math inline">\(x_{n+2}=\sqrt{2x_{n+1}}&gt;\sqrt{2x_n}=x_{n+1}\)</span>, de manera que la sucesión es creciente.</p>
+<p>En segundo lugar, veremos, también por inducción, que <span class="math inline">\(x_n\leq 2\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Para <span class="math inline">\(n=1\)</span> se tiene que <span class="math inline">\(x_1=1&lt;2\)</span>. Supongamos ahora que <span class="math inline">\(x_n&lt;2\)</span>. Entonces, <span class="math inline">\(x_{n+1}=\sqrt{2x_n}=\sqrt{2}\sqrt{x_n}&lt;\sqrt{2}\sqrt{2}=2\)</span>. Luego, la sucesión está acotada, y por el teorema anterior, converge. Para calcular el límite, aprovechando la definición recursiva de la sucesión, es tiene</p>
+<p><span class="math display">\[\begin{align*}
+x&amp;=\lim_{n\to\infty}x_n = \lim_{n\to\infty} x_{n+1} = \lim_{n\to\infty} \sqrt{2x_n} = \lim_{n\to\infty}\sqrt{2}\sqrt{x_n}\\
+&amp;= \lim_{n\to\infty}\sqrt{2}\lim_{n\to\infty}\sqrt{x_n}=\sqrt{2}\sqrt{x}=\sqrt{2x}.
+\end{align*}\]</span></p>
+<p>Así pues, se tiene que</p>
+<p><span class="math display">\[x=\sqrt{x}\Rightarrow x^2=2x \Rightarrow x^2-2x=0 \Rightarrow x(x-2) = 0,\]</span></p>
+<p>de donde se deduce, resolviendo la ecuación, que <span class="math inline">\(x=0\)</span> o <span class="math inline">\(x=1\)</span>. Como <span class="math inline">\(x=0\)</span> es imposible pues <span class="math inline">\(x_n&gt;1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se concluye que <span class="math inline">\(x=2\)</span>, y por tanto, <span class="math inline">\(\lim_{n\to\infty}x_n = 2\)</span>.</p>
+</div>
+<div id="exm-sucesiones-monotonas-convergentes-3" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.13 </strong></span>Veamos ahora que la sucesión <span class="math inline">\(\left(\left(1+\frac{1}{n}\right)^n\right)_{n=1}^\infty\)</span> es convergente. Sea <span class="math inline">\(x_n=\left(1+\frac{1}{n}\right)^n\)</span>, entonces por el desarrollo del binomio, se tiene</p>
+<p><span class="math display">\[\begin{align*}
+x_n &amp;= \left(1+\frac{1}{n}\right)^n \\
+&amp;= \binom{n}{0}1^n\left(\frac{1}{n}\right)^0+\binom{n}{1}1^{n-1}\left(\frac{1}{n}\right)^1 +  \binom{n}{2}1^{n-2}\left(\frac{1}{n}\right)^2 +\cdots + \binom{n}{n}1^0\left(\frac{1}{n}\right)^n \\
+&amp; = \binom{n}{0}1+\binom{n}{1}\frac{1}{n} + \binom{n}{2}\frac{1}{n^2} + \binom{n}{3}\frac{1}{n^3} +\cdots + \binom{n}{n}\frac{1}{n^n} \\
+&amp; = 1+n\frac{1}{n} + \frac{n(n-1)}{2!}\frac{1}{n^2} + \frac{n(n-1)(n-2)}{3!}\frac{1}{n^3} +\cdots + \frac{n!}{n!}\frac{1}{n^n} \\
+&amp;= 1 + 1 + \frac{1}{2!}\left(1-\frac{1}{n}\right) + \frac{1}{3!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right) + \cdots + \frac{1}{n!}\left(1-\frac{1}{n}\right)\cdots \left(1-\frac{n-1}{n}\right).
+\end{align*}\]</span></p>
+<p>y</p>
+<p><span class="math display">\[\begin{align*}
+x_{n+1} &amp;= \left(1+\frac{1}{n}\right)^{n+1} \\
+&amp;= 1 + 1 + \frac{1}{2!}\left(1-\frac{1}{n+1}\right) + \frac{1}{3!}\left(1-\frac{1}{n+1}\right)\left(1-\frac{2}{n+1}\right) + \cdots  \\
+&amp;+ \frac{1}{n!}\left(1-\frac{1}{n+1}\right)\cdots \left(1-\frac{n-1}{n+1}\right) + \frac{1}{(n+1)!}\left(1-\frac{1}{n+1}\right)\cdots \left(1-\frac{n}{n+1}\right).
+\end{align*}\]</span></p>
+<p>Como se puede observar, el desarrollo de <span class="math inline">\(x_n\)</span> tiene <span class="math inline">\(n+1\)</span> términos, mientras que el de <span class="math inline">\(x_{n+1}\)</span> tiene <span class="math inline">\(n+2\)</span> términos. Además, cada uno de los términos que aparece en <span class="math inline">\(x_n\)</span> es menor o igual que el termino correspondiente de <span class="math inline">\(x_{n+1}\)</span>, de modo que se puede concluir que <span class="math inline">\(x_n&lt;x_{n+1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y la sucesión es creciente.</p>
+<p>Por otro lado, como se cumple que <span class="math inline">\(\left(1-\frac{k}{n}\right)&lt;1\)</span> <span class="math inline">\(\forall k=1,\ldots,n\)</span>, entonces</p>
+<p><span class="math display">\[\begin{align*}
+x_n &amp;= 1 + 1 + \frac{1}{2!}\left(1-\frac{1}{n}\right) + \frac{1}{3!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right) + \cdots + \frac{1}{n!}\left(1-\frac{1}{n}\right)\cdots \left(1-\frac{n-1}{n}\right) \\
+&amp;&lt; 1 + 1 + \frac{1}{2!} + \frac{1}{3!}+\cdots + \frac{1}{n!}
+\end{align*}\]</span></p>
+<p>y como <span class="math inline">\(2^{n-1}\leq n!\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, finalmente se tiene</p>
+<p><span class="math display">\[
+x_n&lt;1+1+\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^{n-1}} = 2+ \frac{\frac{1}{2^{n-1}}\frac{1}{2}-\frac{1}{2}}{\frac{1}{2}-1} = 2 +1 -\frac{1}{2^{n-1}} &lt; 3.
+\]</span></p>
+<p>Así pues, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es creciente y está acotada, de manera que por el teorema anterior, es convergente, y como además <span class="math inline">\(2&lt;x_n&lt;3\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, su límite es un número entre 2 y 3. A este número se le llama <span class="math inline">\(e=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n\)</span>, que es un número irracional.</p>
+</div>
+</section>
+<section id="subsucesiones" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="subsucesiones"><span class="header-section-number">4.4</span> Subsucesiones</h2>
+<div id="def-subsucesion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.7 (Subsucesión) </strong></span>Se dice que una sucesión de números reales <span class="math inline">\((y_n)_{n=1}^\infty\)</span> es una <em>subsucesión</em> de otra sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, si existe una sucesión estrictamente creciente de números naturales <span class="math inline">\((r_n)_{n=1}^\infty\)</span>, tal que <span class="math inline">\(y_n=x_{r_n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+</div>
+<div id="exm-subsucesion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.14 </strong></span>La sucesión <span class="math inline">\((y_n)_{n=1}^\infty = \left(\frac{1}{2n}\right)_{n=1}^\infty\)</span> es una subsucesión de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty =\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, ya que tomando <span class="math inline">\((r_n)_{n=1}^\infty = 2n\)</span>, se cumple que <span class="math inline">\(y_n=x_{r_n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+<p>Del mismo modo, las sucesiones <span class="math inline">\(\left(\frac{1}{2^n}\right)_{n=1}^\infty\)</span> y <span class="math inline">\(\left(\frac{1}{n!}\right)_{n=1}^\infty\)</span> también son subsucesiones de <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>.</p>
+</div>
+<div id="thm-convergencia-subsucesiones" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.5 (Convergencia de las subsucesiones) </strong></span>Si una sucesión de números reales converge a <span class="math inline">\(x\)</span> entonces cualquier subsucesión suya converge también a <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> una subsucesión de <span class="math inline">\((x_n)_{n=1}^\infty\)</span>. Como <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, dado cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Como <span class="math inline">\((r_n)_{n=1}^\infty\)</span> es estrictamente creciente, <span class="math inline">\(r_n\geq n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que si <span class="math inline">\(n\geq k\)</span>, entonces <span class="math inline">\(r_n\geq n\geq k\)</span>, y por tanto, <span class="math inline">\(|x_{r_n}-x|&lt;\varepsilon\)</span>, por lo que <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-subsucesiones-convergentes" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.15 </strong></span>Veamos que la sucesión <span class="math inline">\((a^n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(0\)</span> cuando <span class="math inline">\(0&lt;a&lt;1\)</span>.</p>
+<p>La sucesión es decreciente ya que <span class="math inline">\(x_{n+1}=a^{n+1}=a^na&lt;a^n=x_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> al ser <span class="math inline">\(0&lt;a&lt;1\)</span>, y también está acotada ya que <span class="math inline">\(0&lt;a^n&lt;1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que por el teorema de la convergencia de una sucesión monótona, se tiene que <span class="math inline">\((a^n)_{n=1}^\infty\)</span> converge a un número <span class="math inline">\(x\)</span>.</p>
+<p>Para averiguar el límite, como cualquier subsucesión suya también converge a <span class="math inline">\(x\)</span> por el teorema anterior, en particular <span class="math inline">\((a^{2n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, por lo que se tiene</p>
+<p><span class="math display">\[
+x = \lim_{n\to\infty} a^n = \lim_{n\to\infty} a^{2n} = \lim_{n\to\infty} (a^n)^2 = x^2.
+\]</span></p>
+<p>Así pues, <span class="math inline">\(x^2=x\)</span>, de manera que, resolviendo la ecuación, <span class="math inline">\(x=0\)</span> o <span class="math inline">\(x=1\)</span>. Como <span class="math inline">\((a^n)_{n=1}^\infty\)</span> es decreciente y <span class="math inline">\(0&lt;a^n&lt;1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, tiene que ser <span class="math inline">\(x=0\)</span>.</p>
+</div>
+<p>Del teorema anterior se deduce que si una sucesión tiene dos subsucesiones que convergen a distintos límites, o una subsucesión que diverge, entonces dicha sucesión diverge.</p>
+<div id="exm-subsucesiones-distintos-limites" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.16 </strong></span>La sucesión <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span> diverge pues la subsucesión <span class="math inline">\(((-1)^{2n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(1\)</span> y la subsucesión <span class="math inline">\(((-1)^{2n+1})_{n=1}^\infty\)</span> converge a <span class="math inline">\(-1\)</span>.</p>
+</div>
+<div id="thm-bolzano-weierstrass-sucesiones" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.6 (Bolzano-Weierstrass) </strong></span>Toda sucesión de números reales acotada tiene al menos una subsucesión convergente.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión de números reales acotada. Entonces, <span class="math inline">\(A=\{x_n:n\in\mathbb{N}\}\)</span> es un conjunto acotado.</p>
+<p>Si <span class="math inline">\(A\)</span> es finito, existe un <span class="math inline">\(c\in A\)</span> y un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n=c\)</span> <span class="math inline">\(\forall n\geq k\)</span>, de manera que la subsucesión <span class="math inline">\(x_{n+k}=c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y al ser constante, converge a <span class="math inline">\(c\)</span>.</p>
+<p>Si <span class="math inline">\(A\)</span> es infinito, como está acotado, por el <a href="topologia-reales.html#thm-bolzano-weierstrass">Teorema&nbsp;<span>3.3</span></a>, existe un <span class="math inline">\(x\in\mathbb{R}\)</span> que es punto de acumulación de <span class="math inline">\(A\)</span>. Entonces, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, el conjunto <span class="math inline">\(A_n=(x-\frac{1}{n},x+\frac{1}{n})\cap A\neq \emptyset\)</span>, y de hecho es infinito. Tomando como <span class="math inline">\(r_1\)</span> el primer número natural tal que <span class="math inline">\(x_{r_1}\in A_n\)</span>, <span class="math inline">\(r_2\)</span> el primer número natural tal que <span class="math inline">\(r_2&gt;r_1\)</span> y <span class="math inline">\(x_{r_2}\in A_2\)</span>, y así sucesivamente, se puede construir una sucesión de números naturales <span class="math inline">\((r_n)_{n=1}^\infty\)</span> estrictamente creciente, de manera que <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> es una subsucesión de <span class="math inline">\((x_n)_{n=1}^\infty\)</span>. Además, como <span class="math inline">\(x_{r_n}\in A_n\)</span>, se tiene que <span class="math inline">\(|x_{r_n}-x|&lt;\frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-sucesiones-conjuntos-cerrados" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.7 </strong></span>Cualquier conjunto de número reales <span class="math inline">\(A\subseteq\mathbb{R}\)</span> es cerrado si y solo si toda sucesión de números reales en <span class="math inline">\(A\)</span> que converge, lo hace a un número de <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(A\)</span> es un conjunto cerrado y sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión de números reales en <span class="math inline">\(A\)</span> tal que <span class="math inline">\(\lim_{n\to\infty} x_n=x\)</span>. Veremos que <span class="math inline">\(x\in A\)</span> por reducción al absurdo. Para ello, supongamos que <span class="math inline">\(x\not\in A\)</span>. Entonces <span class="math inline">\(x\in \overline{A}\)</span>. Como <span class="math inline">\(A\)</span> es cerrado, <span class="math inline">\(\overline{A}\)</span> es abierto, y entonces, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subset \overline{A}\)</span>. Por otro lado, como <span class="math inline">\(\lim_{n\to\infty}x_n=x\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\forall n\geq k\)</span> se tiene <span class="math inline">\(|x_n-x|&lt;\varepsilon \Rightarrow x_n\in (x-\varepsilon,x+\varepsilon)\subset \overline{A}\)</span>, de manera que <span class="math inline">\(x_n\not\in A\)</span> <span class="math inline">\(\forall n\geq k\)</span>, lo que contradice que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> sea una sucesión de números en <span class="math inline">\(A\)</span>. Por tanto, debe ser <span class="math inline">\(x\in A\)</span>.</p>
+<p>Veamos ahora el otro sentido de la implicación. Supongamos que cualquier sucesión de números en <span class="math inline">\(A\)</span> que converge, lo hace a un número de <span class="math inline">\(A\)</span>. Si <span class="math inline">\(A\)</span> no es cerrado, entonces <span class="math inline">\(\overline{A}\)</span> no es abierto, de manera que existe <span class="math inline">\(x\in\overline{A}\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\cap A\neq\emptyset\)</span> <span class="math inline">\(\forall \varepsilon&gt;0\)</span>. En particular, para cada <span class="math inline">\(n\in\mathbb{N}\)</span> se tiene que <span class="math inline">\((x-\frac{1}{n},x+\frac{1}{n})\cap A\neq \emptyset\)</span>, por lo que podemos tomar <span class="math inline">\(x_n\in (x-\frac{1}{n},x+\frac{1}{n})\cap A\)</span> de manera que la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión en <span class="math inline">\(A\)</span> y además <span class="math inline">\(|x_n-x|&lt;\frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, así que, <span class="math inline">\(\lim_{n\to\infty}x_n=x\not\in A\)</span>, lo que contradice la hipótesis de partida, por lo que <span class="math inline">\(A\)</span> debe ser cerrado.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-sucesiones-conjuntos-cerrados-acotados" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 4.1 </strong></span>Cualquier sucesión de números reales en un conjunto cerrado y acotado tiene una subsucesión convergente a un número del conjunto.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A\subset \mathbb{R}\)</span> un conjunto cerrado y acotado, y sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión en <span class="math inline">\(A\)</span>. Como <span class="math inline">\(A\)</span> está acotado, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> también lo está, y por el <a href="#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> tiene una subsucesión <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> convergente. Ahora bien, como <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> converge y está definida en <span class="math inline">\(A\)</span> que es cerrado, por el teorema anterior, se concluye que <span class="math inline">\(\lim_{n\to\infty}x_{r_n}\in A\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sucesiones-propiamente-divergentes" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sucesiones-propiamente-divergentes"><span class="header-section-number">4.5</span> Sucesiones propiamente divergentes</h2>
+<p>Ya hemos visto que una sucesión que no converge es divergente, pero existen distintos motivos por los que una sucesión puede no converger. En esta sección estudiamos un tipo particular de sucesiones que divergen porque no paran de crecer o decrecer.</p>
+<div id="def-sucesiones-propiamente-divergentes" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.8 (Sucesiones propiamente divergentes) </strong></span>Se dice que una sucesión de números reales <span class="math inline">\((x_n)_{n=1}^\infty\)</span> tiene a <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{n\to\infty}x_n=\infty\)</span>, si para cualquier <span class="math inline">\(\varepsilon\in\mathbb{R}\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n\geq\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Del mismo modo, se dice que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> tiene a <span class="math inline">\(-\infty\)</span>, y se denota <span class="math inline">\(\lim_{n\to\infty}x_n=-\infty\)</span>, si para cualquier <span class="math inline">\(\varepsilon\in\mathbb{R}\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n\leq \varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Y se dice que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es <em>propiamente divergente</em> cuando <span class="math inline">\(\lim_{n\to\infty}x_n=\pm\infty\)</span>.</p>
+</div>
+<div id="exm-sucesiones-propiamente-divergentes" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.17 </strong></span>La sucesión <span class="math inline">\((-n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(-\infty\)</span>, ya que dado <span class="math inline">\(\varepsilon&lt;0\)</span>, por la propiedad arquimediana, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(-\varepsilon&lt;k\)</span>, de manera <span class="math inline">\(\varepsilon&gt;-k\)</span>, y por tanto, <span class="math inline">\(\forall n\geq k\)</span>, <span class="math inline">\(-n\leq -k &lt; \varepsilon\)</span>.</p>
+<p>La sucesión <span class="math inline">\((n^2)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(\infty\)</span>, ya que dado <span class="math inline">\(\varepsilon&gt;0\)</span>, por la propiedad arquimediana, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\sqrt{\varepsilon}&lt;k\)</span>, de manera que <span class="math inline">\(\forall n\geq k\)</span>, <span class="math inline">\(n^2\geq k^2&gt;\varepsilon\)</span>.</p>
+</div>
+<div id="prp-sucesiones-propiamentes-divergentes" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.5 </strong></span>Una sucesión monótona de números reales es propiamente divergente si y solo si no está acotada. Además, si la sucesión es creciente entonces tiende a <span class="math inline">\(\infty\)</span>, y si es decreciente tiende a <span class="math inline">\(-\infty\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión creciente y no acotada. Entonces dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(\varepsilon\)</span> no es cota de la sucesión, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_k&gt;\varepsilon\)</span>. Por tanto, <span class="math inline">\(\forall n\geq k\)</span>, como la sucesión es creciente, se tiene que <span class="math inline">\(x_n\geq x_k&gt;\varepsilon\)</span>. Luego <span class="math inline">\(\lim_{n\to\infty}x_n=\infty\)</span>.</p>
+<p>De forma análoga se prueba que si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es decreciente y no acotada, entonces <span class="math inline">\(\lim_{n\to\infty}x_n=-\infty\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-sucesiones-propiamentes-divergentes" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.6 </strong></span>Sean <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((y_n)_{n=1}^\infty\)</span> dos sucesiones de números reales tales que <span class="math inline">\(x_n\leq y_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Entonces, si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> también tiende a <span class="math inline">\(\infty\)</span>, y si <span class="math inline">\((y_n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(-\infty\)</span>, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> también tiende a <span class="math inline">\(-\infty\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\lim_{n\to\infty}x_n=\infty\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\((x_n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(\infty\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(x_n&gt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto también se cumple que <span class="math inline">\(y_n\geq x_n&gt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, de manera que <span class="math inline">\(\lim_{n\to\infty}y_n=\infty\)</span>.</p>
+<p>De forma análoga se prueba que si <span class="math inline">\(\lim_{n\to\infty}y_n=-\infty\)</span>, entonces <span class="math inline">\(\lim_{n\to\infty}x_n=-\infty\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-sucesiones-propiamentes-divergentes" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 4.7 </strong></span>Sean <span class="math inline">\((x_n)_{n=1}^\infty\)</span> y <span class="math inline">\((y_n)_{n=1}^\infty\)</span> dos sucesiones de números reales estrictamente positivos tales que la sucesión <span class="math inline">\(\left(\frac{x_n}{y_n}\right)_{n=1}^\infty\)</span> converge a <span class="math inline">\(l\neq 0\)</span>. Entonces, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(\infty\)</span> si y solo si <span class="math inline">\((y_n)_{n=1}^\infty\)</span> tiende a <span class="math inline">\(\infty\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(\varepsilon=\frac{l}{2}&gt;0\)</span> ya que <span class="math inline">\(l&gt;0\)</span> al ser las sucesiones estrictamente positivas. Como <span class="math inline">\(\lim_{n\to\infty} \frac{x_n}{y_n}=l\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\forall n\geq k\)</span> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+|x_n-l|&lt;\varepsilon=\frac{l}{2} &amp;\Rightarrow \frac{-l}{2}&lt;\frac{x_n}{y_n}-l&lt;\frac{l}{2}\\
+&amp;\Rightarrow \frac{l}{2}&lt;\frac{x_n}{y_n}&lt; \frac{3l}{2}\\
+&amp;\Rightarrow \frac{l}{2}y_n&lt;x_n&lt;\frac{3l}{2}y_n.
+\end{align*}\]</span></p>
+<p>Ahora, si <span class="math inline">\(\lim_{n\to\infty}x_n=\infty\)</span>, por el teorema anterior, se tiene que <span class="math inline">\(\lim_{n\to\infty}\frac{3l}{2}y_n=\infty\)</span>, y como <span class="math inline">\(\frac{3l}{2}&gt;0\)</span> se concluye que <span class="math inline">\(\lim_{n\to\infty}y_n=\infty\)</span>.</p>
+<p>Del mismo modo, si <span class="math inline">\(\lim_{n\to\infty}y_n=\infty\)</span> entonces <span class="math inline">\(\lim_{n\to\infty}\frac{l}{2}y_n=\infty\)</span>, y por el teorema anterior, se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=\infty\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sucesiones-de-cauchy" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sucesiones-de-cauchy"><span class="header-section-number">4.6</span> Sucesiones de Cauchy</h2>
+<p>En la última sección de este capítulo, se introducen un tipo particular de sucesiones convergente que son de especial importancia para la definición de los números reales.</p>
+<div id="def-sucesion-cauchy" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.9 (Sucesión de Cauchy) </strong></span>Se dice que una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una <em>sucesión de Cauchy</em> si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x_m|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n,m\geq k\)</span>.</p>
+</div>
+<div id="thm-criterio-convergencia-cauchy" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 4.8 (Criterio de convergencia de Cauchy) </strong></span>Una sucesión de números reales es convergente si y solo si es una sucesión de Cauchy.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión convergente a <span class="math inline">\(x\)</span>. Entonces, dado <span class="math inline">\(\varepsilon&gt;0\)</span>, tomando <span class="math inline">\(\varepsilon'=\frac{\varepsilon}{2}&gt;0\)</span> existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon'\)</span> <span class="math inline">\(\forall n\geq k\)</span>.</p>
+<p>Ahora, si se toma <span class="math inline">\(n,m\geq k\)</span>, se tiene, aplicando la desigualdad triangular,</p>
+<p><span class="math display">\[
+|x_n-x_m|=|(x_n-x)+(x-x_m)| \leq |x_n-x| + |x-x_m| &lt; \varepsilon' +\varepsilon' = \varepsilon,
+\]</span></p>
+<p>por lo que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de Cauchy.</p>
+<p>Veamos ahora al implicación en el otro sentido. Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión de Cauchy. Entonces, dado <span class="math inline">\(\varepsilon=1\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x_m|&lt;1\)</span> <span class="math inline">\(\forall n,m\geq k\)</span>. Así pues, si <span class="math inline">\(n\geq k\)</span>, se tiene, aplicando de nuevo la desigualdad triangular,</p>
+<p><span class="math display">\[
+|x_n| = |x_n-x_k+x_k| \leq |x_n-x_k|+|x_k|&lt;1+|x_k|.
+\]</span></p>
+<p>Si se toma <span class="math inline">\(c=\max(\{|x_1|, \ldots, |x_{k-1}|,1+|x_k|\})\)</span> entonces <span class="math inline">\(c\)</span> es una cota de <span class="math inline">\((x_n)_{n=1}^\infty\)</span>. Aplicando ahora el <a href="#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión convergente <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> de <span class="math inline">\((x_n)_{n=1}^\infty\)</span>.</p>
+<p>Sea <span class="math inline">\(\lim_{n\to\infty}x_{r_n}=x\)</span>. Veamos que <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(\varepsilon'=\frac{\varepsilon}{2}&gt;0\)</span>. Como <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de Cauchy, existe <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x_m|&lt;\varepsilon'\)</span> <span class="math inline">\(\forall n,m\geq k_1\)</span>. Por otro lado, como <span class="math inline">\((x_{r_n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>, existe <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_{r_n}-x|&lt;\varepsilon'\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>. Tomando <span class="math inline">\(k=\max(\{k_1,k_2\})\)</span>, para cualquier <span class="math inline">\(n\geq k\)</span> se tiene, de nuevo por la desigualdad triangular,</p>
+<p><span class="math display">\[
+|x_n-x| = |x_n-x_{r_k}+x_{r_k}-x|\leq |x_n-x_{r_k}|+|x_{r_k}-x| &lt; \varepsilon'+\varepsilon=\varepsilon,
+\]</span> pues <span class="math inline">\(r_k\geq k\geq k_1\)</span>. Por consiguiente, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-sucesion-cauchy" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.18 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span> es de Cauchy. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, tomando <span class="math inline">\(\frac{2}{\varepsilon}&gt;0\)</span>, por la propiedad arquimediana, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{2}{\varepsilon}&lt;k\)</span> y, por tanto, <span class="math inline">\(\frac{2}{k}&lt;\varepsilon\)</span>. Ahora, para cualquier <span class="math inline">\(n,m\geq k\)</span> se tiene</p>
+<p><span class="math display">\[
+\left|\frac{1}{n}-\frac{1}{m}\right| \leq  \left|\frac{1}{n}\right| +\left|\frac{1}{m}\right| =\frac{1}{n}+\frac{1}{m} \leq \frac{1}{k}+\frac{1}{k}=\frac{2}{k}&lt;\varepsilon.
+\]</span></p>
 </div>
 
 
