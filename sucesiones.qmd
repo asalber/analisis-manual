@@ -19,6 +19,8 @@ Una _sucesión de números reales_ es una aplicación $x:\mathbb{N}\to \mathbb{R
 
 Es habitual referirse a una sucesión con la notación $(x_n)_{n=1}^\infty$, donde $x_n=x(n)$ con $n\in\mathbb{N}$, o simplemente con $x_n$.
 
+De manera informal, se puede decir que una sucesión es una lista ordenada de números reales.
+
 :::{#exm-sucesion1}
 La sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ está formada por los términos $\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots$.
 :::
@@ -29,6 +31,14 @@ No hay que confundir los términos de una sucesión $(x_n)_{n=1}^\infty$, que ti
 
 :::{#exm-sucesion2}
 La sucesión $\left((-1)^n\right)_{n=1}^\infty$ está formada por los términos $-1,1,-1,1,\ldots$, mientras que $\{x_n:n\in\mathbb{N}\}=\{-1,1\}$.
+:::
+
+Una sucesión de números reales puede definirse dando una fórmula para el término general, de manera que aplicando la fórmula para cada $n\in\mathbb{N}$ se obtienen todos los términos de las sucesión, o bien de manera recursiva, dando el primer término de la sucesión y después dando una fórmula para construir el siguiente término de la sucesión en función del anterior o anteriores. 
+
+:::{#exm-sucesion2}
+La sucesión del ejemplo anterior también se puede definir recursivamente de la siguiente manera, $x_1=-1$ y $x_{n+1}=(-1)x_n$ $\forall n\in\mathbb{N}$.
+
+Otro ejemplo es la famosa sucesión de Fibonacci, que se define recursivamente como $x_1=1$, $x_2=1$ y $x_{n+2}=x_{n}+x_{n+1}$ $\forall n\in\mathbb{N}$.
 :::
 
 Las operaciones aritméticas de los números reales se pueden extrapolar a las sucesiones aplicándolas término a término. 
@@ -68,6 +78,18 @@ Si $x$ es el límite de la sucesión, se dice que la suceción _converge_ a $x$,
 :::
 
 Si una sucesión tiene límite se dice que es _convergente_, y en caso contrario se dice que es _divergente_.
+
+De manera informal podemos decir que una sucesión de números reales converge a un número $x$, si para cualquier entorno suyo, a partir de un determinado término, todos los siguientes caen dentro del entorno, tal y como se muestra en la siguiente figura. 
+
+::: {.content-visible when-format="html"}
+![Límite de una sucesión](./img/sucesiones/limite-sucesion.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite de una sucesión](./img/sucesiones/limite-sucesion.tex)
+:::
+
+Esto es equivalente a decir que podemos encontrar términos de la sucesión tan cerca de $x$ como queramos.
 
 :::{#exm-limite-sucesion}
 La sucesión $(\frac{1}{n})_{n=1}^\infty$ es convergente y $\lim_{n\to\infty}\frac{1}{n} = 0$, ya que para cualquier $\varepsilon>0$, por la @thm-propiedad-arquimediana, se tiene que existe un $k\in\mathbb{N}$, tal que $\frac{1}{k}<\varepsilon$, de manera que para cualquier $n>k$, se tiene $|\frac{1}{n}-0| = \frac{1}{n} <\frac{1}{k}<\varepsilon$.
@@ -473,7 +495,7 @@ La sucesión $(-n)_{n=1}^\infty$ tiende a $-\infty$, ya que dado $\varepsilon<0$
 La sucesión  $(n^2)_{n=1}^\infty$ tiende a $\infty$, ya que dado $\varepsilon>0$, por la propiedad arquimediana, existe $k\in\mathbb{N}$ tal que $\sqrt{\varepsilon}<k$, de manera que $\forall n\geq k$, $n^2\geq k^2>\varepsilon$.
 :::
 
-:::{#prp-sucesiones-propiamentes-divergentes}
+:::{#prp-sucesiones-propiamentes-divergentes-no-acotadas}
 Una sucesión monótona de números reales es propiamente divergente si y solo si no está acotada. Además, si la sucesión es creciente entonces tiende a $\infty$, y si es decreciente tiende a $-\infty$.
 :::
 
@@ -499,7 +521,24 @@ De forma análoga se prueba que si $\lim_{n\to\infty}y_n=-\infty$, entonces $\li
 :::
 :::
 
-:::{#prp-sucesiones-propiamentes-divergentes}
+:::{#prp-algebra-sucesiones-propiamentes-divergentes}
+Sean $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ y $(z_n)_{n=1}^\infty$ sucesiones de números reales tales que $\lim_{n\to\infty}x_n=\infty$, $\lim_{n\to\infty}y_n=\infty$ y $\lim_{n\to\infty}z_n=-\infty$, entonces
+
+a. $\lim_{n\to\infty}(x_n+y_n)=\infty$.
+b. $\lim_{n\to\infty}(x_ny_n)=\infty$.
+c. $\lim_{n\to\infty}(x_n+z_n)=-\infty$.
+d. $\lim_{n\to\infty}kx_n=\infty$ $\forall k>0$ y $\lim_{n\to\infty}kx_n=-\infty$ $\forall k<0$.
+e. $\lim_{n\to\infty}\frac{1}{x_n}=0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#prp-cociente-sucesiones-propiamentes-divergentes}
 Sean $(x_n)_{n=1}^\infty$ y $(y_n)_{n=1}^\infty$ dos sucesiones de números reales estrictamente positivos tales que la sucesión $\left(\frac{x_n}{y_n}\right)_{n=1}^\infty$ converge a $l\neq 0$. Entonces, $(x_n)_{n=1}^\infty$ tiende a $\infty$ si y solo si $(y_n)_{n=1}^\infty$ tiende a $\infty$.
 :::
 
