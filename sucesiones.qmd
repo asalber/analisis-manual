@@ -189,7 +189,45 @@ e. Si $y_n\neq 0$ $\forall n\in\mathbb{N}$ e $y\neq 0$, $\frac{(x_n)_{n=1}^\inft
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Se deja como ejercicio.
+Veamos la prueba de cada apartado.
+
+a. Dado $\varepsilon>0$, sea $\varepsilon'=\frac{\varepsilon}{2}>0$. Por ser $\lim_{n\to\infty}x_n=x$ existe $k_1\in\mathbb{N}$ tal que $|x_n-x|<\varepsilon'=\frac{\varepsilon}{2}$ $\forall n\geq k_1$, y por ser $\lim_{n\to\infty}y_n=x$ existe $k_2\in\mathbb{N}$ tal que $|y_n-y|<\varepsilon'=\frac{\varepsilon}{2}$ $\forall n\geq k_2$. 
+
+    Tomando $k=\max(\{k_1,k_2\})$, para $n\geq k$, aplicando la desigualdad triangular, se tiene que 
+
+    \begin{align*}
+    |(x_n+y_n)-(x+y)| &= |(x_n-x)+(y_n-y)|\\
+    &\leq |x_n-x|+|y_n-y|\\ 
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+    \end{align*}
+
+    Por tanto, $\lim_{n\to\infty}x_n+y_n = x+y$.
+
+b. Se prueba de manera análoga.
+
+c. Dado $\varepsilon>0$, sea $\varepsilon_1=\frac{\varepsilon}{2|x|}>0$. Por ser $\lim_{n\to\infty}y_n=x$ existe $k_1\in\mathbb{N}$ tal que $|y_n-y|<\varepsilon_1=\frac{\varepsilon}{2}$ $\forall n\geq k_1$. Y por el teorema anterior, como $(y_n)_{n=1}^\infty$ converge, está acotada, de modo que existe una cota $c>0$ tal que $|y_n|\leq c$ $\forall n\in\mathbb{N}$. 
+
+    Sea ahora $\varepsilon_2=\frac{\varepsilon}{2c}>0$. Por ser $\lim_{n\to\infty}x_n=x$ existe $k_2\in\mathbb{N}$ tal que $|x_n-x|<\varepsilon_2=\frac{\varepsilon}{2}$ $\forall n\geq k_2$. 
+
+    Tomando ahora Tomando $k=\max(\{k_1,k_2\})$, para $n\geq k$, aplicando la desigualdad triangular, se tiene que 
+
+    \begin{align*}
+    |(x_ny_n)-(xy)| &= |(x_ny_n-xy_n)+(xy_n-xy)|\\ 
+    &\leq |(x_ny_n-xy_n)|+|(xy_n-xy)|\\  
+    &= |(x_n-x)y_n|+|x(y_n-y)| \\ 
+    &= |(x_n-x)||y_n|+|x||(y_n-y)|\\ 
+    &< |(x_n-x)|c+|x||(y_n-y)|\\ 
+    &<c\varepsilon_2+|x|\varepsilon_1=\frac{\varepsilon}{2c}c+|x|\frac{\varepsilon}{2|x|}\\ 
+    &= \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+    \end{align*}
+
+    Por tanto, $\lim_{n\to\infty}x_ny_n = xy$.
+
+d. Se prueba a partir del resultado anterior, tomando la sucesión constante $(c)_{n=1}^\infty$.
+
+d. Se deja como ejercicio.
+
+
 :::
 :::
 

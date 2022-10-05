@@ -423,7 +423,33 @@ Demostración
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada apartado.</p>
+<ol type="a">
+<li><p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(\varepsilon'=\frac{\varepsilon}{2}&gt;0\)</span>. Por ser <span class="math inline">\(\lim_{n\to\infty}x_n=x\)</span> existe <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon'=\frac{\varepsilon}{2}\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>, y por ser <span class="math inline">\(\lim_{n\to\infty}y_n=x\)</span> existe <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(|y_n-y|&lt;\varepsilon'=\frac{\varepsilon}{2}\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>.</p>
+<p>Tomando <span class="math inline">\(k=\max(\{k_1,k_2\})\)</span>, para <span class="math inline">\(n\geq k\)</span>, aplicando la desigualdad triangular, se tiene que</p>
+<p><span class="math display">\[\begin{align*}
+|(x_n+y_n)-(x+y)| &amp;= |(x_n-x)+(y_n-y)|\\
+&amp;\leq |x_n-x|+|y_n-y|\\
+&amp;&lt;\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\end{align*}\]</span></p>
+<p>Por tanto, <span class="math inline">\(\lim_{n\to\infty}x_n+y_n = x+y\)</span>.</p></li>
+<li><p>Se prueba de manera análoga.</p></li>
+<li><p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(\varepsilon_1=\frac{\varepsilon}{2|x|}&gt;0\)</span>. Por ser <span class="math inline">\(\lim_{n\to\infty}y_n=x\)</span> existe <span class="math inline">\(k_1\in\mathbb{N}\)</span> tal que <span class="math inline">\(|y_n-y|&lt;\varepsilon_1=\frac{\varepsilon}{2}\)</span> <span class="math inline">\(\forall n\geq k_1\)</span>. Y por el teorema anterior, como <span class="math inline">\((y_n)_{n=1}^\infty\)</span> converge, está acotada, de modo que existe una cota <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|y_n|\leq c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+<p>Sea ahora <span class="math inline">\(\varepsilon_2=\frac{\varepsilon}{2c}&gt;0\)</span>. Por ser <span class="math inline">\(\lim_{n\to\infty}x_n=x\)</span> existe <span class="math inline">\(k_2\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-x|&lt;\varepsilon_2=\frac{\varepsilon}{2}\)</span> <span class="math inline">\(\forall n\geq k_2\)</span>.</p>
+<p>Tomando ahora Tomando <span class="math inline">\(k=\max(\{k_1,k_2\})\)</span>, para <span class="math inline">\(n\geq k\)</span>, aplicando la desigualdad triangular, se tiene que</p>
+<p><span class="math display">\[\begin{align*}
+|(x_ny_n)-(xy)| &amp;= |(x_ny_n-xy_n)+(xy_n-xy)|\\
+&amp;\leq |(x_ny_n-xy_n)|+|(xy_n-xy)|\\  
+&amp;= |(x_n-x)y_n|+|x(y_n-y)| \\
+&amp;= |(x_n-x)||y_n|+|x||(y_n-y)|\\
+&amp;&lt; |(x_n-x)|c+|x||(y_n-y)|\\
+&amp;&lt;c\varepsilon_2+|x|\varepsilon_1=\frac{\varepsilon}{2c}c+|x|\frac{\varepsilon}{2|x|}\\
+&amp;= \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\end{align*}\]</span></p>
+<p>Por tanto, <span class="math inline">\(\lim_{n\to\infty}x_ny_n = xy\)</span>.</p></li>
+<li><p>Se prueba a partir del resultado anterior, tomando la sucesión constante <span class="math inline">\((c)_{n=1}^\infty\)</span>.</p></li>
+<li><p>Se deja como ejercicio.</p></li>
+</ol>
 </div>
 </div>
 </div>
