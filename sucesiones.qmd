@@ -276,33 +276,33 @@ $$
 
 y que $\lim_{n\to\infty} \frac{2}{n}=\lim_{n\to\infty} 0 = 0$, de manera que aplicando el teorema anterior de compresión se tiene que $\lim_{n\to\infty} \frac{2n}{n^2+1}=0$.
 
-Veamos ahora que la sucesión $\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty$ también converge a 0. De nuevo basta con ver que
+Veamos ahora que la sucesión $\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty$ también converge a 0. De nuevo basta con ver que, como $-1\leq  \operatorname {sen}(n)\leq 1$ $\forall n\in\mathbb{N}$,
 
 $$
-0\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
+\frac{-1}{n}\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
 $$
 
-y que $\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0$, de manera que aplicando el teorema anterior de compresión se tiene que $\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0$.
+y que $\lim_{n\to\infty} \frac{-1}{n}=\lim_{n\to\infty} \frac{1}{n}= 0$, de manera que aplicando el teorema anterior de compresión se tiene que $\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0$.
 :::
 
 :::{#prp-criterio-cociente-sucesiones}
 ## Criterio del cociente
-Si $(x_n)_{n=1}^\infty$ es una sucesión de números reales estrictamente positivos tal que la sucesión  $\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty$ converge a $l<1$, entonces $(x_n)_{n=1}^\infty$ converge a 0.
+Si $(x_n)_{n=1}^\infty$ es una sucesión de números reales estrictamente positivos tal que la sucesión  $\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty$ converge a $x<1$, entonces $(x_n)_{n=1}^\infty$ converge a 0.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sea $y$ tal que $l<y<1$ y tomemos $\varepsilon=y-l>0$. Como $\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=l$, existe un $k\in\mathbb{N}$ tal que $|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon$ $\forall n\geq k$, y por tanto, se tiene que para cualquier $n\geq k$,
+Sea $y$ tal que $x<y<1$ y tomemos $\varepsilon=y-x>0$. Como $\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=x$, existe un $k\in\mathbb{N}$ tal que $|\frac{x_{n+1}}{x_n}-x|\leq \varepsilon$ $\forall n\geq k$, y por tanto, se tiene que para cualquier $n\geq k$,
 
 \begin{align*}
-|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon &\Rightarrow
--\varepsilon<\frac{x_{n+1}}{x_n}-l\leq \varepsilon\\ 
-&\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\ 
+\left|\frac{x_{n+1}}{x_n}-x\right|\leq \varepsilon &\Rightarrow
+-\varepsilon<\frac{x_{n+1}}{x_n}-x\leq \varepsilon\\ 
+&\Rightarrow \frac{x_{n+1}}{x_n}\leq x+\varepsilon=x+y-x=y\\ 
 &\Rightarrow x_{n+1}<yx_n.
 \end{align*}
 
-Por consiguiente, si $m\in\mathbb{N}$ se cumple que $x_{k+m}<yx_{k+m-1}<r^2x_{k+m-2}<\cdots<r^mx_k$, de manera que $0<x_{k+m}<r^mx_k$ $\forall m\in\mathbb{N}$. Como $r<1$, $\lim_{m\to\infty}y^m=0$ y $\lim_{m\to\infty}r^mx_k=0$, y por el teorema de compresión (@thm-compresion-sucesiones-convergentes) $\lim_{m\to\infty}x_{k+m}=0$. Finalmente, como $(x_{k+m})_{m=1}^\infty$ es una cola de la sucesión $(x_n)_{n=1}^\infty$ se tiene que $\lim_{n\to\infty}x_n=0$.
+Por consiguiente, si $m\in\mathbb{N}$ se cumple que $x_{k+m}<yx_{k+m-1}<y^2x_{k+m-2}<\cdots<y^mx_k$, de manera que $0<x_{k+m}<y^mx_k$ $\forall m\in\mathbb{N}$. Como $y<1$, $\lim_{m\to\infty}y^m=0$ y $\lim_{m\to\infty}y^mx_k=0$, y por el teorema de compresión (@thm-compresion-sucesiones-convergentes) $\lim_{m\to\infty}x_{k+m}=0$. Finalmente, como $(x_{k+m})_{m=1}^\infty$ es una cola de la sucesión $(x_n)_{n=1}^\infty$ se tiene que $\lim_{n\to\infty}x_n=0$.
 :::
 :::
 
@@ -365,7 +365,7 @@ De forma similar se puede probar que si $(x_n)_{n=1}^\infty$ una sucesión decre
 :::
 
 :::{#exm-sucesiones-monotonas-convergentes-1}
-Veamos que la sucesión $\left(\frac{1}{\sqrt{n}}\right)_{n=1}^\infty$ converge a 0. La sucesión es decreciente ya que para cualquier $n\in\mathbb{N}$ se tiene que $n<n+1 \Rightarrow \sqrt{n}< \sqrt{n+1}  \Rightarrow \frac{1}{\sqrt{n}}> \frac{1}{\sqrt{n+1}}$. Como además está acotada inferiormente por el $0$, se tiene que $\lim_{n\to\infty}\frac{1}{\sqrt{n}} = \inf\left(\left\{\frac{1}{\sqrt{n}}\right\}\right)= 0$.
+Veamos que la sucesión $\left(\frac{1}{\sqrt{n}}\right)_{n=1}^\infty$ converge a 0. La sucesión es decreciente ya que para cualquier $n\in\mathbb{N}$ se tiene que $n<n+1 \Rightarrow \sqrt{n}< \sqrt{n+1}  \Rightarrow \frac{1}{\sqrt{n}}> \frac{1}{\sqrt{n+1}}$. Como además está acotada inferiormente por el $0$, se tiene que $\lim_{n\to\infty}\frac{1}{\sqrt{n}} = \inf\left(\left\{\frac{1}{\sqrt{n}}: n\in\mathbb{N}\right\}\right)= 0$.
 :::
 
 :::{#exm-sucesiones-monotonas-convergentes-2}
@@ -374,7 +374,7 @@ Sea la sucesion definida recursivamente de la siguiente manera: $x_1=1$ y $x_{n+
 En primer lugar, veremos que es una sucesión creciente por inducción. Para $n=1$ se tiene que $x_1=1<\sqrt{2}=x_2$. Supongamos ahora que $x_n<x_{n+1}$. Entonces, $x_{n+2}=\sqrt{2x_{n+1}}>\sqrt{2x_n}=x_{n+1}$, de manera que la sucesión es creciente. 
 
 En segundo lugar, veremos, también por inducción, que $x_n\leq 2$ $\forall n\in\mathbb{N}$. Para $n=1$ se tiene que $x_1=1<2$. Supongamos ahora que $x_n<2$. Entonces, $x_{n+1}=\sqrt{2x_n}=\sqrt{2}\sqrt{x_n}<\sqrt{2}\sqrt{2}=2$. Luego, la sucesión está acotada, y por el teorema anterior, converge. 
-Para calcular el límite, aprovechando la definición recursiva de la sucesión, es tiene
+Para calcular el límite, aprovechando la definición recursiva de la sucesión, se tiene
 
 \begin{align*}
 x&=\lim_{n\to\infty}x_n = \lim_{n\to\infty} x_{n+1} = \lim_{n\to\infty} \sqrt{2x_n} = \lim_{n\to\infty}\sqrt{2}\sqrt{x_n}\\ 
@@ -383,9 +383,9 @@ x&=\lim_{n\to\infty}x_n = \lim_{n\to\infty} x_{n+1} = \lim_{n\to\infty} \sqrt{2x
 
 Así pues, se tiene que 
 
-$$x=\sqrt{x}\Rightarrow x^2=2x \Rightarrow x^2-2x=0 \Rightarrow x(x-2) = 0,$$
+$$x=\sqrt{2x}\Rightarrow x^2=2x \Rightarrow x^2-2x=0 \Rightarrow x(x-2) = 0,$$
 
-de donde se deduce, resolviendo la ecuación, que $x=0$ o $x=1$. Como $x=0$ es imposible pues $x_n>1$ $\forall n\in\mathbb{N}$, se concluye que $x=2$, y por tanto, $\lim_{n\to\infty}x_n = 2$. 
+de donde se deduce, resolviendo la ecuación, que $x=0$ o $x=1$. Como $x=0$ es imposible pues $x_n\geq 1$ $\forall n\in\mathbb{N}$, se concluye que $x=2$, y por tanto, $\lim_{n\to\infty}x_n = 2$. 
 :::
 
 :::{#exm-sucesiones-monotonas-convergentes-3}

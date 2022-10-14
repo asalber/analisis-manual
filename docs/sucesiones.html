@@ -501,14 +501,14 @@ Demostración
 0\leq \frac{2n}{n^2+1} \leq \frac{2n}{n^2}\leq \frac{2}{n}\ \forall n\in\mathbb{N}
 \]</span></p>
 <p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{2}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{2n}{n^2+1}=0\)</span>.</p>
-<p>Veamos ahora que la sucesión <span class="math inline">\(\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty\)</span> también converge a 0. De nuevo basta con ver que</p>
+<p>Veamos ahora que la sucesión <span class="math inline">\(\left(\frac{\operatorname{sen}(n)}{n}\right)_{n=1}^\infty\)</span> también converge a 0. De nuevo basta con ver que, como <span class="math inline">\(-1\leq \operatorname {sen}(n)\leq 1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>,</p>
 <p><span class="math display">\[
-0\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
+\frac{-1}{n}\leq \frac{\operatorname{sen}(n)}{n} \leq \frac{1}{n}\ \forall n\in\mathbb{N}
 \]</span></p>
-<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0\)</span>.</p>
+<p>y que <span class="math inline">\(\lim_{n\to\infty} \frac{-1}{n}=\lim_{n\to\infty} \frac{1}{n}= 0\)</span>, de manera que aplicando el teorema anterior de compresión se tiene que <span class="math inline">\(\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0\)</span>.</p>
 </div>
 <div id="prp-criterio-cociente-sucesiones" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 4.4 (Criterio del cociente) </strong></span>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de números reales estrictamente positivos tal que la sucesión <span class="math inline">\(\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty\)</span> converge a <span class="math inline">\(l&lt;1\)</span>, entonces <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a 0.</p>
+<p><span class="theorem-title"><strong>Proposición 4.4 (Criterio del cociente) </strong></span>Si <span class="math inline">\((x_n)_{n=1}^\infty\)</span> es una sucesión de números reales estrictamente positivos tal que la sucesión <span class="math inline">\(\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty\)</span> converge a <span class="math inline">\(x&lt;1\)</span>, entonces <span class="math inline">\((x_n)_{n=1}^\infty\)</span> converge a 0.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -523,14 +523,14 @@ Demostración
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(y\)</span> tal que <span class="math inline">\(l&lt;y&lt;1\)</span> y tomemos <span class="math inline">\(\varepsilon=y-l&gt;0\)</span>. Como <span class="math inline">\(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=l\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, se tiene que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(y\)</span> tal que <span class="math inline">\(x&lt;y&lt;1\)</span> y tomemos <span class="math inline">\(\varepsilon=y-x&gt;0\)</span>. Como <span class="math inline">\(\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=x\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|\frac{x_{n+1}}{x_n}-x|\leq \varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, se tiene que para cualquier <span class="math inline">\(n\geq k\)</span>,</p>
 <p><span class="math display">\[\begin{align*}
-|\frac{x_{n+1}}{x_n}-l|\leq \varepsilon &amp;\Rightarrow
--\varepsilon&lt;\frac{x_{n+1}}{x_n}-l\leq \varepsilon\\
-&amp;\Rightarrow \frac{x_{n+1}}{x_n}\leq l+\varepsilon=l+y-l=y\\
+\left|\frac{x_{n+1}}{x_n}-x\right|\leq \varepsilon &amp;\Rightarrow
+-\varepsilon&lt;\frac{x_{n+1}}{x_n}-x\leq \varepsilon\\
+&amp;\Rightarrow \frac{x_{n+1}}{x_n}\leq x+\varepsilon=x+y-x=y\\
 &amp;\Rightarrow x_{n+1}&lt;yx_n.
 \end{align*}\]</span></p>
-<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;r^2x_{k+m-2}&lt;\cdots&lt;r^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;r^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(r&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}r^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones-convergentes">Teorema&nbsp;<span>4.3</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
+<p>Por consiguiente, si <span class="math inline">\(m\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(x_{k+m}&lt;yx_{k+m-1}&lt;y^2x_{k+m-2}&lt;\cdots&lt;y^mx_k\)</span>, de manera que <span class="math inline">\(0&lt;x_{k+m}&lt;y^mx_k\)</span> <span class="math inline">\(\forall m\in\mathbb{N}\)</span>. Como <span class="math inline">\(y&lt;1\)</span>, <span class="math inline">\(\lim_{m\to\infty}y^m=0\)</span> y <span class="math inline">\(\lim_{m\to\infty}y^mx_k=0\)</span>, y por el teorema de compresión (<a href="#thm-compresion-sucesiones-convergentes">Teorema&nbsp;<span>4.3</span></a>) <span class="math inline">\(\lim_{m\to\infty}x_{k+m}=0\)</span>. Finalmente, como <span class="math inline">\((x_{k+m})_{m=1}^\infty\)</span> es una cola de la sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> se tiene que <span class="math inline">\(\lim_{n\to\infty}x_n=0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -593,19 +593,19 @@ s-\varepsilon \leq x_k\leq x_n\leq s&lt; s+\varepsilon \Rightarrow -\varepsilon 
 </div>
 </div>
 <div id="exm-sucesiones-monotonas-convergentes-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4.12 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{\sqrt{n}}\right)_{n=1}^\infty\)</span> converge a 0. La sucesión es decreciente ya que para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se tiene que <span class="math inline">\(n&lt;n+1 \Rightarrow \sqrt{n}&lt; \sqrt{n+1} \Rightarrow \frac{1}{\sqrt{n}}&gt; \frac{1}{\sqrt{n+1}}\)</span>. Como además está acotada inferiormente por el <span class="math inline">\(0\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}} = \inf\left(\left\{\frac{1}{\sqrt{n}}\right\}\right)= 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 4.12 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{\sqrt{n}}\right)_{n=1}^\infty\)</span> converge a 0. La sucesión es decreciente ya que para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se tiene que <span class="math inline">\(n&lt;n+1 \Rightarrow \sqrt{n}&lt; \sqrt{n+1} \Rightarrow \frac{1}{\sqrt{n}}&gt; \frac{1}{\sqrt{n+1}}\)</span>. Como además está acotada inferiormente por el <span class="math inline">\(0\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}} = \inf\left(\left\{\frac{1}{\sqrt{n}}: n\in\mathbb{N}\right\}\right)= 0\)</span>.</p>
 </div>
 <div id="exm-sucesiones-monotonas-convergentes-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.13 </strong></span>Sea la sucesion definida recursivamente de la siguiente manera: <span class="math inline">\(x_1=1\)</span> y <span class="math inline">\(x_{n+1}= \sqrt{2x_n}\)</span>. Veamos que converge a <span class="math inline">\(2\)</span>.</p>
 <p>En primer lugar, veremos que es una sucesión creciente por inducción. Para <span class="math inline">\(n=1\)</span> se tiene que <span class="math inline">\(x_1=1&lt;\sqrt{2}=x_2\)</span>. Supongamos ahora que <span class="math inline">\(x_n&lt;x_{n+1}\)</span>. Entonces, <span class="math inline">\(x_{n+2}=\sqrt{2x_{n+1}}&gt;\sqrt{2x_n}=x_{n+1}\)</span>, de manera que la sucesión es creciente.</p>
-<p>En segundo lugar, veremos, también por inducción, que <span class="math inline">\(x_n\leq 2\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Para <span class="math inline">\(n=1\)</span> se tiene que <span class="math inline">\(x_1=1&lt;2\)</span>. Supongamos ahora que <span class="math inline">\(x_n&lt;2\)</span>. Entonces, <span class="math inline">\(x_{n+1}=\sqrt{2x_n}=\sqrt{2}\sqrt{x_n}&lt;\sqrt{2}\sqrt{2}=2\)</span>. Luego, la sucesión está acotada, y por el teorema anterior, converge. Para calcular el límite, aprovechando la definición recursiva de la sucesión, es tiene</p>
+<p>En segundo lugar, veremos, también por inducción, que <span class="math inline">\(x_n\leq 2\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Para <span class="math inline">\(n=1\)</span> se tiene que <span class="math inline">\(x_1=1&lt;2\)</span>. Supongamos ahora que <span class="math inline">\(x_n&lt;2\)</span>. Entonces, <span class="math inline">\(x_{n+1}=\sqrt{2x_n}=\sqrt{2}\sqrt{x_n}&lt;\sqrt{2}\sqrt{2}=2\)</span>. Luego, la sucesión está acotada, y por el teorema anterior, converge. Para calcular el límite, aprovechando la definición recursiva de la sucesión, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 x&amp;=\lim_{n\to\infty}x_n = \lim_{n\to\infty} x_{n+1} = \lim_{n\to\infty} \sqrt{2x_n} = \lim_{n\to\infty}\sqrt{2}\sqrt{x_n}\\
 &amp;= \lim_{n\to\infty}\sqrt{2}\lim_{n\to\infty}\sqrt{x_n}=\sqrt{2}\sqrt{x}=\sqrt{2x}.
 \end{align*}\]</span></p>
 <p>Así pues, se tiene que</p>
-<p><span class="math display">\[x=\sqrt{x}\Rightarrow x^2=2x \Rightarrow x^2-2x=0 \Rightarrow x(x-2) = 0,\]</span></p>
-<p>de donde se deduce, resolviendo la ecuación, que <span class="math inline">\(x=0\)</span> o <span class="math inline">\(x=1\)</span>. Como <span class="math inline">\(x=0\)</span> es imposible pues <span class="math inline">\(x_n&gt;1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se concluye que <span class="math inline">\(x=2\)</span>, y por tanto, <span class="math inline">\(\lim_{n\to\infty}x_n = 2\)</span>.</p>
+<p><span class="math display">\[x=\sqrt{2x}\Rightarrow x^2=2x \Rightarrow x^2-2x=0 \Rightarrow x(x-2) = 0,\]</span></p>
+<p>de donde se deduce, resolviendo la ecuación, que <span class="math inline">\(x=0\)</span> o <span class="math inline">\(x=1\)</span>. Como <span class="math inline">\(x=0\)</span> es imposible pues <span class="math inline">\(x_n\geq 1\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se concluye que <span class="math inline">\(x=2\)</span>, y por tanto, <span class="math inline">\(\lim_{n\to\infty}x_n = 2\)</span>.</p>
 </div>
 <div id="exm-sucesiones-monotonas-convergentes-3" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4.14 </strong></span>Veamos ahora que la sucesión <span class="math inline">\(\left(\left(1+\frac{1}{n}\right)^n\right)_{n=1}^\infty\)</span> es convergente. Sea <span class="math inline">\(x_n=\left(1+\frac{1}{n}\right)^n\)</span>, entonces por el desarrollo del binomio, se tiene</p>
