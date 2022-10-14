@@ -285,7 +285,8 @@ $$
 y que $\lim_{n\to\infty} \frac{1}{n}=\lim_{n\to\infty} 0 = 0$, de manera que aplicando el teorema anterior de compresión se tiene que $\lim_{n\to\infty} \frac{\operatorname{sen}(n)}{n}=0$.
 :::
 
-:::{#prp-limite-cociente-sucesiones}
+:::{#prp-criterio-cociente-sucesiones}
+## Criterio del cociente
 Si $(x_n)_{n=1}^\infty$ es una sucesión de números reales estrictamente positivos tal que la sucesión  $\left(\frac{x_{n+1}}{x_n}\right)_{n=1}^\infty$ converge a $l<1$, entonces $(x_n)_{n=1}^\infty$ converge a 0.
 :::
 
