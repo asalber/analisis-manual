@@ -636,7 +636,7 @@ Si se toma $c=\max(\{|x_1|, \ldots, |x_{k-1}|,1+|x_k|\})$ entonces $c$ es una co
 Sea $\lim_{n\to\infty}x_{r_n}=x$. Veamos que $(x_n)_{n=1}^\infty$ converge a $x$. Dado $\varepsilon>0$, sea $\varepsilon'=\frac{\varepsilon}{2}>0$. Como $(x_n)_{n=1}^\infty$ es una sucesión de Cauchy, existe $k_1\in\mathbb{N}$ tal que $|x_n-x_m|<\varepsilon'$ $\forall n,m\geq k_1$. Por otro lado, como $(x_{r_n})_{n=1}^\infty$ converge a $x$, existe $k_2\in\mathbb{N}$ tal que $|x_{r_n}-x|<\varepsilon'$ $\forall n\geq k_2$. Tomando $k=\max(\{k_1,k_2\})$, para cualquier $n\geq k$ se tiene, de nuevo por la desigualdad triangular, 
 
 $$
-|x_n-x| = |x_n-x_{r_k}+x_{r_k}-x|\leq |x_n-x_{r_k}|+|x_{r_k}-x| < \varepsilon'+\varepsilon=\varepsilon,
+|x_n-x| = |x_n-x_{r_k}+x_{r_k}-x|\leq |x_n-x_{r_k}|+|x_{r_k}-x| < \varepsilon'+\varepsilon'=\varepsilon,
 $$
 pues $r_k\geq k\geq k_1$. Por consiguiente, $(x_n)_{n=1}^\infty$ converge a $x$.
 :::
@@ -648,5 +648,14 @@ Veamos que la sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ es de Cauchy. Da
 $$
 \left|\frac{1}{n}-\frac{1}{m}\right| \leq  \left|\frac{1}{n}\right| +\left|\frac{1}{m}\right| =\frac{1}{n}+\frac{1}{m} \leq \frac{1}{k}+\frac{1}{k}=\frac{2}{k}<\varepsilon.
 $$
+
+Sin embargo, la sucesión $(n)_{n=1}^\infty$ no es de Cauchy, ya que, dado $\varepsilon=1$, para cualquier $k\in\mathbb{N}$, si tomamos $n=k\geq k$ y $m=k+2\geq k$, se tiene que $|x_n-x_m|>|k-(k+2)|=2>1=\varepsilon$. 
 :::
 
+Las sucesiones de Cauchy juegan un papel clave en la construcción de cuerpos completos, en particular el cuerpo de los números Reales, ya que el hecho de que sus términos estén cada vez más cerca los unos de los otros, hace que aquellos cuerpos en los que cualquier sucesión de Cauchy converge a un elemento del cuerpo sean cuerpos sin huecos o completos. 
+
+:::{#exm-sucesion-cauchy-racionales-irracionales}
+El cuerpo de los números racionales $\mathbb{Q}$ no es completo ya que existen sucesiones de Cauchy de números racionales, como $\left((1+\frac{1}{n})^n\right)_{n=1}^\infty$, que converge al número $e$ que no es racional.
+
+El conjunto de los números irracionales $\mathbb{R}\setminus\mathbb{Q}$ tampoco es completo, pues existen sucesiones de Cauchy de números irracionales, como $(2^{1/(n+1)})_{n=1}^\infty$, que converge a $1$ que no es irracional.
+:::
