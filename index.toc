@@ -1,0 +1,72 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Prefacio}{4}{chapter*.2}%
+\contentsline {section}{Licencia}{4}{section*.3}%
+\contentsline {chapter}{\numberline {1}Teoría de conjuntos}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Conjuntos}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Álgebra de conjuntos}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Relaciones entre conjuntos}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Cotas y extremos}{14}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Funciones}{16}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Cardinalidad de un conjunto}{19}{section.1.6}%
+\contentsline {chapter}{\numberline {2}El sistema de los números reales}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}El conjunto de los números naturales \(\mathbb {N}\)}{25}{section.2.1}%
+\contentsline {section}{\numberline {2.2}El conjunto de los números enteros \(\mathbb {Z}\)}{26}{section.2.2}%
+\contentsline {section}{\numberline {2.3}El conjunto de los números racionales \(\mathbb {Q}\)}{26}{section.2.3}%
+\contentsline {section}{\numberline {2.4}El conjunto de los números irracionales}{27}{section.2.4}%
+\contentsline {section}{\numberline {2.5}El conjunto de los números reales}{28}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Clasificación de los conjuntos numéricos}{45}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Topología de la recta real}{46}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Intervalos y entornos}{46}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Clasificación de puntos}{49}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Conjuntos abiertos y cerrados}{53}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Sucesiones de números reales}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Concepto de sucesión}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Límite de una sucesión}{59}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Sucesiones monótonas}{66}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Subsucesiones}{69}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Sucesiones propiamente divergentes}{71}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Sucesiones de Cauchy}{74}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Funciones reales de variable real}{76}{chapter.5}%
+\contentsline {section}{\numberline {5.1}El concepto de función}{76}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Formas de representar una función}{76}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Por extensión}{77}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Por Intensión}{77}{subsubsection.5.1.1.2}%
+\contentsline {section}{\numberline {5.2}Dominio de una función}{78}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Imagen de una función}{79}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Álgebra de funciones}{79}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Función constante}{79}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Función identidad}{82}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Composición de funciones}{83}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Función inversa}{83}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Crecimiento de una función}{84}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Extremos de una función}{84}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Concavidad de una función}{84}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Funciones periódicas}{85}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Funciones polinómicas}{85}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Propiedades de las funciones polinómicas}{85}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}Funciones racionales}{86}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Propiedades de las funciones racionales}{86}{subsection.5.12.1}%
+\contentsline {section}{\numberline {5.13}Funciones potenciales}{87}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Propiedades de las funciones potenciales}{88}{subsection.5.13.1}%
+\contentsline {section}{\numberline {5.14}Funciones exponenciales}{88}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Propiedades de las funciones exponenciales}{89}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}Funciones logarítmicas}{89}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Propiedades de las funciones logarítmicas}{90}{subsection.5.15.1}%
+\contentsline {section}{\numberline {5.16}Funciones trigonométricas}{91}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Seno de un ángulo}{91}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Función seno}{91}{subsection.5.16.2}%
+\contentsline {subsection}{\numberline {5.16.3}Propiedades de la función seno}{92}{subsection.5.16.3}%
+\contentsline {subsection}{\numberline {5.16.4}Coseno de un ángulo}{92}{subsection.5.16.4}%
+\contentsline {subsection}{\numberline {5.16.5}Función coseno}{92}{subsection.5.16.5}%
+\contentsline {subsection}{\numberline {5.16.6}Propiedades de la función coseno}{93}{subsection.5.16.6}%
+\contentsline {subsection}{\numberline {5.16.7}Tangente de un ángulo}{93}{subsection.5.16.7}%
+\contentsline {subsection}{\numberline {5.16.8}Función tangente}{93}{subsection.5.16.8}%
+\contentsline {subsection}{\numberline {5.16.9}Propiedades de la función tangente}{94}{subsection.5.16.9}%
+\contentsline {subsection}{\numberline {5.16.10}Función arcoseno}{94}{subsection.5.16.10}%
+\contentsline {subsection}{\numberline {5.16.11}Propiedades de la función arcoseno}{94}{subsection.5.16.11}%
+\contentsline {subsection}{\numberline {5.16.12}Función arcocoseno}{95}{subsection.5.16.12}%
+\contentsline {subsection}{\numberline {5.16.13}Propiedades de la función arcoseno}{95}{subsection.5.16.13}%
+\contentsline {subsection}{\numberline {5.16.14}Función arcotangente}{95}{subsection.5.16.14}%
+\contentsline {subsection}{\numberline {5.16.15}Propiedades de la función arcotangente}{95}{subsection.5.16.15}%
+\contentsline {subsection}{\numberline {5.16.16}Algunas relaciones trigonométricas}{96}{subsection.5.16.16}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

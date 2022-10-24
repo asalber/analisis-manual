@@ -2,7 +2,6 @@ project:
   type: book
   output-dir: "docs"
 
-
 website:
   favicon: img/logos/favicon.ico
   reader-mode: true
@@ -22,7 +21,9 @@ book:
   sharing: [twitter, linkedin]
   downloads: [pdf, epub]
   favicon: "img/logos/favicon.ico"
-  sidebar: 
+  sidebar:
+    style: docked 
+    background: light
     logo: img/logos/aprendeconalf.png
     tools:
       - icon: house-fill
@@ -36,10 +37,10 @@ book:
     - reales.qmd
     - topologia-reales.qmd
     - sucesiones.qmd
+    - funciones.qmd
     #- limites.qmd
     
 #bibliography: references.bib
-
 
 format:
   html:
