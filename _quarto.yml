@@ -38,7 +38,7 @@ book:
     - topologia-reales.qmd
     - sucesiones.qmd
     - funciones.qmd
-    #- limites.qmd
+    - limites.qmd
     
 #bibliography: references.bib
 

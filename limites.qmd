@@ -328,7 +328,7 @@ $$
 
 :::{#def-limite-funcion}
 ## Límite de una función en un punto
-Se dice que el límite de la función $f:\mathbb{R}\$ cuando $x\rightarrow a$ es $l$, y se escribe
+Se dice que el límite de la función $f:\mathbb{R}\rightarrow \mathbb{R}$ cuando $x\rightarrow a$ es $l$, y se escribe
 
 $$\lim_{x\rightarrow a} f(x) = l$$ 
 
@@ -339,43 +339,109 @@ si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que, 
 
 ### Definición de límite en el infinito
 
-:::{#def-}
+:::{#def-limite-en-infinito}
 ## Límite de una función en el infinito
-Se dice que el límite de la función $f$ cuando $x\rightarrow +\infty$ es $l$, y se escribe
+Se dice que el límite de la función $f:\mathbb{R}\rightarrow \mathbb{R}$ cuando $x\rightarrow +\infty$ es $l$, y se escribe
 
 $$\lim_{x\rightarrow +\infty} f(x) =l$$
 
-si para cualquier valor $\varepsilon>0$ existe un número $\delta>0$ tal que, $\lvert f(x)-l\rvert <\varepsilon$ siempre que $x>\delta$.
+si para cualquier valor $\varepsilon>0$ existe un número $\delta>0$ tal que, $|f(x)-l| <\varepsilon$ siempre que $x>\delta$.
 
 Se dice que el límite de la función $f$ cuando $x\rightarrow -\infty$ es $l$, y se escribe
 
 $$\lim_{x\rightarrow -\infty} f(x) =l$$
 
-si para cualquier valor $\varepsilon>0$ existe un número $\delta<0$ tal que, $\lvert f(x)-l\rvert <\varepsilon$ siempre que $x<\delta$.
+si para cualquier valor $\varepsilon>0$ existe un número $\delta<0$ tal que, $|f(x)-l|<\varepsilon$ siempre que $x<\delta$.
 :::
 
 ## Álgebra de límites
 
-Dadas dos funciones $f(x)$ y $g(x)$, tales que existe $$\lim_{x\rightarrow a}f(x)$$ y $$\lim_{x\rightarrow a}g(x)$$, entonces se cumple que
+:::{#prp-limite-suma-resta-producto-cociente-funciones}
+Dadas dos funciones $f,g:\mathbb{R}\rightarrow \mathbb{R}$, tales que existe $\lim_{x\rightarrow a}f(x)$ y $\lim_{x\rightarrow a}g(x)$, entonces se cumple que
 
-1. $$ \lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$$, siendo $c$ constante.
-2. $$ \lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).$$
-3. $$ \lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).$$
-4. $$ \lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$$ si $$\lim_{x\rightarrow a}g(x)\neq 0.$$
+1. $\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$$, $\forall c\in\mathbb{R}$.
+
+2. $\lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).$
+
+3. $\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).$
+
+4. $\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$ si $\lim_{x\rightarrow a}g(x)\neq 0.$
+:::
 
 ### Límites de las funciones elementales
 
-- **Funciones polinómicas**. Si $f$ es un polinomio, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::{#prp-limite-funcion-polinomica}
+## Límite de una función polinómica
+Si $f$ es una función polinómica, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::
 
-- **Funciones racionales**. Si $f(x)=\dfrac{p(x)}{q(x)}$ con $p(x)$ y $q(x)$ dos polinomios, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ que no sea una raíz de $q(x)$, y $\lim_{x\rightarrow a}f(x)=f(a)$. Si $a$ es una raíz de $q(x)$ entonces el límite puede existir o no.
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
 
-- **Funciones potenciales**. Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \textrm{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::{#prp-limite-funcion-racional}
+## Límite de una función racional
+Si $f(x)=\dfrac{p(x)}{q(x)}$ con $p(x)$ y $q(x)$ funciones polinómicas, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ que no sea una raíz de $q(x)$, y $\lim_{x\rightarrow a}f(x)=f(a)$. 
 
-- **Funciones exponenciales**. Si $f(x)=c^x$ con $c\in \mathbb{R}$ entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y$\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $a$ es una raíz de $q(x)$ entonces el límite puede existir o no.
+:::
 
-- **Funciones logarítmicas**. Si $f(x)=\log_cx$ con $c\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}^+$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
 
-- **Funciones trigonométricas**. Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \textrm{Dom}(f)$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::{#prp-limite-funcion-potencial}
+## Límite de una función potencial
+Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \textrm{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#prp-limite-funcion-exponencial}
+## Límite de una función exponencial
+Si $f(x)=c^x$ con $c\in \mathbb{R}$ entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#prp-limite-funcion-logarítmica}
+## Límite de una función logarítmica
+Si $f(x)=\log_c(x)$ con $c\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}^+$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#prp-limite-funcion-trigonometrica}
+Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \textrm{Dom}(f)$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
 
 ## Indeterminaciones y su resolución
 
@@ -411,7 +477,7 @@ Existen diferentes técnicas para resolver una indeterminación del tipo $\dfrac
 Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow a$, y $a$ es una
 raíz de $p(x)$ y $q(x)$, se puede resolver la indeterminación factorizando los polinomios y simplificando.
 
-:::{exm-}
+:::{exm-solucion-indeterminacion-cociente}
 La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 1$.
 
 Para resolver la indeterminación factorizamos los polinomios
@@ -429,12 +495,13 @@ $$
 \lim_{x\rightarrow 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\rightarrow 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
 $$
 [^1]
+:::
 
 #### División por el término de mayor orden en funciones racionales
 
 Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow \pm\infty$, entonces se puede resolver dividendo $p(x)$ y $q(x)$ por el término de mayor grado de ambos polinomios.
 
-:::{exm-}
+:::{exm-solucion-indeterminacion-cociente-2}
 La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
 
 Para resolver la indeterminación dividimos numerador y denominador por $x^4$ que es el término de mayor grado:
@@ -442,6 +509,7 @@ Para resolver la indeterminación dividimos numerador y denominador por $x^4$ qu
 $$
 \lim_{x\rightarrow \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
 $$
+:::
 
 En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, entonces:
 
@@ -451,8 +519,9 @@ En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, en
 
 #### Infinitésimos equivalentes
 
-:::{#def-}
-## Infinitésimos equivalentes**. Si $f(x)\rightarrow 0$ y $g(x)\rightarrow 0$ cuando $x\rightarrow a$, entonces se dice que $f$ y $g$ son *infinitésimos equivalentes* cuando $x\rightarrow a$ si se cumple
+:::{#def-infinitesimos equivalentes}
+## Infinitésimos equivalentes
+Si $f(x)\rightarrow 0$ y $g(x)\rightarrow 0$ cuando $x\rightarrow a$, entonces se dice que $f$ y $g$ son *infinitésimos equivalentes* cuando $x\rightarrow a$ si se cumple
 
 $$\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1.$$
 
@@ -476,7 +545,7 @@ $$
 A veces se puede resolver una indeterminación cuando $x\rightarrow a$ sustituyendo cualquier subexpresión de la función por un infinitésimo
 equivalente cuando $x\rightarrow a$.
 
-:::{exm-}
+:::{exm-infinitesimo-equivalente}
 La función $f(x)=\dfrac{\operatorname{sen} x(1- \cos x)}{x^3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 0$.
 
 Como $\operatorname{sen} x \approx x$ y $1-\cos x\approx \dfrac{x^2}{2}$ cuando $x\rightarrow 0$, para resolver la indeterminación sustituimos $\operatorname{sen} x$ por $x$ y $1-\cos x$ por $\dfrac{x^2}{2}$:
@@ -488,20 +557,29 @@ $$
 \lim_{x\rightarrow 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\rightarrow 0}\dfrac{1}{2} =0.5.
 \end{aligned}
 $$
+:::
 
 #### Regla de L'Hôpital
 
-{{% alert theo %}}
-**Teorema - Regla de L’Hôpital**. Si $\dfrac{f(x)}{g(x)}\rightarrow \dfrac{0}{0}$ o $\dfrac{\infty}{\infty}$ cuando $x\rightarrow a$, entonces si existe el límite de $\dfrac{f'(x)}{g'(x)}$ cuando $x\rightarrow a$ se cumple
+:::{#thm-regla-lhopital}
+## Regla de L’Hôpital
+Si $\dfrac{f(x)}{g(x)}\rightarrow \dfrac{0}{0}$ o $\dfrac{\infty}{\infty}$ cuando $x\rightarrow a$, entonces si existe el límite de $\dfrac{f'(x)}{g'(x)}$ cuando $x\rightarrow a$ se cumple
 
 $$\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}.$$
 :::
 
-{{% alert warning %}}
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{.callout-warning}
 Para que exista $\lim_{x\rightarrow a}\dfrac{f'(x)}{g'(x)}$ es necesario que que $f$ y $g$ sean derivables en un entorno de $a$.
 :::
 
-:::{exm-}
+:::{exm-regla-lhopital}
 Sea $f(x)=\dfrac{\log(x^2-1)}{x+2}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
 
 Para resolver la indeterminación aplicamos la regla de L’Hôpital:
@@ -514,6 +592,7 @@ $$
 \lim_{x\rightarrow \infty}\frac{2}{2x}=0.
 \end{aligned}
 $$
+:::
 
 ### Resolución de una indeterminación de tipo producto
 
@@ -521,7 +600,7 @@ Si $f(x)\rightarrow 0$ y $g(x)\rightarrow \pm\infty$ cuando $x\rightarrow a$, en
 
 $$f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\rightarrow \frac{0}{0}.$$
 
-:::{exm-}
+:::{exm-solucion-indeterminacion-producto}
 Sea $f(x)=x^2e^{1/x^2}\rightarrow 0\cdot\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -539,6 +618,7 @@ $$
 0}\frac{e^{1/x^2}\frac{-2}{x^3}}{\frac{-2}{x^3}} = \lim_{x\rightarrow 0}e^{1/x^2}=\infty.
 \end{aligned}
 $$
+:::
 
 ### Resolución de una indeterminación de tipo potencia
 
@@ -546,7 +626,7 @@ Si $f(x)^{g(x)}$ presenta una indeterminación de tipo potencia cuando $x\righta
 
 $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 
-:::{exm-}
+:::{exm-solucion-indeterminacion-producto}
 Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \rightarrow 1^\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -567,6 +647,7 @@ $$
 \exp\left(\lim_{x\rightarrow 0}\frac{1}{1+\frac{1}{x}}\right)=\exp(1)=e.
 \end{aligned}
 $$
+:::
 
 ### Resolución de una indeterminación de tipo diferencia
 
@@ -574,7 +655,7 @@ Si $f(x)\rightarrow \infty$ y $g(x)\rightarrow \infty$ cuando $x\rightarrow a$, 
 
 $$f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\rightarrow \frac{0}{0}.$$
 
-:::{exm-}
+:::{exm-solucion-indeterminacion-diferencia}
 Sea $f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \rightarrow \infty-\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -596,6 +677,7 @@ $$
 &= \frac{0}{2}=0.
 \end{aligned}
 $$
+:::
 
 ## Asíntotas de una función
 
@@ -609,29 +691,32 @@ Existen tres tipos de asíntotas:
 
 ### Asíntotas verticales
 
-:::{#def-}
-## Asíntota vertical**. Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
+:::{#def-asintota-vertical}
+## Asíntota vertical
+Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
 
 $$\lim_{x\rightarrow a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\rightarrow a^-}f(x)=\pm \infty$$
 :::
 
 Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
 
-:::{exm-}
+:::{exm-asintota-vertical}
 La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.$$
 
 <img src="../img/limites_continuidad/asintota_vertical.png" width="350px" alt="Gráfica de una asíntota vertical" />
+:::
 
 ### Asíntotas horizontales
-:::{#def-}
-## Asíntota horizontal**. Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
+:::{#def-asintota-horizontal}
+## Asíntota horizontal
+Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
 
 $$\lim_{x\rightarrow +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\rightarrow \infty}f(x)=a$$
 :::
 
-:::{exm-}
+:::{exm-asintota-horizontal}
 La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$
@@ -642,16 +727,18 @@ $$
 $$
 
 <img src="../img/limites_continuidad/asintota_horizontal.png" width="350px" alt="Gráfica de una asíntota horizontal" />
+:::
 
 ### Asíntotas oblicuas
 
-:::{#def-}
-## Asíntota oblicua**. Se dice que una recta $y=a+bx$ es una *asíntota oblicua* de una función $f$ si se cumple
+:::{#def-asintota-oblicua}
+## Asíntota oblicua
+Se dice que una recta $y=a+bx$ es una *asíntota oblicua* de una función $f$ si se cumple
 
 $$\lim_{x\rightarrow \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\rightarrow \pm\infty}f(x)-bx=a.$$
 :::
 
-:::{exm-}
+:::{exm-asintota-oblicua}
 La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
 $$
@@ -664,11 +751,13 @@ $$
 $$
 
 <img src="../img/limites_continuidad/asintota_oblicua.png" width="350px" alt="Gráfica de una asíntota vertical" />
+:::
 
 ## Continuidad
 
-:::{#def-}
-## Función continua en un punto**. Se dice que una función $f$ es *continua* en el punto $a$ si
+:::{#def-funcion-continua}
+## Función continua en un punto
+Se dice que una función $f$ es *continua* en el punto $a$ si
 
 $$\lim_{x\rightarrow a}f(x)=f(a).$$
 :::
@@ -681,8 +770,9 @@ De esta definición se deducen tres condiciones necesarias para la continuidad:
 
 Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en $a$.
 
-:::{#def-}
-## Función continua en un intervalo**. Se dice que una función $f$ es *continua* en un intervalo si lo es en cada uno de los puntos del intervalo.
+:::{#def-funcion-continua-intervalo}
+## Función continua en un intervalo
+Se dice que una función $f$ es *continua* en un intervalo si lo es en cada uno de los puntos del intervalo.
 :::
 
 La gráfica de una función continua en un intervalo puede dibujarse sin levantar el lápiz.
@@ -698,28 +788,30 @@ Dependiendo de la condición de continuidad que se rompa, existen distintos tipo
 
 ### Discontinuidad evitable
 
-:::{#def-}
+:::{#def-discontinuiada-evitable}
 ## Discontinuidad evitable**. Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\rightarrow a$ pero $\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)$.
 :::
 
-:::{exm-}
+:::{exm-discontinuiada-evitable}
 La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$ ya que la función no está definida en $x=1$ pero
 
 $$\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.$$
 
 <img src="../img/limites_continuidad/discontinuidad_evitable.png" width="300px" alt="Gráfica de una discontinuidad evitable" />
+:::
 
 ### Discontinuidad de 1ª especie de salto finito
 
-:::{#def-}
-## Discontinuidad de 1ª especie de salto finito**. Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f(x)$ cuando $x\rightarrow a$ pero
+:::{#def-discontinuidad-1-especie-salto-finito}
+## Discontinuidad de 1ª especie de salto finito
+Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f(x)$ cuando $x\rightarrow a$ pero
 
 $$\lim_{x\rightarrow a^-}f(x)\neq \lim_{x\rightarrow a^+}f(x).$$
 
 A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 :::
 
-:::{exm-}
+:::{exm-discontinuidad-1-especie-salto-finito}
 La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
 
 $$
@@ -732,18 +824,20 @@ $$
 Salto $= 1-(-1)=2$.
 
 <img src="../img/limites_continuidad/discontinuidad_salto_finito.png" width="350px" alt="Gráfica de una discontinuidad de salto finito" />
+:::
 
 ### Discontinuidad de 1ª especie de salto infinito
 
-:::{#def-}
-## Discontinuidad de 1ª especie de salto infinito**. Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto infinito* en el punto $a$ si
+:::{#def-discontinuidad-1-especie-salto-infinito}
+## Discontinuidad de 1ª especie de salto infinito
+Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto infinito* en el punto $a$ si
 
 $$\lim_{x\rightarrow a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\rightarrow a^+}f(x)=\pm\infty.$$
 :::
 
 Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a$, entonces $f$ tienen una asíntota vertical $x=a$.
 
-:::{exm-}
+:::{exm-discontinuidad-1-especie-salto-infinito}
 La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infinito en $x=0$ ya que
 
 $$
@@ -754,16 +848,18 @@ $$
 $$
 
 <img src="../img/limites_continuidad/discontinuidad_salto_infinito.png" width="300px" alt="Gráfica de una discontinuidad de salto infinito" />
+:::
 
 ### Discontinuidad de 2ª especie
 
-:::{#def-}
-## Discontinuidad de 2ª especie**. Se dice que una función $f$ tiene una *discontinuidad de 2ª especie* en el punto $a$ si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.
+:::{#def-discontinuidad-2-especie}
+## Discontinuidad de 2ª especie
+Se dice que una función $f$ tiene una *discontinuidad de 2ª especie* en el punto $a$ si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.
 :::
 
 Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.
 
-:::{exm-}
+:::{exm-discontinuidad-2-especie}
 La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 
 $$
@@ -774,6 +870,7 @@ $$
 $$
 
 <img src="../img/limites_continuidad/discontinuidad_2_especie.png" width="300px" alt="Gráfica de una discontinuidad de 2ª especie" />
+:::
 
 **Notas**
 

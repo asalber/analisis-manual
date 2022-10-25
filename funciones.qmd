@@ -82,15 +82,15 @@ Existen distintas formas de representar los pares de elementos que forman parte 
     \end{cases}
     $$
 
-    :::{.callout-caution}
-    La representación algebraica paramétrica puede dar lugar a relaciones que no son funciones. Por ejemplo 
-    $$\begin{cases}
-    y=t\\
-    x=t^2
-    \end{cases}
-    $$
-    que no es una función al asignar a los valores de $x$ dos imágenes distintas.
-    :::
+:::{.callout-caution}
+  La representación algebraica paramétrica puede dar lugar a relaciones que no son funciones. Por ejemplo 
+  $$\begin{cases}
+  y=t\\
+  x=t^2
+  \end{cases}
+  $$
+  que no es una función al asignar a los valores de $x$ dos imágenes distintas.
+:::
 
 ## Dominio de una función
 
