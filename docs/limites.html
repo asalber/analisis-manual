@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual de Análisis Matemático Real - 6&nbsp; Límites de funciones</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./funciones.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Manual de Análisis Matemático Real - 6&nbsp; Límites de funciones">
+<meta property="og:description" content="Una asíntota de una función es una recta a la que tiende la función en el infinito, es decir, que la distancia entre la recta y la función es cada vez menor.">
+<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta name="twitter:title" content="Manual de Análisis Matemático Real - 6&nbsp; Límites de funciones">
+<meta name="twitter:description" content="Una asíntota de una función es una recta a la que tiende la función en el infinito, es decir, que la distancia entre la recta y la función es cada vez menor.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual de Análisis Matemático Real</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./limites.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#el-concepto-de-límite" id="toc-el-concepto-de-límite" class="nav-link active" data-scroll-target="#el-concepto-de-límite"><span class="toc-section-number">6.1</span>  El concepto de límite</a>
+  <ul class="collapse">
+  <li><a href="#aproximación-al-concepto-de-límite" id="toc-aproximación-al-concepto-de-límite" class="nav-link" data-scroll-target="#aproximación-al-concepto-de-límite"><span class="toc-section-number">6.1.1</span>  Aproximación al concepto de límite</a></li>
+  <li><a href="#límites-laterales" id="toc-límites-laterales" class="nav-link" data-scroll-target="#límites-laterales"><span class="toc-section-number">6.1.2</span>  Límites laterales</a></li>
+  <li><a href="#límites-que-no-existen-i" id="toc-límites-que-no-existen-i" class="nav-link" data-scroll-target="#límites-que-no-existen-i"><span class="toc-section-number">6.1.3</span>  Límites que no existen (I)</a></li>
+  <li><a href="#límites-que-no-existen-ii" id="toc-límites-que-no-existen-ii" class="nav-link" data-scroll-target="#límites-que-no-existen-ii"><span class="toc-section-number">6.1.4</span>  Límites que no existen (II)</a></li>
+  <li><a href="#límites-que-no-existen-iii" id="toc-límites-que-no-existen-iii" class="nav-link" data-scroll-target="#límites-que-no-existen-iii"><span class="toc-section-number">6.1.5</span>  Límites que no existen (III)</a></li>
+  <li><a href="#límites-que-no-existen-iv" id="toc-límites-que-no-existen-iv" class="nav-link" data-scroll-target="#límites-que-no-existen-iv"><span class="toc-section-number">6.1.6</span>  Límites que no existen (IV)</a></li>
+  <li><a href="#límites-en-el-infinito" id="toc-límites-en-el-infinito" class="nav-link" data-scroll-target="#límites-en-el-infinito"><span class="toc-section-number">6.1.7</span>  Límites en el infinito</a></li>
+  <li><a href="#definición-de-límite" id="toc-definición-de-límite" class="nav-link" data-scroll-target="#definición-de-límite"><span class="toc-section-number">6.1.8</span>  Definición de límite</a></li>
+  <li><a href="#definición-de-límite-en-el-infinito" id="toc-definición-de-límite-en-el-infinito" class="nav-link" data-scroll-target="#definición-de-límite-en-el-infinito"><span class="toc-section-number">6.1.9</span>  Definición de límite en el infinito</a></li>
+  </ul></li>
+  <li><a href="#álgebra-de-límites" id="toc-álgebra-de-límites" class="nav-link" data-scroll-target="#álgebra-de-límites"><span class="toc-section-number">6.2</span>  Álgebra de límites</a>
+  <ul class="collapse">
+  <li><a href="#límites-de-las-funciones-elementales" id="toc-límites-de-las-funciones-elementales" class="nav-link" data-scroll-target="#límites-de-las-funciones-elementales"><span class="toc-section-number">6.2.1</span>  Límites de las funciones elementales</a></li>
+  </ul></li>
+  <li><a href="#indeterminaciones-y-su-resolución" id="toc-indeterminaciones-y-su-resolución" class="nav-link" data-scroll-target="#indeterminaciones-y-su-resolución"><span class="toc-section-number">6.3</span>  Indeterminaciones y su resolución</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-indeterminaciones" id="toc-tipos-de-indeterminaciones" class="nav-link" data-scroll-target="#tipos-de-indeterminaciones"><span class="toc-section-number">6.3.1</span>  Tipos de indeterminaciones</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-cociente" id="toc-resolución-de-una-indeterminación-de-tipo-cociente" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-cociente"><span class="toc-section-number">6.3.2</span>  Resolución de una indeterminación de tipo cociente</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-producto" id="toc-resolución-de-una-indeterminación-de-tipo-producto" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-producto"><span class="toc-section-number">6.3.3</span>  Resolución de una indeterminación de tipo producto</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-potencia" id="toc-resolución-de-una-indeterminación-de-tipo-potencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-potencia"><span class="toc-section-number">6.3.4</span>  Resolución de una indeterminación de tipo potencia</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-diferencia" id="toc-resolución-de-una-indeterminación-de-tipo-diferencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-diferencia"><span class="toc-section-number">6.3.5</span>  Resolución de una indeterminación de tipo diferencia</a></li>
+  </ul></li>
+  <li><a href="#asíntotas-de-una-función" id="toc-asíntotas-de-una-función" class="nav-link" data-scroll-target="#asíntotas-de-una-función"><span class="toc-section-number">6.4</span>  Asíntotas de una función</a>
+  <ul class="collapse">
+  <li><a href="#asíntotas-verticales" id="toc-asíntotas-verticales" class="nav-link" data-scroll-target="#asíntotas-verticales"><span class="toc-section-number">6.4.1</span>  Asíntotas verticales</a></li>
+  <li><a href="#asíntotas-horizontales" id="toc-asíntotas-horizontales" class="nav-link" data-scroll-target="#asíntotas-horizontales"><span class="toc-section-number">6.4.2</span>  Asíntotas horizontales</a></li>
+  <li><a href="#asíntotas-oblicuas" id="toc-asíntotas-oblicuas" class="nav-link" data-scroll-target="#asíntotas-oblicuas"><span class="toc-section-number">6.4.3</span>  Asíntotas oblicuas</a></li>
+  </ul></li>
+  <li><a href="#continuidad" id="toc-continuidad" class="nav-link" data-scroll-target="#continuidad"><span class="toc-section-number">6.5</span>  Continuidad</a></li>
+  <li><a href="#tipos-de-discontinuidades" id="toc-tipos-de-discontinuidades" class="nav-link" data-scroll-target="#tipos-de-discontinuidades"><span class="toc-section-number">6.6</span>  Tipos de discontinuidades</a>
+  <ul class="collapse">
+  <li><a href="#discontinuidad-evitable" id="toc-discontinuidad-evitable" class="nav-link" data-scroll-target="#discontinuidad-evitable"><span class="toc-section-number">6.6.1</span>  Discontinuidad evitable</a></li>
+  <li><a href="#discontinuidad-de-1ª-especie-de-salto-finito" id="toc-discontinuidad-de-1ª-especie-de-salto-finito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-finito"><span class="toc-section-number">6.6.2</span>  Discontinuidad de 1ª especie de salto finito</a></li>
+  <li><a href="#discontinuidad-de-1ª-especie-de-salto-infinito" id="toc-discontinuidad-de-1ª-especie-de-salto-infinito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-infinito"><span class="toc-section-number">6.6.3</span>  Discontinuidad de 1ª especie de salto infinito</a></li>
+  <li><a href="#discontinuidad-de-2ª-especie" id="toc-discontinuidad-de-2ª-especie" class="nav-link" data-scroll-target="#discontinuidad-de-2ª-especie"><span class="toc-section-number">6.6.4</span>  Discontinuidad de 2ª especie</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<!-- LTeX: language = es-ES -->
+<div>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\mathbb{N}}{\mathbb{N}}
+\newcommand{\mathbb{Z}}{\mathbb{Z}}
+\newcommand{\mathbb{Q}}{\mathbb{Q}}
+\newcommand{\mathbb{R}}{\mathbb{R}}
+\newcommand{\mathbb{C}}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
+\]</span></p>
+</div>
+</div>
+<section id="el-concepto-de-límite" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="el-concepto-de-límite"><span class="header-section-number">6.1</span> El concepto de límite</h2>
+<section id="aproximación-al-concepto-de-límite" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="aproximación-al-concepto-de-límite"><span class="header-section-number">6.1.1</span> Aproximación al concepto de límite</h3>
+<p>El concepto de límite está ligado al de tendencia.</p>
+<p>Decimos que <span class="math inline">\(x\)</span> <em>tiende</em> a un valor <span class="math inline">\(a\)</span>, y lo escribimos <span class="math inline">\(x\rightarrow a\)</span>, si se pueden tomar valores de <span class="math inline">\(x\)</span> tan próximos a <span class="math inline">\(a\)</span> como se quiera, pero sin llegar a valer <span class="math inline">\(a\)</span>.</p>
+<p>Si la aproximación es por defecto (con valores menores que <span class="math inline">\(a\)</span>) se dice que <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span> por la izquierda, y se escribe <span class="math inline">\(x\rightarrow a^-\)</span>, y si es por exceso (con valores mayores que <span class="math inline">\(a\)</span>) se dice que <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span> por la derecha, y se escribe <span class="math inline">\(x\rightarrow a^+\)</span>.</p>
+<p>Cuando la variable <span class="math inline">\(x\)</span> de una función <span class="math inline">\(f\)</span> tiende a un valor <span class="math inline">\(a\)</span>, cabe preguntarse si sus imágenes mediante <span class="math inline">\(f\)</span> tienden a otro valor concreto:</p>
+<p>Si <span class="math inline">\(f(x)\)</span> tiende a un valor <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite</em> de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow a}f(x)=l.\]</span></p>
+</section>
+<section id="límites-laterales" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="límites-laterales"><span class="header-section-number">6.1.2</span> Límites laterales</h3>
+<p>Si <span class="math inline">\(f(x)\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span> por la izquierda, entonces se dice que <span class="math inline">\(l\)</span> es el <em>límite por la izquierda</em> de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow a^-\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow a^-}f(x)=l.\]</span></p>
+<p>Si <span class="math inline">\(f(x)\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> se aproxima a <span class="math inline">\(a\)</span> por exceso, entonces se dice que <span class="math inline">\(l\)</span> es el <em>límite por la derecha</em> de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow a^-\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow a^+}f(x)=l.\]</span></p>
+<div id="exm-limites-aproximados" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.1 </strong></span>Consideremos la función <span class="math inline">\(f(x)=x^2\)</span> y veamos que pasa cuando <span class="math inline">\(x\rightarrow 2\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Aproximación por defecto} &amp; \qquad &amp; \textrm{Aproximación por exceso}\newline
+\begin{array}{|l|l|}
+\hline
+x       &amp; f(x)=x^2   \newline
+\hline\hline
+1.9    &amp; 3.61       \newline
+\hline
+1.99   &amp; 3.9601     \newline
+\hline
+1.999  &amp; 3.996001   \newline
+\hline
+1.9999 &amp; 3.99960001 \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|l|l|}
+\hline
+x       &amp; f(x)=x^2   \newline
+\hline\hline
+2.1    &amp; 4.41       \newline
+\hline
+2.01   &amp; 4.0401    \newline
+\hline
+2.001  &amp; 4.004001   \newline
+\hline
+2.0001 &amp; 4.00040001 \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\lim_{x\rightarrow 2^-}x^2=4
+&amp; &amp;
+\lim_{x\rightarrow 2^+}x^2=4
+\end{array}}\newline
+\Downarrow\newline
+\lim_{x\rightarrow 2}x^2=4
+\end{array}
+\]</span></p>
+</div>
+</section>
+<section id="límites-que-no-existen-i" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="límites-que-no-existen-i"><span class="header-section-number">6.1.3</span> Límites que no existen (I)</h3>
+<p>Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto</p>
+<div id="exm-limites-no-existen" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.2 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> y veamos que pasa cuando <span class="math inline">\(x\rightarrow 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} &amp; \qquad &amp; \textrm{Por la derecha }\newline
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+-0.1   &amp; \textrm{No exite}      \newline
+\hline
+-0.01   &amp; \textrm{No existe}     \newline
+\hline
+-0.001  &amp; \textrm{No existe}   \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+0.1    &amp;  \textrm{No existe}      \newline
+\hline
+0.01   &amp; \textrm{No existe}    \newline
+\hline
+0.001  &amp; \textrm{No existe}   \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^-}\frac{1}{\sqrt{x^2-1}}
+&amp; &amp;
+\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^+}\frac{1}{\sqrt{x^2-1}}
+\end{array}}\newline
+\Downarrow\newline
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{\sqrt{x^2-1}}
+\end{array}\]</span></p>
+<p><img src="img/limites/limite_no_existe_1.png" width="300px" alt="Gráfica de una función que no tiene límite"></p>
+</div>
+</section>
+<section id="límites-que-no-existen-ii" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="límites-que-no-existen-ii"><span class="header-section-number">6.1.4</span> Límites que no existen (II)</h3>
+<p>Cuando los límites laterales no coinciden entonces no existe el límite</p>
+<div id="exm-limites-no-existen-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.3 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\rightarrow 0\)</span>:</p>
+<p><span class="math display">\[\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} &amp; \qquad &amp; \textrm{Por la derecha }\newline
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+-0.1   &amp; -1       \newline
+\hline
+-0.01   &amp; -1     \newline
+\hline
+-0.001  &amp; -1   \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+0.1    &amp; 1       \newline
+\hline
+0.01   &amp; 1    \newline
+\hline
+0.001  &amp; 1   \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\displaystyle \lim_{x\rightarrow 0^-}\frac{|x|}{x}=-1
+&amp;\neq &amp;
+\displaystyle \lim_{x\rightarrow 0^+}\frac{|x|}{x}=1
+\end{array}}\newline
+\Downarrow\newline
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{|x|}{x}
+\end{array}
+\]</span></p>
+<p><img src="img/limites/limite_no_existe_2.png" width="300px" alt="Gráfica de una función que no tiene límite"></p>
+</div>
+</section>
+<section id="límites-que-no-existen-iii" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="límites-que-no-existen-iii"><span class="header-section-number">6.1.5</span> Límites que no existen (III)</h3>
+<p>A veces, cuando <span class="math inline">\(x\rightarrow a\)</span> los valores de <span class="math inline">\(f(x)\)</span> crecen o decrecen infinitamente y entonces no existe el límite. En este caso se dice que la función <em>diverge</em> y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow a}f(x)=\pm \infty\]</span></p>
+<div id="exm-limites-no-existen-3" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.4 </strong></span>Veamos la tendencia de la función <span class="math inline">\(f(x)=\dfrac{1}{x^2}\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} &amp; \qquad &amp; \textrm{Por la derecha }\newline
+\begin{array}{|l|r|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+-0.1   &amp; 100       \newline
+\hline
+-0.01   &amp; 10000     \newline
+\hline
+-0.001  &amp; 1000000   \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|l|r|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+0.1    &amp; 100       \newline
+\hline
+0.01   &amp; 10000    \newline
+\hline
+0.001  &amp; 1000000   \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\displaystyle \lim_{x\rightarrow 0^-}\frac{1}{x^2}=+\infty
+&amp; &amp;
+\displaystyle \lim_{x\rightarrow 0^+}\frac{1}{x^2}=+\infty
+\end{array}}\newline
+\Downarrow\newline
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{x^2}=\infty
+\end{array}
+\]</span></p>
+<p><img src="img/limites/limite_no_existe_3.png" width="300px" alt="Gráfica de una función que no tiene límite"></p>
+</div>
+</section>
+<section id="límites-que-no-existen-iv" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="límites-que-no-existen-iv"><span class="header-section-number">6.1.6</span> Límites que no existen (IV)</h3>
+<p>A veces, el límite de un función en un punto puede no existir porque la función oscila rápidamente al acercarnos a dicho punto.</p>
+<div id="exm-limites-no-existen-4" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.5 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\operatorname{sen} \dfrac{1}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\rightarrow 0\)</span>:</p>
+<p><span class="math display">\[\begin{array}{ccc}
+\textrm{Por la izquierda} &amp; \qquad &amp; \textrm{Por la derecha }\newline
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+-0.1   &amp; -0.1736       \newline
+\hline
+-0.01   &amp; -0.9848     \newline
+\hline
+-0.005 &amp; 0.3420 \newline
+\hline
+-0.001  &amp; 0.9848  \newline
+\hline
+-0.0005  &amp; 0.3420\newline
+\hline
+-0.0001 &amp; 0.9848 \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|l|l|}
+\hline
+x      &amp; f(x)   \newline
+\hline\hline
+0.1   &amp; 0.1736       \newline
+\hline
+0.01   &amp; 0.9848     \newline
+\hline
+0.005 &amp; -0.3420 \newline
+\hline
+0.001  &amp; -0.9848  \newline
+\hline
+0.0005  &amp; -0.3420\newline
+\hline
+0.0001 &amp; -0.9848 \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^-}\operatorname{sen} \frac{1}{x}
+&amp; &amp;
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^+}\operatorname{sen} \frac{1}{x}
+\end{array}
+\]</span></p>
+<p><img src="img/limites/limite_no_existe_4.png" width="300px" alt="Gráfica de una función que no tiene límitee"></p>
+</div>
+</section>
+<section id="límites-en-el-infinito" class="level3" data-number="6.1.7">
+<h3 data-number="6.1.7" class="anchored" data-anchor-id="límites-en-el-infinito"><span class="header-section-number">6.1.7</span> Límites en el infinito</h3>
+<p>Si <span class="math inline">\(f(x)\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> crece infinitamente, entonces se dice que <span class="math inline">\(l\)</span> es el <em>límite en el infinito</em> de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow +\infty\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow +\infty}f(x)=l.\]</span></p>
+<p>Si <span class="math inline">\(f(x)\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> decrece infinitamente, entonces se dice que <span class="math inline">\(l\)</span> es el <em>límite en el infinito</em> de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow -\infty\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow -\infty}f(x)=l.\]</span></p>
+<div id="exm-limites-infinito" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.6 </strong></span>Estudiemos la tendencia de <span class="math inline">\(f(x)=\dfrac{1}{x}\)</span> cuando <span class="math inline">\(x\rightarrow \pm\infty\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+x\rightarrow +\infty &amp; \qquad &amp; x\rightarrow -\infty\newline
+\begin{array}{|r|l|}
+\hline
+x      &amp; f(x)=1/x   \newline
+\hline\hline
+1000    &amp; 0.001       \newline
+\hline
+10000   &amp; 0.0001     \newline
+\hline
+100000  &amp; 0.00001   \newline
+\hline
+\end{array}
+&amp; &amp;
+\begin{array}{|r|l|}
+\hline
+x      &amp; f(x)=1/x   \newline
+\hline\hline
+-1000    &amp; -0.001       \newline
+\hline
+-10000   &amp; -0.0001     \newline
+\hline
+-100000  &amp; -0.00001   \newline
+\hline
+\end{array}\newline
+\Downarrow &amp; &amp; \Downarrow\newline
+\lim_{x\rightarrow +\infty}\frac{1}{x}=0
+&amp; &amp;
+\lim_{x\rightarrow -\infty}\frac{1}{x}=0
+\end{array}
+\]</span></p>
+<p><img src="img/limites/limite_infinito.png" width="300px" alt="Gráfica de una función con límite en el infinito"></p>
+</div>
+</section>
+<section id="definición-de-límite" class="level3" data-number="6.1.8">
+<h3 data-number="6.1.8" class="anchored" data-anchor-id="definición-de-límite"><span class="header-section-number">6.1.8</span> Definición de límite</h3>
+<div id="def-limite-funcion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.1 (Límite de una función en un punto) </strong></span>Se dice que el límite de la función <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span> es <span class="math inline">\(l\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow a} f(x) = l\]</span></p>
+<p>si para cualquier número <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&gt;0\)</span> tal que, <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall |x-a|&lt;\delta\)</span>.</p>
+</div>
+<p><img src="img/limites/definicion_limite.png" width="300px" alt="Explicación gráfica de la definición de límite"></p>
+</section>
+<section id="definición-de-límite-en-el-infinito" class="level3" data-number="6.1.9">
+<h3 data-number="6.1.9" class="anchored" data-anchor-id="definición-de-límite-en-el-infinito"><span class="header-section-number">6.1.9</span> Definición de límite en el infinito</h3>
+<div id="def-limite-en-infinito" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.2 (Límite de una función en el infinito) </strong></span>Se dice que el límite de la función <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> cuando <span class="math inline">\(x\rightarrow +\infty\)</span> es <span class="math inline">\(l\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow +\infty} f(x) =l\]</span></p>
+<p>si para cualquier valor <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&gt;0\)</span> tal que, <span class="math inline">\(|f(x)-l| &lt;\varepsilon\)</span> siempre que <span class="math inline">\(x&gt;\delta\)</span>.</p>
+<p>Se dice que el límite de la función <span class="math inline">\(f\)</span> cuando <span class="math inline">\(x\rightarrow -\infty\)</span> es <span class="math inline">\(l\)</span>, y se escribe</p>
+<p><span class="math display">\[\lim_{x\rightarrow -\infty} f(x) =l\]</span></p>
+<p>si para cualquier valor <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&lt;0\)</span> tal que, <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> siempre que <span class="math inline">\(x&lt;\delta\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="álgebra-de-límites" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="álgebra-de-límites"><span class="header-section-number">6.2</span> Álgebra de límites</h2>
+<div id="prp-limite-suma-resta-producto-cociente-funciones" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.1 </strong></span>Dadas dos funciones <span class="math inline">\(f,g:\mathbb{R}\rightarrow \mathbb{R}\)</span>, tales que existe <span class="math inline">\(\lim_{x\rightarrow a}f(x)\)</span> y <span class="math inline">\(\lim_{x\rightarrow a}g(x)\)</span>, entonces se cumple que</p>
+<ol type="1">
+<li><p><span class="math inline">\(\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)\)</span>, <span class="math inline">\(\forall c\in\mathbb{R}\)</span>.</p></li>
+<li><p><span class="math inline">\(\lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}\)</span> si <span class="math inline">\(\lim_{x\rightarrow a}g(x)\neq 0.\)</span></p></li>
+</ol>
+</div>
+<section id="límites-de-las-funciones-elementales" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="límites-de-las-funciones-elementales"><span class="header-section-number">6.2.1</span> Límites de las funciones elementales</h3>
+<div id="prp-limite-funcion-polinomica" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.2 (Límite de una función polinómica) </strong></span>Si <span class="math inline">\(f\)</span> es una función polinómica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-limite-funcion-racional" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.3 (Límite de una función racional) </strong></span>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> con <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> funciones polinómicas, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> que no sea una raíz de <span class="math inline">\(q(x)\)</span>, y <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+<p>Si <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(q(x)\)</span> entonces el límite puede existir o no.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-limite-funcion-potencial" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.4 (Límite de una función potencial) </strong></span>Si <span class="math inline">\(f(x)=x^r\)</span> con <span class="math inline">\(r\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\)</span> tal que exista un intervalo <span class="math inline">\((a-\delta,a+\delta)\subset \textrm{Dom}(f)\)</span> para algún <span class="math inline">\(\delta &gt;0\)</span>, y en ese caso, <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-limite-funcion-exponencial" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.5 (Límite de una función exponencial) </strong></span>Si <span class="math inline">\(f(x)=c^x\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span> entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-limite-funcion-logarítmica" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.6 (Límite de una función logarítmica) </strong></span>Si <span class="math inline">\(f(x)=\log_c(x)\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}^+\)</span> y <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-limite-funcion-trigonometrica" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.7 </strong></span>Si <span class="math inline">\(f(x)\)</span> es una función trigonométrica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \textrm{Dom}(f)\)</span> y <span class="math inline">\(\lim_{x\rightarrow a}f(x)=f(a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="indeterminaciones-y-su-resolución" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="indeterminaciones-y-su-resolución"><span class="header-section-number">6.3</span> Indeterminaciones y su resolución</h2>
+<section id="tipos-de-indeterminaciones" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="tipos-de-indeterminaciones"><span class="header-section-number">6.3.1</span> Tipos de indeterminaciones</h3>
+<p>Al calcular límites pueden aparecer las siguientes indeterminaciones:</p>
+<ul>
+<li><p><strong>Tipo cociente</strong>. Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=0\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=0\)</span>, entonces <span class="math inline">\(\dfrac{f(x)}{g(x)}\)</span> presenta una indeterminación del tipo <span class="math inline">\(\dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+<p>Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=\pm\infty\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=\pm\infty\)</span>, entonces <span class="math inline">\(\dfrac{f(x)}{g(x)}\)</span> presenta una indeterminación del tipo <span class="math inline">\(\pm\dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p></li>
+<li><p><strong>Tipo producto</strong>. Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=0\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=\pm\infty\)</span>, entonces <span class="math inline">\(f(x)\cdot g(x)\)</span> presenta una indeterminación del tipo <span class="math inline">\(0\cdot \pm\infty\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p></li>
+<li><p><strong>Tipo potencia</strong>. Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=1\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=\infty\)</span>, entonces <span class="math inline">\(f(x)^{g(x)}\)</span> presenta una indeterminación del tipo <span class="math inline">\(1^\infty\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+<p>Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=0\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=0\)</span>, entonces <span class="math inline">\(f(x)^{g(x)}\)</span> presenta una indeterminación del tipo <span class="math inline">\(0^0\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+<p>Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=\infty\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=0\)</span>, entonces <span class="math inline">\(f(x)^{g(x)}\)</span> presenta una indeterminación del tipo <span class="math inline">\(\infty^0\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p></li>
+<li><p><strong>Tipo diferencia</strong>. Si <span class="math inline">\(\lim_{x\rightarrow a} f(x)=\infty\)</span> y <span class="math inline">\(\lim_{x\rightarrow a} g(x)=\infty\)</span>, entonces <span class="math inline">\(f(x)-g(x)\)</span> presenta una indeterminación del tipo <span class="math inline">\(\infty-\infty\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p></li>
+</ul>
+</section>
+<section id="resolución-de-una-indeterminación-de-tipo-cociente" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="resolución-de-una-indeterminación-de-tipo-cociente"><span class="header-section-number">6.3.2</span> Resolución de una indeterminación de tipo cociente</h3>
+<p>Existen diferentes técnicas para resolver una indeterminación del tipo <span class="math inline">\(\dfrac{0}{0}\)</span> o <span class="math inline">\(\dfrac{\infty}{\infty}\)</span>:</p>
+<ul>
+<li>Factorización de polinomios en funciones racionales.</li>
+<li>División por el términos de mayor orden en funciones racionales.</li>
+<li>Infinitésimos equivalentes.</li>
+<li>Regla de L’Hôpital.</li>
+</ul>
+<section id="factorización-de-polinomios-en-funciones-racionales" class="level4" data-number="6.3.2.1">
+<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="factorización-de-polinomios-en-funciones-racionales"><span class="header-section-number">6.3.2.1</span> Factorización de polinomios en funciones racionales</h4>
+<p>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> es una función racional que presenta una indeterminación de tipo cociente cuando <span class="math inline">\(x\rightarrow a\)</span>, y <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span>, se puede resolver la indeterminación factorizando los polinomios y simplificando.</p>
+<div id="exm-solucion-indeterminacion-cociente" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.7 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\rightarrow 1\)</span>.</p>
+<p>Para resolver la indeterminación factorizamos los polinomios</p>
+<p><span class="math display">\[
+\begin{aligned}
+x^3-3x+2 &amp;= (x+2)(x-1)^2,\newline
+x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
+\end{aligned}
+\]</span></p>
+<p>Como el factor <span class="math inline">\((x-1)^2\)</span> es común, podemos simplificar la función en el cálculo del límite:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\lim_{x\rightarrow 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\rightarrow 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
+\]</span></p>
+</div>
+</section>
+<section id="división-por-el-término-de-mayor-orden-en-funciones-racionales" class="level4" data-number="6.3.2.2">
+<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="división-por-el-término-de-mayor-orden-en-funciones-racionales"><span class="header-section-number">6.3.2.2</span> División por el término de mayor orden en funciones racionales</h4>
+<p>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> es una función racional que presenta una indeterminación de tipo cociente cuando <span class="math inline">\(x\rightarrow \pm\infty\)</span>, entonces se puede resolver dividendo <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> por el término de mayor grado de ambos polinomios.</p>
+<div id="exm-solucion-indeterminacion-cociente-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.8 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\rightarrow \infty\)</span>.</p>
+<p>Para resolver la indeterminación dividimos numerador y denominador por <span class="math inline">\(x^4\)</span> que es el término de mayor grado:</p>
+<p><span class="math display">\[
+\lim_{x\rightarrow \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
+\]</span></p>
+</div>
+<p>En general, si <span class="math inline">\(f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}\)</span>, entonces:</p>
+<ul>
+<li>Si <span class="math inline">\(n&gt;m\)</span> entonces <span class="math inline">\(\lim_{x\rightarrow \pm \infty}f(x)=\pm\infty\)</span>.</li>
+<li>Si <span class="math inline">\(n&lt;m\)</span> entonces <span class="math inline">\(\lim_{x\rightarrow \pm \infty}f(x)=0\)</span>.</li>
+<li>Si <span class="math inline">\(n=m\)</span> entonces <span class="math inline">\(\lim_{x\rightarrow \pm \infty}f(x)=\dfrac{a_n}{b_m}\)</span>.</li>
+</ul>
+</section>
+<section id="infinitésimos-equivalentes" class="level4" data-number="6.3.2.3">
+<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="infinitésimos-equivalentes"><span class="header-section-number">6.3.2.3</span> Infinitésimos equivalentes</h4>
+<div id="def-infinitesimos-equivalentes" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.3 (Infinitésimos equivalentes) </strong></span>Si <span class="math inline">\(f(x)\rightarrow 0\)</span> y <span class="math inline">\(g(x)\rightarrow 0\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>, entonces se dice que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son <em>infinitésimos equivalentes</em> cuando <span class="math inline">\(x\rightarrow a\)</span> si se cumple</p>
+<p><span class="math display">\[\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1.\]</span></p>
+<p>En tal caso se escribe <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+</div>
+<p>Si <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span> entonces <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(g(x)\)</span> son magnitudes equivalentes cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+<p>Infinitésimos equivalentes cuando <span class="math inline">\(x\rightarrow 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\operatorname{sen} x \approx x \approx \operatorname{tg} x\newline
+1-\cos x \approx \dfrac{x^2}{2}\newline
+\operatorname{arctg} x \approx x\newline
+e^x-1 \approx x\newline
+\log(1+x) \approx x\newline
+\end{array}
+\]</span></p>
+<p>A veces se puede resolver una indeterminación cuando <span class="math inline">\(x\rightarrow a\)</span> sustituyendo cualquier subexpresión de la función por un infinitésimo equivalente cuando <span class="math inline">\(x\rightarrow a\)</span>.</p>
+<div id="exm-infinitesimo-equivalente" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.9 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\operatorname{sen} x(1- \cos x)}{x^3}\rightarrow \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>.</p>
+<p>Como <span class="math inline">\(\operatorname{sen} x \approx x\)</span> y <span class="math inline">\(1-\cos x\approx \dfrac{x^2}{2}\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>, para resolver la indeterminación sustituimos <span class="math inline">\(\operatorname{sen} x\)</span> por <span class="math inline">\(x\)</span> y <span class="math inline">\(1-\cos x\)</span> por <span class="math inline">\(\dfrac{x^2}{2}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\frac{\operatorname{sen} x(1- \cos x)}{x^3}&amp;=
+\lim_{x\rightarrow 0}\dfrac{x\frac{x^2}{2}}{x^3} =
+\lim_{x\rightarrow 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\rightarrow 0}\dfrac{1}{2} =0.5.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="regla-de-lhôpital" class="level4" data-number="6.3.2.4">
+<h4 data-number="6.3.2.4" class="anchored" data-anchor-id="regla-de-lhôpital"><span class="header-section-number">6.3.2.4</span> Regla de L’Hôpital</h4>
+<div id="thm-regla-lhopital" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.1 (Regla de L’Hôpital) </strong></span>Si <span class="math inline">\(\dfrac{f(x)}{g(x)}\rightarrow \dfrac{0}{0}\)</span> o <span class="math inline">\(\dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>, entonces si existe el límite de <span class="math inline">\(\dfrac{f'(x)}{g'(x)}\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span> se cumple</p>
+<p><span class="math display">\[\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}.\]</span></p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para que exista <span class="math inline">\(\lim_{x\rightarrow a}\dfrac{f'(x)}{g'(x)}\)</span> es necesario que que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> sean derivables en un entorno de <span class="math inline">\(a\)</span>.</p>
+</div>
+</div>
+<div id="exm-regla-lhopital" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.10 </strong></span>Sea <span class="math inline">\(f(x)=\dfrac{\log(x^2-1)}{x+2}\rightarrow \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\rightarrow \infty\)</span>.</p>
+<p>Para resolver la indeterminación aplicamos la regla de L’Hôpital:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow \infty}\frac{\log(x^2-1)}{x+2} &amp;= \lim_{x\rightarrow
+\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\rightarrow \infty}\frac{\frac{2x}{x^2-1}}{1}=\newline
+&amp;=\lim_{x\rightarrow \infty}\frac{2x}{x^2-1}= \lim_{x\rightarrow \infty}\frac{\left(2x\right)'}{\left(x^2-1\right)'}=
+\lim_{x\rightarrow \infty}\frac{2}{2x}=0.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="resolución-de-una-indeterminación-de-tipo-producto" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="resolución-de-una-indeterminación-de-tipo-producto"><span class="header-section-number">6.3.3</span> Resolución de una indeterminación de tipo producto</h3>
+<p>Si <span class="math inline">\(f(x)\rightarrow 0\)</span> y <span class="math inline">\(g(x)\rightarrow \pm\infty\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>, entonces la indeterminación <span class="math inline">\(f(x)\cdot g(x)\rightarrow 0\cdot \pm\infty\)</span> puede convertirse en una de tipo cociente mediante la transformación:</p>
+<p><span class="math display">\[f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\rightarrow \frac{0}{0}.\]</span></p>
+<div id="exm-solucion-indeterminacion-producto" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.11 </strong></span>Sea <span class="math inline">\(f(x)=x^2e^{1/x^2}\rightarrow 0\cdot\infty\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0}x^2e^{1/x^2} &amp;= \lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2}\rightarrow \frac{\infty}{\infty}
+\end{aligned}
+\]</span></p>
+<p>Aplicando ahora la regla de L´Hôpital tenemos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2} &amp;= \lim_{x\rightarrow
+0}\frac{\left(e^{1/x^2}\right)'}{\left(1/x^2\right)'} = \lim_{x\rightarrow
+0}\frac{e^{1/x^2}\frac{-2}{x^3}}{\frac{-2}{x^3}} = \lim_{x\rightarrow 0}e^{1/x^2}=\infty.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="resolución-de-una-indeterminación-de-tipo-potencia" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="resolución-de-una-indeterminación-de-tipo-potencia"><span class="header-section-number">6.3.4</span> Resolución de una indeterminación de tipo potencia</h3>
+<p>Si <span class="math inline">\(f(x)^{g(x)}\)</span> presenta una indeterminación de tipo potencia cuando <span class="math inline">\(x\rightarrow a\)</span>, entonces la indeterminación puede convertirse en una de tipo producto mediante la transformación:</p>
+<p><span class="math display">\[\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).\]</span></p>
+<div id="exm-solucion-indeterminacion-producto" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.12 </strong></span>Sea <span class="math inline">\(f(x)=\left(1+\dfrac{1}{x}\right)^{x} \rightarrow 1^\infty\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\left(1+\dfrac{1}{x}\right)^{x} &amp;= \lim_{x\rightarrow
+0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right) = \exp\left(\lim_{x\rightarrow
+0}x\log\left(1+\frac{1}{x}\right)\right) =\newline
+&amp;= \exp\left(\lim_{x\rightarrow 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
+\end{aligned}
+\]</span></p>
+<p>Aplicando ahora la regla de L´Hôpital tenemos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\exp\left(\lim_{x\rightarrow 0}\frac{\left(\log\left(1+\frac{1}{x}\right)\right)'}{\left(1/x\right)'}\right) &amp;=
+\exp\left(\lim_{x\rightarrow 0}\frac{\frac{1}{1+1/x}\frac{-1}{x^2}}{\frac{-1}{x^2}}\right) =
+\exp\left(\lim_{x\rightarrow 0}\frac{1}{1+\frac{1}{x}}\right)=\exp(1)=e.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="resolución-de-una-indeterminación-de-tipo-diferencia" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="resolución-de-una-indeterminación-de-tipo-diferencia"><span class="header-section-number">6.3.5</span> Resolución de una indeterminación de tipo diferencia</h3>
+<p>Si <span class="math inline">\(f(x)\rightarrow \infty\)</span> y <span class="math inline">\(g(x)\rightarrow \infty\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span>, entonces la indeterminación <span class="math inline">\(f(x)-g(x)\)</span> puede convertirse en una de tipo cociente mediante la transformación:</p>
+<p><span class="math display">\[f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\rightarrow \frac{0}{0}.\]</span></p>
+<div id="exm-solucion-indeterminacion-diferencia" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.13 </strong></span>Sea <span class="math inline">\(f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \rightarrow \infty-\infty\)</span> cuando <span class="math inline">\(x\rightarrow 0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0} \frac{1}{\operatorname{sen} x}-\frac{1}{x} &amp;=
+\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} \rightarrow \frac{0}{0}.
+\end{aligned}
+\]</span></p>
+<p>Aplicando ahora la regla de L´Hôpital tenemos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} &amp; =
+\lim_{x\rightarrow 0} \frac{\left(x-\operatorname{sen} x\right)'}{\left(x\operatorname{sen} x\right)'}=
+\lim_{x\rightarrow 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \newline
+&amp;= \lim_{x\rightarrow 0} \frac{\left(1-\cos x\right)'}{\left(\operatorname{sen} x +x\cos x\right)'} =
+\lim_{x\rightarrow 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\newline
+&amp;= \frac{0}{2}=0.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="asíntotas-de-una-función" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="asíntotas-de-una-función"><span class="header-section-number">6.4</span> Asíntotas de una función</h2>
+<p>Una asíntota de una función es una recta a la que tiende la función en el infinito, es decir, que la distancia entre la recta y la función es cada vez menor.</p>
+<p>Existen tres tipos de asíntotas:</p>
+<ul>
+<li><strong>Asíntota vertial</strong>: <span class="math inline">\(x=a\)</span>,</li>
+<li><strong>Asíntota horizontal</strong>: <span class="math inline">\(y=a\)</span>,</li>
+<li><strong>Asíntota oblicua</strong>: <span class="math inline">\(y=a+bx\)</span>.</li>
+</ul>
+<section id="asíntotas-verticales" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="asíntotas-verticales"><span class="header-section-number">6.4.1</span> Asíntotas verticales</h3>
+<div id="def-asintota-vertical" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.4 (Asíntota vertical) </strong></span>Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="math display">\[\lim_{x\rightarrow a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\rightarrow a^-}f(x)=\pm \infty\]</span></p>
+</div>
+<p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.</p>
+<div id="exm-asintota-vertical" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.14 </strong></span>La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
+<p><span class="math display">\[\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.\]</span></p>
+<p><img src="img/limites/asintota_vertical.png" width="350px" alt="Gráfica de una asíntota vertical"></p>
+</div>
+</section>
+<section id="asíntotas-horizontales" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="asíntotas-horizontales"><span class="header-section-number">6.4.2</span> Asíntotas horizontales</h3>
+<div id="def-asintota-horizontal" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.5 (Asíntota horizontal) </strong></span>Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="math display">\[\lim_{x\rightarrow +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\rightarrow \infty}f(x)=a\]</span></p>
+</div>
+<div id="exm-asintota-horizontal" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.15 </strong></span>La recta <span class="math inline">\(y=1\)</span> es una asíntota horizontal de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&amp;= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\newline
+\lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&amp;= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1.
+\end{aligned}
+\]</span></p>
+<p><img src="img/limites/asintota_horizontal.png" width="350px" alt="Gráfica de una asíntota horizontal"></p>
+</div>
+</section>
+<section id="asíntotas-oblicuas" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="asíntotas-oblicuas"><span class="header-section-number">6.4.3</span> Asíntotas oblicuas</h3>
+<div id="def-asintota-oblicua" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.6 (Asíntota oblicua) </strong></span>Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="math display">\[\lim_{x\rightarrow \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\rightarrow \pm\infty}f(x)-bx=a.\]</span></p>
+</div>
+<div id="exm-asintota-oblicua" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.16 </strong></span>La recta <span class="math inline">\(y=x+1\)</span> es una asíntota oblicua de <span class="math inline">\(f(x)=\dfrac{x^2}{x-1}\)</span> ya que</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow \pm\infty}\frac{\frac{x^2}{x-1}}{x}&amp;=
+\lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\newline
+\lim_{x\rightarrow \pm\infty}\frac{x^2}{x-1}-x &amp;=
+\lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1
+\end{aligned}
+\]</span></p>
+<p><img src="img/limites/asintota_oblicua.png" width="350px" alt="Gráfica de una asíntota vertical"></p>
+</div>
+</section>
+</section>
+<section id="continuidad" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="continuidad"><span class="header-section-number">6.5</span> Continuidad</h2>
+<div id="def-funcion-continua" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.7 (Función continua en un punto) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<p><span class="math display">\[\lim_{x\rightarrow a}f(x)=f(a).\]</span></p>
+</div>
+<p>De esta definición se deducen tres condiciones necesarias para la continuidad:</p>
+<ol type="1">
+<li><span class="math inline">\(f(a)\in \operatorname{Dom}(f)\)</span>.</li>
+<li>Existe $ _{xa}f(x)$.</li>
+<li>$ _{xa}f(x)=f(a)$.</li>
+</ol>
+<p>Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en <span class="math inline">\(a\)</span>.</p>
+<div id="def-funcion-continua-intervalo" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.8 (Función continua en un intervalo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>continua</em> en un intervalo si lo es en cada uno de los puntos del intervalo.</p>
+</div>
+<p>La gráfica de una función continua en un intervalo puede dibujarse sin levantar el lápiz.</p>
+</section>
+<section id="tipos-de-discontinuidades" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="tipos-de-discontinuidades"><span class="header-section-number">6.6</span> Tipos de discontinuidades</h2>
+<p>Dependiendo de la condición de continuidad que se rompa, existen distintos tipos de discontinuidades:</p>
+<ul>
+<li>Discontinuidad evitable.</li>
+<li>Discontinuidad de 1ª especie de salto finito.</li>
+<li>Discontinuidad de 1ª especie de salto infinito.</li>
+<li>Discontinuidad de 2ª especie.</li>
+</ul>
+<section id="discontinuidad-evitable" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="discontinuidad-evitable"><span class="header-section-number">6.6.1</span> Discontinuidad evitable</h3>
+<div id="def-discontinuiada-evitable" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.9 (Discontinuidad evitable) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad evitable</em> en el punto <span class="math inline">\(a\)</span> si existe el límite de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span> pero <span class="math inline">\(\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)\)</span>.</p>
+</div>
+<div id="exm-discontinuiada-evitable" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.17 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
+<p><span class="math display">\[\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.\]</span></p>
+<p><img src="img/limites/discontinuidad_evitable.png" width="300px" alt="Gráfica de una discontinuidad evitable"></p>
+</div>
+</section>
+<section id="discontinuidad-de-1ª-especie-de-salto-finito" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="discontinuidad-de-1ª-especie-de-salto-finito"><span class="header-section-number">6.6.2</span> Discontinuidad de 1ª especie de salto finito</h3>
+<div id="def-discontinuidad-1-especie-salto-finito" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.10 (Discontinuidad de 1ª especie de salto finito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto finito</em> en el punto <span class="math inline">\(a\)</span> si existen los límites laterales de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\rightarrow a\)</span> pero</p>
+<p><span class="math display">\[\lim_{x\rightarrow a^-}f(x)\neq \lim_{x\rightarrow a^+}f(x).\]</span></p>
+<p>A la diferencia entre ambos límite se le lama <em>salto</em> de la discontinuidad.</p>
+</div>
+<div id="exm-discontinuidad-1-especie-salto-finito" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.18 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0^-}\frac{|x|}{x}&amp;= -1\newline
+\lim_{x\rightarrow 0^+}\frac{|x|}{x}&amp;= 1
+\end{aligned}
+\]</span></p>
+<p>Salto <span class="math inline">\(= 1-(-1)=2\)</span>.</p>
+<p><img src="img/limites/discontinuidad_salto_finito.png" width="350px" alt="Gráfica de una discontinuidad de salto finito"></p>
+</div>
+</section>
+<section id="discontinuidad-de-1ª-especie-de-salto-infinito" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="discontinuidad-de-1ª-especie-de-salto-infinito"><span class="header-section-number">6.6.3</span> Discontinuidad de 1ª especie de salto infinito</h3>
+<div id="def-discontinuidad-1-especie-salto-infinito" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.11 (Discontinuidad de 1ª especie de salto infinito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto infinito</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<p><span class="math display">\[\lim_{x\rightarrow a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\rightarrow a^+}f(x)=\pm\infty.\]</span></p>
+</div>
+<p>Si <span class="math inline">\(f\)</span> tienen una discontinuidad de 1ª especie de salto infinito en un punto <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> tienen una asíntota vertical <span class="math inline">\(x=a\)</span>.</p>
+<div id="exm-discontinuidad-1-especie-salto-infinito" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.19 </strong></span>La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\rightarrow 0^-}e^{1/x}&amp;= 0\newline
+\lim_{x\rightarrow 0^+}e^{1/x}&amp;= \infty
+\end{aligned}
+\]</span></p>
+<p><img src="img/limites/discontinuidad_salto_infinito.png" width="300px" alt="Gráfica de una discontinuidad de salto infinito"></p>
+</div>
+</section>
+<section id="discontinuidad-de-2ª-especie" class="level3" data-number="6.6.4">
+<h3 data-number="6.6.4" class="anchored" data-anchor-id="discontinuidad-de-2ª-especie"><span class="header-section-number">6.6.4</span> Discontinuidad de 2ª especie</h3>
+<div id="def-discontinuidad-2-especie" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.12 (Discontinuidad de 2ª especie) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 2ª especie</em> en el punto <span class="math inline">\(a\)</span> si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.</p>
+</div>
+<p>Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.</p>
+<div id="exm-discontinuidad-2-especie" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.20 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \lim_{x\rightarrow 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \newline
+&amp; \lim_{x\rightarrow 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
+\end{aligned}
+\]</span></p>
+<p><img src="img/limites/discontinuidad_2_especie.png" width="300px" alt="Gráfica de una discontinuidad de 2ª especie"></p>
+</div>
+<p><strong>Notas</strong></p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Se pude simplificar porque aunque <span class="math inline">\(x\rightarrow 1\)</span>, <span class="math inline">\(x\neq 1\)</span> y por tanto el denominador no se anula.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./funciones.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

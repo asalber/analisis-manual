@@ -35,7 +35,7 @@ Si $f(x)$ tiende a $l$ cuando $x$ se aproxima a $a$ por exceso, entonces se dice
 
 $$\lim_{x\rightarrow a^+}f(x)=l.$$
 
-:::{exm-limites-aproximados}
+:::{#exm-limites-aproximados}
 Consideremos la función $f(x)=x^2$ y veamos que pasa cuando $x\rightarrow 2$:
 
 $$
@@ -84,7 +84,7 @@ $$
 
 Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto
 
-:::{exm-limites-no-existen}
+:::{#exm-limites-no-existen}
 Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando $x\rightarrow 0$:
 
 $$
@@ -123,14 +123,14 @@ x      & f(x)   \newline
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{\sqrt{x^2-1}}
 \end{array}$$
 
-<img src="../img/limites_continuidad/limite_no_existe_1.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+<img src="img/limites/limite_no_existe_1.png" width="300px" alt="Gráfica de una función que no tiene límite" />
 :::
 
 ### Límites que no existen (II)
 
 Cuando los límites laterales no coinciden entonces no existe el límite
 
-:::{exm-limites-no-existen-2}
+:::{#exm-limites-no-existen-2}
 Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
 
 $$\begin{array}{c}
@@ -169,7 +169,7 @@ x      & f(x)   \newline
 \end{array}
 $$
 
-<img src="../img/limites_continuidad/limite_no_existe_2.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+<img src="img/limites/limite_no_existe_2.png" width="300px" alt="Gráfica de una función que no tiene límite" />
 :::
 
 ### Límites que no existen (III)
@@ -178,7 +178,7 @@ A veces, cuando $x\rightarrow a$ los valores de $f(x)$ crecen o decrecen infinit
 
 $$\lim_{x\rightarrow a}f(x)=\pm \infty$$
 
-:::{exm-limites-no-existen-3}
+:::{#exm-limites-no-existen-3}
 Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\rightarrow 0$:
 
 $$
@@ -218,14 +218,14 @@ x      & f(x)   \newline
 \end{array}
 $$
 
-<img src="../img/limites_continuidad/limite_no_existe_3.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+<img src="img/limites/limite_no_existe_3.png" width="300px" alt="Gráfica de una función que no tiene límite" />
 :::
 
 ### Límites que no existen (IV)
 
 A veces, el límite de un función en un punto puede no existir porque la función oscila rápidamente al acercarnos a dicho punto.
 
-:::{exm-limites-no-existen-4}
+:::{#exm-limites-no-existen-4}
 Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
 
 $$\begin{array}{ccc}
@@ -272,7 +272,7 @@ x      & f(x)   \newline
 \end{array}
 $$
 
-<img src="../img/limites_continuidad/limite_no_existe_4.png" width="300px" alt="Gráfica de una función que no tiene límitee" />
+<img src="img/limites/limite_no_existe_4.png" width="300px" alt="Gráfica de una función que no tiene límitee" />
 :::
 
 ### Límites en el infinito
@@ -285,7 +285,7 @@ Si $f(x)$ tiende a $l$ cuando $x$ decrece infinitamente, entonces se dice que $l
 
 $$\lim_{x\rightarrow -\infty}f(x)=l.$$
 
-:::{exm-limites-infinito}
+:::{#exm-limites-infinito}
 Estudiemos la tendencia de $f(x)=\dfrac{1}{x}$ cuando $x\rightarrow \pm\infty$:
 
 $$
@@ -321,7 +321,7 @@ x      & f(x)=1/x   \newline
 \end{array}
 $$
 
-<img src="../img/limites_continuidad/limite_infinito.png" width="300px" alt="Gráfica de una función con límite en el infinito" />
+<img src="img/limites/limite_infinito.png" width="300px" alt="Gráfica de una función con límite en el infinito" />
 :::
 
 ### Definición de límite
@@ -335,7 +335,7 @@ $$\lim_{x\rightarrow a} f(x) = l$$
 si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que, $|f(x)-l|<\varepsilon$  $\forall |x-a|<\delta$.
 :::
 
-<img src="../img/limites_continuidad/definicion_limite.png" width="300px" alt="Explicación gráfica de la definición de límite" />
+<img src="img/limites/definicion_limite.png" width="300px" alt="Explicación gráfica de la definición de límite" />
 
 ### Definición de límite en el infinito
 
@@ -359,13 +359,13 @@ si para cualquier valor $\varepsilon>0$ existe un número $\delta<0$ tal que, $|
 :::{#prp-limite-suma-resta-producto-cociente-funciones}
 Dadas dos funciones $f,g:\mathbb{R}\rightarrow \mathbb{R}$, tales que existe $\lim_{x\rightarrow a}f(x)$ y $\lim_{x\rightarrow a}g(x)$, entonces se cumple que
 
-1. $\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$$, $\forall c\in\mathbb{R}$.
+1. $\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$, $\forall c\in\mathbb{R}$.
 
 2. $\lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).$
 
 3. $\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).$
 
-4. $\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$ si $\lim_{x\rightarrow a}g(x)\neq 0.$
+4. $\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$ si $\lim_{x\rightarrow a}g(x)\neq 0.$
 :::
 
 ### Límites de las funciones elementales
@@ -474,10 +474,9 @@ Existen diferentes técnicas para resolver una indeterminación del tipo $\dfrac
 
 #### Factorización de polinomios en funciones racionales
 
-Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow a$, y $a$ es una
-raíz de $p(x)$ y $q(x)$, se puede resolver la indeterminación factorizando los polinomios y simplificando.
+Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow a$, y $a$ es una raíz de $p(x)$ y $q(x)$, se puede resolver la indeterminación factorizando los polinomios y simplificando.
 
-:::{exm-solucion-indeterminacion-cociente}
+:::{#exm-solucion-indeterminacion-cociente}
 La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 1$.
 
 Para resolver la indeterminación factorizamos los polinomios
@@ -489,19 +488,18 @@ x^4-4x+3 &= (x^2+2x+3)(x-1)^2.
 \end{aligned}
 $$
 
-Como el factor $(x-1)^2$ es común, podemos simplificar la función en el cálculo del límite:
+Como el factor $(x-1)^2$ es común, podemos simplificar la función en el cálculo del límite:[^1] 
 
 $$
 \lim_{x\rightarrow 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\rightarrow 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
 $$
-[^1]
 :::
 
 #### División por el término de mayor orden en funciones racionales
 
 Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow \pm\infty$, entonces se puede resolver dividendo $p(x)$ y $q(x)$ por el término de mayor grado de ambos polinomios.
 
-:::{exm-solucion-indeterminacion-cociente-2}
+:::{#exm-solucion-indeterminacion-cociente-2}
 La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
 
 Para resolver la indeterminación dividimos numerador y denominador por $x^4$ que es el término de mayor grado:
@@ -519,7 +517,7 @@ En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, en
 
 #### Infinitésimos equivalentes
 
-:::{#def-infinitesimos equivalentes}
+:::{#def-infinitesimos-equivalentes}
 ## Infinitésimos equivalentes
 Si $f(x)\rightarrow 0$ y $g(x)\rightarrow 0$ cuando $x\rightarrow a$, entonces se dice que $f$ y $g$ son *infinitésimos equivalentes* cuando $x\rightarrow a$ si se cumple
 
@@ -545,7 +543,7 @@ $$
 A veces se puede resolver una indeterminación cuando $x\rightarrow a$ sustituyendo cualquier subexpresión de la función por un infinitésimo
 equivalente cuando $x\rightarrow a$.
 
-:::{exm-infinitesimo-equivalente}
+:::{#exm-infinitesimo-equivalente}
 La función $f(x)=\dfrac{\operatorname{sen} x(1- \cos x)}{x^3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 0$.
 
 Como $\operatorname{sen} x \approx x$ y $1-\cos x\approx \dfrac{x^2}{2}$ cuando $x\rightarrow 0$, para resolver la indeterminación sustituimos $\operatorname{sen} x$ por $x$ y $1-\cos x$ por $\dfrac{x^2}{2}$:
@@ -579,7 +577,7 @@ Se deja como ejercicio.
 Para que exista $\lim_{x\rightarrow a}\dfrac{f'(x)}{g'(x)}$ es necesario que que $f$ y $g$ sean derivables en un entorno de $a$.
 :::
 
-:::{exm-regla-lhopital}
+:::{#exm-regla-lhopital}
 Sea $f(x)=\dfrac{\log(x^2-1)}{x+2}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
 
 Para resolver la indeterminación aplicamos la regla de L’Hôpital:
@@ -600,7 +598,7 @@ Si $f(x)\rightarrow 0$ y $g(x)\rightarrow \pm\infty$ cuando $x\rightarrow a$, en
 
 $$f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\rightarrow \frac{0}{0}.$$
 
-:::{exm-solucion-indeterminacion-producto}
+:::{#exm-solucion-indeterminacion-producto}
 Sea $f(x)=x^2e^{1/x^2}\rightarrow 0\cdot\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -626,7 +624,7 @@ Si $f(x)^{g(x)}$ presenta una indeterminación de tipo potencia cuando $x\righta
 
 $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 
-:::{exm-solucion-indeterminacion-producto}
+:::{#exm-solucion-indeterminacion-producto}
 Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \rightarrow 1^\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -655,7 +653,7 @@ Si $f(x)\rightarrow \infty$ y $g(x)\rightarrow \infty$ cuando $x\rightarrow a$, 
 
 $$f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\rightarrow \frac{0}{0}.$$
 
-:::{exm-solucion-indeterminacion-diferencia}
+:::{#exm-solucion-indeterminacion-diferencia}
 Sea $f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \rightarrow \infty-\infty$ cuando $x\rightarrow 0$.
 
 $$
@@ -700,12 +698,12 @@ $$\lim_{x\rightarrow a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\rightarr
 
 Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
 
-:::{exm-asintota-vertical}
+:::{#exm-asintota-vertical}
 La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.$$
 
-<img src="../img/limites_continuidad/asintota_vertical.png" width="350px" alt="Gráfica de una asíntota vertical" />
+<img src="img/limites/asintota_vertical.png" width="350px" alt="Gráfica de una asíntota vertical" />
 :::
 
 ### Asíntotas horizontales
@@ -716,7 +714,7 @@ Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si
 $$\lim_{x\rightarrow +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\rightarrow \infty}f(x)=a$$
 :::
 
-:::{exm-asintota-horizontal}
+:::{#exm-asintota-horizontal}
 La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$
@@ -726,7 +724,7 @@ $$
 \end{aligned}
 $$
 
-<img src="../img/limites_continuidad/asintota_horizontal.png" width="350px" alt="Gráfica de una asíntota horizontal" />
+<img src="img/limites/asintota_horizontal.png" width="350px" alt="Gráfica de una asíntota horizontal" />
 :::
 
 ### Asíntotas oblicuas
@@ -738,7 +736,7 @@ Se dice que una recta $y=a+bx$ es una *asíntota oblicua* de una función $f$ si
 $$\lim_{x\rightarrow \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\rightarrow \pm\infty}f(x)-bx=a.$$
 :::
 
-:::{exm-asintota-oblicua}
+:::{#exm-asintota-oblicua}
 La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
 $$
@@ -750,7 +748,7 @@ $$
 \end{aligned}
 $$
 
-<img src="../img/limites_continuidad/asintota_oblicua.png" width="350px" alt="Gráfica de una asíntota vertical" />
+<img src="img/limites/asintota_oblicua.png" width="350px" alt="Gráfica de una asíntota vertical" />
 :::
 
 ## Continuidad
@@ -789,15 +787,16 @@ Dependiendo de la condición de continuidad que se rompa, existen distintos tipo
 ### Discontinuidad evitable
 
 :::{#def-discontinuiada-evitable}
-## Discontinuidad evitable**. Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\rightarrow a$ pero $\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)$.
+## Discontinuidad evitable
+Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\rightarrow a$ pero $\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)$.
 :::
 
-:::{exm-discontinuiada-evitable}
+:::{#exm-discontinuiada-evitable}
 La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$ ya que la función no está definida en $x=1$ pero
 
 $$\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.$$
 
-<img src="../img/limites_continuidad/discontinuidad_evitable.png" width="300px" alt="Gráfica de una discontinuidad evitable" />
+<img src="img/limites/discontinuidad_evitable.png" width="300px" alt="Gráfica de una discontinuidad evitable" />
 :::
 
 ### Discontinuidad de 1ª especie de salto finito
@@ -811,7 +810,7 @@ $$\lim_{x\rightarrow a^-}f(x)\neq \lim_{x\rightarrow a^+}f(x).$$
 A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 :::
 
-:::{exm-discontinuidad-1-especie-salto-finito}
+:::{#exm-discontinuidad-1-especie-salto-finito}
 La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
 
 $$
@@ -823,7 +822,7 @@ $$
 
 Salto $= 1-(-1)=2$.
 
-<img src="../img/limites_continuidad/discontinuidad_salto_finito.png" width="350px" alt="Gráfica de una discontinuidad de salto finito" />
+<img src="img/limites/discontinuidad_salto_finito.png" width="350px" alt="Gráfica de una discontinuidad de salto finito" />
 :::
 
 ### Discontinuidad de 1ª especie de salto infinito
@@ -837,7 +836,7 @@ $$\lim_{x\rightarrow a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\rightarro
 
 Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a$, entonces $f$ tienen una asíntota vertical $x=a$.
 
-:::{exm-discontinuidad-1-especie-salto-infinito}
+:::{#exm-discontinuidad-1-especie-salto-infinito}
 La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infinito en $x=0$ ya que
 
 $$
@@ -847,7 +846,7 @@ $$
 \end{aligned}
 $$
 
-<img src="../img/limites_continuidad/discontinuidad_salto_infinito.png" width="300px" alt="Gráfica de una discontinuidad de salto infinito" />
+<img src="img/limites/discontinuidad_salto_infinito.png" width="300px" alt="Gráfica de una discontinuidad de salto infinito" />
 :::
 
 ### Discontinuidad de 2ª especie
@@ -859,7 +858,7 @@ Se dice que una función $f$ tiene una *discontinuidad de 2ª especie* en el pun
 
 Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.
 
-:::{exm-discontinuidad-2-especie}
+:::{#exm-discontinuidad-2-especie}
 La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 
 $$
@@ -869,7 +868,7 @@ $$
 \end{aligned}
 $$
 
-<img src="../img/limites_continuidad/discontinuidad_2_especie.png" width="300px" alt="Gráfica de una discontinuidad de 2ª especie" />
+<img src="img/limites/discontinuidad_2_especie.png" width="300px" alt="Gráfica de una discontinuidad de 2ª especie" />
 :::
 
 **Notas**
