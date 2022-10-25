@@ -26,7 +26,13 @@ f:\,&A\longrightarrow B\\
 \end{align*}
 :::
 
-<img src="img/funciones/definicion_funcion.png" width="400px" alt="Correspondencia de una función" />
+::: {.content-visible when-format="html"}
+  ![Ejemplo de función.](./img/funciones/funcion.png)
+:::
+
+::: {.content-visible unless-format="html"}
+  ![Ejemplo de función.](./img/funciones/funcion.tex)
+:::
 
 Cuando el conjunto inicial y final es el de los números reales $\mathbb{R}$, entonces se dice que $f:\mathbb{R}\rightarrow \mathbb{R}$ es una *función real de variable real*.
 
@@ -34,7 +40,7 @@ Cuando el conjunto inicial y final es el de los números reales $\mathbb{R}$, en
 
 Existen distintas formas de representar los pares de elementos que forman parte de una función.
 
-#### Por extensión
+#### Por extensión {.unnumbered}
 
 - **Representación en forma de tabla**. Se escriben los pares $(x,y)$ de la función de forma explícita en una tabla. 
 
@@ -50,9 +56,15 @@ Existen distintas formas de representar los pares de elementos que forman parte 
 
 - **Representación gráfica**. Se representan los pares $(x,y)$ de la función mediante puntos con las correspondientes coordenadas en el plano Real cartesiano.
 
-    <img src="img/funciones/funcion_cuadrado.png" width="300px" alt="Función cudrado" />
+::: {.content-visible when-format="html"}
+  ![Gráfica de una función.](./img/funciones/grafica-funcion.png)
+:::
 
-#### Por Intensión
+::: {.content-visible unless-format="html"}
+  ![Gráfica de una función.](./img/funciones/grafica-funcion.tex)
+:::
+
+#### Por Intensión {.unnumbered}
 
 - **Representación algebraica explícita**. Se da fórmula o expresión $f(x)$ que determina el valor de $y$ asociado a cada $x$ mediante la función. 
 
@@ -108,7 +120,7 @@ $$\mbox{Dom}(f)=(-\infty,-1)\cup(1,\infty)$$
 ## Imagen de una función
 
 :::{#def-imagen-funcion}
-## Imagen de una función
+## Imagenñ de una función
 La *imagen* de una función $f$ es el conjunto de valores que la función puede tomar
 
 $$Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}$$
@@ -245,7 +257,13 @@ $$f\circ f^{-1}=f^{-1}\circ f=Id(x)$$
 
 La función inversa de $f$ deshace o revierte el efecto de $f$. Es decir, si $f:A\rightarrow B$ asocia un elemento $x\in A$ con otro $y\in B$, entonces $f^{-1}$ asocia el elemento $y$ con el $x$.
 
-<img src="img/funciones/funcion_inversa.png" width="200px" alt="Función inversa" />
+::: {.content-visible when-format="html"}
+  ![Función inversa.](./img/funciones/funcion-inversa.png)
+:::
+
+::: {.content-visible unless-format="html"}
+  ![Función inversa.](./img/funciones/funcion-inversa.tex)
+:::
 
 :::{#exm-funcion-inversa}
 La inversa de $f(x)=x^3$ es la función $f^{-1}(x)=\sqrt[3]{x}.$ Sin embargo, la inversa de la función $x^2$ no es $\sqrt{x}$ ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. [^0]
@@ -260,18 +278,46 @@ Se dice que una función $f$ es *creciente* en un intervalo $I$, si para todo $x
 Se dice que una función $f$ es *decreciente* en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple $f(x_1)\geq f(x_2)$.
 :::
 
-<img src="img/funciones/funcion_creciente_decreciente.png" width="600px" alt="Gráficas de funciones creciente y decreciente" />
+::: {.content-visible when-format="html"}
+::: {layout-ncol=2}
+  ![Función creciente.](./img/funciones/funcion-creciente.png)
+
+  ![Función decreciente.](./img/funciones/funcion-decreciente.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+::: {layout-ncol=2}
+  ![Función creciente.](./img/funciones/funcion-creciente.tex)
+
+  ![Función decreciente.](./img/funciones/funcion-decreciente.tex)
+:::
+:::
 
 ## Extremos de una función
 
 :::{#def-extremos-funcion}
 ## Máximo y mínimo relativo
-Se dice que una función $f$ tiene un *máximo relativo* en $x_0$, si existe un $\delta>0$ tal que para todo $x\in (x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\geq f(x)$.
+Se dice que una función $f:\\mathbb{R}\rightarrow\mathbb{R}$ tiene un *máximo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\geq f(x)$.
 
-Se dice que una función $f$ tiene un *mínimo relativo* en $x_0$, si existe un $\delta>0$ tal que para todo $x\in (x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\leq f(x)$.
+Y se dice que $f$ tiene un *mínimo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\leq f(x)$.
 :::
 
-<img src="img/funciones/maximo_minimo.png" width="700px" alt="Gráfica del máximo y mínimo de una función" />
+::: {.content-visible when-format="html"}
+::: {layout-ncol=2}
+  ![Máximo relativo.](./img/funciones/maximo.png)
+
+  ![Mínimo relativo.](./img/funciones/minimo.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+::: {layout-ncol=2}
+  ![Máximo relativo.](./img/funciones/maximo.tex)
+
+  ![Mínimo relativo.](./img/funciones/minimo.tex)
+:::
+:::
 
 ## Concavidad de una función
 
@@ -285,7 +331,21 @@ los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por debajo de la gráfica de $f
 Al punto donde cambia la concavidad de una función se le llama *punto de inflexión*.
 :::
 
-<img src="img/funciones/funcion_concava_convexa.png" width="700px" alt="Gráfica de una función cóncava y otra convexa" />
+::: {.content-visible when-format="html"}
+::: {layout-ncol=2}
+  ![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba.png)
+
+  ![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+::: {layout-ncol=2}
+  ![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba.tex)
+
+  ![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo.tex)
+:::
+:::
 
 ## Funciones periódicas
 
@@ -300,7 +360,13 @@ para todo $x\in \textrm{Dom}(f)$.
 Al menor valor de $h$ que verifica la igualdad anterior se le llama *periodo* de $f$, y a la diferencia entre el máximo y el mínimo de la función se le llama *amplitud* de $f$.
 :::
 
-<img src="img/funciones/funcion_periodica.png" width="500px" alt="Función inversa" />
+::: {.content-visible when-format="html"}
+![Periodo y amplitud de una función periódica.](./img/funciones/funcion-periodica.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Periodo y amplitud de una función periódica.](./img/funciones/funcion-periodica.tex)
+:::
 
 ## Funciones polinómicas
 
@@ -314,7 +380,6 @@ donde $n$ es un entero no negativo que se llama *grado del polinomio*, y $a_0,\l
 :::
 
 :::{#exm-funcion-polinomica}
-
 ::: {.content-visible when-format="html"}
 ![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica.png)
 :::
@@ -322,7 +387,6 @@ donde $n$ es un entero no negativo que se llama *grado del polinomio*, y $a_0,\l
 ::: {.content-visible unless-format="html"}
 ![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica.tex)
 :::
-
 :::
 
 ### Propiedades de las funciones polinómicas
@@ -443,7 +507,6 @@ donde $a$ es un valor real positivo distinto de 1.
 :::
 
 :::{#exm-funcion-logaritmica}
-
 ::: {.content-visible when-format="html"}
 ![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica.png)
 :::
@@ -503,7 +566,15 @@ $$f(x)=\operatorname{sen} x$$
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su seno.
 :::
 
-<img src="img/funciones/funcion_seno.png" width="600px" alt="Gráfica de la función seno" />
+:::{#exm-funcion-seno}
+::: {.content-visible when-format="html"}
+![Gráfica de la función seno.](./img/funciones/funcion-seno.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función seno.](./img/funciones/funcion-seno.tex)
+:::
+:::
 
 ### Propiedades de la función seno
 
@@ -540,7 +611,15 @@ $$f(x)=\cos x$$
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su coseno.
 :::
 
-<img src="img/funciones/funcion_coseno.png" width="600px" alt="Gráfica de la función coseno" />
+:::{#exm-funcion-coseno}
+::: {.content-visible when-format="html"}
+![Gráfica de la función coseno.](./img/funciones/funcion-coseno.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función coseno.](./img/funciones/funcion-coseno.tex)
+:::
+:::
 
 ### Propiedades de la función coseno
 
@@ -577,7 +656,16 @@ $$f(x)=\operatorname{tg} x=\frac{\operatorname{sen} x}{\cos x}$$
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su tangente.
 :::
 
-<img src="img/funciones/funcion_tangente.png" width="450px" alt="Gráfica de la función tangente" />
+:::{#exm-funcion-tangente}
+::: {.content-visible when-format="html"}
+![Gráfica de la función tangente.](./img/funciones/funcion-tangente.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función tangente.](./img/funciones/funcion-tangente.tex)
+:::
+:::
+
 
 ### Propiedades de la función tangente
 
@@ -600,7 +688,15 @@ $$f(x)=\operatorname{arcsen} x$$
 como la función inversa de la función seno.
 :::
 
-<img src="img/funciones/funcion_arcoseno.png" width="400px" alt="Gráfica de la función arcoseno" />
+:::{#exm-funcion-arcoseno}
+::: {.content-visible when-format="html"}
+![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.png)
+:::
+:::
 
 ### Propiedades de la función arcoseno
 
@@ -620,7 +716,15 @@ $$f(x)=\operatorname{arccos} x$$
 como la función inversa de la función coseno.
 :::
 
-<img src="img/funciones/funcion_arcocoseno.png" width="350px" alt="Gráfica de la función arcocoseno" />
+:::{#exm-funcion-arcocoseno}
+::: {.content-visible when-format="html"}
+![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.png)
+:::
+:::
 
 ### Propiedades de la función arcoseno
 
@@ -640,7 +744,15 @@ $$f(x)=\operatorname{arctg} x$$
 como la función inversa de la función tangente.
 :::
 
-<img src="img/funciones/funcion_arcotangente.png" width="400px" alt="Gráfica de la función arcotangente" />
+:::{#exm-funcion-arcotangente}
+::: {.content-visible when-format="html"}
+![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.png)
+:::
+:::
 
 ### Propiedades de la función arcotangente
 
