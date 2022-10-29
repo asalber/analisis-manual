@@ -134,7 +134,7 @@ Dada la función $f(x)=x^2-2$
 :::
 
 ::: {.content-visible unless-format="html"}
-![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen.png)
+![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen.tex)
 :::
 
 
@@ -549,11 +549,17 @@ hipotenusa de dicho triángulo. No obstante, esta no es la única definición po
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el *seno* de $\alpha$, y se nota $\operatorname{sen} \alpha$, como el cociente entre el cateto opuesto y la hipotenusa.
 :::
 
-<img src="img/funciones/seno_triangulo.png" width="150px" alt="Definición del seno en un triángulo rectángulo" />
+::: {.content-visible when-format="html"}
+![Seno de un ángulo de un triángulo rectángulo.](./img/funciones/seno-triangulo.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Seno de un ángulo de un triángulo rectángulo.](./img/funciones/seno-triangulo.tex)
+:::
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.
 
-<img src="img/funciones/seno_circunferencia.png" width="200px" alt="Definición del seno en la circunferencia" />
+<!-- <img src="img/funciones/seno_circunferencia.png" width="200px" alt="Definición del seno en la circunferencia" /> -->
 
 ### Función seno
 
@@ -561,7 +567,7 @@ La definición se extiende fácilmente a ángulos de circunferencia con vértice
 ## Función seno
 Se define la función *seno*,
 
-$$f(x)=\operatorname{sen} x$$
+$$f(x)=\operatorname{sen}(x)$$
 
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su seno.
 :::
@@ -594,11 +600,17 @@ $$\operatorname{sen} (x+2k\pi)= \operatorname{sen} x\quad \forall k\in \mathbb{Z
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el *coseno* de $\alpha$, y se nota $\cos \alpha$, como el cociente entre el cateto contiguo y la hipotenusa.
 :::
 
-<img src="img/funciones/coseno_triangulo.png" width="150px" alt="Definición del coseno en un triángulo rectángulo" />
+::: {.content-visible when-format="html"}
+![Coseno de un ángulo de un triángulo rectángulo.](./img/funciones/coseno-triangulo.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Coseno de un ángulo de un triángulo rectángulo.](./img/funciones/coseno-triangulo.tex)
+:::
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.
 
-<img src="img/funciones/coseno_circunferencia.png" width="200px" alt="Definición del coseno en la circunferencia" />
+<!-- <img src="img/funciones/coseno_circunferencia.png" width="200px" alt="Definición del coseno en la circunferencia" /> -->
 
 ### Función coseno
 
@@ -606,12 +618,12 @@ La definición se extiende fácilmente a ángulos de circunferencia con vértice
 ## Función coseno
 Se define la función *coseno*,
 
-$$f(x)=\cos x$$
+$$f(x)=\cos(x)$$
 
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su coseno.
 :::
 
-:::{#exm-funcion-coseno}
+:::{#exm-grafica-funcion-coseno}
 ::: {.content-visible when-format="html"}
 ![Gráfica de la función coseno.](./img/funciones/funcion-coseno.png)
 :::
@@ -639,11 +651,17 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define la *tangente* de $\alpha$, y se nota $\operatorname{tg} \alpha$, como el cociente entre el cateto opuesto y el cateto contiguo.
 :::
 
-<img src="img/funciones/tangente_triangulo.png" width="150px" alt="Definición de la tangente en un triángulo rectángulo" />
+::: {.content-visible when-format="html"}
+![Tangente de un ángulo de un triángulo rectángulo.](./img/funciones/tangente-triangulo.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Tangente de un ángulo de un triángulo rectángulo.](./img/funciones/tangente-triangulo.tex)
+:::
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.
 
-<img src="img/funciones/tangente_circunferencia.png" width="200px" alt="Definición de la tangente en la circunferencia" />
+<!-- <img src="img/funciones/tangente_circunferencia.png" width="200px" alt="Definición de la tangente en la circunferencia" /> -->
 
 ### Función tangente
 
@@ -651,7 +669,7 @@ La definición se extiende fácilmente a ángulos de circunferencia con vértice
 ## Función tangente
 Se define la función *tangente*,
 
-$$f(x)=\operatorname{tg} x=\frac{\operatorname{sen} x}{\cos x}$$
+$$f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}$$
 
 como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su tangente.
 :::
@@ -683,7 +701,7 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 ## Función arcoseno
 Se define la función *arcoseno*,
 
-$$f(x)=\operatorname{arcsen} x$$
+$$f(x)=\operatorname{arcsen}(x)$$
 
 como la función inversa de la función seno.
 :::
@@ -694,7 +712,7 @@ como la función inversa de la función seno.
 :::
 
 ::: {.content-visible unless-format="html"}
-![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.png)
+![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.tex)
 :::
 :::
 
@@ -711,7 +729,7 @@ como la función inversa de la función seno.
 ## Función arcocoseno
 Se define la función *arcocoseno*,
 
-$$f(x)=\operatorname{arccos} x$$
+$$f(x)=\operatorname{arccos}(x)$$
 
 como la función inversa de la función coseno.
 :::
@@ -722,7 +740,7 @@ como la función inversa de la función coseno.
 :::
 
 ::: {.content-visible unless-format="html"}
-![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.png)
+![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.tex)
 :::
 :::
 
@@ -739,7 +757,7 @@ como la función inversa de la función coseno.
 ## Función arcotangente
 Se define la función *arcotangente*,
 
-$$f(x)=\operatorname{arctg} x$$
+$$f(x)=\operatorname{arctg}(x)$$
 
 como la función inversa de la función tangente.
 :::
@@ -750,7 +768,7 @@ como la función inversa de la función tangente.
 :::
 
 ::: {.content-visible unless-format="html"}
-![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.png)
+![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.tex)
 :::
 :::
 

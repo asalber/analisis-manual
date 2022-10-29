@@ -41,40 +41,40 @@ Consideremos la función $f(x)=x^2$ y veamos que pasa cuando $x\rightarrow 2$:
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Aproximación por defecto} & \qquad & \textrm{Aproximación por exceso}\newline
+\textrm{Aproximación por defecto} & \qquad & \textrm{Aproximación por exceso}\\
 \begin{array}{|l|l|}
 \hline
-x       & f(x)=x^2   \newline
+x       & f(x)=x^2   \\
 \hline\hline
- 1.9    & 3.61       \newline
+ 1.9    & 3.61       \\
 \hline
- 1.99   & 3.9601     \newline
+ 1.99   & 3.9601     \\
 \hline
- 1.999  & 3.996001   \newline
+ 1.999  & 3.996001   \\
 \hline
- 1.9999 & 3.99960001 \newline
+ 1.9999 & 3.99960001 \\
 \hline
 \end{array}
 & &
 \begin{array}{|l|l|}
 \hline
-x       & f(x)=x^2   \newline
+x       & f(x)=x^2   \\
 \hline\hline
- 2.1    & 4.41       \newline
+ 2.1    & 4.41       \\
 \hline
- 2.01   & 4.0401    \newline
+ 2.01   & 4.0401    \\
 \hline
- 2.001  & 4.004001   \newline
+ 2.001  & 4.004001   \\
 \hline
- 2.0001 & 4.00040001 \newline
+ 2.0001 & 4.00040001 \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \lim_{x\rightarrow 2^-}x^2=4
 & &
 \lim_{x\rightarrow 2^+}x^2=4
-\end{array}}\newline
-\Downarrow\newline
+\end{array}}\\
+\Downarrow\\
 \lim_{x\rightarrow 2}x^2=4
 \end{array}
 $$
@@ -90,40 +90,46 @@ Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\newline
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- -0.1   & \textrm{No exite}      \newline
+ -0.1   & \textrm{No exite}      \\
 \hline
- -0.01   & \textrm{No existe}     \newline
+ -0.01   & \textrm{No existe}     \\
 \hline
- -0.001  & \textrm{No existe}   \newline
+ -0.001  & \textrm{No existe}   \\
 \hline
 \end{array}
 & &
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- 0.1    &  \textrm{No existe}      \newline
+ 0.1    &  \textrm{No existe}      \\
 \hline
- 0.01   & \textrm{No existe}    \newline
+ 0.01   & \textrm{No existe}    \\
 \hline
- 0.001  & \textrm{No existe}   \newline
+ 0.001  & \textrm{No existe}   \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \displaystyle \textrm{No existe } \lim_{x\rightarrow 0^-}\frac{1}{\sqrt{x^2-1}}
 & &
 \displaystyle \textrm{No existe } \lim_{x\rightarrow 0^+}\frac{1}{\sqrt{x^2-1}}
-\end{array}}\newline
-\Downarrow\newline
+\end{array}}\\
+\Downarrow\\
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{\sqrt{x^2-1}}
 \end{array}$$
 
-<img src="img/limites/limite_no_existe_1.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+::: {.content-visible when-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-1.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-1.tex)
+:::
 :::
 
 ### Límites que no existen (II)
@@ -135,41 +141,47 @@ Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuan
 
 $$\begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\newline
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- -0.1   & -1       \newline
+ -0.1   & -1       \\
 \hline
- -0.01   & -1     \newline
+ -0.01   & -1     \\
 \hline
- -0.001  & -1   \newline
+ -0.001  & -1   \\
 \hline
 \end{array}
 & &
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- 0.1    & 1       \newline
+ 0.1    & 1       \\
 \hline
- 0.01   & 1    \newline
+ 0.01   & 1    \\
 \hline
- 0.001  & 1   \newline
+ 0.001  & 1   \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \displaystyle \lim_{x\rightarrow 0^-}\frac{|x|}{x}=-1
 &\neq &
 \displaystyle \lim_{x\rightarrow 0^+}\frac{|x|}{x}=1
-\end{array}}\newline
-\Downarrow\newline
+\end{array}}\\
+\Downarrow\\
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{|x|}{x}
 \end{array}
 $$
 
-<img src="img/limites/limite_no_existe_2.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+::: {.content-visible when-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-2.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-2.tex)
+:::
 :::
 
 ### Límites que no existen (III)
@@ -184,41 +196,47 @@ Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\rightarrow 0$
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\newline
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
 \begin{array}{|l|r|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- -0.1   & 100       \newline
+ -0.1   & 100       \\
 \hline
- -0.01   & 10000     \newline
+ -0.01   & 10000     \\
 \hline
- -0.001  & 1000000   \newline
+ -0.001  & 1000000   \\
 \hline
 \end{array}
 & &
 \begin{array}{|l|r|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- 0.1    & 100       \newline
+ 0.1    & 100       \\
 \hline
- 0.01   & 10000    \newline
+ 0.01   & 10000    \\
 \hline
- 0.001  & 1000000   \newline
+ 0.001  & 1000000   \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \displaystyle \lim_{x\rightarrow 0^-}\frac{1}{x^2}=+\infty
 & &
 \displaystyle \lim_{x\rightarrow 0^+}\frac{1}{x^2}=+\infty
-\end{array}}\newline
-\Downarrow\newline
+\end{array}}\\
+\Downarrow\\
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{x^2}=\infty
 \end{array}
 $$
 
-<img src="img/limites/limite_no_existe_3.png" width="300px" alt="Gráfica de una función que no tiene límite" />
+::: {.content-visible when-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-3.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-3.tex)
+:::
 :::
 
 ### Límites que no existen (IV)
@@ -229,50 +247,56 @@ A veces, el límite de un función en un punto puede no existir porque la funci�
 Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
 
 $$\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\newline
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- -0.1   & -0.1736       \newline
+ -0.1   & -0.1736       \\
 \hline
- -0.01   & -0.9848     \newline
+ -0.01   & -0.9848     \\
 \hline
--0.005 & 0.3420 \newline
+-0.005 & 0.3420 \\
 \hline
- -0.001  & 0.9848  \newline
+ -0.001  & 0.9848  \\
 \hline
--0.0005  & 0.3420\newline
+-0.0005  & 0.3420\\
 \hline
--0.0001 & 0.9848 \newline
+-0.0001 & 0.9848 \\
 \hline
 \end{array}
 & &
 \begin{array}{|l|l|}
 \hline
-x      & f(x)   \newline
+x      & f(x)   \\
 \hline\hline
- 0.1   & 0.1736       \newline
+ 0.1   & 0.1736       \\
 \hline
- 0.01   & 0.9848     \newline
+ 0.01   & 0.9848     \\
 \hline
-0.005 & -0.3420 \newline
+0.005 & -0.3420 \\
 \hline
- 0.001  & -0.9848  \newline
+ 0.001  & -0.9848  \\
 \hline
-0.0005  & -0.3420\newline
+0.0005  & -0.3420\\
 \hline
-0.0001 & -0.9848 \newline
+0.0001 & -0.9848 \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0^-}\operatorname{sen} \frac{1}{x}
 & &
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0^+}\operatorname{sen} \frac{1}{x}
 \end{array}
 $$
 
-<img src="img/limites/limite_no_existe_4.png" width="300px" alt="Gráfica de una función que no tiene límitee" />
+::: {.content-visible when-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-4.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-4.tex)
+:::
 :::
 
 ### Límites en el infinito
@@ -290,38 +314,44 @@ Estudiemos la tendencia de $f(x)=\dfrac{1}{x}$ cuando $x\rightarrow \pm\infty$:
 
 $$
 \begin{array}{ccc}
-x\rightarrow +\infty & \qquad & x\rightarrow -\infty\newline
+x\rightarrow +\infty & \qquad & x\rightarrow -\infty\\
 \begin{array}{|r|l|}
 \hline
-x      & f(x)=1/x   \newline
+x      & f(x)=1/x   \\
 \hline\hline
- 1000    & 0.001       \newline
+ 1000    & 0.001       \\
 \hline
- 10000   & 0.0001     \newline
+ 10000   & 0.0001     \\
 \hline
- 100000  & 0.00001   \newline
+ 100000  & 0.00001   \\
 \hline
 \end{array}
 & &
 \begin{array}{|r|l|}
 \hline
-x      & f(x)=1/x   \newline
+x      & f(x)=1/x   \\
 \hline\hline
- -1000    & -0.001       \newline
+ -1000    & -0.001       \\
 \hline
- -10000   & -0.0001     \newline
+ -10000   & -0.0001     \\
 \hline
- -100000  & -0.00001   \newline
+ -100000  & -0.00001   \\
 \hline
-\end{array}\newline
-\Downarrow & & \Downarrow\newline
+\end{array}\\
+\Downarrow & & \Downarrow\\
 \lim_{x\rightarrow +\infty}\frac{1}{x}=0
 & &
 \lim_{x\rightarrow -\infty}\frac{1}{x}=0
 \end{array}
 $$
 
-<img src="img/limites/limite_infinito.png" width="300px" alt="Gráfica de una función con límite en el infinito" />
+::: {.content-visible when-format="html"}
+![Límites en el infinito.](./img/limites/limite-en-infinito.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límites en el infinito.](./img/limites/limite-en-infinito.tex)
+:::
 :::
 
 ### Definición de límite
@@ -335,7 +365,13 @@ $$\lim_{x\rightarrow a} f(x) = l$$
 si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que, $|f(x)-l|<\varepsilon$  $\forall |x-a|<\delta$.
 :::
 
-<img src="img/limites/definicion_limite.png" width="300px" alt="Explicación gráfica de la definición de límite" />
+::: {.content-visible when-format="html"}
+![Límite de una función.](./img/limites/definicion-limite.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Límite de una función.](./img/limites/definicion-limite.tex)
+:::
 
 ### Definición de límite en el infinito
 
@@ -483,7 +519,7 @@ Para resolver la indeterminación factorizamos los polinomios
 
 $$
 \begin{aligned}
-x^3-3x+2 &= (x+2)(x-1)^2,\newline
+x^3-3x+2 &= (x+2)(x-1)^2,\\
 x^4-4x+3 &= (x^2+2x+3)(x-1)^2.
 \end{aligned}
 $$
@@ -532,11 +568,11 @@ Infinitésimos equivalentes cuando $x\rightarrow 0$:
 
 $$
 \begin{array}{c}
-\operatorname{sen} x \approx x \approx \operatorname{tg} x\newline
-1-\cos x \approx \dfrac{x^2}{2}\newline
-\operatorname{arctg} x \approx x\newline
-e^x-1 \approx x\newline
-\log(1+x) \approx x\newline
+\operatorname{sen} x \approx x \approx \operatorname{tg} x\\
+1-\cos x \approx \dfrac{x^2}{2}\\
+\operatorname{arctg} x \approx x\\
+e^x-1 \approx x\\
+\log(1+x) \approx x\\
 \end{array}
 $$
 
@@ -585,7 +621,7 @@ Para resolver la indeterminación aplicamos la regla de L’Hôpital:
 $$
 \begin{aligned}
 \lim_{x\rightarrow \infty}\frac{\log(x^2-1)}{x+2} &= \lim_{x\rightarrow
-\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\rightarrow \infty}\frac{\frac{2x}{x^2-1}}{1}=\newline
+\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\rightarrow \infty}\frac{\frac{2x}{x^2-1}}{1}=\\
 &=\lim_{x\rightarrow \infty}\frac{2x}{x^2-1}= \lim_{x\rightarrow \infty}\frac{\left(2x\right)'}{\left(x^2-1\right)'}=
 \lim_{x\rightarrow \infty}\frac{2}{2x}=0.
 \end{aligned}
@@ -631,7 +667,7 @@ $$
 \begin{aligned}
 \lim_{x\rightarrow 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\rightarrow
 0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right) = \exp\left(\lim_{x\rightarrow
-0}x\log\left(1+\frac{1}{x}\right)\right) =\newline
+0}x\log\left(1+\frac{1}{x}\right)\right) =\\
 &= \exp\left(\lim_{x\rightarrow 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
 \end{aligned}
 $$
@@ -669,9 +705,9 @@ $$
 \begin{aligned}
 \lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} & =
 \lim_{x\rightarrow 0} \frac{\left(x-\operatorname{sen} x\right)'}{\left(x\operatorname{sen} x\right)'}=
-\lim_{x\rightarrow 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \newline
+\lim_{x\rightarrow 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \\
 &= \lim_{x\rightarrow 0} \frac{\left(1-\cos x\right)'}{\left(\operatorname{sen} x +x\cos x\right)'} =
-\lim_{x\rightarrow 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\newline
+\lim_{x\rightarrow 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\\
 &= \frac{0}{2}=0.
 \end{aligned}
 $$
@@ -703,7 +739,13 @@ La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.$$
 
-<img src="img/limites/asintota_vertical.png" width="350px" alt="Gráfica de una asíntota vertical" />
+::: {.content-visible when-format="html"}
+![Asíntota vertical.](./img/limites/asintota-vertical.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Asíntota vertical.](./img/limites/asintota-vertical.tex)
+:::
 :::
 
 ### Asíntotas horizontales
@@ -719,12 +761,18 @@ La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 $$
 \begin{aligned}
-\lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\newline
+\lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
 \lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1.
 \end{aligned}
 $$
 
-<img src="img/limites/asintota_horizontal.png" width="350px" alt="Gráfica de una asíntota horizontal" />
+::: {.content-visible when-format="html"}
+![Asíntota horizontal.](./img/limites/asintota-horizontal.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Asíntota horizontal.](./img/limites/asintota-horizontal.tex)
+:::
 :::
 
 ### Asíntotas oblicuas
@@ -742,13 +790,19 @@ La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 $$
 \begin{aligned}
 \lim_{x\rightarrow \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
-\lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\newline
+\lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
 \lim_{x\rightarrow \pm\infty}\frac{x^2}{x-1}-x &=
 \lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1
 \end{aligned}
 $$
 
-<img src="img/limites/asintota_oblicua.png" width="350px" alt="Gráfica de una asíntota vertical" />
+::: {.content-visible when-format="html"}
+![Asíntota oblicua.](./img/limites/asintota-oblicua.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Asíntota oblicua.](./img/limites/asintota-oblicua.tex)
+:::
 :::
 
 ## Continuidad
@@ -763,8 +817,8 @@ $$\lim_{x\rightarrow a}f(x)=f(a).$$
 De esta definición se deducen tres condiciones necesarias para la continuidad:
 
 1. $f(a)\in \operatorname{Dom}(f)$.
-2. Existe $ \lim_{x\rightarrow a}f(x)$.
-3. $ \lim_{x\rightarrow a}f(x)=f(a)$.
+2. Existe $\lim_{x\rightarrow a}f(x)$.
+3. $\lim_{x\rightarrow a}f(x)=f(a)$.
 
 Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en $a$.
 
@@ -796,7 +850,13 @@ La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$
 
 $$\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.$$
 
-<img src="img/limites/discontinuidad_evitable.png" width="300px" alt="Gráfica de una discontinuidad evitable" />
+::: {.content-visible when-format="html"}
+![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.tex)
+:::
 :::
 
 ### Discontinuidad de 1ª especie de salto finito
@@ -815,14 +875,20 @@ La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª esp
 
 $$
 \begin{aligned}
-\lim_{x\rightarrow 0^-}\frac{|x|}{x}&= -1\newline
+\lim_{x\rightarrow 0^-}\frac{|x|}{x}&= -1\\
 \lim_{x\rightarrow 0^+}\frac{|x|}{x}&= 1
 \end{aligned}
 $$
 
 Salto $= 1-(-1)=2$.
 
-<img src="img/limites/discontinuidad_salto_finito.png" width="350px" alt="Gráfica de una discontinuidad de salto finito" />
+::: {.content-visible when-format="html"}
+![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.tex)
+:::
 :::
 
 ### Discontinuidad de 1ª especie de salto infinito
@@ -841,12 +907,18 @@ La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infi
 
 $$
 \begin{aligned}
-\lim_{x\rightarrow 0^-}e^{1/x}&= 0\newline
+\lim_{x\rightarrow 0^-}e^{1/x}&= 0\\
 \lim_{x\rightarrow 0^+}e^{1/x}&= \infty
 \end{aligned}
 $$
 
-<img src="img/limites/discontinuidad_salto_infinito.png" width="300px" alt="Gráfica de una discontinuidad de salto infinito" />
+::: {.content-visible when-format="html"}
+![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.tex)
+:::
 :::
 
 ### Discontinuidad de 2ª especie
@@ -863,12 +935,18 @@ La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª espec
 
 $$
 \begin{aligned}
-& \lim_{x\rightarrow 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \newline
+& \lim_{x\rightarrow 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
 & \lim_{x\rightarrow 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
 \end{aligned}
 $$
 
-<img src="img/limites/discontinuidad_2_especie.png" width="300px" alt="Gráfica de una discontinuidad de 2ª especie" />
+::: {.content-visible when-format="html"}
+![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.tex)
+:::
 :::
 
 **Notas**

@@ -271,9 +271,9 @@ ul.task-list li input[type="checkbox"] {
 \newcommand{\mathbb{Q}}{\mathbb{Q}}
 \newcommand{\mathbb{R}}{\mathbb{R}}
 \newcommand{\mathbb{C}}{\mathbb{C}}
-\DeclareMathOperator{\operatorname{Int}}{Int}
-\DeclareMathOperator{\operatorname{Ext}}{Ext}
-\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fr}{Fr}
 \DeclareMathOperator{\Adh}{Adh}
 \DeclareMathOperator{\Ac}{Ac}
 \DeclareMathOperator{\sen}{sen}
@@ -796,15 +796,22 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <div id="def-seno-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.19 (Seno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
 </div>
-<p><img src="img/funciones/seno_triangulo.png" width="150px" alt="Definición del seno en un triángulo rectángulo"></p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/seno-triangulo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Seno de un ángulo de un triángulo rectángulo.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.</p>
-<p><img src="img/funciones/seno_circunferencia.png" width="200px" alt="Definición del seno en la circunferencia"></p>
+<!-- <img src="img/funciones/seno_circunferencia.png" width="200px" alt="Definición del seno en la circunferencia" /> -->
 </section>
 <section id="función-seno" class="level3" data-number="5.16.2">
 <h3 data-number="5.16.2" class="anchored" data-anchor-id="función-seno"><span class="header-section-number">5.16.2</span> Función seno</h3>
 <div id="def-funcion-seno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.20 (Función seno) </strong></span>Se define la función <em>seno</em>,</p>
-<p><span class="math display">\[f(x)=\operatorname{sen} x\]</span></p>
+<p><span class="math display">\[f(x)=\operatorname{sen}(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su seno.</p>
 </div>
 <div id="exm-funcion-seno" class="theorem example">
@@ -837,18 +844,25 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <div id="def-coseno-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.21 (Coseno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
 </div>
-<p><img src="img/funciones/coseno_triangulo.png" width="150px" alt="Definición del coseno en un triángulo rectángulo"></p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/coseno-triangulo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Coseno de un ángulo de un triángulo rectángulo.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.</p>
-<p><img src="img/funciones/coseno_circunferencia.png" width="200px" alt="Definición del coseno en la circunferencia"></p>
+<!-- <img src="img/funciones/coseno_circunferencia.png" width="200px" alt="Definición del coseno en la circunferencia" /> -->
 </section>
 <section id="función-coseno" class="level3" data-number="5.16.5">
 <h3 data-number="5.16.5" class="anchored" data-anchor-id="función-coseno"><span class="header-section-number">5.16.5</span> Función coseno</h3>
 <div id="def-funcion-coseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.22 (Función coseno) </strong></span>Se define la función <em>coseno</em>,</p>
-<p><span class="math display">\[f(x)=\cos x\]</span></p>
+<p><span class="math display">\[f(x)=\cos(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su coseno.</p>
 </div>
-<div id="exm-funcion-coseno" class="theorem example">
+<div id="exm-grafica-funcion-coseno" class="theorem example">
 <div>
 <span class="theorem-title"><strong>Ejemplo 5.11 </strong></span>
 <div class="quarto-figure quarto-figure-center">
@@ -876,15 +890,22 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <div id="def-tangente-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.23 (Tangente de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
 </div>
-<p><img src="img/funciones/tangente_triangulo.png" width="150px" alt="Definición de la tangente en un triángulo rectángulo"></p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/tangente-triangulo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tangente de un ángulo de un triángulo rectángulo.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.</p>
-<p><img src="img/funciones/tangente_circunferencia.png" width="200px" alt="Definición de la tangente en la circunferencia"></p>
+<!-- <img src="img/funciones/tangente_circunferencia.png" width="200px" alt="Definición de la tangente en la circunferencia" /> -->
 </section>
 <section id="función-tangente" class="level3" data-number="5.16.8">
 <h3 data-number="5.16.8" class="anchored" data-anchor-id="función-tangente"><span class="header-section-number">5.16.8</span> Función tangente</h3>
 <div id="def-funcion-tangente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.24 (Función tangente) </strong></span>Se define la función <em>tangente</em>,</p>
-<p><span class="math display">\[f(x)=\operatorname{tg} x=\frac{\operatorname{sen} x}{\cos x}\]</span></p>
+<p><span class="math display">\[f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su tangente.</p>
 </div>
 <div id="exm-funcion-tangente" class="theorem example">
@@ -913,7 +934,7 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <h3 data-number="5.16.10" class="anchored" data-anchor-id="función-arcoseno"><span class="header-section-number">5.16.10</span> Función arcoseno</h3>
 <div id="def-funcion-arcoseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.25 (Función arcoseno) </strong></span>Se define la función <em>arcoseno</em>,</p>
-<p><span class="math display">\[f(x)=\operatorname{arcsen} x\]</span></p>
+<p><span class="math display">\[f(x)=\operatorname{arcsen}(x)\]</span></p>
 <p>como la función inversa de la función seno.</p>
 </div>
 <div id="exm-funcion-arcoseno" class="theorem example">
@@ -943,7 +964,7 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <h3 data-number="5.16.12" class="anchored" data-anchor-id="función-arcocoseno"><span class="header-section-number">5.16.12</span> Función arcocoseno</h3>
 <div id="def-funcion-arcocoseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.26 (Función arcocoseno) </strong></span>Se define la función <em>arcocoseno</em>,</p>
-<p><span class="math display">\[f(x)=\operatorname{arccos} x\]</span></p>
+<p><span class="math display">\[f(x)=\operatorname{arccos}(x)\]</span></p>
 <p>como la función inversa de la función coseno.</p>
 </div>
 <div id="exm-funcion-arcocoseno" class="theorem example">
@@ -973,7 +994,7 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <h3 data-number="5.16.14" class="anchored" data-anchor-id="función-arcotangente"><span class="header-section-number">5.16.14</span> Función arcotangente</h3>
 <div id="def-funcion-arcotangente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.27 (Función arcotangente) </strong></span>Se define la función <em>arcotangente</em>,</p>
-<p><span class="math display">\[f(x)=\operatorname{arctg} x\]</span></p>
+<p><span class="math display">\[f(x)=\operatorname{arctg}(x)\]</span></p>
 <p>como la función inversa de la función tangente.</p>
 </div>
 <div id="exm-funcion-arcotangente" class="theorem example">

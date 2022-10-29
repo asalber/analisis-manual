@@ -76,8 +76,9 @@
 
 %\newfontfamily\Ubuntu[Mapping=tex-text]{Ubuntu}
 \usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,arrows}
+\usetikzlibrary{angles,quotes}
 \pgfplotsset{grid style={dashed,mygray}}
-
 % Colors
 \definecolor{myblue}{rgb}{0.067,0.529,0.871}
 \definecolor{mypurple}{rgb}{0.859,0.071,0.525}
@@ -90,9 +91,9 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
-\DeclareMathOperator{\operatorname{Int}}{Int}
-\DeclareMathOperator{\operatorname{Ext}}{Ext}
-\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fr}{Fr}
 \DeclareMathOperator{\Adh}{Adh}
 \DeclareMathOperator{\Ac}{Ac}
 \DeclareMathOperator{\sen}{sen}
@@ -156,13 +157,13 @@
 \theoremstyle{definition}
 \newtheorem{example}{Ejemplo}[chapter]
 \theoremstyle{plain}
-\newtheorem{theorem}{Teorema}[chapter]
-\theoremstyle{plain}
-\newtheorem{corollary}{Corolario}[chapter]
-\theoremstyle{plain}
 \newtheorem{proposition}{Proposición}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definición}[chapter]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corolario}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{remark}
 \renewcommand*{\proofname}{Prueba}
 \newtheorem*{remark}{Observación}
@@ -245,7 +246,7 @@ Sánchez
 Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \end{tabular}
 \end{flushleft}
-\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, frame hidden, breakable, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable, enhanced, sharp corners, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Indice de contenidos}
 {
@@ -965,7 +966,7 @@ mínimo.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -1312,7 +1313,7 @@ El cardinal del conjunto potencia de un conjunto \(A\) es
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -1530,7 +1531,7 @@ estrictamente mayor que el cardinal de \(A\), es decir,
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -1579,7 +1580,7 @@ al del conjunto potencia del conjunto de los números naturales
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -1830,7 +1831,7 @@ El número \(\sqrt{2}\) no es racional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -1867,7 +1868,7 @@ Entre dos números racionales siempre existe un número irracional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2100,7 +2101,7 @@ siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2324,7 +2325,7 @@ decir, cumple las propiedades
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2418,7 +2419,7 @@ propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2641,7 +2642,7 @@ Se cumplen las siguientes propiedades del valor absoluto:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2761,7 +2762,7 @@ inferior, entonces tiene un ínfimo \(m\in \mathbb{R}\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2780,7 +2781,7 @@ natural \(n\in \mathbb{N}\) tal que \(a<n\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2824,7 +2825,7 @@ llama \emph{raíz cuadrada} de \(a\) y se denota por \(\sqrt{a}\) o
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2886,7 +2887,7 @@ número racional \(q\in \mathbb{Q}\) tal que \(a<q<b\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -2921,7 +2922,7 @@ número irracional \(p\in \mathbb{R}\setminus \mathbb{Q}\) tal que
 
 \end{corollary}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3030,7 +3031,7 @@ que \(b\) \[
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 Obsérvese que si \(a=b\), \((a,a)=\emptyset\) y \([a,a]=\{a\}\).
 \end{tcolorbox}
 
@@ -3105,7 +3106,7 @@ longitudes \(\{b_n-a_n: n\in \mathbb{N}\}\) es \(0\), entonces \(a\) es
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3235,7 +3236,7 @@ de manera que
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 El que un punto no sea punto interior de un conjunto no significa que
 sea un punto exterior. Por ejemplo, \(1\) no es un punto interior del
 intervalo \((0,1)\), y tampoco de su complementario
@@ -3275,7 +3276,7 @@ cumple que \(\operatorname{Int}((a,b)) = (a,b)\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3297,7 +3298,7 @@ puntos interiores suyos, es decir, dado un intervalo cerrado
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3342,7 +3343,7 @@ decir,
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3386,7 +3387,7 @@ El conjunto de los puntos de acumulación de \(A\) se llama
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 Resulta obvio de la definición que cualquier punto de acumulación es
 también un punto de adherencia, es decir,
 \(\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\) para cualquier
@@ -3444,7 +3445,7 @@ Para cualquier intervalo abierto \((a,b)\) se tiene que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3483,7 +3484,7 @@ Para cualquier conjunto \(A\subseteq \mathbb{R}\), se tiene que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3524,7 +3525,7 @@ decir, existe \(\varepsilon>0\) tal que
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
 \end{tcolorbox}
 
@@ -3559,7 +3560,7 @@ Todo intervalo cerrado \([a,b]\) es cerrado, pues su complementario
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 Un subconjunto puede ser abierto y cerrado a la vez, como por ejemplo
 \(\mathbb{R}\) y \(\emptyset\). \(\mathbb{R}\) es abierto ya que todos
 sus puntos son interiores, y por tanto
@@ -3598,7 +3599,7 @@ Se cumplen las siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3608,7 +3609,7 @@ Se deja como ejercicio.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 La intersección de una colección infinita de conjuntos abiertos puede no
 ser un conjunto abierto, como por ejemplo la colección de conjuntos
 \(I_n=(0,1+\frac{1}{n})\), \(n\in\mathbb{N}\), ya que
@@ -3630,7 +3631,7 @@ tiene un mínimo.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3662,7 +3663,7 @@ punto de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3711,7 +3712,7 @@ a todos sus puntos de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3778,7 +3779,7 @@ los términos \(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\).
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 No hay que confundir los términos de una sucesión
 \((x_n)_{n=1}^\infty\), que tienen orden, con el conjunto de los valores
 de la sucesión \(\{x_n:n\in\mathbb{N}\}\) que no tiene orden.
@@ -3919,7 +3920,7 @@ Una sucesión de números reales puede tener a lo sumo un límite.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3958,7 +3959,7 @@ solo si \((x_n)_{n=1}^\infty\) converge, y en tal caso,
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -3993,7 +3994,7 @@ números reales tales que \((y_n)_{n=1}^\infty\) converge a 0. Si existe
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4044,7 +4045,7 @@ Toda sucesión de números reales convergente está acotada.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4074,7 +4075,7 @@ estuviese acotada existiría un \(c>0\) tal que \(|n|\leq c\)
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 El otro sentido de la implicación no se cumple, es decir, no toda
 sucesión acotada es convergente. Por ejemplo, la sucesión
 \(((-1)^n)_{n=1}^\infty\).
@@ -4105,7 +4106,7 @@ números reales tales que \((x_n)_{n=1}^\infty\) converge a \(x\) e
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4196,7 +4197,7 @@ entonces \((y_n)_{n=1}^\infty\) converge a \(x\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4270,7 +4271,7 @@ entonces \((x_n)_{n=1}^\infty\) converge a 0.
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4380,7 +4381,7 @@ si y solo si está acotada. Además se cumple que:
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4554,7 +4555,7 @@ subsucesión suya converge también a \(x\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4619,7 +4620,7 @@ convergente.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4658,7 +4659,7 @@ hace a un número de \(A\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4701,7 +4702,7 @@ tiene una subsucesión convergente a un número del conjunto.
 
 \end{corollary}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4771,7 +4772,7 @@ tiende a \(\infty\), y si es decreciente tiende a \(-\infty\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4800,7 +4801,7 @@ también tiende a \(-\infty\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4843,7 +4844,7 @@ Sean \((x_n)_{n=1}^\infty\), \((y_n)_{n=1}^\infty\) y
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4864,7 +4865,7 @@ Entonces, \((x_n)_{n=1}^\infty\) tiende a \(\infty\) si y solo si
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -4915,7 +4916,7 @@ sucesión de Cauchy.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, left=2mm, colback=white, breakable]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
 
 \begin{proof}
 
@@ -5046,6 +5047,18 @@ f:\,&A\longrightarrow B\\
 
 \end{definition}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion.tex}
+
+}
+
+\caption{Ejemplo de función.}
+
+\end{figure}
+
 Cuando el conjunto inicial y final es el de los números reales
 \(\mathbb{R}\), entonces se dice que
 \(f:\mathbb{R}\rightarrow \mathbb{R}\) es una \emph{función real de
@@ -5059,7 +5072,8 @@ Existen distintas formas de representar los pares de elementos que
 forman parte de una función.
 
 \hypertarget{por-extensiuxf3n}{%
-\subsubsection{Por extensión}\label{por-extensiuxf3n}}
+\subsubsection*{Por extensión}\label{por-extensiuxf3n}}
+\addcontentsline{toc}{subsubsection}{Por extensión}
 
 \begin{itemize}
 \item
@@ -5081,8 +5095,21 @@ forman parte de una función.
   plano Real cartesiano.
 \end{itemize}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/grafica-funcion.tex}
+
+}
+
+\caption{Gráfica de una función.}
+
+\end{figure}
+
 \hypertarget{por-intensiuxf3n}{%
-\subsubsection{Por Intensión}\label{por-intensiuxf3n}}
+\subsubsection*{Por Intensión}\label{por-intensiuxf3n}}
+\addcontentsline{toc}{subsubsection}{Por Intensión}
 
 \begin{itemize}
 \item
@@ -5107,6 +5134,16 @@ forman parte de una función.
     \]
 \end{itemize}
 
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+La representación algebraica paramétrica puede dar lugar a relaciones
+que no son funciones. Por ejemplo \[\begin{cases}
+  y=t\\
+  x=t^2
+  \end{cases}
+  \] que no es una función al asignar a los valores de \(x\) dos
+imágenes distintas.
+\end{tcolorbox}
+
 \hypertarget{dominio-de-una-funciuxf3n}{%
 \section{Dominio de una función}\label{dominio-de-una-funciuxf3n}}
 
@@ -5125,6 +5162,18 @@ los que la función está definida
 
 Dada la función \[f(x)=\frac{1}{\sqrt{x^2-1}}\]
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/ejemplo-dominio.tex}
+
+}
+
+\caption{Dominio de la función \(f(x)=\frac{1}{\sqrt{x^2-1}}\).}
+
+\end{figure}
+
 Para determinar su dominio hay que eliminar los valores en los que no
 está definida la función. En este caso hay que eliminar los valores que
 hacen negativo el radicando de la raíz del denominador, es decir, los
@@ -5141,7 +5190,7 @@ anulan el denominador, es decir, los valores de \(x\) tales que
 \section{Imagen de una función}\label{imagen-de-una-funciuxf3n}}
 
 \leavevmode\vadjust pre{\hypertarget{def-imagen-funcion}{}}%
-\begin{definition}[Imagen de una función]\label{def-imagen-funcion}
+\begin{definition}[Imagenñ de una función]\label{def-imagen-funcion}
 
 La \emph{imagen} de una función \(f\) es el conjunto de valores que la
 función puede tomar
@@ -5154,6 +5203,18 @@ función puede tomar
 \begin{example}[]\label{exm-imagen-funcion}
 
 Dada la función \(f(x)=x^2-2\)
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/ejemplo-imagen.tex}
+
+}
+
+\caption{Imagen de la función \(f(x)=x^2-2\).}
+
+\end{figure}
 
 Su imagen es
 
@@ -5190,7 +5251,7 @@ Se dice que una función \(f: \mathbb{R}\rightarrow \mathbb{R}\) es una
 
 }
 
-\caption{Límite de una sucesión}
+\caption{Gráfica de una función constante.}
 
 \end{figure}
 
@@ -5210,6 +5271,18 @@ Se llama \emph{función identidad}, a la función
 \[Id(x)=x.\]
 
 \end{definition}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-identidad.tex}
+
+}
+
+\caption{Gráfica de la función identidad.}
+
+\end{figure}
 
 El dominio y la imagen de la función identidad es \(\mathbb{R}\).
 
@@ -5333,6 +5406,18 @@ La función inversa de \(f\) deshace o revierte el efecto de \(f\). Es
 decir, si \(f:A\rightarrow B\) asocia un elemento \(x\in A\) con otro
 \(y\in B\), entonces \(f^{-1}\) asocia el elemento \(y\) con el \(x\).
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-inversa.tex}
+
+}
+
+\caption{Función inversa.}
+
+\end{figure}
+
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-inversa}{}}%
 \begin{example}[]\label{exm-funcion-inversa}
 
@@ -5345,10 +5430,8 @@ sería una función. \footnote{Para que exista la inversa de la función
 
 \end{example}
 
-\bookmarksetup{startatroot}
-
 \hypertarget{crecimiento-de-una-funciuxf3n}{%
-\chapter{Crecimiento de una
+\section{Crecimiento de una
 función}\label{crecimiento-de-una-funciuxf3n}}
 
 \leavevmode\vadjust pre{\hypertarget{def-crecimiento-funcion}{}}%
@@ -5365,21 +5448,93 @@ Se dice que una función \(f\) es \emph{decreciente} en un intervalo
 
 \end{definition}
 
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/funcion-creciente.tex}
+
+}
+
+\caption{Función creciente.}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/funcion-decreciente.tex}
+
+}
+
+\caption{Función decreciente.}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
 \hypertarget{extremos-de-una-funciuxf3n}{%
 \section{Extremos de una función}\label{extremos-de-una-funciuxf3n}}
 
 \leavevmode\vadjust pre{\hypertarget{def-extremos-funcion}{}}%
 \begin{definition}[Máximo y mínimo relativo]\label{def-extremos-funcion}
 
-Se dice que una función \(f\) tiene un \emph{máximo relativo} en
-\(x_0\), si existe un \(\delta>0\) tal que para todo
-\(x\in (x_0-\delta,x_0+\delta)\) se cumple \(f(x_0)\geq f(x)\).
+Se dice que una función \(f:\\mathbb{R}\rightarrow\mathbb{R}\) tiene un
+\emph{máximo relativo} en \(a\), si existe un \(\delta>0\) tal que para
+todo \(x\in (a-\delta,a+\delta)\) se cumple \(f(a)\geq f(x)\).
 
-Se dice que una función \(f\) tiene un \emph{mínimo relativo} en
-\(x_0\), si existe un \(\delta>0\) tal que para todo
-\(x\in (x_0-\delta,x_0+\delta)\) se cumple \(f(x_0)\leq f(x)\).
+Y se dice que \(f\) tiene un \emph{mínimo relativo} en \(a\), si existe
+un \(\delta>0\) tal que para todo \(x\in (a-\delta,a+\delta)\) se cumple
+\(f(a)\leq f(x)\).
 
 \end{definition}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/maximo.tex}
+
+}
+
+\caption{Máximo relativo.}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/minimo.tex}
+
+}
+
+\caption{Mínimo relativo.}
+
+}
+
+\end{minipage}%
+
+\end{figure}
 
 \hypertarget{concavidad-de-una-funciuxf3n}{%
 \section{Concavidad de una función}\label{concavidad-de-una-funciuxf3n}}
@@ -5403,6 +5558,42 @@ Al punto donde cambia la concavidad de una función se le llama
 
 \end{definition}
 
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/funcion-concava-arriba.tex}
+
+}
+
+\caption{Función cóncava hacia arriba.}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\input{././img/funciones/funcion-concava-abajo.tex}
+
+}
+
+\caption{Función cóncava hacia abajo.}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
 \hypertarget{funciones-periuxf3dicas}{%
 \section{Funciones periódicas}\label{funciones-periuxf3dicas}}
 
@@ -5423,6 +5614,18 @@ de la función se le llama \emph{amplitud} de \(f\).
 
 \end{definition}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-periodica.tex}
+
+}
+
+\caption{Periodo y amplitud de una función periódica.}
+
+\end{figure}
+
 \hypertarget{funciones-polinuxf3micas}{%
 \section{Funciones polinómicas}\label{funciones-polinuxf3micas}}
 
@@ -5441,6 +5644,18 @@ que se llaman \emph{coeficientes del polinomio}.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-polinomica}{}}%
 \begin{example}[]\label{exm-funcion-polinomica}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-polinomica.tex}
+
+}
+
+\caption{Gráficas de funciones polinómicas.}
+
+\end{figure}
 
 \end{example}
 
@@ -5479,6 +5694,18 @@ donde \(p(x)\) y \(q(x)\) son funcione polinómicas con \(q(x)\neq 0\).
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-racional}{}}%
 \begin{example}[]\label{exm-funcion-racional}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-racional.tex}
+
+}
+
+\caption{Gráficas de funciones racionales.}
+
+\end{figure}
 
 \end{example}
 
@@ -5524,6 +5751,18 @@ donde \(r\) es un número real.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-potencial}{}}%
 \begin{example}[]\label{exm-funcion-potencial}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-potencial.tex}
+
+}
+
+\caption{Gráficas de funciones potenciales.}
+
+\end{figure}
 
 \end{example}
 
@@ -5583,6 +5822,18 @@ Una \emph{función exponencial} de base \(a\) es una función de la forma
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-exponencial}{}}%
 \begin{example}[]\label{exm-funcion-exponencial}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-exponencial.tex}
+
+}
+
+\caption{Gráficas de funciones exponenciales.}
+
+\end{figure}
+
 \end{example}
 
 \hypertarget{propiedades-de-las-funciones-exponenciales}{%
@@ -5633,6 +5884,18 @@ donde \(a\) es un valor real positivo distinto de 1.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-logaritmica}{}}%
 \begin{example}[]\label{exm-funcion-logaritmica}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-logaritmica.tex}
+
+}
+
+\caption{Gráficas de funciones logaritmicas.}
+
+\end{figure}
 
 \end{example}
 
@@ -5715,6 +5978,18 @@ y la hipotenusa.
 
 \end{definition}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/seno-triangulo.tex}
+
+}
+
+\caption{Seno de un ángulo de un triángulo rectángulo.}
+
+\end{figure}
+
 La definición se extiende fácilmente a ángulos de circunferencia con
 vértice en el origen y uno de sus lados el eje \(OX\), como el cociente
 entre la ordenada de cualquier punto del otro lado y su distancia al
@@ -5728,12 +6003,29 @@ vértice.
 
 Se define la función \emph{seno},
 
-\[f(x)=\operatorname{sen} x\]
+\[f(x)=\operatorname{sen}(x)\]
 
 como la función que asocia a cada ángulo \(x\) (habitualmente medido en
 radianes) su seno.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-funcion-seno}{}}%
+\begin{example}[]\label{exm-funcion-seno}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-seno.tex}
+
+}
+
+\caption{Gráfica de la función seno.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-seno}{%
 \subsection{Propiedades de la función
@@ -5778,6 +6070,18 @@ hipotenusa.
 
 \end{definition}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/coseno-triangulo.tex}
+
+}
+
+\caption{Coseno de un ángulo de un triángulo rectángulo.}
+
+\end{figure}
+
 La definición se extiende fácilmente a ángulos de circunferencia con
 vértice en el origen y uno de sus lados el eje \(OX\), como el cociente
 entre la abscisa de cualquier punto del otro lado y su distancia al
@@ -5791,12 +6095,29 @@ vértice.
 
 Se define la función \emph{coseno},
 
-\[f(x)=\cos x\]
+\[f(x)=\cos(x)\]
 
 como la función que asocia a cada ángulo \(x\) (habitualmente medido en
 radianes) su coseno.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-grafica-funcion-coseno}{}}%
+\begin{example}[]\label{exm-grafica-funcion-coseno}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-coseno.tex}
+
+}
+
+\caption{Gráfica de la función coseno.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-coseno}{%
 \subsection{Propiedades de la función
@@ -5833,6 +6154,18 @@ el cateto contiguo.
 
 \end{definition}
 
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/tangente-triangulo.tex}
+
+}
+
+\caption{Tangente de un ángulo de un triángulo rectángulo.}
+
+\end{figure}
+
 La definición se extiende fácilmente a ángulos de circunferencia con
 vértice en el origen y uno de sus lados el eje \(OX\), como el cociente
 entre la ordenada y la abscisa de cualquier punto del otro lado.
@@ -5845,12 +6178,29 @@ entre la ordenada y la abscisa de cualquier punto del otro lado.
 
 Se define la función \emph{tangente},
 
-\[f(x)=\operatorname{tg} x=\frac{\operatorname{sen} x}{\cos x}\]
+\[f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}\]
 
 como la función que asocia a cada ángulo \(x\) (habitualmente medido en
 radianes) su tangente.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-funcion-tangente}{}}%
+\begin{example}[]\label{exm-funcion-tangente}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-tangente.tex}
+
+}
+
+\caption{Gráfica de la función tangente.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-tangente}{%
 \subsection{Propiedades de la función
@@ -5881,11 +6231,28 @@ tangente}\label{propiedades-de-la-funciuxf3n-tangente}}
 
 Se define la función \emph{arcoseno},
 
-\[f(x)=\operatorname{arcsen} x\]
+\[f(x)=\operatorname{arcsen}(x)\]
 
 como la función inversa de la función seno.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-funcion-arcoseno}{}}%
+\begin{example}[]\label{exm-funcion-arcoseno}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-arcoseno.tex}
+
+}
+
+\caption{Gráfica de la función arcoseno.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-arcoseno}{%
 \subsection{Propiedades de la función
@@ -5903,9 +6270,9 @@ arcoseno}\label{propiedades-de-la-funciuxf3n-arcoseno}}
     Su dominio es la imagen de la función seno, es decir \([-1,1]\).
   \item
     Su imagen es el dominio restringido de la función seno, es decir
-    \([-\pi/2,\pi/2]\).\footnote{Para que exista la inversa de la
-      función seno, es necesario restringir su dominio a
-      \([-\pi/2,\pi/2]\) para que sea inyectiva.}
+    \([-\pi/2,\pi/2]\).\footnote{Se pude simplificar porque aunque
+      \(x\rightarrow 1\), \(x\neq 1\) y por tanto el denominador no se
+      anula.}
   \end{itemize}
 \item
   Es creciente en todo el dominio.
@@ -5919,11 +6286,28 @@ arcoseno}\label{propiedades-de-la-funciuxf3n-arcoseno}}
 
 Se define la función \emph{arcocoseno},
 
-\[f(x)=\operatorname{arccos} x\]
+\[f(x)=\operatorname{arccos}(x)\]
 
 como la función inversa de la función coseno.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-funcion-arcocoseno}{}}%
+\begin{example}[]\label{exm-funcion-arcocoseno}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-arcocoseno.tex}
+
+}
+
+\caption{Gráfica de la función arcocoseno.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-arcoseno-1}{%
 \subsection{Propiedades de la función
@@ -5957,11 +6341,28 @@ arcoseno}\label{propiedades-de-la-funciuxf3n-arcoseno-1}}
 
 Se define la función \emph{arcotangente},
 
-\[f(x)=\operatorname{arctg} x\]
+\[f(x)=\operatorname{arctg}(x)\]
 
 como la función inversa de la función tangente.
 
 \end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-funcion-arcotangente}{}}%
+\begin{example}[]\label{exm-funcion-arcotangente}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/funciones/funcion-arcotangente.tex}
+
+}
+
+\caption{Gráfica de la función arcotangente.}
+
+\end{figure}
+
+\end{example}
 
 \hypertarget{propiedades-de-la-funciuxf3n-arcotangente}{%
 \subsection{Propiedades de la función
@@ -6009,6 +6410,1380 @@ trigonométricas}\label{algunas-relaciones-trigonomuxe9tricas}}
 \item
   \(\cos x - \cos y = -2 \operatorname{sen} \dfrac{x+y}{2}\operatorname{sen}\dfrac{x-y}{2}\)
 \end{itemize}
+
+\textbf{Notas}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{luxedmites-de-funciones}{%
+\chapter{Límites de funciones}\label{luxedmites-de-funciones}}
+
+\hypertarget{el-concepto-de-luxedmite}{%
+\section{El concepto de límite}\label{el-concepto-de-luxedmite}}
+
+\hypertarget{aproximaciuxf3n-al-concepto-de-luxedmite}{%
+\subsection{Aproximación al concepto de
+límite}\label{aproximaciuxf3n-al-concepto-de-luxedmite}}
+
+El concepto de límite está ligado al de tendencia.
+
+Decimos que \(x\) \emph{tiende} a un valor \(a\), y lo escribimos
+\(x\rightarrow a\), si se pueden tomar valores de \(x\) tan próximos a
+\(a\) como se quiera, pero sin llegar a valer \(a\).
+
+Si la aproximación es por defecto (con valores menores que \(a\)) se
+dice que \(x\) tiende a \(a\) por la izquierda, y se escribe
+\(x\rightarrow a^-\), y si es por exceso (con valores mayores que \(a\))
+se dice que \(x\) tiende a \(a\) por la derecha, y se escribe
+\(x\rightarrow a^+\).
+
+Cuando la variable \(x\) de una función \(f\) tiende a un valor \(a\),
+cabe preguntarse si sus imágenes mediante \(f\) tienden a otro valor
+concreto:
+
+Si \(f(x)\) tiende a un valor \(l\) cuando \(x\) tiende a \(a\), se dice
+que \(l\) es el \emph{límite} de \(f(x)\) cuando \(x\rightarrow a\), y
+se escribe
+
+\[\lim_{x\rightarrow a}f(x)=l.\]
+
+\hypertarget{luxedmites-laterales}{%
+\subsection{Límites laterales}\label{luxedmites-laterales}}
+
+Si \(f(x)\) tiende a \(l\) cuando \(x\) tiende a \(a\) por la izquierda,
+entonces se dice que \(l\) es el \emph{límite por la izquierda} de
+\(f(x)\) cuando \(x\rightarrow a^-\), y se escribe
+
+\[\lim_{x\rightarrow a^-}f(x)=l.\]
+
+Si \(f(x)\) tiende a \(l\) cuando \(x\) se aproxima a \(a\) por exceso,
+entonces se dice que \(l\) es el \emph{límite por la derecha} de
+\(f(x)\) cuando \(x\rightarrow a^-\), y se escribe
+
+\[\lim_{x\rightarrow a^+}f(x)=l.\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-aproximados}{}}%
+\begin{example}[]\label{exm-limites-aproximados}
+
+Consideremos la función \(f(x)=x^2\) y veamos que pasa cuando
+\(x\rightarrow 2\):
+
+\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Aproximación por defecto} & \qquad & \textrm{Aproximación por exceso}\\
+\begin{array}{|l|l|}
+\hline
+x       & f(x)=x^2   \\
+\hline\hline
+ 1.9    & 3.61       \\
+\hline
+ 1.99   & 3.9601     \\
+\hline
+ 1.999  & 3.996001   \\
+\hline
+ 1.9999 & 3.99960001 \\
+\hline
+\end{array}
+& &
+\begin{array}{|l|l|}
+\hline
+x       & f(x)=x^2   \\
+\hline\hline
+ 2.1    & 4.41       \\
+\hline
+ 2.01   & 4.0401    \\
+\hline
+ 2.001  & 4.004001   \\
+\hline
+ 2.0001 & 4.00040001 \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\lim_{x\rightarrow 2^-}x^2=4
+& &
+\lim_{x\rightarrow 2^+}x^2=4
+\end{array}}\\
+\Downarrow\\
+\lim_{x\rightarrow 2}x^2=4
+\end{array}
+\]
+
+\end{example}
+
+\hypertarget{luxedmites-que-no-existen-i}{%
+\subsection{Límites que no existen
+(I)}\label{luxedmites-que-no-existen-i}}
+
+Si la función no está definida entorno a un punto, entonces no existe el
+límite en dicho punto
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-no-existen}{}}%
+\begin{example}[]\label{exm-limites-no-existen}
+
+Consideremos la función \(f(x)=\dfrac{1}{\sqrt{x^2-1}}\) y veamos que
+pasa cuando \(x\rightarrow 0\):
+
+\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ -0.1   & \textrm{No exite}      \\
+\hline
+ -0.01   & \textrm{No existe}     \\
+\hline
+ -0.001  & \textrm{No existe}   \\
+\hline
+\end{array}
+& &
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ 0.1    &  \textrm{No existe}      \\
+\hline
+ 0.01   & \textrm{No existe}    \\
+\hline
+ 0.001  & \textrm{No existe}   \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^-}\frac{1}{\sqrt{x^2-1}}
+& &
+\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^+}\frac{1}{\sqrt{x^2-1}}
+\end{array}}\\
+\Downarrow\\
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{\sqrt{x^2-1}}
+\end{array}\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/limite-no-existe-1.tex}
+
+}
+
+\caption{Límite que no existe en \(x=0\).}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{luxedmites-que-no-existen-ii}{%
+\subsection{Límites que no existen
+(II)}\label{luxedmites-que-no-existen-ii}}
+
+Cuando los límites laterales no coinciden entonces no existe el límite
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-no-existen-2}{}}%
+\begin{example}[]\label{exm-limites-no-existen-2}
+
+Consideremos la función \(f(x)=\dfrac{\lvert x\rvert}{x}\) y veamos que
+pasa cuando \(x\rightarrow 0\):
+
+\[\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ -0.1   & -1       \\
+\hline
+ -0.01   & -1     \\
+\hline
+ -0.001  & -1   \\
+\hline
+\end{array}
+& &
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ 0.1    & 1       \\
+\hline
+ 0.01   & 1    \\
+\hline
+ 0.001  & 1   \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\displaystyle \lim_{x\rightarrow 0^-}\frac{|x|}{x}=-1
+&\neq &
+\displaystyle \lim_{x\rightarrow 0^+}\frac{|x|}{x}=1
+\end{array}}\\
+\Downarrow\\
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{|x|}{x}
+\end{array}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/limite-no-existe-2.tex}
+
+}
+
+\caption{Límite que no existe en \(x=0\).}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{luxedmites-que-no-existen-iii}{%
+\subsection{Límites que no existen
+(III)}\label{luxedmites-que-no-existen-iii}}
+
+A veces, cuando \(x\rightarrow a\) los valores de \(f(x)\) crecen o
+decrecen infinitamente y entonces no existe el límite. En este caso se
+dice que la función \emph{diverge} y se escribe
+
+\[\lim_{x\rightarrow a}f(x)=\pm \infty\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-no-existen-3}{}}%
+\begin{example}[]\label{exm-limites-no-existen-3}
+
+Veamos la tendencia de la función \(f(x)=\dfrac{1}{x^2}\) cuando
+\(x\rightarrow 0\):
+
+\[
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\begin{array}{|l|r|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ -0.1   & 100       \\
+\hline
+ -0.01   & 10000     \\
+\hline
+ -0.001  & 1000000   \\
+\hline
+\end{array}
+& &
+\begin{array}{|l|r|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ 0.1    & 100       \\
+\hline
+ 0.01   & 10000    \\
+\hline
+ 0.001  & 1000000   \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\displaystyle \lim_{x\rightarrow 0^-}\frac{1}{x^2}=+\infty
+& &
+\displaystyle \lim_{x\rightarrow 0^+}\frac{1}{x^2}=+\infty
+\end{array}}\\
+\Downarrow\\
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{x^2}=\infty
+\end{array}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/limite-no-existe-3.tex}
+
+}
+
+\caption{Límite que no existe en \(x=0\).}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{luxedmites-que-no-existen-iv}{%
+\subsection{Límites que no existen
+(IV)}\label{luxedmites-que-no-existen-iv}}
+
+A veces, el límite de un función en un punto puede no existir porque la
+función oscila rápidamente al acercarnos a dicho punto.
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-no-existen-4}{}}%
+\begin{example}[]\label{exm-limites-no-existen-4}
+
+Consideremos la función \(f(x)=\operatorname{sen} \dfrac{1}{x}\) y
+veamos que pasa cuando \(x\rightarrow 0\):
+
+\[\begin{array}{ccc}
+\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ -0.1   & -0.1736       \\
+\hline
+ -0.01   & -0.9848     \\
+\hline
+-0.005 & 0.3420 \\
+\hline
+ -0.001  & 0.9848  \\
+\hline
+-0.0005  & 0.3420\\
+\hline
+-0.0001 & 0.9848 \\
+\hline
+\end{array}
+& &
+\begin{array}{|l|l|}
+\hline
+x      & f(x)   \\
+\hline\hline
+ 0.1   & 0.1736       \\
+\hline
+ 0.01   & 0.9848     \\
+\hline
+0.005 & -0.3420 \\
+\hline
+ 0.001  & -0.9848  \\
+\hline
+0.0005  & -0.3420\\
+\hline
+0.0001 & -0.9848 \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^-}\operatorname{sen} \frac{1}{x}
+& &
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^+}\operatorname{sen} \frac{1}{x}
+\end{array}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/limite-no-existe-4.tex}
+
+}
+
+\caption{Límite que no existe en \(x=0\).}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{luxedmites-en-el-infinito}{%
+\subsection{Límites en el infinito}\label{luxedmites-en-el-infinito}}
+
+Si \(f(x)\) tiende a \(l\) cuando \(x\) crece infinitamente, entonces se
+dice que \(l\) es el \emph{límite en el infinito} de \(f(x)\) cuando
+\(x\rightarrow +\infty\), y se escribe
+
+\[\lim_{x\rightarrow +\infty}f(x)=l.\]
+
+Si \(f(x)\) tiende a \(l\) cuando \(x\) decrece infinitamente, entonces
+se dice que \(l\) es el \emph{límite en el infinito} de \(f(x)\) cuando
+\(x\rightarrow -\infty\), y se escribe
+
+\[\lim_{x\rightarrow -\infty}f(x)=l.\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-limites-infinito}{}}%
+\begin{example}[]\label{exm-limites-infinito}
+
+Estudiemos la tendencia de \(f(x)=\dfrac{1}{x}\) cuando
+\(x\rightarrow \pm\infty\):
+
+\[
+\begin{array}{ccc}
+x\rightarrow +\infty & \qquad & x\rightarrow -\infty\\
+\begin{array}{|r|l|}
+\hline
+x      & f(x)=1/x   \\
+\hline\hline
+ 1000    & 0.001       \\
+\hline
+ 10000   & 0.0001     \\
+\hline
+ 100000  & 0.00001   \\
+\hline
+\end{array}
+& &
+\begin{array}{|r|l|}
+\hline
+x      & f(x)=1/x   \\
+\hline\hline
+ -1000    & -0.001       \\
+\hline
+ -10000   & -0.0001     \\
+\hline
+ -100000  & -0.00001   \\
+\hline
+\end{array}\\
+\Downarrow & & \Downarrow\\
+\lim_{x\rightarrow +\infty}\frac{1}{x}=0
+& &
+\lim_{x\rightarrow -\infty}\frac{1}{x}=0
+\end{array}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/limite-en-infinito.tex}
+
+}
+
+\caption{Límites en el infinito.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{definiciuxf3n-de-luxedmite}{%
+\subsection{Definición de límite}\label{definiciuxf3n-de-luxedmite}}
+
+\leavevmode\vadjust pre{\hypertarget{def-limite-funcion}{}}%
+\begin{definition}[Límite de una función en un
+punto]\label{def-limite-funcion}
+
+Se dice que el límite de la función
+\(f:\mathbb{R}\rightarrow \mathbb{R}\) cuando \(x\rightarrow a\) es
+\(l\), y se escribe
+
+\[\lim_{x\rightarrow a} f(x) = l\]
+
+si para cualquier número \(\varepsilon>0\) existe un número \(\delta>0\)
+tal que, \(|f(x)-l|<\varepsilon\) \(\forall |x-a|<\delta\).
+
+\end{definition}
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/definicion-limite.tex}
+
+}
+
+\caption{Límite de una función.}
+
+\end{figure}
+
+\hypertarget{definiciuxf3n-de-luxedmite-en-el-infinito}{%
+\subsection{Definición de límite en el
+infinito}\label{definiciuxf3n-de-luxedmite-en-el-infinito}}
+
+\leavevmode\vadjust pre{\hypertarget{def-limite-en-infinito}{}}%
+\begin{definition}[Límite de una función en el
+infinito]\label{def-limite-en-infinito}
+
+Se dice que el límite de la función
+\(f:\mathbb{R}\rightarrow \mathbb{R}\) cuando \(x\rightarrow +\infty\)
+es \(l\), y se escribe
+
+\[\lim_{x\rightarrow +\infty} f(x) =l\]
+
+si para cualquier valor \(\varepsilon>0\) existe un número \(\delta>0\)
+tal que, \(|f(x)-l| <\varepsilon\) siempre que \(x>\delta\).
+
+Se dice que el límite de la función \(f\) cuando
+\(x\rightarrow -\infty\) es \(l\), y se escribe
+
+\[\lim_{x\rightarrow -\infty} f(x) =l\]
+
+si para cualquier valor \(\varepsilon>0\) existe un número \(\delta<0\)
+tal que, \(|f(x)-l|<\varepsilon\) siempre que \(x<\delta\).
+
+\end{definition}
+
+\hypertarget{uxe1lgebra-de-luxedmites}{%
+\section{Álgebra de límites}\label{uxe1lgebra-de-luxedmites}}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-suma-resta-producto-cociente-funciones}{}}%
+\begin{proposition}[]\label{prp-limite-suma-resta-producto-cociente-funciones}
+
+Dadas dos funciones \(f,g:\mathbb{R}\rightarrow \mathbb{R}\), tales que
+existe \(\lim_{x\rightarrow a}f(x)\) y \(\lim_{x\rightarrow a}g(x)\),
+entonces se cumple que
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)\),
+  \(\forall c\in\mathbb{R}\).
+\item
+  \(\lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).\)
+\item
+  \(\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).\)
+\item
+  \(\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}\)
+  si \(\lim_{x\rightarrow a}g(x)\neq 0.\)
+\end{enumerate}
+
+\end{proposition}
+
+\hypertarget{luxedmites-de-las-funciones-elementales}{%
+\subsection{Límites de las funciones
+elementales}\label{luxedmites-de-las-funciones-elementales}}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-polinomica}{}}%
+\begin{proposition}[Límite de una función
+polinómica]\label{prp-limite-funcion-polinomica}
+
+Si \(f\) es una función polinómica, entonces existe el límite de \(f\)
+en cualquier punto \(a\in \mathbb{R}\) y
+\(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-racional}{}}%
+\begin{proposition}[Límite de una función
+racional]\label{prp-limite-funcion-racional}
+
+Si \(f(x)=\dfrac{p(x)}{q(x)}\) con \(p(x)\) y \(q(x)\) funciones
+polinómicas, entonces existe el límite de \(f\) en cualquier punto
+\(a\in \mathbb{R}\) que no sea una raíz de \(q(x)\), y
+\(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+Si \(a\) es una raíz de \(q(x)\) entonces el límite puede existir o no.
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-potencial}{}}%
+\begin{proposition}[Límite de una función
+potencial]\label{prp-limite-funcion-potencial}
+
+Si \(f(x)=x^r\) con \(r\in \mathbb{R}\), entonces existe el límite de
+\(f\) en cualquier punto \(a\) tal que exista un intervalo
+\((a-\delta,a+\delta)\subset \textrm{Dom}(f)\) para algún \(\delta >0\),
+y en ese caso, \(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-exponencial}{}}%
+\begin{proposition}[Límite de una función
+exponencial]\label{prp-limite-funcion-exponencial}
+
+Si \(f(x)=c^x\) con \(c\in \mathbb{R}\) entonces existe el límite de
+\(f\) en cualquier punto \(a\in \mathbb{R}\) y
+\(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-logaruxedtmica}{}}%
+\begin{proposition}[Límite de una función
+logarítmica]\label{prp-limite-funcion-logarítmica}
+
+Si \(f(x)=\log_c(x)\) con \(c\in \mathbb{R}\), entonces existe el límite
+de \(f\) en cualquier punto \(a\in \mathbb{R}^+\) y
+\(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{prp-limite-funcion-trigonometrica}{}}%
+\begin{proposition}[]\label{prp-limite-funcion-trigonometrica}
+
+Si \(f(x)\) es una función trigonométrica, entonces existe el límite de
+\(f\) en cualquier punto \(a\in \textrm{Dom}(f)\) y
+\(\lim_{x\rightarrow a}f(x)=f(a)\).
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\hypertarget{indeterminaciones-y-su-resoluciuxf3n}{%
+\section{Indeterminaciones y su
+resolución}\label{indeterminaciones-y-su-resoluciuxf3n}}
+
+\hypertarget{tipos-de-indeterminaciones}{%
+\subsection{Tipos de
+indeterminaciones}\label{tipos-de-indeterminaciones}}
+
+Al calcular límites pueden aparecer las siguientes indeterminaciones:
+
+\begin{itemize}
+\item
+  \textbf{Tipo cociente}. Si \(\lim_{x\rightarrow a} f(x)=0\) y
+  \(\lim_{x\rightarrow a} g(x)=0\), entonces \(\dfrac{f(x)}{g(x)}\)
+  presenta una indeterminación del tipo \(\dfrac{0}{0}\) cuando
+  \(x\rightarrow a\).
+
+  Si \(\lim_{x\rightarrow a} f(x)=\pm\infty\) y
+  \(\lim_{x\rightarrow a} g(x)=\pm\infty\), entonces
+  \(\dfrac{f(x)}{g(x)}\) presenta una indeterminación del tipo
+  \(\pm\dfrac{\infty}{\infty}\) cuando \(x\rightarrow a\).
+\item
+  \textbf{Tipo producto}. Si \(\lim_{x\rightarrow a} f(x)=0\) y
+  \(\lim_{x\rightarrow a} g(x)=\pm\infty\), entonces \(f(x)\cdot g(x)\)
+  presenta una indeterminación del tipo \(0\cdot \pm\infty\) cuando
+  \(x\rightarrow a\).
+\item
+  \textbf{Tipo potencia}. Si \(\lim_{x\rightarrow a} f(x)=1\) y
+  \(\lim_{x\rightarrow a} g(x)=\infty\), entonces \(f(x)^{g(x)}\)
+  presenta una indeterminación del tipo \(1^\infty\) cuando
+  \(x\rightarrow a\).
+
+  Si \(\lim_{x\rightarrow a} f(x)=0\) y
+  \(\lim_{x\rightarrow a} g(x)=0\), entonces \(f(x)^{g(x)}\) presenta
+  una indeterminación del tipo \(0^0\) cuando \(x\rightarrow a\).
+
+  Si \(\lim_{x\rightarrow a} f(x)=\infty\) y
+  \(\lim_{x\rightarrow a} g(x)=0\), entonces \(f(x)^{g(x)}\) presenta
+  una indeterminación del tipo \(\infty^0\) cuando \(x\rightarrow a\).
+\item
+  \textbf{Tipo diferencia}. Si \(\lim_{x\rightarrow a} f(x)=\infty\) y
+  \(\lim_{x\rightarrow a} g(x)=\infty\), entonces \(f(x)-g(x)\) presenta
+  una indeterminación del tipo \(\infty-\infty\) cuando
+  \(x\rightarrow a\).
+\end{itemize}
+
+\hypertarget{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-cociente}{%
+\subsection{Resolución de una indeterminación de tipo
+cociente}\label{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-cociente}}
+
+Existen diferentes técnicas para resolver una indeterminación del tipo
+\(\dfrac{0}{0}\) o \(\dfrac{\infty}{\infty}\):
+
+\begin{itemize}
+\tightlist
+\item
+  Factorización de polinomios en funciones racionales.
+\item
+  División por el términos de mayor orden en funciones racionales.
+\item
+  Infinitésimos equivalentes.
+\item
+  Regla de L'Hôpital.
+\end{itemize}
+
+\hypertarget{factorizaciuxf3n-de-polinomios-en-funciones-racionales}{%
+\subsubsection{Factorización de polinomios en funciones
+racionales}\label{factorizaciuxf3n-de-polinomios-en-funciones-racionales}}
+
+Si \(f(x)=\dfrac{p(x)}{q(x)}\) es una función racional que presenta una
+indeterminación de tipo cociente cuando \(x\rightarrow a\), y \(a\) es
+una raíz de \(p(x)\) y \(q(x)\), se puede resolver la indeterminación
+factorizando los polinomios y simplificando.
+
+\leavevmode\vadjust pre{\hypertarget{exm-solucion-indeterminacion-cociente}{}}%
+\begin{example}[]\label{exm-solucion-indeterminacion-cociente}
+
+La función \(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{0}{0}\)
+cuando \(x\rightarrow 1\).
+
+Para resolver la indeterminación factorizamos los polinomios
+
+\[
+\begin{aligned}
+x^3-3x+2 &= (x+2)(x-1)^2,\\
+x^4-4x+3 &= (x^2+2x+3)(x-1)^2.
+\end{aligned}
+\]
+
+Como el factor \((x-1)^2\) es común, podemos simplificar la función en
+el cálculo del límite:\footnote{Se pude simplificar porque aunque
+  \(x\rightarrow 1\), \(x\neq 1\) y por tanto el denominador no se
+  anula.}
+
+\[
+\lim_{x\rightarrow 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\rightarrow 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
+\]
+
+\end{example}
+
+\hypertarget{divisiuxf3n-por-el-tuxe9rmino-de-mayor-orden-en-funciones-racionales}{%
+\subsubsection{División por el término de mayor orden en funciones
+racionales}\label{divisiuxf3n-por-el-tuxe9rmino-de-mayor-orden-en-funciones-racionales}}
+
+Si \(f(x)=\dfrac{p(x)}{q(x)}\) es una función racional que presenta una
+indeterminación de tipo cociente cuando \(x\rightarrow \pm\infty\),
+entonces se puede resolver dividendo \(p(x)\) y \(q(x)\) por el término
+de mayor grado de ambos polinomios.
+
+\leavevmode\vadjust pre{\hypertarget{exm-solucion-indeterminacion-cociente-2}{}}%
+\begin{example}[]\label{exm-solucion-indeterminacion-cociente-2}
+
+La función
+\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{\infty}{\infty}\)
+cuando \(x\rightarrow \infty\).
+
+Para resolver la indeterminación dividimos numerador y denominador por
+\(x^4\) que es el término de mayor grado:
+
+\[
+\lim_{x\rightarrow \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
+\]
+
+\end{example}
+
+En general, si
+\(f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}\),
+entonces:
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(n>m\) entonces \(\lim_{x\rightarrow \pm \infty}f(x)=\pm\infty\).
+\item
+  Si \(n<m\) entonces \(\lim_{x\rightarrow \pm \infty}f(x)=0\).
+\item
+  Si \(n=m\) entonces
+  \(\lim_{x\rightarrow \pm \infty}f(x)=\dfrac{a_n}{b_m}\).
+\end{itemize}
+
+\hypertarget{infinituxe9simos-equivalentes}{%
+\subsubsection{Infinitésimos
+equivalentes}\label{infinituxe9simos-equivalentes}}
+
+\leavevmode\vadjust pre{\hypertarget{def-infinitesimos-equivalentes}{}}%
+\begin{definition}[Infinitésimos
+equivalentes]\label{def-infinitesimos-equivalentes}
+
+Si \(f(x)\rightarrow 0\) y \(g(x)\rightarrow 0\) cuando
+\(x\rightarrow a\), entonces se dice que \(f\) y \(g\) son
+\emph{infinitésimos equivalentes} cuando \(x\rightarrow a\) si se cumple
+
+\[\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1.\]
+
+En tal caso se escribe \(f(x)\approx g(x)\) cuando \(x\rightarrow a\).
+
+\end{definition}
+
+Si \(f(x)\approx g(x)\) cuando \(x\rightarrow a\) entonces \(f(x)\) y
+\(g(x)\) son magnitudes equivalentes cuando \(x\rightarrow a\).
+
+Infinitésimos equivalentes cuando \(x\rightarrow 0\):
+
+\[
+\begin{array}{c}
+\operatorname{sen} x \approx x \approx \operatorname{tg} x\\
+1-\cos x \approx \dfrac{x^2}{2}\\
+\operatorname{arctg} x \approx x\\
+e^x-1 \approx x\\
+\log(1+x) \approx x\\
+\end{array}
+\]
+
+A veces se puede resolver una indeterminación cuando \(x\rightarrow a\)
+sustituyendo cualquier subexpresión de la función por un infinitésimo
+equivalente cuando \(x\rightarrow a\).
+
+\leavevmode\vadjust pre{\hypertarget{exm-infinitesimo-equivalente}{}}%
+\begin{example}[]\label{exm-infinitesimo-equivalente}
+
+La función
+\(f(x)=\dfrac{\operatorname{sen} x(1- \cos x)}{x^3}\rightarrow \dfrac{0}{0}\)
+cuando \(x\rightarrow 0\).
+
+Como \(\operatorname{sen} x \approx x\) y
+\(1-\cos x\approx \dfrac{x^2}{2}\) cuando \(x\rightarrow 0\), para
+resolver la indeterminación sustituimos \(\operatorname{sen} x\) por
+\(x\) y \(1-\cos x\) por \(\dfrac{x^2}{2}\):
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\frac{\operatorname{sen} x(1- \cos x)}{x^3}&=
+\lim_{x\rightarrow 0}\dfrac{x\frac{x^2}{2}}{x^3} =
+\lim_{x\rightarrow 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\rightarrow 0}\dfrac{1}{2} =0.5.
+\end{aligned}
+\]
+
+\end{example}
+
+\hypertarget{regla-de-lhuxf4pital}{%
+\subsubsection{Regla de L'Hôpital}\label{regla-de-lhuxf4pital}}
+
+\leavevmode\vadjust pre{\hypertarget{thm-regla-lhopital}{}}%
+\begin{theorem}[Regla de L'Hôpital]\label{thm-regla-lhopital}
+
+Si \(\dfrac{f(x)}{g(x)}\rightarrow \dfrac{0}{0}\) o
+\(\dfrac{\infty}{\infty}\) cuando \(x\rightarrow a\), entonces si existe
+el límite de \(\dfrac{f'(x)}{g'(x)}\) cuando \(x\rightarrow a\) se
+cumple
+
+\[\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}.\]
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+
+\begin{proof}
+
+Se deja como ejercicio.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, bottomtitle=1mm, opacityback=0, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, toprule=.15mm, coltitle=black, leftrule=.75mm, toptitle=1mm]
+Para que exista \(\lim_{x\rightarrow a}\dfrac{f'(x)}{g'(x)}\) es
+necesario que que \(f\) y \(g\) sean derivables en un entorno de \(a\).
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-regla-lhopital}{}}%
+\begin{example}[]\label{exm-regla-lhopital}
+
+Sea \(f(x)=\dfrac{\log(x^2-1)}{x+2}\rightarrow \dfrac{\infty}{\infty}\)
+cuando \(x\rightarrow \infty\).
+
+Para resolver la indeterminación aplicamos la regla de L'Hôpital:
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow \infty}\frac{\log(x^2-1)}{x+2} &= \lim_{x\rightarrow
+\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\rightarrow \infty}\frac{\frac{2x}{x^2-1}}{1}=\\
+&=\lim_{x\rightarrow \infty}\frac{2x}{x^2-1}= \lim_{x\rightarrow \infty}\frac{\left(2x\right)'}{\left(x^2-1\right)'}=
+\lim_{x\rightarrow \infty}\frac{2}{2x}=0.
+\end{aligned}
+\]
+
+\end{example}
+
+\hypertarget{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-producto}{%
+\subsection{Resolución de una indeterminación de tipo
+producto}\label{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-producto}}
+
+Si \(f(x)\rightarrow 0\) y \(g(x)\rightarrow \pm\infty\) cuando
+\(x\rightarrow a\), entonces la indeterminación
+\(f(x)\cdot g(x)\rightarrow 0\cdot \pm\infty\) puede convertirse en una
+de tipo cociente mediante la transformación:
+
+\[f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\rightarrow \frac{0}{0}.\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-solucion-indeterminacion-producto}{}}%
+\begin{example}[]\label{exm-solucion-indeterminacion-producto}
+
+Sea \(f(x)=x^2e^{1/x^2}\rightarrow 0\cdot\infty\) cuando
+\(x\rightarrow 0\).
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0}x^2e^{1/x^2} &= \lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2}\rightarrow \frac{\infty}{\infty}
+\end{aligned}
+\]
+
+Aplicando ahora la regla de L´Hôpital tenemos:
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2} &= \lim_{x\rightarrow
+0}\frac{\left(e^{1/x^2}\right)'}{\left(1/x^2\right)'} = \lim_{x\rightarrow
+0}\frac{e^{1/x^2}\frac{-2}{x^3}}{\frac{-2}{x^3}} = \lim_{x\rightarrow 0}e^{1/x^2}=\infty.
+\end{aligned}
+\]
+
+\end{example}
+
+\hypertarget{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-potencia}{%
+\subsection{Resolución de una indeterminación de tipo
+potencia}\label{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-potencia}}
+
+Si \(f(x)^{g(x)}\) presenta una indeterminación de tipo potencia cuando
+\(x\rightarrow a\), entonces la indeterminación puede convertirse en una
+de tipo producto mediante la transformación:
+
+\[\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-solucion-indeterminacion-producto}{}}%
+\begin{example}[]\label{exm-solucion-indeterminacion-producto}
+
+Sea \(f(x)=\left(1+\dfrac{1}{x}\right)^{x} \rightarrow 1^\infty\) cuando
+\(x\rightarrow 0\).
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\rightarrow
+0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right) = \exp\left(\lim_{x\rightarrow
+0}x\log\left(1+\frac{1}{x}\right)\right) =\\
+&= \exp\left(\lim_{x\rightarrow 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
+\end{aligned}
+\]
+
+Aplicando ahora la regla de L´Hôpital tenemos:
+
+\[
+\begin{aligned}
+\exp\left(\lim_{x\rightarrow 0}\frac{\left(\log\left(1+\frac{1}{x}\right)\right)'}{\left(1/x\right)'}\right) &=
+\exp\left(\lim_{x\rightarrow 0}\frac{\frac{1}{1+1/x}\frac{-1}{x^2}}{\frac{-1}{x^2}}\right) =
+\exp\left(\lim_{x\rightarrow 0}\frac{1}{1+\frac{1}{x}}\right)=\exp(1)=e.
+\end{aligned}
+\]
+
+\end{example}
+
+\hypertarget{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-diferencia}{%
+\subsection{Resolución de una indeterminación de tipo
+diferencia}\label{resoluciuxf3n-de-una-indeterminaciuxf3n-de-tipo-diferencia}}
+
+Si \(f(x)\rightarrow \infty\) y \(g(x)\rightarrow \infty\) cuando
+\(x\rightarrow a\), entonces la indeterminación \(f(x)-g(x)\) puede
+convertirse en una de tipo cociente mediante la transformación:
+
+\[f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\rightarrow \frac{0}{0}.\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-solucion-indeterminacion-diferencia}{}}%
+\begin{example}[]\label{exm-solucion-indeterminacion-diferencia}
+
+Sea
+\(f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \rightarrow \infty-\infty\)
+cuando \(x\rightarrow 0\).
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0} \frac{1}{\operatorname{sen} x}-\frac{1}{x} &=
+\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} \rightarrow \frac{0}{0}.
+\end{aligned}
+\]
+
+Aplicando ahora la regla de L´Hôpital tenemos:
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} & =
+\lim_{x\rightarrow 0} \frac{\left(x-\operatorname{sen} x\right)'}{\left(x\operatorname{sen} x\right)'}=
+\lim_{x\rightarrow 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \\
+&= \lim_{x\rightarrow 0} \frac{\left(1-\cos x\right)'}{\left(\operatorname{sen} x +x\cos x\right)'} =
+\lim_{x\rightarrow 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\\
+&= \frac{0}{2}=0.
+\end{aligned}
+\]
+
+\end{example}
+
+\hypertarget{asuxedntotas-de-una-funciuxf3n}{%
+\section{Asíntotas de una
+función}\label{asuxedntotas-de-una-funciuxf3n}}
+
+Una asíntota de una función es una recta a la que tiende la función en
+el infinito, es decir, que la distancia entre la recta y la función es
+cada vez menor.
+
+Existen tres tipos de asíntotas:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Asíntota vertial}: \(x=a\),
+\item
+  \textbf{Asíntota horizontal}: \(y=a\),
+\item
+  \textbf{Asíntota oblicua}: \(y=a+bx\).
+\end{itemize}
+
+\hypertarget{asuxedntotas-verticales}{%
+\subsection{Asíntotas verticales}\label{asuxedntotas-verticales}}
+
+\leavevmode\vadjust pre{\hypertarget{def-asintota-vertical}{}}%
+\begin{definition}[Asíntota vertical]\label{def-asintota-vertical}
+
+Se dice que una recta \(x=a\) es una \emph{asíntota vertical} de una
+función \(f\) si se cumple
+
+\[\lim_{x\rightarrow a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\rightarrow a^-}f(x)=\pm \infty\]
+
+\end{definition}
+
+Las asíntotas verticales deben buscarse en los puntos donde no está
+definida la función, pero si lo está en las proximidades.
+
+\leavevmode\vadjust pre{\hypertarget{exm-asintota-vertical}{}}%
+\begin{example}[]\label{exm-asintota-vertical}
+
+La recta \(x=2\) es una asíntota vertical de \(f(x)=\dfrac{x+1}{x-2}\)
+ya que
+
+\[\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/asintota-vertical.tex}
+
+}
+
+\caption{Asíntota vertical.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{asuxedntotas-horizontales}{%
+\subsection{Asíntotas horizontales}\label{asuxedntotas-horizontales}}
+
+\leavevmode\vadjust pre{\hypertarget{def-asintota-horizontal}{}}%
+\begin{definition}[Asíntota horizontal]\label{def-asintota-horizontal}
+
+Se dice que una recta \(y=a\) es una \emph{asíntota horizontal} de una
+función \(f\) si se cumple
+
+\[\lim_{x\rightarrow +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\rightarrow \infty}f(x)=a\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-asintota-horizontal}{}}%
+\begin{example}[]\label{exm-asintota-horizontal}
+
+La recta \(y=1\) es una asíntota horizontal de \(f(x)=\dfrac{x+1}{x-2}\)
+ya que
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
+\lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1.
+\end{aligned}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/asintota-horizontal.tex}
+
+}
+
+\caption{Asíntota horizontal.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{asuxedntotas-oblicuas}{%
+\subsection{Asíntotas oblicuas}\label{asuxedntotas-oblicuas}}
+
+\leavevmode\vadjust pre{\hypertarget{def-asintota-oblicua}{}}%
+\begin{definition}[Asíntota oblicua]\label{def-asintota-oblicua}
+
+Se dice que una recta \(y=a+bx\) es una \emph{asíntota oblicua} de una
+función \(f\) si se cumple
+
+\[\lim_{x\rightarrow \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\rightarrow \pm\infty}f(x)-bx=a.\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-asintota-oblicua}{}}%
+\begin{example}[]\label{exm-asintota-oblicua}
+
+La recta \(y=x+1\) es una asíntota oblicua de \(f(x)=\dfrac{x^2}{x-1}\)
+ya que
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
+\lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
+\lim_{x\rightarrow \pm\infty}\frac{x^2}{x-1}-x &=
+\lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1
+\end{aligned}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/asintota-oblicua.tex}
+
+}
+
+\caption{Asíntota oblicua.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{continuidad}{%
+\section{Continuidad}\label{continuidad}}
+
+\leavevmode\vadjust pre{\hypertarget{def-funcion-continua}{}}%
+\begin{definition}[Función continua en un
+punto]\label{def-funcion-continua}
+
+Se dice que una función \(f\) es \emph{continua} en el punto \(a\) si
+
+\[\lim_{x\rightarrow a}f(x)=f(a).\]
+
+\end{definition}
+
+De esta definición se deducen tres condiciones necesarias para la
+continuidad:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f(a)\in \operatorname{Dom}(f)\).
+\item
+  Existe \(\lim_{x\rightarrow a}f(x)\).
+\item
+  \(\lim_{x\rightarrow a}f(x)=f(a)\).
+\end{enumerate}
+
+Si se rompe alguna de estas condiciones, se dice que la función presenta
+una discontinuidad en \(a\).
+
+\leavevmode\vadjust pre{\hypertarget{def-funcion-continua-intervalo}{}}%
+\begin{definition}[Función continua en un
+intervalo]\label{def-funcion-continua-intervalo}
+
+Se dice que una función \(f\) es \emph{continua} en un intervalo si lo
+es en cada uno de los puntos del intervalo.
+
+\end{definition}
+
+La gráfica de una función continua en un intervalo puede dibujarse sin
+levantar el lápiz.
+
+\hypertarget{tipos-de-discontinuidades}{%
+\section{Tipos de discontinuidades}\label{tipos-de-discontinuidades}}
+
+Dependiendo de la condición de continuidad que se rompa, existen
+distintos tipos de discontinuidades:
+
+\begin{itemize}
+\tightlist
+\item
+  Discontinuidad evitable.
+\item
+  Discontinuidad de 1ª especie de salto finito.
+\item
+  Discontinuidad de 1ª especie de salto infinito.
+\item
+  Discontinuidad de 2ª especie.
+\end{itemize}
+
+\hypertarget{discontinuidad-evitable}{%
+\subsection{Discontinuidad evitable}\label{discontinuidad-evitable}}
+
+\leavevmode\vadjust pre{\hypertarget{def-discontinuiada-evitable}{}}%
+\begin{definition}[Discontinuidad
+evitable]\label{def-discontinuiada-evitable}
+
+Se dice que una función \(f\) tiene una \emph{discontinuidad evitable}
+en el punto \(a\) si existe el límite de \(f(x)\) cuando
+\(x\rightarrow a\) pero
+\(\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)\).
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-discontinuiada-evitable}{}}%
+\begin{example}[]\label{exm-discontinuiada-evitable}
+
+La función \(f(x)=\dfrac{x^2-1}{x-1}\) tiene una discontinuidad evitable
+en \(x=1\) ya que la función no está definida en \(x=1\) pero
+
+\[\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/discontinuidad-evitable.tex}
+
+}
+
+\caption{Discontinuidad evitable en \(x=1\)}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{discontinuidad-de-1uxaa-especie-de-salto-finito}{%
+\subsection{Discontinuidad de 1ª especie de salto
+finito}\label{discontinuidad-de-1uxaa-especie-de-salto-finito}}
+
+\leavevmode\vadjust pre{\hypertarget{def-discontinuidad-1-especie-salto-finito}{}}%
+\begin{definition}[Discontinuidad de 1ª especie de salto
+finito]\label{def-discontinuidad-1-especie-salto-finito}
+
+Se dice que una función \(f\) tiene una \emph{discontinuidad de 1ª
+especie de salto finito} en el punto \(a\) si existen los límites
+laterales de \(f(x)\) cuando \(x\rightarrow a\) pero
+
+\[\lim_{x\rightarrow a^-}f(x)\neq \lim_{x\rightarrow a^+}f(x).\]
+
+A la diferencia entre ambos límite se le lama \emph{salto} de la
+discontinuidad.
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-discontinuidad-1-especie-salto-finito}{}}%
+\begin{example}[]\label{exm-discontinuidad-1-especie-salto-finito}
+
+La función \(f(x)=\dfrac{\lvert x\rvert}{x}\) tiene una discontinuidad
+de 1ª especie de salto finito en \(x=0\) ya que
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0^-}\frac{|x|}{x}&= -1\\
+\lim_{x\rightarrow 0^+}\frac{|x|}{x}&= 1
+\end{aligned}
+\]
+
+Salto \(= 1-(-1)=2\).
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/discontinuidad-salto-finito.tex}
+
+}
+
+\caption{Discontinuidad de primera especie de salto finito en \(x=0\)}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{discontinuidad-de-1uxaa-especie-de-salto-infinito}{%
+\subsection{Discontinuidad de 1ª especie de salto
+infinito}\label{discontinuidad-de-1uxaa-especie-de-salto-infinito}}
+
+\leavevmode\vadjust pre{\hypertarget{def-discontinuidad-1-especie-salto-infinito}{}}%
+\begin{definition}[Discontinuidad de 1ª especie de salto
+infinito]\label{def-discontinuidad-1-especie-salto-infinito}
+
+Se dice que una función \(f\) tiene una \emph{discontinuidad de 1ª
+especie de salto infinito} en el punto \(a\) si
+
+\[\lim_{x\rightarrow a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\rightarrow a^+}f(x)=\pm\infty.\]
+
+\end{definition}
+
+Si \(f\) tienen una discontinuidad de 1ª especie de salto infinito en un
+punto \(a\), entonces \(f\) tienen una asíntota vertical \(x=a\).
+
+\leavevmode\vadjust pre{\hypertarget{exm-discontinuidad-1-especie-salto-infinito}{}}%
+\begin{example}[]\label{exm-discontinuidad-1-especie-salto-infinito}
+
+La función \(f(x)=e^{1/x}\) tiene una discontinuidad de 1ª especie de
+salto infinito en \(x=0\) ya que
+
+\[
+\begin{aligned}
+\lim_{x\rightarrow 0^-}e^{1/x}&= 0\\
+\lim_{x\rightarrow 0^+}e^{1/x}&= \infty
+\end{aligned}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/discontinuidad-salto-infinito.tex}
+
+}
+
+\caption{Discontinuidad de primera especie de salto infinito en \(x=0\)}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{discontinuidad-de-2uxaa-especie}{%
+\subsection{Discontinuidad de 2ª
+especie}\label{discontinuidad-de-2uxaa-especie}}
+
+\leavevmode\vadjust pre{\hypertarget{def-discontinuidad-2-especie}{}}%
+\begin{definition}[Discontinuidad de 2ª
+especie]\label{def-discontinuidad-2-especie}
+
+Se dice que una función \(f\) tiene una \emph{discontinuidad de 2ª
+especie} en el punto \(a\) si no existe alguno de los límites laterales
+y tampoco se trata de una discontinuidad de 1ª especie de salto
+infinito.
+
+\end{definition}
+
+Normalmente la discontinuidades de 2ª especie se dan en puntos donde la
+función no definida en sus proximidades.
+
+\leavevmode\vadjust pre{\hypertarget{exm-discontinuidad-2-especie}{}}%
+\begin{example}[]\label{exm-discontinuidad-2-especie}
+
+La función \(f(x)=\dfrac{1}{\sqrt{x^2-1}}\) tiene una discontinuidad de
+2ª especie en \(x=1\) ya que
+
+\[
+\begin{aligned}
+& \lim_{x\rightarrow 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
+& \lim_{x\rightarrow 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
+\end{aligned}
+\]
+
+\begin{figure}
+
+{\centering 
+
+\input{././img/limites/discontinuidad-segunda-especie.tex}
+
+}
+
+\caption{Discontinuidad de segunda especie en \(x=0\)}
+
+\end{figure}
+
+\end{example}
 
 \textbf{Notas}
 
