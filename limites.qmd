@@ -9,13 +9,21 @@ lang: es
 
 # Límites de funciones
 
+En este capítulo se introduce el concepto de límite de una función real de variable real, que es parecido al que ya se vio para sucesiones de números reales, y resulta imprescindible para llegar al concepto de derivada que se verá en el siguiente capítulo. 
+
+Se presentan también algunas propiedades de los límites, distintas técnicas para calcularlos y algunas aplicaciones importantes. Finalmente se introduce también el concepto de continuidad y se estudian los distintos tipos de discontinuidades que puede presentar una función.
+
 ## El concepto de límite
 
 ### Aproximación al concepto de límite
 
 El concepto de límite está ligado al de tendencia.
 
-Decimos que $x$ *tiende* a un valor $a$, y lo escribimos $x\rightarrow a$, si se pueden tomar valores de $x$ tan próximos a $a$ como se quiera, pero sin llegar a valer $a$.
+Dado un conjunto $A\subseteq \mathbb{R}$, se dice que $x\in A$ *tiende* a un número $a\in\mathbb{R}$, y lo escribimos $x\rightarrow a$, si se pueden tomar valores de $x$ tan próximos a $a$ como se quiera, pero sin llegar a valer $a$.
+
+:::{.callout-warning}
+Para que $x\in A$ tienda a $a$, es necesario que $a$ sea un punto de acumulación de $A$.
+::: 
 
 Si la aproximación es por defecto (con valores menores que $a$) se dice que $x$ tiende a $a$ por la izquierda, y se escribe $x\rightarrow a^-$, y si es por exceso (con valores mayores que $a$) se dice que $x$ tiende a $a$ por la derecha, y se escribe $x\rightarrow a^+$.
 
@@ -82,7 +90,7 @@ $$
 
 ### Límites que no existen (I)
 
-Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto
+Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto.
 
 :::{#exm-limites-no-existen}
 Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando $x\rightarrow 0$:
@@ -134,7 +142,7 @@ x      & f(x)   \\
 
 ### Límites que no existen (II)
 
-Cuando los límites laterales no coinciden entonces no existe el límite
+Cuando los límites laterales no coinciden entonces no existe el límite.
 
 :::{#exm-limites-no-existen-2}
 Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
@@ -188,7 +196,7 @@ $$
 
 A veces, cuando $x\rightarrow a$ los valores de $f(x)$ crecen o decrecen infinitamente y entonces no existe el límite. En este caso se dice que la función *diverge* y se escribe
 
-$$\lim_{x\rightarrow a}f(x)=\pm \infty$$
+$$\lim_{x\rightarrow a}f(x)=\pm \infty.$$
 
 :::{#exm-limites-no-existen-3}
 Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\rightarrow 0$:
@@ -246,7 +254,9 @@ A veces, el límite de un función en un punto puede no existir porque la funci�
 :::{#exm-limites-no-existen-4}
 Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
 
-$$\begin{array}{ccc}
+$$
+\begin{array}{c}
+\underbrace{\begin{array}{ccc}
 \textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
@@ -287,6 +297,9 @@ x      & f(x)   \\
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0^-}\operatorname{sen} \frac{1}{x}
 & &
 \displaystyle \textrm{No existe }\lim_{x\rightarrow 0^+}\operatorname{sen} \frac{1}{x}
+\end{array}}\\
+\Downarrow\\
+\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\operatorname{sen} \frac{1}{x}
 \end{array}
 $$
 
@@ -354,15 +367,15 @@ $$
 :::
 :::
 
-### Definición de límite
+## Definición de límite
 
 :::{#def-limite-funcion}
 ## Límite de una función en un punto
-Se dice que el límite de la función $f:\mathbb{R}\rightarrow \mathbb{R}$ cuando $x\rightarrow a$ es $l$, y se escribe
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $l\in\mathbb{R}$ es el _límite_ de $f$ en $a$ y se escribe
 
 $$\lim_{x\rightarrow a} f(x) = l$$ 
 
-si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que, $|f(x)-l|<\varepsilon$  $\forall |x-a|<\delta$.
+si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
 :::
 
 ::: {.content-visible when-format="html"}
@@ -373,27 +386,120 @@ si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que, 
 ![Límite de una función.](./img/limites/definicion-limite.tex)
 :::
 
-### Definición de límite en el infinito
+:::{.callout-warning}
+Obsérvese que en la definición anterior $x\neq a$, es decir, no es necesario que $|f(a)-l|<\varepsilon$.
+:::
 
-:::{#def-limite-en-infinito}
-## Límite de una función en el infinito
-Se dice que el límite de la función $f:\mathbb{R}\rightarrow \mathbb{R}$ cuando $x\rightarrow +\infty$ es $l$, y se escribe
+:::{#exm-límite-funcion}
+Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall $x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
+\begin{align*}
+|f(x)-a^2| &= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\ 
+&< (1+2|a|)\delta < (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
+\end{align*}
+:::
 
-$$\lim_{x\rightarrow +\infty} f(x) =l$$
+:::{#thm-unicidad-limite-funcion}
+## Unicidad del límite
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces es único.
+:::
 
-si para cualquier valor $\varepsilon>0$ existe un número $\delta>0$ tal que, $|f(x)-l| <\varepsilon$ siempre que $x>\delta$.
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Haremos la prueba por reducción al absurdo. Supongamos que $l_1$ y $l_2$ son límites de $f$ en $a$, y que $l_1\neq l_2$. Entonces, existen $\varepsilon_1>0$ y $\varepsilon_2>0$ tales que $(l_1-\varepsilon_1,l_1+\varepsilon_1)\cap (l_2-\varepsilon_2,l_2+\varepsilon_2)=\emptyset$. 
 
-Se dice que el límite de la función $f$ cuando $x\rightarrow -\infty$ es $l$, y se escribe
+Como $\lim_{x\to a} f(x)=l_1$, existe $\delta_1>0$ tal que, $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta_1$ se tiene que $f(x)\in (l_1-\varepsilon_1,l_1+\varepsilon_1)$.
 
-$$\lim_{x\rightarrow -\infty} f(x) =l$$
+Del mismo modo, como $\lim_{x\to a} f(x)=l_2$, existe $\delta_2>0$ tal que, $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta_2$ se tiene que $f(x)\in (l_2-\varepsilon_2,l_2+\varepsilon_2)$.
 
-si para cualquier valor $\varepsilon>0$ existe un número $\delta<0$ tal que, $|f(x)-l|<\varepsilon$ siempre que $x<\delta$.
+Tomando ahora $\delta=\min\{\delta_1,\delta_2\}$, se tiene que si $x\in A\setminus\{a\}$ y $|x-a|<\delta$, $f(x)\in (l_1-\varepsilon_1,l_1+\varepsilon_1)$ y $f(x)\in (l_2-\varepsilon_2,l_2+\varepsilon_2)$, lo que contradice que $(l_1-\varepsilon_1,l_1+\varepsilon_1)\cap (l_2-\varepsilon_2,l_2+\varepsilon_2)=\emptyset$. Por consiguiente, tiene que ser $l_1=l_2$.
+:::
+:::
+
+:::{#thm-criterio-sucesiones}
+## Criterio de las sucesiones
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se cumple que $\lim_{x\to a}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $A\setminus\{a\}$ que converge a $a$, se tiene que $(f(x_n))_{n=1}^\infty$ converge a $l$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\lim_{x\to a}f(x)=l$ y sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ que converge a $a$. Veamos que $(f(x_n))_{n=1}^\infty$ converge a $l$.
+Dado $\varepsilon>0$, como $\lim_{x\to a}f(x)=l$ existe $\delta>0$ tal que $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$ se tiene $|f(x)-l|<\varepsilon$. 
+
+Por otro lado, como $\lim_{n\to \infty} x_n=a$, para este $\delta$ existe $k\in\mathbb{N}$ tal que $|x_n-a|<\delta$ $\forall n\geq k$.
+
+Así pues, si $n\geq k$, como $x_n\in A\setminus\{a\}$ y 
+$|x_n-a|<\delta$, se tiene que $|f(x_n)-l|<\varepsilon$. Por tanto, $\lim_{x\to a}f(x_n) = l$.
+
+Para probar el otro sentido de la implicación, utilizaremos la reducción al absurdo. Supongamos que para cualquier sucesión $(x_n)_{n=1}^\infty$ en $A\setminus\{a\}$ se tiene que $\lim_{n\to\infty}f(x_n)=l$, pero $\lim_{x\to a}f(x)\neq l$. Entonces, existe $\varepsilon>0$ tal que $\forall \delta>0$ existe $x_\delta\in A\setminus\{a\}$ con $|x_\delta -a|<\delta$, pero $|f(x_\delta)-l|\geq \varepsilon$. En particular, para cada $n\in\mathbb{N}$, tomando $\delta=\frac{1}{n}$ y $x_n=x_\delta$, se construye una sucesión $(x_n)_{n=1}^\infty$ que converge a $a$ pero tal que $(f(x_n))_{n=1}^\infty$ no converge a $l$, lo que contradice que $\lim_{x\to a}f(x_n)=l$. Por tanto, se tiene que cumplir que $\lim_{x\to a}f(x)=l$.
+:::
+:::
+
+:::{.callout-important}
+Este criterio se puede utilizar tanto para demostrar que un número es el límite de una función en un punto como, para demostrar que no lo es.
+:::
+
+:::{#exm-criterio-sucesiones-1}
+Sea $f(x)=\frac{1}{x}$ $\forall x\neq 0$ y sea $a\neq 0$. Entonces, para cualquier sucesión $(x_n)_{n=1}^\infty$ convergente a $a$ con $x_n\neq 0$ $\forall n\in\mathbb{N}$, se tiene 
+
+$$
+\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}\frac{1}{x_n}= \frac{\lim_{n\to\infty}1}{\lim_{n\to\infty}x_n} = \frac{1}{a},
+$$
+
+por lo que, aplicando el criterio anterior se tiene $\lim_{x\to a}f(x) = \frac{1}{a}$.
+
+Del mismo modo, si $a=0$, tomando la sucesión $\left(\frac{1}{n}\right)_{n=1}^\infty$ que converge a $0$, $\lim_{n\to\infty}f\left(\frac{1}{n}\right) = \lim_{n\to\infty}n=\infty$, por lo que no existe $\lim_{x\to 0}f(x)$.
+:::
+
+:::{#exm-criterio-sucesiones-2}
+Sea $f(x)=\operatorname{sen}\left(\frac{1}{x}\right)$ $\forall x\neq 0$. Tomando la sucesión $\left(\frac{1}{n\pi}\right)_{n=1}^\infty$, que converge a $0$, se tiene que 
+
+$$
+\lim_{n\to\infty}f\left(\frac{1}{n\pi}\right) = \lim_{n\to\infty}\operatorname{sen}\left(\frac{1}{\frac{1}{n\pi}}\right) = \lim_{n\to\infty}\operatorname{sen}(n\pi) = 0.
+$$
+
+Y tomando la sucesión $\left(\frac{1}{2n\pi+\pi/2}\right)_{n=1}^\infty$, que también converge a $0$, se tiene que 
+
+$$
+\lim_{n\to\infty}f\left(\frac{1}{2n\pi+\pi/2}\right) = \lim_{n\to\infty}\operatorname{sen}\left(\frac{1}{\frac{1}{2n\pi+\pi/2}}\right) = \lim_{n\to\infty}\operatorname{sen}(2n\pi+\pi/2) = 1.
+$$
+
+Por tanto, el límite de la función aplicada a estas dos sucesiones es distinto, y por el criterio anterior, no existe el límite de $f$ en $0$.
+:::
+
+:::{#def-funcion-acotada-entorno}
+## Función acotada en un entorno de un punto
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $f$ está _acotada_ en el entorno de $a$ si existe un $\delta>0$ y un $c>0$ tal que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$.
+:::
+
+:::{#prp-limite-funcion-acotada}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces $f$ está acotada en un entorno de $a$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\lim_{x\to a}f(x))=l$. Entonces, dado $\varepsilon=1$ existe $\delta>0$ tal que $|f(x)-l|<1$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$, y por tanto, 
+
+$$
+|f(x)| = |f(x)-l+l|\leq |f(x)-l| + |l| < 1+|l|
+$$ 
+
+$\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
+
+Tomando ahora $c=\max\{1+|l|,|f(a)|\}$, se tiene que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$, y por tanto, $f$ está acotada en un entorno de $a$.
+:::
+:::
+
+:::{#exm-funcion-no-acotada}
+La función $f(x)=\frac{1}{x}$ no está acotada en un entorno de $0$, por lo que no existe el límite de $f$ en $0$.
 :::
 
 ## Álgebra de límites
 
 :::{#prp-limite-suma-resta-producto-cociente-funciones}
-Dadas dos funciones $f,g:\mathbb{R}\rightarrow \mathbb{R}$, tales que existe $\lim_{x\rightarrow a}f(x)$ y $\lim_{x\rightarrow a}g(x)$, entonces se cumple que
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, tales que existe $\lim_{x\to a}f(x)$ y $\lim_{x\to a}g(x)$, entonces se cumple que
 
 1. $\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$, $\forall c\in\mathbb{R}$.
 
@@ -401,10 +507,229 @@ Dadas dos funciones $f,g:\mathbb{R}\rightarrow \mathbb{R}$, tales que existe $\l
 
 3. $\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).$
 
-4. $\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$ si $\lim_{x\rightarrow a}g(x)\neq 0.$
+4. Si $g(x)\neq 0$ $\forall x\in A$ y $\lim_{x\to a}g(x)\neq 0$, entonces $\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$.
 :::
 
-### Límites de las funciones elementales
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\lim_{x\to a}f(x)=l$ y $\lim_{x\to a}g(x)=m$, y sea $(x_n)_{n=1}^\infty$ una sucesión convergente a $a$. Entonces $\lim_{x\to a}f(x_n) = l$ y $\lim_{x\to a}g(x_n)=m$, y por tanto, 
+
+$$
+\lim_{n\to\infty}(f+g)(x_n) = \lim_{n\to\infty}f(x_n)+g(x_n) = \lim_{n\to\infty}f(x_n)+ \lim_{n\to\infty}g(x_n) = l+m,
+$$
+
+por lo que $\lim_{x\to a}(f+g)(x)=l+m$.
+
+El resto son similares y se dejan como ejercicio.
+:::
+:::
+
+:::{#exm-limite-suma-resta-producto-cociente-funciones}
+Sea $f(x)=x^3+x^2-2x-1$, entonces
+
+\begin{align*}
+\lim_{x\to 2}f(x) &= \lim_{x\to 2}x^3+x^2-2x-1\\  
+&= \lim_{x\to 2}x^3 + \lim_{x\to 2}x^2 - \lim_{x\to 2} 2x - \lim_{x\to 2} 1\\
+&= 2^3 + 2^2 -2*2 -1 = 7.
+\end{align*}
+
+Sea ahora $g(x)=\frac{x^2-4}{3x-6}$, entonces
+
+\begin{align*}
+\lim_{x\to 2}g(x) &= \lim_{x\to 2}\frac{x^2-4}{3x-6} = \lim_{x\to 2}\frac{(x+2)(x-2)}{3(x-2)}\\ 
+&= \lim_{x\to 2}\frac{x+2}{3} =\frac{\lim_{x\to 2}x+\lim_{x\to 2}2}{\lim_{x\to 2}3} \tag{$x\neq 2$} \\ 
+&= \frac{2+2}{3}=\frac{4}{3}.
+\end{align*}
+:::
+
+:::{#thm-compresión-funciones}
+## Compresión de funciones
+Dado un conjunto $A\subseteq \mathbb{R}$, tres funciones $f,g,h:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si $f(x)\leq g(x)\leq h(x)$ $\forall x\in A$ y $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l$, entonces $\lim_{x\to a}g(x)=l$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ convergente a $a$. Entonces $f(x_n)\leq g(x_n)\leq h(x_n)$ $\forall n\in\mathbb{N}$ y además $\lim_{n\to\infty} f(x_n)=\lim_{n\to\infty}h(x_n)=l$. Así pues, por el [teorema de compresión de sucesiones](@thm-compresion-sucesiones-convergentes), se tiene que $\lim_{n\to\infty}g(x_n)=l$, y por tanto, $\lim_{x\to a}g(x)=l$.
+:::
+:::
+
+:::{#exm-compresion-funciones}
+Sea $f(x)=x\operatorname{sen}\left(\frac{1}{x}\right)$ $\forall x\neq 0$. Entonces $0\leq \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|\leq |x|$ $\forall x\neq 0$. Como $\lim_{x\to 0}|x| = 0$, aplicando el teorema de compresión de funciones se tiene que $\lim_{x\to 0} \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|=0$ y por tanto $\lim_{x\to 0} x\operatorname{sen}\left(\frac{1}{x}\right)=0$.
+:::
+
+:::{#prp-limite-valor-absoluto}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\lim_{x\to a}f(x)=l$. Por las propiedades del valor absoluto se cumple que $0\leq ||f(x)|-|l||\leq |f(x)-l|$ $\forall x\in A$. Como además $\lim_{x\to a} |f(x)-l|=0$, por el teorema de compresión de funciones se tiene que 
+
+$$\lim_{x\to a}||f(x)|-|l||=0 \Rightarrow \lim_{x\to a}|f(x)|-|l|=0 \Rightarrow \lim_{x\to a}|f(x)|=|l|.$$
+:::
+:::
+
+:::{#prp-limite-raiz}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+## Límites laterales
+
+:::{#def-limites-laterales}
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$,
+
+1. Si $a$ es un punto de acumulación de $\{x\in A: x>a\}$, se dice que $l$ es el _límite por la derecha_ de $f$ en $a$ y se denota $\lim_{x\to a^+}f(x)=l$, si para cualquier $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<x-a<\delta$.
+
+2. Si $a$ es un punto de acumulación de $\{x\in A: x<a\}$, se dice que $l$ es el _límite por la izquierda_ de $f$ en $a$ y se denota $\lim_{x\to a^-}f(x)=l$, si para cualquier $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<a-x<\delta$.
+:::
+
+:::{#thm-limites-laterales}
+## Límites laterales
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$, y sea $a$ un punto de acumulación de los conjuntos $\{x\in A: x>a\}$ y $\{x\in A: x<a\}$, entonces $\lim_{x\to a}f(x)=l$ si y solo si $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\lim_{x\to a}f(x)=l$. Entonces, dado $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$. Así pues, si $x\in A$ y $0<x-c<\delta$ se tiene que $|f(x)-l|\varepsilon$ por lo que $\lim_{x\to a^+}f(x)=l$, y si $x\in A$ y $0<c-x<\delta$ también se tiene que $|f(x)-l|\varepsilon$ por lo que $\lim_{x\to a^-}f(x)=l$.
+
+Para probar el otro sentido de la implicación, supongamos ahora que $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l$. Entonces, dado $\varepsilon>0$, existe $\delta_1>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<x-c<\delta_1$, y también existe $\delta_2>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<c-x<\delta_2$. Así pues, tomando $\delta=\min\{\delta_1,\delta_2\}$, para cualquier $x\in A\setminus\{a\}$ con $|x-a|<\delta$, si $x>a$ se tiene que $0<x-a<\delta<\delta_1$ y, por tanto, $|f(x)-l|<\varepsilon$. Y si $x<a$ se tiene que $0<a-x<\delta<\delta_2$ y, por tanto, $|f(x)-l|<\varepsilon$. Por consiguiente, $\lim_{x\to a}f(x)=l$.
+:::
+:::
+
+:::{#exm-limites-laterales}
+Sea 
+
+$$
+f(x)=\frac{|x|}{x}=
+\begin{cases}
+-1 & \mbox{si } x<0\\
+1 & \mbox{si } x>0
+\end{cases}
+$$
+
+Entonces, $\lim_{x\to 0^-}f(x)=-1$ y $\lim_{x\to 0^+}f(x)=1$, y como los límites son distintos, por el teorema anterior, se tiene que no existe el límite de la función en $0$.
+:::
+
+## Límites infinitos
+
+:::{#def-limite-infinito}
+## Límite infinito
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$, y sea $a$ un punto de acumulación de $A$:
+
+1. Se dice que $f$ tiende a $\infty$ cuando $x$ tiende a $a$, y se denota $\lim_{x\to a}f(x)=\infty$, si para cada $\varepsilon>0$ existe un $\delta>0$ tal que $f(x)>\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
+
+1. Se dice que $f$ tiende a $-\infty$ cuando $x$ tiende a $a$, y se denota $\lim_{x\to a}f(x)=-\infty$, si para cada $\varepsilon<0$ existe un $\delta>0$ tal que $f(x)<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
+:::
+
+:::{#exm-limites-infinitos}
+Sea $f(x)=\frac{1}{x^2}$. Dado $\varepsilon>0$, tomando $\delta=\frac{1}{\sqrt{\varepsilon}}>0$, se tiene que si $0<|x|<\delta=\frac{1}{\sqrt{\varepsilon}}$ entonces
+
+$$
+f(x)=\frac{1}{x^2}> \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \varepsilon.
+$$
+Por tanto, $\lim_{x\to 0}f(x)=\infty$.
+:::
+
+:::{#prp-limites-infinitos}
+Dado un conjunto $A\subseteq \mathbb{R}$, un punto de acumulación $a$ de $A$ y dos funciones $f,g:A\rightarrow \mathbb{R}$ tales que $f(x)\leq g(x)$ $\forall x\in A\setminus\{a\}$:
+
+1. Si $\lim_{x\to a}f(x)=\infty$ entonces $\lim_{x\to a}g(x)=\infty$.
+
+2. Si $\lim_{x\to a}g(x)=-\infty$ entonces $\lim_{x\to a}f(x)=-\infty$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\lim_{x\to a}f(x)=\infty$. Entonces dado $\varepsilon>0$ existe $\delta>0$ tal que $f(x)>\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$, y como $f(x)\leq g(x)$ $\forall x\in A\setminus\{a\}$ también tiene que $g(x)\geq f(x)>\varepsilon$, por lo que $\lim_{x\to a}g(x)=\infty$.
+
+La segunda parte se prueba de forma análoga.
+:::
+:::
+
+## Límites en el infinito
+
+:::{#def-limite-en-infinito}
+## Límite de una función en el infinito
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, se dice que $f$ tiende a $l$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=l$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $|f(x)-l|<\varepsilon$ $\forall x>\delta$.
+
+Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\rightarrow \mathbb{R}$, se dice que $g$ tiende a $l$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=l$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $|f(x)-l|<\varepsilon$ $\forall x<\delta$.
+:::
+
+:::{#exm-limite-en-infinito}
+Sea $f(x)=\frac{1}{x}$ $\forall x\neq 0$. Veamos que $\lim_{x\to\infty}f(x)=0$. Dado $\varepsilon>0$ existe $\delta=\frac{1}{\varepsilon}>0$ tal que si $x>\delta=\frac{1}{\varepsilon}$ se tiene $|f(x)-0|=|f(x)| = \left|\frac{1}{x}\right|<\varepsilon$.
+
+Del mismo modo se puede probar que $\lim_{x\to -\infty}f(x)=0$.
+:::
+
+:::{#thm-criterio-sucesiones-divergente}
+## Criterio de las sucesiones divergentes
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, entonces $\lim_{x\to\infty}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $(a,\infty)$ que diverja a $\infty$, $\lim_{n\to\infty}f(x_n)=l$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\lim_{x\to\infty}f(x)=l$. Entonces, dado $\varepsilon>0$ existe $\delta>a$ tal que $|f(x)-l|<\varepsilon$ $\forall x>\delta$.
+
+Por otro lado, como $\lim_{n\to\infty}x_n=\infty$, existe $k_\delta\in\mathbb{N}$ tal que $x_n>\delta$ $\forall n\geq k_\delta$. Así pues, si $n\geq k_\delta$ se tiene que como $x_n\in A$ y $x_n>\delta$, $|f(x_n)-l|<\varepsilon$, por lo que $\lim_{x\to\infty}f(x_n)=l$.
+
+Para ver el otro sentido de la implicación, procederemos por reducción al absurdo. Supongamos que ahora que para cualquier $(x_n)_{n=1}^\infty$ en $(a,\infty)$ que diverja a $\infty$, $\lim_{n\to\infty}f(x_n)=l$, pero $\lim_{x\to\infty}f(x)\neq l$. Entonces existe $\varepsilon>0$ tal que para cualquier $\delta>a$ existe $x_\delta>\delta$ con $|f(x_\delta)-l|\geq \varepsilon$.
+
+Así, para cada $n\in\mathbb{N}$ existe $x_n>a$ tal que $x_n>n$ y $|f(x_n)-l|\geq \varepsilon$. Entonces $(x_n)_{n=1}^\infty$ es una sucesión en $(a\infty)\subset A$ que diverge a $\infty$ y tal que $(f(x_n))_{n=1}^\infty$ no converge a $l$, lo que contradice la hipótesis de partida. Por consiguiente, debe ser $\lim_{x\to\infty}f(x)=l$.
+:::
+:::
+
+:::{#def-limite-infinito-en-infinito}
+## Límite infinito en el infinito
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, se dice que $f$ tiende a $\infty$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $f(x)>\varepsilon$ $\forall x>\delta$.
+
+Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\rightarrow \mathbb{R}$, se dice que $g$ tiende a $\infty$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $f(x)<\varepsilon$ $\forall x<\delta$.
+:::
+
+:::{#exm-limite-infinito-en-infinito}
+Sea $f(x)=x^2$. Veamos que $\lim_{x\to\infty}f(x)=\infty$. Dado $\varepsilon>0$ existe $\delta=\sqrt{\varepsilon}>0$ tal que si $x>\delta$, entonces $f(x)=x^2>(\sqrt{\varepsilon})^2 =\varepsilon$.
+
+Del mismo modo se puede probar que $\lim_{x\to-\infty}f(x)=\infty$.
+:::
+
+:::{#prp-cociente-limites-infinitos}
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y dos funciones $f,g:A\rightarrow \mathbb{R}$, tales que $g(x)>0$ $\forall x\in A$ y $\lim_{x\to\infty}\frac{f(x)}{g(x)}=l$, entonces:
+
+1. Si $l>0$, $\lim_{x\to\infty}f(x)=\infty$ si y solo si $\lim_{x\to\infty}g(x)=\infty$.
+
+2. Si $l<0$, $\lim_{x\to\infty}f(x)=-\infty$ si y solo si $\lim_{x\to\infty}g(x)=\infty$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\lim_{x\to\infty}\frac{f(x)}{g(x)}=l>0$. Entonces, dado $\varepsilon=\frac{l}{2}>0$ existe $\delta>a$ tal que $\left|\frac{f(x)}{g(x)}-l\right|<\varepsilon=\frac{l}{2}$ $\forall x>\delta$. Así pues, si $x>\delta$ se tiene
+
+\begin{align*}
+\left|\frac{f(x)}{g(x)}-l\right|<\frac{l}{2} &\Rightarrow \frac{-l}{2}<\frac{f(x)}{g(x)}-l<\frac{l}{2}\\ 
+& \Rightarrow \frac{l}{2}<\frac{f(x)}{g(x)}<\frac{3l}{2}\\ 
+&\Rightarrow \frac{l}{2}g(x)<f(x)<\frac{3l}{2}g(x). 
+\end{align*}
+
+Por tanto, por la @prp-limites-infinitos se tiene que si $\lim_{x\to\infty}g(x)=\infty$ entonces $\lim_{x\to\infty}f(x)=\infty$ y si $\lim_{x\to\infty}f(x)=\infty$ entonces $\lim_{x\to\infty}g(x)=\infty$.
+
+La segunda parte se prueba de forma análoga.
+:::
+:::
+
+## Límites de las funciones elementales
 
 :::{#prp-limite-funcion-polinomica}
 ## Límite de una función polinómica

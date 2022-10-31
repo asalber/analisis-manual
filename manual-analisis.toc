@@ -1,0 +1,107 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Prefacio}{3}{chapter*.2}%
+\contentsline {section}{Licencia}{3}{section*.3}%
+\contentsline {chapter}{\numberline {1}Teoría de conjuntos}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Conjuntos}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Álgebra de conjuntos}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Relaciones entre conjuntos}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Cotas y extremos}{13}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Funciones}{15}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Cardinalidad de un conjunto}{18}{section.1.6}%
+\contentsline {chapter}{\numberline {2}El sistema de los números reales}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}El conjunto de los números naturales \(\mathbb {N}\)}{24}{section.2.1}%
+\contentsline {section}{\numberline {2.2}El conjunto de los números enteros \(\mathbb {Z}\)}{25}{section.2.2}%
+\contentsline {section}{\numberline {2.3}El conjunto de los números racionales \(\mathbb {Q}\)}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}El conjunto de los números irracionales}{26}{section.2.4}%
+\contentsline {section}{\numberline {2.5}El conjunto de los números reales}{27}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Clasificación de los conjuntos numéricos}{44}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Topología de la recta real}{45}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Intervalos y entornos}{45}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Clasificación de puntos}{48}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Conjuntos abiertos y cerrados}{52}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Sucesiones de números reales}{56}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Concepto de sucesión}{56}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Límite de una sucesión}{58}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Sucesiones monótonas}{65}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Subsucesiones}{68}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Sucesiones propiamente divergentes}{70}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Sucesiones de Cauchy}{73}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Funciones reales de variable real}{75}{chapter.5}%
+\contentsline {section}{\numberline {5.1}El concepto de función}{75}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Formas de representar una función}{76}{subsection.5.1.1}%
+\contentsline {subsubsection}{Por extensión}{76}{section*.232}%
+\contentsline {subsubsection}{Por Intensión}{76}{section*.234}%
+\contentsline {section}{\numberline {5.2}Dominio de una función}{77}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Imagen de una función}{78}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Álgebra de funciones}{78}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Función constante}{78}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Función identidad}{79}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Composición de funciones}{81}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Función inversa}{82}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Crecimiento de una función}{83}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Extremos de una función}{83}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Concavidad de una función}{83}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Funciones periódicas}{84}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Funciones polinómicas}{85}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Propiedades de las funciones polinómicas}{85}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}Funciones racionales}{86}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Propiedades de las funciones racionales}{86}{subsection.5.12.1}%
+\contentsline {section}{\numberline {5.13}Funciones potenciales}{87}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Propiedades de las funciones potenciales}{88}{subsection.5.13.1}%
+\contentsline {section}{\numberline {5.14}Funciones exponenciales}{88}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Propiedades de las funciones exponenciales}{89}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}Funciones logarítmicas}{89}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Propiedades de las funciones logarítmicas}{90}{subsection.5.15.1}%
+\contentsline {section}{\numberline {5.16}Funciones trigonométricas}{91}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Seno de un ángulo}{91}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Función seno}{92}{subsection.5.16.2}%
+\contentsline {subsection}{\numberline {5.16.3}Propiedades de la función seno}{92}{subsection.5.16.3}%
+\contentsline {subsection}{\numberline {5.16.4}Coseno de un ángulo}{93}{subsection.5.16.4}%
+\contentsline {subsection}{\numberline {5.16.5}Función coseno}{93}{subsection.5.16.5}%
+\contentsline {subsection}{\numberline {5.16.6}Propiedades de la función coseno}{94}{subsection.5.16.6}%
+\contentsline {subsection}{\numberline {5.16.7}Tangente de un ángulo}{94}{subsection.5.16.7}%
+\contentsline {subsection}{\numberline {5.16.8}Función tangente}{95}{subsection.5.16.8}%
+\contentsline {subsection}{\numberline {5.16.9}Propiedades de la función tangente}{95}{subsection.5.16.9}%
+\contentsline {subsection}{\numberline {5.16.10}Función arcoseno}{96}{subsection.5.16.10}%
+\contentsline {subsection}{\numberline {5.16.11}Propiedades de la función arcoseno}{96}{subsection.5.16.11}%
+\contentsline {subsection}{\numberline {5.16.12}Función arcocoseno}{97}{subsection.5.16.12}%
+\contentsline {subsection}{\numberline {5.16.13}Propiedades de la función arcoseno}{97}{subsection.5.16.13}%
+\contentsline {subsection}{\numberline {5.16.14}Función arcotangente}{98}{subsection.5.16.14}%
+\contentsline {subsection}{\numberline {5.16.15}Propiedades de la función arcotangente}{98}{subsection.5.16.15}%
+\contentsline {subsection}{\numberline {5.16.16}Algunas relaciones trigonométricas}{99}{subsection.5.16.16}%
+\contentsline {chapter}{\numberline {6}Límites de funciones}{100}{chapter.6}%
+\contentsline {section}{\numberline {6.1}El concepto de límite}{100}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Aproximación al concepto de límite}{100}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Límites laterales}{101}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Límites que no existen (I)}{101}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Límites que no existen (II)}{102}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}Límites que no existen (III)}{103}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}Límites que no existen (IV)}{104}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}Límites en el infinito}{105}{subsection.6.1.7}%
+\contentsline {section}{\numberline {6.2}Definición de límite}{106}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Álgebra de límites}{110}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Límites laterales}{112}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Límites infinitos}{113}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Límites en el infinito}{114}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Límites de las funciones elementales}{116}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Indeterminaciones y su resolución}{118}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Tipos de indeterminaciones}{118}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Resolución de una indeterminación de tipo cociente}{118}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}Factorización de polinomios en funciones racionales}{119}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}División por el término de mayor orden en funciones racionales}{119}{subsubsection.6.8.2.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.3}Infinitésimos equivalentes}{120}{subsubsection.6.8.2.3}%
+\contentsline {subsubsection}{\numberline {6.8.2.4}Regla de L'Hôpital}{121}{subsubsection.6.8.2.4}%
+\contentsline {subsection}{\numberline {6.8.3}Resolución de una indeterminación de tipo producto}{121}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Resolución de una indeterminación de tipo potencia}{122}{subsection.6.8.4}%
+\contentsline {subsection}{\numberline {6.8.5}Resolución de una indeterminación de tipo diferencia}{123}{subsection.6.8.5}%
+\contentsline {section}{\numberline {6.9}Asíntotas de una función}{123}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Asíntotas verticales}{124}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Asíntotas horizontales}{124}{subsection.6.9.2}%
+\contentsline {subsection}{\numberline {6.9.3}Asíntotas oblicuas}{127}{subsection.6.9.3}%
+\contentsline {section}{\numberline {6.10}Continuidad}{127}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Tipos de discontinuidades}{129}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Discontinuidad evitable}{129}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Discontinuidad de 1ª especie de salto finito}{129}{subsection.6.11.2}%
+\contentsline {subsection}{\numberline {6.11.3}Discontinuidad de 1ª especie de salto infinito}{131}{subsection.6.11.3}%
+\contentsline {subsection}{\numberline {6.11.4}Discontinuidad de 2ª especie}{132}{subsection.6.11.4}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
