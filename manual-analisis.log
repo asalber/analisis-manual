@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  31 OCT 2022 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  2 NOV 2022 10:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -828,11 +828,11 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@corollary=\count341
-\c@proposition=\count342
-\c@theorem=\count343
+\c@definition=\count341
+\c@corollary=\count342
+\c@proposition=\count343
 \c@example=\count344
-\c@definition=\count345
+\c@theorem=\count345
  (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count346
@@ -861,7 +861,29 @@ Package babel Info: Hyphen rules for 'spanish' set to \l@spanish
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 208.
- (./manual-analisis.aux)
+ (./manual-analisis.aux
+
+LaTeX Warning: Label `exm-sucesion2' multiply defined.
+
+
+LaTeX Warning: Label `def-dominio-funcion' multiply defined.
+
+
+LaTeX Warning: Label `def-imagen-funcion' multiply defined.
+
+
+LaTeX Warning: Label `def-funcion-identidad' multiply defined.
+
+
+LaTeX Warning: Label `def-composicion-funciones' multiply defined.
+
+
+LaTeX Warning: Label `def-funcion-inversa' multiply defined.
+
+
+LaTeX Warning: Label `exm-solucion-indeterminacion-producto' multiply defined.
+
+)
 \openout1 = `manual-analisis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 221.
@@ -984,18 +1006,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package tocbasic Info: character protrusion at toc deactivated on input line 255.
+ (./manual-analisis.toc [2
 
-No file manual-analisis.toc.
+]
+Overfull \hbox (1.09496pt too wide) detected at line 72
+ []\T1/lmss/bx/n/10.95 102
+ []
+
+[3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 104.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 \tf@toc=\write4
 \openout4 = `manual-analisis.toc'.
 
-[2
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 287.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3
+ [4] [5
 
 ]
 chapter 1.
@@ -1014,50 +1040,39 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface.
 
-[4
+[6
 
-] [5]
-<./img/teoria-conjuntos/union.png, id=74, 300.53745pt x 233.55548pt>
+] [7]
+<./img/teoria-conjuntos/union.png, id=279, 300.53745pt x 233.55548pt>
 File: ./img/teoria-conjuntos/union.png Graphic file (type png)
 <use ./img/teoria-conjuntos/union.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/union.png  used on input line 527.
 (pdftex.def)             Requested size: 170.71654pt x 132.66827pt.
- [6]
-<./img/teoria-conjuntos/interseccion.png, id=96, 301.125pt x 201.05885pt>
+ [8]
+<./img/teoria-conjuntos/interseccion.png, id=299, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/interseccion.png Graphic file (type png)
 <use ./img/teoria-conjuntos/interseccion.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/interseccion.png  used on input line 548.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
-<./img/teoria-conjuntos/complemento.png, id=97, 302.97807pt x 206.61807pt>
+<./img/teoria-conjuntos/complemento.png, id=300, 302.97807pt x 206.61807pt>
 File: ./img/teoria-conjuntos/complemento.png Graphic file (type png)
 <use ./img/teoria-conjuntos/complemento.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/complemento.png  used on input line 569.
 (pdftex.def)             Requested size: 199.17097pt x 135.82607pt.
- [7 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
-<./img/teoria-conjuntos/diferencia.png, id=112, 300.05772pt x 200.34341pt>
+ [9 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
+<./img/teoria-conjuntos/diferencia.png, id=314, 300.05772pt x 200.34341pt>
 File: ./img/teoria-conjuntos/diferencia.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/diferencia.png  used on input line 590.
 (pdftex.def)             Requested size: 170.71875pt x 113.986pt.
-<./img/teoria-conjuntos/diferencia-simetrica.png, id=113, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/diferencia-simetrica.png, id=315, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/diferencia-simetrica.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia-simetrica.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 616.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
- [8 <./img/teoria-conjuntos/complemento.png> <./img/teoria-conjuntos/diferencia.png>] [9 <./img/teoria-conjuntos/diferencia-simetrica.png>] [10] [11] [12]
+ [10 <./img/teoria-conjuntos/complemento.png> <./img/teoria-conjuntos/diferencia.png>] [11 <./img/teoria-conjuntos/diferencia-simetrica.png>] [12] [13] [14]
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 969.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [13] [14] (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) (././img/teoria-conjuntos/no-funcion.tex) [15] (././img/teoria-conjuntos/funcion-inyectiva.tex) (././img/teoria-conjuntos/funcion-sobreyectiva.tex) (././img/teoria-conjuntos/funcion-biyectiva.tex) (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) [16] [17] [18] [19]
-
-LaTeX Warning: Reference `prp-biyeccion-conjuntos-equipotentes' on page 20 undefined on input line 1456.
-
-
-LaTeX Warning: Reference `prp-biyeccion-conjuntos-equipotentes' on page 20 undefined on input line 1496.
-
-[20] [21]
-
-LaTeX Warning: Reference `thm-cantor' on page 22 undefined on input line 1609.
-
-[22] [23]
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [15] [16] (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) (././img/teoria-conjuntos/no-funcion.tex) [17] (././img/teoria-conjuntos/funcion-inyectiva.tex) (././img/teoria-conjuntos/funcion-sobreyectiva.tex) (././img/teoria-conjuntos/funcion-biyectiva.tex) (././img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex) [18] [19] [20] [21] [22] [23] [24] [25]
 chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 1656.
@@ -1065,51 +1080,33 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 1656.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 1656.
-[24
+[26
 
-] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39
+] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41
 
-] [40] [41]
-
-LaTeX Warning: Reference `cor-consecuencias-arquimedianas' on page 42 undefined on input line 2840.
-
-
-LaTeX Warning: Reference `cor-consecuencias-arquimedianas' on page 42 undefined on input line 2855.
-
-[42] [43] [44]
+] [42] [43] [44] [45] [46]
 chapter 3.
-<./img/topologia-reales/recta-real.png, id=680, 551.43pt x 180.18pt>
+<./img/topologia-reales/recta-real.png, id=876, 551.43pt x 180.18pt>
 File: ./img/topologia-reales/recta-real.png Graphic file (type png)
 <use ./img/topologia-reales/recta-real.png>
 Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 3000.
 (pdftex.def)             Requested size: 418.26656pt x 136.66876pt.
-[45
+[47
 
- <./img/topologia-reales/recta-real.png>] [46] [47]
+ <./img/topologia-reales/recta-real.png>] [48] [49]
 
 LaTeX Warning: Command \~ invalid in math mode on input line 3243.
 
-[48] [49] [50] [51] [52]
-
-LaTeX Warning: Reference `prp-interior-intervalo-abierto' on page 53 undefined on input line 3536.
-
-[53]
-
-LaTeX Warning: Reference `thm-intervalos-anidados' on page 54 undefined on input line 3672.
-
-
-LaTeX Warning: Reference `thm-intervalos-anidados' on page 54 undefined on input line 3690.
-
-[54] [55]
+[50] [51] [52] [53] [54] [55] [56] [57]
 chapter 4.
-[56
+[58
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{exm-sucesion2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3804 ...adjust pre{\hypertarget{exm-sucesion2}{}
-                                                  }% [57] (././img/sucesiones/limite-sucesion.tex
+                                                  }% [59] (././img/sucesiones/limite-sucesion.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <24.88> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1121,38 +1118,11 @@ Overfull \hbox (152.39957pt too wide) in paragraph at lines 44--3892
  [][] 
  []
 
-
-LaTeX Warning: Reference `thm-propiedad-arquimediana' on page 58 undefined on input line 3907.
-
-[58] [59]
-
-LaTeX Warning: Reference `prp-propiedades-valor-absoluto' on page 60 undefined on input line 4057.
-
-[60] [61] [62] [63]
-
-LaTeX Warning: Reference `thm-compresion-sucesiones-convergentes' on page 64 undefined on input line 4295.
-
-[64]
-
-LaTeX Warning: Reference `thm-convergencia-sucesion-acotada' on page 65 undefined on input line 4388.
-
-[65] [66] [67] [68]
-
-LaTeX Warning: Reference `thm-bolzano-weierstrass' on page 69 undefined on input line 4636.
-
-[69]
-
-LaTeX Warning: Reference `thm-bolzano-weierstrass-sucesiones' on page 70 undefined on input line 4712.
-
-[70] [71] [72]
-
-LaTeX Warning: Reference `thm-bolzano-weierstrass-sucesiones' on page 73 undefined on input line 4949.
-
-[73] [74]
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
 chapter 5.
-(././img/funciones/funcion.tex) [75
+(././img/funciones/funcion.tex) [77
 
-] (././img/funciones/grafica-funcion.tex) [76]
+] (././img/funciones/grafica-funcion.tex) [78]
 pdfTeX warning (ext4): destination with the same identifier (name{def-dominio-funcion}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1197,19 +1167,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{def-imagen-fun
 <to be read again> 
                    \relax 
 l.5192 ...t pre{\hypertarget{def-imagen-funcion}{}
-                                                  }% [77] (././img/funciones/ejemplo-imagen.tex
+                                                  }% [79] (././img/funciones/ejemplo-imagen.tex
 Missing character: There is no ; in font nullfont!
-) [78] (././img/funciones/funcion-constante.tex)
+) [80] (././img/funciones/funcion-constante.tex)
 pdfTeX warning (ext4): destination with the same identifier (name{def-funcion-identidad}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.5264 ...re{\hypertarget{def-funcion-identidad}{}
-                                                  }% (././img/funciones/funcion-identidad.tex) [79] [80]
+                                                  }% (././img/funciones/funcion-identidad.tex) [81] [82]
 pdfTeX warning (ext4): destination with the same identifier (name{def-composicion-funciones}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.5364 ...hypertarget{def-composicion-funciones}{}
-                                                  }% [81]
+                                                  }% [83]
 pdfTeX warning (ext4): destination with the same identifier (name{def-funcion-inversa}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1219,7 +1189,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 5429.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 5429.
- [82] (././img/funciones/funcion-creciente.tex) (././img/funciones/funcion-decreciente.tex) (././img/funciones/maximo.tex) (././img/funciones/minimo.tex) [83] (././img/funciones/funcion-concava-arriba.tex) (././img/funciones/funcion-concava-abajo.tex) [84] (././img/funciones/funcion-periodica.tex) (././img/funciones/funcion-polinomica.tex) [85] (././img/funciones/funcion-racional.tex) [86] (././img/funciones/funcion-potencial.tex
+ [84] (././img/funciones/funcion-creciente.tex) (././img/funciones/funcion-decreciente.tex) (././img/funciones/maximo.tex) (././img/funciones/minimo.tex) [85] (././img/funciones/funcion-concava-arriba.tex) (././img/funciones/funcion-concava-abajo.tex) [86] (././img/funciones/funcion-periodica.tex) (././img/funciones/funcion-polinomica.tex) [87] (././img/funciones/funcion-racional.tex) [88] (././img/funciones/funcion-potencial.tex
 NOTE: coordinate (2Y3.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y2.9393951e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y2.8787903e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1270,15 +1240,15 @@ NOTE: coordinate (2Y2.1217613e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (2Y1.5157124e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y9.096635e-2],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y3.036145e-2],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
-) [87] [88] (././img/funciones/funcion-exponencial.tex) [89] (././img/funciones/funcion-logaritmica.tex
+) [89] [90] (././img/funciones/funcion-exponencial.tex) [91] (././img/funciones/funcion-logaritmica.tex
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
-) [90] (././img/funciones/seno-triangulo.tex) [91] (././img/funciones/funcion-seno.tex) [92] (././img/funciones/coseno-triangulo.tex) (././img/funciones/funcion-coseno.tex) [93] (././img/funciones/tangente-triangulo.tex) [94] (././img/funciones/funcion-tangente.tex) [95] (././img/funciones/funcion-arcoseno.tex) [96] (././img/funciones/funcion-arcocoseno.tex) [97] (././img/funciones/funcion-arcotangente.tex) [98] [99]
+) [92] (././img/funciones/seno-triangulo.tex) [93] (././img/funciones/funcion-seno.tex) [94] (././img/funciones/coseno-triangulo.tex) (././img/funciones/funcion-coseno.tex) [95] (././img/funciones/tangente-triangulo.tex) [96] (././img/funciones/funcion-tangente.tex) [97] (././img/funciones/funcion-arcoseno.tex) [98] (././img/funciones/funcion-arcocoseno.tex) [99] (././img/funciones/funcion-arcotangente.tex) [100] [101]
 chapter 6.
-[100
+[102
 
-] [101] (././img/limites/limite-no-existe-1.tex
+] [103] (././img/limites/limite-no-existe-1.tex
 NOTE: coordinate (2Y9.394348e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.7882991e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.1822502e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1313,62 +1283,36 @@ NOTE: coordinate (1Y8.7871191e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (1Y9.393168e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (1Y9.9992169e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
-) [102] (././img/limites/limite-no-existe-2.tex
+) [104] (././img/limites/limite-no-existe-2.tex
 Missing character: There is no ; in font nullfont!
-) [103] (././img/limites/limite-no-existe-3.tex
+) [105] (././img/limites/limite-no-existe-3.tex
 Missing character: There is no ; in font nullfont!
-) [104] (././img/limites/limite-no-existe-4.tex
+) [106] (././img/limites/limite-no-existe-4.tex
 Missing character: There is no ; in font nullfont!
-) [105] (././img/limites/limite-en-infinito.tex
+) [107] (././img/limites/limite-en-infinito.tex
 Missing character: There is no ; in font nullfont!
-) [106] (././img/limites/definicion-limite.tex)
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:6909: Missing $ inserted.
-<inserted text> 
-                $
-l.6909 \$\forall
-                 \(x\neq a\) si \(|x-a|<\delta\), entonces \(|x-a|<1\) y, por
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex:6909: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6909 \$\forall \(
-                   x\neq a\) si \(|x-a|<\delta\), entonces \(|x-a|<1\) y, por
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[107] [108] [109] [110] [111] [112] [113] [114] [115]
-
-LaTeX Warning: Reference `prp-limites-infinitos' on page 116 undefined on input line 7566.
-
-[116] [117] [118] [119] [120] [121]
+) [108] (././img/limites/definicion-limite.tex) [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124]
 pdfTeX warning (ext4): destination with the same identifier (name{exm-solucion-indeterminacion-producto}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7997 ...exm-solucion-indeterminacion-producto}{}
-                                                  }% [122] [123] (././img/limites/asintota-vertical.tex
+l.8059 ...exm-solucion-indeterminacion-producto}{}
+                                                  }% [125] [126] (././img/limites/asintota-vertical.tex
 Missing character: There is no ; in font nullfont!
 ) (././img/limites/asintota-horizontal.tex
 Missing character: There is no ; in font nullfont!
-) [124] [125] [126] (././img/limites/asintota-oblicua.tex
+) [127] [128] [129] (././img/limites/asintota-oblicua.tex
 Missing character: There is no ; in font nullfont!
-) [127] [128] (././img/limites/discontinuidad-evitable.tex
+) [130] [131] (././img/limites/discontinuidad-evitable.tex
 Missing character: There is no ; in font nullfont!
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 8301.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 8363.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [129] (././img/limites/discontinuidad-salto-finito.tex
+) [132] (././img/limites/discontinuidad-salto-finito.tex
 Missing character: There is no ; in font nullfont!
-) [130] (././img/limites/discontinuidad-salto-infinito.tex
+) [133] (././img/limites/discontinuidad-salto-infinito.tex
 Missing character: There is no ; in font nullfont!
-) [131] (././img/limites/discontinuidad-segunda-especie.tex
+) [134] (././img/limites/discontinuidad-segunda-especie.tex
 NOTE: coordinate (2Y9.394348e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.7882991e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.1822502e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1403,27 +1347,24 @@ NOTE: coordinate (1Y8.7871191e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (1Y9.393168e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (1Y9.9992169e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
-) [132] (./manual-analisis.aux)
+) [135] (./manual-analisis.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 51673 strings out of 476932
- 1199148 string characters out of 5824858
- 2087305 words of memory out of 5000000
- 70268 multiletter control sequences out of 15000+600000
- 605709 words of font info for 344 fonts, out of 8000000 for 9000
+ 51693 strings out of 476932
+ 1199500 string characters out of 5824858
+ 2105058 words of memory out of 5000000
+ 70279 multiletter control sequences out of 15000+600000
+ 605839 words of font info for 345 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  122i,25n,120p,10682b,2608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/home/alf/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/home/alf/texmf/fonts/enc/dvips/fontawesome5/fa5free1.enc}</home/alf/texmf/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmex10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi12.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi6.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi8.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi9.pfb></home/alf/texmf/fonts/type1/public/lm/lmr10.pfb></home/alf/texmf/fonts/type1/public/lm/lmr17.pfb></home/alf/texmf/fonts/type1/public/lm/lmr6.pfb></home/alf/texmf/fonts/type1/public/lm/lmr8.pfb></home/alf/texmf/fonts/type1/public/lm/lmr9.pfb></home/alf/texmf/fonts/type1/public/lm/lmri10.pfb></home/alf/texmf/fonts/type1/public/lm/lmss12.pfb></home/alf/texmf/fonts/type1/public/lm/lmssbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy9.pfb></home/alf/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manual-analisis.pdf (132 pages, 972036 bytes).
+Output written on manual-analisis.pdf (135 pages, 985255 bytes).
 PDF statistics:
- 2363 PDF objects out of 2487 (max. 8388607)
- 2142 compressed objects within 22 object streams
- 1203 named destinations out of 1440 (max. 500000)
+ 2497 PDF objects out of 2984 (max. 8388607)
+ 2272 compressed objects within 23 object streams
+ 1208 named destinations out of 1440 (max. 500000)
  74573 words of extra memory for PDF output out of 89155 (max. 10000000)
 

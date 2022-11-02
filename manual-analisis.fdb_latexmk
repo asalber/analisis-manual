@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667239730 "/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex" "manual-analisis.pdf" "manual-analisis" 1667239730
+["pdflatex"] 1667379607 "/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex" "manual-analisis.pdf" "manual-analisis" 1667379632
   "./img/funciones/coseno-triangulo.tex" 1666987685 500 68da8d0bba61c9ee60c998a4f748473e ""
   "./img/funciones/ejemplo-dominio.tex" 1666598373 824 234f6755e4863c91e2824ed207546f07 ""
   "./img/funciones/ejemplo-imagen.tex" 1666598716 662 2f1a6fa25795a6120e91e4777f08c8d6 ""
@@ -123,7 +123,7 @@
   "/home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb" 1254269338 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
   "/home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb" 1254269338 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "/home/alf/texmf/fonts/type1/public/lm/lmsy9.pfb" 1254269338 27835 16c2fa83351d4ef8cf5aebfab8a44bc1 ""
-  "/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex" 1667239612 306321 1ce152d6d8971ac74b556b56cd94aff8 ""
+  "/run/media/alf/datos/misrepositorios/docencia/analisis-manual/manual-analisis.tex" 1667379533 309363 ff09adffaa1864a551c10e981e1d6821 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -373,9 +373,9 @@
   "img/teoria-conjuntos/interseccion.png" 1661643615 16874 a966112cdd584b996d0ea83c1109c460 ""
   "img/teoria-conjuntos/union.png" 1661643416 20872 f1ee533afa11359125368c5d7851eb25 ""
   "img/topologia-reales/recta-real.png" 1663088221 7761 d5a4ed85f6af83516a549eafbb76d7cf ""
-  "manual-analisis.aux" 1667239730 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "manual-analisis.tex" 1667239612 306321 1ce152d6d8971ac74b556b56cd94aff8 ""
-  "manual-analisis.toc" 0 -1 0 "pdflatex"
+  "manual-analisis.aux" 1667379631 93916 d3124db8c2dfda7089689f52bbaa4e8a "pdflatex"
+  "manual-analisis.tex" 1667379533 309363 ff09adffaa1864a551c10e981e1d6821 ""
+  "manual-analisis.toc" 1667379631 9933 a2edb0c59e6c0a55fff1e10c8da64546 "pdflatex"
   (generated)
   "manual-analisis.aux"
   "manual-analisis.log"

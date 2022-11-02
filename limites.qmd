@@ -391,7 +391,7 @@ Obsérvese que en la definición anterior $x\neq a$, es decir, no es necesario q
 :::
 
 :::{#exm-límite-funcion}
-Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall $x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
+Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
 \begin{align*}
 |f(x)-a^2| &= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\ 
 &< (1+2|a|)\delta < (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
@@ -580,6 +580,32 @@ Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R
 ## Demostración
 :::{.proof}
 Se deja como ejercicio.
+:::
+:::
+
+:::{#thm-criterio-cauchy}
+## Criterio de Cauchy
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, entonces $\lim_{x\to a}f(x)=l$ si y solo si para cualquier $\varepsilon>0$ existe un $\delta>0$ tal que $|f(x)-f(y)|<\varepsilon$ $\forall x,y\in A\setminus\{a\}$ con $|x-a|<\delta|$ y $|y-a|<\delta$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\lim_{x\to a}f(x)=l$. Entonces, dado $\varepsilon>0$, existe $\delta>0$ tal que $|f(x)-l|<\frac{\varepsilon}{2}$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$. Por tanto, para cualquier $x,y\in A\setminus\{a\}$ con $|x-a|<\delta$ y $|y-a|<\delta$ se tiene
+
+$$
+|f(x)-f(y)| = |f(x)-l+l-f(y)| \leq |f(x)-l|+|l-f(y)| < \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+$$
+
+Para probar el otro sentido de la implicación, supongamos que para cualquier $\varepsilon>0$, existe $\delta>0$ tal que $|f(x)-f(y)|<\varepsilon$ $\forall x,y\in A\setminus\{a\}$ con $|x-a|<\delta|$ y $|y-a|<\delta$. Sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ convergente a $a$. Entonces existe $k\in\mathbb{N}$ tal que $|x_n-a|<\delta$ $\forall n\geq k$, y por tanto, $|f(x_n)-f(x_m)|<\varepsilon$ $\forall m,n\geq k$. Así pues, $(f(x_n))_{n=1}^\infty$ es una sucesión de Cauchy y por el criterio de convergencia de Cauchy para sucesiones (@thm-criterio-convergencia-cauchy), existe $l\in\mathbb{R}$ tal que $\lim_{n\to\infty}f(x_n)=l$.
+
+Veamos ahora que $l$ es el límite de $f$ en $a$, usando el [criterio de las sucesiones](#thm-criterio-sucesiones). Sea $(y_n)_{n=1}^\infty$ otra una sucesión en $A\setminus\{a\}$ convergente a $a$. Por el mismo razonamiento de antes, se tiene que existe $l'\in\mathbb{R}$ tal que $\lim_{n\to\infty}f(y_n)=l'$. Tomando ahora $\varepsilon>0$ y $\delta>0$ de antes, existe $k\in\mathbb{N}$ tal que $|x_n-a|<\delta$ y $|y_n-a|<\delta$ $\forall n\geq k$, de manera que $|f(x_n)-f(y_n)|<\varepsilon$ $\forall n\geq k$. Así pues, 
+
+$$
+\lim_{n\to\infty}|f(x_n)-f(y_n)| = |\lim_{n\to\infty}f(x_n)- \lim_{n\to\infty}f(y_n)| = |l-l'|<\varepsilon.
+$$
+
+Y como esto es cierto para cualquier $\varepsilon>0$ se concluye que $l=l'$, es decir, para cualquier sucesión $(y_n)_{n =1}^\infty$ en $A\setminus\{a\}$ convergente a $a$, se tiene %$\lim_{n\to\infty}f(y_n)=l$, por lo que se concluye que $\lim_{x\to a}f(x)=l$.
 :::
 :::
 
