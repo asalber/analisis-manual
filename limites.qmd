@@ -19,32 +19,32 @@ Se presentan también algunas propiedades de los límites, distintas técnicas p
 
 El concepto de límite está ligado al de tendencia.
 
-Dado un conjunto $A\subseteq \mathbb{R}$, se dice que $x\in A$ *tiende* a un número $a\in\mathbb{R}$, y lo escribimos $x\rightarrow a$, si se pueden tomar valores de $x$ tan próximos a $a$ como se quiera, pero sin llegar a valer $a$.
+Dado un conjunto $A\subseteq \mathbb{R}$, se dice que $x\in A$ *tiende* a un número $a\in\mathbb{R}$, y lo escribimos $x\to a$, si se pueden tomar valores de $x$ tan próximos a $a$ como se quiera, pero sin llegar a valer $a$.
 
 :::{.callout-warning}
 Para que $x\in A$ tienda a $a$, es necesario que $a$ sea un punto de acumulación de $A$.
 ::: 
 
-Si la aproximación es por defecto (con valores menores que $a$) se dice que $x$ tiende a $a$ por la izquierda, y se escribe $x\rightarrow a^-$, y si es por exceso (con valores mayores que $a$) se dice que $x$ tiende a $a$ por la derecha, y se escribe $x\rightarrow a^+$.
+Si la aproximación es por defecto (con valores menores que $a$) se dice que $x$ tiende a $a$ por la izquierda, y se escribe $x\to a^-$, y si es por exceso (con valores mayores que $a$) se dice que $x$ tiende a $a$ por la derecha, y se escribe $x\to a^+$.
 
 Cuando la variable $x$ de una función $f$ tiende a un valor $a$, cabe preguntarse si sus imágenes mediante $f$ tienden a otro valor concreto:
 
-Si $f(x)$ tiende a un valor $l$ cuando $x$ tiende a $a$, se dice que $l$ es el *límite* de $f(x)$ cuando $x\rightarrow a$, y se escribe
+Si $f(x)$ tiende a un valor $l$ cuando $x$ tiende a $a$, se dice que $l$ es el *límite* de $f(x)$ cuando $x\to a$, y se escribe
 
-$$\lim_{x\rightarrow a}f(x)=l.$$
+$$\lim_{x\to a}f(x)=l.$$
 
 ### Límites laterales
 
-Si $f(x)$ tiende a $l$ cuando $x$ tiende a $a$ por la izquierda, entonces se dice que $l$ es el *límite por la izquierda* de $f(x)$ cuando $x\rightarrow a^-$, y se escribe
+Si $f(x)$ tiende a $l$ cuando $x$ tiende a $a$ por la izquierda, entonces se dice que $l$ es el *límite por la izquierda* de $f(x)$ cuando $x\to a^-$, y se escribe
 
-$$\lim_{x\rightarrow a^-}f(x)=l.$$
+$$\lim_{x\to a^-}f(x)=l.$$
 
-Si $f(x)$ tiende a $l$ cuando $x$ se aproxima a $a$ por exceso, entonces se dice que $l$ es el *límite por la derecha* de $f(x)$ cuando $x\rightarrow a^-$, y se escribe
+Si $f(x)$ tiende a $l$ cuando $x$ se aproxima a $a$ por exceso, entonces se dice que $l$ es el *límite por la derecha* de $f(x)$ cuando $x\to a^-$, y se escribe
 
-$$\lim_{x\rightarrow a^+}f(x)=l.$$
+$$\lim_{x\to a^+}f(x)=l.$$
 
 :::{#exm-limites-aproximados}
-Consideremos la función $f(x)=x^2$ y veamos que pasa cuando $x\rightarrow 2$:
+Consideremos la función $f(x)=x^2$ y veamos que pasa cuando $x\to 2$:
 
 $$
 \begin{array}{c}
@@ -78,12 +78,12 @@ x       & f(x)=x^2   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\lim_{x\rightarrow 2^-}x^2=4
+\lim_{x\to 2^-}x^2=4
 & &
-\lim_{x\rightarrow 2^+}x^2=4
+\lim_{x\to 2^+}x^2=4
 \end{array}}\\
 \Downarrow\\
-\lim_{x\rightarrow 2}x^2=4
+\lim_{x\to 2}x^2=4
 \end{array}
 $$
 :::
@@ -93,7 +93,7 @@ $$
 Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto.
 
 :::{#exm-limites-no-existen}
-Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando $x\rightarrow 0$:
+Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando $x\to 0$:
 
 $$
 \begin{array}{c}
@@ -123,12 +123,12 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^-}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \textrm{No existe } \lim_{x\to 0^-}\frac{1}{\sqrt{x^2-1}}
 & &
-\displaystyle \textrm{No existe } \lim_{x\rightarrow 0^+}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \textrm{No existe } \lim_{x\to 0^+}\frac{1}{\sqrt{x^2-1}}
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{\sqrt{x^2-1}}
 \end{array}$$
 
 ::: {.content-visible when-format="html"}
@@ -145,7 +145,7 @@ x      & f(x)   \\
 Cuando los límites laterales no coinciden entonces no existe el límite.
 
 :::{#exm-limites-no-existen-2}
-Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
+Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuando $x\to 0$:
 
 $$\begin{array}{c}
 \underbrace{\begin{array}{ccc}
@@ -174,12 +174,12 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \lim_{x\rightarrow 0^-}\frac{|x|}{x}=-1
+\displaystyle \lim_{x\to 0^-}\frac{|x|}{x}=-1
 &\neq &
-\displaystyle \lim_{x\rightarrow 0^+}\frac{|x|}{x}=1
+\displaystyle \lim_{x\to 0^+}\frac{|x|}{x}=1
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{|x|}{x}
+\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{|x|}{x}
 \end{array}
 $$
 
@@ -194,12 +194,12 @@ $$
 
 ### Límites que no existen (III)
 
-A veces, cuando $x\rightarrow a$ los valores de $f(x)$ crecen o decrecen infinitamente y entonces no existe el límite. En este caso se dice que la función *diverge* y se escribe
+A veces, cuando $x\to a$ los valores de $f(x)$ crecen o decrecen infinitamente y entonces no existe el límite. En este caso se dice que la función *diverge* y se escribe
 
-$$\lim_{x\rightarrow a}f(x)=\pm \infty.$$
+$$\lim_{x\to a}f(x)=\pm \infty.$$
 
 :::{#exm-limites-no-existen-3}
-Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\rightarrow 0$:
+Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\to 0$:
 
 $$
 \begin{array}{c}
@@ -229,12 +229,12 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \lim_{x\rightarrow 0^-}\frac{1}{x^2}=+\infty
+\displaystyle \lim_{x\to 0^-}\frac{1}{x^2}=+\infty
 & &
-\displaystyle \lim_{x\rightarrow 0^+}\frac{1}{x^2}=+\infty
+\displaystyle \lim_{x\to 0^+}\frac{1}{x^2}=+\infty
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\frac{1}{x^2}=\infty
+\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{x^2}=\infty
 \end{array}
 $$
 
@@ -252,7 +252,7 @@ $$
 A veces, el límite de un función en un punto puede no existir porque la función oscila rápidamente al acercarnos a dicho punto.
 
 :::{#exm-limites-no-existen-4}
-Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\rightarrow 0$:
+Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\to 0$:
 
 $$
 \begin{array}{c}
@@ -294,12 +294,12 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^-}\operatorname{sen} \frac{1}{x}
+\displaystyle \textrm{No existe }\lim_{x\to 0^-}\operatorname{sen} \frac{1}{x}
 & &
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0^+}\operatorname{sen} \frac{1}{x}
+\displaystyle \textrm{No existe }\lim_{x\to 0^+}\operatorname{sen} \frac{1}{x}
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\rightarrow 0}\operatorname{sen} \frac{1}{x}
+\displaystyle \textrm{No existe }\lim_{x\to 0}\operatorname{sen} \frac{1}{x}
 \end{array}
 $$
 
@@ -314,20 +314,20 @@ $$
 
 ### Límites en el infinito
 
-Si $f(x)$ tiende a $l$ cuando $x$ crece infinitamente, entonces se dice que $l$ es el *límite en el infinito* de $f(x)$ cuando $x\rightarrow +\infty$, y se escribe
+Si $f(x)$ tiende a $l$ cuando $x$ crece infinitamente, entonces se dice que $l$ es el *límite en el infinito* de $f(x)$ cuando $x\to +\infty$, y se escribe
 
-$$\lim_{x\rightarrow +\infty}f(x)=l.$$
+$$\lim_{x\to +\infty}f(x)=l.$$
 
-Si $f(x)$ tiende a $l$ cuando $x$ decrece infinitamente, entonces se dice que $l$ es el *límite en el infinito* de $f(x)$ cuando $x\rightarrow -\infty$, y se escribe
+Si $f(x)$ tiende a $l$ cuando $x$ decrece infinitamente, entonces se dice que $l$ es el *límite en el infinito* de $f(x)$ cuando $x\to -\infty$, y se escribe
 
-$$\lim_{x\rightarrow -\infty}f(x)=l.$$
+$$\lim_{x\to -\infty}f(x)=l.$$
 
 :::{#exm-limites-infinito}
-Estudiemos la tendencia de $f(x)=\dfrac{1}{x}$ cuando $x\rightarrow \pm\infty$:
+Estudiemos la tendencia de $f(x)=\dfrac{1}{x}$ cuando $x\to \pm\infty$:
 
 $$
 \begin{array}{ccc}
-x\rightarrow +\infty & \qquad & x\rightarrow -\infty\\
+x\to +\infty & \qquad & x\to -\infty\\
 \begin{array}{|r|l|}
 \hline
 x      & f(x)=1/x   \\
@@ -352,9 +352,9 @@ x      & f(x)=1/x   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\lim_{x\rightarrow +\infty}\frac{1}{x}=0
+\lim_{x\to +\infty}\frac{1}{x}=0
 & &
-\lim_{x\rightarrow -\infty}\frac{1}{x}=0
+\lim_{x\to -\infty}\frac{1}{x}=0
 \end{array}
 $$
 
@@ -371,9 +371,9 @@ $$
 
 :::{#def-limite-funcion}
 ## Límite de una función en un punto
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $l\in\mathbb{R}$ es el _límite_ de $f$ en $a$ y se escribe
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $l\in\mathbb{R}$ es el _límite_ de $f$ en $a$ y se escribe
 
-$$\lim_{x\rightarrow a} f(x) = l$$ 
+$$\lim_{x\to a} f(x) = l$$ 
 
 si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
 :::
@@ -400,7 +400,7 @@ Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\
 
 :::{#thm-unicidad-limite-funcion}
 ## Unicidad del límite
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces es único.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces es único.
 :::
 
 :::{.callout-note collapse="true"}
@@ -418,7 +418,7 @@ Tomando ahora $\delta=\min\{\delta_1,\delta_2\}$, se tiene que si $x\in A\setmin
 
 :::{#thm-criterio-sucesiones}
 ## Criterio de las sucesiones
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se cumple que $\lim_{x\to a}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $A\setminus\{a\}$ que converge a $a$, se tiene que $(f(x_n))_{n=1}^\infty$ converge a $l$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se cumple que $\lim_{x\to a}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $A\setminus\{a\}$ que converge a $a$, se tiene que $(f(x_n))_{n=1}^\infty$ converge a $l$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -470,11 +470,11 @@ Por tanto, el límite de la función aplicada a estas dos sucesiones es distinto
 
 :::{#def-funcion-acotada-entorno}
 ## Función acotada en un entorno de un punto
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $f$ está _acotada_ en el entorno de $a$ si existe un $\delta>0$ y un $c>0$ tal que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $f$ está _acotada_ en el entorno de $a$ si existe un $\delta>0$ y un $c>0$ tal que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$.
 :::
 
 :::{#prp-limite-funcion-acotada}
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces $f$ está acotada en un entorno de $a$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces $f$ está acotada en un entorno de $a$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -499,15 +499,15 @@ La función $f(x)=\frac{1}{x}$ no está acotada en un entorno de $0$, por lo que
 ## Álgebra de límites
 
 :::{#prp-limite-suma-resta-producto-cociente-funciones}
-Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, tales que existe $\lim_{x\to a}f(x)$ y $\lim_{x\to a}g(x)$, entonces se cumple que
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, tales que existe $\lim_{x\to a}f(x)$ y $\lim_{x\to a}g(x)$, entonces se cumple que
 
-1. $\lim_{x\rightarrow a}c f(x)=c\lim_{x\rightarrow a}f(x)$, $\forall c\in\mathbb{R}$.
+1. $\lim_{x\to a}c f(x)=c\lim_{x\to a}f(x)$, $\forall c\in\mathbb{R}$.
 
-2. $\lim_{x\rightarrow a}(f(x)\pm g(x))=\lim_{x\rightarrow a}f(x)\pm \lim_{x\rightarrow a}g(x).$
+2. $\lim_{x\to a}(f(x)\pm g(x))=\lim_{x\to a}f(x)\pm \lim_{x\to a}g(x).$
 
-3. $\lim_{x\rightarrow a}(f(x)\cdot g(x))=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x).$
+3. $\lim_{x\to a}(f(x)\cdot g(x))=\lim_{x\to a}f(x)\cdot \lim_{x\to a}g(x).$
 
-4. Si $g(x)\neq 0$ $\forall x\in A$ y $\lim_{x\to a}g(x)\neq 0$, entonces $\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\rightarrow a}f(x)}{\displaystyle \lim_{x\rightarrow a}g(x)}$.
+4. Si $g(x)\neq 0$ $\forall x\in A$ y $\lim_{x\to a}g(x)\neq 0$, entonces $\lim_{x\to a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\to a}f(x)}{\displaystyle \lim_{x\to a}g(x)}$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -545,7 +545,7 @@ Sea ahora $g(x)=\frac{x^2-4}{3x-6}$, entonces
 
 :::{#thm-compresión-funciones}
 ## Compresión de funciones
-Dado un conjunto $A\subseteq \mathbb{R}$, tres funciones $f,g,h:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si $f(x)\leq g(x)\leq h(x)$ $\forall x\in A$ y $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l$, entonces $\lim_{x\to a}g(x)=l$.
+Dado un conjunto $A\subseteq \mathbb{R}$, tres funciones $f,g,h:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si $f(x)\leq g(x)\leq h(x)$ $\forall x\in A$ y $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l$, entonces $\lim_{x\to a}g(x)=l$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -560,7 +560,7 @@ Sea $f(x)=x\operatorname{sen}\left(\frac{1}{x}\right)$ $\forall x\neq 0$. Entonc
 :::
 
 :::{#prp-limite-valor-absoluto}
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -573,7 +573,7 @@ $$\lim_{x\to a}||f(x)|-|l||=0 \Rightarrow \lim_{x\to a}|f(x)|-|l|=0 \Rightarrow 
 :::
 
 :::{#prp-limite-raiz}
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -585,7 +585,7 @@ Se deja como ejercicio.
 
 :::{#thm-criterio-cauchy}
 ## Criterio de Cauchy
-Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\rightarrow \mathbb{R}$ y un punto de acumulación $a$ de $A$, entonces $\lim_{x\to a}f(x)=l$ si y solo si para cualquier $\varepsilon>0$ existe un $\delta>0$ tal que $|f(x)-f(y)|<\varepsilon$ $\forall x,y\in A\setminus\{a\}$ con $|x-a|<\delta|$ y $|y-a|<\delta$.
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, entonces $\lim_{x\to a}f(x)=l$ si y solo si para cualquier $\varepsilon>0$ existe un $\delta>0$ tal que $|f(x)-f(y)|<\varepsilon$ $\forall x,y\in A\setminus\{a\}$ con $|x-a|<\delta|$ y $|y-a|<\delta$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -612,7 +612,7 @@ Y como esto es cierto para cualquier $\varepsilon>0$ se concluye que $l=l'$, es 
 ## Límites laterales
 
 :::{#def-limites-laterales}
-Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$,
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$,
 
 1. Si $a$ es un punto de acumulación de $\{x\in A: x>a\}$, se dice que $l$ es el _límite por la derecha_ de $f$ en $a$ y se denota $\lim_{x\to a^+}f(x)=l$, si para cualquier $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<x-a<\delta$.
 
@@ -621,13 +621,13 @@ Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{
 
 :::{#thm-limites-laterales}
 ## Límites laterales
-Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$, y sea $a$ un punto de acumulación de los conjuntos $\{x\in A: x>a\}$ y $\{x\in A: x<a\}$, entonces $\lim_{x\to a}f(x)=l$ si y solo si $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l$.
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, y sea $a$ un punto de acumulación de los conjuntos $\{x\in A: x>a\}$ y $\{x\in A: x<a\}$, entonces $\lim_{x\to a}f(x)=l$ si y solo si $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l$.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sea $\lim_{x\to a}f(x)=l$. Entonces, dado $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$. Así pues, si $x\in A$ y $0<x-c<\delta$ se tiene que $|f(x)-l|\varepsilon$ por lo que $\lim_{x\to a^+}f(x)=l$, y si $x\in A$ y $0<c-x<\delta$ también se tiene que $|f(x)-l|\varepsilon$ por lo que $\lim_{x\to a^-}f(x)=l$.
+Sea $\lim_{x\to a}f(x)=l$. Entonces, dado $\varepsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$. Así pues, si $x\in A$ y $0<x-c<\delta$ se tiene que $|f(x)-l|<\varepsilon$ por lo que $\lim_{x\to a^+}f(x)=l$, y si $x\in A$ y $0<c-x<\delta$ también se tiene que $|f(x)-l|<\varepsilon$ por lo que $\lim_{x\to a^-}f(x)=l$.
 
 Para probar el otro sentido de la implicación, supongamos ahora que $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l$. Entonces, dado $\varepsilon>0$, existe $\delta_1>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<x-c<\delta_1$, y también existe $\delta_2>0$ tal que $|f(x)-l|<\varepsilon$ $\forall x\in A$ con $0<c-x<\delta_2$. Así pues, tomando $\delta=\min\{\delta_1,\delta_2\}$, para cualquier $x\in A\setminus\{a\}$ con $|x-a|<\delta$, si $x>a$ se tiene que $0<x-a<\delta<\delta_1$ y, por tanto, $|f(x)-l|<\varepsilon$. Y si $x<a$ se tiene que $0<a-x<\delta<\delta_2$ y, por tanto, $|f(x)-l|<\varepsilon$. Por consiguiente, $\lim_{x\to a}f(x)=l$.
 :::
@@ -651,7 +651,7 @@ Entonces, $\lim_{x\to 0^-}f(x)=-1$ y $\lim_{x\to 0^+}f(x)=1$, y como los límite
 
 :::{#def-limite-infinito}
 ## Límite infinito
-Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\rightarrow \mathbb{R}$, y sea $a$ un punto de acumulación de $A$:
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, y sea $a$ un punto de acumulación de $A$:
 
 1. Se dice que $f$ tiende a $\infty$ cuando $x$ tiende a $a$, y se denota $\lim_{x\to a}f(x)=\infty$, si para cada $\varepsilon>0$ existe un $\delta>0$ tal que $f(x)>\varepsilon$ $\forall x\in A\setminus\{a\}$ con $|x-a|<\delta$.
 
@@ -668,7 +668,7 @@ Por tanto, $\lim_{x\to 0}f(x)=\infty$.
 :::
 
 :::{#prp-limites-infinitos}
-Dado un conjunto $A\subseteq \mathbb{R}$, un punto de acumulación $a$ de $A$ y dos funciones $f,g:A\rightarrow \mathbb{R}$ tales que $f(x)\leq g(x)$ $\forall x\in A\setminus\{a\}$:
+Dado un conjunto $A\subseteq \mathbb{R}$, un punto de acumulación $a$ de $A$ y dos funciones $f,g:A\to \mathbb{R}$ tales que $f(x)\leq g(x)$ $\forall x\in A\setminus\{a\}$:
 
 1. Si $\lim_{x\to a}f(x)=\infty$ entonces $\lim_{x\to a}g(x)=\infty$.
 
@@ -688,9 +688,9 @@ La segunda parte se prueba de forma análoga.
 
 :::{#def-limite-en-infinito}
 ## Límite de una función en el infinito
-Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, se dice que $f$ tiende a $l$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=l$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $|f(x)-l|<\varepsilon$ $\forall x>\delta$.
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\to \mathbb{R}$, se dice que $f$ tiende a $l$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=l$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $|f(x)-l|<\varepsilon$ $\forall x>\delta$.
 
-Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\rightarrow \mathbb{R}$, se dice que $g$ tiende a $l$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=l$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $|f(x)-l|<\varepsilon$ $\forall x<\delta$.
+Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\to \mathbb{R}$, se dice que $g$ tiende a $l$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=l$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $|f(x)-l|<\varepsilon$ $\forall x<\delta$.
 :::
 
 :::{#exm-limite-en-infinito}
@@ -701,7 +701,7 @@ Del mismo modo se puede probar que $\lim_{x\to -\infty}f(x)=0$.
 
 :::{#thm-criterio-sucesiones-divergente}
 ## Criterio de las sucesiones divergentes
-Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, entonces $\lim_{x\to\infty}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $(a,\infty)$ que diverja a $\infty$, $\lim_{n\to\infty}f(x_n)=l$.
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\to \mathbb{R}$, entonces $\lim_{x\to\infty}f(x)=l$ si y solo si para cualquier sucesión $(x_n)_{n=1}^\infty$ en $(a,\infty)$ que diverja a $\infty$, $\lim_{n\to\infty}f(x_n)=l$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -719,9 +719,9 @@ Así, para cada $n\in\mathbb{N}$ existe $x_n>a$ tal que $x_n>n$ y $|f(x_n)-l|\ge
 
 :::{#def-limite-infinito-en-infinito}
 ## Límite infinito en el infinito
-Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\rightarrow \mathbb{R}$, se dice que $f$ tiende a $\infty$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $f(x)>\varepsilon$ $\forall x>\delta$.
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y una función $f:A\to \mathbb{R}$, se dice que $f$ tiende a $\infty$ cuando $x$ tiende $\infty$, y se denota $\lim_{x\to\infty}f(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta>a$ tal que $f(x)>\varepsilon$ $\forall x>\delta$.
 
-Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\rightarrow \mathbb{R}$, se dice que $g$ tiende a $\infty$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $f(x)<\varepsilon$ $\forall x<\delta$.
+Y dado un conjunto $B\subseteq \mathbb{R}$ tal que $(-\infty,b)\subset B$ para algún $b\in\mathbb{R}$, y una función $g:B\to \mathbb{R}$, se dice que $g$ tiende a $\infty$ cuando $x$ tiende $-\infty$, y se denota $\lim_{x\to-\infty}g(x)=\infty$, si para cada $\varepsilon>0$ existe $\delta<b$ tal que $f(x)<\varepsilon$ $\forall x<\delta$.
 :::
 
 :::{#exm-limite-infinito-en-infinito}
@@ -731,7 +731,7 @@ Del mismo modo se puede probar que $\lim_{x\to-\infty}f(x)=\infty$.
 :::
 
 :::{#prp-cociente-limites-infinitos}
-Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y dos funciones $f,g:A\rightarrow \mathbb{R}$, tales que $g(x)>0$ $\forall x\in A$ y $\lim_{x\to\infty}\frac{f(x)}{g(x)}=l$, entonces:
+Dado un conjunto $A\subseteq \mathbb{R}$ tal que $(a,\infty)\subset A$ para algún $a\in\mathbb{R}$, y dos funciones $f,g:A\to \mathbb{R}$, tales que $g(x)>0$ $\forall x\in A$ y $\lim_{x\to\infty}\frac{f(x)}{g(x)}=l$, entonces:
 
 1. Si $l>0$, $\lim_{x\to\infty}f(x)=\infty$ si y solo si $\lim_{x\to\infty}g(x)=\infty$.
 
@@ -759,7 +759,7 @@ La segunda parte se prueba de forma análoga.
 
 :::{#prp-limite-funcion-polinomica}
 ## Límite de una función polinómica
-Si $f$ es una función polinómica, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $f$ es una función polinómica, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -771,7 +771,7 @@ Se deja como ejercicio.
 
 :::{#prp-limite-funcion-racional}
 ## Límite de una función racional
-Si $f(x)=\dfrac{p(x)}{q(x)}$ con $p(x)$ y $q(x)$ funciones polinómicas, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ que no sea una raíz de $q(x)$, y $\lim_{x\rightarrow a}f(x)=f(a)$. 
+Si $f(x)=\dfrac{p(x)}{q(x)}$ con $p(x)$ y $q(x)$ funciones polinómicas, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ que no sea una raíz de $q(x)$, y $\lim_{x\to a}f(x)=f(a)$. 
 
 Si $a$ es una raíz de $q(x)$ entonces el límite puede existir o no.
 :::
@@ -785,7 +785,7 @@ Se deja como ejercicio.
 
 :::{#prp-limite-funcion-potencial}
 ## Límite de una función potencial
-Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \textrm{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \textrm{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -797,7 +797,7 @@ Se deja como ejercicio.
 
 :::{#prp-limite-funcion-exponencial}
 ## Límite de una función exponencial
-Si $f(x)=c^x$ con $c\in \mathbb{R}$ entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $f(x)=c^x$ con $c\in \mathbb{R}$ entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}$ y $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -809,7 +809,7 @@ Se deja como ejercicio.
 
 :::{#prp-limite-funcion-logarítmica}
 ## Límite de una función logarítmica
-Si $f(x)=\log_c(x)$ con $c\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}^+$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $f(x)=\log_c(x)$ con $c\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a\in \mathbb{R}^+$ y $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -820,7 +820,7 @@ Se deja como ejercicio.
 :::
 
 :::{#prp-limite-funcion-trigonometrica}
-Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \textrm{Dom}(f)$ y $\lim_{x\rightarrow a}f(x)=f(a)$.
+Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \textrm{Dom}(f)$ y $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -836,19 +836,19 @@ Se deja como ejercicio.
 
 Al calcular límites pueden aparecer las siguientes indeterminaciones:
 
-- **Tipo cociente**. Si $\lim_{x\rightarrow a} f(x)=0$ y $\lim_{x\rightarrow a} g(x)=0$, entonces $\dfrac{f(x)}{g(x)}$ presenta una indeterminación del tipo $\dfrac{0}{0}$ cuando $x\rightarrow a$.
+- **Tipo cociente**. Si $\lim_{x\to a} f(x)=0$ y $\lim_{x\to a} g(x)=0$, entonces $\dfrac{f(x)}{g(x)}$ presenta una indeterminación del tipo $\dfrac{0}{0}$ cuando $x\to a$.
 
-    Si $\lim_{x\rightarrow a} f(x)=\pm\infty$ y $\lim_{x\rightarrow a} g(x)=\pm\infty$, entonces $\dfrac{f(x)}{g(x)}$ presenta una indeterminación del tipo $\pm\dfrac{\infty}{\infty}$ cuando $x\rightarrow a$.
+    Si $\lim_{x\to a} f(x)=\pm\infty$ y $\lim_{x\to a} g(x)=\pm\infty$, entonces $\dfrac{f(x)}{g(x)}$ presenta una indeterminación del tipo $\pm\dfrac{\infty}{\infty}$ cuando $x\to a$.
 
-- **Tipo producto**. Si $\lim_{x\rightarrow a} f(x)=0$ y $\lim_{x\rightarrow a} g(x)=\pm\infty$, entonces $f(x)\cdot g(x)$ presenta una indeterminación del tipo $0\cdot \pm\infty$ cuando $x\rightarrow a$.
+- **Tipo producto**. Si $\lim_{x\to a} f(x)=0$ y $\lim_{x\to a} g(x)=\pm\infty$, entonces $f(x)\cdot g(x)$ presenta una indeterminación del tipo $0\cdot \pm\infty$ cuando $x\to a$.
 
-- **Tipo potencia**. Si $\lim_{x\rightarrow a} f(x)=1$ y $\lim_{x\rightarrow a} g(x)=\infty$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $1^\infty$ cuando $x\rightarrow a$.
+- **Tipo potencia**. Si $\lim_{x\to a} f(x)=1$ y $\lim_{x\to a} g(x)=\infty$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $1^\infty$ cuando $x\to a$.
 
-    Si $\lim_{x\rightarrow a} f(x)=0$ y $\lim_{x\rightarrow a} g(x)=0$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $0^0$ cuando $x\rightarrow a$.
+    Si $\lim_{x\to a} f(x)=0$ y $\lim_{x\to a} g(x)=0$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $0^0$ cuando $x\to a$.
 
-    Si $\lim_{x\rightarrow a} f(x)=\infty$ y $\lim_{x\rightarrow a} g(x)=0$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $\infty^0$ cuando $x\rightarrow a$.
+    Si $\lim_{x\to a} f(x)=\infty$ y $\lim_{x\to a} g(x)=0$, entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo $\infty^0$ cuando $x\to a$.
 
-- **Tipo diferencia**. Si $\lim_{x\rightarrow a} f(x)=\infty$ y $\lim_{x\rightarrow a} g(x)=\infty$, entonces $f(x)-g(x)$ presenta una indeterminación del tipo $\infty-\infty$ cuando $x\rightarrow a$.
+- **Tipo diferencia**. Si $\lim_{x\to a} f(x)=\infty$ y $\lim_{x\to a} g(x)=\infty$, entonces $f(x)-g(x)$ presenta una indeterminación del tipo $\infty-\infty$ cuando $x\to a$.
 
 ### Resolución de una indeterminación de tipo cociente
 
@@ -861,96 +861,69 @@ Existen diferentes técnicas para resolver una indeterminación del tipo $\dfrac
 
 #### Factorización de polinomios en funciones racionales
 
-Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow a$, y $a$ es una raíz de $p(x)$ y $q(x)$, se puede resolver la indeterminación factorizando los polinomios y simplificando.
+Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\to a$, y $a$ es una raíz de $p(x)$ y $q(x)$, se puede resolver la indeterminación factorizando los polinomios y simplificando.
 
 :::{#exm-solucion-indeterminacion-cociente}
-La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 1$.
+La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{0}{0}$ cuando $x\to 1$.
 
 Para resolver la indeterminación factorizamos los polinomios
 
-$$
-\begin{aligned}
+\begin{align*}
 x^3-3x+2 &= (x+2)(x-1)^2,\\
 x^4-4x+3 &= (x^2+2x+3)(x-1)^2.
-\end{aligned}
-$$
+\end{align*}
 
 Como el factor $(x-1)^2$ es común, podemos simplificar la función en el cálculo del límite:[^1] 
 
 $$
-\lim_{x\rightarrow 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\rightarrow 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
+\lim_{x\to 1}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\to 1}\frac{(x+2)(x-1)^2}{(x^2+2x+3)(x-1)^2} = \lim_{x\to 1}\frac{(x+2)}{(x^2+2x+3)} =\frac{3}{6}=0.5.
 $$
 :::
 
 #### División por el término de mayor orden en funciones racionales
 
-Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\rightarrow \pm\infty$, entonces se puede resolver dividendo $p(x)$ y $q(x)$ por el término de mayor grado de ambos polinomios.
+Si $f(x)=\dfrac{p(x)}{q(x)}$ es una función racional que presenta una indeterminación de tipo cociente cuando $x\to \pm\infty$, entonces se puede resolver dividendo $p(x)$ y $q(x)$ por el término de mayor grado de ambos polinomios.
 
 :::{#exm-solucion-indeterminacion-cociente-2}
-La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
+La función $f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{\infty}{\infty}$ cuando $x\to \infty$.
 
 Para resolver la indeterminación dividimos numerador y denominador por $x^4$ que es el término de mayor grado:
 
 $$
-\lim_{x\rightarrow \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\rightarrow \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
+\lim_{x\to \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\to \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\to \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
 $$
 :::
 
-En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, entonces:
+En general, si $f(x)=\dfrac{a_0+a_1x+\cdots + a_nx^n}{b_0+b_1x+\cdots + b_mx^m}$, entonces:
 
-- Si $n>m$ entonces $\lim_{x\rightarrow \pm \infty}f(x)=\pm\infty$.
-- Si $n<m$ entonces $\lim_{x\rightarrow \pm \infty}f(x)=0$.
-- Si $n=m$ entonces $\lim_{x\rightarrow \pm \infty}f(x)=\dfrac{a_n}{b_m}$.
+- Si $n>m$ entonces $\lim_{x\to \pm \infty}f(x)=\pm\infty$.
+- Si $n<m$ entonces $\lim_{x\to \pm \infty}f(x)=0$.
+- Si $n=m$ entonces $\lim_{x\to \pm \infty}f(x)=\dfrac{a_n}{b_m}$.
 
 #### Infinitésimos equivalentes
 
-:::{#def-infinitesimos-equivalentes}
-## Infinitésimos equivalentes
-Si $f(x)\rightarrow 0$ y $g(x)\rightarrow 0$ cuando $x\rightarrow a$, entonces se dice que $f$ y $g$ son *infinitésimos equivalentes* cuando $x\rightarrow a$ si se cumple
-
-$$\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1.$$
-
-En tal caso se escribe $f(x)\approx g(x)$ cuando $x\rightarrow a$.
+:::{#def-infinitesimo}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$, y un punto de acumulación $a$ de $A$, se dice que $f$ es un infinitésimo en $a$ si $\lim_{x\to a}f(x)=0$.
 :::
 
-Si $f(x)\approx g(x)$ cuando $x\rightarrow a$ entonces $f(x)$ y $g(x)$ son magnitudes equivalentes cuando $x\rightarrow a$.
+De manera informal, se puede decir que un infinitésimo es una cantidad infinitamente pequeña.
 
-Infinitésimos equivalentes cuando $x\rightarrow 0$:
+:::{#exm-infinitesimos}
+La función identidad $f(x)=x$ es un infinitésimo en $x=0$, ya que $\lim_{x\to 0}x = 0$.
 
-$$
-\begin{array}{c}
-\operatorname{sen} x \approx x \approx \operatorname{tg} x\\
-1-\cos x \approx \dfrac{x^2}{2}\\
-\operatorname{arctg} x \approx x\\
-e^x-1 \approx x\\
-\log(1+x) \approx x\\
-\end{array}
-$$
+Del mismo modo, la función $g(x)=\operatorname{sen}(x)$ es otro infinitésimo en $x=0$ ya que $\lim_{x\to 0}\operatorname{sen}(x)=0$.
 
-A veces se puede resolver una indeterminación cuando $x\rightarrow a$ sustituyendo cualquier subexpresión de la función por un infinitésimo
-equivalente cuando $x\rightarrow a$.
-
-:::{#exm-infinitesimo-equivalente}
-La función $f(x)=\dfrac{\operatorname{sen} x(1- \cos x)}{x^3}\rightarrow \dfrac{0}{0}$ cuando $x\rightarrow 0$.
-
-Como $\operatorname{sen} x \approx x$ y $1-\cos x\approx \dfrac{x^2}{2}$ cuando $x\rightarrow 0$, para resolver la indeterminación sustituimos $\operatorname{sen} x$ por $x$ y $1-\cos x$ por $\dfrac{x^2}{2}$:
-
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0}\frac{\operatorname{sen} x(1- \cos x)}{x^3}&=
-\lim_{x\rightarrow 0}\dfrac{x\frac{x^2}{2}}{x^3} =
-\lim_{x\rightarrow 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\rightarrow 0}\dfrac{1}{2} =0.5.
-\end{aligned}
-$$
+Y la función $h(x)=x^2-4$ es un infinitésimo en $x=2$, ya que $\lim_{x\to 2}x^2-4 = 0$.
 :::
 
-#### Regla de L'Hôpital
+:::{#prp-propiedades-infinitesimos}
+## Propiedades de los infinitésimos
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$, y un punto de acumulación $a$ de $A$, tales que $f$ y $g$ son infinitésimos en $a$. Entonces se cumple
 
-:::{#thm-regla-lhopital}
-## Regla de L’Hôpital
-Si $\dfrac{f(x)}{g(x)}\rightarrow \dfrac{0}{0}$ o $\dfrac{\infty}{\infty}$ cuando $x\rightarrow a$, entonces si existe el límite de $\dfrac{f'(x)}{g'(x)}$ cuando $x\rightarrow a$ se cumple
-
-$$\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}.$$
+1. $f+g$ es un infinitésimo en $a$.
+2. $f\cdot g$ es un infinitésimo en $a$.
+3. $c\cdot f$ es un infinitésimo en $a$ $\forall c\in\mathbb{R}$.
+3. Si $h$ es una función acotada en un entorno de $a$, $f\cdot h$ es un infinitésimo en $a$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -960,108 +933,152 @@ Se deja como ejercicio.
 :::
 :::
 
+:::{#def-infinitesimos-equivalentes}
+## Infinitésimos equivalentes
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$, y un punto de acumulación $a$ de $A$, tales que $f$ y $g$ son infitésimos en $a$, se dice que $f$ y $g$ son _infinitésimos equivalentes_ en $a$, se denota $f(x)\approx g(x)$ cuando $x\to a$, si 
+
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=1.$$
+:::
+
+Si $f(x)\approx g(x)$ cuando $x\to a$ entonces $f(x)$ y $g(x)$ son magnitudes equivalentes cuando $x\to a$.
+
+:::{#exm-infinitesimos-equivalentes}
+Los siguientes infinitésimos equivalentes cuando $x\to 0$:
+
+$$
+\begin{array}{c}
+\operatorname{sen}(x) \approx x \approx \operatorname{tg}(x)\\
+1-\cos(x) \approx \dfrac{x^2}{2}\\
+\operatorname{arctg}(x) \approx x\\
+e^x-1 \approx x\\
+\log(1+x) \approx x\\
+\end{array}
+$$
+:::
+
+A veces se puede resolver una indeterminación cuando $x\to a$ sustituyendo cualquier subexpresión de la función por un infinitésimo
+equivalente cuando $x\to a$.
+
+:::{#exm-infinitesimo-equivalente}
+La función $f(x)=\dfrac{\operatorname{sen}(x)(1- \cos(x))}{x^3}\to \dfrac{0}{0}$ cuando $x\to 0$.
+
+Como $\operatorname{sen}(x) \approx x$ y $1-\cos(x)\approx \dfrac{x^2}{2}$ cuando $x\to 0$, para resolver la indeterminación sustituimos $\operatorname{sen}(x)$ por $x$ y $1-\cos(x)$ por $\dfrac{x^2}{2}$:
+
+\begin{align*}
+\lim_{x\to 0}\frac{\operatorname{sen}(x)(1- \cos (x))}{x^3}&=
+\lim_{x\to 0}\dfrac{x\frac{x^2}{2}}{x^3} =
+\lim_{x\to 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\to 0}\dfrac{1}{2} =0.5.
+\end{align*}
+:::
+
+#### Regla de L'Hôpital
+
+:::{#thm-regla-lhopital}
+## Regla de L’Hôpital
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$, y un punto de acumulación $a$ de $A$, tales que $\dfrac{f(x)}{g(x)}\to \dfrac{0}{0}$ o $\dfrac{\infty}{\infty}$ cuando $x\to a$, entonces si existe $\lim_{x\to a}\dfrac{f'(x)}{g'(x)}$ se cumple que
+
+$$
+\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se verá en el siguiente
+:::
+:::
+
 :::{.callout-warning}
-Para que exista $\lim_{x\rightarrow a}\dfrac{f'(x)}{g'(x)}$ es necesario que que $f$ y $g$ sean derivables en un entorno de $a$.
+Para que exista $\lim_{x\to a}\dfrac{f'(x)}{g'(x)}$ es necesario que que $f$ y $g$ sean derivables en un entorno de $a$.
 :::
 
 :::{#exm-regla-lhopital}
-Sea $f(x)=\dfrac{\log(x^2-1)}{x+2}\rightarrow \dfrac{\infty}{\infty}$ cuando $x\rightarrow \infty$.
+Sea $f(x)=\dfrac{\log(x^2-1)}{x+2}\to \dfrac{\infty}{\infty}$ cuando $x\to \infty$.
 
 Para resolver la indeterminación aplicamos la regla de L’Hôpital:
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow \infty}\frac{\log(x^2-1)}{x+2} &= \lim_{x\rightarrow
-\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\rightarrow \infty}\frac{\frac{2x}{x^2-1}}{1}=\\
-&=\lim_{x\rightarrow \infty}\frac{2x}{x^2-1}= \lim_{x\rightarrow \infty}\frac{\left(2x\right)'}{\left(x^2-1\right)'}=
-\lim_{x\rightarrow \infty}\frac{2}{2x}=0.
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to \infty}\frac{\log(x^2-1)}{x+2} &= \lim_{x\to
+\infty}\frac{\left(\log(x^2-1)\right)'}{\left(x+2\right)'}= \lim_{x\to \infty}\frac{\frac{2x}{x^2-1}}{1}=\\
+&=\lim_{x\to \infty}\frac{2x}{x^2-1}= \lim_{x\to \infty}\frac{\left(2x\right)'}{\left(x^2-1\right)'}=
+\lim_{x\to \infty}\frac{2}{2x}=0.
+\end{align*}
 :::
 
 ### Resolución de una indeterminación de tipo producto
 
-Si $f(x)\rightarrow 0$ y $g(x)\rightarrow \pm\infty$ cuando $x\rightarrow a$, entonces la indeterminación $f(x)\cdot g(x)\rightarrow 0\cdot \pm\infty$ puede convertirse en una de tipo cociente mediante la transformación:
+Si $f(x)\to 0$ y $g(x)\to \pm\infty$ cuando $x\to a$, entonces la indeterminación $f(x)\cdot g(x)\to 0\cdot \pm\infty$ puede convertirse en una de tipo cociente mediante la transformación:
 
-$$f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\rightarrow \frac{0}{0}.$$
+$$f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\to \frac{0}{0}.$$
 
 :::{#exm-solucion-indeterminacion-producto}
-Sea $f(x)=x^2e^{1/x^2}\rightarrow 0\cdot\infty$ cuando $x\rightarrow 0$.
+Sea $f(x)=x^2e^{1/x^2}\to 0\cdot\infty$ cuando $x\to 0$.
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0}x^2e^{1/x^2} &= \lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2}\rightarrow \frac{\infty}{\infty}
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0}x^2e^{1/x^2} &= \lim_{x\to 0}\frac{e^{1/x^2}}{1/x^2}\to \frac{\infty}{\infty}
+\end{align*}
 
 Aplicando ahora la regla de L´Hôpital tenemos:
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0}\frac{e^{1/x^2}}{1/x^2} &= \lim_{x\rightarrow
-0}\frac{\left(e^{1/x^2}\right)'}{\left(1/x^2\right)'} = \lim_{x\rightarrow
-0}\frac{e^{1/x^2}\frac{-2}{x^3}}{\frac{-2}{x^3}} = \lim_{x\rightarrow 0}e^{1/x^2}=\infty.
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0}\frac{e^{1/x^2}}{1/x^2} &= \lim_{x\to
+0}\frac{\left(e^{1/x^2}\right)'}{\left(1/x^2\right)'} = \lim_{x\to
+0}\frac{e^{1/x^2}\frac{-2}{x^3}}{\frac{-2}{x^3}} = \lim_{x\to 0}e^{1/x^2}=\infty.
+\end{align*}
 :::
 
 ### Resolución de una indeterminación de tipo potencia
 
-Si $f(x)^{g(x)}$ presenta una indeterminación de tipo potencia cuando $x\rightarrow a$, entonces la indeterminación puede convertirse en una de tipo producto mediante la transformación:
+Si $f(x)^{g(x)}$ presenta una indeterminación de tipo potencia cuando $x\to a$, entonces la indeterminación puede convertirse en una de tipo producto mediante la transformación:
 
 $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 
 :::{#exm-solucion-indeterminacion-producto}
-Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \rightarrow 1^\infty$ cuando $x\rightarrow 0$.
+Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty$ cuando $x\to 0$.
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\rightarrow
-0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right) = \exp\left(\lim_{x\rightarrow
-0}x\log\left(1+\frac{1}{x}\right)\right) =\\
-&= \exp\left(\lim_{x\rightarrow 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\to
+0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\ 
+&= \exp\left(\lim_{x\to
+0}x\log\left(1+\frac{1}{x}\right)\right)\\
+&= \exp\left(\lim_{x\to 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
+\end{align*}
 
 Aplicando ahora la regla de L´Hôpital tenemos:
 
-$$
-\begin{aligned}
-\exp\left(\lim_{x\rightarrow 0}\frac{\left(\log\left(1+\frac{1}{x}\right)\right)'}{\left(1/x\right)'}\right) &=
-\exp\left(\lim_{x\rightarrow 0}\frac{\frac{1}{1+1/x}\frac{-1}{x^2}}{\frac{-1}{x^2}}\right) =
-\exp\left(\lim_{x\rightarrow 0}\frac{1}{1+\frac{1}{x}}\right)=\exp(1)=e.
-\end{aligned}
-$$
+\begin{align*}
+\exp\left(\lim_{x\to 0}\frac{\left(\log\left(1+\frac{1}{x}\right)\right)'}{\left(1/x\right)'}\right) &=
+\exp\left(\lim_{x\to 0}\frac{\frac{1}{1+1/x}\frac{-1}{x^2}}{\frac{-1}{x^2}}\right) \\ 
+&=
+\exp\left(\lim_{x\to 0}\frac{1}{1+\frac{1}{x}}\right)=\exp(1)=e.
+\end{align*}
 :::
 
 ### Resolución de una indeterminación de tipo diferencia
 
-Si $f(x)\rightarrow \infty$ y $g(x)\rightarrow \infty$ cuando $x\rightarrow a$, entonces la indeterminación $f(x)-g(x)$ puede convertirse en una de tipo cociente mediante la transformación:
+Si $f(x)\to \infty$ y $g(x)\to \infty$ cuando $x\to a$, entonces la indeterminación $f(x)-g(x)$ puede convertirse en una de tipo cociente mediante la transformación:
 
-$$f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\rightarrow \frac{0}{0}.$$
+$$f(x)-g(x)=\frac{\frac{1}{g(x)}-\frac{1}{f(x)}}{\frac{1}{f(x)g(x)}}\to \frac{0}{0}.$$
 
 :::{#exm-solucion-indeterminacion-diferencia}
-Sea $f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \rightarrow \infty-\infty$ cuando $x\rightarrow 0$.
+Sea $f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \to \infty-\infty$ cuando $x\to 0$.
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0} \frac{1}{\operatorname{sen} x}-\frac{1}{x} &=
-\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} \rightarrow \frac{0}{0}.
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0} \frac{1}{\operatorname{sen} x}-\frac{1}{x} &=
+\lim_{x\to 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} \to \frac{0}{0}.
+\end{align*}
 
 Aplicando ahora la regla de L´Hôpital tenemos:
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} & =
-\lim_{x\rightarrow 0} \frac{\left(x-\operatorname{sen} x\right)'}{\left(x\operatorname{sen} x\right)'}=
-\lim_{x\rightarrow 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \\
-&= \lim_{x\rightarrow 0} \frac{\left(1-\cos x\right)'}{\left(\operatorname{sen} x +x\cos x\right)'} =
-\lim_{x\rightarrow 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\\
+\begin{align*}
+\lim_{x\to 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} & =
+\lim_{x\to 0} \frac{\left(x-\operatorname{sen} x\right)'}{\left(x\operatorname{sen} x\right)'}=
+\lim_{x\to 0} \frac{1-\cos x}{\operatorname{sen} x +x\cos x} = \\
+&= \lim_{x\to 0} \frac{\left(1-\cos x\right)'}{\left(\operatorname{sen} x +x\cos x\right)'} =
+\lim_{x\to 0} \frac{\operatorname{sen} x}{\cos x +\cos x-x\operatorname{sen} x}=\\
 &= \frac{0}{2}=0.
-\end{aligned}
-$$
+\end{align*}
 :::
 
 ## Asíntotas de una función
@@ -1070,7 +1087,7 @@ Una asíntota de una función es una recta a la que tiende la función en el inf
 
 Existen tres tipos de asíntotas:
 
-- **Asíntota vertial**: $x=a$,
+- **Asíntota vertical**: $x=a$,
 - **Asíntota horizontal**: $y=a$,
 - **Asíntota oblicua**: $y=a+bx$.
 
@@ -1080,7 +1097,7 @@ Existen tres tipos de asíntotas:
 ## Asíntota vertical
 Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
 
-$$\lim_{x\rightarrow a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\rightarrow a^-}f(x)=\pm \infty$$
+$$\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty$$
 :::
 
 Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
@@ -1088,7 +1105,7 @@ Las asíntotas verticales deben buscarse en los puntos donde no está definida l
 :::{#exm-asintota-vertical}
 La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
-$$\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow 2^+}\frac{x+1}{x-2} =\infty.$$
+$$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.$$
 
 ::: {.content-visible when-format="html"}
 ![Asíntota vertical.](./img/limites/asintota-vertical.png)
@@ -1104,18 +1121,16 @@ $$\lim_{x\rightarrow 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\rightarrow
 ## Asíntota horizontal
 Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
 
-$$\lim_{x\rightarrow +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\rightarrow \infty}f(x)=a$$
+$$\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a$$
 :::
 
 :::{#exm-asintota-horizontal}
 La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
-\lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1.
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to -\infty}\frac{x+1}{x-2}&= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
+\lim_{x\to +\infty}\frac{x+1}{x-2}&= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
+\end{align*}
 
 ::: {.content-visible when-format="html"}
 ![Asíntota horizontal.](./img/limites/asintota-horizontal.png)
@@ -1132,20 +1147,18 @@ $$
 ## Asíntota oblicua
 Se dice que una recta $y=a+bx$ es una *asíntota oblicua* de una función $f$ si se cumple
 
-$$\lim_{x\rightarrow \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\rightarrow \pm\infty}f(x)-bx=a.$$
+$$\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.$$
 :::
 
 :::{#exm-asintota-oblicua}
 La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
-\lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
-\lim_{x\rightarrow \pm\infty}\frac{x^2}{x-1}-x &=
-\lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
+\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
+\lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &=
+\lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
+\end{align*}
 
 ::: {.content-visible when-format="html"}
 ![Asíntota oblicua.](./img/limites/asintota-oblicua.png)
@@ -1162,14 +1175,14 @@ $$
 ## Función continua en un punto
 Se dice que una función $f$ es *continua* en el punto $a$ si
 
-$$\lim_{x\rightarrow a}f(x)=f(a).$$
+$$\lim_{x\to a}f(x)=f(a).$$
 :::
 
 De esta definición se deducen tres condiciones necesarias para la continuidad:
 
 1. $f(a)\in \operatorname{Dom}(f)$.
-2. Existe $\lim_{x\rightarrow a}f(x)$.
-3. $\lim_{x\rightarrow a}f(x)=f(a)$.
+2. Existe $\lim_{x\to a}f(x)$.
+3. $\lim_{x\to a}f(x)=f(a)$.
 
 Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en $a$.
 
@@ -1193,13 +1206,13 @@ Dependiendo de la condición de continuidad que se rompa, existen distintos tipo
 
 :::{#def-discontinuiada-evitable}
 ## Discontinuidad evitable
-Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\rightarrow a$ pero $\displaystyle \lim_{x\rightarrow a}f(x)\neq f(a)$.
+Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\to a$ pero $\displaystyle \lim_{x\to a}f(x)\neq f(a)$.
 :::
 
 :::{#exm-discontinuiada-evitable}
 La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$ ya que la función no está definida en $x=1$ pero
 
-$$\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.$$
+$$\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.$$
 
 ::: {.content-visible when-format="html"}
 ![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.png)
@@ -1214,9 +1227,9 @@ $$\lim_{x\rightarrow 2}\frac{x^2-1}{x-1} = \lim_{x\rightarrow 2}x+1=2.$$
 
 :::{#def-discontinuidad-1-especie-salto-finito}
 ## Discontinuidad de 1ª especie de salto finito
-Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f(x)$ cuando $x\rightarrow a$ pero
+Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f(x)$ cuando $x\to a$ pero
 
-$$\lim_{x\rightarrow a^-}f(x)\neq \lim_{x\rightarrow a^+}f(x).$$
+$$\lim_{x\to a^-}f(x)\neq \lim_{x\to a^+}f(x).$$
 
 A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 :::
@@ -1224,12 +1237,10 @@ A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 :::{#exm-discontinuidad-1-especie-salto-finito}
 La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0^-}\frac{|x|}{x}&= -1\\
-\lim_{x\rightarrow 0^+}\frac{|x|}{x}&= 1
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0^-}\frac{|x|}{x}&= -1\\
+\lim_{x\to 0^+}\frac{|x|}{x}&= 1
+\end{align*}
 
 Salto $= 1-(-1)=2$.
 
@@ -1248,7 +1259,7 @@ Salto $= 1-(-1)=2$.
 ## Discontinuidad de 1ª especie de salto infinito
 Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto infinito* en el punto $a$ si
 
-$$\lim_{x\rightarrow a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\rightarrow a^+}f(x)=\pm\infty.$$
+$$\lim_{x\to a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm\infty.$$
 :::
 
 Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a$, entonces $f$ tienen una asíntota vertical $x=a$.
@@ -1256,12 +1267,10 @@ Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a
 :::{#exm-discontinuidad-1-especie-salto-infinito}
 La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infinito en $x=0$ ya que
 
-$$
-\begin{aligned}
-\lim_{x\rightarrow 0^-}e^{1/x}&= 0\\
-\lim_{x\rightarrow 0^+}e^{1/x}&= \infty
-\end{aligned}
-$$
+\begin{align*}
+\lim_{x\to 0^-}e^{1/x}&= 0\\
+\lim_{x\to 0^+}e^{1/x}&= \infty
+\end{align*}
 
 ::: {.content-visible when-format="html"}
 ![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.png)
@@ -1284,12 +1293,10 @@ Normalmente la discontinuidades de 2ª especie se dan en puntos donde la funció
 :::{#exm-discontinuidad-2-especie}
 La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 
-$$
-\begin{aligned}
-& \lim_{x\rightarrow 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
-& \lim_{x\rightarrow 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
-\end{aligned}
-$$
+\begin{align*}
+& \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
+& \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
+\end{align*}
 
 ::: {.content-visible when-format="html"}
 ![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.png)
@@ -1302,4 +1309,4 @@ $$
 
 **Notas**
 
-[^1]: Se pude simplificar porque aunque $x\rightarrow 1$, $x\neq 1$ y por tanto el denominador no se anula.
+[^1]: Se pude simplificar porque aunque $x\to 1$, $x\neq 1$ y por tanto el denominador no se anula.
