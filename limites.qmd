@@ -473,6 +473,11 @@ Por tanto, el límite de la función aplicada a estas dos sucesiones es distinto
 Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $f$ está _acotada_ en el entorno de $a$ si existe un $\delta>0$ y un $c>0$ tal que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$.
 :::
 
+:::{#def-funcion-acotada-entorno}
+## Función acotada
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$, se dice que $f$ está _acotada_ en $A$, si existe un $c>0$ tal que $|f(x)|\leq c$ $\forall x\in A$.
+:::
+
 :::{#prp-limite-funcion-acotada}
 Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$, entonces $f$ está acotada en un entorno de $a$.
 :::
@@ -1171,27 +1176,53 @@ La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
 ## Continuidad
 
-:::{#def-funcion-continua}
+:::{#def-funcion-continua-punto}
 ## Función continua en un punto
-Se dice que una función $f$ es *continua* en el punto $a$ si
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que la función $f$ es *continua* en el punto $a$ si
 
 $$\lim_{x\to a}f(x)=f(a).$$
 :::
 
-De esta definición se deducen tres condiciones necesarias para la continuidad:
+:::{#exm-funcion-continua}
+La función $f(x)=x^2$ es continua en $2$ ya que $\lim_{x\to 2}x^2 = 4 = f(2)$.
+:::
+
+:::{#def-funcion-continua-intervalo}
+## Función continua en un intervalo
+Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, se dice que función $f$ es *continua* en un intervalo $I\subseteq A$, si lo es en cada uno de los puntos de $I$.
+:::
+
+De manera informal, se puede decir que una una función es continua en un intervalo, si puede dibujarse su gráfica en ese intervalo sin levantar el lápiz.
+
+:::{#exm-funcion-continua}
+La función constante $f(x)=c$ es continua en todo $\mathbb{R}$, ya que $\lim_{x\to a}c = c = f(a)$ $\forall a\in\mathbb{R}$.
+
+La función identidad $\operatorname{Id}(x)=x$ es continua en todo $\mathbb{R}$, ya que $\lim_{x\to a}x = a = \operatorname{Id}(a)$ $\forall a\in\mathbb{R}$.
+
+Del mismo modo, función $f(x)=x^2$ es continua en todo $\mathbb{R}$, ya que $\lim_{x\to a}x^2 = a^2 = f(a)$ $\forall a\in\mathbb{R}$, 
+:::
+
+:::{#exm-continuidad-seno}
+Veamos que la $f(x)\operatorname{sen}(x)$ es continua en todo $\mathbb{R}$. Sea $a\in\mathbb{R}$. Usando propiedades trigonométricas se tiene
+
+$$
+|\operatorname{sen}(x)-\operatorname{sen}(a)|=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| = 2|\operatorname{sen}\left(\frac{x-a}{2}\right)||\cos\left(\frac{x-a}{2}\right)| \leq 2\frac{|x-a|}{2}=|x-a|,
+$$
+
+ya que $\operatorname{sen}(x)\leq x$ $\forall x\in\mathbb{R}$ y $\cos(x)\leq 1$ $\forall x\in\mathbb{R}$.
+
+Así pues, para cualquier $\varepsilon>0$ existe $\delta=\varepsilon>0$ tal que si $|x-a|<\delta=\varepsilon$, entonces $|\operatorname{sen}(x)-\operatorname{sen}(a)|<|x-a|=\varepsilon$.
+
+De aquí se puede deducir que todas las funciones trigonométricas son continuas en su dominio.
+:::
+
+De la definición de continuidad se deducen tres condiciones necesarias para la continuidad:
 
 1. $f(a)\in \operatorname{Dom}(f)$.
 2. Existe $\lim_{x\to a}f(x)$.
 3. $\lim_{x\to a}f(x)=f(a)$.
 
 Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en $a$.
-
-:::{#def-funcion-continua-intervalo}
-## Función continua en un intervalo
-Se dice que una función $f$ es *continua* en un intervalo si lo es en cada uno de los puntos del intervalo.
-:::
-
-La gráfica de una función continua en un intervalo puede dibujarse sin levantar el lápiz.
 
 ## Tipos de discontinuidades
 
@@ -1206,7 +1237,7 @@ Dependiendo de la condición de continuidad que se rompa, existen distintos tipo
 
 :::{#def-discontinuiada-evitable}
 ## Discontinuidad evitable
-Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f(x)$ cuando $x\to a$ pero $\displaystyle \lim_{x\to a}f(x)\neq f(a)$.
+Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f$ en $a$ pero $\displaystyle \lim_{x\to a}f(x)\neq f(a)$.
 :::
 
 :::{#exm-discontinuiada-evitable}
@@ -1227,7 +1258,7 @@ $$\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.$$
 
 :::{#def-discontinuidad-1-especie-salto-finito}
 ## Discontinuidad de 1ª especie de salto finito
-Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f(x)$ cuando $x\to a$ pero
+Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto finito* en el punto $a$ si existen los límites laterales de $f$ en $a$ pero
 
 $$\lim_{x\to a^-}f(x)\neq \lim_{x\to a^+}f(x).$$
 
@@ -1306,6 +1337,161 @@ La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª espec
 ![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.tex)
 :::
 :::
+
+:::{#prp-algebra-funciones-continuas}
+Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si $f$ y $g$ son continuas en $a$, entonces
+
+a. $f\pm g$ es continua en $a$.
+b. $f\cdot g$ es continua en $a$.
+c. $cf$ es continua en $a$ $\forall c\in\mathbb{R}$.
+d. $\frac{f}{g}$ es continua en $a$ si $g(x)\neq 0$ $\forall x\in\mathbb{R}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Es una consecuencia inmediata del álgebra de límites.
+:::
+:::
+
+:::{#exm-continuidad-polinomios}
+El polinomio $p(x)=2x^2-x+3$ es continuo en todo $\mathbb{R}$ ya que las funciones $f(x)=x^2$, $g(x)=x$ y $h(x)=3$ son continuas en todo $\mathbb{R}$.
+
+De hecho, se puede demostrar de manera similar que cualquier polinomio es continuo en todo $\mathbb{R}$.
+:::
+
+:::{#prp-continuidad-composicion-funciones}
+Dados dos conjuntos $A,B\subseteq \mathbb{R}$, dos funciones $f:A\to \mathbb{R}$, $g:B\to \mathbb{R}$ tales que $f(A)\subseteq B$ y un punto de acumulación $a$ de $A$, si $f$ es continua en $a$ y $g$ es continua en $f(a)$, entonces $g\circ f$ es continua en $a$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $g$ es continua en $f(a)$, para cualquier $\varepsilon>0$ existe $\delta'>0$ tal que si $|x-f(a)|<\delta'$ entonces $|g(x)-g(f(a))|<\varepsilon$. 
+
+Por otro lado, como $f$ es continua en $a$, para $\delta'>0$ existe otro $\delta>0$ tal que si $|x-a|<\delta$, entonces $|f(x)-f(a)|<\delta'$. 
+
+Así pues, si $|x-a|<\delta$ se tiene que $|f(x)-f(a)|<\delta'$ y $|g(f(x))-g(f(a))|<\varepsilon$, por lo que $\lim_{x\to a}g(f(x)) = g(f(a))$ y $g\circ f$ es continua en $a$.
+:::
+:::
+
+:::{#exm-continuidad-composicion-funciones}
+Sea $f(x)=\frac{1}{x}$, que es continua en $\mathbb{R}\setminus\{0\}$ y $g(x)=\cos(x)$ que es continua en todo $\mathbb{R}$. Entonces $g\circ f(x)=\cos\left(\frac{1}{x}\right)$ es continua en $\mathbb{R}\setminus\{0\}$, mientras que $f\circ g(x)=\frac{1}{\cos(x)}$ es continua en $\mathbb{R}\setminus\{(2k+1)\pi/2: k\in\mathbb{Z}\}$. 
+:::
+
+## Funciones continuas en intervalos
+
+:::{#thm-funcion-continua-intervalo-cerrado}
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ está acotada en $I$. 
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Lo probaremos por reducción al absurdo. Supongamos que $f$ no está acotada en $I$. Entonces, para cada $n\in\mathbb{N}$ existe $x_n\in I$ tal que $|f(x_n)|>n$. La sucesión $(x_n)_{n=1}^\infty$\subset I$ y como $I$ está acotado, $(x_n)_{n=1}^\infty$ también está acotada, de manera que, por el @thm-bolzano-weierstrass-sucesiones existe una subsucesión $(x_{n_k})_{k=1}^\infty$ que converge. 
+
+Sea $c=\lim_{k\to\infty}x_{n_k}$. Como $(x_{n_k})_{k=1}^\infty\subset I$, y $I$ es cerrado, por el @thm-conjunto-cerrado-puntos-acumulacion, contiene a todos sus puntos de acumulación, y por tanto $c\in I$. 
+
+Como $f$ es continua en $I$, lo es, en particular, en $c$, de modo que como $(x_{n_k})_{k=1}^\infty$ converge a $c$, $\lim_{k\to\infty}f(x_{n_k}) = f(c)$ y, por el @thm-convergencia-sucesion-acotada, $(f(x_{n_k}))_{k=1}^\infty$ está acotada, pero $|f(x_{n_k})|>n_k>k$ $\forall k\in\mathbb{N}$, lo que contradice que esté acotada. Así pues, $f$ está acotada en $I$.
+:::
+:::
+
+:::{#exm-función-discontinua-no-acotada}
+La función
+
+$$
+f(x)=
+\begin{cases}
+\frac{1}{x} & \mbox{si } x\in (0,1]\\
+0 & \mbox{si } x=0
+\end{cases}
+$$
+
+no está acotada en el intervalo $[0,1]$, luego no es continua en este intervalo.
+:::
+
+:::{#thm-extremos-funcion-continua-intervalo-cerrado}
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $c\leq f(x)\leq d$ $\forall x\in I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $I=[a,b]$ es cerrado y acotado, y $f$ es continua en $I$, por el teorema anterior se tiene que $f$ está acotada en $I$.
+
+Como $f(I)\neq \emptyset$ pues $f(a)\in f(I)$, por el axioma de completitud de los números reales, existe el supremo $s=\sup\{f(I)\}$. Para cada $n\in\mathbb{N}$, $s-\frac{1}{n}$ no es cota superior de $f(I)$, y por tanto, existe $x_n\in I$ tal que $s-\frac{1}{n}<f(x_n)<s$. Podemos construir así una sucesión $(x_n)_{n=1}^\infty\subset I$. Como $I$ está acotado, por el por el @thm-bolzano-weierstrass-sucesiones existe una subsucesión $(x_{n_k})_{k=1}^\infty$ que converge. 
+
+Sea $d=\lim_{k\to\infty}x_{n_k}$. Como $(x_{n_k})_{k=1}^\infty\subset I$, y $I$ es cerrado, por el @thm-conjunto-cerrado-puntos-acumulacion, contiene a todos sus puntos de acumulación, y por tanto $d\in I$. 
+
+Como $f$ es continua en $I$, lo es, en particular, en $d$, de modo que como $(x_{n_k})_{k=1}^\infty$ converge a $d$, $\lim_{k\to\infty}f(x_{n_k}) = f(d)$. Además se tiene que $s-\frac{1}{k}<s-\frac{1}{n_k}<f(x_{n_k})<s$ $\forall k\in\mathbb{N}$. Así pues, por el teorema de compresión de funciones, se tiene que $\lim_{k\to\infty} f(x_{n_k})=s$, y por tanto $f(d)=s$ de modo que $f(d)\geq f(x)$ $\forall x\in I$.
+
+Si ahora consideramos la función $-f$, que también es continua en $I$ al ser la composición de funciones continuas, por lo que acabamos de demostrar, $-f$ alcanza el máximo en $I$, es decir, existe $c\in I$ tal que $-f(c)\geq -f(x)$ $\forall x\in I$, de donde se deduce que $f(c)\leq f(x)$ $\forall x\in I$.
+:::
+:::
+
+:::{#thm-bolzano}
+# Bolzano
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, y $f(a)<0<f(b)$, entonces existe $c\in(a,b)$ tal que $f(c)=0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $A=\{x\in I: f(x)<0\}$. $A\subset I$ y como $I$ está acotado, también $A$ está acotado. $A\neq\emptyset$ ya que $a\in A$, de manera que, por el axioma del supremo existe $c=\sup(A)$.
+
+Veamos ahora que $c\in(a,b)$. Como $f$ es continua en $I$, $\lim_{x\to a^-}f(x)=f(a)<0$, de modo que existe $\delta_1>0$ tal que $f(x)<0$ $\forall x\in [a,a+\delta_1)$, y por tanto, $[a,a+\delta_1)\subset A$, por lo que $c>a$.
+
+Del mismo modo, $\lim_{x\to b^+}f(x)=f(b)>0$, de modo que existe $\delta_2>0$ tal que $f(x)>0$ $\forall x\in (b-\delta_2,b]$, y por tanto, $(b-\delta_2,b]\subset \overline{A}$, por lo que $c<b$.
+
+Finalmente, veamos que $f(c)=0$ por reducción al absurdo. Si suponemos que $f(c)>0$, entonces $f(c)=\lim_{x\to c} f(x)>0$, de manera que existe $\delta>0$ tal que si $f(x)>0$ $\forall x\in(c-\delta, c+\delta)$, lo que contradice que $c$ sea el supremo de $A$. Del mismo modo, si suponemos que $f(c)<0$, entonces $f(c)=\lim_{x\to c} f(x)<0$, de manera que existe $\delta>0$ tal que si $f(x)<0$ $\forall x\in(c-\delta, c+\delta)$, y entonces, $f\left(c+\frac{\delta}{2}\right)<0$, por lo que $c+\frac{\delta}{2}\in A$ y $c+\frac{\delta}{2}>c$, lo que contradice que $c$ sea cota superior de $A$. Por consiguiente, debe ser $f(c)=0$.
+:::
+:::
+
+:::{#thm-valores-intermedios}
+## Valores intermedios
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ y si $c,d\in I$, entonces para cualquier $k\\mathbb{R}$ con $f(c)<k<f(d)$, existe $e\in I$ entre $c$ y $d$ tal que $f(e)=k$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $c<d$ y tomemos la función $g:[c,d]\to\mathbb{R}$ tal que $g(x)=f(x)-k$ $\forall x\in[c,d]$. Puesto que $f$ es continua en $[c,d]$, $g$ también lo es. Además $g(c)=f(c)-k<0$ y $g(d)=f(d)-k>0$. Por tanto, por el teorema de Bolzano, existe $e\in(c,d)$ tal que $g(e)=0$, y por consiguiente, $g(e)=f(e)-k=0$, de donde se deduce que $f(e)=k$.
+
+De forma análoga se procede si $d<c$.
+:::
+:::
+
+:::{#thm-valores-intermedios}
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ y $k\in\mathbb{R}$ es tal que $\inf(f(I))\leq k\leq \sup(f(I))$, entonces existe $e\in I$ tal que $f(e)=k$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Por el @thm-extremos-funcion-continua-intervalo-cerrado existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$.
+$f(c)=\min(f(I))=\inf(f(I))\leq k\leq \sup(f(I))=\max(f(I))=f(d)$.
+
+Si $k=f(c)$ o $k=f(d)$ el resultado es trivial, y si $f(c)<k<f(d)$, por el teorema de los valores intermedios, existe $e\in I$ entre $c$ y $d$ tal que $f(e)=k$.
+:::
+:::
+
+:::{#thm-imagen-funcion-continua-intervalo-cerrado-acotado}
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ entonces $f(I)$ es un intervalo cerrado y acotado.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Por el @thm-extremos-funcion-continua-intervalo-cerrado existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$, por lo que $f(I)\subseteq[f(c), f(d)]$.
+
+Veamos ahora que también se cumple el otro sentido de la inclusión. Si $k\in[f(c),f(d)]$, por el teorema anterior, se tiene que existe $e\in I$ tal que $f(e)=k$, y por tanto $k\in f(I)$, por lo que $[f(c),f(d)]\subset f(I)$.
+
+Por consiguiente, $f(I)=[f(c),f(d)]$ que es un intervalo cerrado y acotado.
+:::
+:::
+
+
+
 
 **Notas**
 

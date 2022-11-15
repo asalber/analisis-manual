@@ -221,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#discontinuidad-de-1ª-especie-de-salto-infinito" id="toc-discontinuidad-de-1ª-especie-de-salto-infinito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-infinito"><span class="toc-section-number">6.11.3</span>  Discontinuidad de 1ª especie de salto infinito</a></li>
   <li><a href="#discontinuidad-de-2ª-especie" id="toc-discontinuidad-de-2ª-especie" class="nav-link" data-scroll-target="#discontinuidad-de-2ª-especie"><span class="toc-section-number">6.11.4</span>  Discontinuidad de 2ª especie</a></li>
   </ul></li>
+  <li><a href="#funciones-continuas-en-intervalos" id="toc-funciones-continuas-en-intervalos" class="nav-link" data-scroll-target="#funciones-continuas-en-intervalos"><span class="toc-section-number">6.12</span>  Funciones continuas en intervalos</a></li>
   </ul>
 </nav>
     </div>
@@ -720,6 +721,9 @@ Importante
 <div id="def-funcion-acotada-entorno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6.2 (Función acotada en un entorno de un punto) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en el entorno de <span class="math inline">\(a\)</span> si existe un <span class="math inline">\(\delta&gt;0\)</span> y un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|&lt;c\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p>
 </div>
+<div id="def-funcion-acotada-entorno" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.3 (Función acotada) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en <span class="math inline">\(A\)</span>, si existe un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|\leq c\)</span> <span class="math inline">\(\forall x\in A\)</span>.</p>
+</div>
 <div id="prp-limite-funcion-acotada" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.1 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
@@ -899,7 +903,7 @@ Demostración
 <section id="límites-laterales-1" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="límites-laterales-1"><span class="header-section-number">6.4</span> Límites laterales</h2>
 <div id="def-limites-laterales" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.3 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>,</p>
+<p><span class="theorem-title"><strong>Definición 6.4 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>,</p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(\{x\in A: x&gt;a\}\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite por la derecha</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se denota <span class="math inline">\(\lim_{x\to a^+}f(x)=l\)</span>, si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(0&lt;x-a&lt;\delta\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite por la izquierda</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se denota <span class="math inline">\(\lim_{x\to a^-}f(x)=l\)</span>, si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(0&lt;a-x&lt;\delta\)</span>.</p></li>
@@ -942,7 +946,7 @@ f(x)=\frac{|x|}{x}=
 <section id="límites-infinitos" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="límites-infinitos"><span class="header-section-number">6.5</span> Límites infinitos</h2>
 <div id="def-limite-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.4 (Límite infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>:</p>
+<p><span class="theorem-title"><strong>Definición 6.5 (Límite infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>:</p>
 <ol type="1">
 <li><p>Se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(\lim_{x\to a}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p></li>
 <li><p>Se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(-\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(\lim_{x\to a}f(x)=-\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&lt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(f(x)&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p></li>
@@ -984,7 +988,7 @@ Demostración
 <section id="límites-en-el-infinito-1" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="límites-en-el-infinito-1"><span class="header-section-number">6.6</span> Límites en el infinito</h2>
 <div id="def-limite-en-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.5 (Límite de una función en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.6 (Límite de una función en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
 <p>Y dado un conjunto <span class="math inline">\(B\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((-\infty,b)\subset B\)</span> para algún <span class="math inline">\(b\in\mathbb{R}\)</span>, y una función <span class="math inline">\(g:B\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(g\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(-\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to-\infty}g(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&lt;b\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&lt;\delta\)</span>.</p>
 </div>
 <div id="exm-limite-en-infinito" class="theorem example">
@@ -1016,7 +1020,7 @@ Demostración
 </div>
 </div>
 <div id="def-limite-infinito-en-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.6 (Límite infinito en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.7 (Límite infinito en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
 <p>Y dado un conjunto <span class="math inline">\(B\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((-\infty,b)\subset B\)</span> para algún <span class="math inline">\(b\in\mathbb{R}\)</span>, y una función <span class="math inline">\(g:B\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(g\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(-\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to-\infty}g(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&lt;b\)</span> tal que <span class="math inline">\(f(x)&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&lt;\delta\)</span>.</p>
 </div>
 <div id="exm-limite-infinito-en-infinito" class="theorem example">
@@ -1246,7 +1250,7 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <section id="infinitésimos-equivalentes" class="level4" data-number="6.8.2.3">
 <h4 data-number="6.8.2.3" class="anchored" data-anchor-id="infinitésimos-equivalentes"><span class="header-section-number">6.8.2.3</span> Infinitésimos equivalentes</h4>
 <div id="def-infinitesimo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.7 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> es un infinitésimo en <span class="math inline">\(a\)</span> si <span class="math inline">\(\lim_{x\to a}f(x)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.8 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> es un infinitésimo en <span class="math inline">\(a\)</span> si <span class="math inline">\(\lim_{x\to a}f(x)=0\)</span>.</p>
 </div>
 <p>De manera informal, se puede decir que un infinitésimo es una cantidad infinitamente pequeña.</p>
 <div id="exm-infinitesimos" class="theorem example">
@@ -1282,7 +1286,7 @@ Demostración
 </div>
 </div>
 <div id="def-infinitesimos-equivalentes" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.8 (Infinitésimos equivalentes) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infitésimos en <span class="math inline">\(a\)</span>, se dice que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son <em>infinitésimos equivalentes</em> en <span class="math inline">\(a\)</span>, se denota <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span>, si</p>
+<p><span class="theorem-title"><strong>Definición 6.9 (Infinitésimos equivalentes) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infitésimos en <span class="math inline">\(a\)</span>, se dice que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son <em>infinitésimos equivalentes</em> en <span class="math inline">\(a\)</span>, se denota <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span>, si</p>
 <p><span class="math display">\[\lim_{x\to a}\frac{f(x)}{g(x)}=1.\]</span></p>
 </div>
 <p>Si <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span> entonces <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(g(x)\)</span> son magnitudes equivalentes cuando <span class="math inline">\(x\to a\)</span>.</p>
@@ -1433,7 +1437,7 @@ Advertencia
 <section id="asíntotas-verticales" class="level3" data-number="6.9.1">
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="asíntotas-verticales"><span class="header-section-number">6.9.1</span> Asíntotas verticales</h3>
 <div id="def-asintota-vertical" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.9 (Asíntota vertical) </strong></span>Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 6.10 (Asíntota vertical) </strong></span>Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty\]</span></p>
 </div>
 <p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.</p>
@@ -1453,7 +1457,7 @@ Advertencia
 <section id="asíntotas-horizontales" class="level3" data-number="6.9.2">
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="asíntotas-horizontales"><span class="header-section-number">6.9.2</span> Asíntotas horizontales</h3>
 <div id="def-asintota-horizontal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.10 (Asíntota horizontal) </strong></span>Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 6.11 (Asíntota horizontal) </strong></span>Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a\]</span></p>
 </div>
 <div id="exm-asintota-horizontal" class="theorem example">
@@ -1475,7 +1479,7 @@ Advertencia
 <section id="asíntotas-oblicuas" class="level3" data-number="6.9.3">
 <h3 data-number="6.9.3" class="anchored" data-anchor-id="asíntotas-oblicuas"><span class="header-section-number">6.9.3</span> Asíntotas oblicuas</h3>
 <div id="def-asintota-oblicua" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.11 (Asíntota oblicua) </strong></span>Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 6.12 (Asíntota oblicua) </strong></span>Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.\]</span></p>
 </div>
 <div id="exm-asintota-oblicua" class="theorem example">
@@ -1499,21 +1503,38 @@ Advertencia
 </section>
 <section id="continuidad" class="level2" data-number="6.10">
 <h2 data-number="6.10" class="anchored" data-anchor-id="continuidad"><span class="header-section-number">6.10</span> Continuidad</h2>
-<div id="def-funcion-continua" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.12 (Función continua en un punto) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<div id="def-funcion-continua-punto" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.13 (Función continua en un punto) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que la función <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\(a\)</span> si</p>
 <p><span class="math display">\[\lim_{x\to a}f(x)=f(a).\]</span></p>
 </div>
-<p>De esta definición se deducen tres condiciones necesarias para la continuidad:</p>
+<div id="exm-funcion-continua" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.29 </strong></span>La función <span class="math inline">\(f(x)=x^2\)</span> es continua en <span class="math inline">\(2\)</span> ya que <span class="math inline">\(\lim_{x\to 2}x^2 = 4 = f(2)\)</span>.</p>
+</div>
+<div id="def-funcion-continua-intervalo" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.14 (Función continua en un intervalo) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que función <span class="math inline">\(f\)</span> es <em>continua</em> en un intervalo <span class="math inline">\(I\subseteq A\)</span>, si lo es en cada uno de los puntos de <span class="math inline">\(I\)</span>.</p>
+</div>
+<p>De manera informal, se puede decir que una una función es continua en un intervalo, si puede dibujarse su gráfica en ese intervalo sin levantar el lápiz.</p>
+<div id="exm-funcion-continua" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.30 </strong></span>La función constante <span class="math inline">\(f(x)=c\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}c = c = f(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</p>
+<p>La función identidad <span class="math inline">\(\operatorname{Id}(x)=x\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}x = a = \operatorname{Id}(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</p>
+<p>Del mismo modo, función <span class="math inline">\(f(x)=x^2\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}x^2 = a^2 = f(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>,</p>
+</div>
+<div id="exm-continuidad-seno" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.31 </strong></span>Veamos que la <span class="math inline">\(f(x)\operatorname{sen}(x)\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Sea <span class="math inline">\(a\in\mathbb{R}\)</span>. Usando propiedades trigonométricas se tiene</p>
+<p><span class="math display">\[
+|\operatorname{sen}(x)-\operatorname{sen}(a)|=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| = 2|\operatorname{sen}\left(\frac{x-a}{2}\right)||\cos\left(\frac{x-a}{2}\right)| \leq 2\frac{|x-a|}{2}=|x-a|,
+\]</span></p>
+<p>ya que <span class="math inline">\(\operatorname{sen}(x)\leq x\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span> y <span class="math inline">\(\cos(x)\leq 1\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
+<p>Así pues, para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\varepsilon&gt;0\)</span> tal que si <span class="math inline">\(|x-a|&lt;\delta=\varepsilon\)</span>, entonces <span class="math inline">\(|\operatorname{sen}(x)-\operatorname{sen}(a)|&lt;|x-a|=\varepsilon\)</span>.</p>
+<p>De aquí se puede deducir que todas las funciones trigonométricas son continuas en su dominio.</p>
+</div>
+<p>De la definición de continuidad se deducen tres condiciones necesarias para la continuidad:</p>
 <ol type="1">
 <li><span class="math inline">\(f(a)\in \operatorname{Dom}(f)\)</span>.</li>
 <li>Existe <span class="math inline">\(\lim_{x\to a}f(x)\)</span>.</li>
 <li><span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</li>
 </ol>
 <p>Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en <span class="math inline">\(a\)</span>.</p>
-<div id="def-funcion-continua-intervalo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.13 (Función continua en un intervalo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>continua</em> en un intervalo si lo es en cada uno de los puntos del intervalo.</p>
-</div>
-<p>La gráfica de una función continua en un intervalo puede dibujarse sin levantar el lápiz.</p>
 </section>
 <section id="tipos-de-discontinuidades" class="level2" data-number="6.11">
 <h2 data-number="6.11" class="anchored" data-anchor-id="tipos-de-discontinuidades"><span class="header-section-number">6.11</span> Tipos de discontinuidades</h2>
@@ -1527,10 +1548,10 @@ Advertencia
 <section id="discontinuidad-evitable" class="level3" data-number="6.11.1">
 <h3 data-number="6.11.1" class="anchored" data-anchor-id="discontinuidad-evitable"><span class="header-section-number">6.11.1</span> Discontinuidad evitable</h3>
 <div id="def-discontinuiada-evitable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.14 (Discontinuidad evitable) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad evitable</em> en el punto <span class="math inline">\(a\)</span> si existe el límite de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\to a\)</span> pero <span class="math inline">\(\displaystyle \lim_{x\to a}f(x)\neq f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.15 (Discontinuidad evitable) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad evitable</em> en el punto <span class="math inline">\(a\)</span> si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero <span class="math inline">\(\displaystyle \lim_{x\to a}f(x)\neq f(a)\)</span>.</p>
 </div>
 <div id="exm-discontinuiada-evitable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6.29 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.32 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
 <p><span class="math display">\[\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.\]</span></p>
 <div>
 <div class="quarto-figure quarto-figure-center">
@@ -1545,12 +1566,12 @@ Advertencia
 <section id="discontinuidad-de-1ª-especie-de-salto-finito" class="level3" data-number="6.11.2">
 <h3 data-number="6.11.2" class="anchored" data-anchor-id="discontinuidad-de-1ª-especie-de-salto-finito"><span class="header-section-number">6.11.2</span> Discontinuidad de 1ª especie de salto finito</h3>
 <div id="def-discontinuidad-1-especie-salto-finito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.15 (Discontinuidad de 1ª especie de salto finito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto finito</em> en el punto <span class="math inline">\(a\)</span> si existen los límites laterales de <span class="math inline">\(f(x)\)</span> cuando <span class="math inline">\(x\to a\)</span> pero</p>
+<p><span class="theorem-title"><strong>Definición 6.16 (Discontinuidad de 1ª especie de salto finito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto finito</em> en el punto <span class="math inline">\(a\)</span> si existen los límites laterales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)\neq \lim_{x\to a^+}f(x).\]</span></p>
 <p>A la diferencia entre ambos límite se le lama <em>salto</em> de la discontinuidad.</p>
 </div>
 <div id="exm-discontinuidad-1-especie-salto-finito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6.30 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.33 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0^-}\frac{|x|}{x}&amp;= -1\\
 \lim_{x\to 0^+}\frac{|x|}{x}&amp;= 1
@@ -1569,12 +1590,12 @@ Advertencia
 <section id="discontinuidad-de-1ª-especie-de-salto-infinito" class="level3" data-number="6.11.3">
 <h3 data-number="6.11.3" class="anchored" data-anchor-id="discontinuidad-de-1ª-especie-de-salto-infinito"><span class="header-section-number">6.11.3</span> Discontinuidad de 1ª especie de salto infinito</h3>
 <div id="def-discontinuidad-1-especie-salto-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.16 (Discontinuidad de 1ª especie de salto infinito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto infinito</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 6.17 (Discontinuidad de 1ª especie de salto infinito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto infinito</em> en el punto <span class="math inline">\(a\)</span> si</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm\infty.\]</span></p>
 </div>
 <p>Si <span class="math inline">\(f\)</span> tienen una discontinuidad de 1ª especie de salto infinito en un punto <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> tienen una asíntota vertical <span class="math inline">\(x=a\)</span>.</p>
 <div id="exm-discontinuidad-1-especie-salto-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6.31 </strong></span>La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.34 </strong></span>La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0^-}e^{1/x}&amp;= 0\\
 \lim_{x\to 0^+}e^{1/x}&amp;= \infty
@@ -1592,11 +1613,11 @@ Advertencia
 <section id="discontinuidad-de-2ª-especie" class="level3" data-number="6.11.4">
 <h3 data-number="6.11.4" class="anchored" data-anchor-id="discontinuidad-de-2ª-especie"><span class="header-section-number">6.11.4</span> Discontinuidad de 2ª especie</h3>
 <div id="def-discontinuidad-2-especie" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6.17 (Discontinuidad de 2ª especie) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 2ª especie</em> en el punto <span class="math inline">\(a\)</span> si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.</p>
+<p><span class="theorem-title"><strong>Definición 6.18 (Discontinuidad de 2ª especie) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 2ª especie</em> en el punto <span class="math inline">\(a\)</span> si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.</p>
 </div>
 <p>Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.</p>
 <div id="exm-discontinuidad-2-especie" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6.32 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.35 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
 &amp; \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
 &amp; \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
@@ -1610,10 +1631,220 @@ Advertencia
 </div>
 </div>
 </div>
+<div id="prp-algebra-funciones-continuas" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.14 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son continuas en <span class="math inline">\(a\)</span>, entonces</p>
+<ol type="a">
+<li><span class="math inline">\(f\pm g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
+<li><span class="math inline">\(f\cdot g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
+<li><span class="math inline">\(cf\)</span> es continua en <span class="math inline">\(a\)</span> <span class="math inline">\(\forall c\in\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(x)\neq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
+</ol>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Es una consecuencia inmediata del álgebra de límites.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-continuidad-polinomios" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.36 </strong></span>El polinomio <span class="math inline">\(p(x)=2x^2-x+3\)</span> es continuo en todo <span class="math inline">\(\mathbb{R}\)</span> ya que las funciones <span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(g(x)=x\)</span> y <span class="math inline">\(h(x)=3\)</span> son continuas en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>De hecho, se puede demostrar de manera similar que cualquier polinomio es continuo en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+<div id="prp-continuidad-composicion-funciones" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6.15 </strong></span>Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta'&gt;0\)</span> tal que si <span class="math inline">\(|x-f(a)|&lt;\delta'\)</span> entonces <span class="math inline">\(|g(x)-g(f(a))|&lt;\varepsilon\)</span>.</p>
+<p>Por otro lado, como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span>, para <span class="math inline">\(\delta'&gt;0\)</span> existe otro <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(|x-a|&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x)-f(a)|&lt;\delta'\)</span>.</p>
+<p>Así pues, si <span class="math inline">\(|x-a|&lt;\delta\)</span> se tiene que <span class="math inline">\(|f(x)-f(a)|&lt;\delta'\)</span> y <span class="math inline">\(|g(f(x))-g(f(a))|&lt;\varepsilon\)</span>, por lo que <span class="math inline">\(\lim_{x\to a}g(f(x)) = g(f(a))\)</span> y <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-continuidad-composicion-funciones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.37 </strong></span>Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span>, que es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> que es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Entonces <span class="math inline">\(g\circ f(x)=\cos\left(\frac{1}{x}\right)\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span>, mientras que <span class="math inline">\(f\circ g(x)=\frac{1}{\cos(x)}\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{(2k+1)\pi/2: k\in\mathbb{Z}\}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="funciones-continuas-en-intervalos" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="funciones-continuas-en-intervalos"><span class="header-section-number">6.12</span> Funciones continuas en intervalos</h2>
+<div id="thm-funcion-continua-intervalo-cerrado" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.8 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Lo probaremos por reducción al absurdo. Supongamos que <span class="math inline">\(f\)</span> no está acotada en <span class="math inline">\(I\)</span>. Entonces, para cada <span class="math inline">\(n\in\mathbb{N}\)</span> existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(|f(x_n)|&gt;n\)</span>. La sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span>I$ y como <span class="math inline">\(I\)</span> está acotado, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> también está acotada, de manera que, por el <a href="sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
+<p>Sea <span class="math inline">\(c=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(c\in I\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, lo es, en particular, en <span class="math inline">\(c\)</span>, de modo que como <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> converge a <span class="math inline">\(c\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k}) = f(c)\)</span> y, por el <a href="sucesiones.html#thm-convergencia-sucesion-acotada">Teorema&nbsp;<span>4.2</span></a>, <span class="math inline">\((f(x_{n_k}))_{k=1}^\infty\)</span> está acotada, pero <span class="math inline">\(|f(x_{n_k})|&gt;n_k&gt;k\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>, lo que contradice que esté acotada. Así pues, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-función-discontinua-no-acotada" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.38 </strong></span>La función</p>
+<p><span class="math display">\[
+f(x)=
+\begin{cases}
+\frac{1}{x} &amp; \mbox{si } x\in (0,1]\\
+0 &amp; \mbox{si } x=0
+\end{cases}
+\]</span></p>
+<p>no está acotada en el intervalo <span class="math inline">\([0,1]\)</span>, luego no es continua en este intervalo.</p>
+</div>
+<div id="thm-extremos-funcion-continua-intervalo-cerrado" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.9 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(I=[a,b]\)</span> es cerrado y acotado, y <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, por el teorema anterior se tiene que <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
+<p>Como <span class="math inline">\(f(I)\neq \emptyset\)</span> pues <span class="math inline">\(f(a)\in f(I)\)</span>, por el axioma de completitud de los números reales, existe el supremo <span class="math inline">\(s=\sup\{f(I)\}\)</span>. Para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(s-\frac{1}{n}\)</span> no es cota superior de <span class="math inline">\(f(I)\)</span>, y por tanto, existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(s-\frac{1}{n}&lt;f(x_n)&lt;s\)</span>. Podemos construir así una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\subset I\)</span>. Como <span class="math inline">\(I\)</span> está acotado, por el por el <a href="sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
+<p>Sea <span class="math inline">\(d=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(d\in I\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, lo es, en particular, en <span class="math inline">\(d\)</span>, de modo que como <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> converge a <span class="math inline">\(d\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k}) = f(d)\)</span>. Además se tiene que <span class="math inline">\(s-\frac{1}{k}&lt;s-\frac{1}{n_k}&lt;f(x_{n_k})&lt;s\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>. Así pues, por el teorema de compresión de funciones, se tiene que <span class="math inline">\(\lim_{k\to\infty} f(x_{n_k})=s\)</span>, y por tanto <span class="math inline">\(f(d)=s\)</span> de modo que <span class="math inline">\(f(d)\geq f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+<p>Si ahora consideramos la función <span class="math inline">\(-f\)</span>, que también es continua en <span class="math inline">\(I\)</span> al ser la composición de funciones continuas, por lo que acabamos de demostrar, <span class="math inline">\(-f\)</span> alcanza el máximo en <span class="math inline">\(I\)</span>, es decir, existe <span class="math inline">\(c\in I\)</span> tal que <span class="math inline">\(-f(c)\geq -f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, de donde se deduce que <span class="math inline">\(f(c)\leq f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-bolzano" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.10 (Bolzano) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, y <span class="math inline">\(f(a)&lt;0&lt;f(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f(c)=0\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A=\{x\in I: f(x)&lt;0\}\)</span>. <span class="math inline">\(A\subset I\)</span> y como <span class="math inline">\(I\)</span> está acotado, también <span class="math inline">\(A\)</span> está acotado. <span class="math inline">\(A\neq\emptyset\)</span> ya que <span class="math inline">\(a\in A\)</span>, de manera que, por el axioma del supremo existe <span class="math inline">\(c=\sup(A)\)</span>.</p>
+<p>Veamos ahora que <span class="math inline">\(c\in(a,b)\)</span>. Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, <span class="math inline">\(\lim_{x\to a^-}f(x)=f(a)&lt;0\)</span>, de modo que existe <span class="math inline">\(\delta_1&gt;0\)</span> tal que <span class="math inline">\(f(x)&lt;0\)</span> <span class="math inline">\(\forall x\in [a,a+\delta_1)\)</span>, y por tanto, <span class="math inline">\([a,a+\delta_1)\subset A\)</span>, por lo que <span class="math inline">\(c&gt;a\)</span>.</p>
+<p>Del mismo modo, <span class="math inline">\(\lim_{x\to b^+}f(x)=f(b)&gt;0\)</span>, de modo que existe <span class="math inline">\(\delta_2&gt;0\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in (b-\delta_2,b]\)</span>, y por tanto, <span class="math inline">\((b-\delta_2,b]\subset \overline{A}\)</span>, por lo que <span class="math inline">\(c&lt;b\)</span>.</p>
+<p>Finalmente, veamos que <span class="math inline">\(f(c)=0\)</span> por reducción al absurdo. Si suponemos que <span class="math inline">\(f(c)&gt;0\)</span>, entonces <span class="math inline">\(f(c)=\lim_{x\to c} f(x)&gt;0\)</span>, de manera que existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in(c-\delta, c+\delta)\)</span>, lo que contradice que <span class="math inline">\(c\)</span> sea el supremo de <span class="math inline">\(A\)</span>. Del mismo modo, si suponemos que <span class="math inline">\(f(c)&lt;0\)</span>, entonces <span class="math inline">\(f(c)=\lim_{x\to c} f(x)&lt;0\)</span>, de manera que existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(f(x)&lt;0\)</span> <span class="math inline">\(\forall x\in(c-\delta, c+\delta)\)</span>, y entonces, <span class="math inline">\(f\left(c+\frac{\delta}{2}\right)&lt;0\)</span>, por lo que <span class="math inline">\(c+\frac{\delta}{2}\in A\)</span> y <span class="math inline">\(c+\frac{\delta}{2}&gt;c\)</span>, lo que contradice que <span class="math inline">\(c\)</span> sea cota superior de <span class="math inline">\(A\)</span>. Por consiguiente, debe ser <span class="math inline">\(f(c)=0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-valores-intermedios" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.11 (Valores intermedios) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y si <span class="math inline">\(c,d\in I\)</span>, entonces para cualquier <span class="math inline">\(k\\mathbb{R}\)</span> con <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(c&lt;d\)</span> y tomemos la función <span class="math inline">\(g:[c,d]\to\mathbb{R}\)</span> tal que <span class="math inline">\(g(x)=f(x)-k\)</span> <span class="math inline">\(\forall x\in[c,d]\)</span>. Puesto que <span class="math inline">\(f\)</span> es continua en <span class="math inline">\([c,d]\)</span>, <span class="math inline">\(g\)</span> también lo es. Además <span class="math inline">\(g(c)=f(c)-k&lt;0\)</span> y <span class="math inline">\(g(d)=f(d)-k&gt;0\)</span>. Por tanto, por el teorema de Bolzano, existe <span class="math inline">\(e\in(c,d)\)</span> tal que <span class="math inline">\(g(e)=0\)</span>, y por consiguiente, <span class="math inline">\(g(e)=f(e)-k=0\)</span>, de donde se deduce que <span class="math inline">\(f(e)=k\)</span>.</p>
+<p>De forma análoga se procede si <span class="math inline">\(d&lt;c\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-valores-intermedios" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.12 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y <span class="math inline">\(k\in\mathbb{R}\)</span> es tal que <span class="math inline">\(\inf(f(I))\leq k\leq \sup(f(I))\)</span>, entonces existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Por el <a href="#thm-extremos-funcion-continua-intervalo-cerrado">Teorema&nbsp;<span>6.9</span></a> existe <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(f(c)\leq f(x)\leq f(d)\)</span> <span class="math inline">\(\forall x\in I\)</span>. <span class="math inline">\(f(c)=\min(f(I))=\inf(f(I))\leq k\leq \sup(f(I))=\max(f(I))=f(d)\)</span>.</p>
+<p>Si <span class="math inline">\(k=f(c)\)</span> o <span class="math inline">\(k=f(d)\)</span> el resultado es trivial, y si <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, por el teorema de los valores intermedios, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-imagen-funcion-continua-intervalo-cerrado-acotado" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.13 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(f(I)\)</span> es un intervalo cerrado y acotado.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Por el <a href="#thm-extremos-funcion-continua-intervalo-cerrado">Teorema&nbsp;<span>6.9</span></a> existe <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(f(c)\leq f(x)\leq f(d)\)</span> <span class="math inline">\(\forall x\in I\)</span>, por lo que <span class="math inline">\(f(I)\subseteq[f(c), f(d)]\)</span>.</p>
+<p>Veamos ahora que también se cumple el otro sentido de la inclusión. Si <span class="math inline">\(k\in[f(c),f(d)]\)</span>, por el teorema anterior, se tiene que existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>, y por tanto <span class="math inline">\(k\in f(I)\)</span>, por lo que <span class="math inline">\([f(c),f(d)]\subset f(I)\)</span>.</p>
+<p>Por consiguiente, <span class="math inline">\(f(I)=[f(c),f(d)]\)</span> que es un intervalo cerrado y acotado.</p>
+</div>
+</div>
+</div>
+</div>
 <p><strong>Notas</strong></p>
 
 
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
