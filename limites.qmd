@@ -564,6 +564,30 @@ Sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ convergente a $a$. E
 Sea $f(x)=x\operatorname{sen}\left(\frac{1}{x}\right)$ $\forall x\neq 0$. Entonces $0\leq \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|\leq |x|$ $\forall x\neq 0$. Como $\lim_{x\to 0}|x| = 0$, aplicando el teorema de compresión de funciones se tiene que $\lim_{x\to 0} \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|=0$ y por tanto $\lim_{x\to 0} x\operatorname{sen}\left(\frac{1}{x}\right)=0$.
 :::
 
+:::{#thm-limite-composicion-funciones}
+## Límite de la composición de funciones
+Dados dos conjuntos $A,B\subseteq \mathbb{R}$, dos funciones $f:A\to \mathbb{R}$, $g:B\to \mathbb{R}$ tales que $f(A)\subseteq B$, un punto de acumulación $a$ de $A$ y un punto de acumulación $b$ de $B$, si $\lim_{x\to a}f(x)=b$ y $\lim_{x\to b}g(x)=l$, entonces $\lim_{x\to a}g\circ f(x)=l$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $\lim_{x\to b}g(x)=l$, para cualquier $\varepsilon>0$ existe $\delta'>0$ tal que si $|x-b|<\delta'$ entonces $|g(x)-l)|<\varepsilon$. 
+
+Por otro lado, como $\lim_{x\to a}f(x)=b$, para $\delta'>0$ existe otro $\delta>0$ tal que si $|x-a|<\delta$, entonces $|f(x)-b|<\delta'$. 
+
+Así pues, si $|x-a|<\delta$ se tiene que $|f(x)-b|<\delta'$ y $|g(f(x))-l)|<\varepsilon$, por lo que $\lim_{x\to a}g(f(x)) = l$.
+:::
+:::
+
+:::{#exm-limite-composicion-funciones}
+Si tomamos las funciones $f(x)=x^2-5$ y $g(y)=\sqrt{y}$, se cumple que $\lim_{x\to 3}f(x)=4$ y $\lim_{y\to 4}g(y)=2$. Entonces, aplicando el teorema anterior se tiene
+
+$$
+\lim_{x\to 3}g\circ f(x)=\lim_{x\to 3}\sqrt{x^2-5} = \lim_{y\to 4} \sqrt{y} = 2.
+$$
+:::
+
 :::{#prp-limite-valor-absoluto}
 Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, si existe el límite de $f$ en $a$ entonces $\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|$.
 :::
@@ -584,7 +608,7 @@ Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Se deja como ejercicio.
+Se deja como ejercicio usando el teorema del límite de la composición de funciones.
 :::
 :::
 
@@ -904,6 +928,18 @@ En general, si $f(x)=\dfrac{a_0+a_1x+\cdots + a_nx^n}{b_0+b_1x+\cdots + b_mx^m}$
 - Si $n>m$ entonces $\lim_{x\to \pm \infty}f(x)=\pm\infty$.
 - Si $n<m$ entonces $\lim_{x\to \pm \infty}f(x)=0$.
 - Si $n=m$ entonces $\lim_{x\to \pm \infty}f(x)=\dfrac{a_n}{b_m}$.
+
+#### Cambio de variable
+
+El teorema del límite de la composición de funciones nos permite calcular límites haciendo un cambio de variable por medio de la composición de funciones. 
+
+:::{#exm-limite-cambio-variable}
+Sea $f(x)=\frac{(x+8)^{1/3}-2}{x}$. Cuando $x\to 0$, $f(x)\to \frac{0}{0}$. Aplicando el cambio de variable $y=(x+8)^{1/3}$, se tiene que $y^3=x+8$ y $x=y^3-8$. Como $\lim_{x\to 0}(x+8)^{1/3}=2$, aplicando el teorema del límite de la composición de funciones, se tiene que 
+
+$$
+\lim_{x\to 0} \frac{(x+8)^{1/3}-2}{x} = \lim_{y\to 2}\frac{y-2}{y^3-8} = \lim_{y\to 2}\frac{y-2}{(y-2)(y^2+2y+4)} = \lim_{y\to 2} \frac{1}{y^2+2y+4} = \frac{2}{12}.
+$$
+:::
 
 #### Infinitésimos equivalentes
 
@@ -1367,11 +1403,7 @@ Dados dos conjuntos $A,B\subseteq \mathbb{R}$, dos funciones $f:A\to \mathbb{R}$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Como $g$ es continua en $f(a)$, para cualquier $\varepsilon>0$ existe $\delta'>0$ tal que si $|x-f(a)|<\delta'$ entonces $|g(x)-g(f(a))|<\varepsilon$. 
-
-Por otro lado, como $f$ es continua en $a$, para $\delta'>0$ existe otro $\delta>0$ tal que si $|x-a|<\delta$, entonces $|f(x)-f(a)|<\delta'$. 
-
-Así pues, si $|x-a|<\delta$ se tiene que $|f(x)-f(a)|<\delta'$ y $|g(f(x))-g(f(a))|<\varepsilon$, por lo que $\lim_{x\to a}g(f(x)) = g(f(a))$ y $g\circ f$ es continua en $a$.
+Como $f$ es continua en $a$, $\lim_{x\to a}f(x)=f(a)$ y como $g$ es continua en $f(a)$, $\lim_{x\to f(a)}g(x)=g(f(a))$, de manera que, aplicando el teorema del límite de la composición de funciones, se tiene que $\lim_{x\to a}g\circ f(x)= g\circ f(a)$, y por tanto, $g\circ f$ es continua en $a$.
 :::
 :::
 
