@@ -1239,13 +1239,13 @@ Del mismo modo, función $f(x)=x^2$ es continua en todo $\mathbb{R}$, ya que $\l
 :::
 
 :::{#exm-continuidad-seno}
-Veamos que la $f(x)\operatorname{sen}(x)$ es continua en todo $\mathbb{R}$. Sea $a\in\mathbb{R}$. Usando propiedades trigonométricas se tiene
+Veamos que la $f(x)=\operatorname{sen}(x)$ es continua en todo $\mathbb{R}$. Sea $a\in\mathbb{R}$. Usando propiedades trigonométricas se tiene
 
 $$
 |\operatorname{sen}(x)-\operatorname{sen}(a)|=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| = 2|\operatorname{sen}\left(\frac{x-a}{2}\right)||\cos\left(\frac{x-a}{2}\right)| \leq 2\frac{|x-a|}{2}=|x-a|,
 $$
 
-ya que $\operatorname{sen}(x)\leq x$ $\forall x\in\mathbb{R}$ y $\cos(x)\leq 1$ $\forall x\in\mathbb{R}$.
+ya que $\operatorname{sen}(x)\leq x$ $\forall x\in\mathbb{R}^+$ y $\cos(x)\leq 1$ $\forall x\in\mathbb{R}$.
 
 Así pues, para cualquier $\varepsilon>0$ existe $\delta=\varepsilon>0$ tal que si $|x-a|<\delta=\varepsilon$, entonces $|\operatorname{sen}(x)-\operatorname{sen}(a)|<|x-a|=\varepsilon$.
 
