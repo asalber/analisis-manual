@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 1&nbsp; Teoría de conjuntos">
 <meta name="twitter:description" content="Los conjuntos son entes matemáticos que se usan habitualmente para modelar situaciones reales en las que aparecen colecciones de objetos de cualquier naturaleza, así como las relaciones entre ellos…">
+<meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./" class="sidebar-logo-link">
+      <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
@@ -175,6 +176,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./limites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -206,6 +212,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -681,7 +688,7 @@ Demostración
 <p><span class="theorem-title"><strong>Ejemplo 1.13 </strong></span>El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
 <p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>.</p>
 </div>
-<p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
+<p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span class="quarto-unresolved-ref">prp-biyeccion-conjuntos-equipotentes</span></a>.</p>
 <div id="exm-conjunto-pares-equipotente-naturales" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1.14 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
 </div>
@@ -693,7 +700,7 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 1.1 </strong></span>Un conjunto <span class="math inline">\(A\)</span> es numerable si existe una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow A\)</span>.</p>
 </div>
 <p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
-<p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
+<p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span class="quarto-unresolved-ref">prp-biyeccion-conjuntos-equipotentes</span></a>.</p>
 <div id="exm-enteros-equipotentes-naturales" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1.15 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
 <p>Del mismo modo se puede probar que el conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span> también es numerable, pues se puede definir una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow \mathbb{Z}\)</span> de la siguiente manera</p>
@@ -753,7 +760,7 @@ Demostración
 <p>En cuanto a la parte entera, ya se ha visto que el conjunto de los números enteros es equipotente al de los números naturales, por lo que <span class="math inline">\(|\mathbb{Z}|=|\mathbb{N}|\)</span>.</p>
 <p>Así pues, el número total de expansiones decimales infinitas es <span class="math inline">\(|\mathbb{N}|10^{|\mathbb{N}|}\)</span>, y como todo número real tienen una expansión decimal infinita, se tiene</p>
 <p><span class="math display">\[|\mathbb{R}| \leq |\mathbb{N}|10^{|\mathbb{N}|}.\]</span></p>
-<p>Por otro lado, aplicando el <a href="#thm-cantor">Teorema&nbsp;<span>1.2</span></a>, <span class="math inline">\(|\mathbb{N}|\leq 2^{|\mathbb{N}|}\)</span>, por lo que finalmente se tiene</p>
+<p>Por otro lado, aplicando el <a href="#thm-cantor">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-cantor</span></a>, <span class="math inline">\(|\mathbb{N}|\leq 2^{|\mathbb{N}|}\)</span>, por lo que finalmente se tiene</p>
 <p><span class="math inline">\(|\mathbb{R}| \leq |\mathbb{N}|10^{|\mathbb{N}|}\leq 2^{|\mathbb{N}|}10^{|\mathbb{N}|} \leq 2^{|\mathbb{N}|}(2^4)^{|\mathbb{N}|}= 2^{|\mathbb{N}|+4|\mathbb{N}|} = 2^{|\mathbb{N}|}\)</span>, ya que por aritmética de las cardinalidades se tiene que <span class="math inline">\(|\mathbb{N}|+4|\mathbb{N}|=|\mathbb{N}|\)</span>.</p>
 <p>Para probar el otro sentido de la desigualdad, basta tomar el conjunto de las fracciones decimales de la forma <span class="math inline">\(0.d_1d_2d_3\ldots\)</span> donde <span class="math inline">\(d_i\in\{0,1\}\)</span> (por ejemplo <span class="math inline">\(0.101000\ldots\)</span>) que claramente es un subconjunto de <span class="math inline">\(\mathbb{R}\)</span>. Puesto que cada número de este conjunto tiene infinitos dígitos decimales, de nuevo, se puede poner en correspondencia biyectiva cada dígito con un número natural, y como para cada posición hay dos posibles dígitos (<span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>), el número total de números en este conjunto es <span class="math inline">\(2^{|\mathbb{N}|}\)</span>, por lo que se tiene que <span class="math inline">\(2^{|\mathbb{N}|}\leq |\mathbb{R}|\)</span>.</p>
 <p>Así pues, como <span class="math inline">\(|\mathbb{R}| \leq 2^{|\mathbb{N}|}\)</span> y <span class="math inline">\(2^{|\mathbb{N}|}\leq |\mathbb{R}|\)</span>, se concluye que <span class="math inline">\(|\mathbb{R}| = 2^{|\mathbb{N}|}\)</span>.</p>
@@ -902,7 +909,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -924,7 +933,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -960,24 +986,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

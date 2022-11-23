@@ -39,6 +39,7 @@ book:
     - sucesiones.qmd
     - funciones.qmd
     - limites.qmd
+    - derivadas.qmd
     
 #bibliography: references.bib
 

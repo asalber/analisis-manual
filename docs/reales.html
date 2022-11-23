@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 2&nbsp; El sistema de los números reales">
 <meta name="twitter:description" content="En este capítulo se estudia el conjunto de los números reales \(\mathbb{R}\) ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus…">
+<meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./" class="sidebar-logo-link">
+      <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
@@ -175,6 +176,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./limites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -206,6 +212,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -873,14 +880,14 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A=\{y\in\mathbb{R}: y&gt;0, y^2&lt;a\}\)</span>. <span class="math inline">\(A\)</span> está acotado superiormente ya que si <span class="math inline">\(a&gt;1\)</span>, el propio <span class="math inline">\(a\)</span> es una cota superior y si no <span class="math inline">\(1\)</span> es una cota superior. Por tanto, según el axioma del supremo, existe <span class="math inline">\(x\in \mathbb{R}\)</span> tal que <span class="math inline">\(x=\sup(A)&gt;0\)</span>. Vamos a probar que <span class="math inline">\(x^2=a\)</span>.</p>
-<p>Supongamos primero que <span class="math inline">\(x^2&lt;a\)</span>. Entonces <span class="math inline">\(a-x^2&gt;0\)</span> y <span class="math inline">\(\frac{a-x^2}{2x+1}&gt;0\)</span> ya que <span class="math inline">\(2x+1&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Por el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span>2.1</span></a> se tiene que existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;\frac{a-x^2}{2x+1}&gt;0\)</span>.</p>
+<p>Supongamos primero que <span class="math inline">\(x^2&lt;a\)</span>. Entonces <span class="math inline">\(a-x^2&gt;0\)</span> y <span class="math inline">\(\frac{a-x^2}{2x+1}&gt;0\)</span> ya que <span class="math inline">\(2x+1&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Por el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span class="quarto-unresolved-ref">cor-consecuencias-arquimedianas</span></a> se tiene que existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;\frac{a-x^2}{2x+1}&gt;0\)</span>.</p>
 <p>Por otro lado, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \left(x+\frac{1}{n}\right)^2 &amp;= x^2 + \frac{1}{n^2}+\frac{2x}{n} = x^2+\frac{1}{n}\left(\frac{1}{n}+2x\right) \leq x^2 + \frac{1}{n} (2x+1) &lt;\\
 &amp;&lt; x^2 + \frac{a-x^2}{2x+1}(2x+1) = x^2 + (a - x^2) = a.
 \end{align*}\]</span></p>
 <p>Por tanto, <span class="math inline">\(x+\frac{1}{n}\in A\)</span>, pero <span class="math inline">\(x+\frac{1}{n}&gt;x\)</span> lo que contradice que <span class="math inline">\(x\)</span> sea cota superior de <span class="math inline">\(A\)</span>.</p>
-<p>Supongamos ahora que <span class="math inline">\(x^2&gt;a\)</span>. Entonces <span class="math inline">\(x^2-a&gt;0\)</span> y <span class="math inline">\(\frac{x^2-a}{2x}&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Aplicando de nuevo el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span>2.1</span></a> se tiene que existe <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{m}&lt;\frac{x^2-a}{2x}\)</span> y por tanto <span class="math inline">\(\frac{2x}{m}&lt;x^2-a\)</span>.</p>
+<p>Supongamos ahora que <span class="math inline">\(x^2&gt;a\)</span>. Entonces <span class="math inline">\(x^2-a&gt;0\)</span> y <span class="math inline">\(\frac{x^2-a}{2x}&gt;0\)</span> al ser <span class="math inline">\(x&gt;0\)</span>. Aplicando de nuevo el <a href="#cor-consecuencias-arquimedianas">Corolario&nbsp;<span class="quarto-unresolved-ref">cor-consecuencias-arquimedianas</span></a> se tiene que existe <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{m}&lt;\frac{x^2-a}{2x}\)</span> y por tanto <span class="math inline">\(\frac{2x}{m}&lt;x^2-a\)</span>.</p>
 <p>Por otro lado, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \left(x-\frac{1}{m}\right)^2 &amp;= x^2 + \frac{1}{m^2}-\frac{2x}{m} &gt; x^2 - \frac{2x}{m} &gt; x^2 -(x^2-a) = a.
@@ -1100,7 +1107,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1122,7 +1131,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1158,24 +1184,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
