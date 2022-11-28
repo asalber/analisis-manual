@@ -156,14 +156,14 @@
 \usepackage{amsthm}
 \theoremstyle{plain}
 \newtheorem{corollary}{Corolario}[chapter]
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposición}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definición}[chapter]
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Ejemplo}[chapter]
-\theoremstyle{plain}
-\newtheorem{proposition}{Proposición}[chapter]
 \theoremstyle{remark}
 \renewcommand*{\proofname}{Prueba}
 \newtheorem*{remark}{Observación}
@@ -216,7 +216,7 @@
 \makeatother
 \subtitle{para Ciencias e Ingenierías}
 \author{Alfredo Sánchez Alberca}
-\date{1/6/2022}
+\date{6/1/22}
 
 \begin{document}
 \begin{titlepage}
@@ -246,7 +246,7 @@ Sánchez
 Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \end{tabular}
 \end{flushleft}
-\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, interior hidden, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, breakable, sharp corners, enhanced, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Indice de contenidos}
 {
@@ -259,6 +259,8 @@ Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \hypertarget{prefacio}{%
 \chapter*{Prefacio}\label{prefacio}}
 \addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
 
 ¡Bienvenida/os al manual de Análisis Matemático de variable real!
 
@@ -273,6 +275,8 @@ problemas resueltos}.
 \hypertarget{licencia}{%
 \section*{Licencia}\label{licencia}}
 \addcontentsline{toc}{section}{Licencia}
+
+\markright{Licencia}
 
 Esta obra está bajo una licencia Reconocimiento -- No comercial --
 Compartir bajo la misma licencia 3.0 España de Creative Commons. Para
@@ -966,7 +970,7 @@ mínimo.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -1313,7 +1317,7 @@ El cardinal del conjunto potencia de un conjunto \(A\) es
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -1531,7 +1535,7 @@ estrictamente mayor que el cardinal de \(A\), es decir,
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -1580,7 +1584,7 @@ al del conjunto potencia del conjunto de los números naturales
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -1831,7 +1835,7 @@ El número \(\sqrt{2}\) no es racional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -1868,7 +1872,7 @@ Entre dos números racionales siempre existe un número irracional.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2101,7 +2105,7 @@ siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2325,7 +2329,7 @@ decir, cumple las propiedades
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2419,7 +2423,7 @@ propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2642,7 +2646,7 @@ Se cumplen las siguientes propiedades del valor absoluto:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2762,7 +2766,7 @@ inferior, entonces tiene un ínfimo \(m\in \mathbb{R}\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2781,7 +2785,7 @@ natural \(n\in \mathbb{N}\) tal que \(a<n\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2825,7 +2829,7 @@ llama \emph{raíz cuadrada} de \(a\) y se denota por \(\sqrt{a}\) o
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2887,7 +2891,7 @@ número racional \(q\in \mathbb{Q}\) tal que \(a<q<b\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -2922,7 +2926,7 @@ número irracional \(p\in \mathbb{R}\setminus \mathbb{Q}\) tal que
 
 \end{corollary}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3031,8 +3035,10 @@ que \(b\) \[
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Obsérvese que si \(a=b\), \((a,a)=\emptyset\) y \([a,a]=\{a\}\).
+
 \end{tcolorbox}
 
 Los intervalos también pueden ser abiertos por un lado y cerrados por el
@@ -3106,7 +3112,7 @@ longitudes \(\{b_n-a_n: n\in \mathbb{N}\}\) es \(0\), entonces \(a\) es
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3236,11 +3242,13 @@ de manera que
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 El que un punto no sea punto interior de un conjunto no significa que
 sea un punto exterior. Por ejemplo, \(1\) no es un punto interior del
 intervalo \((0,1)\), y tampoco de su complementario
 \(\overline{(0,1)}=(-\infty, 0]\cup[ñ1,\infty)\).
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{def-punto-frontera}{}}%
@@ -3276,7 +3284,7 @@ cumple que \(\operatorname{Int}((a,b)) = (a,b)\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3298,7 +3306,7 @@ puntos interiores suyos, es decir, dado un intervalo cerrado
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3343,7 +3351,7 @@ decir,
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3387,12 +3395,14 @@ El conjunto de los puntos de acumulación de \(A\) se llama
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Resulta obvio de la definición que cualquier punto de acumulación es
 también un punto de adherencia, es decir,
 \(\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\) para cualquier
 conjunto \(A\subset \mathbb{R}\). Sin embargo no todo punto de
 adherencia es un punto de acumulación.
+
 \end{tcolorbox}
 
 Es posible que un conjunto tenga puntos de acumulación que pertenezcan
@@ -3445,7 +3455,7 @@ Para cualquier intervalo abierto \((a,b)\) se tiene que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3484,7 +3494,7 @@ Para cualquier conjunto \(A\subseteq \mathbb{R}\), se tiene que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3525,8 +3535,10 @@ decir, existe \(\varepsilon>0\) tal que
 
 \end{definition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-important-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{exm-intervalo-abierto-conjunto-abierto}{}}%
@@ -3560,7 +3572,8 @@ Todo intervalo cerrado \([a,b]\) es cerrado, pues su complementario
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Un subconjunto puede ser abierto y cerrado a la vez, como por ejemplo
 \(\mathbb{R}\) y \(\emptyset\). \(\mathbb{R}\) es abierto ya que todos
 sus puntos son interiores, y por tanto
@@ -3574,6 +3587,7 @@ Un subconjunto también puede no ser abierto ni cerrado, como por ejemplo
 es un punto interior de \(\overline{(a,b]}=(-\infty,a]\cup (b,\infty)\).
 Por tanto, no abierto no implica cerrado y no cerrado no implica
 abierto.
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{prp-union-interseccion-conjuntos-abiertos-cerrados}{}}%
@@ -3599,7 +3613,7 @@ Se cumplen las siguientes propiedades:
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3609,7 +3623,8 @@ Se deja como ejercicio.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 La intersección de una colección infinita de conjuntos abiertos puede no
 ser un conjunto abierto, como por ejemplo la colección de conjuntos
 \(I_n=(0,1+\frac{1}{n})\), \(n\in\mathbb{N}\), ya que
@@ -3619,6 +3634,7 @@ Y la unión de una colección infinita de conjuntos cerrados puede no ser
 cerrada, como por ejemplo la colección de conjuntos
 \(J_n=[\frac{1}{n},1]\), \(n\in\mathbb{N}\), ya que
 \(\cup_{n=1}^\infty J_n=(0,1]\).
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{thm-existencia-maximo-minimo}{}}%
@@ -3631,7 +3647,7 @@ tiene un mínimo.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3663,7 +3679,7 @@ punto de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3712,7 +3728,7 @@ a todos sus puntos de acumulación.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3779,10 +3795,12 @@ los términos \(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\).
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-caution-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 No hay que confundir los términos de una sucesión
 \((x_n)_{n=1}^\infty\), que tienen orden, con el conjunto de los valores
 de la sucesión \(\{x_n:n\in\mathbb{N}\}\) que no tiene orden.
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{exm-sucesion2}{}}%
@@ -3920,7 +3938,7 @@ Una sucesión de números reales puede tener a lo sumo un límite.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3959,7 +3977,7 @@ solo si \((x_n)_{n=1}^\infty\) converge, y en tal caso,
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -3994,7 +4012,7 @@ números reales tales que \((y_n)_{n=1}^\infty\) converge a 0. Si existe
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4045,7 +4063,7 @@ Toda sucesión de números reales convergente está acotada.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4075,10 +4093,12 @@ estuviese acotada existiría un \(c>0\) tal que \(|n|\leq c\)
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-caution-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 El otro sentido de la implicación no se cumple, es decir, no toda
 sucesión acotada es convergente. Por ejemplo, la sucesión
 \(((-1)^n)_{n=1}^\infty\).
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{prp-algebra-limites-sucesiones}{}}%
@@ -4106,7 +4126,7 @@ números reales tales que \((x_n)_{n=1}^\infty\) converge a \(x\) e
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4197,7 +4217,7 @@ entonces \((y_n)_{n=1}^\infty\) converge a \(x\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4271,7 +4291,7 @@ entonces \((x_n)_{n=1}^\infty\) converge a 0.
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4381,7 +4401,7 @@ si y solo si está acotada. Además se cumple que:
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4555,7 +4575,7 @@ subsucesión suya converge también a \(x\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4620,7 +4640,7 @@ convergente.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4659,7 +4679,7 @@ hace a un número de \(A\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4702,7 +4722,7 @@ tiene una subsucesión convergente a un número del conjunto.
 
 \end{corollary}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4772,7 +4792,7 @@ tiende a \(\infty\), y si es decreciente tiende a \(-\infty\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4801,7 +4821,7 @@ también tiende a \(-\infty\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4844,7 +4864,7 @@ Sean \((x_n)_{n=1}^\infty\), \((y_n)_{n=1}^\infty\) y
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4865,7 +4885,7 @@ Entonces, \((x_n)_{n=1}^\infty\) tiende a \(\infty\) si y solo si
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -4916,7 +4936,7 @@ sucesión de Cauchy.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -5134,7 +5154,8 @@ forman parte de una función.
     \]
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-caution-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 La representación algebraica paramétrica puede dar lugar a relaciones
 que no son funciones. Por ejemplo \[\begin{cases}
   y=t\\
@@ -5142,6 +5163,7 @@ que no son funciones. Por ejemplo \[\begin{cases}
   \end{cases}
   \] que no es una función al asignar a los valores de \(x\) dos
 imágenes distintas.
+
 \end{tcolorbox}
 
 \hypertarget{dominio-de-una-funciuxf3n}{%
@@ -5645,6 +5667,8 @@ que se llaman \emph{coeficientes del polinomio}.
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-polinomica}{}}%
 \begin{example}[]\label{exm-funcion-polinomica}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -5694,6 +5718,8 @@ donde \(p(x)\) y \(q(x)\) son funcione polinómicas con \(q(x)\neq 0\).
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-racional}{}}%
 \begin{example}[]\label{exm-funcion-racional}
+
+~
 
 \begin{figure}
 
@@ -5751,6 +5777,8 @@ donde \(r\) es un número real.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-potencial}{}}%
 \begin{example}[]\label{exm-funcion-potencial}
+
+~
 
 \begin{figure}
 
@@ -5822,6 +5850,8 @@ Una \emph{función exponencial} de base \(a\) es una función de la forma
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-exponencial}{}}%
 \begin{example}[]\label{exm-funcion-exponencial}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -5884,6 +5914,8 @@ donde \(a\) es un valor real positivo distinto de 1.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-logaritmica}{}}%
 \begin{example}[]\label{exm-funcion-logaritmica}
+
+~
 
 \begin{figure}
 
@@ -6013,6 +6045,8 @@ radianes) su seno.
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-seno}{}}%
 \begin{example}[]\label{exm-funcion-seno}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -6105,6 +6139,8 @@ radianes) su coseno.
 \leavevmode\vadjust pre{\hypertarget{exm-grafica-funcion-coseno}{}}%
 \begin{example}[]\label{exm-grafica-funcion-coseno}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -6188,6 +6224,8 @@ radianes) su tangente.
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-tangente}{}}%
 \begin{example}[]\label{exm-funcion-tangente}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -6239,6 +6277,8 @@ como la función inversa de la función seno.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-arcoseno}{}}%
 \begin{example}[]\label{exm-funcion-arcoseno}
+
+~
 
 \begin{figure}
 
@@ -6294,6 +6334,8 @@ como la función inversa de la función coseno.
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-arcocoseno}{}}%
 \begin{example}[]\label{exm-funcion-arcocoseno}
 
+~
+
 \begin{figure}
 
 {\centering 
@@ -6348,6 +6390,8 @@ como la función inversa de la función tangente.
 
 \leavevmode\vadjust pre{\hypertarget{exm-funcion-arcotangente}{}}%
 \begin{example}[]\label{exm-funcion-arcotangente}
+
+~
 
 \begin{figure}
 
@@ -6441,9 +6485,11 @@ Dado un conjunto \(A\subseteq \mathbb{R}\), se dice que \(x\in A\)
 \(x\to a\), si se pueden tomar valores de \(x\) tan próximos a \(a\)
 como se quiera, pero sin llegar a valer \(a\).
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Para que \(x\in A\) tienda a \(a\), es necesario que \(a\) sea un punto
 de acumulación de \(A\).
+
 \end{tcolorbox}
 
 Si la aproximación es por defecto (con valores menores que \(a\)) se
@@ -6893,9 +6939,11 @@ tal que \(|f(x)-l|<\varepsilon\) \(\forall x\in A\setminus\{a\}\) con
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Obsérvese que en la definición anterior \(x\neq a\), es decir, no es
 necesario que \(|f(a)-l|<\varepsilon\).
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{exm-luxedmite-funcion}{}}%
@@ -6922,7 +6970,7 @@ existe el límite de \(f\) en \(a\), entonces es único.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -6962,7 +7010,7 @@ tiene que \((f(x_n))_{n=1}^\infty\) converge a \(l\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -6998,9 +7046,11 @@ cumplir que \(\lim_{x\to a}f(x)=l\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-important-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Este criterio se puede utilizar tanto para demostrar que un número es el
 límite de una función en un punto como, para demostrar que no lo es.
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{exm-criterio-sucesiones-1}{}}%
@@ -7081,7 +7131,7 @@ entorno de \(a\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7139,7 +7189,7 @@ cumple que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7191,7 +7241,7 @@ Dado un conjunto \(A\subseteq \mathbb{R}\), tres funciones
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7233,7 +7283,7 @@ de acumulación \(b\) de \(B\), si \(\lim_{x\to a}f(x)=b\) y
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7275,7 +7325,7 @@ existe el límite de \(f\) en \(a\) entonces
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7300,7 +7350,7 @@ existe el límite de \(f\) en \(a\) entonces
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7323,7 +7373,7 @@ existe un \(\delta>0\) tal que \(|f(x)-f(y)|<\varepsilon\)
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7411,7 +7461,7 @@ conjuntos \(\{x\in A: x>a\}\) y \(\{x\in A: x<a\}\), entonces
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7514,7 +7564,7 @@ Dado un conjunto \(A\subseteq \mathbb{R}\), un punto de acumulación
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7578,7 +7628,7 @@ diverja a \(\infty\), \(\lim_{n\to\infty}f(x_n)=l\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7661,7 +7711,7 @@ Dado un conjunto \(A\subseteq \mathbb{R}\) tal que
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7700,7 +7750,7 @@ en cualquier punto \(a\in \mathbb{R}\) y \(\lim_{x\to a}f(x)=f(a)\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7723,7 +7773,7 @@ Si \(a\) es una raíz de \(q(x)\) entonces el límite puede existir o no.
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7744,7 +7794,7 @@ y en ese caso, \(\lim_{x\to a}f(x)=f(a)\).
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7764,7 +7814,7 @@ Si \(f(x)=c^x\) con \(c\in \mathbb{R}\) entonces existe el límite de
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7784,7 +7834,7 @@ de \(f\) en cualquier punto \(a\in \mathbb{R}^+\) y
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -7803,7 +7853,7 @@ Si \(f(x)\) es una función trigonométrica, entonces existe el límite de
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8020,7 +8070,7 @@ que \(f\) y \(g\) son infinitésimos en \(a\). Entonces se cumple
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8106,7 +8156,7 @@ cuando \(x\to a\), entonces si existe
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8116,9 +8166,11 @@ Se verá en el siguiente
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
 Para que exista \(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\) es necesario que
 que \(f\) y \(g\) sean derivables en un entorno de \(a\).
+
 \end{tcolorbox}
 
 \leavevmode\vadjust pre{\hypertarget{exm-regla-lhopital}{}}%
@@ -8675,7 +8727,7 @@ Dado un conjunto \(A\subseteq \mathbb{R}\), dos funciones
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8708,7 +8760,7 @@ es continua en \(a\) y \(g\) es continua en \(f(a)\), entonces
 
 \end{proposition}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8747,14 +8799,14 @@ acotada en \(I\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
 Lo probaremos por reducción al absurdo. Supongamos que \(f\) no está
 acotada en \(I\). Entonces, para cada \(n\in\mathbb{N}\) existe
 \(x_n\in I\) tal que \(|f(x_n)|>n\). La sucesión
-\((x_n)_{n=1}^\infty\)\subset I\$ y como \(I\) está acotado,
+\((x_n)_{n=1}^\infty\subset I\) y como \(I\) está acotado,
 \((x_n)_{n=1}^\infty\) también está acotada, de manera que, por el
 Teorema~\ref{thm-bolzano-weierstrass-sucesiones} existe una subsucesión
 \((x_{n_k})_{k=1}^\infty\) que converge.
@@ -8804,7 +8856,7 @@ tales que \(c\leq f(x)\leq d\) \(\forall x\in I\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8846,11 +8898,15 @@ deduce que \(f(c)\leq f(x)\) \(\forall x\in I\).
 \leavevmode\vadjust pre{\hypertarget{thm-bolzano}{}}%
 \begin{theorem}[]\label{thm-bolzano}
 
+~
+
 \bookmarksetup{startatroot}
 
 \hypertarget{bolzano}{%
 \chapter*{Bolzano}\label{bolzano}}
 \addcontentsline{toc}{chapter}{Bolzano}
+
+\markboth{Bolzano}{Bolzano}
 
 Dado un intervalo cerrado y acotado \(I=[a,b]\), y una función
 \(f:I\to\mathbb{R}\), si \(f\) es continua en \(I\), y \(f(a)<0<f(b)\),
@@ -8858,7 +8914,7 @@ entonces existe \(c\in(a,b)\) tal que \(f(c)=0\).
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8901,7 +8957,7 @@ entonces para cualquier \(k\\mathbb{R}\) con \(f(c)<k<f(d)\), existe
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8928,7 +8984,7 @@ es tal que \(\inf(f(I))\leq k\leq \sup(f(I))\), entonces existe
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8954,7 +9010,7 @@ un intervalo cerrado y acotado.
 
 \end{theorem}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, rightrule=.15mm, arc=.35mm, toptitle=1mm, breakable, titlerule=0mm, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
 
 \begin{proof}
 
@@ -8975,6 +9031,1952 @@ acotado.
 \end{tcolorbox}
 
 \textbf{Notas}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{derivadas-de-funciones}{%
+\chapter{Derivadas de funciones}\label{derivadas-de-funciones}}
+
+\hypertarget{el-concepto-de-derivada}{%
+\section{El concepto de derivada}\label{el-concepto-de-derivada}}
+
+\hypertarget{tasa-de-variaciuxf3n-media}{%
+\subsection{Tasa de variación media}\label{tasa-de-variaciuxf3n-media}}
+
+\leavevmode\vadjust pre{\hypertarget{def-incremento}{}}%
+\begin{definition}[Incremento]\label{def-incremento}
+
+Dada una función \(y=f(x)\), se llama \emph{incremento} de \(f\) en un
+intervalo \([a,b]\) a la diferencia entre el valor de \(f\) en cada uno
+de los extremos del intervalo, y se nota
+
+\[\Delta y= f(b)-f(a).\]
+
+\end{definition}
+
+Cuando \(f\) es la función identidad \(y=x\), se cumple que
+
+\[\Delta x=\Delta y= f(b)-f(a)=b-a,\]
+
+y por tanto, el incremento de \(x\) en un intervalo es la amplitud del
+intervalo. Esto nos permite escribir el intervalo \([a,b]\) como
+\([a,a+\Delta x]\).
+
+\leavevmode\vadjust pre{\hypertarget{def-tasa-variacion-media}{}}%
+\begin{definition}[Tasa de variación
+media]\label{def-tasa-variacion-media}
+
+Dada una función \(y=f(x)\), se llama \emph{tasa de variación media} de
+\(f\) en el intervalo \([a,a+\Delta x]\), al cociente entre el
+incremento de \(y\) y el incremento de \(x\) en dicho intervalo, y se
+escribe
+
+\[
+\operatorname{TVM}(f,[a,a+\Delta x])=\frac{\Delta y}{\Delta x}=\frac{f(a+\Delta x)-f(a)}{\Delta x}.
+\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-tasa-variacion-media}{}}%
+\begin{example}[]\label{exm-tasa-variacion-media}
+
+Consideremos la función \(y=x^2\) que mide el área de un cuadrado de
+chapa metálica de lado \(x\).
+
+Si en un determinado instante el lado del cuadrado es \(a\), y sometemos
+la chapa a un proceso de calentamiento que aumenta el lado del cuadrado
+una cantidad \(\Delta x\), ¿en cuánto se incrementará el área del
+cuadrado?
+
+\begin{align*}
+\Delta y &= f(a+\Delta x)-f(a)=(a+\Delta x)^2-a^2=\\
+&= a^2+2a\Delta x+\Delta x^2-a^2=2a\Delta x+\Delta x^2.
+\end{align*}
+
+¿Cuál será la tasa de variación media del área en el intervalo
+\([a,a+\Delta x]\)?
+
+\[\operatorname{TVM}f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{2a\Delta x+\Delta x^2}{\Delta x}=2a+\Delta x.\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/variacion_area_cuadrado.png}
+
+}
+
+\caption{Variación que experimenta el area de un cuadrado al variar el
+lado}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{interpretaciuxf3n-geomuxe9trica-de-la-tasa-de-variaciuxf3n-media}{%
+\subsection{Interpretación geométrica de la tasa de variación
+media}\label{interpretaciuxf3n-geomuxe9trica-de-la-tasa-de-variaciuxf3n-media}}
+
+La tasa de variación media de \(f\) en el intervalo \([a,a+\Delta x]\)
+es la pendiente de la recta \emph{secante} a \(f\) en los puntos
+\((a,f(a))\) y \((a+\Delta x,f(a+\Delta x))\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/secante.png}
+
+}
+
+\caption{Gráfica de la recta secante a una función en dos puntos.}
+
+\end{figure}
+
+\hypertarget{tasa-de-variaciuxf3n-instantuxe1nea}{%
+\subsection{Tasa de variación
+instantánea}\label{tasa-de-variaciuxf3n-instantuxe1nea}}
+
+En muchas ocasiones, es interesante estudiar la tasa de variación que
+experimenta una función, no en intervalo, sino en un punto.
+
+Conocer la tendencia de variación de una función en un instante puede
+ayudarnos a predecir valores en instantes próximos.
+
+\leavevmode\vadjust pre{\hypertarget{def-tasa-variacion-instantanea}{}}%
+\begin{definition}[Tasa de variación instantánea y
+derivada]\label{def-tasa-variacion-instantanea}
+
+Dada una función \(y=f(x)\), se llama \emph{tasa de variación
+instantánea} de \(f\) en un punto \(a\), al límite de la tasa de
+variación media de \(f\) en el intervalo \([a,a+\Delta x]\), cuando
+\(\Delta x\) tiende a 0, y se denota
+
+\begin{align*}
+\operatorname{TVI}(f,a) &= \lim_{\Delta x\rightarrow 0} \operatorname{TVM}(f,[a,a+\Delta x])=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x} = \\
+&= \lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
+\end{align*}
+
+Cuando este límite existe, se dice que la función \(f\) es derivable en
+el punto \(a\), y al valor del mismo se le llama derivada de \(f\) en
+\(a\), y se nota como
+
+\[
+f'(a) \mbox{ o bien } \frac{df}{dx}(a)
+\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-tasa-variacion-instantanea}{}}%
+\begin{example}[]\label{exm-tasa-variacion-instantanea}
+
+Consideremos de nuevo la función \(y=x^2\) que mide el área de un
+cuadrado de chapa metálica de lado \(x\).
+
+Si en un determinado instante el lado del cuadrado es \(a\), y sometemos
+la chapa a un proceso de calentamiento que aumenta el lado del cuadrado,
+¿cuál es la tasa de variación instantánea del área del cuadrado en dicho
+instante?
+
+\begin{align*}
+\operatorname{TVI}(f(a)) &=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} =\\
+&=\lim_{\Delta x\rightarrow 0}\frac{2a\Delta x+\Delta x^2}{\Delta x}=\lim_{\Delta x\rightarrow 0} 2a+\Delta x= 2a.
+\end{align*}
+
+Así pues, \(f'(a)=2a\), lo que indica que la tendencia de crecimiento el
+área es del doble del valor del lado.
+
+\end{example}
+
+El signo de \(f'(a)\) indica la tendencia de crecimiento de \(f\) en el
+punto \(a\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(f'(a)>0\) indica que la tendencia es creciente.
+\item
+  \(f'(a)<0\) indica que la tendencia es decreciente.
+\end{itemize}
+
+\hypertarget{interpretaciuxf3n-geomuxe9trica-de-la-tasa-de-variaciuxf3n-instantuxe1nea}{%
+\subsection{Interpretación geométrica de la tasa de variación
+instantánea}\label{interpretaciuxf3n-geomuxe9trica-de-la-tasa-de-variaciuxf3n-instantuxe1nea}}
+
+La tasa de variación instantánea de \(f\) en el punto \(a\) es la
+pendiente de la recta \emph{tangente} a \(f\) en el punto \((a,f(a))\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/tangente.png}
+
+}
+
+\caption{Gráfica de la recta tangente a una función en un punto.}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering 
+
+\href{https://www.geogebra.org/m/TX3ABH6F}{\includegraphics{./img/logos/logo-geogebra.png}}
+
+}
+
+\end{figure}
+
+\hypertarget{diferenciabilidad}{%
+\section{Diferenciabilidad}\label{diferenciabilidad}}
+
+\leavevmode\vadjust pre{\hypertarget{def-funcion-diferenciable-derivada}{}}%
+\begin{definition}[]\label{def-funcion-diferenciable-derivada}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\), una función
+\(f:I\to\mathbb{R}\) y un punto \(a\in I\), se dice que \(f\) es
+\emph{diferenciable} o \emph{derivable} en \(a\), si existe el límite
+
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+\]
+
+En tal caso, al valor del límite se le llama \emph{derivada} de \(f\) en
+\(a\) y se denota \(f'(a)\).
+
+Se dice que \(f\) es \emph{diferenciable} en el intervalo \(I\), si
+\(f\) es diferenciable en todos los puntos de \(I\).
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{def-funcion-derivada}{}}%
+\begin{definition}[]\label{def-funcion-derivada}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\), se define la \emph{función derivada} de \(f\), y
+se denota \(f'\), a la función cuyo dominio es el conjunto de los puntos
+de \(I\) donde \(f\) es diferenciable y el valor de \(f'\) es el valor
+de la derivada en cada uno de esos puntos.
+
+\end{definition}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+La notación \(f'(a)\) para la derivada de \(f\) se debe a Lagrange, pero
+también es común en Ciencias e Ingenierías utilizar la notación de
+\(\frac{df}{dx}\) debida a Leibniz. En esta última notación \(df\) y
+\(dx\) se conocen como \emph{diferenciales} de \(f\) y \(x\), y
+representan variaciones infinitesimales de \(f\) y \(x\)
+respectivamente.
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-derivada-1}{}}%
+\begin{example}[]\label{exm-derivada-1}
+
+Sea \(f(x)=Id(x)=x\) la función identidad. Entonces, para cualquier
+\(a\in\mathbb{R}\), se tiene que
+
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a} = \lim_{x\to a}\frac{x-a}{x-a} = \lim_{x\to a}1 = 1.
+\]
+
+Por tanto, \(Id(x)\) es diferenciable en todo \(\mathbb{R}\) y
+\(Id'(a)=a\).
+
+Con la notación de Leibniz, el cálculo de la derivada es, si cabe, más
+sencillo, pues se puede obtener algebraicamente,
+
+\[
+\frac{df}{dx} = \frac{dx}{dx} = 1.
+\]
+
+Sea ahora \(f(x)=x^2\). Entonces, para cualquier \(a\in\mathbb{R}\), se
+tiene que
+
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a} = \lim_{x\to a}\frac{x^2-a^2}{x-a} = \lim_{x\to a}\frac{(x-a)(x+a)}{x-a} = \lim_{x\to a}x+a = 2a.
+\]
+
+Por tanto, \(f(x)\) es diferenciable en todo \(\mathbb{R}\) y
+\(f'(a)=2a\).
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{exm-derivada-2}{}}%
+\begin{example}[]\label{exm-derivada-2}
+
+Sea la función \(f(x)=|x|\). Veamos si \(f\) es diferenciable en \(0\).
+Para ello calculamos los límites laterales.
+
+\begin{align*}
+\lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0} &= \lim_{x\to 0^-} \frac{|x|}{x} = \lim_{x\to 0^-} \frac{-x}{x} = -1,\\
+\lim_{x\to 0^+}\frac{f(x)-f(0)}{x-0} &= \lim_{x\to 0^+} \frac{|x|}{x} = \lim_{x\to 0^+} \frac{x}{x} = 1,
+\end{align*}
+
+Por tanto, como los límites laterales no coinciden, \(f\) no es
+diferenciable en \(0\).
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{def-tangente-funcion}{}}%
+\begin{definition}[]\label{def-tangente-funcion}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\), una función
+\(f:I\to\mathbb{R}\) y un punto \(a\in I\), si \(f\) es diferenciable en
+\(a\), se define la \emph{recta tangente} a la gráfica de \(f\) en \(a\)
+como la recta que pasa por el punto \((a,f(a))\) con pendiente
+\(f'(a)\), es decir, la recta con ecuación
+
+\[
+y=f(a)+f'(a)(x-a)
+\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{def-normal-funcion}{}}%
+\begin{definition}[]\label{def-normal-funcion}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\), una función
+\(f:I\to\mathbb{R}\) y un punto \(a\in I\), si \(f\) es diferenciable en
+\(a\), se define la \emph{recta normal} a la gráfica de \(f\) en \(a\)
+como la recta que pasa por el punto \((a,f(a))\) y es perpendicular a la
+recta tangente a la gráfica de \(f\) en \(a\), es decir, la recta con
+ecuación
+
+\[
+y=f(a)-\frac{1}{f'(a)}(x-a)
+\]
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-tangente-normal-funcion}{}}%
+\begin{example}[]\label{exm-tangente-normal-funcion}
+
+Dada la función \(y=f(x)=x^2\), la recta tangente a \(f\) en \(1\) es
+
+\[
+y = f(1)+f'(1)(x-1) = 1+2(x-1) = 2x-1,
+\]
+
+y la recta normal es
+
+\[
+y = f(1)-\frac{1}{f'(1)}(x-1) = 1-\frac{1}{2}(x-1) = \frac{-x}{2}+\frac{3}{2}.
+\]
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{thm-diferenciabilidad-implica-continuidad}{}}%
+\begin{theorem}[]\label{thm-diferenciabilidad-implica-continuidad}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\), una función
+\(f:I\to\mathbb{R}\) y un punto \(a\in I\), si \(f\) es diferenciable en
+\(a\) entonces \(f\) es continua en \(a\).
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Sea \(x\in I\) y \(x\neq a\). Entonces
+
+\[
+\lim_{x\to a}f(x)-f(a) = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}(x-a) = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}\lim_{x\to a}x-a = f'(a)\cdot 0 = 0.
+\]
+
+Así pues,
+
+\[
+\lim_{x\to a}f(x)-f(a) = 0 \Rightarrow \lim_{x\to a}f(x)-\lim_{x\to a}f(a) = 0 \Rightarrow \lim_{x\to a}f(x)=\lim_{x\to a}f(a) =f(a),
+\] y, por tanto, \(f\) es continua en \(a\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+El recíproco de este teorema no es cierto, es decir, pueden existir
+funciones continuas en un punto que no sean derivables en ese punto,
+como por ejemplo la función \(f(x)=|x|\) que es continua en \(0\) pero,
+como se ha visto, no es derivable en \(0\).
+
+\end{tcolorbox}
+
+\hypertarget{uxe1lgebra-de-derivadas}{%
+\section{Álgebra de derivadas}\label{uxe1lgebra-de-derivadas}}
+
+\leavevmode\vadjust pre{\hypertarget{prp-algebra-derivadas}{}}%
+\begin{proposition}[]\label{prp-algebra-derivadas}
+
+Dado un intervalo \(I\subseteq \mathbb{R}\) y dos funciones
+\(f,g:I\to \mathbb{R}\), si \(f\) y \(g\) son diferenciables en
+\(a\in I\), entonces
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(f+ g\) es diferenciable en \(a\) y \((f+g)'(a)=f'(a)+g'(a)\).
+\item
+  \(f- g\) es diferenciable en \(a\) y \((f-g)'(a)=f'(a)-g'(a)\).
+\item
+  \(c\cdot f\) es diferenciable en \(a\) y
+  \((c\cdot f)'(a) = c\cdot f'(a)\) \(\forall c \in \mathbb{R}\).
+\item
+  \(f\cdot g\) es diferenciable en \(a\) y
+  \((f\cdot g)'(a) = f'(a)g(a)+f(a)g'(a)\).
+\item
+  Si \(g(c)\neq 0\), \(\frac{f}{g}\) es diferenciable en \(a\) y
+  \(\left(\dfrac{f}{g}\right)'(a)=\dfrac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}\).
+\end{enumerate}
+
+\end{proposition}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Veamos la demostración de cada caso usando la definición de derivada.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Derivada de la suma de funciones. \begin{align*}
+  (f+g)'(a) &=\lim_{x\to a}\frac{(f+g)(x)-(f+g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)+g(x)-f(a)-g(a)}{x-a} \\
+  &= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}+\frac{g(x)-g(a)}{x-a} = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}+\lim_{x\to a}\frac{g(x)-g(a)}{x-a}\\ 
+  &= f'(a)+g'(a). 
+  \end{align*}
+\item
+  Derivada de la resta de funciones. Se prueba del mismo modo que la
+  suma.
+\item
+  Derivada del producto de una función por un escalar. \begin{align*}
+  (c\cdot f)'(a) &=\lim_{x\to a}\frac{(c\cdot f)(x)-(c\cdot f)(a)}{x-a} = \lim_{x\to a}\frac{c\cdot f(a)-c\cdot f(a)}{x-a} \\
+  &= \lim_{x\to a}\frac{c(f(x)-f(a))}{x-a} = c\lim_{x\to a}\frac{f(x)-f(a)}{x-a}= c\cdot f'(a). 
+  \end{align*}
+\item
+  Derivada del producto de funciones. \begin{align*}
+  (f\cdot g)'(a) &=\lim_{x\to a}\frac{(f\cdot g)(x)-(f\cdot g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)\cdot g(x)-f(a)\cdot g(a)}{x-a} \\
+  &= \lim_{x\to a}\frac{f(x)\cdot g(x)-f(a)\cdot g(x)+f(a)\cdot g(x)-f(a)\cdot g(a)}{x-a} \\ 
+  &= \lim_{x\to a}\frac{(f(x)-f(a))\cdot g(x)+f(a)(g(x)-g(a))}{x-a} \\
+  &= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}\lim_{x\to a} g(x)+\lim_{x\to a}f(a)\lim_{x\to a}\frac{g(x)-g(a)}{x-a}  = f'(a)g(a)+f(a)g'(a).
+  \end{align*}
+\item
+  Derivada del cociente de funciones. \begin{align*}
+  (f\cdot g)'(a) &=\lim_{x\to a}\frac{(f/g)(x)-(f/g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)/g(x)-f(a)/g(a)}{x-a} \\
+  &= \lim_{x\to a}\frac{\frac{f(x)g(a)-f(a)g(x)}{g(x)g(a)}}{x-a} \\ 
+  &= \lim_{x\to a}\frac{f(x)g(a)-f(a)g(x)}{(x-a)g(x)g(a)}\\ 
+  &= \lim_{x\to a} \frac{f(x)g(a)-f(a)g(a)+f(a)g(a)-f(a)g(x)}{(x-a)g(x)g(a)} \\ 
+  &= \lim_{x\to a} \frac{1}{g(x)g(a)}\left(\frac{f(x)-f(a)}{x-a}g(a) - f(a)\frac{g(x)-g(a)}{x-a}\right) \\ 
+  &= \lim_{x\to a}\frac{1}{g(x)g(a)}\left(\lim_{x\to a}g(a)\lim_{x\to a}\frac{f(x)-f(a)}{x-a}-\lim_{x\to a}f(a)\lim_{x\to a}\frac{g(x)-g(a)}{x-a}\right) \\ 
+  &= \frac{f'(a)g(a)-f(a)g'(a)}{g(a)^2},
+  \end{align*} ya que \(g(a)\neq 0\) y como \(g\) es continua en \(a\)
+  al ser derivable en \(a\), también se puede afirmar que existe un
+  \(\delta>0\) tal que \(g(x)\neq 0\)
+  \(\forall x \in (a-\delta, a+\delta)\cap I\), por lo que \[
+  \lim_{x\to a}\frac{1}{g(x)g(a)}=\frac{1}{g(a)^2}.
+  \]
+\end{enumerate}
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-algebra-derivadas}{}}%
+\begin{example}[]\label{exm-algebra-derivadas}
+
+Veamos cuál es la función derivada de la función racional
+\(f(x)=\dfrac{x^2-2x+1}{x}\).
+
+\begin{align*}
+f'(x) &= \frac{(x^2-2x+1)'x-(x^2-2x+1)x'}{x^2} = \frac{((x^2)'-(2x)'+1')x-(x^2-2x+1)}{x^2} = \\ 
+&= \frac{(2x-2)x-(x^2-2x+1)}{x^2} =  \frac{2x^2-2x-x^2+2x-1}{x^2} = \frac{x^2-1}{x^2}  \forall x\neq 0.
+\end{align*}
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{thm-regla-cadena}{}}%
+\begin{theorem}[Regla de la cadena]\label{thm-regla-cadena}
+
+Dados dos intervalos \(I,J\subseteq \mathbb{R}\) y dos funciones
+\(f:I\to \mathbb{R}\) y \(g:J\to\mathbb{R}\) tales que
+\(f(I)\subseteq J\), si \(f\) es diferenciable en en \(a\) y \(g\) es
+diferenciable en \(f(a)\), entonces \(g\circ f\) es diferenciable en
+\(a\) y \[
+(g\circ f)'(a) = g'(f(a))f'(a).
+\]
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Sea
+
+\[
+h(y)=
+\begin{cases}
+\frac{g(y)-g(f(a))}{y-f(a)} & \mbox{si } y\in J \mbox{ y } y\neq f(a)\\
+g'(f(a)) & \mbox{si } y=f(a)
+\end{cases}
+\]
+
+Veamos que \(h\) es continua en \(f(a)\). Como \(g\) es diferenciable en
+\(f(a)\), se tiene que
+\(\lim_{x\to f(a)} \frac{g(x)-g(f(a))}{x-f(a)}=g'(f(a))\), de modo que
+para cualquier \(\varepsilon>0\) existe \(\delta>0\) tal que si
+\(x\in J\setminus \{f(a)\}\) y \(|x-f(a)|<\delta\), entonces
+\(\left|\frac{g(x)-g(f(a))}{x-f(a)}-g'(f(a))\right|<\varepsilon\). Así
+pues, si \(y\in J\), \(y\neq f(a)\) y \(|y-f(a)|<\delta\) entonces
+\(|h(y)-g'(f(a))|<\varepsilon\), y si \(y=f(a)\), entonces
+\(|y-f(a)|=0<\delta\) y
+\(|h(y)-g'(f(a))|=|g'(f(a))-g'(f(a))|=0<\varepsilon\). Por consiguiente,
+\(h\) es continua en \(f(a)\) y
+\(\lim_{y\to f(a)}h(y)=h(f(a))=g'(f(a))\).
+
+Por otro lado, de la definición de \(h\) se tiene que
+\(g(y)-g(f(a))=h(y)(y-f(a))\) \(\forall y\in J\), de manera que si
+\(x\in I\setminus\{a\}\) y \(y=f(x)\in J\) entonces
+
+\begin{align*}
+(g\circ f)'(a) &= \lim_{x\to a}\frac{g\circ f(x)-g\circ f(a)}{x-a} = \lim_{x\to a}\frac{g(f(x))-g(f(a))}{x-a} \\ 
+& = \lim_{x\to a}\frac{h(f(x))(f(x)-f(a))}{x-a} = \lim_{x\to a}h(f(x))\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\\ 
+&= h(f(a))f'(a) = g'(f(a))f'(a).
+\end{align*}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+La demostración es mucho sencilla usando la notación diferencial de
+Leibniz para la derivada. Si \(g=f(z)\) y \(z=f(x)\), entonces
+
+\[
+\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=g'(z)f'(x)=g'(f(x))f'(x).
+\]
+
+\end{tcolorbox}
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-regla-cadena}{}}%
+\begin{example}[]\label{exm-regla-cadena}
+
+Si \(g(x)=\operatorname{sen}(x)\) y \(f(x)=x^2\), entonces
+\(g\circ f(x)=\operatorname{sen}(x^2)\) y, aplicando la regla de la
+cadena, su derivada vale
+
+\[
+(g\circ f)'(x)=g'(f(x))f'(x) = \cos(g(x)) 2x = \cos(x^2)2x.
+\]
+
+Por otro lado, \(f\circ g(x)= (\sin(x))^2\) y, de nuevo aplicando la
+regla de la cadena, su derivada vale
+
+\[
+(f\circ g)'(x)=f'(g(z))g'(z) = 2g(x)\cos(x) = 2\operatorname{sen}(x)\cos(x).
+\]
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{thm-derivada-funcion-inversa}{}}%
+\begin{theorem}[Derivada de la función
+inversa]\label{thm-derivada-funcion-inversa}
+
+Dado un intervalo \(I\subseteq \mathbb{R}\) y una función
+\(f:I\to \mathbb{R}\) continua e inyectiva en \(I\), y sea \(J=f(I)\) y
+\(f^{-1}:J\to\mathbb{R}\) la función inversa de \(f\). Si \(f\) es
+diferenciable en \(a\in I\) y \(f'(a)\neq 0\), entonces \(f^{-1}\) es
+diferenciable en \(f(a)\) y
+
+\[
+(f^{-1})'(f(a)) = \frac{1}{f'(a)}.
+\]
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Como \(f\) es continua en \(I\), \(J=f(I)\) es un intervalo. Como además
+\(f\) es inyectiva, necesariamente \(f\) es monótona. Sea la función
+\(g(y)=\frac{y-f(a)}{f^{-1}(y)-a}\)
+\(\forall y\in J\setminus \{f(a)\}\). \(g\) está bien definida pues
+\(f^{-1}\) es inyectiva, y además, si \(y\neq f(a)\) entonces
+\(f^{-1}(y) \neq f^{-1}(f(a))=a\), por lo que el denominador no se
+anula. Veamos que \(\lim_{y\to f(a)}g(y)=f'(a)\).
+
+Como \(f\) es diferenciable en \(a\), es decir,
+\(f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\), para cualquier
+\(\varepsilon>0\) existe \(\delta'>0\) tal que si \(|x-a|<\delta'\)
+entonces \(\left|\frac{f(x)-f(a)}{x-a}-f'(a)\right|<\varepsilon\).
+
+Por otro lado, como \(f\) es continua en \(I\), \(f^{-1}\) es continua
+en \(J\), y en particular en \(f(a)\), es decir,
+\(\lim_{y\to f(a)}f^{-1}(y)=f^{-1}(f(a))=a\), de manera que para
+cualquier \(\delta'>0\) existe \(\delta>0\) tal que si
+\(y\in J\setminus\{f(a)\}\) y \(|y-f(a)|<\delta\) entonces
+\(|f^{-1}(y)-a|<\delta'\), y por tanto,
+
+\[
+\begin{gathered}
+\left|\frac{f(f^-1(y))-f(a)}{f^{-1}(y)-a}-f'(a)\right|<\varepsilon \Leftrightarrow \left|\frac{y-f(a)}{f^{-1}(y)-a}-f'(a)\right|<\varepsilon \\ 
+\Leftrightarrow |g(y)-f'(a)|<\varepsilon \Rightarrow \lim_{y\to f(a)}g(y)=f'(a).
+\end{gathered}
+\]
+
+Como además
+
+\begin{align*}
+\frac{f^{-1}(y)-f^{-1}(f(a))}{y-f(a)} &= \frac{f^{-1}(y)-a}{y-f(a)} \\ 
+&= \frac{1}{\frac{y-f(a)}{f^{-1}(y)-a}} = \frac{1}{g(y)} \label{si $y\neq f(a)$}, 
+\end{align*}
+
+y como \(\lim_{y\to f(a)}\frac{1}{g(y)} = \frac{1}{f'(a)}\), finalmente
+se tiene que
+
+\[
+(f^{-1})'(f(a)) = \lim_{y\to f(a)} \frac{f^{-1}(y)-f^{-1}(f(a))}{y-f(a)} = \lim_{y\to f(a)}\frac{1}{g(y)} = \frac{1}{f'(a)}.
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+De nuevo, podemos realizar la demostración del teorema de manera más
+sencilla utilizando la notación de diferencial de Leibniz.
+
+\[
+\frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{f'(x)}
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+Si en las condiciones del teorema anterior quitamos la condición
+\(f'(a)\neq 0\), el resultado no es cierto y \(f^{-1}\) no es
+diferenciable en \(f(a)\). Vamos a probarlo por reducción al absurdo.
+Supongamos que \(f'(a)=0\), entonces, aplicando la regla de la cadena,
+se tiene
+
+\[
+(f^{-1}\circ f)'(a) = (f^{-1})'(f(a))f'(a) = (f^{-1})'(f(a))0 = 0.
+\]
+
+Pero, por otro lado,
+\((f^{-1}\circ f)'(a) = \operatorname{Id}'(a) = 1\), lo que supone una
+contradicción, por lo que \(f^{-1}\) no puede ser derivable en \(f(a)\).
+
+\end{tcolorbox}
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{cor-derivada-funcion-inversa}{}}%
+\begin{corollary}[]\label{cor-derivada-funcion-inversa}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\) inyectiva en \(I\), y sea \(J=f(I)\) y
+\(f^{-1}:J\to\mathbb{R}\) la función inversa de \(f\). Si \(f\) es
+derivable en \(I\) y \(f'(x)\neq 0\) \(\forall x\in I\), entonces
+\(f^{-1}\) es derivable en \(I\) y \(\forall y\in J\),
+
+\[
+(f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}
+\]
+
+\end{corollary}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Si \(f\) es diferenciable en \(I\) entonces es continua en \(I\) y se
+puede aplicar el teorema anterior.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-derivada-funcion-inversa}{}}%
+\begin{example}[]\label{exm-derivada-funcion-inversa}
+
+La inversa de la función exponencial \(y=f(x)=e^x\) es el logaritmo
+neperiano \(x=f^{-1}(y)=\ln y\), de modo que, aplicando el teorema
+anterior, la función derivada del logaritmo es \[
+\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
+\]
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{exm-derivada-funcion-inversa-2}{}}%
+\begin{example}[]\label{exm-derivada-funcion-inversa-2}
+
+Si \(n\in\mathbb{N}\) es par, la función \(f(x)=x^n\)
+\(\forall x\in \mathbb{R}^+\) es inyectiva y derivable, con
+\(f'(x)=nx^{n-1}>0\) \(\forall x\in\mathbb{R}^+\). Por tanto, la función
+\(f^{-1}(y)=\sqrt[n]{y}\) es derivable en \(\mathbb{R}^+\) y
+\(\forall y\in \mathbb{R}^+\),
+
+\begin{align*}
+(f^{-1})'(y) &= \frac{1}{f'(f^{-1}(y))} = \frac{1}{f'(\sqrt[n]{y})} = \frac{1}{n(\sqrt[n]{y})^{n-1}} \\ 
+&= \frac{1}{n (y^{1/n})^{n-1}} = \frac{1}{ny^{1-\frac{1}{n}}} = \frac{1}{n}y^{\frac{1}{n}-1}.
+\end{align*}
+
+Por otro lado, si \(n\in\mathbb{N}\) es impar, la función \(f(x)=x^n\)
+\(\forall x\in\mathbb{R}\) es inyectiva y derivable, con
+\(f'(x)=nx^{n-1}\neq 0\) \(\forall x\neq 0\). Por tanto, la función
+\(f^{-1}(y)=\sqrt[n]{y}\) es derivable en \(\mathbb{R}\setminus\{0\}\)
+y, al igual que antes, \(\forall y\in \mathbb{R}^+\),
+
+\[
+(f^{-1})'(y) = \frac{1}{n}y^{\frac{1}{n}-1}.
+\]
+
+\end{example}
+
+\hypertarget{crecimiento-y-extremos-relativos-de-una-funciuxf3n}{%
+\section{Crecimiento y extremos relativos de una
+función}\label{crecimiento-y-extremos-relativos-de-una-funciuxf3n}}
+
+\leavevmode\vadjust pre{\hypertarget{thm-extremo-interior}{}}%
+\begin{theorem}[Extremo interior]\label{thm-extremo-interior}
+
+Dado un intervalo \(I\subseteq \mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\) con un extremo relativo en un punto interior
+\(a\in I\), si \(f\) es diferenciable en \(a\), entonces \(f'(a)=0\).
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Supongamos que \(f\) tiene un máximo relativo en \(a\in I\). Por ser
+\(a\) un punto interior de \(I\), existe un \(\delta>0\) tal que el
+entorno \((a-\delta, a+\delta)\subset I\) y \(f(x)<f(a)\)
+\(\forall x\in (a-\delta,a+\delta)\).
+
+Supongamos ahora que \(f'(a)>0\). Como
+\(f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\), existe un
+\(0<\delta'<\delta\) tal que \(\frac{f(x)-f(a)}{x-a}>0\)
+\(\forall x\in (a-\delta',a+\delta')\setminus\{a\}\). Por tanto, si
+\(x\in (a,a+\delta')\), \(f(x)-f(a)>0\) de donde se deduce que
+\(f(x)>f(a)\) lo que contradice que \(f\) tenga un máximo relativo en
+\(a\). Así que no puede ser \(f'(c)>0\).
+
+Del mismo modo se puede probar que no puede ser \(f'(a)<0\). Por lo que
+necesariamente tiene que ser \(f'(a)=0\).
+
+Si \(f\) tiene un mínimo relativo en \(a\), la demostración es análoga.
+
+\end{proof}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-caution-color-frame, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+El resultado anterior no es cierto si el punto \(a\) no es interior de
+\(I\). Para verlo, basta considerar \(f(x)=x\) \(\forall x\in[0,1]\). Se
+observa que \(f\) tiene un máximo relativo en \(1\), pero
+\(f'(1)\neq 0\).
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{cor-extremo-interior}{}}%
+\begin{corollary}[]\label{cor-extremo-interior}
+
+Dado un intervalo \(I\subseteq \mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\) con un extremo relativo en un punto \(a\in I\),
+entonces \(f'(a)\) no existe o \(f'(a)=0\).
+
+\end{corollary}
+
+\leavevmode\vadjust pre{\hypertarget{exm-extremo-intrior-valor-absoluto}{}}%
+\begin{example}[]\label{exm-extremo-intrior-valor-absoluto}
+
+La función \(f(x)=|x|\) tiene un mínimo relativo en \(0\) que es un
+punto interior de \(\mathbb{R}\). Sin embargo, \(f'(0)\) no existe.
+
+\end{example}
+
+\leavevmode\vadjust pre{\hypertarget{def-punto-critico}{}}%
+\begin{definition}[Punto crítico]\label{def-punto-critico}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\), se dice que \(a\) es un \emph{punto crítico} o
+\emph{punto singular} de \(f\), si \(f'(a)=0\).
+
+\end{definition}
+
+Gráficamente, los puntos críticos son puntos donde la tangente a la
+gráfica de la función es horizontal.
+
+Como veremos más adelante, los puntos críticos juegan un papel clave en
+la determinación de los extremos relativos de una función.
+
+\leavevmode\vadjust pre{\hypertarget{thm-rolle}{}}%
+\begin{theorem}[Rolle]\label{thm-rolle}
+
+Dada una función \(f:[a,b]\to\mathbb{R}\) continua en \([a,b]\) y
+diferenciable en \((a,b)\), si \(f(a)=f(b)\), entonces \(f\) tiene al
+menos un punto crítico en \((a,b)\), es decir, existe \(c\in(a,b)\) tal
+que \(f'(c)=0\).
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Como \(f\) es continua en \([a,b]\), por el
+Teorema~\ref{thm-extremos-funcion-continua-intervalo-cerrado} \(f\)
+alcanza el máximo y el mínimo en \([a,b]\). Si existe \(c\in (a,b)\) tal
+que \(f\) alcanza el máximo o el mínimo en \(c\), por el teorema
+anterior se tiene \(f'(c)=0\). En caso contrario, si no existe
+\(c\in(a,b)\) tal que \(f\) alcanza el máximo o el mínimo en \(c\),
+entonces \(f\) alcanza el máximo o el mínimo en los extremos del
+intervalo, pero como \(f(a)=f(b)\), se deduce que que \(f\) es constante
+en \([a,b]\) y, por tanto, \(f'(x)=0\) \(\forall x\in (a,b)\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{thm-valor-medio}{}}%
+\begin{theorem}[Valor medio]\label{thm-valor-medio}
+
+Dada una función \(f:[a,b]\to\mathbb{R}\) continua en \([a,b]\) y
+diferenciable en \((a,b)\), entonces existe \(c\in (a,b)\) tal que
+
+\[
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+\]
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Sea \(g(x)\) la recta secante a \(f\) en los puntos \((a,f(a))\) y
+\((b,f(b))\). Entonces
+\(g(x)=f(a)+\operatorname{TVM}(f,[a,b])(x-a) = f(a)+\frac{f(b)-f(a)}{b-a}(x-a)\).
+Si tomamos la función que mide la distancia entre \(f\) y \(g\), es
+decir, \(\forall x\in[a,b]\)
+
+\[
+h(x)=f(x)-g(x)= f(x)-f(a)+\frac{f(b)-f(a)}{b-a}(x-a),
+\]
+
+\(h\) es continua en \([a,b]\) por ser la diferencia de dos funciones
+continuas en ese intervalo, también es derivable en \((a,b)\) al ser
+\(f\) y \(g\) derivables en el intervalo. Además
+
+\begin{align*}
+h(a) &= f(a) - f(a)+\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
+h(b) &= f(a) - f(b)+\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
+\end{align*}
+
+Por tanto, aplicando el teorema de Rolle, existe \(c\in(a,b)\) tal que
+\(f'(c)=0\). Como
+
+\[
+h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a} \ \forall x\in (a,b),
+\]
+
+en particular se tiene
+
+\[
+h'(c) = f'(c) - \frac{f(b)-f(a)}{b-a} = 0 \Rightarrow f'(c) = \frac{f(b)-f(a)}{b-a}.
+\]
+
+\end{proof}
+
+\end{tcolorbox}
+
+\hypertarget{estudio-del-crecimiento-de-una-funciuxf3n}{%
+\subsection{Estudio del crecimiento de una
+función}\label{estudio-del-crecimiento-de-una-funciuxf3n}}
+
+La principal aplicación de la derivada es el estudio del crecimiento de
+una función mediante el signo de la derivada.
+
+\leavevmode\vadjust pre{\hypertarget{thm-crecimiento-signo-derivada}{}}%
+\begin{theorem}[Signo de la
+derivada]\label{thm-crecimiento-signo-derivada}
+
+Dado un intervalo \(I\subseteq\mathbb{R}\) y una función
+\(f:I\to\mathbb{R}\) diferenciable en \(I\), entonces:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(f\) es creciente en \(I\) si y sólo si \(f'(x)\geq 0\)
+  \(\forall x\in I\).
+\item
+  \(f\) es decreciente en \(I\) si y sólo si \(f'(x)\leq 0\)
+  \(\forall x\in I\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Demostración}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+\begin{proof}
+
+Probaremos solo el primer apartado, ya que el segundo se prueba de forma
+análoga.
+
+Supongamos que \(f\) es creciente en \(I\) y sea \(a\in I\). Si
+\(x\in I\) y \(x>a\), por ser \(f\) creciente, \(f(x)>f(a)\), por lo que
+\(\frac{f(x)-f(a)}{x-a}\geq 0\). Y si \(x<a\), \(f(x)<f(a)\), por lo que
+también se tiene \(\frac{f(x)-f(a)}{x-a}\geq 0\). Así pues,
+\(f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\geq 0\).
+
+Para ver el otro sentido de la implicación, supongamos que
+\(f'(x)\geq 0\) \(\forall x\in I\), y sean \(a,b\in I\) con \(a<b\).
+Aplicando el teorema del valor medio a \(f\) en el intervalo \([a,b]\),
+se tiene que existe \(c\in(a,b)\) tal que
+\(f'(c)= \frac{f(b)-f(a)}{b-a}\geq 0\), y como \(b-a>0\), se tiene que
+\(f(b)-f(a)>0\) por lo que \(f(b)>f(a)\) y, por tanto, \(f\) es
+creciente en \(I\).
+
+\end{proof}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-crecimiento}{}}%
+\begin{example}[]\label{exm-crecimiento}
+
+La función \(f(x)=x^3\) es creciente en todo \(\mathbb{R}\) ya que
+\(\forall x\in \mathbb{R}\ f'(x)\geq 0\).
+
+\end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+Una función puede ser creciente o decreciente en un intervalo y no tener
+derivada.
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-crecimiento-2}{}}%
+\begin{example}[]\label{exm-crecimiento-2}
+
+Consideremos la función \(f(x)=x^4-2x^2+1\). Su derivada
+\(f'(x)=4x^3-4x\) está definida en todo \(\mathbb{R}\) y es continua.
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/crecimiento.png}
+
+}
+
+\caption{Estudio del crecimiento de una función.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{determinaciuxf3n-de-los-extremos-relativos-de-una-funciuxf3n}{%
+\subsection{Determinación de los extremos relativos de una
+función}\label{determinaciuxf3n-de-los-extremos-relativos-de-una-funciuxf3n}}
+
+Como consecuencia del resultado anterior, la derivada también sirve para
+determinar los extremos relativos de una función.
+
+\leavevmode\vadjust pre{\hypertarget{thm-extremos-relativos}{}}%
+\begin{theorem}[Criterio de la primera
+derivada]\label{thm-extremos-relativos}
+
+Sea \(f\) es una función cuya derivada existe en un intervalo \(I\), y
+sea \(x_0\in I\) tal que \(f'(x_0)=0\), entonces:
+
+\begin{itemize}
+\tightlist
+\item
+  Si existe un \(\delta>0\) tal que
+  \(\forall x\in(x_0-\delta,x_0)\ f'(x)>0\) y
+  \(\forall x\in(x_0,x_0+\delta)\ f'(x)<0\) entonces \(f\) tiene un
+  \emph{máximo relativo} en \(x_0\).
+\item
+  Si existe un \(\delta>0\) tal que
+  \(\forall x\in(x_0-\delta,x_0)\ f'(x)<0\) y
+  \(\forall x\in(x_0,x_0+\delta)\ f'(x)>0\) entonces \(f\) tiene un
+  \emph{mínimo relativo} en \(x_0\).
+\item
+  Si existe un \(\delta>0\) tal que
+  \(\forall x\in(x_0-\delta,x_0)\ f'(x)>0\) y
+  \(\forall x\in(x_0,x_0+\delta)\ f'(x)>0\) entonces \(f\) tiene un
+  \emph{punto de inflexión creciente} en \(x_0\).
+\item
+  Si existe un \(\delta>0\) tal que
+  \(\forall x\in(x_0-\delta,x_0)\ f'(x)<0\) y
+  \(\forall x\in(x_0,x_0+\delta)\ f'(x)<0\) entonces \(f\) tiene un
+  \emph{punto de inflexión decreciente} en \(x_0\).
+\end{itemize}
+
+Los puntos donde se anula la derivada de una función se denominan
+\emph{puntos críticos}.
+
+\end{theorem}
+
+\leavevmode\vadjust pre{\hypertarget{exm-extremos-relativos}{}}%
+\begin{example}[]\label{exm-extremos-relativos}
+
+Consideremos de nuevo la función \(f(x)=x^4-2x^2+1\). Su derivada
+\(f'(x)=4x^3-4x\) está definida en todo \(\mathbb{R}\) y es continua.
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/extremos.png}
+
+}
+
+\caption{Estudio de los extremos de una función}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{estudio-de-la-concavidad-de-una-funciuxf3n}{%
+\section{Estudio de la concavidad de una
+función}\label{estudio-de-la-concavidad-de-una-funciuxf3n}}
+
+La concavidad de una función puede estudiarse mediante el signo de la
+segunda derivada.
+
+\leavevmode\vadjust pre{\hypertarget{thm-concavidad}{}}%
+\begin{theorem}[Criterio de la segunda derivada]\label{thm-concavidad}
+
+Si \(f\) es una función cuya segunda derivada existe en un intervalo
+\(I\), entonces:
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(\forall x\in I\ f^{\prime\prime}(x)\geq 0\) entonces \(f\) es
+  cóncava en el intervalo \(I\).
+\item
+  Si \(\forall x\in I\ f^{\prime\prime}(x)\leq 0\) entonces \(f\) es
+  convexa en el intervalo \(I\).
+\end{itemize}
+
+\end{theorem}
+
+\leavevmode\vadjust pre{\hypertarget{exm-concavidad}{}}%
+\begin{example}[]\label{exm-concavidad}
+
+La función \(f(x)=x^2\) tiene segunda derivada \(f''(x)=2>0\) y por
+tanto es cóncava en todo \(\mathbb{R}\).
+
+\end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+Una función puede ser cóncava o convexa en un intervalo y no tener
+derivada.
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-concavidad-2}{}}%
+\begin{example}[]\label{exm-concavidad-2}
+
+Consideremos de nuevo la función \(f(x)=x^4-2x^2+1\). Su segunda
+derivada \(f^{\prime\prime}(x)=12x^2-4\) está definida en todo
+\(\mathbb{R}\) y es continua.
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/concavidad.png}
+
+}
+
+\caption{Estudio de la concavidad de una función.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{interpretaciuxf3n-cinemuxe1tica-de-la-derivada}{%
+\section{Interpretación cinemática de la
+derivada}\label{interpretaciuxf3n-cinemuxe1tica-de-la-derivada}}
+
+\hypertarget{movimiento-rectiluxedneo}{%
+\subsection{Movimiento rectilíneo}\label{movimiento-rectiluxedneo}}
+
+Cuando una función \(f(t)\) describe la posición de un objeto móvil
+sobre la recta real en el instante \(t\), tomando como referencia el
+origen de coordenadas \(O\) y el vector unitario \(\mathbf{i}=(1)\), se
+puede representar la posición \(P\) del móvil en cada instante \(t\)
+mediante un vector \(\vec{OP}=x\mathbf{i}\) donde \(x=f(t)\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/movimiento_rectilineo.png}
+
+}
+
+\caption{Interpretación cinemática del movimiento rectilíneo.}
+
+\end{figure}
+
+En este contexto, si se toman los instantes \(t=t_0\) y
+\(t=t_0+\Delta t\), ambos del dominio \(I\) de \(f\), el vector
+
+\[\mathbf{v}_m=\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\]
+
+que se conoce como \emph{velocidad media} del espacio recorrido por
+\(f\) entre los instantes \(t_0\) y \(t_0+\Delta t\).
+
+\leavevmode\vadjust pre{\hypertarget{exm-movimiento-rectilineo}{}}%
+\begin{example}[]\label{exm-movimiento-rectilineo}
+
+Un vehículo realiza un viaje de Madrid a Barcelona. Sea \(f(t)\) la
+función que da la posición el vehículo en cada instante \(t\). Si el
+vehículo parte de Madrid (km 0) a las 8 y llega a Barcelona (km 600) a
+las 14 horas, entonces la velocidad media del vehículo en el trayecto es
+
+\[
+\mathbf{v}_m=\frac{f(14)-f(8)}{14-8}=\frac{600-0}{6} = 100 \mbox{ km/h}.
+\]
+
+Siguiendo en este mismo contexto del movimiento rectilíneo, la derivada
+de \(f\) en el instante \(t=t_0\) es el vector
+
+\[
+\mathbf{v}=f'(t_0)=\lim_{\Delta x\rightarrow 0}\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\]
+
+que se conoce, siempre que exista el límite, como \emph{velocidad
+instantánea} o simplemente la \emph{velocidad} del espacio recorrido por
+\(f\) en el instante \(t_0\).
+
+Es decir, la derivada de la posición respecto del tiempo, es un campo de
+vectores que recibe el nombre de \emph{velocidad a lo largo de la
+trayectoria \(f\)}.
+
+Siguiendo con el ejemplo anterior, lo que marca el velocímetro en un
+determinado instante sería el módulo del vector velocidad en ese
+instante.
+
+\end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+También tiene sentido pensar en \(f(t)\) como una función que mide otras
+magnitudes como por ejemplo la temperatura de un cuerpo, la
+concentración de un gas, la cantidad de un compuesto en una reacción
+química o el precio de las acciones de una compañía en cada instante
+\(t\).
+
+\end{tcolorbox}
+
+\hypertarget{generalizaciuxf3n-al-movimiento-curviluxedneo}{%
+\subsection{Generalización al movimiento
+curvilíneo}\label{generalizaciuxf3n-al-movimiento-curviluxedneo}}
+
+La derivada como velocidad a lo largo de una trayectoria en la recta
+real puede generalizarse a trayectorias en cualquier espacio euclídeo
+\(\mathbb{R}^n\).
+
+Para el caso del plano real \(\mathbb{R}^2\), si \(f(t)\) describe la
+posición de un objeto móvil en el plano en el instante \(t\), tomando
+como referencia el origen de coordenadas \(O\) y los vectores
+coordenados \(\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}\), se puede
+representar la posición \(P\) del móvil en cada instante \(t\) mediante
+un vector \(\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}\) cuyas coordenadas
+
+\[
+\begin{cases}
+x=x(t)\\
+y=y(t)
+\end{cases}
+\quad
+t\in I\subseteq \mathbb{R}
+\]
+
+se conocen como \emph{funciones coordenadas} de \(f\) y se escribe
+\(f(t)=(x(t),y(t))\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/movimiento_curvilineo.png}
+
+}
+
+\caption{Interpretación cinemática del movimiento curvilineo.}
+
+\end{figure}
+
+\hypertarget{velocidad-en-una-trayectoria-curviluxednea-en-el-plano}{%
+\subsubsection{Velocidad en una trayectoria curvilínea en el
+plano}\label{velocidad-en-una-trayectoria-curviluxednea-en-el-plano}}
+
+En este contexto de una trayectoria \(f(t)=(x(t),y(t))\) en el plano
+real \(\mathbb{R}^2\), para un instante \(t=t_0\), si existe el vector
+
+\[
+\mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\]
+
+entonces \(f\) es derivable en el instante \(t=t_0\) y el vector
+\(\mathbf{v}=f'(t_0)\) se conoce como \emph{velocidad} de \(f\) en ese
+instante.
+
+Como \(f(t)=(x(t),y(t))\),
+
+\begin{align*}
+f'(t)&=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\\ 
+&= \lim_{\Delta t\rightarrow 0} \frac{(x(t_0+\Delta t),y(t_0+\Delta t))-(x(t_0),y(t_0))}{\Delta t} \\
+&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =\\
+&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) \\ 
+&=
+(x'(t_0),y'(t_0)).
+\end{align*}
+
+luego
+
+\[
+\mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
+\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-movimiento-curvilineo}{}}%
+\begin{example}[]\label{exm-movimiento-curvilineo}
+
+Dada la trayectoria \(f(t) = (\cos(t),\operatorname{sen}(t))\),
+\(t\in \mathbb{R}\), cuya imagen es la circunferencia de centro el
+origen de coordenadas y radio 1, sus funciones coordenadas son
+\(x(t) = \cos(t)\), \(y(t) = \operatorname{sen}(t)\),
+\(t\in \mathbb{R}\), y su velocidad es
+
+\[
+\mathbf{v}=f'(t)=(x'(t),y'(t))=(-\operatorname{sen}(t), \cos(t).
+\]
+
+En el instante \(t=\pi/4\), el móvil estará en la posición
+\(f(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)\)
+y se moverá con una velocidad
+\(\mathbf{v}=f'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/circunferencia.png}
+
+}
+
+\caption{Trayectoria de la circunferencia.}
+
+\end{figure}
+
+Obsérvese que el módulo del vector velocidad siempre será 1 ya que
+\(\lvert \mathbf{v}\rvert = \sqrt{(-\operatorname{sen}(t))^2+(\cos(t))^2}=1\).
+
+\end{example}
+
+\hypertarget{recta-tangente-a-una-trayectoria}{%
+\section{Recta tangente a una
+trayectoria}\label{recta-tangente-a-una-trayectoria}}
+
+\hypertarget{recta-tangente-a-una-trayectoria-en-el-plano}{%
+\subsection{Recta tangente a una trayectoria en el
+plano}\label{recta-tangente-a-una-trayectoria-en-el-plano}}
+
+Los vectores paralelos a la velocidad \(\mathbf{v}\) se denominan
+\emph{vectores tangentes} a la trayectoria \(f\) en el instante
+\(t=t_0\), y la recta que pasa por \(P=f(t_0)\) dirigida por
+\(\mathbf{v}\) es la recta tangente a \(f\) cuando \(t=t_0\).
+
+\leavevmode\vadjust pre{\hypertarget{def-tangente-trayectoria}{}}%
+\begin{definition}[Recta tangente a una
+trayectoria]\label{def-tangente-trayectoria}
+
+Dada una trayectoria \(f\) sobre el plano real \(\mathbb{R}^2\), se
+llama \emph{recta tangente} a \(f\) en \(t=t_0\) a la recta de ecuación
+
+\begin{align*}
+l: (x,y)&= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
+&= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
+\end{align*}
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-tangente-trayectoria}{}}%
+\begin{example}[]\label{exm-tangente-trayectoria}
+
+Se ha visto que para la trayectoria
+\(f(t) = (\cos(t),\operatorname{sen}(t))\), \(t\in \mathbb{R}\), cuya
+imagen es la circunferencia de centro el origen de coordenadas y radio
+1, en el instante \(t=\pi/4\) la posición del móvil era
+\(f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)\) y su velocidad
+\(\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)\), de modo que la recta tangente a
+\(f\) en ese instante es
+
+\begin{align*}
+l &: X=f(\pi/2)+t\mathbf{v} = \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) \\ 
+&=
+\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
+\end{align*}
+
+\end{example}
+
+De la ecuación vectorial de la recta tangente a \(f\) para \(t=t_0\), se
+obtiene que sus funciones cartesianas son
+
+\[
+s\begin{cases}
+x=x(t_0)+tx'(t_0)\\
+y=y(t_0)+ty'(t_0)
+\end{cases}
+\quad t\in \mathbb{R},
+\]
+
+y despejando \(t\) en ambas ecuaciones e igualando se llega a la
+ecuación cartesiana de la recta tangente
+
+\[
+\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)},
+\]
+
+si \(x'(t_0)\neq 0\) e \(y'(t_0)\neq 0\), y de ahí a la ecuación en la
+forma punto-pendiente
+
+\[
+y-y(t_0)=\frac{y'(t_0)}{x'(t_0)}(x-x(t_0)).
+\]
+
+Partiendo de la ecuación vectorial de la tangente del ejemplo anterior
+\(l=\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right)\),
+su ecuación cartesiana es
+
+\[
+\begin{gathered}
+\frac{x-\sqrt{2}/2}{-\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}\Rightarrow\\
+y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow \\
+y=-x+\sqrt{2}.
+\end{gathered}
+\]
+
+\hypertarget{recta-normal-a-una-trayectoria-en-el-plano}{%
+\subsection{Recta normal a una trayectoria en el
+plano}\label{recta-normal-a-una-trayectoria-en-el-plano}}
+
+Se ha visto que la recta tangente a una trayectoria \(f\) cuando
+\(t=t_0\) es la recta que pasa por el punto el punto \(P=f(t_0)\)
+dirigida por el vector velocidad
+\(\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))\). Si en lugar de tomar ese
+vector se toma como vector director el vector
+\(\mathbf{w}=(y'(t_0),-x'(t_0))\), que es ortogonal a \(\mathbf{v}\), se
+obtiene otra recta que se conoce como \emph{recta normal} a la
+trayectoria \(f\) cuanto \(t=t_0\).
+
+\leavevmode\vadjust pre{\hypertarget{def-normal-trayectoria}{}}%
+\begin{definition}[Recta normal a una
+trayectoria]\label{def-normal-trayectoria}
+
+Dada una trayectoria \(f\) sobre el plano real \(\mathbb{R}^2\), se
+llama \emph{recta normal} a \(f\) en \(t=t_0\) a la recta de ecuación
+
+\begin{align*}
+l: (x,y) &= (x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) =\\
+&= (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
+\end{align*}
+
+\end{definition}
+
+Su ecuación cartesiana es
+
+\[
+\frac{x-x(t_0)}{y'(t_0)} = \frac{y-y(t_0)}{-x'(t_0)},
+\]
+
+y su ecuación en la forma punto pendiente
+
+\[
+y-y(t_0) = \frac{-x'(t_0)}{y'(t_0)}(x-x(t_0)).
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+La recta normal es perpendicular a la recta tangente ya que sus vectores
+directores son ortogonales.
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-normal-trayectoria}{}}%
+\begin{example}[]\label{exm-normal-trayectoria}
+
+Siguiendo con el ejemplo de la trayectoria
+\(f(t) = (\cos(t),\operatorname{sen}(t))\), \(t\in \mathbb{R}\), la
+recta normal en el instante \(t=\pi/4\) es
+
+\begin{align*}
+l&: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatorname{sen}(\pi/2)) =\\
+& \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
+=\left(\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right),
+\end{align*}
+
+y su ecuación cartesiana es
+
+\[
+\frac{x-\sqrt{2}/2}{\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}\Rightarrow y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/circunferencia_tangente_normal.png}
+
+}
+
+\caption{Tangente y normal a la trayectoria de una circunferencia.}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{rectas-tangente-y-normal-a-una-funciuxf3n}{%
+\subsection{Rectas tangente y normal a una
+función}\label{rectas-tangente-y-normal-a-una-funciuxf3n}}
+
+Un caso particular de las recta tangente y normal a una trayectoria son
+la recta tangente y normal a una función de una variable real. Si se
+tiene la función \(y=f(x)\), \(x\in I\subseteq \mathbb{R}\), una
+trayectoria que traza la gráfica de \(f\) es
+\(g(t) = (t,f(t)) \quad t\in I,\) y su velocidad es
+\(g'(t) = (1,f'(t)),\) de modo que la recta tangente para \(t=x_0\) es
+
+\[
+\frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
+\]
+
+y la recta normal es
+
+\[
+\frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
+\]
+
+\leavevmode\vadjust pre{\hypertarget{exm-tangente-normal-funcion-2}{}}%
+\begin{example}[]\label{exm-tangente-normal-funcion-2}
+
+Dada la función \(y=f(x)=x^2\), la trayectoria que dibuja la gráfica de
+esta función es \(g(t)=(t,t^2)\) y su velocidad es \(g'(t)=(1,2t)\), de
+modo que en el punto \((1,1)\), que se alcanza en el instante \(t=1\),
+la recta tangente es
+
+\[
+\frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
+\]
+
+y la recta normal es
+
+\[
+\frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
+\]
+
+\end{example}
+
+\hypertarget{recta-tangente-a-una-trayectoria-en-el-espacio}{%
+\subsection{Recta tangente a una trayectoria en el
+espacio}\label{recta-tangente-a-una-trayectoria-en-el-espacio}}
+
+El concepto de recta tangente a una trayectoria en el plano real puede
+extenderse fácilmente a trayectorias en el espacio real
+\(\mathbb{R}^3\).
+
+Si \(f(t)=(x(t),y(t),z(t))\), \(t\in I\subseteq \mathbb{R}\), es una
+trayectoria en el espacio real \(\mathbb{R}^3\), entonces el móvil que
+recorre esta trayectoria en el instante \(t=t_0\), ocupará la posición
+\(P=(x(t_0),y(t_0),z(t_0))\) y tendrá una velocidad
+\(\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))\), de manera que la recta
+tangente a \(f\) en ese instante será
+
+\begin{align*}
+l&: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
+&= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0),z(t_0)+tz'(t_0)),
+\end{align*}
+
+cuyas ecuaciones cartesianas son
+
+\[
+\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)}=\frac{z-z(t_0)}{z'(t_0)},
+\]
+
+siempre que \(x'(t_0)\neq 0\), \(y'(t_0)\neq 0\) y \(z'(t_0)\neq 0\).
+
+\leavevmode\vadjust pre{\hypertarget{exm-tangente-tracyectoria-espacio}{}}%
+\begin{example}[]\label{exm-tangente-tracyectoria-espacio}
+
+Dada la trayectoria del espacio
+\(f(t)=(\cos(t), \operatorname{sen}(t), t)\), \(t\in \mathbb{R}\), en el
+instante \(t=\pi/2\), la trayectoria pasará por el punto
+
+\[
+f(\pi/2)=(\cos(\pi/2),\operatorname{sen}(\pi/2),\pi/2)=(0,1,\pi/2),
+\]
+
+con una velocidad
+
+\[
+\mathbf{v}=f'(\pi/2)=(-\operatorname{sen}(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
+\]
+
+y la tangente en ese punto es
+
+\[
+l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/tangente_trayectoria_espacio.png}
+
+}
+
+\caption{Gráfica de la tangente a una trayectoria en el espacio.}
+
+\end{figure}
+
+\end{example}
+
+\textbf{Ejemplo interactivo}
+
+\hypertarget{polinomios-de-taylor}{%
+\section{Polinomios de Taylor}\label{polinomios-de-taylor}}
+
+\hypertarget{aproximaciuxf3n-de-una-funciuxf3n-mediante-un-polinomio}{%
+\subsection{Aproximación de una función mediante un
+polinomio}\label{aproximaciuxf3n-de-una-funciuxf3n-mediante-un-polinomio}}
+
+Una aplicación muy útil de la derivada es la aproximación de funciones
+mediante polinomios.
+
+Los polinomios son funciones sencillas de calcular (mediante sumas y
+productos), que tienen muy buenas propiedades:
+
+\begin{itemize}
+\tightlist
+\item
+  Están definidos en todos los números reales.
+\item
+  Son funciones continuas.
+\item
+  Son derivables hasta cualquier orden y sus derivadas son continuas.
+\end{itemize}
+
+En esta sección veremos cómo aproximar una función \(f(x)\) mediante un
+polinomio \(p(x)\) cerca de un valor \(x=x_0\).
+
+\hypertarget{aproximaciuxf3n-mediante-un-polinomio-de-grado-0}{%
+\subsubsection{Aproximación mediante un polinomio de grado
+0}\label{aproximaciuxf3n-mediante-un-polinomio-de-grado-0}}
+
+Un polinomio de grado 0 tiene ecuación \[p(x) = c_0,\] donde \(c_0\) es
+una constante.
+
+Como el polinomio debe valer lo que la función en el punto \(x_0\), debe
+cumplir
+
+\[
+p(x_0) = c_0 = f(x_0).
+\]
+
+En consecuencia, el polinomio de grado 0 que mejor aproxima a \(f\) en
+un entorno de \(x_0\) es
+
+\[
+p(x) = f(x_0).
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/polinomio_grado_0.png}
+
+}
+
+\caption{Gráfica del polinomio de Taylor de grado 0}
+
+\end{figure}
+
+\hypertarget{aproximaciuxf3n-mediante-un-polinomio-de-grado-1}{%
+\subsubsection{Aproximación mediante un polinomio de grado
+1}\label{aproximaciuxf3n-mediante-un-polinomio-de-grado-1}}
+
+Un polinomio de grado 1 es una recta y tiene ecuación
+
+\[
+p(x) = c_0+c_1x,
+\]
+
+aunque también puede escribirse
+
+\[
+p(x) = c_0+c_1(x-x_0).
+\]
+
+De entre todos los polinomios de grado 1, el que mejor aproxima a \(f\)
+en entorno de \(x_0\) será el que cumpla las dos condiciones siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\) y \(f\) valen lo mismo en \(x_0\): \(p(x_0) = f(x_0)\),
+\item
+  \(p\) y \(f\) tienen la misma tasa de crecimiento en \(a\):
+  \(p'(x_0) = f'(x_0)\).
+\end{itemize}
+
+Esta última condición nos asegura que en un entorno de \(x_0\), \(p\) y
+\(f\) tienen aproximadamente la misma tendencia de crecimiento, pero
+requiere que la función \(f\) sea derivable en \(x_0\).
+
+Imponiendo las condiciones anteriores tenemos
+
+\begin{itemize}
+\tightlist
+\item
+  \(p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)\),
+\item
+  \(p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)\).
+\end{itemize}
+
+Así pues, el polinomio de grado 1 que mejor aproxima a \(f\) en un
+entorno de \(x_0\) es
+
+\[
+p(x) = f(x_0)+f '(x_0)(x-x_0),
+\]
+
+que resulta ser la recta tangente a \(f\) en el punto \((x_0,f(x_0))\).
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/polinomio_grado_1.png}
+
+}
+
+\caption{Gráfica del polinomio de Taylor de grado 1}
+
+\end{figure}
+
+\hypertarget{aproximaciuxf3n-mediante-un-polinomio-de-grado-2}{%
+\subsubsection{Aproximación mediante un polinomio de grado
+2}\label{aproximaciuxf3n-mediante-un-polinomio-de-grado-2}}
+
+Un polinomio de grado 2 es una parábola y tiene ecuación
+
+\[
+p(x) = c_0+c_1x+c_2x^2,
+\]
+
+aunque también puede escribirse
+
+\[
+p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
+\]
+
+De entre todos los polinomio de grado 2, el que mejor aproxima a \(f\)
+en entorno de \(x_0\) será el que cumpla las tres condiciones
+siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p\) y \(f\) valen lo mismo en \(x_0\): \(p(x_0) = f(x_0)\),
+\item
+  \(p\) y \(f\) tienen la misma tasa de crecimiento en \(x_0\):
+  \(p'(x_0) = f'(x_0)\).
+\item
+  \(p\) y \(f\) tienen la misma curvatura en \(x_0\):
+  \(p''(x_0)=f''(x_0)\).
+\end{itemize}
+
+Esta última condición requiere que la función \(f\) sea dos veces
+derivable en \(x_0\).
+
+Imponiendo las condiciones anteriores tenemos
+
+\begin{itemize}
+\tightlist
+\item
+  \(p(x)=c_0+c_1(x-x_0)+c_2(x-x_0)^2 \Rightarrow p(x_0)=c_0=f(x_0)\),
+\item
+  \(p'(x)=c_1+2c_2(x-x_0) \Rightarrow p'(x_0)=c_1+2c_2(x_0-x_0)=c_1=f'(x_0)\),
+\item
+  \(p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}\).
+\end{itemize}
+
+Así pues, el polinomio de grado 2 que mejor aproxima a \(f\) en un
+entorno de \(x_0\) es
+
+\[
+p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/polinomio_grado_2.png}
+
+}
+
+\caption{Gráfica del polinomio de Taylor de grado 2}
+
+\end{figure}
+
+\hypertarget{aproximaciuxf3n-mediante-un-polinomio-de-grado-n}{%
+\subsubsection{\texorpdfstring{Aproximación mediante un polinomio de
+grado
+\(n\)}{Aproximación mediante un polinomio de grado n}}\label{aproximaciuxf3n-mediante-un-polinomio-de-grado-n}}
+
+Un polinomio de grado \(n\) tiene ecuación
+
+\[
+p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,
+\]
+
+aunque también puede escribirse
+
+\[
+p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.
+\]
+
+De entre todos los polinomio de grado \(n\), el que mejor aproxima a
+\(f\) en entorno de \(x_0\) será el que cumpla las \(n+1\) condiciones
+siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(p(x_0) = f(x_0)\),
+\item
+  \(p'(x_0) = f'(x_0)\),
+\item
+  \(p''(x_0)=f''(x_0)\),
+\item
+  \(\cdots\)
+\item
+  \(p^{(n}(x_0)=f^{(n}(x_0)\).
+\end{itemize}
+
+Las sucesivas derivadas de \(p\) valen
+
+\begin{align*}
+p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
+p'(x) &= c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
+p''(x) &= 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+\vdots\\
+p^{(n}(x) &= n(n-1)(n-2)\cdots 1c_n = n!c_n.
+\end{align*}
+
+Imponiendo las condiciones anteriores se tiene
+
+\begin{itemize}
+\tightlist
+\item
+  \(p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0),\)
+\item
+  \(p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0),\)
+\item
+  \(p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=\frac{f''(x_0)}{2},\)
+\item
+  \(\cdots\)
+\item
+  \(p^{(n}(x_0)=n!c_n=f^{(n}(x_0)=c_n=\frac{f^{(n}(x_0)}{n!}\).
+\end{itemize}
+
+\leavevmode\vadjust pre{\hypertarget{def-polinomio-taylor}{}}%
+\begin{definition}[Polinomio de Taylor de orden \(n\) para \(f\) en el
+punto \(a\)]\label{def-polinomio-taylor}
+
+Dada una función \(f\), \(n\) veces derivable en \(x=x_0\), se define el
+\emph{polinomio de Taylor} de orden \(n\) para \(f\) en \(x_0\) como
+
+\begin{align*}
+p_{f,x_0}^n(x)&=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2+\cdots +\frac{f^{(n}(x_0)}{n!}(x-x_0)^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}(x-x_0)^i,
+\end{align*}
+
+o bien, escribiendo \(x=x_0+h\)
+
+\begin{align*}
+p_f^n(x_0+h) &= f(x_0)+f'(x_0)h+\frac{f''(x_0)}{2}h^2+\cdots +\frac{f^{(n}(x_0)}{n!}h^n =\\
+&= \sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}h^i.
+\end{align*}
+
+\end{definition}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, colback=white, toprule=.15mm, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, arc=.35mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, bottomrule=.15mm]
+
+El polinomio de Taylor de orden \(n\) para \(f\) en \(x_0\) es el
+polinomio de orden \(n\) que mejor aproxima a \(f\) alrededor de
+\(x_0\), ya que es el único que cumple las \(n+1\) condiciones
+anteriores.
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exm-polinomio-taylor}{}}%
+\begin{example}[]\label{exm-polinomio-taylor}
+
+Vamos a aproximar la función \(f(x)=\log x\) en un entorno del punto
+\(1\) mediante un polinomio de grado \(3\).
+
+La ecuación del polinomio de Taylor de orden \(3\) para \(f\) en el
+punto \(1\) es
+
+\[
+p_{f,1}^3(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3.
+\]
+
+Calculamos las tres primeras derivadas de \(f\) en \(1\):
+
+\[
+\begin{array}{lll}
+f(x)=\log x & \quad & f(1)=\log 1 =0,\\
+f'(x)=1/x & & f'(1)=1/1=1,\\
+f''(x)=-1/x^2 & & f''(1)=-1/1^2=-1,\\
+f'''(x)=2/x^3 & & f'''(1)=2/1^3=2.
+\end{array}
+\]
+
+Sustituyendo en la ecuación del polinomio se tiene
+
+\[
+p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\frac{3}{2}x^2+3x-\frac{11}{6}.
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/polinomio_taylor_logaritmo.png}
+
+}
+
+\caption{Gráfica del polinomio de Taylor del logaritmo}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{polinomio-de-maclaurin-de-orden-n}{%
+\subsection{\texorpdfstring{Polinomio de Maclaurin de orden
+\(n\)}{Polinomio de Maclaurin de orden n}}\label{polinomio-de-maclaurin-de-orden-n}}
+
+La ecuación del polinomio de Taylor se simplifica cuando el punto en
+torno al cual queremos aproximar es el \(0\).
+
+\leavevmode\vadjust pre{\hypertarget{def-polinomio-maclaurin}{}}%
+\begin{definition}[Polinomio de Maclaurin de orden \(n\) para
+\(f\)]\label{def-polinomio-maclaurin}
+
+Dada una función \(f\), \(n\) veces derivable en \(0\), se define el
+\emph{polinomio de Maclaurin} de orden \(n\) para \(f\) como
+
+\begin{align*}
+p_{f,0}^n(x) &= f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n}(0)}{n!}x^n =\\
+&= \sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i.
+\end{align*}
+
+\end{definition}
+
+\leavevmode\vadjust pre{\hypertarget{exm-polinomio-maclaurin}{}}%
+\begin{example}[]\label{exm-polinomio-maclaurin}
+
+Vamos a aproximar la función \(f(x)=\operatorname{sen} x\) en un entorno
+del punto \(0\) mediante un polinomio de grado \(3\).
+
+La ecuación del polinomio de Maclaurin de orden \(3\) para \(f\) es
+
+\[
+p_{f,0}^3(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\frac{f'''(0)}{3!}x^3.
+\]
+
+Calculamos las tres primeras derivadas de \(f\) en \(0\):
+
+\[
+\begin{array}{lll}
+f(x)=\operatorname{sen} x & \quad & f(0)=\operatorname{sen} 0 =0,\\
+f'(x)=\cos x & & f'(0)=\cos 0=1,\\
+f''(x)=-\operatorname{sen} x & & f''(0)=-\operatorname{sen} 0=0,\\
+f'''(x)=-\cos x & & f'''(0)=-\cos 0=-1.
+\end{array}
+\]
+
+Sustituyendo en la ecuación del polinomio obtenemos
+
+\[
+p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
+\]
+
+\begin{figure}
+
+{\centering \includegraphics{./img/derivadas/polinomio_mclaurin_seno.png}
+
+}
+
+\caption{Gráfica del polinomio de Maclaurin del seno}
+
+\end{figure}
+
+\end{example}
+
+\hypertarget{polinomios-de-maclaurin-de-funciones-elementales}{%
+\subsection{Polinomios de Maclaurin de funciones
+elementales}\label{polinomios-de-maclaurin-de-funciones-elementales}}
+
+\[
+\renewcommand{\arraystretch}{2.5}
+\begin{array}{|c|c|}
+\hline
+f(x) & p_{f,0}^n(x) \\
+\hline\hline
+\operatorname{sen} x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
+\hline
+\cos x &  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
+\hline
+\operatorname{arctg} x &  \displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ si $n=2k$ o $n=2k-1$}\\
+\hline
+e^x & \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
+\hline
+\log(1+x) & \displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n}\\
+\hline
+\end{array}
+\]
+
+\hypertarget{resto-de-taylor}{%
+\subsection{Resto de Taylor}\label{resto-de-taylor}}
+
+Los polinomios de Taylor permiten calcular el valor aproximado de una
+función cerca de un valor \(x_0\), pero siempre se comete un error en
+dicha aproximación.
+
+\leavevmode\vadjust pre{\hypertarget{def-resto-taylor}{}}%
+\begin{definition}[Resto de Taylor]\label{def-resto-taylor}
+
+Si \(f\) es una función para la que existe el su polinomio de Taylor de
+orden \(n\) en \(x_0\), \(p_{f,x_0}^n\), entonces se define el
+\emph{resto de Taylor} de orden \(n\) para \(f\) en \(x_0\) como
+
+\[
+r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
+\]
+
+\end{definition}
+
+El resto mide el error cometido al aproximar \(f(x)\) mediante
+\(p_{f,x_0}^n(x)\) y permite expresar la función \(f\) como la suma de
+un polinomio de Taylor más su resto correspondiente:
+
+\[
+f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
+\]
+
+Esta expresión se conoce como \emph{fórmula de Taylor} de orden \(n\)
+para \(f\) en \(x_0\). Se pude demostrar, además, que
+
+\[
+\lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
+\]
+
+lo cual indica que el resto \(r_{f,x_0}^n(x_0+h)\) es mucho menor que
+\(h^n\).
 
 
 

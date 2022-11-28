@@ -1420,7 +1420,7 @@ Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Lo probaremos por reducción al absurdo. Supongamos que $f$ no está acotada en $I$. Entonces, para cada $n\in\mathbb{N}$ existe $x_n\in I$ tal que $|f(x_n)|>n$. La sucesión $(x_n)_{n=1}^\infty$\subset I$ y como $I$ está acotado, $(x_n)_{n=1}^\infty$ también está acotada, de manera que, por el @thm-bolzano-weierstrass-sucesiones existe una subsucesión $(x_{n_k})_{k=1}^\infty$ que converge. 
+Lo probaremos por reducción al absurdo. Supongamos que $f$ no está acotada en $I$. Entonces, para cada $n\in\mathbb{N}$ existe $x_n\in I$ tal que $|f(x_n)|>n$. La sucesión $(x_n)_{n=1}^\infty\subset I$ y como $I$ está acotado, $(x_n)_{n=1}^\infty$ también está acotada, de manera que, por el @thm-bolzano-weierstrass-sucesiones existe una subsucesión $(x_{n_k})_{k=1}^\infty$ que converge. 
 
 Sea $c=\lim_{k\to\infty}x_{n_k}$. Como $(x_{n_k})_{k=1}^\infty\subset I$, y $I$ es cerrado, por el @thm-conjunto-cerrado-puntos-acumulacion, contiene a todos sus puntos de acumulación, y por tanto $c\in I$. 
 

@@ -159,7 +159,7 @@ Por tanto, $f(x)$ es diferenciable en todo $\mathbb{R}$ y $f'(a)=2a$.
 Sea la función $f(x)=|x|$. Veamos si $f$ es diferenciable en $0$. Para ello calculamos los límites laterales.
 
 \begin{align*}
-\lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0} &= \lim_{x\to 0^⁻} \frac{|x|}{x} = \lim_{x\to 0^⁻} \frac{-x}{x} = -1,\\
+\lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0} &= \lim_{x\to 0^-} \frac{|x|}{x} = \lim_{x\to 0^-} \frac{-x}{x} = -1,\\
 \lim_{x\to 0^+}\frac{f(x)-f(0)}{x-0} &= \lim_{x\to 0^+} \frac{|x|}{x} = \lim_{x\to 0^+} \frac{x}{x} = 1,
 \end{align*}
 
@@ -220,6 +220,405 @@ y, por tanto, $f$ es continua en $a$.
 
 :::{.callout-caution}
 El recíproco de este teorema no es cierto, es decir, pueden existir funciones continuas en un punto que no sean derivables en ese punto, como por ejemplo la función $f(x)=|x|$ que es continua en $0$ pero, como se ha visto, no es derivable en $0$.
+:::
+
+## Álgebra de derivadas
+
+:::{#prp-algebra-derivadas}
+Dado un intervalo $I\subseteq \mathbb{R}$ y dos funciones $f,g:I\to \mathbb{R}$, si $f$ y $g$ son diferenciables en $a\in I$, entonces
+
+a. $f+ g$ es diferenciable en $a$ y $(f+g)'(a)=f'(a)+g'(a)$.
+
+b. $f- g$ es diferenciable en $a$ y $(f-g)'(a)=f'(a)-g'(a)$.
+
+c. $c\cdot f$ es diferenciable en $a$ y $(c\cdot f)'(a) = c\cdot f'(a)$ $\forall c \in \mathbb{R}$.
+
+d. $f\cdot g$ es diferenciable en $a$ y $(f\cdot g)'(a) = f'(a)g(a)+f(a)g'(a)$.
+
+e. Si $g(c)\neq 0$, $\frac{f}{g}$ es diferenciable en $a$ y $\left(\dfrac{f}{g}\right)'(a)=\dfrac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veamos la demostración de cada caso usando la definición de derivada. 
+
+a. Derivada de la suma de funciones.
+\begin{align*}
+(f+g)'(a) &=\lim_{x\to a}\frac{(f+g)(x)-(f+g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)+g(x)-f(a)-g(a)}{x-a} \\
+&= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}+\frac{g(x)-g(a)}{x-a} = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}+\lim_{x\to a}\frac{g(x)-g(a)}{x-a}\\ 
+&= f'(a)+g'(a). 
+\end{align*}
+
+b. Derivada de la resta de funciones. Se prueba del mismo modo que la suma.
+
+b. Derivada del producto de una función por un escalar.
+\begin{align*}
+(c\cdot f)'(a) &=\lim_{x\to a}\frac{(c\cdot f)(x)-(c\cdot f)(a)}{x-a} = \lim_{x\to a}\frac{c\cdot f(a)-c\cdot f(a)}{x-a} \\
+&= \lim_{x\to a}\frac{c(f(x)-f(a))}{x-a} = c\lim_{x\to a}\frac{f(x)-f(a)}{x-a}= c\cdot f'(a). 
+\end{align*}
+
+c. Derivada del producto de funciones.
+\begin{align*}
+(f\cdot g)'(a) &=\lim_{x\to a}\frac{(f\cdot g)(x)-(f\cdot g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)\cdot g(x)-f(a)\cdot g(a)}{x-a} \\
+&= \lim_{x\to a}\frac{f(x)\cdot g(x)-f(a)\cdot g(x)+f(a)\cdot g(x)-f(a)\cdot g(a)}{x-a} \\ 
+&= \lim_{x\to a}\frac{(f(x)-f(a))\cdot g(x)+f(a)(g(x)-g(a))}{x-a} \\
+&= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}\lim_{x\to a} g(x)+\lim_{x\to a}f(a)\lim_{x\to a}\frac{g(x)-g(a)}{x-a}  = f'(a)g(a)+f(a)g'(a).
+\end{align*}
+
+d. Derivada del cociente de funciones.
+\begin{align*}
+(f\cdot g)'(a) &=\lim_{x\to a}\frac{(f/g)(x)-(f/g)(a)}{x-a} = \lim_{x\to a}\frac{f(x)/g(x)-f(a)/g(a)}{x-a} \\
+&= \lim_{x\to a}\frac{\frac{f(x)g(a)-f(a)g(x)}{g(x)g(a)}}{x-a} \\ 
+&= \lim_{x\to a}\frac{f(x)g(a)-f(a)g(x)}{(x-a)g(x)g(a)}\\ 
+&= \lim_{x\to a} \frac{f(x)g(a)-f(a)g(a)+f(a)g(a)-f(a)g(x)}{(x-a)g(x)g(a)} \\ 
+&= \lim_{x\to a} \frac{1}{g(x)g(a)}\left(\frac{f(x)-f(a)}{x-a}g(a) - f(a)\frac{g(x)-g(a)}{x-a}\right) \\ 
+&= \lim_{x\to a}\frac{1}{g(x)g(a)}\left(\lim_{x\to a}g(a)\lim_{x\to a}\frac{f(x)-f(a)}{x-a}-\lim_{x\to a}f(a)\lim_{x\to a}\frac{g(x)-g(a)}{x-a}\right) \\ 
+&= \frac{f'(a)g(a)-f(a)g'(a)}{g(a)^2},
+\end{align*}
+ya que $g(a)\neq 0$ y como $g$ es continua en $a$ al ser derivable en $a$, también se puede afirmar que existe un $\delta>0$ tal que $g(x)\neq 0$ $\forall x \in (a-\delta, a+\delta)\cap I$, por lo que
+$$
+\lim_{x\to a}\frac{1}{g(x)g(a)}=\frac{1}{g(a)^2}.
+$$
+:::
+:::
+
+:::{#exm-algebra-derivadas}
+Veamos cuál es la función derivada de la función racional $f(x)=\dfrac{x^2-2x+1}{x}$.
+
+\begin{align*}
+f'(x) &= \frac{(x^2-2x+1)'x-(x^2-2x+1)x'}{x^2} = \frac{((x^2)'-(2x)'+1')x-(x^2-2x+1)}{x^2} = \\ 
+&= \frac{(2x-2)x-(x^2-2x+1)}{x^2} =  \frac{2x^2-2x-x^2+2x-1}{x^2} = \frac{x^2-1}{x^2}  \forall x\neq 0.
+\end{align*}
+:::
+
+:::{#thm-regla-cadena}
+## Regla de la cadena
+Dados dos intervalos $I,J\subseteq \mathbb{R}$ y dos funciones $f:I\to \mathbb{R}$ y $g:J\to\mathbb{R}$ tales que $f(I)\subseteq J$, si $f$ es diferenciable en en $a$ y $g$ es diferenciable en $f(a)$, entonces  $g\circ f$ es diferenciable en $a$ y 
+$$
+(g\circ f)'(a) = g'(f(a))f'(a).
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea 
+
+$$
+h(y)=
+\begin{cases}
+\frac{g(y)-g(f(a))}{y-f(a)} & \mbox{si } y\in J \mbox{ y } y\neq f(a)\\
+g'(f(a)) & \mbox{si } y=f(a)
+\end{cases}
+$$
+
+Veamos que $h$ es continua en $f(a)$. Como $g$ es diferenciable en $f(a)$, se tiene que $\lim_{x\to f(a)} \frac{g(x)-g(f(a))}{x-f(a)}=g'(f(a))$, de modo que para cualquier $\varepsilon>0$ existe $\delta>0$ tal que si $x\in J\setminus \{f(a)\}$ y $|x-f(a)|<\delta$, entonces $\left|\frac{g(x)-g(f(a))}{x-f(a)}-g'(f(a))\right|<\varepsilon$. Así pues, si $y\in J$, $y\neq f(a)$ y $|y-f(a)|<\delta$ entonces $|h(y)-g'(f(a))|<\varepsilon$, y si 
+$y=f(a)$, entonces $|y-f(a)|=0<\delta$ y $|h(y)-g'(f(a))|=|g'(f(a))-g'(f(a))|=0<\varepsilon$. Por consiguiente, $h$ es continua en $f(a)$ y $\lim_{y\to f(a)}h(y)=h(f(a))=g'(f(a))$.
+
+Por otro lado, de la definición de $h$ se tiene que $g(y)-g(f(a))=h(y)(y-f(a))$ $\forall y\in J$, de manera que si $x\in I\setminus\{a\}$ y $y=f(x)\in J$ entonces 
+
+\begin{align*}
+(g\circ f)'(a) &= \lim_{x\to a}\frac{g\circ f(x)-g\circ f(a)}{x-a} = \lim_{x\to a}\frac{g(f(x))-g(f(a))}{x-a} \\ 
+& = \lim_{x\to a}\frac{h(f(x))(f(x)-f(a))}{x-a} = \lim_{x\to a}h(f(x))\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\\ 
+&= h(f(a))f'(a) = g'(f(a))f'(a).
+\end{align*}
+
+:::{.callout-note}
+La demostración es mucho sencilla usando la notación diferencial de Leibniz para la derivada. Si $g=f(z)$ y $z=f(x)$, entonces 
+
+$$
+\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=g'(z)f'(x)=g'(f(x))f'(x).
+$$
+:::
+:::
+:::
+     
+:::{#exm-regla-cadena}
+Si $g(x)=\operatorname{sen}(x)$ y $f(x)=x^2$, entonces $g\circ f(x)=\operatorname{sen}(x^2)$ y, aplicando la regla de la cadena, su derivada vale
+
+$$
+(g\circ f)'(x)=g'(f(x))f'(x) = \cos(g(x)) 2x = \cos(x^2)2x.
+$$
+
+Por otro lado, $f\circ g(x)= (\sin(x))^2$ y, de nuevo aplicando la regla de la cadena, su derivada vale
+
+$$
+(f\circ g)'(x)=f'(g(z))g'(z) = 2g(x)\cos(x) = 2\operatorname{sen}(x)\cos(x).
+$$
+:::
+
+:::{#thm-derivada-funcion-inversa}
+## Derivada de la función inversa
+Dado un intervalo $I\subseteq \mathbb{R}$ y una función $f:I\to \mathbb{R}$ continua e inyectiva en $I$, y sea $J=f(I)$ y $f^{-1}:J\to\mathbb{R}$ la función inversa de $f$. Si $f$ es diferenciable en $a\in I$ y $f'(a)\neq 0$, entonces $f^{-1}$ es diferenciable en $f(a)$ y 
+
+$$
+(f^{-1})'(f(a)) = \frac{1}{f'(a)}.
+$$  
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$  es continua en $I$, $J=f(I)$ es un intervalo. Como además $f$ es inyectiva, necesariamente $f$ es monótona. Sea la función $g(y)=\frac{y-f(a)}{f^{-1}(y)-a}$ $\forall y\in J\setminus \{f(a)\}$. $g$ está bien definida pues $f^{-1}$ es inyectiva, y además, si $y\neq f(a)$ entonces $f^{-1}(y) \neq f^{-1}(f(a))=a$, por lo que el denominador no se anula. Veamos que $\lim_{y\to f(a)}g(y)=f'(a)$.
+
+Como $f$ es diferenciable en $a$, es decir, $f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$, para cualquier $\varepsilon>0$ existe $\delta'>0$ tal que si $|x-a|<\delta'$ entonces $\left|\frac{f(x)-f(a)}{x-a}-f'(a)\right|<\varepsilon$.
+
+Por otro lado, como $f$ es continua en $I$, $f^{-1}$ es continua en $J$, y en particular en $f(a)$, es decir, $\lim_{y\to f(a)}f^{-1}(y)=f^{-1}(f(a))=a$, de manera que para cualquier $\delta'>0$ existe $\delta>0$  tal que si $y\in J\setminus\{f(a)\}$ y $|y-f(a)|<\delta$ entonces $|f^{-1}(y)-a|<\delta'$, y por tanto, 
+
+$$
+\begin{gathered}
+\left|\frac{f(f^-1(y))-f(a)}{f^{-1}(y)-a}-f'(a)\right|<\varepsilon \Leftrightarrow \left|\frac{y-f(a)}{f^{-1}(y)-a}-f'(a)\right|<\varepsilon \\ 
+\Leftrightarrow |g(y)-f'(a)|<\varepsilon \Rightarrow \lim_{y\to f(a)}g(y)=f'(a).
+\end{gathered}
+$$
+
+Como además 
+
+\begin{align*}
+\frac{f^{-1}(y)-f^{-1}(f(a))}{y-f(a)} &= \frac{f^{-1}(y)-a}{y-f(a)} \\ 
+&= \frac{1}{\frac{y-f(a)}{f^{-1}(y)-a}} = \frac{1}{g(y)} \label{si $y\neq f(a)$}, 
+\end{align*}
+
+y como $\lim_{y\to f(a)}\frac{1}{g(y)} = \frac{1}{f'(a)}$, finalmente se tiene que 
+
+$$
+(f^{-1})'(f(a)) = \lim_{y\to f(a)} \frac{f^{-1}(y)-f^{-1}(f(a))}{y-f(a)} = \lim_{y\to f(a)}\frac{1}{g(y)} = \frac{1}{f'(a)}.
+$$
+
+:::{.callout-note}
+De nuevo, podemos realizar la demostración del teorema de manera más sencilla utilizando la notación de diferencial de Leibniz.
+
+$$
+\frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{f'(x)}
+$$
+:::
+
+:::{.callout-caution}
+Si en las condiciones del teorema anterior quitamos la condición $f'(a)\neq 0$, el resultado no es cierto y $f^{-1}$ no es diferenciable en $f(a)$. Vamos a probarlo por reducción al absurdo. Supongamos que $f'(a)=0$, entonces, aplicando la regla de la cadena, se tiene
+
+$$
+(f^{-1}\circ f)'(a) = (f^{-1})'(f(a))f'(a) = (f^{-1})'(f(a))0 = 0.
+$$
+
+Pero, por otro lado, $(f^{-1}\circ f)'(a) = \operatorname{Id}'(a) = 1$, lo que supone una contradicción, por lo que $f^{-1}$ no puede ser derivable en $f(a)$.
+:::
+:::
+:::
+
+:::{#cor-derivada-funcion-inversa}
+Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$ inyectiva en $I$, y sea $J=f(I)$ y $f^{-1}:J\to\mathbb{R}$ la función inversa de $f$. Si $f$ es derivable en $I$ y $f'(x)\neq 0$ $\forall x\in I$, entonces $f^{-1}$ es derivable en $I$ y $\forall y\in J$,
+
+$$
+(f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Si $f$ es diferenciable en $I$ entonces es continua en $I$ y se puede aplicar el teorema anterior.
+:::
+:::
+
+:::{#exm-derivada-funcion-inversa}
+La inversa de la función exponencial $y=f(x)=e^x$ es el logaritmo neperiano $x=f^{-1}(y)=\ln y$, de modo que, aplicando el teorema anterior, la función derivada del logaritmo es
+$$
+\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
+$$
+:::
+
+:::{#exm-derivada-funcion-inversa-2}
+Si $n\in\mathbb{N}$ es par, la función $f(x)=x^n$ $\forall x\in \mathbb{R}^+$ es inyectiva y derivable, con $f'(x)=nx^{n-1}>0$ $\forall x\in\mathbb{R}^+$. Por tanto, la función $f^{-1}(y)=\sqrt[n]{y}$ es derivable en $\mathbb{R}^+$ y $\forall y\in \mathbb{R}^+$,
+
+\begin{align*}
+(f^{-1})'(y) &= \frac{1}{f'(f^{-1}(y))} = \frac{1}{f'(\sqrt[n]{y})} = \frac{1}{n(\sqrt[n]{y})^{n-1}} \\ 
+&= \frac{1}{n (y^{1/n})^{n-1}} = \frac{1}{ny^{1-\frac{1}{n}}} = \frac{1}{n}y^{\frac{1}{n}-1}.
+\end{align*}
+
+Por otro lado, si $n\in\mathbb{N}$ es impar, la función $f(x)=x^n$ $\forall x\in\mathbb{R}$ es inyectiva y derivable, con $f'(x)=nx^{n-1}\neq 0$ $\forall x\neq 0$. Por tanto, la función $f^{-1}(y)=\sqrt[n]{y}$ es derivable en $\mathbb{R}\setminus\{0\}$ y, al igual que antes, $\forall y\in \mathbb{R}^+$,
+
+$$
+(f^{-1})'(y) = \frac{1}{n}y^{\frac{1}{n}-1}.
+$$
+:::
+
+## Crecimiento y extremos relativos de una función
+
+:::{#thm-extremo-interior}
+## Extremo interior
+Dado un intervalo $I\subseteq \mathbb{R}$ y una función $f:I\to\mathbb{R}$ con un extremo relativo en un punto interior $a\in I$, si $f$ es diferenciable en $a$, entonces $f'(a)=0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $f$ tiene un máximo relativo en $a\in I$. Por ser $a$ un punto interior de $I$, existe un $\delta>0$ tal que el entorno $(a-\delta, a+\delta)\subset I$ y $f(x)<f(a)$ $\forall x\in (a-\delta,a+\delta)$.
+
+Supongamos ahora que $f'(a)>0$. Como $f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$, existe un $0<\delta'<\delta$ tal que $\frac{f(x)-f(a)}{x-a}>0$ $\forall x\in (a-\delta',a+\delta')\setminus\{a\}$. Por tanto, si $x\in (a,a+\delta')$, $f(x)-f(a)>0$ de donde se deduce que $f(x)>f(a)$ lo que contradice que $f$ tenga un máximo relativo en $a$. Así que no puede ser $f'(c)>0$.
+
+Del mismo modo se puede probar que no puede ser $f'(a)<0$. Por lo que necesariamente tiene que ser $f'(a)=0$.
+
+Si $f$ tiene un mínimo relativo en $a$, la demostración es análoga.
+:::
+:::
+
+:::{.callout-caution}
+El resultado anterior no es cierto si el punto $a$ no es interior de $I$. Para verlo, basta considerar $f(x)=x$ $\forall x\in[0,1]$. Se observa que $f$ tiene un máximo relativo en $1$, pero $f'(1)\neq 0$.
+:::
+
+:::{#cor-extremo-interior}
+Dado un intervalo $I\subseteq \mathbb{R}$ y una función $f:I\to\mathbb{R}$ con un extremo relativo en un punto $a\in I$, entonces $f'(a)$ no existe o $f'(a)=0$.
+:::
+
+:::{#exm-extremo-intrior-valor-absoluto}
+La función $f(x)=|x|$ tiene un mínimo relativo en $0$ que es un punto interior de $\mathbb{R}$. Sin embargo, $f'(0)$ no existe.
+:::
+
+:::{#def-punto-critico}
+## Punto crítico
+Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$, se dice que $a$ es un _punto crítico_ o _punto singular_ de $f$, si $f'(a)=0$.
+:::
+
+Gráficamente, los puntos críticos son puntos donde la tangente a la gráfica de la función es horizontal.
+
+Como veremos más adelante, los puntos críticos juegan un papel clave en la determinación de los extremos relativos de una función.
+
+:::{#thm-rolle}
+## Rolle
+Dada una función $f:[a,b]\to\mathbb{R}$ continua en $[a,b]$ y diferenciable en $(a,b)$, si $f(a)=f(b)$, entonces $f$ tiene al menos un punto crítico en $(a,b)$, es decir, existe $c\in(a,b)$ tal que $f'(c)=0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es continua en $[a,b]$, por el @thm-extremos-funcion-continua-intervalo-cerrado $f$ alcanza el máximo y el mínimo en $[a,b]$. Si existe $c\in (a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, por el teorema anterior se tiene $f'(c)=0$. En caso contrario, si no existe $c\in(a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, entonces $f$ alcanza el máximo o el mínimo en los extremos del intervalo, pero como $f(a)=f(b)$, se deduce que que $f$ es constante en $[a,b]$ y, por tanto, $f'(x)=0$ $\forall x\in (a,b)$.
+:::
+:::
+
+:::{#thm-valor-medio}
+## Valor medio
+Dada una función $f:[a,b]\to\mathbb{R}$ continua en $[a,b]$ y diferenciable en $(a,b)$, entonces existe $c\in (a,b)$ tal que 
+
+$$
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $g(x)$ la recta secante a $f$ en los puntos $(a,f(a))$ y $(b,f(b))$. Entonces $g(x)=f(a)+\operatorname{TVM}(f,[a,b])(x-a) = f(a)+\frac{f(b)-f(a)}{b-a}(x-a)$. Si tomamos la función que mide la distancia entre $f$ y $g$, es decir, $\forall x\in[a,b]$
+
+$$
+h(x)=f(x)-g(x)= f(x)-f(a)+\frac{f(b)-f(a)}{b-a}(x-a),
+$$
+
+$h$ es continua en $[a,b]$ por ser la diferencia de dos funciones continuas en ese intervalo, también es derivable en $(a,b)$ al ser $f$ y $g$ derivables en el intervalo. Además 
+
+\begin{align*}
+h(a) &= f(a) - f(a)+\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
+h(b) &= f(a) - f(b)+\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
+\end{align*}
+
+Por tanto, aplicando el teorema de Rolle, existe $c\in(a,b)$ tal que $f'(c)=0$. Como 
+
+$$
+h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a} \ \forall x\in (a,b),
+$$
+
+en particular se tiene 
+
+$$
+h'(c) = f'(c) - \frac{f(b)-f(a)}{b-a} = 0 \Rightarrow f'(c) = \frac{f(b)-f(a)}{b-a}.
+$$
+:::
+:::
+
+### Estudio del crecimiento de una función
+
+La principal aplicación de la derivada es el estudio del crecimiento de una función mediante el signo de la derivada.
+
+:::{#thm-crecimiento-signo-derivada}
+## Signo de la derivada
+Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$ diferenciable en $I$, entonces:
+
+a. $f$ es creciente en $I$ si y sólo si $f'(x)\geq 0$ $\forall x\in I$.
+b. $f$ es decreciente en $I$ si y sólo si $f'(x)\leq 0$ $\forall x\in I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Probaremos solo el primer apartado, ya que el segundo se prueba de forma análoga.
+
+Supongamos que $f$ es creciente en $I$ y sea $a\in I$. Si $x\in I$ y $x>a$, por ser $f$ creciente, $f(x)>f(a)$, por lo que $\frac{f(x)-f(a)}{x-a}\geq 0$. Y si $x<a$, $f(x)<f(a)$, por lo que también se tiene $\frac{f(x)-f(a)}{x-a}\geq 0$. Así pues, $f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\geq 0$.
+
+Para ver el otro sentido de la implicación, supongamos que $f'(x)\geq 0$ $\forall x\in I$, y sean $a,b\in I$ con $a<b$. Aplicando el teorema del valor medio a $f$ en el intervalo $[a,b]$, se tiene que existe $c\in(a,b)$ tal que $f'(c)= \frac{f(b)-f(a)}{b-a}\geq 0$, y como $b-a>0$, se tiene que $f(b)-f(a)>0$ por lo que $f(b)>f(a)$ y, por tanto, $f$ es creciente en $I$.
+:::
+:::
+
+:::{#exm-crecimiento}
+La función $f(x)=x^3$ es creciente en todo $\mathbb{R}$ ya que $\forall x\in \mathbb{R}\ f'(x)\geq 0$.
+:::
+
+:::{.callout-warning}
+Una función puede ser creciente o decreciente en un intervalo y no tener derivada.
+:::
+
+:::{#exm-crecimiento-2}
+Consideremos la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
+
+![Estudio del crecimiento de una función.](img/derivadas/crecimiento.png)
+:::
+
+### Determinación de los extremos relativos de una función
+
+Como consecuencia del resultado anterior, la derivada también sirve para determinar los extremos relativos de una función.
+
+:::{#thm-extremos-relativos}
+## Criterio de la primera derivada
+Sea $f$ es una función cuya derivada existe en un intervalo $I$, y sea $x_0\in I$ tal que $f'(x_0)=0$, entonces:
+
+- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *máximo relativo* en $x_0$.
+- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un
+*mínimo relativo* en $x_0$.
+- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un *punto de inflexión creciente* en $x_0$.
+- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *punto de inflexión decreciente* en $x_0$.
+
+Los puntos donde se anula la derivada de una función se denominan _puntos críticos_.
+:::
+
+:::{#exm-extremos-relativos}
+Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
+
+![Estudio de los extremos de una función](img/derivadas/extremos.png)
+:::
+
+## Estudio de la concavidad de una función
+
+La concavidad de una función puede estudiarse mediante el signo de la segunda derivada.
+
+:::{#thm-concavidad}
+## Criterio de la segunda derivada
+Si $f$ es una función cuya segunda derivada existe en un intervalo $I$, entonces:
+
+- Si $\forall x\in I\ f^{\prime\prime}(x)\geq 0$ entonces $f$ es cóncava en el intervalo $I$.
+- Si $\forall x\in I\ f^{\prime\prime}(x)\leq 0$ entonces $f$ es convexa en el intervalo $I$.
+:::
+
+:::{#exm-concavidad}
+La función $f(x)=x^2$ tiene segunda derivada $f''(x)=2>0$ y por tanto es cóncava en todo $\mathbb{R}$.
+:::
+
+:::{.callout-warning}
+Una función puede ser cóncava o convexa en un intervalo y no tener derivada.
+:::
+
+:::{#exm-concavidad-2}
+Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f^{\prime\prime}(x)=12x^2-4$ está definida en todo $\mathbb{R}$ y es continua.
+
+![Estudio de la concavidad de una función.](img/derivadas/concavidad.png)
 :::
 
 ## Interpretación cinemática de la derivada
@@ -497,156 +896,6 @@ $$
 
 <img src="img/logos/logo-geogebra.png#left" /> **<a href="http://ggbtu.be/m156108" target="_blank">Ejemplo interactivo</a>**
 
-## Álgebra de derivadas
-
-### Propiedades de la derivada
-
-Si $y=c$, es una función constante, entonces $y'=0$.
-
-Si $y=x$, es la función identidad, entonces $y'=1$.
-
-Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
-
-- $(u+v)'=u'+v'$
-- $(u-v)'=u'-v'$
-- $(u\cdot v)'=u'\cdot v+ u\cdot v'$
-- $\left(\dfrac{u}{v}\right)'=\dfrac{u'\cdot v-u\cdot v'}{v^2}$
-
-## Derivada de una función compuesta: La regla de la cadena
-
-:::{#thm-regla-cadena}
-## Regla de la cadena
-Si $y=f\circ g$ es la composición de dos funciones $y=f(z)$ y $z=g(x)$, entonces
-
-$$(f\circ g)'(x)=f'(g(x))g'(x),$$
-:::
-
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Resulta sencillo demostrarlo con la notación diferencial
-
-$$
-\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=f'(z)g'(x)=f'(g(x))g'(x).
-$$
-:::
-:::
-
-:::{#exm-regla-cadena}
-Si $f(z)=\operatorname{sen} z$ y $g(x)=x^2$, entonces $f\circ g(x)=\operatorname{sen}(x^2)$ y, aplicando la regla de la cadena, su derivada vale
-
-$$
-(f\circ g)'(x)=f'(g(x))g'(x) = \cos g(x) 2x = \cos(x^2)2x.
-$$
-
-Por otro lado, $g\circ f(z)= (\sin z)^2$ y, de nuevo aplicando la regla de la cadena, su derivada vale
-
-$$
-(g\circ f)'(z)=g'(f(z))f'(z) = 2f(z)\cos z = 2\operatorname{sen} z\cos z.
-$$
-:::
-
-## Derivada de la inversa de una función
-
-:::{#thm-derivada-inversa}
-## Derivada de la función inversa
-Si $y=f(x)$ es una función y $x=f^{-1}(y)$ es su inversa, entonces
-
-$$
-\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
-$$
-:::
-
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-También resulta sencillo de demostrar con la notación diferencial
-
-$$\frac{dx}{dy}=\frac{1}{dy/dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}$$
-:::
-:::
-
-:::{#exm-derivada-funcion-inversa}
-La inversa de la función exponencial $y=f(x)=e^x$ es el logaritmo neperiano $x=f^{-1}(y)=\ln y$, de modo que para calcular la derivada del logaritmo podemos utilizar el teorema de la derivada de la inversa y se tiene
-
-$$
-\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
-$$
-:::
-
-## Estudio del crecimiento de una función
-
-La principal aplicación de la derivada es el estudio del crecimiento de una función mediante el signo de la derivada.
-
-:::{#thm-crecimiento}
-Si $f$ es una función cuya derivada existe en un intervalo $I$, entonces:
-
-- Si $\forall x\in I\ f'(x)\geq 0$ entonces $f$ es creciente en el intervalo $I$.
-- Si $\forall x\in I\ f'(x)\leq 0$ entonces $f$ es decreciente en el intervalo $I$.
-:::
-
-:::{#exm-crecimiento}
-La función $f(x)=x^3$ es creciente en todo $\mathbb{R}$ ya que $\forall x\in \mathbb{R}\ f'(x)\geq 0$.
-:::
-
-:::{.callout-warning}
-Una función puede ser creciente o decreciente en un intervalo y no tener derivada.*
-:::
-
-:::{#exm-crecimiento-2}
-Consideremos la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
-
-![Estudio del crecimiento de una función.](img/derivadas/crecimiento.png)
-
-## Determinación de los extremos relativos de una función
-
-Como consecuencia del resultado anterior, la derivada también sirve para determinar los extremos relativos de una función.
-
-:::{#thm-extremos-relativos}
-## Criterio de la primera derivada
-Sea $f$ es una función cuya derivada existe en un intervalo $I$, y sea $x_0\in I$ tal que $f'(x_0)=0$, entonces:
-
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *máximo relativo* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un
-*mínimo relativo* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un *punto de inflexión creciente* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *punto de inflexión decreciente* en $x_0$.
-
-Los puntos donde se anula la derivada de una función se denominan _puntos críticos_.
-:::
-
-:::{#exm-extremos-relativos}
-Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
-
-![Estudio de los extremos de una función](img/derivadas/extremos.png)
-:::
-
-## Estudio de la concavidad de una función
-
-La concavidad de una función puede estudiarse mediante el signo de la segunda derivada.
-
-:::{#thm-concavidad}
-## Criterio de la segunda derivada
-Si $f$ es una función cuya segunda derivada existe en un intervalo $I$, entonces:
-
-- Si $\forall x\in I\ f^{\prime\prime}(x)\geq 0$ entonces $f$ es cóncava en el intervalo $I$.
-- Si $\forall x\in I\ f^{\prime\prime}(x)\leq 0$ entonces $f$ es convexa en el intervalo $I$.
-:::
-
-:::{#exm-concavidad}
-La función $f(x)=x^2$ tiene segunda derivada $f''(x)=2>0$ y por tanto es cóncava en todo $\mathbb{R}$.
-:::
-
-:::{.callout-warning}
-Una función puede ser cóncava o convexa en un intervalo y no tener derivada.
-:::
-
-:::{#exm-concavidad-2}
-Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f^{\prime\prime}(x)=12x^2-4$ está definida en todo $\mathbb{R}$ y es continua.
-
-![Estudio de la concavidad de una función.](img/derivadas/concavidad.png)
-:::
-
 ## Polinomios de Taylor
 
 ### Aproximación de una función mediante un polinomio
@@ -777,11 +1026,10 @@ Las sucesivas derivadas de $p$ valen
 
 \begin{align*}
 p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
-p'(x)& = c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
-p''(x)& = 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
-\vdots\ \
-\\
-p^{(n}(x)&= n(n-1)(n-2)\cdots 1 c_n=n!c_n.
+p'(x) &= c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
+p''(x) &= 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+\vdots\\
+p^{(n}(x) &= n(n-1)(n-2)\cdots 1c_n = n!c_n.
 \end{align*}
 
 Imponiendo las condiciones anteriores se tiene
