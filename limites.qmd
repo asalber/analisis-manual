@@ -1481,7 +1481,7 @@ Finalmente, veamos que $f(c)=0$ por reducción al absurdo. Si suponemos que $f(c
 
 :::{#thm-valores-intermedios}
 ## Valores intermedios
-Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ y si $c,d\in I$, entonces para cualquier $k\\mathbb{R}$ con $f(c)<k<f(d)$, existe $e\in I$ entre $c$ y $d$ tal que $f(e)=k$.
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ y si $c,d\in I$, entonces para cualquier $k\mathbb{R}$ con $f(c)<k<f(d)$, existe $e\in I$ entre $c$ y $d$ tal que $f(e)=k$.
 :::
 
 :::{.callout-note collapse="true"}

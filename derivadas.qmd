@@ -123,6 +123,15 @@ En tal caso, al valor del límite se le llama _derivada_ de $f$ en $a$ y se deno
 Se dice que $f$ es _diferenciable_ en el intervalo $I$, si $f$ es diferenciable en todos los puntos de $I$.
 :::
 
+:::{.callout-note}
+Si en la definición anterior llamamos $h=x-a$, resulta
+
+$$
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
+$$
+que es otra definición equivalente de la derivada de $f$ en $a$.
+:::
+
 :::{#def-funcion-derivada}
 Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$, se define la _función derivada_ de $f$, y se denota $f'$, a la función cuyo dominio es el conjunto de los puntos de $I$ donde $f$ es diferenciable y el valor de $f'$ es el valor de la derivada en cada uno de esos puntos.
 :::
@@ -227,9 +236,9 @@ El recíproco de este teorema no es cierto, es decir, pueden existir funciones c
 :::{#prp-algebra-derivadas}
 Dado un intervalo $I\subseteq \mathbb{R}$ y dos funciones $f,g:I\to \mathbb{R}$, si $f$ y $g$ son diferenciables en $a\in I$, entonces
 
-a. $f+ g$ es diferenciable en $a$ y $(f+g)'(a)=f'(a)+g'(a)$.
+a. $f+g$ es diferenciable en $a$ y $(f+g)'(a)=f'(a)+g'(a)$.
 
-b. $f- g$ es diferenciable en $a$ y $(f-g)'(a)=f'(a)-g'(a)$.
+b. $f-g$ es diferenciable en $a$ y $(f-g)'(a)=f'(a)-g'(a)$.
 
 c. $c\cdot f$ es diferenciable en $a$ y $(c\cdot f)'(a) = c\cdot f'(a)$ $\forall c \in \mathbb{R}$.
 
@@ -325,7 +334,7 @@ Por otro lado, de la definición de $h$ se tiene que $g(y)-g(f(a))=h(y)(y-f(a))$
 \end{align*}
 
 :::{.callout-note}
-La demostración es mucho sencilla usando la notación diferencial de Leibniz para la derivada. Si $g=f(z)$ y $z=f(x)$, entonces 
+La demostración es mucho sencilla usando la notación diferencial de Leibniz para la derivada. Si $y=g(z)$ y $z=f(x)$, entonces 
 
 $$
 \frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=g'(z)f'(x)=g'(f(x))f'(x).
@@ -443,7 +452,7 @@ $$
 $$
 :::
 
-## Crecimiento y extremos relativos de una función
+## Teorema del valor medio y aplicaciones
 
 :::{#thm-extremo-interior}
 ## Extremo interior
@@ -578,15 +587,21 @@ Como consecuencia del resultado anterior, la derivada también sirve para determ
 
 :::{#thm-extremos-relativos}
 ## Criterio de la primera derivada
-Sea $f$ es una función cuya derivada existe en un intervalo $I$, y sea $x_0\in I$ tal que $f'(x_0)=0$, entonces:
+Sea una función $f:[a,b]\to\mathbb{R}$ continua en $[a,b]$ y derivable en $(a,c)\cup (c,b)$ para un punto $c\in(a,b)$.
 
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *máximo relativo* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un
-*mínimo relativo* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un *punto de inflexión creciente* en $x_0$.
-- Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un *punto de inflexión decreciente* en $x_0$.
+a. Si existe un $\delta>0$ tal que $(c-\delta, c+\delta)\subseteq[a,b]$ y $f'(x)\geq 0$ y $\forall x\in(c-\delta,c)$ y $f'(x)\leq 0$ $\forall x\in(c,c+\delta)$, entonces $f$ tiene un _máximo relativo_ en $c$.
+b. Si existe un $\delta>0$ tal que $(c-\delta, c+\delta)\subseteq[a,b]$ y $f'(x)\leq 0$ y $\forall x\in(c-\delta,c)$ y $f'(x)\geq 0$ $\forall x\in(c,c+\delta)$, entonces $f$ tiene un _mínimo relativo_ en $c$.
+:::
 
-Los puntos donde se anula la derivada de una función se denominan _puntos críticos_.
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Demostraremos solo el caso de un máximo, ya que el otro caso es análogo. Para ver que $f$ tiene un máximo local en $c$ basta con probar que si $x\in(c-\delta,c+\delta)$ entonces $f(x)\leq f(c)$.
+
+Si $x\in(c-\delta,c)$ entonces $f'(x)\geq 0$. Aplicando el teorema del valor medio a $f$ en el intervalo $[x,c]$ se tiene que existe $u\in(x,c)$ tal que $f'(u)=\frac{f(c)-f(x)}{c-x}\geq 0$, y como $c-x>0$ se concluye que $f(c)-f(x)\geq 0$, y por tanto, $f(x)\leq f(c)$.
+
+Y si Si $x\in(c, c+\delta)$ entonces $f'(x)\leq 0$. Aplicando de nuevo el teorema del valor medio a $f$ en el intervalo $[c,x]$ se tiene que existe $v\in(c,x)$ tal que $f'(v)=\frac{f(x)-f(c)}{x-c}\leq 0$, y como $x-c>0$ se concluye que $f(x)-f(c)\leq 0$, y por tanto, $f(x)\leq f(c)$.
+:::
 :::
 
 :::{#exm-extremos-relativos}
@@ -595,28 +610,135 @@ Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$
 ![Estudio de los extremos de una función](img/derivadas/extremos.png)
 :::
 
+:::{.callout-caution}
+El recíproco de las implicaciones del teorema anterior no tiene por qué ser cierto. Por ejemplo, la función 
+
+$$
+f(x)=
+\begin{cases}
+2x^4+x^4\operatorname{sen}\left(\frac{1}{x}\right) & \mbox{si } x\neq 0,\\
+0 & \mbox{si } x=0.
+\end{cases}
+$$
+
+tiene un mínimo relativo y absoluto en $x=0$, pero su derivada toma valores positivos y negativos en cualquier entorno de $0$.
+:::
+
+:::{#thm-darboux}
+## Darboux
+Dada una función $f:[a,b]\to\mathbb{R}$, si $f$ es diferenciable en $[a,b]$ y $f'(a)<k<f'(b)$, entonces existe $c\in(a,b)$ tal que $f'(c)=k$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Definimos $g(x)=k(x-a)-f(x)$ $\forall x\in[a,b]$. $g$ es diferenciable en $[a,b]$ al serlo $f$ y $g'(x)=k-f'(x)$ $\forall x\in[a,b]$. Por tanto, $g$ es continua en $[a,b]$, y entonces tiene un máximo y un mínimo relativos en $[a,b]$.
+
+Por otro lado, $g'(a)=k-f'(a)>0$, de manera que $g$ no tiene un máximo relativo en $a$, y $g'(b)=k-f'(b)<0$, de manera que $g$ tampoco tiene un máximo relativo en $b$. Por tanto, $g$ alcanza el máximo relativo en un punto $c\in (a,b)$, y por el teorema del extremo interior, $g'(c)=0$, de donde se deduce que $k-f(c)=0$, y $f'(c)=k$.
+:::
+:::
+
+### Determinación de los extremos absolutos de una función
+
+Ya se vió, por el @thm-extremos-funcion-continua-intervalo-cerrado, que una función continua en un intervalo cerrado $[a,b]$ alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función $f$ derivable en $[a,b]$, basta con seguir el siguiente procedimiento:
+
+1. Calcular los puntos críticos de $f$.
+2. Calcular los valores de $f$ en los puntos críticos.
+3. Calcular el valor de $f$ en los extremos del intervalo, $a$ y $b$.
+4. El máximo absoluto será el mayor de los valores obtenidos en los pasos 2 y 3, y el mínimo absoluto será el menor de los valores obtenidos en esos mismos pasos.
+
+:::{#exm-extremos-absolutos}
+Veamos cuáles son los extremos absolutos de la función $f(x)=x^4-2x^2+1$ en el intervalo $[0,2]$. Seguiremos el procedimiento anterior para la determinación de los extremos absolutos.
+
+1. En el @exm-extremos-relativos se vió que $f$ tenía tres puntos críticos en $-1$, $0$ y $1$. El punto crítico en $-1$ se puede descartar al no pertenecer al intervalo $[0,2]$. 
+
+2. El valor de la función en los puntos críticos del intervalo $[0,2]$ son $f(0)=1$ y $f(1)=0$. 
+
+3. El valor de la función en los extremos del intervalo $[0,2]$ es $f(0)=1$ y $f(2)=9$. 
+
+4. El máximo absoluto de $f$ en $[a,b]$ es $\max\{f(0),f(1),f(2)\}=\max\{1,0,9\}=9$ y el mínimo absoluto es $\min\{f(0),f(1),f(2)\}=\max\{1,0,9\}=0$.
+:::
+
+### Otras aplicaciones del teorema del valor medio
+
+Además del estudio del crecimiento de una función y de la determinación de sus extremos relativos, el teorema del valor medio tiene otras muchas aplicaciones como las que se enumeran a continuación.
+
+#### Localización de raíces
+
+Si una función $g$ es la derivada de otra función $f$, el teorema de Rolle nos asegura que entre dos raíces cualesquiera de $f$ existe al menos una raíz de $g$.
+
+:::{#exm-localizacion-raices-teorema-valor-medio}
+La función $g(x)=\cos(x)$ es la derivada de la función $f(x)=\operatorname{sen}(x)$, de manera que, entre dos raíces cualesquiera de $\operatorname{sen}(x)$ existe al menos una raíz de $\cos(x)$.
+:::
+
+#### Desigualdades
+El teorema del valor medio se puede usar en la obtención de desigualdades tales como $-x\leq \operatorname{sen}(x)\leq x$, donde la igualdad se da para $x=0$ y la desigualdad se cumple para $x>0$.
+
+:::{#exm-desigualdad-teorema-valor-medio}
+Sea $f(x)=\operatorname{sen}(x)$ cuya derivada es $f'(x)=\cos(x)$ $\forall x\in\mathbb{R}$. Aplicando el teorema del valor medio a $f$ en el intervalo $[0,x]$ para $x>0$, se tiene que $\frac{\operatorname{sen}(x)-\operatorname{sen}(0)}{x-0} = \cos(c)$ para algún $c\in(0,x)$. Como $\operatorname{sen(0)}=0$ y $-1\leq \cos(x)\leq 1$ $\forall x\in \mathbb{R}$, se tiene $\operatorname{sen}(x)=\cos(c)x$ para algún $c\in(0,x)$, de lo que se deduce que $-x\leq \operatorname{sen}(x)\leq x$.
+:::
+
+#### Estimación de errores
+Otra interesante aplicación es el cálculo aproximado del valor de una función en un punto $c\in (a,b)$, si se conoce el valor de la función en $a$ y $b$.
+
+:::{#exm-estimacion-errores-teorema-valor-medio}
+Veamos cómo calcular $\sqrt{105}$ de manera aproximada. Para ello tomamos la función $f(x)=\sqrt{x}$ que es derivable en todo $\mathbb{R}$ con derivada $f'(x)=\frac{1}{2\sqrt{x}}$. Aplicando el teorema del valor medio en el intervalo $[100, 105]$ se tiene que $\frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}}$ para algún $c\in(100,105)$. 
+
+Por otro lado, como $f$ es creciente, se tiene que $10=\sqrt{100}<\sqrt{c}<\sqrt{121}=11$. Así pues, se tiene
+
+\begin{align*}
+\frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}} & \Rightarrow \sqrt{105}-10 = \frac{5}{2\sqrt{c}} \\ 
+& \Rightarrow \frac{5}{2\cdot 11}< \sqrt{105}-10 < \frac{5}{2\cdot 10} \\ 
+&\Rightarrow 10.22<\sqrt{105}<10.25.
+\end{align*}
+:::
+
 ## Estudio de la concavidad de una función
 
-La concavidad de una función puede estudiarse mediante el signo de la segunda derivada.
+Como se ha visto, la derivada de una función puede utilizarse para estudiar el crecimiento de la función en un intervalo, de manera que si la función es dos veces derivable en el intervalo, es decir, si existe la derivada de la derivada de la función, la segunda derivada puede utilizarse para estudiar el crecimiento de la primera, y esto permite estudiar la concavidad de la función.
 
 :::{#thm-concavidad}
 ## Criterio de la segunda derivada
-Si $f$ es una función cuya segunda derivada existe en un intervalo $I$, entonces:
+Dado un intervalo $I\subseteq\mathbb{R}$ abierto y una función $f:I\to\mathbb{R}$ dos veces diferenciable en $I$. Entonces,
 
-- Si $\forall x\in I\ f^{\prime\prime}(x)\geq 0$ entonces $f$ es cóncava en el intervalo $I$.
-- Si $\forall x\in I\ f^{\prime\prime}(x)\leq 0$ entonces $f$ es convexa en el intervalo $I$.
+1. $f$ es cóncava hacia arriba en $I$, si y sólo si, $f''(x)\geq 0$ $\forall x\in I$. 
+2. $f$ es cóncava hacia abajo en $I$, si y sólo si, $f''(x)\leq 0$ $\forall x\in I$. 
 :::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Daremos un prueba informal del primer apartado, ya que el segundo se prueba de manera análoga por simetría, ya que si $f$ es cóncava hacia abajo, $-f$ es cóncava hacia arriba.
+
+Si $f$ es cóncava hacia arriba en $I$, para cualquier $a,b\in I$ con $a<b$, la pendiente de la recta tangente en $(a,f(a))$ es menor que la pendiente de la recta tangente en $(b,f(b))$, por lo que las pendientes crecen. Como la pendiente de la recta tangente es la derivada, se concluye que $f'$ es creciente en $I$ y, por tanto, $f''(x)\geq 0$ $\forall x\in I$.
+
+<!-- Probaremos solamente el punto primer apartado ya que el segundo se prueba de manera análoga por simetría, ya que si $f$ es cóncava hacia abajo, $-f$ es cóncava hacia arriba.
+
+Supongamos que $f$ es cóncava hacia arriba. Para cualquier $x\in I$, como existe $f''(x)$, se tiene que 
+
+$$
+f''(x) = \lim_{h\to 0}\frac{f(x+h-2f(x)+f(x-h))}{h^2}.
+$$
+
+Tomando $h\in\mathbb{R}$ tal que $x+h, x-h \in I$, como $f$ es cóncava hacia arriba en $I$, se tiene que 
+
+$$
+\begin{gathered}
+f(x) = f(\frac{1}{2}(x+h)+(x-h)) \leq \frac{1}{2}f(x+h)+\frac{1}{2}f(x-h) \\ 
+\Rightarrow f(x+h)+f(x-h)-2f(x) \geq 0 \Rightarrow \frac{f(x+h)-f(x-h)-2f(x)}{h^2} \geq 0 \Rightarrow f''(x)\geq 0$
+\end{gathered}
+$$ -->
 
 :::{#exm-concavidad}
 La función $f(x)=x^2$ tiene segunda derivada $f''(x)=2>0$ y por tanto es cóncava en todo $\mathbb{R}$.
 :::
 
 :::{.callout-warning}
-Una función puede ser cóncava o convexa en un intervalo y no tener derivada.
+Una función puede ser cóncava hacia arriba o hacia abajo en un intervalo y no tener derivada.
 :::
 
 :::{#exm-concavidad-2}
-Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f^{\prime\prime}(x)=12x^2-4$ está definida en todo $\mathbb{R}$ y es continua.
+Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f''(x)=12x^2-4$ está definida en todo $\mathbb{R}$ y es continua.
 
 ![Estudio de la concavidad de una función.](img/derivadas/concavidad.png)
 :::
