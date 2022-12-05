@@ -301,6 +301,9 @@ f'(x) &= \frac{(x^2-2x+1)'x-(x^2-2x+1)x'}{x^2} = \frac{((x^2)'-(2x)'+1')x-(x^2-2
 \end{align*}
 :::
 
+## Regla de la cadena
+El resultado anterior permite calcular la derivada de cualquier función algebraica. A continuación se presenta otro importante resultado que nos permitirá calcular la derivada de una composición de funciones.
+
 :::{#thm-regla-cadena}
 ## Regla de la cadena
 Dados dos intervalos $I,J\subseteq \mathbb{R}$ y dos funciones $f:I\to \mathbb{R}$ y $g:J\to\mathbb{R}$ tales que $f(I)\subseteq J$, si $f$ es diferenciable en en $a$ y $g$ es diferenciable en $f(a)$, entonces  $g\circ f$ es diferenciable en $a$ y 
@@ -356,6 +359,10 @@ $$
 (f\circ g)'(x)=f'(g(z))g'(z) = 2g(x)\cos(x) = 2\operatorname{sen}(x)\cos(x).
 $$
 :::
+
+### Derivada de la función inversa
+
+La regla de la cadena nos permite calcular la derivada de la función inversa de una función. 
 
 :::{#thm-derivada-funcion-inversa}
 ## Derivada de la función inversa
@@ -452,6 +459,67 @@ $$
 $$
 :::
 
+### Derivadas implícitas
+
+Hasta hora siempre hemos trabajado con funciones de la forma $y=f(x)$ donde la variable $y$ depende de la variable $x$ según la función $f(x)$. Esta representación se conoce como explícita, por que la variable dependiente $y$ aparece despejada en el lado izquierdo de la igualdad. Sin embargo, como ya se vió en la @def-funcion, una una función real de variable real es una relación formada por pares $(x,y)\in \mathbb{R}\times\mathbb{R}$, de modo que también se puede representar de manera intensiva mediante una ecuación $F(x,y)=0$, que cumplen los puntos de la función y solo ellos. 
+
+:::{#exm-funcion-implicita}
+La función $y=x^2$ también se puede expresar implícitamente mediante la ecuación $y-x^2=0$.
+:::
+
+:::{.callout-caution}
+El problema de la representación implícita es que no toda ecuación en $x$ e $y$ define una función. Por ejemplo, la ecuación $y^2-x=0$ no define una función, ya que si se despeja $y$ de la ecuación se obtiene $y=\pm\sqrt{x}$, que no es una función ya que para cualquier valor de $x>0$, $y$ puede tomar dos valores, lo cual no está permitido en una función.
+:::
+
+Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $x$, si $y$ es derivable en un punto $(x_0,y_0)$, se puede calcular la derivada mediante el siguiente procedimiento:
+
+1. Calcular la derivada de las expresiones de ambos lados de la ecuación. $F'(x,y)=0$. En el cálculo de estas derivadas hay que tener en cuenta que $y$ es una función que depende de $x$ y aplicar la regla de la cadena para derivarla.
+
+2. Reescribir la ecuación de manera que los términos donde aparezca $y'$ queden a un lado de la ecuación y el resto al otro.
+
+3. Sacar $y'$ factor común en el lado de la ecuación donde aparezca. 
+
+4. Resolver la ecuación para $y'$. 
+
+5. Sustituir $x=x_0$, $y=y_0$.
+
+:::{#exm-derivada-implicita}
+Dada la ecuación $e^y-x^2=0$ que define a $y$ como función implícita de $x$, veamos cómo calcular su derivada en el punto $(1,0)$ implícitamente
+
+\begin{align*}
+(e^y-x^2)' = 0' &\Rightarrow e^yy'-2x = 0 \Rightarrow e^yy' = 2x \Rightarrow y' = \frac{2x}{e^y}.
+\end{align*}
+
+Sustituyendo $x=1$ e $y=0$, se tiene $y'(1) = \frac{2\dot 1}{e^0} = 2$.
+
+En este caso, es posible obtener la representación explícita de la función, ya que $e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)$. Si calculamos su derivada explícitamente, se tiene $y'=\frac{2}{x}$, y para $x=1$ se tiene $y'(1) = \frac{2}{1}=2$, que coincide con el resultado anterior. 
+:::
+
+Aún cuando la ecuación $F(x,y)=0$ no defina implícitamente a $y$ como función de $x$, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de $y$ con respecto a $x$ en un punto $(x_0,y_0)$ que cumpla la ecuación.
+
+:::{#exm-derivada-implicita-2}
+La ecuación $x^2-xy+y^2=1$ no define a $y$ como función explícita de $x$, ya que para $x=0$ se obtienen dos posibles valores de $y$, $0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1$. No obstante, en el punto $(0,1)$, se puede calcular la tasa de variación instantánea de $y$ con respecto a $x$,
+
+$$
+\begin{gathered}
+(x^2-xy+y^2)' = 1' \Rightarrow (x^2)'-(xy)'+(y^2)' = 0 \\ \Rightarrow 2x -(1\cdot y+xy')+2yy' = 0 \Rightarrow 2x-y-xy'+2yy'=0 \\ 
+\Rightarrow y'(-x+2y)=-2x+y \Rightarrow y'=\frac{-2x+y}{-x+2y},
+\end{gathered}
+$$
+
+y sustituyendo $x=0$, $y=1$ se tiene $y'(0)=\frac{-2\cdot 0+1}{-0+2\cdot 1} = \frac{1}{2}$.
+
+Si dibujamos la gráfica de los puntos que cumplen la ecuación, se puede comprobar que la recta tangente a la gráfica en el punto $(0,1)$ tiene pendiente $1/2$.
+
+::: {.content-visible when-format="html"}
+![Recta tangente a la curva implícita $x^2-xy+y^2=1$ en el punto $(0,1)$.](./img/derivadas/tangente-curva-implicita.png)
+:::
+
+::: {.content-visible unless-format="html"}
+![Recta tangente a la curva implícita $x^2-xy+y^2=1$ en el punto $(0,1)$.](./img/derivadas/tangente-curva-implicita.tex)
+:::
+:::
+
 ## Teorema del valor medio y aplicaciones
 
 :::{#thm-extremo-interior}
@@ -480,7 +548,7 @@ El resultado anterior no es cierto si el punto $a$ no es interior de $I$. Para v
 Dado un intervalo $I\subseteq \mathbb{R}$ y una función $f:I\to\mathbb{R}$ con un extremo relativo en un punto $a\in I$, entonces $f'(a)$ no existe o $f'(a)=0$.
 :::
 
-:::{#exm-extremo-intrior-valor-absoluto}
+:::{#exm-extremo-interior-valor-absoluto}
 La función $f(x)=|x|$ tiene un mínimo relativo en $0$ que es un punto interior de $\mathbb{R}$. Sin embargo, $f'(0)$ no existe.
 :::
 
@@ -728,6 +796,8 @@ f(x) = f(\frac{1}{2}(x+h)+(x-h)) \leq \frac{1}{2}f(x+h)+\frac{1}{2}f(x-h) \\
 \Rightarrow f(x+h)+f(x-h)-2f(x) \geq 0 \Rightarrow \frac{f(x+h)-f(x-h)-2f(x)}{h^2} \geq 0 \Rightarrow f''(x)\geq 0$
 \end{gathered}
 $$ -->
+:::
+:::
 
 :::{#exm-concavidad}
 La función $f(x)=x^2$ tiene segunda derivada $f''(x)=2>0$ y por tanto es cóncava en todo $\mathbb{R}$.
