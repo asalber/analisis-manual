@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -768,13 +768,13 @@ Precaución
 <p>El problema de la representación implícita es que no toda ecuación en <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> define una función. Por ejemplo, la ecuación <span class="math inline">\(y^2-x=0\)</span> no define una función, ya que si se despeja <span class="math inline">\(y\)</span> de la ecuación se obtiene <span class="math inline">\(y=\pm\sqrt{x}\)</span>, que no es una función ya que para cualquier valor de <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(y\)</span> puede tomar dos valores, lo cual no está permitido en una función.</p>
 </div>
 </div>
-<p>Dada una ecuación <span class="math inline">\(F(x,y)=0\)</span>, que define implícitamente <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, si <span class="math inline">\(y\)</span> es derivable en un punto <span class="math inline">\((x_0,y_0)\)</span>, se puede calcular la derivada mediante el siguiente procedimiento:</p>
+<p>Dada una ecuación <span class="math inline">\(F(x,y)=0\)</span>, que define implícitamente <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, si <span class="math inline">\(y\)</span> es derivable en un punto <span class="math inline">\((a,y_0)\)</span>, se puede calcular la derivada mediante el siguiente procedimiento:</p>
 <ol type="1">
 <li><p>Calcular la derivada de las expresiones de ambos lados de la ecuación. <span class="math inline">\(F'(x,y)=0\)</span>. En el cálculo de estas derivadas hay que tener en cuenta que <span class="math inline">\(y\)</span> es una función que depende de <span class="math inline">\(x\)</span> y aplicar la regla de la cadena para derivarla.</p></li>
 <li><p>Reescribir la ecuación de manera que los términos donde aparezca <span class="math inline">\(y'\)</span> queden a un lado de la ecuación y el resto al otro.</p></li>
 <li><p>Sacar <span class="math inline">\(y'\)</span> factor común en el lado de la ecuación donde aparezca.</p></li>
 <li><p>Resolver la ecuación para <span class="math inline">\(y'\)</span>.</p></li>
-<li><p>Sustituir <span class="math inline">\(x=x_0\)</span>, <span class="math inline">\(y=y_0\)</span>.</p></li>
+<li><p>Sustituir <span class="math inline">\(x=a\)</span>, <span class="math inline">\(y=y_0\)</span>.</p></li>
 </ol>
 <div id="exm-derivada-implicita" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.11 </strong></span>Dada la ecuación <span class="math inline">\(e^y-x^2=0\)</span> que define a <span class="math inline">\(y\)</span> como función implícita de <span class="math inline">\(x\)</span>, veamos cómo calcular su derivada en el punto <span class="math inline">\((1,0)\)</span> implícitamente</p>
@@ -784,7 +784,7 @@ Precaución
 <p>Sustituyendo <span class="math inline">\(x=1\)</span> e <span class="math inline">\(y=0\)</span>, se tiene <span class="math inline">\(y'(1) = \frac{2\dot 1}{e^0} = 2\)</span>.</p>
 <p>En este caso, es posible obtener la representación explícita de la función, ya que <span class="math inline">\(e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)\)</span>. Si calculamos su derivada explícitamente, se tiene <span class="math inline">\(y'=\frac{2}{x}\)</span>, y para <span class="math inline">\(x=1\)</span> se tiene <span class="math inline">\(y'(1) = \frac{2}{1}=2\)</span>, que coincide con el resultado anterior.</p>
 </div>
-<p>Aún cuando la ecuación <span class="math inline">\(F(x,y)=0\)</span> no defina implícitamente a <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span> en un punto <span class="math inline">\((x_0,y_0)\)</span> que cumpla la ecuación.</p>
+<p>Aún cuando la ecuación <span class="math inline">\(F(x,y)=0\)</span> no defina implícitamente a <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span> en un punto <span class="math inline">\((a,y_0)\)</span> que cumpla la ecuación.</p>
 <div id="exm-derivada-implicita-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.12 </strong></span>La ecuación <span class="math inline">\(x^2-xy+y^2=1\)</span> no define a <span class="math inline">\(y\)</span> como función explícita de <span class="math inline">\(x\)</span>, ya que para <span class="math inline">\(x=0\)</span> se obtienen dos posibles valores de <span class="math inline">\(y\)</span>, <span class="math inline">\(0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1\)</span>. No obstante, en el punto <span class="math inline">\((0,1)\)</span>, se puede calcular la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span>,</p>
 <p><span class="math display">\[
@@ -1372,13 +1372,13 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 </section>
 <section id="rectas-tangente-y-normal-a-una-función" class="level3" data-number="7.8.3">
 <h3 data-number="7.8.3" class="anchored" data-anchor-id="rectas-tangente-y-normal-a-una-función"><span class="header-section-number">7.8.3</span> Rectas tangente y normal a una función</h3>
-<p>Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(x\in I\subseteq \mathbb{R}\)</span>, una trayectoria que traza la gráfica de <span class="math inline">\(f\)</span> es <span class="math inline">\(g(t) = (t,f(t)) \quad t\in I,\)</span> y su velocidad es <span class="math inline">\(g'(t) = (1,f'(t)),\)</span> de modo que la recta tangente para <span class="math inline">\(t=x_0\)</span> es</p>
+<p>Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(x\in I\subseteq \mathbb{R}\)</span>, una trayectoria que traza la gráfica de <span class="math inline">\(f\)</span> es <span class="math inline">\(g(t) = (t,f(t)) \quad t\in I,\)</span> y su velocidad es <span class="math inline">\(g'(t) = (1,f'(t)),\)</span> de modo que la recta tangente para <span class="math inline">\(t=a\)</span> es</p>
 <p><span class="math display">\[
-\frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
+\frac{x-a}{1} = \frac{y-f(a)}{f'(a)} \Rightarrow y-f(a) = f'(a)(x-a),
 \]</span></p>
 <p>y la recta normal es</p>
 <p><span class="math display">\[
-\frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
+\frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 \]</span></p>
 <div id="exm-tangente-normal-funcion-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.27 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la trayectoria que dibuja la gráfica de esta función es <span class="math inline">\(g(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(g'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
@@ -1438,17 +1438,17 @@ l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 <li>Son funciones continuas.</li>
 <li>Son derivables hasta cualquier orden y sus derivadas son continuas.</li>
 </ul>
-<p>En esta sección veremos cómo aproximar una función <span class="math inline">\(f(x)\)</span> mediante un polinomio <span class="math inline">\(p(x)\)</span> cerca de un valor <span class="math inline">\(x=x_0\)</span>.</p>
+<p>En esta sección veremos cómo aproximar una función <span class="math inline">\(f(x)\)</span> mediante un polinomio <span class="math inline">\(p(x)\)</span> cerca de un valor <span class="math inline">\(x=a\)</span>.</p>
 <section id="aproximación-mediante-un-polinomio-de-grado-0" class="level4" data-number="7.9.1.1">
 <h4 data-number="7.9.1.1" class="anchored" data-anchor-id="aproximación-mediante-un-polinomio-de-grado-0"><span class="header-section-number">7.9.1.1</span> Aproximación mediante un polinomio de grado 0</h4>
 <p>Un polinomio de grado 0 tiene ecuación <span class="math display">\[p(x) = c_0,\]</span> donde <span class="math inline">\(c_0\)</span> es una constante.</p>
-<p>Como el polinomio debe valer lo que la función en el punto <span class="math inline">\(x_0\)</span>, debe cumplir</p>
+<p>Como el polinomio debe valer lo que la función en el punto <span class="math inline">\(a\)</span>, debe cumplir</p>
 <p><span class="math display">\[
-p(x_0) = c_0 = f(x_0).
+p(a) = c_0 = f(a).
 \]</span></p>
-<p>En consecuencia, el polinomio de grado 0 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(x_0\)</span> es</p>
+<p>En consecuencia, el polinomio de grado 0 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(a\)</span> es</p>
 <p><span class="math display">\[
-p(x) = f(x_0).
+p(x) = f(a).
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1465,24 +1465,24 @@ p(x) = c_0+c_1x,
 \]</span></p>
 <p>aunque también puede escribirse</p>
 <p><span class="math display">\[
-p(x) = c_0+c_1(x-x_0).
+p(x) = c_0+c_1(x-a).
 \]</span></p>
-<p>De entre todos los polinomios de grado 1, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(x_0\)</span> será el que cumpla las dos condiciones siguientes:</p>
+<p>De entre todos los polinomios de grado 1, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(a\)</span> será el que cumpla las dos condiciones siguientes:</p>
 <ul>
-<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> valen lo mismo en <span class="math inline">\(x_0\)</span>: <span class="math inline">\(p(x_0) = f(x_0)\)</span>,</li>
-<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma tasa de crecimiento en <span class="math inline">\(a\)</span>: <span class="math inline">\(p'(x_0) = f'(x_0)\)</span>.</li>
+<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> valen lo mismo en <span class="math inline">\(a\)</span>: <span class="math inline">\(p(a) = f(a)\)</span>,</li>
+<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma tasa de crecimiento en <span class="math inline">\(a\)</span>: <span class="math inline">\(p'(a) = f'(a)\)</span>.</li>
 </ul>
-<p>Esta última condición nos asegura que en un entorno de <span class="math inline">\(x_0\)</span>, <span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función <span class="math inline">\(f\)</span> sea derivable en <span class="math inline">\(x_0\)</span>.</p>
+<p>Esta última condición nos asegura que en un entorno de <span class="math inline">\(a\)</span>, <span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función <span class="math inline">\(f\)</span> sea derivable en <span class="math inline">\(a\)</span>.</p>
 <p>Imponiendo las condiciones anteriores tenemos</p>
 <ul>
-<li><span class="math inline">\(p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)\)</span>,</li>
-<li><span class="math inline">\(p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)\)</span>.</li>
+<li><span class="math inline">\(p(x)=c_0+c_1(x-a) \Rightarrow p(a)=c_0+c_1(a-a)=c_0=f(a)\)</span>,</li>
+<li><span class="math inline">\(p'(x)=c_1 \Rightarrow p'(a)=c_1=f'(a)\)</span>.</li>
 </ul>
-<p>Así pues, el polinomio de grado 1 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(x_0\)</span> es</p>
+<p>Así pues, el polinomio de grado 1 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(a\)</span> es</p>
 <p><span class="math display">\[
-p(x) = f(x_0)+f '(x_0)(x-x_0),
+p(x) = f(a)+f '(a)(x-a),
 \]</span></p>
-<p>que resulta ser la recta tangente a <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((x_0,f(x_0))\)</span>.</p>
+<p>que resulta ser la recta tangente a <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,f(a))\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_grado_1.png" class="img-fluid figure-img"></p>
@@ -1498,24 +1498,24 @@ p(x) = c_0+c_1x+c_2x^2,
 \]</span></p>
 <p>aunque también puede escribirse</p>
 <p><span class="math display">\[
-p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
+p(x) = c_0+c_1(x-a)+c_2(x-a)^2.
 \]</span></p>
-<p>De entre todos los polinomio de grado 2, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(x_0\)</span> será el que cumpla las tres condiciones siguientes:</p>
+<p>De entre todos los polinomio de grado 2, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(a\)</span> será el que cumpla las tres condiciones siguientes:</p>
 <ul>
-<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> valen lo mismo en <span class="math inline">\(x_0\)</span>: <span class="math inline">\(p(x_0) = f(x_0)\)</span>,</li>
-<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma tasa de crecimiento en <span class="math inline">\(x_0\)</span>: <span class="math inline">\(p'(x_0) = f'(x_0)\)</span>.</li>
-<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma curvatura en <span class="math inline">\(x_0\)</span>: <span class="math inline">\(p''(x_0)=f''(x_0)\)</span>.</li>
+<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> valen lo mismo en <span class="math inline">\(a\)</span>: <span class="math inline">\(p(a) = f(a)\)</span>,</li>
+<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma tasa de crecimiento en <span class="math inline">\(a\)</span>: <span class="math inline">\(p'(a) = f'(a)\)</span>.</li>
+<li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma curvatura en <span class="math inline">\(a\)</span>: <span class="math inline">\(p''(a)=f''(a)\)</span>.</li>
 </ul>
-<p>Esta última condición requiere que la función <span class="math inline">\(f\)</span> sea dos veces derivable en <span class="math inline">\(x_0\)</span>.</p>
+<p>Esta última condición requiere que la función <span class="math inline">\(f\)</span> sea dos veces derivable en <span class="math inline">\(a\)</span>.</p>
 <p>Imponiendo las condiciones anteriores tenemos</p>
 <ul>
-<li><span class="math inline">\(p(x)=c_0+c_1(x-x_0)+c_2(x-x_0)^2 \Rightarrow p(x_0)=c_0=f(x_0)\)</span>,</li>
-<li><span class="math inline">\(p'(x)=c_1+2c_2(x-x_0) \Rightarrow p'(x_0)=c_1+2c_2(x_0-x_0)=c_1=f'(x_0)\)</span>,</li>
-<li><span class="math inline">\(p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}\)</span>.</li>
+<li><span class="math inline">\(p(x)=c_0+c_1(x-a)+c_2(x-a)^2 \Rightarrow p(a)=c_0=f(a)\)</span>,</li>
+<li><span class="math inline">\(p'(x)=c_1+2c_2(x-a) \Rightarrow p'(a)=c_1+2c_2(a-a)=c_1=f'(a)\)</span>,</li>
+<li><span class="math inline">\(p''(x)=2c_2 \Rightarrow p''(a)=2c_2=f''(a) \Rightarrow c_2=\frac{f''(a)}{2}\)</span>.</li>
 </ul>
-<p>Así pues, el polinomio de grado 2 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(x_0\)</span> es</p>
+<p>Así pues, el polinomio de grado 2 que mejor aproxima a <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(a\)</span> es</p>
 <p><span class="math display">\[
-p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
+p(x) = f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2.
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1532,41 +1532,41 @@ p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,
 \]</span></p>
 <p>aunque también puede escribirse</p>
 <p><span class="math display">\[
-p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.
+p(x) = c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n.
 \]</span></p>
-<p>De entre todos los polinomio de grado <span class="math inline">\(n\)</span>, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(x_0\)</span> será el que cumpla las <span class="math inline">\(n+1\)</span> condiciones siguientes:</p>
+<p>De entre todos los polinomio de grado <span class="math inline">\(n\)</span>, el que mejor aproxima a <span class="math inline">\(f\)</span> en entorno de <span class="math inline">\(a\)</span> será el que cumpla las <span class="math inline">\(n+1\)</span> condiciones siguientes:</p>
 <ul>
-<li><span class="math inline">\(p(x_0) = f(x_0)\)</span>,</li>
-<li><span class="math inline">\(p'(x_0) = f'(x_0)\)</span>,</li>
-<li><span class="math inline">\(p''(x_0)=f''(x_0)\)</span>,</li>
+<li><span class="math inline">\(p(a) = f(a)\)</span>,</li>
+<li><span class="math inline">\(p'(a) = f'(a)\)</span>,</li>
+<li><span class="math inline">\(p''(a)=f''(a)\)</span>,</li>
 <li><span class="math inline">\(\cdots\)</span></li>
-<li><span class="math inline">\(p^{(n}(x_0)=f^{(n}(x_0)\)</span>.</li>
+<li><span class="math inline">\(p^{(n}(a)=f^{(n}(a)\)</span>.</li>
 </ul>
 <p>Las sucesivas derivadas de <span class="math inline">\(p\)</span> valen</p>
 <p><span class="math display">\[\begin{align*}
-p(x) &amp;= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
-p'(x) &amp;= c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
-p''(x) &amp;= 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+p(x) &amp;= c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n,\\
+p'(x) &amp;= c_1+2c_2(x-a)+\cdots +nc_n(x-a)^{n-1},\\
+p''(x) &amp;= 2c_2+\cdots +n(n-1)c_n(x-a)^{n-2},\\
 \vdots\\
 p^{(n}(x) &amp;= n(n-1)(n-2)\cdots 1c_n = n!c_n.
 \end{align*}\]</span></p>
 <p>Imponiendo las condiciones anteriores se tiene</p>
 <ul>
-<li><span class="math inline">\(p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0),\)</span></li>
-<li><span class="math inline">\(p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0),\)</span></li>
-<li><span class="math inline">\(p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=\frac{f''(x_0)}{2},\)</span></li>
+<li><span class="math inline">\(p(a) = c_0+c_1(a-a)+c_2(a-a)^2+\cdots +c_n(a-a)^n=c_0=f(a),\)</span></li>
+<li><span class="math inline">\(p'(a) = c_1+2c_2(a-a)+\cdots +nc_n(a-a)^{n-1}=c_1=f'(a),\)</span></li>
+<li><span class="math inline">\(p''(a) = 2c_2+\cdots +n(n-1)c_n(a-a)^{n-2}=2c_2=f''(a)\Rightarrow c_2=\frac{f''(a)}{2},\)</span></li>
 <li><span class="math inline">\(\cdots\)</span></li>
-<li><span class="math inline">\(p^{(n}(x_0)=n!c_n=f^{(n}(x_0)=c_n=\frac{f^{(n}(x_0)}{n!}\)</span>.</li>
+<li><span class="math inline">\(p^{(n}(a)=n!c_n=f^{(n}(a)=c_n=\frac{f^{(n}(a)}{n!}\)</span>.</li>
 </ul>
 <div id="def-polinomio-taylor" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.11 (Polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span>) </strong></span>Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(x=x_0\)</span>, se define el <em>polinomio de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(x_0\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 7.11 (Polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span>) </strong></span>Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(x=a\)</span>, se define el <em>polinomio de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
 <p><span class="math display">\[\begin{align*}
-p_{f,x_0}^n(x)&amp;=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2+\cdots +\frac{f^{(n}(x_0)}{n!}(x-x_0)^n = \\ &amp;=\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}(x-x_0)^i,
+p_{f,a}^n(x)&amp;=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2+\cdots +\frac{f^{(n}(a)}{n!}(x-a)^n = \\ &amp;=\sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}(x-a)^i,
 \end{align*}\]</span></p>
-<p>o bien, escribiendo <span class="math inline">\(x=x_0+h\)</span></p>
+<p>o bien, escribiendo <span class="math inline">\(x=a+h\)</span></p>
 <p><span class="math display">\[\begin{align*}
-p_f^n(x_0+h) &amp;= f(x_0)+f'(x_0)h+\frac{f''(x_0)}{2}h^2+\cdots +\frac{f^{(n}(x_0)}{n!}h^n =\\
-&amp;= \sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}h^i.
+p_f^n(a+h) &amp;= f(a)+f'(a)h+\frac{f''(a)}{2}h^2+\cdots +\frac{f^{(n}(a)}{n!}h^n =\\
+&amp;= \sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}h^i.
 \end{align*}\]</span></p>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -1579,7 +1579,7 @@ Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(x_0\)</span> es el polinomio de orden <span class="math inline">\(n\)</span> que mejor aproxima a <span class="math inline">\(f\)</span> alrededor de <span class="math inline">\(x_0\)</span>, ya que es el único que cumple las <span class="math inline">\(n+1\)</span> condiciones anteriores.</p>
+<p>El polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> es el polinomio de orden <span class="math inline">\(n\)</span> que mejor aproxima a <span class="math inline">\(f\)</span> alrededor de <span class="math inline">\(a\)</span>, ya que es el único que cumple las <span class="math inline">\(n+1\)</span> condiciones anteriores.</p>
 </div>
 </div>
 <div id="exm-polinomio-taylor" class="theorem example">
@@ -1670,22 +1670,46 @@ e^x &amp; \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!
 </section>
 <section id="resto-de-taylor" class="level3" data-number="7.9.4">
 <h3 data-number="7.9.4" class="anchored" data-anchor-id="resto-de-taylor"><span class="header-section-number">7.9.4</span> Resto de Taylor</h3>
-<p>Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor <span class="math inline">\(x_0\)</span>, pero siempre se comete un error en dicha aproximación.</p>
+<p>Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor <span class="math inline">\(a\)</span>, pero siempre se comete un error en dicha aproximación.</p>
 <div id="def-resto-taylor" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.13 (Resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(x_0\)</span>, <span class="math inline">\(p_{f,x_0}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(x_0\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 7.13 (Resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span>, <span class="math inline">\(p_{f,a}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
 <p><span class="math display">\[
-r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
+r_{f,a}^n(x)=f(x)-p_{f,a}^n(x).
 \]</span></p>
 </div>
-<p>El resto mide el error cometido al aproximar <span class="math inline">\(f(x)\)</span> mediante <span class="math inline">\(p_{f,x_0}^n(x)\)</span> y permite expresar la función <span class="math inline">\(f\)</span> como la suma de un polinomio de Taylor más su resto correspondiente:</p>
+<p>El resto mide el error cometido al aproximar <span class="math inline">\(f(x)\)</span> mediante <span class="math inline">\(p_{f,a}^n(x)\)</span> y permite expresar la función <span class="math inline">\(f\)</span> como la suma de un polinomio de Taylor más su resto correspondiente:</p>
 <p><span class="math display">\[
-f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
+f(x)=p_{f,a}^n(x) + r_{f,a}^n(x).
 \]</span></p>
-<p>Esta expresión se conoce como <em>fórmula de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(x_0\)</span>. Se pude demostrar, además, que</p>
+<p>Esta expresión se conoce como <em>fórmula de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>. Se pude demostrar, además, que</p>
 <p><span class="math display">\[
-\lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
+\lim_{h\rightarrow 0}\frac{r_{f,a}^n(a+h)}{h^n}=0,
 \]</span></p>
-<p>lo cual indica que el resto <span class="math inline">\(r_{f,x_0}^n(x_0+h)\)</span> es mucho menor que <span class="math inline">\(h^n\)</span>.</p>
+<p>lo cual indica que el resto <span class="math inline">\(r_{f,a}^n(a+h)\)</span> es mucho menor que <span class="math inline">\(h^n\)</span>.</p>
+<div id="thm-forma-Lagrange-resto" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 7.11 (Forma de Lagrange del resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función tal que <span class="math inline">\(f^{(n+1}(t)\)</span> es continua en un intervalo que incluye a <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>, entonces</p>
+<p><span class="math display">\[
+R^n_{f,a}(x)=\frac{f^{(n+1}(c)}{(n+1)!}(x-a)^{n+1}
+\]</span></p>
+<p>para algún <span class="math inline">\(c\)</span> entre <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>.</p>
+</div>
+<p>La forma de Lagrange del resto de Taylor permite, en muchas ocasiones, dar una cota de las aproximaciones realizadas mediante un polinomio de Taylor.</p>
+<div id="exm-cota-resto" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7.31 </strong></span>Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span> el polinomio de MacLaurin de cuarto grado de <span class="math inline">\(f\)</span> es</p>
+<p><span class="math display">\[
+P^4_{f,0}(x)=1-\frac{x^2}{2}+\frac{x^4}{4!}.
+\]</span></p>
+<p>Sustituyendo en <span class="math inline">\(x=0.1\)</span> se tiene que <span class="math inline">\(\cos(0.1)\approx P^2_{f,0}(0.1) = 1-\frac{0.1^2}{2}+\frac{0.1^4}{4!}= 0.9950041667\)</span>.</p>
+<p>Para obtener una cota del error cometido, aplicando el teorema anterior se tiene que</p>
+<p><span class="math display">\[
+R^4_{f,0}(0.1)=\frac{f^{5}(c)}{5!}0.1^5 = \frac{-\operatorname{sen}(c)}{5!}0.1^5 \mbox{ con }c\in [0,0.1].
+\]</span></p>
+<p>Como <span class="math inline">\(|\operatorname{sen}(x)|\leq 1\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, se tiene que</p>
+<p><span class="math display">\[
+|R^4_{f,0}(0.1)|\leq \frac{0.1^5}{5!} = 8.3\cdot 10^{-8},
+\]</span></p>
+<p>que es una cota del error cometido en la aproximación.</p>
+</div>
 
 
 </section>

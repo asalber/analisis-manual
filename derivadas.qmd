@@ -471,7 +471,7 @@ La función $y=x^2$ también se puede expresar implícitamente mediante la ecuac
 El problema de la representación implícita es que no toda ecuación en $x$ e $y$ define una función. Por ejemplo, la ecuación $y^2-x=0$ no define una función, ya que si se despeja $y$ de la ecuación se obtiene $y=\pm\sqrt{x}$, que no es una función ya que para cualquier valor de $x>0$, $y$ puede tomar dos valores, lo cual no está permitido en una función.
 :::
 
-Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $x$, si $y$ es derivable en un punto $(x_0,y_0)$, se puede calcular la derivada mediante el siguiente procedimiento:
+Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $x$, si $y$ es derivable en un punto $(a,y_0)$, se puede calcular la derivada mediante el siguiente procedimiento:
 
 1. Calcular la derivada de las expresiones de ambos lados de la ecuación. $F'(x,y)=0$. En el cálculo de estas derivadas hay que tener en cuenta que $y$ es una función que depende de $x$ y aplicar la regla de la cadena para derivarla.
 
@@ -481,7 +481,7 @@ Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $
 
 4. Resolver la ecuación para $y'$. 
 
-5. Sustituir $x=x_0$, $y=y_0$.
+5. Sustituir $x=a$, $y=y_0$.
 
 :::{#exm-derivada-implicita}
 Dada la ecuación $e^y-x^2=0$ que define a $y$ como función implícita de $x$, veamos cómo calcular su derivada en el punto $(1,0)$ implícitamente
@@ -495,7 +495,7 @@ Sustituyendo $x=1$ e $y=0$, se tiene $y'(1) = \frac{2\dot 1}{e^0} = 2$.
 En este caso, es posible obtener la representación explícita de la función, ya que $e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)$. Si calculamos su derivada explícitamente, se tiene $y'=\frac{2}{x}$, y para $x=1$ se tiene $y'(1) = \frac{2}{1}=2$, que coincide con el resultado anterior. 
 :::
 
-Aún cuando la ecuación $F(x,y)=0$ no defina implícitamente a $y$ como función de $x$, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de $y$ con respecto a $x$ en un punto $(x_0,y_0)$ que cumpla la ecuación.
+Aún cuando la ecuación $F(x,y)=0$ no defina implícitamente a $y$ como función de $x$, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de $y$ con respecto a $x$ en un punto $(a,y_0)$ que cumpla la ecuación.
 
 :::{#exm-derivada-implicita-2}
 La ecuación $x^2-xy+y^2=1$ no define a $y$ como función explícita de $x$, ya que para $x=0$ se obtienen dos posibles valores de $y$, $0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1$. No obstante, en el punto $(0,1)$, se puede calcular la tasa de variación instantánea de $y$ con respecto a $x$,
@@ -1019,16 +1019,16 @@ $$
 
 ### Rectas tangente y normal a una función
 
-Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función $y=f(x)$, $x\in I\subseteq \mathbb{R}$, una trayectoria que traza la gráfica de $f$ es $g(t) = (t,f(t))  \quad t\in I,$ y su velocidad es $g'(t) = (1,f'(t)),$ de modo que la recta tangente para $t=x_0$ es
+Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función $y=f(x)$, $x\in I\subseteq \mathbb{R}$, una trayectoria que traza la gráfica de $f$ es $g(t) = (t,f(t))  \quad t\in I,$ y su velocidad es $g'(t) = (1,f'(t)),$ de modo que la recta tangente para $t=a$ es
 
 $$
-\frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
+\frac{x-a}{1} = \frac{y-f(a)}{f'(a)} \Rightarrow y-f(a) = f'(a)(x-a),
 $$
 
 y la recta normal es
 
 $$
-\frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
+\frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 $$
 
 :::{#exm-tangente-normal-funcion-2}
@@ -1100,22 +1100,22 @@ Los polinomios son funciones sencillas de calcular (mediante sumas y productos),
 - Son funciones continuas.
 - Son derivables hasta cualquier orden y sus derivadas son continuas.
 
-En esta sección veremos cómo aproximar una función $f(x)$ mediante un polinomio $p(x)$ cerca de un valor $x=x_0$.
+En esta sección veremos cómo aproximar una función $f(x)$ mediante un polinomio $p(x)$ cerca de un valor $x=a$.
 
 #### Aproximación mediante un polinomio de grado 0
 
 Un polinomio de grado 0 tiene ecuación $$p(x) = c_0,$$ donde $c_0$ es una constante.
 
-Como el polinomio debe valer lo que la función en el punto $x_0$, debe cumplir
+Como el polinomio debe valer lo que la función en el punto $a$, debe cumplir
 
 $$
-p(x_0) = c_0 = f(x_0).
+p(a) = c_0 = f(a).
 $$
 
-En consecuencia, el polinomio de grado 0 que mejor aproxima a $f$ en un entorno de $x_0$ es
+En consecuencia, el polinomio de grado 0 que mejor aproxima a $f$ en un entorno de $a$ es
 
 $$
-p(x) = f(x_0).
+p(x) = f(a).
 $$
 
 ![Gráfica del polinomio de Taylor de grado 0](img/derivadas/polinomio_grado_0.png)
@@ -1131,28 +1131,28 @@ $$
 aunque también puede escribirse
 
 $$
-p(x) = c_0+c_1(x-x_0).
+p(x) = c_0+c_1(x-a).
 $$
 
-De entre todos los polinomios de grado 1, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las dos condiciones siguientes:
+De entre todos los polinomios de grado 1, el que mejor aproxima a $f$ en entorno de $a$ será el que cumpla las dos condiciones siguientes:
 
-- $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
-- $p$ y $f$ tienen la misma tasa de crecimiento en $a$: $p'(x_0) = f'(x_0)$.
+- $p$ y $f$ valen lo mismo en $a$: $p(a) = f(a)$,
+- $p$ y $f$ tienen la misma tasa de crecimiento en $a$: $p'(a) = f'(a)$.
 
-Esta última condición nos asegura que en un entorno de $x_0$, $p$ y $f$ tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función $f$ sea derivable en $x_0$.
+Esta última condición nos asegura que en un entorno de $a$, $p$ y $f$ tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función $f$ sea derivable en $a$.
 
 Imponiendo las condiciones anteriores tenemos
 
-- $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
-- $p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)$.
+- $p(x)=c_0+c_1(x-a) \Rightarrow p(a)=c_0+c_1(a-a)=c_0=f(a)$,
+- $p'(x)=c_1 \Rightarrow p'(a)=c_1=f'(a)$.
 
-Así pues, el polinomio de grado 1 que mejor aproxima a $f$ en un entorno de $x_0$ es
+Así pues, el polinomio de grado 1 que mejor aproxima a $f$ en un entorno de $a$ es
 
 $$
-p(x) = f(x_0)+f '(x_0)(x-x_0),
+p(x) = f(a)+f '(a)(x-a),
 $$
 
-que resulta ser la recta tangente a $f$ en el punto $(x_0,f(x_0))$.
+que resulta ser la recta tangente a $f$ en el punto $(a,f(a))$.
 
 ![Gráfica del polinomio de Taylor de grado 1](img/derivadas/polinomio_grado_1.png)
 
@@ -1167,27 +1167,27 @@ $$
 aunque también puede escribirse
 
 $$
-p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
+p(x) = c_0+c_1(x-a)+c_2(x-a)^2.
 $$
 
-De entre todos los polinomio de grado 2, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las tres condiciones siguientes:
+De entre todos los polinomio de grado 2, el que mejor aproxima a $f$ en entorno de $a$ será el que cumpla las tres condiciones siguientes:
 
-- $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
-- $p$ y $f$ tienen la misma tasa de crecimiento en $x_0$: $p'(x_0) = f'(x_0)$.
-- $p$ y $f$ tienen la misma curvatura en $x_0$: $p''(x_0)=f''(x_0)$.
+- $p$ y $f$ valen lo mismo en $a$: $p(a) = f(a)$,
+- $p$ y $f$ tienen la misma tasa de crecimiento en $a$: $p'(a) = f'(a)$.
+- $p$ y $f$ tienen la misma curvatura en $a$: $p''(a)=f''(a)$.
 
-Esta última condición requiere que la función $f$ sea dos veces derivable en $x_0$.
+Esta última condición requiere que la función $f$ sea dos veces derivable en $a$.
 
 Imponiendo las condiciones anteriores tenemos
 
-- $p(x)=c_0+c_1(x-x_0)+c_2(x-x_0)^2 \Rightarrow p(x_0)=c_0=f(x_0)$,
-- $p'(x)=c_1+2c_2(x-x_0) \Rightarrow p'(x_0)=c_1+2c_2(x_0-x_0)=c_1=f'(x_0)$,
-- $p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}$.
+- $p(x)=c_0+c_1(x-a)+c_2(x-a)^2 \Rightarrow p(a)=c_0=f(a)$,
+- $p'(x)=c_1+2c_2(x-a) \Rightarrow p'(a)=c_1+2c_2(a-a)=c_1=f'(a)$,
+- $p''(x)=2c_2 \Rightarrow p''(a)=2c_2=f''(a) \Rightarrow c_2=\frac{f''(a)}{2}$.
 
-Así pues, el polinomio de grado 2 que mejor aproxima a $f$ en un entorno de $x_0$ es
+Así pues, el polinomio de grado 2 que mejor aproxima a $f$ en un entorno de $a$ es
 
 $$
-p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
+p(x) = f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2.
 $$
 
 ![Gráfica del polinomio de Taylor de grado 2](img/derivadas/polinomio_grado_2.png)
@@ -1203,53 +1203,53 @@ $$
 aunque también puede escribirse
 
 $$
-p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.
+p(x) = c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n.
 $$
 
-De entre todos los polinomio de grado $n$, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las $n+1$ condiciones siguientes:
+De entre todos los polinomio de grado $n$, el que mejor aproxima a $f$ en entorno de $a$ será el que cumpla las $n+1$ condiciones siguientes:
 
-- $p(x_0) = f(x_0)$,
-- $p'(x_0) = f'(x_0)$,
-- $p''(x_0)=f''(x_0)$,
+- $p(a) = f(a)$,
+- $p'(a) = f'(a)$,
+- $p''(a)=f''(a)$,
 - $\cdots$
-- $p^{(n}(x_0)=f^{(n}(x_0)$.
+- $p^{(n}(a)=f^{(n}(a)$.
 
 Las sucesivas derivadas de $p$ valen
 
 \begin{align*}
-p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
-p'(x) &= c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
-p''(x) &= 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+p(x) &= c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n,\\
+p'(x) &= c_1+2c_2(x-a)+\cdots +nc_n(x-a)^{n-1},\\
+p''(x) &= 2c_2+\cdots +n(n-1)c_n(x-a)^{n-2},\\
 \vdots\\
 p^{(n}(x) &= n(n-1)(n-2)\cdots 1c_n = n!c_n.
 \end{align*}
 
 Imponiendo las condiciones anteriores se tiene
 
-- $p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0),$
-- $p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0),$
-- $p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=\frac{f''(x_0)}{2},$
+- $p(a) = c_0+c_1(a-a)+c_2(a-a)^2+\cdots +c_n(a-a)^n=c_0=f(a),$
+- $p'(a) = c_1+2c_2(a-a)+\cdots +nc_n(a-a)^{n-1}=c_1=f'(a),$
+- $p''(a) = 2c_2+\cdots +n(n-1)c_n(a-a)^{n-2}=2c_2=f''(a)\Rightarrow c_2=\frac{f''(a)}{2},$
 - $\cdots$
-- $p^{(n}(x_0)=n!c_n=f^{(n}(x_0)=c_n=\frac{f^{(n}(x_0)}{n!}$.
+- $p^{(n}(a)=n!c_n=f^{(n}(a)=c_n=\frac{f^{(n}(a)}{n!}$.
 
 :::{#def-polinomio-taylor}
 ## Polinomio de Taylor de orden $n$ para $f$ en el punto $a$
-Dada una función $f$, $n$ veces derivable en $x=x_0$, se define el *polinomio de Taylor* de orden $n$ para $f$ en $x_0$ como
+Dada una función $f$, $n$ veces derivable en $x=a$, se define el *polinomio de Taylor* de orden $n$ para $f$ en $a$ como
 
 \begin{align*}
-p_{f,x_0}^n(x)&=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2+\cdots +\frac{f^{(n}(x_0)}{n!}(x-x_0)^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}(x-x_0)^i,
+p_{f,a}^n(x)&=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2+\cdots +\frac{f^{(n}(a)}{n!}(x-a)^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}(x-a)^i,
 \end{align*}
 
-o bien, escribiendo $x=x_0+h$
+o bien, escribiendo $x=a+h$
 
 \begin{align*}
-p_f^n(x_0+h) &= f(x_0)+f'(x_0)h+\frac{f''(x_0)}{2}h^2+\cdots +\frac{f^{(n}(x_0)}{n!}h^n =\\
-&= \sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}h^i.
+p_f^n(a+h) &= f(a)+f'(a)h+\frac{f''(a)}{2}h^2+\cdots +\frac{f^{(n}(a)}{n!}h^n =\\
+&= \sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}h^i.
 \end{align*}
 :::
 
 :::{.callout-important}
-El polinomio de Taylor de orden $n$ para $f$ en $x_0$ es el polinomio de orden $n$ que mejor aproxima a $f$ alrededor de $x_0$, ya que es el único que cumple las $n+1$ condiciones anteriores.
+El polinomio de Taylor de orden $n$ para $f$ en $a$ es el polinomio de orden $n$ que mejor aproxima a $f$ alrededor de $a$, ya que es el único que cumple las $n+1$ condiciones anteriores.
 :::
 
 :::{#exm-polinomio-taylor}
@@ -1347,27 +1347,64 @@ $$
 
 ### Resto de Taylor
 
-Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $x_0$, pero siempre se comete un error en dicha aproximación.
+Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $a$, pero siempre se comete un error en dicha aproximación.
 
 :::{#def-resto-taylor}
 ## Resto de Taylor
-Si $f$ es una función para la que existe el su polinomio de Taylor de orden $n$ en $x_0$, $p_{f,x_0}^n$, entonces se define el *resto de Taylor* de orden $n$ para $f$ en $x_0$ como
+Si $f$ es una función para la que existe el su polinomio de Taylor de orden $n$ en $a$, $p_{f,a}^n$, entonces se define el *resto de Taylor* de orden $n$ para $f$ en $a$ como
 
 $$
-r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
+r_{f,a}^n(x)=f(x)-p_{f,a}^n(x).
 $$
 :::
 
-El resto mide el error cometido al aproximar $f(x)$ mediante $p_{f,x_0}^n(x)$ y permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
+El resto mide el error cometido al aproximar $f(x)$ mediante $p_{f,a}^n(x)$ y permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
 
 $$
-f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
+f(x)=p_{f,a}^n(x) + r_{f,a}^n(x).
 $$
 
-Esta expresión se conoce como _fórmula de Taylor_ de orden $n$ para $f$ en $x_0$. Se pude demostrar, además, que
+Esta expresión se conoce como _fórmula de Taylor_ de orden $n$ para $f$ en $a$. Se pude demostrar, además, que
 
 $$
-\lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
+\lim_{h\rightarrow 0}\frac{r_{f,a}^n(a+h)}{h^n}=0,
 $$
 
-lo cual indica que el resto $r_{f,x_0}^n(x_0+h)$ es mucho menor que $h^n$.
+lo cual indica que el resto $r_{f,a}^n(a+h)$ es mucho menor que $h^n$.
+
+:::{#thm-forma-Lagrange-resto}
+## Forma de Lagrange del resto de Taylor
+Si $f$ es una función tal que  $f^{(n+1}(t)$ es continua en un intervalo que incluye a $a$ y $x$, entonces
+
+$$
+R^n_{f,a}(x)=\frac{f^{(n+1}(c)}{(n+1)!}(x-a)^{n+1}
+$$
+
+para algún $c$ entre $a$ y $x$.
+:::
+
+La forma de Lagrange del resto de Taylor permite, en muchas ocasiones, dar una cota de las aproximaciones realizadas mediante un polinomio de Taylor.
+
+:::{#exm-cota-resto}
+Dada la función $f(x)=\cos(x)$ el polinomio de MacLaurin de cuarto grado de $f$ es 
+
+$$
+P^4_{f,0}(x)=1-\frac{x^2}{2}+\frac{x^4}{4!}.
+$$
+
+Sustituyendo en $x=0.1$ se tiene que $\cos(0.1)\approx P^2_{f,0}(0.1) = 1-\frac{0.1^2}{2}+\frac{0.1^4}{4!}= 0.9950041667$.
+
+Para obtener una cota del error cometido, aplicando el teorema anterior se tiene que 
+
+$$
+R^4_{f,0}(0.1)=\frac{f^{5}(c)}{5!}0.1^5 = \frac{-\operatorname{sen}(c)}{5!}0.1^5 \mbox{ con }c\in [0,0.1].
+$$
+
+Como $|\operatorname{sen}(x)|\leq 1$ $\forall x\in\mathbb{R}$, se tiene que 
+
+$$
+|R^4_{f,0}(0.1)|\leq \frac{0.1^5}{5!} = 8.3\cdot 10^{-8},
+$$
+
+que es una cota del error cometido en la aproximación.
+:::

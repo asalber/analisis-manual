@@ -22,8 +22,8 @@ book:
   downloads: [pdf, epub]
   favicon: "img/logos/favicon.ico"
   sidebar:
-    style: docked 
-    background: light
+    #style: docked 
+    #background: light
     logo: img/logos/aprendeconalf.png
     tools:
       - icon: house-fill
