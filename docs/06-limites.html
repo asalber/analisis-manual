@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./derivadas.html" rel="next">
-<link href="./funciones.html" rel="prev">
+<link href="./07-derivadas.html" rel="next">
+<link href="./05-funciones.html" rel="prev">
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -148,37 +148,42 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
+  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./limites.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
+  <a href="./06-limites.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-series.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></a>
   </div>
 </li>
     </ul>
@@ -926,7 +931,7 @@ Demostración
 <p><span class="math display">\[
 |f(x)-f(y)| = |f(x)-l+l-f(y)| \leq |f(x)-l|+|l-f(y)| &lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
 \]</span></p>
-<p>Para probar el otro sentido de la implicación, supongamos que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>. Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión en <span class="math inline">\(A\setminus\{a\}\)</span> convergente a <span class="math inline">\(a\)</span>. Entonces existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-a|&lt;\delta\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, <span class="math inline">\(|f(x_n)-f(x_m)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall m,n\geq k\)</span>. Así pues, <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> es una sucesión de Cauchy y por el criterio de convergencia de Cauchy para sucesiones (<a href="sucesiones.html#thm-criterio-convergencia-cauchy">Teorema&nbsp;<span>4.8</span></a>), existe <span class="math inline">\(l\in\mathbb{R}\)</span> tal que <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
+<p>Para probar el otro sentido de la implicación, supongamos que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>. Sea <span class="math inline">\((x_n)_{n=1}^\infty\)</span> una sucesión en <span class="math inline">\(A\setminus\{a\}\)</span> convergente a <span class="math inline">\(a\)</span>. Entonces existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-a|&lt;\delta\)</span> <span class="math inline">\(\forall n\geq k\)</span>, y por tanto, <span class="math inline">\(|f(x_n)-f(x_m)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall m,n\geq k\)</span>. Así pues, <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> es una sucesión de Cauchy y por el criterio de convergencia de Cauchy para sucesiones (<a href="04-sucesiones.html#thm-criterio-convergencia-cauchy">Teorema&nbsp;<span>4.8</span></a>), existe <span class="math inline">\(l\in\mathbb{R}\)</span> tal que <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
 <p>Veamos ahora que <span class="math inline">\(l\)</span> es el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, usando el <a href="#thm-criterio-sucesiones">criterio de las sucesiones</a>. Sea <span class="math inline">\((y_n)_{n=1}^\infty\)</span> otra una sucesión en <span class="math inline">\(A\setminus\{a\}\)</span> convergente a <span class="math inline">\(a\)</span>. Por el mismo razonamiento de antes, se tiene que existe <span class="math inline">\(l'\in\mathbb{R}\)</span> tal que <span class="math inline">\(\lim_{n\to\infty}f(y_n)=l'\)</span>. Tomando ahora <span class="math inline">\(\varepsilon&gt;0\)</span> y <span class="math inline">\(\delta&gt;0\)</span> de antes, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-a|&lt;\delta\)</span> y <span class="math inline">\(|y_n-a|&lt;\delta\)</span> <span class="math inline">\(\forall n\geq k\)</span>, de manera que <span class="math inline">\(|f(x_n)-f(y_n)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq k\)</span>. Así pues,</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}|f(x_n)-f(y_n)| = |\lim_{n\to\infty}f(x_n)- \lim_{n\to\infty}f(y_n)| = |l-l'|&lt;\varepsilon.
@@ -1753,9 +1758,9 @@ Demostración
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Lo probaremos por reducción al absurdo. Supongamos que <span class="math inline">\(f\)</span> no está acotada en <span class="math inline">\(I\)</span>. Entonces, para cada <span class="math inline">\(n\in\mathbb{N}\)</span> existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(|f(x_n)|&gt;n\)</span>. La sucesión <span class="math inline">\((x_n)_{n=1}^\infty\subset I\)</span> y como <span class="math inline">\(I\)</span> está acotado, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> también está acotada, de manera que, por el <a href="sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
-<p>Sea <span class="math inline">\(c=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(c\in I\)</span>.</p>
-<p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, lo es, en particular, en <span class="math inline">\(c\)</span>, de modo que como <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> converge a <span class="math inline">\(c\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k}) = f(c)\)</span> y, por el <a href="sucesiones.html#thm-convergencia-sucesion-acotada">Teorema&nbsp;<span>4.2</span></a>, <span class="math inline">\((f(x_{n_k}))_{k=1}^\infty\)</span> está acotada, pero <span class="math inline">\(|f(x_{n_k})|&gt;n_k&gt;k\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>, lo que contradice que esté acotada. Así pues, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Lo probaremos por reducción al absurdo. Supongamos que <span class="math inline">\(f\)</span> no está acotada en <span class="math inline">\(I\)</span>. Entonces, para cada <span class="math inline">\(n\in\mathbb{N}\)</span> existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(|f(x_n)|&gt;n\)</span>. La sucesión <span class="math inline">\((x_n)_{n=1}^\infty\subset I\)</span> y como <span class="math inline">\(I\)</span> está acotado, <span class="math inline">\((x_n)_{n=1}^\infty\)</span> también está acotada, de manera que, por el <a href="04-sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
+<p>Sea <span class="math inline">\(c=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="03-topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(c\in I\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, lo es, en particular, en <span class="math inline">\(c\)</span>, de modo que como <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> converge a <span class="math inline">\(c\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k}) = f(c)\)</span> y, por el <a href="04-sucesiones.html#thm-convergencia-sucesion-acotada">Teorema&nbsp;<span>4.2</span></a>, <span class="math inline">\((f(x_{n_k}))_{k=1}^\infty\)</span> está acotada, pero <span class="math inline">\(|f(x_{n_k})|&gt;n_k&gt;k\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>, lo que contradice que esté acotada. Así pues, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1788,8 +1793,8 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(I=[a,b]\)</span> es cerrado y acotado, y <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, por el teorema anterior se tiene que <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
-<p>Como <span class="math inline">\(f(I)\neq \emptyset\)</span> pues <span class="math inline">\(f(a)\in f(I)\)</span>, por el axioma de completitud de los números reales, existe el supremo <span class="math inline">\(s=\sup\{f(I)\}\)</span>. Para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(s-\frac{1}{n}\)</span> no es cota superior de <span class="math inline">\(f(I)\)</span>, y por tanto, existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(s-\frac{1}{n}&lt;f(x_n)&lt;s\)</span>. Podemos construir así una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\subset I\)</span>. Como <span class="math inline">\(I\)</span> está acotado, por el por el <a href="sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
-<p>Sea <span class="math inline">\(d=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(d\in I\)</span>.</p>
+<p>Como <span class="math inline">\(f(I)\neq \emptyset\)</span> pues <span class="math inline">\(f(a)\in f(I)\)</span>, por el axioma de completitud de los números reales, existe el supremo <span class="math inline">\(s=\sup\{f(I)\}\)</span>. Para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(s-\frac{1}{n}\)</span> no es cota superior de <span class="math inline">\(f(I)\)</span>, y por tanto, existe <span class="math inline">\(x_n\in I\)</span> tal que <span class="math inline">\(s-\frac{1}{n}&lt;f(x_n)&lt;s\)</span>. Podemos construir así una sucesión <span class="math inline">\((x_n)_{n=1}^\infty\subset I\)</span>. Como <span class="math inline">\(I\)</span> está acotado, por el por el <a href="04-sucesiones.html#thm-bolzano-weierstrass-sucesiones">Teorema&nbsp;<span>4.6</span></a> existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge.</p>
+<p>Sea <span class="math inline">\(d=\lim_{k\to\infty}x_{n_k}\)</span>. Como <span class="math inline">\((x_{n_k})_{k=1}^\infty\subset I\)</span>, y <span class="math inline">\(I\)</span> es cerrado, por el <a href="03-topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion">Teorema&nbsp;<span>3.4</span></a>, contiene a todos sus puntos de acumulación, y por tanto <span class="math inline">\(d\in I\)</span>.</p>
 <p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, lo es, en particular, en <span class="math inline">\(d\)</span>, de modo que como <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> converge a <span class="math inline">\(d\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k}) = f(d)\)</span>. Además se tiene que <span class="math inline">\(s-\frac{1}{k}&lt;s-\frac{1}{n_k}&lt;f(x_{n_k})&lt;s\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>. Así pues, por el teorema de compresión de funciones, se tiene que <span class="math inline">\(\lim_{k\to\infty} f(x_{n_k})=s\)</span>, y por tanto <span class="math inline">\(f(d)=s\)</span> de modo que <span class="math inline">\(f(d)\geq f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 <p>Si ahora consideramos la función <span class="math inline">\(-f\)</span>, que también es continua en <span class="math inline">\(I\)</span> al ser la composición de funciones continuas, por lo que acabamos de demostrar, <span class="math inline">\(-f\)</span> alcanza el máximo en <span class="math inline">\(I\)</span>, es decir, existe <span class="math inline">\(c\in I\)</span> tal que <span class="math inline">\(-f(c)\geq -f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, de donde se deduce que <span class="math inline">\(f(c)\leq f(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 </div>
@@ -2149,12 +2154,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./funciones.html" class="pagination-link">
+      <a href="./05-funciones.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./derivadas.html" class="pagination-link">
+      <a href="./07-derivadas.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
