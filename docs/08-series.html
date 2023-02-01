@@ -196,6 +196,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#concepto-de-serie" id="toc-concepto-de-serie" class="nav-link active" data-scroll-target="#concepto-de-serie"><span class="toc-section-number">8.1</span>  Concepto de serie</a></li>
   <li><a href="#convergencia-de-series" id="toc-convergencia-de-series" class="nav-link" data-scroll-target="#convergencia-de-series"><span class="toc-section-number">8.2</span>  Convergencia de series</a></li>
+  <li><a href="#convergencia-de-series-de-términos-positivos" id="toc-convergencia-de-series-de-términos-positivos" class="nav-link" data-scroll-target="#convergencia-de-series-de-términos-positivos"><span class="toc-section-number">8.3</span>  Convergencia de series de términos positivos</a></li>
   </ul>
 </nav>
     </div>
@@ -330,7 +331,10 @@ A_4 &amp;= -1+ (-1)^2 + (-1)^3 + (-1)^4= 0\\
 \]</span></p>
 <p>Es fácil ver que los términos de esta serie son mayores que los de esta otra</p>
 <p><span class="math display">\[
-1 + \frac{1}{2} + \left[\frac{1}{4}+\frac{1}{4}\right] + \left[\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}\right] + \cdots = 1 +\frac{1}{2} + \frac{1}{2} + \frac{1}{2} + \cdots101
+\begin{gathered}
+1 + \frac{1}{2} + \left[\frac{1}{4}+\frac{1}{4}\right] + \left[\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}\right] + \cdots \\
+= 1 +\frac{1}{2} + \frac{1}{2} + \frac{1}{2} + \cdots
+\end{gathered}
 \]</span> que claramente diverge, por lo que la serie armónica también diverge.</p>
 <p>Sin embargo, la serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n+1}}{n}\)</span> converge. La prueba es una consecuencia de la serie de Taylor para el logaritmo y se deja como ejercicio.</p>
 </div>
@@ -420,7 +424,7 @@ Demostración
 </div>
 <p>El siguiente teorema establece una condición necesaria para la convergencia de una serie.</p>
 <div id="thm-condicion-convergencia-series" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.2 </strong></span>Si la serie <span class="math inline">\(\sum a_n\)</span> converge, entonces <span class="math inline">\(\lim_{n\to\infty} a_n =0\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.2 (Condición de convergencia) </strong></span>Si la serie <span class="math inline">\(\sum a_n\)</span> converge, entonces <span class="math inline">\(\lim_{n\to\infty} a_n =0\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -435,7 +439,7 @@ Demostración
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((A_n)_{n=1}^\infty\)</span> la sucesión de las sumas parciales de <span class="math inline">\(\sum a_n\)</span>. Si la serie <span class="math inline">\(\sum a_n\)</span> es convergente, entonces existe <span class="math inline">\(\lim_{n\to\infty}A_n=l\)</span>, y por las propiedades de las colas de sucesiones, también se cumple que <span class="math inline">\(\lim_{n\to\infty}A_{n-1}=l\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((A_n)_{n=1}^\infty\)</span> la sucesión de las sumas parciales de de <span class="math inline">\(\sum a_n\)</span>. Si la serie <span class="math inline">\(\sum a_n\)</span> es convergente, entonces existe <span class="math inline">\(\lim_{n\to\infty}A_n=l\)</span>, y por las propiedades de las colas de sucesiones, también se cumple que <span class="math inline">\(\lim_{n\to\infty}A_{n-1}=l\)</span>.</p>
 <p>Por otro lado, como <span class="math inline">\(a_n=A_n-A_{n-1}\)</span> <span class="math inline">\(\forall n\geq 2\)</span>, se deduce que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}a_n =\lim_{n\to\infty}A_n-A_{n-1} = \lim_{n\to\infty}A_n-\lim_{n\to\infty}A_{n-1}=l-l=0.
@@ -444,30 +448,120 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Precaución
+Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El teorema anterior establece una condición necesaria, pero no suficiente, para la convergencia de una serie. Por ejemplo, como se ha visto antes, la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> no converge pero <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n}=0\)</span>.</p>
+<p>El teorema anterior establece una condición necesaria, pero no suficiente, para la convergencia de una serie. Por ejemplo, como se ha visto antes, la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> no converge pero <span class="math inline">\(\lim_{n\to\infty}\frac{1}{n}=0\)</span>. Por tanto, el hecho que de que <span class="math inline">\(\lim_{n\to\infty} a_n =0\)</span> no garantiza que la serie <span class="math inline">\(\sum a_n\)</span> converja, pero si <span class="math inline">\((a_n)_{n=1}^\infty\)</span> no converge, o <span class="math inline">\(\lim_{n\to\infty} a_n \neq 0\)</span>, entonces se puede concluir que la serie <span class="math inline">\(\sum a_n\)</span> diverge.</p>
 </div>
 </div>
-<!-- 
-\begin{ejemplo}
-Las series $\dis\sum_{n\ge 1}\left(1-\frac{1}{n}\right)^n$, $\dis\sum_{n\ge 1}n\sen\frac{1}{n}$, $\dis\sum_{n\ge 1}n\big(\e^{\frac{1}{n}}-1\big)$ no son ninguna de ellas convergente porque sus términos generales no convergen a $0$:
-$$
-\left(1-\frac{1}{n}\right)^n\to\frac{1}{\e},\quad n\sen\frac{1}{n}\to 1,\quad n\big(\e^{\frac{1}{n}}-1\big)\to 1.
-$$
-\end{ejemplo} -->
+<div id="exm-series-divergentes" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.5 </strong></span>Ya hemos visto antes que la serie <span class="math inline">\(\sum (-1)^n\)</span> no converge, porque la sucesión <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span> no converge.</p>
+<p>La serie <span class="math inline">\(\sum \frac{2n^2}{3n^2+n}\)</span> tampoco converge, pues <span class="math inline">\(\lim_{n\to\infty}\frac{2n^2}{3n^2+n}=\frac{2}{3}\neq 0\)</span>.</p>
+</div>
+<div id="exm-series-telescópicas" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.6 </strong></span>Dada una sucesión <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, las series de la forma <span class="math inline">\(\sum (a_n-a_{n+1})\)</span> se conocen como <em>series telescópicas</em>. Es fácil ver que la suma parcial de los <span class="math inline">\(n\)</span> primeros términos es</p>
+<p><span class="math display">\[\begin{align*}
+A_n &amp;= \sum_{i=1}^n (a_i-a_{i+1})\\
+&amp; = (a_1-a_2)+(a_2-a_3)+(a_3-a_4)+\cdots (a_n-a_{n+1})\\
+&amp; = a_1-a_{n+1}.
+\end{align*}\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} A_n = \lim_{n\to\infty} a_1-a_{n+1} = a_1 - \lim_{n\to\infty} a_{n+1},\]</span></p>
+<p>de manera que si existe <span class="math inline">\(\lim_{n\to\infty} a_n=l\)</span>, la serie telescópica converge y <span class="math inline">\(\sum_{n=1}^\infty (a_n-a_{n+1}) = a_1-l\)</span>.</p>
+</div>
+<div id="cor-divergencia-serie-inversa-convergente" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 8.1 </strong></span>Dada una serie <span class="math inline">\(\sum a_n\)</span> convergente, si <span class="math inline">\(a_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, entonces la serie de los términos inversos <span class="math inline">\(\sum a_n^{-1}\)</span> diverge.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>La demostración es una consecuencia inmediata del teorema anterior, ya que si <span class="math inline">\(\sum a_n\)</span> converge, entonces <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span> y, por tanto, <span class="math inline">\(\lim_{n\to\infty} a_n^{-1} = \frac{1}{\lim_{n\to\infty} a_n} = \infty\)</span>, por lo que la serie <span class="math inline">\(\sum a_n^{-1}\)</span> diverge.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="convergencia-de-series-de-términos-positivos" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="convergencia-de-series-de-términos-positivos"><span class="header-section-number">8.3</span> Convergencia de series de términos positivos</h2>
+<p>En esta sección se presentan algunos criterios para estudiar la convergencia de series <span class="math inline">\(\sum a_n\)</span> tales que todos sus términos son positivos, es decir, <span class="math inline">\(a_n\geq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Este tipo de series aparecen de manera frecuente en muchos problemas donde siempre se suman cantidades positivas.</p>
+<div id="thm-criterio-acotacion" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.3 (Criterio de acotación) </strong></span>Una serie <span class="math inline">\(\sum a_n\)</span> de términos positivos converge si y solo si la sucesión de sus sumas parciales está acotada.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(a_n\geq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, la sucesión <span class="math inline">\((A_n)_{n=1}^\infty\)</span> de las sumas parciales de <span class="math inline">\(\sum a_n\)</span> es monótona creciente y por el teorema de la convergencia monótona para sucesiones se tiene que <span class="math inline">\((A_n)_{n=1}^\infty\)</span> converge si y solo si está acotada.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-criterio-comparacion" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.4 </strong></span>Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> tales que <span class="math inline">\(a_n&lt;b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, entonces:</p>
+<ol type="a">
+<li>Si <span class="math inline">\(\sum b_n\)</span> converge, <span class="math inline">\(\sum a_n\)</span> converge.</li>
+<li>Si <span class="math inline">\(\sum a_n\)</span> diverge, <span class="math inline">\(\sum b_n\)</span> diverge.</li>
+</ol>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sean <span class="math inline">\((A_n)_{n=1}^\infty\)</span> y <span class="math inline">\((B_n)_{n=1}^\infty\)</span> las sucesiones de las sumas parciales de <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> respectivamente. Como <span class="math inline">\(a_n&lt;b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se tiene que <span class="math inline">\(A_n&lt;B_n\)</span> <span class="math inline">\(\forall n\in \mathbb{N}\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(\sum b_n\)</span> converge. Entonces, por el teorema anterior, la sucesión de sus sumas parciales <span class="math inline">\((B_n)_{n=1}^\infty\)</span> está acotada. Sea <span class="math inline">\(k\)</span> una cota de <span class="math inline">\((B_n)_{n=1}^\infty\)</span>. Entonces <span class="math inline">\(A_n&lt;B_n\leq k\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\((A_n)_{n=1}^\infty\)</span> está acotada y, por el teorema anterior converge.</p>
+<p>Supongamos ahora que <span class="math inline">\(\sum a_n\)</span> diverge. Entonces, por el teorema anterior, <span class="math inline">\((A_n)_{n=1}^\infty\)</span> no está acotada y como <span class="math inline">\(A_n&lt;B_n\)</span> <span class="math inline">\(\forall n\in \mathbb{N}\)</span>, <span class="math inline">\((B_n)_{n=1}^\infty\)</span> tampoco está acotada, así que, de nuevo por el teorema anterior, se concluye que <span class="math inline">\((B_n)_{n=1}^\infty\)</span> diverge.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-criterio-comparacion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.7 </strong></span>Veamos que la serie <span class="math inline">\(\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}\)</span> converge.</p>
+<p>Para ello basta ver que se trata de una serie de términos positivos, y que</p>
+<p><span class="math display">\[
+\frac{2+\operatorname{sen}(n+1)}{2^n+n^2} \leq \frac{3}{2^n+n^2} \leq \frac{3}{2^n}
+\]</span></p>
+<p>Como se ha visto antes, la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, de manera que <span class="math inline">\(\sum \frac{3}{2^n}\)</span> también converge, y por el teorema anterior, <span class="math inline">\(\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}\)</span> también converge.</p>
+</div>
 
 <!-- 
 \subsection{Propiedades asociativas y conmutativas}
-Ya hemos dicho que el límite, $L$, de una serie convergente, $L=\lim\ser{a}$, no es, como a veces se dice, una ``suma de los infinitos términos'' de la sucesión $(a_n)_{n=1}^\infty$. ¿Qué sentido tiene eso de ``sumar infinitos términos''? Ninguno, desde luego. Lo que  dicho número verifica es que $\modulo{L-\sum_{j=1}^{n}a_j}$ se conserva menor que cualquier número \epos, a partir de un cierto \nN\ en adelante. Si bien, puede ser sugerente la interpretación de $\,L\,$ como ``la suma de los términos de la sucesión $(a_n)_{n=1}^\infty$'', no hay que olvidar que esto  no es más que una forma de hablar, y  que el límite de una serie convergente es, justamente, el límite de una sucesión de sumas y no debe confundirse con una operación algebraica. Por ello cabe preguntarse si las propiedades asociativa y conmutativa de la adición se conservan para series convergentes. De hecho, ya hemos visto que la propiedad conmutativa no se verifica en general, pues reordenando los términos de una serie convergente podemos obtener otra serie con suma distinta. Las cosas van mejor en lo que se refiere a la asociatividad. Precisemos estas ideas.
+Ya hemos dicho que el límite, $L$, de una serie convergente, $L=\lim\ser{a}$, no es, como a veces se dice, una ``suma de los infinitos términos'' de la sucesión $(a_n)_{n=1}^\infty$. ¿Qué sentido tiene eso de ``sumar infinitos términos''? Ninguno, desde luego. Lo que  dicho número verifica es que $\modulo{L-\sum_{j=1}^{n}a_j}$ se conserva menor que cualquier número \epos, a partir de un cierto   \nN\ en adelante. Si bien, puede ser sugerente la interpretación de $\,L\,$ como ``la suma de los términos de la sucesión $(a_n)_{n=1}^\infty$'', no hay que olvidar que esto  no es más que una forma de hablar, y  que el límite de una serie convergente es, justamente, el límite de una sucesión de sumas y no debe confundirse con una operación algebraica. Por ello cabe preguntarse si las propiedades asociativa y conmutativa de la adición se conservan para series convergentes. De hecho, ya hemos visto que la propiedad conmutativa no se verifica en general, pues reordenando los términos de una serie convergente podemos obtener otra serie con suma distinta. Las cosas van mejor en lo que se refiere a la asociatividad. Precisemos estas ideas.
 
 Sea \ser{a}\ la serie definida por la sucesión $(a_n)_{n=1}^\infty$. Dada una aplicación estrictamente creciente $\sigma:\N\rightarrow\N$, definamos una sucesión $(b_n)_{n=1}^\infty$\ por:
 \begin{equation}\label{eq:asociandoterminos}

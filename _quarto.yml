@@ -48,8 +48,8 @@ format:
   html:
     highlight-style: a11y
     theme:
-      dark: darkly
-      light: flatly
+      dark: [darkly, custom.scss]
+      light: [flatly, custom.scss]
     html-math-method: mathjax
   pdf:
     documentclass: scrreport

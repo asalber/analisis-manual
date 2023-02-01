@@ -459,7 +459,7 @@ $$
 $$
 :::
 
-### Derivadas implícitas
+## Derivadas implícitas
 
 Hasta hora siempre hemos trabajado con funciones de la forma $y=f(x)$ donde la variable $y$ depende de la variable $x$ según la función $f(x)$. Esta representación se conoce como explícita, por que la variable dependiente $y$ aparece despejada en el lado izquierdo de la igualdad. Sin embargo, como ya se vió en la @def-funcion, una una función real de variable real es una relación formada por pares $(x,y)\in \mathbb{R}\times\mathbb{R}$, de modo que también se puede representar de manera intensiva mediante una ecuación $F(x,y)=0$, que cumplen los puntos de la función y solo ellos. 
 
@@ -471,7 +471,7 @@ La función $y=x^2$ también se puede expresar implícitamente mediante la ecuac
 El problema de la representación implícita es que no toda ecuación en $x$ e $y$ define una función. Por ejemplo, la ecuación $y^2-x=0$ no define una función, ya que si se despeja $y$ de la ecuación se obtiene $y=\pm\sqrt{x}$, que no es una función ya que para cualquier valor de $x>0$, $y$ puede tomar dos valores, lo cual no está permitido en una función.
 :::
 
-Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $x$, si $y$ es derivable en un punto $(a,y_0)$, se puede calcular la derivada mediante el siguiente procedimiento:
+Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $x$, si $y$ es derivable en un punto $(x_0, y_0)$, se puede calcular la derivada mediante el siguiente procedimiento:
 
 1. Calcular la derivada de las expresiones de ambos lados de la ecuación. $F'(x,y)=0$. En el cálculo de estas derivadas hay que tener en cuenta que $y$ es una función que depende de $x$ y aplicar la regla de la cadena para derivarla.
 
@@ -481,7 +481,7 @@ Dada una ecuación $F(x,y)=0$, que define implícitamente $y$ como función de $
 
 4. Resolver la ecuación para $y'$. 
 
-5. Sustituir $x=a$, $y=y_0$.
+5. Sustituir $x=x_0$, $y=y_0$.
 
 :::{#exm-derivada-implicita}
 Dada la ecuación $e^y-x^2=0$ que define a $y$ como función implícita de $x$, veamos cómo calcular su derivada en el punto $(1,0)$ implícitamente
@@ -495,7 +495,7 @@ Sustituyendo $x=1$ e $y=0$, se tiene $y'(1) = \frac{2\dot 1}{e^0} = 2$.
 En este caso, es posible obtener la representación explícita de la función, ya que $e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)$. Si calculamos su derivada explícitamente, se tiene $y'=\frac{2}{x}$, y para $x=1$ se tiene $y'(1) = \frac{2}{1}=2$, que coincide con el resultado anterior. 
 :::
 
-Aún cuando la ecuación $F(x,y)=0$ no defina implícitamente a $y$ como función de $x$, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de $y$ con respecto a $x$ en un punto $(a,y_0)$ que cumpla la ecuación.
+Aún cuando la ecuación $F(x,y)=0$ no defina implícitamente a $y$ como función de $x$, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de $y$ con respecto a $x$ en un punto $(x_0, y_0)$ que cumpla la ecuación.
 
 :::{#exm-derivada-implicita-2}
 La ecuación $x^2-xy+y^2=1$ no define a $y$ como función explícita de $x$, ya que para $x=0$ se obtienen dos posibles valores de $y$, $0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1$. No obstante, en el punto $(0,1)$, se puede calcular la tasa de variación instantánea de $y$ con respecto a $x$,
