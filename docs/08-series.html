@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Enviar"
   }
 }</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -197,6 +200,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#concepto-de-serie" id="toc-concepto-de-serie" class="nav-link active" data-scroll-target="#concepto-de-serie"><span class="toc-section-number">8.1</span>  Concepto de serie</a></li>
   <li><a href="#convergencia-de-series" id="toc-convergencia-de-series" class="nav-link" data-scroll-target="#convergencia-de-series"><span class="toc-section-number">8.2</span>  Convergencia de series</a></li>
   <li><a href="#convergencia-de-series-de-términos-positivos" id="toc-convergencia-de-series-de-términos-positivos" class="nav-link" data-scroll-target="#convergencia-de-series-de-términos-positivos"><span class="toc-section-number">8.3</span>  Convergencia de series de términos positivos</a></li>
+  <li><a href="#convergencia-de-series-alternadas" id="toc-convergencia-de-series-alternadas" class="nav-link" data-scroll-target="#convergencia-de-series-alternadas"><span class="toc-section-number">8.4</span>  Convergencia de series alternadas</a></li>
+  <li><a href="#convergencia-absoluta" id="toc-convergencia-absoluta" class="nav-link" data-scroll-target="#convergencia-absoluta"><span class="toc-section-number">8.5</span>  Convergencia absoluta</a></li>
+  <li><a href="#cálculo-aproximado-de-sumas" id="toc-cálculo-aproximado-de-sumas" class="nav-link" data-scroll-target="#cálculo-aproximado-de-sumas"><span class="toc-section-number">8.6</span>  Cálculo aproximado de sumas</a></li>
   </ul>
 </nav>
     </div>
@@ -291,6 +297,10 @@ A_n &amp;= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i
 \end{align*}\]</span></p>
 <p>Esta serie se conoce como <em>serie armónica</em>.</p>
 </div>
+<p>En ocasiones es posible expresar el valor de la suma parcial de orden <span class="math inline">\(n\)</span> mediante una fórmula explícita que depende de <span class="math inline">\(n\)</span> y que se conoce como <em>forma cerrada</em> de la serie. Si una serie puede expresarse mediante una forma cerrada, resulta más rápido calcular el valor de la suma parcial de orden <span class="math inline">\(n\)</span> mediante la forma cerrada, que haciendo la propia suma de los <span class="math inline">\(n\)</span> primeros términos de la sucesión.</p>
+<div id="exr-serie-forma-cerrada" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8.1 </strong></span>Dada la serie <span class="math inline">\(\sum n\)</span>, su suma parcial de orden <span class="math inline">\(n\)</span> <span class="math inline">\(A_n=\sum_{i=1}^n n\)</span> puede expresarse mediante la forma cerrada <span class="math inline">\(A_n = \frac{1}{2}n(n+1)\)</span>.</p>
+</div>
 </section>
 <section id="convergencia-de-series" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="convergencia-de-series"><span class="header-section-number">8.2</span> Convergencia de series</h2>
@@ -312,6 +322,34 @@ A_n &amp;= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i
 <p><span class="math display">\[
 \sum_{n=1}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=1}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
 \]</span></p>
+<div>
+<div id="ggb-series-01">
+
+</div>
+<script>
+var params = {
+            "appName": "graphing", 
+            "width": 600, 
+            "height": 450, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": false,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            //"showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"nh59tcxp"
+            };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-series-01');
+    });
+</script>
+</div>
 </div>
 <div id="exm-serie-divergente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8.3 </strong></span>La serie <span class="math inline">\(\sum (-1)^n\)</span> diverge. Para probarlo, basta con ver que las sumas parciales de orden <span class="math inline">\(n\)</span> forman una sucesión alternada.</p>
@@ -465,8 +503,11 @@ Advertencia
 <p><span class="theorem-title"><strong>Ejemplo 8.5 </strong></span>Ya hemos visto antes que la serie <span class="math inline">\(\sum (-1)^n\)</span> no converge, porque la sucesión <span class="math inline">\(((-1)^n)_{n=1}^\infty\)</span> no converge.</p>
 <p>La serie <span class="math inline">\(\sum \frac{2n^2}{3n^2+n}\)</span> tampoco converge, pues <span class="math inline">\(\lim_{n\to\infty}\frac{2n^2}{3n^2+n}=\frac{2}{3}\neq 0\)</span>.</p>
 </div>
+<div id="exm-serie-p" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.6 </strong></span>La serie <span class="math inline">\(\sum \frac{1}{n^p}\)</span>, con <span class="math inline">\(p\in \mathbb{R}\)</span> se conoce como la serie <span class="math inline">\(p\)</span>. Usando el teorema anterior, es fácil probar que la serie diverge para <span class="math inline">\(p\leq 0\)</span>, ya que <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n^p}=\infty\)</span> si <span class="math inline">\(p&lt;0\)</span> y <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n^p}=1\)</span> si <span class="math inline">\(p=0\)</span>.</p>
+</div>
 <div id="exm-series-telescópicas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.6 </strong></span>Dada una sucesión <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, las series de la forma <span class="math inline">\(\sum (a_n-a_{n+1})\)</span> se conocen como <em>series telescópicas</em>. Es fácil ver que la suma parcial de los <span class="math inline">\(n\)</span> primeros términos es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.7 </strong></span>Dada una sucesión <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, las series de la forma <span class="math inline">\(\sum (a_n-a_{n+1})\)</span> se conocen como <em>series telescópicas</em>. Es fácil ver que la suma parcial de los <span class="math inline">\(n\)</span> primeros términos es</p>
 <p><span class="math display">\[\begin{align*}
 A_n &amp;= \sum_{i=1}^n (a_i-a_{i+1})\\
 &amp; = (a_1-a_2)+(a_2-a_3)+(a_3-a_4)+\cdots (a_n-a_{n+1})\\
@@ -524,7 +565,7 @@ Demostración
 </div>
 </div>
 <div id="thm-criterio-comparacion" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.4 </strong></span>Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> tales que <span class="math inline">\(a_n&lt;b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, entonces:</p>
+<p><span class="theorem-title"><strong>Teorema 8.4 (Criterio de comparación de series) </strong></span>Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> tales que <span class="math inline">\(a_n&lt;b_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, entonces:</p>
 <ol type="a">
 <li>Si <span class="math inline">\(\sum b_n\)</span> converge, <span class="math inline">\(\sum a_n\)</span> converge.</li>
 <li>Si <span class="math inline">\(\sum a_n\)</span> diverge, <span class="math inline">\(\sum b_n\)</span> diverge.</li>
@@ -551,13 +592,142 @@ Demostración
 </div>
 </div>
 <div id="exm-criterio-comparacion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.7 </strong></span>Veamos que la serie <span class="math inline">\(\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}\)</span> converge.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.8 </strong></span>Veamos que la serie <span class="math inline">\(\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}\)</span> converge.</p>
 <p>Para ello basta ver que se trata de una serie de términos positivos, y que</p>
 <p><span class="math display">\[
 \frac{2+\operatorname{sen}(n+1)}{2^n+n^2} \leq \frac{3}{2^n+n^2} \leq \frac{3}{2^n}
 \]</span></p>
 <p>Como se ha visto antes, la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, de manera que <span class="math inline">\(\sum \frac{3}{2^n}\)</span> también converge, y por el teorema anterior, <span class="math inline">\(\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}\)</span> también converge.</p>
 </div>
+<div id="thm-criterio-cociente" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.5 (Criterio del cociente) </strong></span>Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span>, si existe el límite</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \frac{a_n}{b_n} = l
+\]</span></p>
+<p>con <span class="math inline">\(l&gt;0\)</span>, entonces <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\(\sum b_n\)</span> converge.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\lim_{n\to\infty} \frac{a_n}{b_n} = l&gt;0\)</span>. Entonces, por la definición de límite, dado un <span class="math inline">\(\varepsilon=l/2\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\forall n\geq k\)</span> se tiene</p>
+<p><span class="math display">\[
+\left|\frac{a_n}{b_n}-l\right|&lt;\frac{l}{2} \Leftrightarrow \frac{l}{2}&lt; \frac{a_n}{b_n}&lt;\frac{3l}{2} \Leftrightarrow \frac{l}{2}b_n&lt;a_n&lt;\frac{3l}{2}b_n.
+\]</span></p>
+<p>Así pues, si <span class="math inline">\(\sum b_n\)</span> converge, también converge <span class="math inline">\(\sum \frac{3l}{2}b_n\)</span>, y como <span class="math inline">\(a_n&lt;\frac{3l}{2}b_n\)</span> <span class="math inline">\(\forall n\geq k\)</span>, por el criterio de comparación de series, se tiene que <span class="math inline">\(\sum a_n\)</span> también converge.</p>
+<p>Por otro lado, si <span class="math inline">\(\sum b_n\)</span> diverge, también diverge <span class="math inline">\(\sum \frac{l}{2}b_n\)</span>, y como <span class="math inline">\(\frac{l}{2}b_n&lt;a_n\)</span> <span class="math inline">\(\forall n\geq k\)</span>, por el criterio de comparación de series, se tiene que <span class="math inline">\(\sum a_n\)</span> también diverge.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-criterio-cociente" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.9 </strong></span>Veamos que la serie <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> converge. Ya hemos visto que la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, pero no podemos usar directamente el criterio de comparación de series porque <span class="math inline">\(\frac{1}{2^n-n}&gt;\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Sin embargo, usando el criterio del cociente se tiene</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \frac{\frac{1}{2^n-n}}{\frac{1}{2^n}} = \lim_{n\to\infty} \frac{2^n}{2^n-n} = \lim_{n\to\infty}\frac{1}{1-\frac{n}{2^n}} = 1&gt;0,
+\]</span></p>
+<p>por lo que, como <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> también.</p>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para poder aplicar el criterio del cociente, es necesario que <span class="math inline">\(\lim_{n\to\infty} \frac{a_n}{b_n}\)</span> exista y sea estrictamente positivo, ya que si <span class="math inline">\(\lim_{n\to\infty} \frac{a_n}{b_n}=0\)</span>, es posible que una sucesión converja y la otra no.</p>
+</div>
+</div>
+<div id="exm-no-aplicacion-criterio-cociente" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.10 </strong></span>Si tomamos la serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> y la serie armónica <span class="math inline">\(\frac{1}{n}\)</span>, se cumple que</p>
+<p><span class="math display">\[
+\lim_{n\to\infty}\frac{\frac{1}{2^n}}{\frac{1}{n}} = \lim_{n\to\infty}\frac{n}{2^n} = 0.
+\]</span></p>
+<p>Sin embargo, ya hemos visto que una converge y la otra no.</p>
+</div>
+</section>
+<section id="convergencia-de-series-alternadas" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="convergencia-de-series-alternadas"><span class="header-section-number">8.4</span> Convergencia de series alternadas</h2>
+<p>Los resultados de la sección anterior solo se aplican a series de términos positivos, pero en ocasiones, la sucesión a partir de la que se construye la serie es de términos alternados, es decir, el signo de los sucesivos términos va cambiando. Un ejemplo es la serie armónica alternada que ya se ha tratado. A continuación se presentan algunos resultados para estudiar este tipo de series.</p>
+<div id="thm-criterio-serie-alternada" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.6 (Criterio de la serie alternada) </strong></span>Dada una serie alternada <span class="math inline">\(\sum (-1)^{n-1} a_n\)</span>, con <span class="math inline">\(a_n&gt;0\)</span>, si cumple</p>
+<ol type="a">
+<li><span class="math inline">\(a_{n+1}\leq a_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>,</li>
+<li><span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>,</li>
+</ol>
+<p>entonces la serie converge.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos <span class="math inline">\(a_{n+1}\leq a_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>. Entonces, si construimos la sucesión de las sumas parciales de orden par, se tiene</p>
+<p><span class="math display">\[\begin{align*}
+A_2 &amp;= a_1-a_2\geq 0\\
+A_4 &amp;= a_1-a_2+a_3-a_4 = A_2+(a_3-a_4) \geq A_2\\
+A_6 &amp;= a_1-a_2+a_3-a_4+a_5-a_6 = A_4+(a_5-a_6) \geq A_4\\
+\vdots\\
+A_{2n} &amp;= a_1-a_2+a_3-a_4+\cdots+a_{2n-1}-a_{2n} = A_{2n-2}+a_{2n-1}-a_{2n} \geq A_{2n-2},
+\end{align*}\]</span></p>
+<p>de manera que se obtiene una sucesión monótona creciente.</p>
+<p>Por otro lado, si agrupamos los términos de la sucesión de la siguiente manera,</p>
+<p><span class="math display">\[
+A_{2n} = a_1 -(a_2-a_3)-(a_4-a_5)-\cdots -(a_{2n-2}-a_{2n-1})-a_{2n},
+\]</span></p>
+<p>es fácil ver que <span class="math inline">\(A_{2n}\leq a_1\)</span>, ya que todos los términos entre paréntesis son positivos, y también <span class="math inline">\(a_{2n}\)</span>. Así pues, por el <a href="#thm-criterio-acotacion">Teorema&nbsp;<span>8.3</span></a> la serie converge y <span class="math inline">\(\lim_{n\to\infty} A_{2n} = l\)</span>.</p>
+<p>Si calculamos ahora el límite de la sucesión de las sumas parciales de orden impar, se tiene,</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} A_{2n+1} = \lim_{n\to\infty} A_{2n} + a_{2n+1} = \lim_{n\to\infty} A_{2n} + \lim_{n\to\infty} a_{2n+1} = l + 0 = l.
+\]</span></p>
+<p>Por consiguiente, como las subsucesiones de los términos pares e impares convergen al mismo número, la sucesión de las sumas parciales de orden <span class="math inline">\(n\)</span> también converge a ese número, es decir <span class="math inline">\(\sum_{n=1}^\infty (-1)^{n-1}a_n = \lim_{n\to\infty} A_n = l\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-criterio-serie-alternada" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.11 </strong></span>La serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> cumple las condiciones del teorema anterior, ya que, <span class="math inline">\(\frac{1}{n+1}\leq \frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=0\)</span>, por lo que converge.</p>
+<p>Veamos ahora que la serie <span class="math inline">\(\sum (-1)^{n-1}\frac{n}{n^2+1}\)</span> también cumple las condiciones del teorema. La primera condición se cumple ya que,</p>
+<p><span class="math display">\[
+\begin{gathered}
+\frac{n+1}{(n+1)^2+1}\leq\frac{n}{n^2+1} \Leftrightarrow \frac{(n+1)^2+1}{n+1}\geq\frac{n^2+1}{n}\\
+\Leftrightarrow (n+1)+\frac{1}{n+1} \geq n+\frac{1}{n},
+\end{gathered}
+\]</span></p>
+<p>lo cual es cierto <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, por que, en particular, <span class="math inline">\(n+1\geq n+\frac{1}{n}\)</span>.</p>
+<p>Por otro lado,</p>
+<p><span class="math display">\[
+\lim_{n\to\infty}\frac{n}{n^2+1}= \lim_{n\to\infty}\frac{1}{n+\frac{1}{n}} = 0,
+\]</span> de manera que la segunda condición también se cumple, y por tanto, las serie converge.</p>
+</div>
+</section>
+<section id="convergencia-absoluta" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="convergencia-absoluta"><span class="header-section-number">8.5</span> Convergencia absoluta</h2>
+<div id="def-serie-absolutamente-convergente" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 8.3 (Serie absolutamente convergente) </strong></span>Una serie <span class="math inline">\(\sum a_n\)</span> es <em>absolutamente convergente</em> si la serie de los valores absolutos de sus términos <span class="math inline">\(\sum |a_n|\)</span> converge.</p>
+</div>
+</section>
+<section id="cálculo-aproximado-de-sumas" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="cálculo-aproximado-de-sumas"><span class="header-section-number">8.6</span> Cálculo aproximado de sumas</h2>
 
 <!-- 
 \subsection{Propiedades asociativas y conmutativas}

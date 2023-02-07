@@ -5,10 +5,10 @@ library(colorspace)
 
 # Colores
 color1 <- "#00BFC4"
-color2 <- "#F8766D"
+color2 <- "#F8766D" #rgb(248,118,109)
 color3 <- "#7CAE00"
 color4 <- "#C77CFF"
-color5 <- "#1187DE"
+color5 <- "#1187DE" #rgb(17,135,222)
 color6 <- "#FF2152"
 color7 <- "#03BF3D"
 color8 <- "#DB1286"

@@ -5,6 +5,9 @@ project:
 website:
   favicon: img/logos/favicon.ico
   reader-mode: true
+  search:
+    location: sidebar
+    type: overlay
   comments: 
     hypothesis:
       theme: clean
@@ -51,6 +54,8 @@ format:
       dark: [darkly, custom.scss]
       light: [flatly, custom.scss]
     html-math-method: mathjax
+    include-in-header:
+      - geogebra.html
   pdf:
     documentclass: scrreport
     papersize: a4
