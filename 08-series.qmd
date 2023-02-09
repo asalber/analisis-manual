@@ -63,7 +63,35 @@ A_3 &= 1+\frac{1}{2}+\frac{1}{3}\\
 A_n &= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i} 
 \end{align*}
 
-Esta serie se conoce como _serie armónica_.
+Esta serie se conoce como _serie armónica_. En la siguiente gráfica se puede apreciar cómo evoluciona la sucesión de sus sumas parciales.
+
+::: {.content-visible when-format="html"}
+<div id="ggb-serie-armonica"></div>
+
+<script>
+var params = {
+            "appName": "graphing", 
+            "width": 600, 
+            "height": 450, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": false,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            //"showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"efjzy9kw"
+            };
+    var ggbApplet1 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet1.inject('ggb-serie-armonica');
+    });
+</script>
+:::
 :::
 
 En ocasiones es posible expresar el valor de la suma parcial de orden $n$ mediante una fórmula explícita que depende de $n$ y que se conoce como _forma cerrada_ de la serie. Si una serie puede expresarse mediante una forma cerrada, resulta más rápido calcular el valor de la suma parcial de orden $n$ mediante la forma cerrada, que haciendo la propia suma de los $n$ primeros términos de la sucesión.
@@ -87,11 +115,8 @@ Si una serie no es convergente, se dice que es _divergente_.
 
 A veces interesa considerar series que empiezan en un índice distinto de 1. En tal caso, se usará la notación $\sum_{n\geq k}a_n$ para referirse a la serie, y $\sum_{n=k}^\infty a_n$ para referirse a su límite.
 
-:::{#exm-series-geometricas}
-## Series geométricas
-Dado un número $x$, la sucesión $(1+x+x^{2}+\cdots+x^{n})_{n=1}^\infty$ se llama _serie geométrica_ de razón $x$ y se representa $\sum x^n$.
-
-Veamos que la serie geométrica $\sum \left(\frac{1}{2}\right)^n$ converge. 
+:::{#exm-serie-paradoja-zenon}
+Veamos que la serie $\sum \left(\frac{1}{2}\right)^n$ de la paradoja de la dicotomía de Zenon converge. 
 
 $$
 \sum_{i=1}^n \left(\frac{1}{2}\right)^i = 1 + \frac{1}{2} + \cdots +\frac{1}{2^n} = \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} = 2-\frac{1}{2^n}.
@@ -104,7 +129,7 @@ $$
 $$
 
 ::: {.content-visible when-format="html"}
-<div id="ggb-series-01"></div>
+<div id="ggb-series-paradoja-zenon"></div>
 
 <script>
 var params = {
@@ -124,9 +149,9 @@ var params = {
             "transparentGraphics": true,
             "material_id":"nh59tcxp"
             };
-    var ggbApplet = new GGBApplet(params, true);
+    var ggbApplet2 = new GGBApplet(params, true);
     window.addEventListener("load", function() { 
-        ggbApplet.inject('ggb-series-01');
+        ggbApplet2.inject('ggb-series-paradoja-zenon');
     });
 </script>
 :::
@@ -230,14 +255,16 @@ Sea $(A_n)_{n=1}^\infty$ la sucesión de las sumas parciales de $\sum a_n$. Ento
 
 El siguiente teorema establece una condición necesaria para la convergencia de una serie.
 
-:::{#thm-condicion-convergencia-series}
-## Condición de convergencia
-Si la serie $\sum a_n$ converge, entonces $\lim_{n\to\infty} a_n =0$.
+:::{#thm-criterio-divergencia-series}
+## Criterio de divergencia
+Dada una serie $\sum a_n$, si $\lim_{n\to\infty} a_n \neq 0$, entonces la serie diverge.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
+Probaremos que si la serie converge, entonces $\lim_{n\to\infty}=0$. 
+
 Sea $(A_n)_{n=1}^\infty$ la sucesión de las sumas parciales de de $\sum a_n$. Si la serie $\sum a_n$ es convergente, entonces existe $\lim_{n\to\infty}A_n=l$, y por las propiedades de las colas de sucesiones, también se cumple que $\lim_{n\to\infty}A_{n-1}=l$. 
 
 Por otro lado, como $a_n=A_n-A_{n-1}$ $\forall n\geq 2$, se deduce que 
@@ -249,22 +276,145 @@ $$
 :::
 
 :::{.callout-warning}
-El teorema anterior establece una condición necesaria, pero no suficiente, para la convergencia de una serie. Por ejemplo, como se ha visto antes, la serie armónica $\sum \frac{1}{n}$ no converge pero $\lim_{n\to\infty}\frac{1}{n}=0$.
-Por tanto, el hecho que de que $\lim_{n\to\infty} a_n =0$ no garantiza que la serie $\sum a_n$ converja, pero si $(a_n)_{n=1}^\infty$ no converge, o $\lim_{n\to\infty} a_n \neq 0$, entonces se puede concluir que la serie $\sum a_n$ diverge.
+El teorema anterior permite establecer la divergencia de una serie cuando $\lim_{n\to\infty} a_n \neq 0$, pero no dice nada cuando $\lim_{n\to\infty} a_0 = 0$. De hecho, en este último caso, puede ocurrir que la serie converja, como ocurre con la serie $\sum \frac{1}{2^n}$ o que diverja como ocurre con la serie armónica $\sum \frac{1}{n}$.
 :::
 
-:::{#exm-series-divergentes}
+:::{#exm-criterio-divergencia}
 Ya hemos visto antes que la serie $\sum (-1)^n$ no converge, porque la sucesión $((-1)^n)_{n=1}^\infty$ no converge.
 
 La serie $\sum \frac{2n^2}{3n^2+n}$ tampoco converge, pues $\lim_{n\to\infty}\frac{2n^2}{3n^2+n}=\frac{2}{3}\neq 0$.
 :::
 
-:::{#exm-serie-p}
-La serie $\sum \frac{1}{n^p}$, con $p\in \mathbb{R}$ se conoce como la serie $p$. Usando el teorema anterior, es fácil probar que la serie diverge para $p\leq 0$, ya que $\lim_{n\to\infty} \frac{1}{n^p}=\infty$ si $p<0$ y $\lim_{n\to\infty} \frac{1}{n^p}=1$ si $p=0$.
+:::{#cor-divergencia-serie-inversa-convergente}
+Dada una serie $\sum a_n$ convergente, si $a_n\neq 0$ $\forall n\in\mathbb{N}$, entonces la serie de los términos inversos $\sum a_n^{-1}$ diverge.
 :::
 
-:::{#exm-series-telescópicas}
-Dada una sucesión $(a_n)_{n=1}^\infty$, las series de la forma $\sum (a_n-a_{n+1})$ se conocen como _series telescópicas_. Es fácil ver que la suma parcial de los $n$ primeros términos es
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La demostración es una consecuencia inmediata del criterio de divergencia, ya que si $\sum a_n$ converge, entonces $\lim_{n\to\infty} a_n = 0$ y, por tanto, $\lim_{n\to\infty} a_n^{-1} = \frac{1}{\lim_{n\to\infty} a_n} = \infty$, por lo que la serie $\sum a_n^{-1}$ diverge.
+:::
+:::
+
+## Series geométricas
+
+En muchas casos de la vida real, aparecen sucesiones cuyo término $n$ se obtiene multiplicando el término anterior por un mismo valor.
+
+:::{#def-serie-geometrica}
+## Series geométricas
+Dados dos números $a, r\in\mathbb{R}$, la sucesión $(a+ar+ar^{2}+\cdots+ar^{n})_{n=1}^\infty$ se llama _serie geométrica_ de razón $r$ y se representa $\sum ar^n$.
+:::
+
+:::{#exm-serie-geometrica}
+La serie $\sum \frac{1}{2^n}$ de la paradoja de la dicotomía de Zenon es una serie geométrica de razón $1/2$.
+:::
+
+:::{#prp-suma-parcial-serie-geometrica}
+La suma parcial de orden $n$ de una serie geométrica $\sum ar^n$ es 
+
+$$
+A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La suma parcial de orden $n$ de la serie geométrica de razón $r$ es 
+
+$$
+A_n = a + ar + ar^2 + ar^3 + \cdots + ar^n
+$$
+
+Si multiplicamos $A_n$ por la razón de las serie se obtiene
+
+$$
+rA_n = ar + ar^2 + ar^3 + \cdots + ar^n + a^{n+1}.
+$$
+
+Y si restamos las dos expresiones anteriores se obtiene
+
+$$
+A_n-rA_n = a - a^{n+1} \Leftrightarrow A_n = \frac{a-a^{n+1}}{1-r}.
+$$
+:::
+:::
+
+:::{#exm-suma-parcial-serie-geometrica}
+La suma parcial de orden $10$ de la serie $\sum \frac{1}{2^n}$ es $A_n = \sum_{i=0}^n \frac{1}{2^n} = \frac{1-\frac{1}{2^{11}}}{1-\frac{1}{2}} \approx 1.9990234375$.
+:::
+
+:::{#cor-convergencia-series-geometricas}
+Una serie geométrica $\sum ar^n$ de razón $r$ converge si y solo si $|r|<1$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La demostración es fácil a partir de la proposición anterior y se deja como ejercicio.
+:::
+:::
+
+:::{#exm-convergencia-series-geometricas}
+La serie geométrica $\sum \frac{1}{2^n}$ converge ya que su razón es $\frac{1}{2}<1$. Sin embargo, la serie geométrica $\sum \left(\frac{3}{2}\right)^n$ no converge, ya que $\frac{3}{2}\geq 1$.
+:::
+
+## Series $p$
+
+Otro tipo de series que aparece con bastante frecuencia en contextos reales son las llamadas series $p$, de las que la serie armónica es un caso particular.
+
+:::{#def-serie-p}
+## Series $p$
+Dado un número $p\in\mathbb{R}$, la serie $\sum \frac{1}{n^p}$ se conoce como serie $p$.
+:::
+
+:::{#exm-series-p}
+La serie armónica $\frac{1}{n}$ es una serie $p$ con $p=1$, y la serie de los inversos de los cuadrados $\frac{1}{n^2}$ es otra serie $p$ con $p=2$.
+:::
+
+:::{#prp-convergencia-series-p}
+Una serie $p$ $\sum \frac{1}{n^p}$ converge si y solo si $p>1$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Usando el criterio de divergencia, es fácil probar que la serie diverge para $p\leq 0$, ya que $\lim_{n\to\infty} \frac{1}{n^p}=\infty$ si $p<0$ y $\lim_{n\to\infty} \frac{1}{n^p}=1$ si $p=0$.
+
+Más adelante se probará también que la serie $p$ diverge para $0<p\leq 1$ y converge para $p>1$.
+:::
+:::
+
+:::{#exm-convergencia-series-p}
+Ya se ha visto que la serie armónica $\sum \frac{1}{n}$ diverge, ya que $p=1$, mientras que la serie $\sum \frac{1}{n^2}$ converge al ser $p=2>1$. De hecho, la suma exacta de esta última serie es el famoso [problema de Basilea](https://es.wikipedia.org/wiki/Problema_de_Basilea) que consiguió resolver Euler, demostrando que que $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}$ (la demostración se escapa de los conocimientos de este curso y puede verse en el enlace anterior).
+:::
+
+[![Graficador de Series](img/logos/logo-geogebra.png)](https://www.geogebra.org/classic/e4ynyzhn)
+
+## Series telescópicas
+
+Otro tipo de serie, menos frecuente, pero también interesante, son las series cuyos términos se van cancelando sucesivamente, de manera que la serie colapsa.
+
+:::{#def-series-telescopicas}
+Dada una sucesión $(a_n)_{n=1}^\infty$, las series de la forma $\sum (a_n-a_{n+1})$ se llaman _series telescópicas_.
+:::
+
+:::{#exm-series-teslecopicas}
+La serie $\sum \frac{1}{n^2+n}$ es una serie telescópica, ya que 
+
+$$
+\sum \frac{1}{n^2+1} = \sum \frac{1}{n}-\frac{1}{n+1}.
+$$
+:::
+
+:::{#prp-convergencia-series-telescopicas}
+Una serie telescópica $\sum (a_n-a_{n+1})$ converge si y solo si la sucesión $(a_n)_{n=1}^\infty$ converge.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Es fácil ver que la suma parcial de los $n$ primeros términos es
 
 \begin{align*}
 A_n &= \sum_{i=1}^n (a_i-a_{i+1})\\ 
@@ -275,20 +425,15 @@ A_n &= \sum_{i=1}^n (a_i-a_{i+1})\\
 Por tanto, 
 
 $$
-\lim_{n\to\infty} A_n = \lim_{n\to\infty} a_1-a_{n+1} = a_1 - \lim_{n\to\infty} a_{n+1},$$
+\lim_{n\to\infty} A_n = \lim_{n\to\infty} a_1-a_{n+1} = a_1 - \lim_{n\to\infty} a_{n+1},
+$$
 
-de manera que si existe $\lim_{n\to\infty} a_n=l$, la serie telescópica converge y $\sum_{n=1}^\infty (a_n-a_{n+1}) = a_1-l$.
+de manera que si existe $\lim_{n\to\infty} a_n=l$, la serie telescópica converge y $\sum_{n=1}^\infty (a_n-a_{n+1}) = a_1-l$, y si no existe $\lim_{n\to\infty} a_n$, la serie diverge.
+:::
 :::
 
-:::{#cor-divergencia-serie-inversa-convergente}
-Dada una serie $\sum a_n$ convergente, si $a_n\neq 0$ $\forall n\in\mathbb{N}$, entonces la serie de los términos inversos $\sum a_n^{-1}$ diverge.
-:::
-
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-La demostración es una consecuencia inmediata del teorema anterior, ya que si $\sum a_n$ converge, entonces $\lim_{n\to\infty} a_n = 0$ y, por tanto, $\lim_{n\to\infty} a_n^{-1} = \frac{1}{\lim_{n\to\infty} a_n} = \infty$, por lo que la serie $\sum a_n^{-1}$ diverge.
-:::
+:::{#exm-convergencia-series-telescopicas}
+La serie telescópica $\sum \frac{1}{n}-\frac{1}{n+1}$ converge ya que $\lim_{n\to\infty}\frac{1}{n} = 0$, y por tanto, $\sum_{n=1}^\infty \frac{1}{n}\frac{1}{n+1} = 1$.
 :::
 
 ## Convergencia de series de términos positivos
@@ -394,19 +539,14 @@ Sin embargo, ya hemos visto que una converge y la otra no.
 Los resultados de la sección anterior solo se aplican a series de términos positivos, pero en ocasiones, la sucesión a partir de la que se construye la serie es de términos alternados, es decir, el signo de los sucesivos términos va cambiando. Un ejemplo es la serie armónica alternada que ya se ha tratado. A continuación se presentan algunos resultados para estudiar este tipo de series. 
 
 :::{#thm-criterio-serie-alternada}
-## Criterio de la serie alternada
-Dada una serie alternada $\sum (-1)^{n-1} a_n$, con $a_n>0$, si cumple 
-
-a. $a_{n+1}\leq a_n$ $\forall n\in\mathbb{N}$,
-b. $\lim_{n\to\infty} a_n = 0$,
-
-entonces la serie converge. 
+## Criterio de la serie alternada (Leibniz)
+Dada una serie alternada $\sum (-1)^{n-1} a_n$, con $a_n>0$, si $(a_n)_{n=1}^\infty$ es monótona decreciente y $\lim_{n\to\infty} a_n = 0$, entonces la serie converge. 
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Supongamos $a_{n+1}\leq a_n$ $\forall n\in\mathbb{N}$ y $\lim_{n\to\infty} a_n = 0$. Entonces, si construimos la sucesión de las sumas parciales de orden par, se tiene
+Supongamos que $(a_n)_{n=1}^\infty$ es monótona decreciente, es decir, $a_{n+1}\leq a_n$ $\forall n\in\mathbb{N}$, y además $\lim_{n\to\infty} a_n = 0$. Entonces, si construimos la sucesión de las sumas parciales de orden par, se tiene
 
 \begin{align*}
 A_2 &= a_1-a_2\geq 0\\
@@ -464,6 +604,63 @@ de manera que la segunda condición también se cumple, y por tanto, las serie c
 ## Serie absolutamente convergente
 Una serie $\sum a_n$ es _absolutamente convergente_ si la serie de los valores absolutos de sus términos $\sum |a_n|$ converge.
 :::
+
+Si la serie es de términos positivos, entonces $|a_n|=a_n$ $\forall n\in\mathbb{N}$ y, por tanto, la convergencia y la convergencia absoluta son equivalentes. Pero si la serie tiene términos negativos, puede ocurrir que la serie sea convergente pero no absolutamente convergente.
+
+:::{#exm-serie-absolutamente-convergente}
+La serie $\sum \frac{(-1)^n}{n^2}$ es absolutamente convergente ya que $\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}$, que es convergente al ser una serie $p$ con $p=2$.
+:::
+
+:::{#def-serie-condicionalmente-convergente}
+## Serie condicionalmente convergente
+Una serie $\sum a_n$ es _condicionalmente convergente_ si es convergente pero no absolutamente convergente.
+:::
+
+:::{#exm-serie-condicionalmente-convergente}
+Ya hemos visto que la serie armónica alternada $\sum \frac{(-1)^n}{n}$ es convergente, pero no es absolutamente convergente, ya que $\sum \left|\frac{(-1)^n}{n}\right|=\sum \frac{1}{n}$, que se trata de la serie armónica, y por tanto, no converge. Por tanto la serie armónica alternada es condicionalmente convergente.
+:::
+
+:::{#thm-condicion-convergencia-absoluta}
+Si una serie es absolutamente convergente, entonces es convergente.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Partimos del hecho de que $a_n=|a_n|$ o $a_n=-|a_n|$, y por tanto, $a_n+|a_n|= 2|a_n|$ o $a_n+|a_n|=0$, y se tiene que $0\leq a_n+|a_n|\leq 2|a_n|$ $\forall n\in\mathbb{N}$. 
+Como $\sum |a_n|$ converge, $\sum 2|a_n|$ también converge, y por el criterio de comparación de series se tiene que $\sum a_n+|a_n|$ converge. De aquí se deduce fácilmente que
+
+$$
+\sum a_n = \sum a_n+|a_n|-|a_n| = \sum (a_n+|a_n|)-|a_n| = \sum (a_n+|a_n|)-\sum |a_n|,
+$$
+que converge por ser la resta de dos series convergentes.
+:::
+:::
+
+:::{#thm-criterio-razon}
+Dada una serie $\sum a_n$, se cumple:
+
+a. Si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l<1$, entonces la serie es absolutamente convergente.
+b. Si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$, o no existe el límite, entonces la serie es divergente.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+
+:::
+:::
+
+:::{#exm-criterio-razon}
+Veamos que la serie $\sum (-1)^n \frac{n^2}{2^n}$ es absolutamente convergente aplicando el criterio de la razón. 
+
+\begin{align*}
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| &= \lim_{n\to\infty} \left|\frac{\frac{(-1)^{n+1}(n+1)^2}{2^{n+1}}}{\frac{(-1)^n n^2}{2^n}}\right| = \lim_{n\to\infty} \frac{(n+1)^2}{2^{n+1}}\frac{2^n}{n^2}\\ 
+&= \lim_{n\to\infty}\frac{1}{2}\left(\frac{n+1}{n}\right)^2 = \frac{1}{2}\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^2 = \frac{1}{2}<1,
+\end{align*}
+y por tanto, la serie es absolutamente convergente.
+:::
+
 
 ## Cálculo aproximado de sumas
 
