@@ -39,7 +39,7 @@ En este capítulo estudiaremos estas sumas infinitas y veremos técnicas para ca
 
 :::{#def-serie}
 ## Serie
-Dada una sucesión de números reales $(a_n)_{n=1}^\infty$, se llama _serie_ de término general $a_n$ a la sucesión $(A_n)_{n=1}^\infty$, cuyos términos se obtienen sumando consecutivamente los términos $n$ primeros términos de $(a_n)_{n=1}^\infty$, es decir,
+Dada una sucesión de números reales $(a_n)_{n=1}^\infty$, se llama _serie_ de término general $a_n$ a la sucesión $(A_n)_{n=1}^\infty$, cuyos términos se obtienen sumando consecutivamente los $n$ primeros términos de $(a_n)_{n=1}^\infty$, es decir,
 
 $$
 (A_n)_{n=1}^\infty= \left(\sum_{i=1}^na_i\right)_{n=1}^\infty.
@@ -96,7 +96,7 @@ var params = {
 
 En ocasiones es posible expresar el valor de la suma parcial de orden $n$ mediante una fórmula explícita que depende de $n$ y que se conoce como _forma cerrada_ de la serie. Si una serie puede expresarse mediante una forma cerrada, resulta más rápido calcular el valor de la suma parcial de orden $n$ mediante la forma cerrada, que haciendo la propia suma de los $n$ primeros términos de la sucesión.
 
-:::{#exr-serie-forma-cerrada}
+:::{#exm-serie-forma-cerrada}
 Dada la serie $\sum n$, su suma parcial de orden $n$ $A_n=\sum_{i=1}^n n$ puede expresarse mediante la forma cerrada $A_n = \frac{1}{2}n(n+1)$.
 :::
 
@@ -638,16 +638,33 @@ que converge por ser la resta de dos series convergentes.
 :::
 
 :::{#thm-criterio-razon}
+## Criterio de la razón (D'Alembert)
 Dada una serie $\sum a_n$, se cumple:
 
 a. Si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l<1$, entonces la serie es absolutamente convergente.
-b. Si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$, o no existe el límite, entonces la serie es divergente.
+b. Si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$ o $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty$, entonces la serie es divergente.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
+Veamos la prueba de cada caso. 
 
+a. Supongamos que $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l<1$ y sea $r$ tal que $l<r<1$. Por la definición de límite se tiene que existe $k\in\mathbb{N}$ tal que $\left|\frac{a_{n+1}}{a_n}\right|<r$ $\forall n\geq k$, es decir, $|a_{n+1}|<|a_n|r$ $\forall n\geq k$. De aquí se deduce que 
+
+    \begin{align*}
+    |a_{k+1}| &< |a_k|r\\ 
+    |a_{k+2}| &< |a_{k+1}|r < |a_k|r^2\\
+    |a_{k+3}1 &< |a_{k+2}|r < |a_{k+1}|r^2 < |a_k|r^3\\
+    \vdots \\
+    |a_{k+n}| &< |a_k|r^n.
+    \end{align*}
+
+    Así pues, como $\sum |a_k|r^n$ es una serie geométrica con $r<1$, converge, y aplicando el criterio de comparación de series de términos positivos, $\sum_{n\geq k} |a_n|$ también converge, y como un número finito de sumandos no influye en la convergencia de la serie, se concluye que $\sum a_n$ converge.
+
+b. Supongamos ahora $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$. Entonces existe $k\in\mathbb{N}$ tal que $\left|\frac{a_{n+1}}{a_n}\right|>1$ $\forall n\geq k$, es decir, $|a_{n+1}|>|a_n|$ $\forall n\geq k$, de donde se deduce que $\lim_{n\to\infty} a_n\neq 0$, y según el criterio de la divergencia, $\sum a_n$ diverge.
+
+    El mismo razonamiento se puede aplicar si $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty$.
 :::
 :::
 
@@ -661,8 +678,165 @@ Veamos que la serie $\sum (-1)^n \frac{n^2}{2^n}$ es absolutamente convergente a
 y por tanto, la serie es absolutamente convergente.
 :::
 
+:::{.callout-warning}
+$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$, el criterio de la razón no garantiza nada, es decir, la serie podría ser convergente o divergente.
+:::
 
-## Cálculo aproximado de sumas
+:::{#thm-criterio-raiz}
+## Criterio de la raíz (Cauchy)
+Dada una serie $\sum a_n$, se cumple:
+
+a. Si $\lim_{n\to\infty}\sqrt[n]{|a_n|}=l<1$, entonces la serie es absolutamente convergente.
+b. Si $\lim_{n\to\infty}\sqrt[n]{|a_n|}=l>1$, o $\lim_{n\to\infty}\sqrt[n]{|a_n|}=\infty$, entonces la serie es divergente.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La demostración es similar a la del criterio de la razón.
+
+a. Supongamos que $\lim_{n\to\infty}\sqrt[n]{|a_n|}=l<1$ y sea $r$ tal que $l<r<1$. Por la definición de límite se tiene que existe $k\in\mathbb{N}$ tal que $\sqrt[n]{|a_n|}<r$ $\forall n\geq k$, es decir, $|a_{n}|<r^n$ $\forall n\geq k$. Como $\sum r^n$ es una serie geométrica con $r<1$, converge, y aplicando el criterio de comparación de series de términos positivos, $\sum_{n\geq k} |a_n|$ también converge, y como un número finito de sumandos no influye en la convergencia de la serie, se concluye que $\sum a_n$ converge.
+
+b. Supongamos que $\lim_{n\to\infty}\sqrt[n]{|a_n|}=l>1$ y sea $r$ tal que $1<r<l$. Por la definición de límite se tiene que existe $k\in\mathbb{N}$ tal que $\sqrt[n]{|a_n|}>r$ $\forall n\geq k$, es decir, $|a_{n}|>r^n$ $\forall n\geq k$. Como $\sum r^n$ es una serie geométrica con $r>1$, diverge, y aplicando el criterio de comparación de series de términos positivos, $\sum_{n\geq k} |a_n|$ también diverge, y por tanto $\sum a_n$ diverge.
+:::
+:::
+
+:::{#exm-criterio-raíz}
+Veamos que la serie $\sum \left(\frac{3n}{2n+1}\right)^n$ diverge aplicando el criterio de la raíz. Para ello basta ver que 
+
+$$
+\lim_{n\to\infty} \sqrt[n]{\left(\frac{3n}{2n+1}\right)^n} = \lim_{n\to\infty} \frac{3n}{2n+1} = \lim_{n\to\infty} \frac{3}{2+\frac{1}{n}} = \frac{3}{2} >1.
+$$
+::: 
+
+ 
+<!-- ## Cálculo aproximado de sumas
+
+En muchas ocasiones, aún cuando se pueda probar que una serie converge, puede ser difícil encontrar su suma, por lo que tendremos que conformarnos con una aproximación tomando el valor de su suma parcial de orden $n$ para algún $n$ en particular. En estos casos, lo importante es disponer de una cota del error cometido lo suficientemente pequeña. -->
+
+
+## Series de potencias
+
+Del mismo modo que hemos estudiado las series que se obtienen a partir de una sucesión numérica, en Análisis resulta también interesante estudiar las series que se obtienen a partir de una [sucesión de funciones](04-sucesiones.qmd#sucesiones-de-funciones). 
+
+:::{#def-serie-funcional}
+## Serie funcional
+Dada una sucesión de funciones $(f_n)_{n=1}^\infty$, 
+se llama _serie de funciones_  o _serie funcional_ de término general $f_n$ a la sucesión $(F_n)_{n=1}^\infty$, cuyos términos se obtienen sumando consecutivamente las $n$ primeras funciones de $(f_n)_{n=1}^\infty$, es decir,
+
+$$
+(F_n)_{n=1}^\infty= \left(\sum_{i=1}^nf_i\right)_{n=1}^\infty.
+$$
+
+El número $F_n=\sum_{i=1}^n f_i$ se llama _suma funcional parcial de orden_ $n$ de la serie funcional, y habitualmente utilizaremos la notación $\sum f_n$ para referirnos a la serie funcional de término general $f_n$.
+:::
+
+:::{#-exm-serie-funcional}
+Las primeras sumas funcionales parciales de la serie funcional $\sum \frac{x}{n}$ son 
+
+\begin{align*}
+F_1 &= x\\
+F_2 &= x+\frac{x}{2}\\ 
+F_3 &= x+\frac{x}{2}+\frac{x}{3}\\ 
+\vdots\\ 
+F_n &= \sum_{i=1}^n \frac{x}{i}
+\end{align*}
+:::
+
+:::{.callout-important}
+Debe quedar claro que una serie funcional es una sucesión funcional, y por tanto, todos los resultados vistos para [sucesiones funcionales](04-sucesiones.qmd#sucesiones-de-funciones) son válidos para las series funcionales.
+:::
+
+Una serie funcional puede ser convergente para algunos valores de $x$ y divergente para otros.
+
+:::{#exm-convergencia-puntual}
+La serie funcional $\sum x^n$ es una serie geométrica de razón $x$, de modo que, será convergente cuando $|x|<1$ y divergente en caso contrario.
+:::
+
+:::{#def-dominio-convergencia-puntual-serie-funcional}
+## Dominio de convergencia puntual de una serie funcional
+Dada una serie funcional $\sum f_n$, se llama _dominio de convergencia puntual_ de las serie al conjunto $\mathcal{C}=\{x\in\mathbb{R}: \sum f_n(x) \mbox{ converge}\}$
+:::
+
+:::{#def-funcion-suma}
+## Función suma de una serie funcional
+Dada una serie funcional $\sum f_n$ con dominio de convergencia puntual $\mathcal{C}$, se llama _función suma_ de la serie, a la función $F:\mathcal{C}\to\mathbb{R}$ definida por 
+$$
+F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
+$$
+:::
+
+De particular interés son las series que se obtienen a partir de sucesiones de la forma $(c_nx^n)_{n=1}^\infty$ que dan lugar a polinomios. Como ya vimos con los [polinomios de Taylor](07-derivadas.qmd#polinomios-de-taylor), estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.
+
+:::{#def-serie-potencias}
+## Serie de potencias
+Dado un número real $a\in\mathbb{R}$ y una sucesión de números reales $(c_n)_{n=0}^\infty$, se llama _serie de potencias centrada en $a$_ a la serie $\sum c_n(x-a)^n$.
+
+La sucesión $(c_n)_{n=0}^\infty$ se llama _sucesión de coeficientes de la serie_, y al término $c_0$ se le llama _termino independiente_.
+:::
+
+:::{#exm-serie-potencias}
+Tomando $a=0$ y la sucesión de coeficientes $\left(\frac{1}{n}\right)_{n=1}^\infty$, se tiene la serie de potencias $\sum \frac{x^n}{n}$, cuyas primeras sumas funcionales parciales son 
+
+\begin{align*}
+F_1 &= x\\ 
+F_2 &= x+\frac{x^2}{2}\\ 
+F_3 &= x+\frac{x^2}{2}+\frac{x^3}{3}\\ 
+\vdots\\ 
+F_n &= \sum_{i=1}^n \frac{x^i}{i}
+\end{align*}
+:::
+
+Para cualquier serie de potencias $\sum c_n(x-a)^n$, está claro que $a$ pertenece al dominio de convergencia puntual de la serie, pues para $x=a$ se tiene $\sum_{n=1}^\infty c_n(a-a)^n = c_0$. Veremos a continuación, para qué otros valores de $x$ la serie de potencias converge.
+ 
+:::{#def-radio-convergencia}
+## Radio de convergencia de una serie de potencias
+Dada una serie de potencias $\sum c_n(x-a)^n$, se define el _radio de convergencia_ de la serie como 
+
+$$
+R = \frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}
+$$
+:::
+
+El siguiente teorema nos permite definir el dominio de convergencia puntual de una serie de potencias.
+
+:::{#thm-dominio-convergencia-serie-potencias}
+Dada una serie de potencias $\sum c_n(x-a)^n$ con radio de convergencia $R$, se cumple
+
+a. La serie converge para todo $|x-a|<R$.
+b. La serie diverge para todo $|x-a|>R$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Aplicaremos el criterio de la raíz para estudiar la convergencia absoluta de la serie $\sum c_n(x-a)^n$.
+
+$$
+\lim_{n\to\infty} \sqrt[n]{|c_n(x-a)^n|} = \lim_{n\to\infty} \sqrt[n]{|c_n|}\sqrt[n]{|(x-a)|^n} = \frac{|x-a|}{R}.
+$$
+
+Por tanto, la serie converge si $\frac{|x-a|}{R}<1$, es decir, si $|x-a|<R$, y diverge si $|x-a|<R$.
+:::
+:::
+
+:::{.callout-warning}
+El teorema anterior no afirma nada sobre los puntos $|x-a|=R$. De hecho, en estos los puntos la serie puede converger o divergir. 
+:::
+
+:::{#exm-dominio-convergencia-serie-potencias}
+Veamos cuál es el dominio de convergencia puntual de la serie $\sum \frac{(x-2)^n}{n}$. El radio de convergencia de la serie es 
+
+$$
+R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
+$$
+
+Por tanto, la serie converge para todo $|x-2|<1$, es decir, $1<x<3$. En $x=1$ y $x=3$ el teorema anterior no dice nada, pero podemos estudiar la convergencia de estos dos casos particulares. En $x=1$ tenemos la serie $\sum \frac{(-1)^n}{n}$ que es la serie armónica alternada, y por tanto, converge. Y en $x=3$ tenemos la serie $\sum \frac{1}{n}$ que es la serie armónica, y por tanto diverge. 
+
+Así pues, el dominio de convergencia puntal de la serie es el intervalo $[1,3)$.
+:::
+
+
 
 <!-- 
 \subsection{Propiedades asociativas y conmutativas}
