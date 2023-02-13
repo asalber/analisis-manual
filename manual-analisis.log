@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  5 DEC 2022 23:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  14 FEB 2023 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -828,11 +828,11 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@proposition=\count341
-\c@theorem=\count342
-\c@definition=\count343
-\c@corollary=\count344
-\c@example=\count345
+\c@example=\count341
+\c@proposition=\count342
+\c@corollary=\count343
+\c@theorem=\count344
+\c@definition=\count345
  (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count346
@@ -961,11 +961,11 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 22
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<img/logos/infinito.png, id=7, 416.50342pt x 187.33145pt>
-File: img/logos/infinito.png Graphic file (type png)
-<use img/logos/infinito.png>
-Package pdftex.def Info: img/logos/infinito.png  used on input line 237.
-(pdftex.def)             Requested size: 167.2975pt x 75.24567pt.
+<img/logos/sticker.png, id=7, 124.7862pt x 144.54pt>
+File: img/logos/sticker.png Graphic file (type png)
+<use img/logos/sticker.png>
+Package pdftex.def Info: img/logos/sticker.png  used on input line 237.
+(pdftex.def)             Requested size: 124.79158pt x 144.54623pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 243.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1009,7 +1009,7 @@ Package pdftex.def Info: img/logos/aprendeconalf.png  used on input line 244.
 
 
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/logos/infinito.png> <./img/logos/aprendeconalf.png>]
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/logos/sticker.png> <./img/logos/aprendeconalf.png>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1018,25 +1018,30 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 255
  (./manual-analisis.toc [2
 
 ]
-Overfull \hbox (1.09496pt too wide) detected at line 72
- []\T1/lmss/bx/n/10.95 103
+Overfull \hbox (1.09496pt too wide) detected at line 73
+ []\T1/lmss/bx/n/10.95 104
  []
 
 [3]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 105.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 106.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (1.09496pt too wide) detected at line 109
- []\T1/lmss/bx/n/10.95 141
- []
-
-
 Overfull \hbox (1.09496pt too wide) detected at line 110
- []\T1/lmss/bx/n/10.95 143
+ []\T1/lmss/bx/n/10.95 142
  []
 
-[4])
+
+Overfull \hbox (1.09496pt too wide) detected at line 111
+ []\T1/lmss/bx/n/10.95 144
+ []
+
+[4]
+Overfull \hbox (1.09496pt too wide) detected at line 149
+ []\T1/lmss/bx/n/10.95 191
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `manual-analisis.toc'.
 
@@ -1062,29 +1067,29 @@ Class scrreprt Warning: \float@addtolists detected!
 [7
 
 ] [8]
-<./img/teoria-conjuntos/union.png, id=347, 300.53745pt x 233.55548pt>
+<./img/teoria-conjuntos/union.png, id=367, 300.53745pt x 233.55548pt>
 File: ./img/teoria-conjuntos/union.png Graphic file (type png)
 <use ./img/teoria-conjuntos/union.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/union.png  used on input line 531.
 (pdftex.def)             Requested size: 170.71654pt x 132.66827pt.
  [9]
-<./img/teoria-conjuntos/interseccion.png, id=368, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/interseccion.png, id=388, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/interseccion.png Graphic file (type png)
 <use ./img/teoria-conjuntos/interseccion.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/interseccion.png  used on input line 552.
 (pdftex.def)             Requested size: 170.72406pt x 113.99115pt.
-<./img/teoria-conjuntos/complemento.png, id=369, 302.97807pt x 206.61807pt>
+<./img/teoria-conjuntos/complemento.png, id=389, 302.97807pt x 206.61807pt>
 File: ./img/teoria-conjuntos/complemento.png Graphic file (type png)
 <use ./img/teoria-conjuntos/complemento.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/complemento.png  used on input line 573.
 (pdftex.def)             Requested size: 199.17097pt x 135.82607pt.
  [10 <./img/teoria-conjuntos/union.png> <./img/teoria-conjuntos/interseccion.png>]
-<./img/teoria-conjuntos/diferencia.png, id=383, 300.05772pt x 200.34341pt>
+<./img/teoria-conjuntos/diferencia.png, id=403, 300.05772pt x 200.34341pt>
 File: ./img/teoria-conjuntos/diferencia.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/diferencia.png  used on input line 594.
 (pdftex.def)             Requested size: 170.71875pt x 113.986pt.
-<./img/teoria-conjuntos/diferencia-simetrica.png, id=384, 301.125pt x 201.05885pt>
+<./img/teoria-conjuntos/diferencia-simetrica.png, id=404, 301.125pt x 201.05885pt>
 File: ./img/teoria-conjuntos/diferencia-simetrica.png Graphic file (type png)
 <use ./img/teoria-conjuntos/diferencia-simetrica.png>
 Package pdftex.def Info: ./img/teoria-conjuntos/diferencia-simetrica.png  used on input line 620.
@@ -1105,7 +1110,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [43] [44] [45] [46] [47]
 chapter 3.
-<./img/topologia-reales/recta-real.png, id=945, 551.43pt x 180.18pt>
+<./img/topologia-reales/recta-real.png, id=965, 551.43pt x 180.18pt>
 File: ./img/topologia-reales/recta-real.png Graphic file (type png)
 <use ./img/topologia-reales/recta-real.png>
 Package pdftex.def Info: ./img/topologia-reales/recta-real.png  used on input line 3004.
@@ -1137,15 +1142,15 @@ Overfull \hbox (152.39957pt too wide) in paragraph at lines 44--3910
  [][] 
  []
 
-[61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
+[61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78]
 chapter 5.
-(././img/funciones/funcion.tex) [78
+(././img/funciones/funcion.tex) [79
 
-] (././img/funciones/grafica-funcion.tex) [79]
+] (././img/funciones/grafica-funcion.tex) [80]
 pdfTeX warning (ext4): destination with the same identifier (name{def-dominio-funcion}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5172 ... pre{\hypertarget{def-dominio-funcion}{}
+l.5248 ... pre{\hypertarget{def-dominio-funcion}{}
                                                   }% (././img/funciones/ejemplo-dominio.tex
 NOTE: coordinate (2Y9.394348e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.7882991e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1185,30 +1190,30 @@ Missing character: There is no ; in font nullfont!
 pdfTeX warning (ext4): destination with the same identifier (name{def-imagen-funcion}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5214 ...t pre{\hypertarget{def-imagen-funcion}{}
-                                                  }% [80] (././img/funciones/ejemplo-imagen.tex
+l.5290 ...t pre{\hypertarget{def-imagen-funcion}{}
+                                                  }% [81] (././img/funciones/ejemplo-imagen.tex
 Missing character: There is no ; in font nullfont!
-) [81] (././img/funciones/funcion-constante.tex)
+) [82] (././img/funciones/funcion-constante.tex)
 pdfTeX warning (ext4): destination with the same identifier (name{def-funcion-identidad}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5286 ...re{\hypertarget{def-funcion-identidad}{}
-                                                  }% (././img/funciones/funcion-identidad.tex) [82] [83]
+l.5362 ...re{\hypertarget{def-funcion-identidad}{}
+                                                  }% (././img/funciones/funcion-identidad.tex) [83] [84]
 pdfTeX warning (ext4): destination with the same identifier (name{def-composicion-funciones}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5386 ...hypertarget{def-composicion-funciones}{}
-                                                  }% [84]
+l.5462 ...hypertarget{def-composicion-funciones}{}
+                                                  }% [85]
 pdfTeX warning (ext4): destination with the same identifier (name{def-funcion-inversa}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5417 ... pre{\hypertarget{def-funcion-inversa}{}
+l.5493 ... pre{\hypertarget{def-funcion-inversa}{}
                                                   }% (././img/funciones/funcion-inversa.tex)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 5451.
+(Font)              <9> on input line 5527.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5451.
- [85] (././img/funciones/funcion-creciente.tex) (././img/funciones/funcion-decreciente.tex) (././img/funciones/maximo.tex) (././img/funciones/minimo.tex) [86] (././img/funciones/funcion-concava-arriba.tex) (././img/funciones/funcion-concava-abajo.tex) [87] (././img/funciones/funcion-periodica.tex) (././img/funciones/funcion-polinomica.tex) [88] (././img/funciones/funcion-racional.tex) [89] (././img/funciones/funcion-potencial.tex
+(Font)              <5> on input line 5527.
+ [86] (././img/funciones/funcion-creciente.tex) (././img/funciones/funcion-decreciente.tex) (././img/funciones/maximo.tex) (././img/funciones/minimo.tex) [87] (././img/funciones/funcion-concava-arriba.tex) (././img/funciones/funcion-concava-abajo.tex) [88] (././img/funciones/funcion-periodica.tex) (././img/funciones/funcion-polinomica.tex) [89] (././img/funciones/funcion-racional.tex) [90] (././img/funciones/funcion-potencial.tex
 NOTE: coordinate (2Y3.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y2.9393951e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y2.8787903e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1259,15 +1264,15 @@ NOTE: coordinate (2Y2.1217613e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (2Y1.5157124e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y9.096635e-2],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y3.036145e-2],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
-) [90] [91] (././img/funciones/funcion-exponencial.tex) [92] (././img/funciones/funcion-logaritmica.tex
+) [91] [92] (././img/funciones/funcion-exponencial.tex) [93] (././img/funciones/funcion-logaritmica.tex
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (0Y0.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
-) [93] (././img/funciones/seno-triangulo.tex) [94] (././img/funciones/funcion-seno.tex) [95] (././img/funciones/coseno-triangulo.tex) (././img/funciones/funcion-coseno.tex) [96] (././img/funciones/tangente-triangulo.tex) [97] (././img/funciones/funcion-tangente.tex) [98] (././img/funciones/funcion-arcoseno.tex) [99] (././img/funciones/funcion-arcocoseno.tex) [100] (././img/funciones/funcion-arcotangente.tex) [101] [102]
+) [94] (././img/funciones/seno-triangulo.tex) [95] (././img/funciones/funcion-seno.tex) [96] (././img/funciones/coseno-triangulo.tex) (././img/funciones/funcion-coseno.tex) [97] (././img/funciones/tangente-triangulo.tex) [98] (././img/funciones/funcion-tangente.tex) [99] (././img/funciones/funcion-arcoseno.tex) [100] (././img/funciones/funcion-arcocoseno.tex) [101] (././img/funciones/funcion-arcotangente.tex) [102] [103]
 chapter 6.
-[103
+[104
 
-] [104] (././img/limites/limite-no-existe-1.tex
+] [105] (././img/limites/limite-no-existe-1.tex
 NOTE: coordinate (2Y9.394348e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.7882991e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.1822502e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1302,51 +1307,51 @@ NOTE: coordinate (1Y8.7871191e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (1Y9.393168e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (1Y9.9992169e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
-) [105] (././img/limites/limite-no-existe-2.tex
+) [106] (././img/limites/limite-no-existe-2.tex
 Missing character: There is no ; in font nullfont!
-) [106] (././img/limites/limite-no-existe-3.tex
+) [107] (././img/limites/limite-no-existe-3.tex
 Missing character: There is no ; in font nullfont!
-) [107] (././img/limites/limite-no-existe-4.tex
+) [108] (././img/limites/limite-no-existe-4.tex
 Missing character: There is no ; in font nullfont!
-) [108] (././img/limites/limite-en-infinito.tex
+) [109] (././img/limites/limite-en-infinito.tex
 Missing character: There is no ; in font nullfont!
-) [109] (././img/limites/definicion-limite.tex) [110] [111] [112
+) [110] (././img/limites/definicion-limite.tex) [111] [112] [113
 pdfTeX warning (ext4): destination with the same identifier (name{def-funcion-acotada-entorno}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.7154 \end{tcolorbox}
-                      ] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126] [127]
+l.7230 \end{tcolorbox}
+                      ] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128]
 pdfTeX warning (ext4): destination with the same identifier (name{exm-solucion-indeterminacion-producto}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8232 ...exm-solucion-indeterminacion-producto}{}
-                                                  }% [128] [129] (././img/limites/asintota-vertical.tex
+l.8308 ...exm-solucion-indeterminacion-producto}{}
+                                                  }% [129] [130] (././img/limites/asintota-vertical.tex
 Missing character: There is no ; in font nullfont!
-) [130] (././img/limites/asintota-horizontal.tex
+) [131] (././img/limites/asintota-horizontal.tex
 Missing character: There is no ; in font nullfont!
-) [131] (././img/limites/asintota-oblicua.tex
+) [132] (././img/limites/asintota-oblicua.tex
 Missing character: There is no ; in font nullfont!
-) [132]
-Overfull \hbox (64.92258pt too wide) detected at line 8490
+) [133]
+Overfull \hbox (64.92258pt too wide) detected at line 8566
 \OMS/lmsy/m/n/10.95 j []\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ []\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 )\OMS/lmsy/m/n/10.95 j \OT1/lmr/m/n/10.95 = \OMS/lmsy/m/n/10.95 j\OT1/lmr/m/n/10.95 2 [] [] [] [] \OMS/lmsy/m/n/10.95 j \OT1/lmr/m/n/10.95 = 2\OMS/lmsy/m/n/10.95 j [] [] jj [] [] j ^^T \OT1/lmr/m/n/10.95 2[] = \OMS/lmsy/m/n/10.95 j\OML/lmm/m/it/10.95 x \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 a\OMS/lmsy/m/n/10.95 j\OML/lmm/m/it/10.95 ;
  []
 
-[133
+[134
 pdfTeX warning (ext4): destination with the same identifier (name{exm-funcion-continua}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.8502 
+l.8578 
        ] (././img/limites/discontinuidad-evitable.tex
 Missing character: There is no ; in font nullfont!
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 8577.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 8653.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [134] (././img/limites/discontinuidad-salto-finito.tex
+) [135] (././img/limites/discontinuidad-salto-finito.tex
 Missing character: There is no ; in font nullfont!
-) [135] (././img/limites/discontinuidad-salto-infinito.tex
+) [136] (././img/limites/discontinuidad-salto-infinito.tex
 Missing character: There is no ; in font nullfont!
-) [136] (././img/limites/discontinuidad-segunda-especie.tex
+) [137] (././img/limites/discontinuidad-segunda-especie.tex
 NOTE: coordinate (2Y9.394348e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.7882991e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (2Y8.1822502e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
@@ -1381,170 +1386,184 @@ NOTE: coordinate (1Y8.7871191e-1],3Y0.0e0]) has been dropped because it is unbou
 NOTE: coordinate (1Y9.393168e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 NOTE: coordinate (1Y9.9992169e-1],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
-) [137] [138] [139] [140] [141
+) [138] [139] [140] [141] [142
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{thm-valores-intermedios}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8977 ...{\hypertarget{thm-valores-intermedios}{}
-                                                  }% [142]
+l.9053 ...{\hypertarget{thm-valores-intermedios}{}
+                                                  }% [143]
 chapter 7.
-[143
+[144
 
 ]
-<./img/derivadas/variacion_area_cuadrado.png, id=2003, 264.99pt x 288.3272pt>
+<./img/derivadas/variacion_area_cuadrado.png, id=2035, 264.99pt x 288.3272pt>
 File: ./img/derivadas/variacion_area_cuadrado.png Graphic file (type png)
 <use ./img/derivadas/variacion_area_cuadrado.png>
-Package pdftex.def Info: ./img/derivadas/variacion_area_cuadrado.png  used on input line 9103.
+Package pdftex.def Info: ./img/derivadas/variacion_area_cuadrado.png  used on input line 9179.
 (pdftex.def)             Requested size: 265.00146pt x 288.33966pt.
-<./img/derivadas/secante.png, id=2004, 542.77782pt x 353.06906pt>
+<./img/derivadas/secante.png, id=2036, 542.77782pt x 353.06906pt>
 File: ./img/derivadas/secante.png Graphic file (type png)
 <use ./img/derivadas/secante.png>
-Package pdftex.def Info: ./img/derivadas/secante.png  used on input line 9124.
+Package pdftex.def Info: ./img/derivadas/secante.png  used on input line 9200.
 (pdftex.def)             Requested size: 418.2715pt x 272.0795pt.
- [144 <./img/derivadas/variacion_area_cuadrado.png>] [145 <./img/derivadas/secante.png>]
-<./img/derivadas/tangente.png, id=2021, 520.94624pt x 312.41719pt>
+ [145 <./img/derivadas/variacion_area_cuadrado.png>] [146 <./img/derivadas/secante.png>]
+<./img/derivadas/tangente.png, id=2053, 520.94624pt x 312.41719pt>
 File: ./img/derivadas/tangente.png Graphic file (type png)
 <use ./img/derivadas/tangente.png>
-Package pdftex.def Info: ./img/derivadas/tangente.png  used on input line 9207.
+Package pdftex.def Info: ./img/derivadas/tangente.png  used on input line 9283.
 (pdftex.def)             Requested size: 418.25992pt x 250.83505pt.
-<./img/logos/logo-geogebra.png, id=2023, 45.16875pt x 45.16875pt>
+<./img/logos/logo-geogebra.png, id=2055, 45.16875pt x 45.16875pt>
 File: ./img/logos/logo-geogebra.png Graphic file (type png)
 <use ./img/logos/logo-geogebra.png>
-Package pdftex.def Info: ./img/logos/logo-geogebra.png  used on input line 9219.
+Package pdftex.def Info: ./img/logos/logo-geogebra.png  used on input line 9295.
 (pdftex.def)             Requested size: 45.16862pt x 45.16862pt.
- [146] [147 <./img/derivadas/tangente.png> <./img/logos/logo-geogebra.png>] [148] [149]
-Overfull \hbox (2.67917pt too wide) detected at line 9392
+ [147] [148 <./img/derivadas/tangente.png> <./img/logos/logo-geogebra.png>] [149] [150]
+Overfull \hbox (2.67917pt too wide) detected at line 9468
 [] \OML/lmm/m/it/10.95 f\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 f\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 ) = [] [](\OML/lmm/m/it/10.95 x \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 ) = [] [] [] \OML/lmm/m/it/10.95 x \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 a \OT1/lmr/m/n/10.95 = \OML/lmm/m/it/10.95 f[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 a\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^A \OT1/lmr/m/n/10.95 0 = 0\OML/lmm/m/it/10.95 :
  []
 
-[150]
-Overfull \hbox (28.52444pt too wide) detected at line 9455
+[151]
+Overfull \hbox (28.52444pt too wide) detected at line 9531
 []
  []
 
 
-Overfull \hbox (63.70518pt too wide) detected at line 9470
+Overfull \hbox (63.70518pt too wide) detected at line 9546
 []
  []
 
 
-Overfull \hbox (23.95146pt too wide) detected at line 9480
+Overfull \hbox (23.95146pt too wide) detected at line 9556
 []
  []
 
-[151] [152] [153] [154] [155] [156] [157] (././img/derivadas/tangente-curva-implicita.tex
+[152] [153] [154] [155] [156] [157] [158] (././img/derivadas/tangente-curva-implicita.tex
 Missing character: There is no ; in font nullfont!
-) [158] [159] [160]
-<./img/derivadas/crecimiento.png, id=2168, 493.0922pt x 440.39531pt>
+) [159] [160] [161]
+<./img/derivadas/crecimiento.png, id=2201, 493.0922pt x 440.39531pt>
 File: ./img/derivadas/crecimiento.png Graphic file (type png)
 <use ./img/derivadas/crecimiento.png>
-Package pdftex.def Info: ./img/derivadas/crecimiento.png  used on input line 10117.
+Package pdftex.def Info: ./img/derivadas/crecimiento.png  used on input line 10193.
 (pdftex.def)             Requested size: 418.27261pt x 373.5717pt.
- [161] [162 <./img/derivadas/crecimiento.png>]
-<./img/derivadas/extremos.png, id=2188, 493.0922pt x 481.8pt>
+ [162] [163 <./img/derivadas/crecimiento.png>]
+<./img/derivadas/extremos.png, id=2221, 493.0922pt x 481.8pt>
 File: ./img/derivadas/extremos.png Graphic file (type png)
 <use ./img/derivadas/extremos.png>
-Package pdftex.def Info: ./img/derivadas/extremos.png  used on input line 10192.
+Package pdftex.def Info: ./img/derivadas/extremos.png  used on input line 10268.
 (pdftex.def)             Requested size: 418.27261pt x 408.69383pt.
- [163] [164 <./img/derivadas/extremos.png>] [165] [166] [167]
-<./img/derivadas/concavidad.png, id=2252, 503.63156pt x 489.32813pt>
+ [164] [165 <./img/derivadas/extremos.png>] [166] [167] [168]
+<./img/derivadas/concavidad.png, id=2284, 503.63156pt x 489.32813pt>
 File: ./img/derivadas/concavidad.png Graphic file (type png)
 <use ./img/derivadas/concavidad.png>
-Package pdftex.def Info: ./img/derivadas/concavidad.png  used on input line 10451.
+Package pdftex.def Info: ./img/derivadas/concavidad.png  used on input line 10527.
 (pdftex.def)             Requested size: 418.25232pt x 406.37369pt.
- [168 <./img/derivadas/concavidad.png>]
-<./img/derivadas/movimiento_rectilineo.png, id=2260, 497.60907pt x 174.6525pt>
+ [169 <./img/derivadas/concavidad.png>]
+<./img/derivadas/movimiento_rectilineo.png, id=2293, 497.60907pt x 174.6525pt>
 File: ./img/derivadas/movimiento_rectilineo.png Graphic file (type png)
 <use ./img/derivadas/movimiento_rectilineo.png>
-Package pdftex.def Info: ./img/derivadas/movimiento_rectilineo.png  used on input line 10476.
+Package pdftex.def Info: ./img/derivadas/movimiento_rectilineo.png  used on input line 10552.
 (pdftex.def)             Requested size: 418.2621pt x 146.80302pt.
- [169 <./img/derivadas/movimiento_rectilineo.png>]
-<./img/derivadas/movimiento_curvilineo.png, id=2272, 484.81125pt x 232.61906pt>
+ [170 <./img/derivadas/movimiento_rectilineo.png>]
+<./img/derivadas/movimiento_curvilineo.png, id=2305, 484.81125pt x 232.61906pt>
 File: ./img/derivadas/movimiento_curvilineo.png Graphic file (type png)
 <use ./img/derivadas/movimiento_curvilineo.png>
-Package pdftex.def Info: ./img/derivadas/movimiento_curvilineo.png  used on input line 10564.
+Package pdftex.def Info: ./img/derivadas/movimiento_curvilineo.png  used on input line 10640.
 (pdftex.def)             Requested size: 418.27591pt x 200.69449pt.
- [170] [171 <./img/derivadas/movimiento_curvilineo.png>]
-<./img/derivadas/circunferencia.png, id=2287, 328.22626pt x 275.52937pt>
+ [171] [172 <./img/derivadas/movimiento_curvilineo.png>]
+<./img/derivadas/circunferencia.png, id=2320, 328.22626pt x 275.52937pt>
 File: ./img/derivadas/circunferencia.png Graphic file (type png)
 <use ./img/derivadas/circunferencia.png>
-Package pdftex.def Info: ./img/derivadas/circunferencia.png  used on input line 10624.
+Package pdftex.def Info: ./img/derivadas/circunferencia.png  used on input line 10700.
 (pdftex.def)             Requested size: 328.23045pt x 275.53288pt.
 
-Underfull \hbox (badness 1365) in paragraph at lines 10632--10634
+Underfull \hbox (badness 1365) in paragraph at lines 10708--10710
 []\T1/lmr/m/n/10.95 (+20) Obsérvese que el mó-du-lo del vec-tor ve-lo-ci-dad siem-pre se-rá 1 ya que $\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (+20) v\OMS/lmsy/m/n/10.95 j \OT1/lmr/m/n/10.95 (+20) =$
  []
 
-[172 <./img/derivadas/circunferencia.png>]
-Underfull \hbox (badness 1783) in paragraph at lines 10708--10711
+[173 <./img/derivadas/circunferencia.png>]
+Underfull \hbox (badness 1783) in paragraph at lines 10784--10787
 []\T1/lmr/m/n/10.95 (+20) Partiendo de la ecua-ción vec-to-rial de la tan-gen-te del ejem-plo an-te-rior $\OML/lmm/m/it/10.95 l \OT1/lmr/m/n/10.95 (+20) =$
  []
 
-[173] [174]
-<./img/derivadas/circunferencia_tangente_normal.png, id=2312, 678.28406pt x 274.02374pt>
+[174] [175]
+<./img/derivadas/circunferencia_tangente_normal.png, id=2345, 678.28406pt x 274.02374pt>
 File: ./img/derivadas/circunferencia_tangente_normal.png Graphic file (type png)
 <use ./img/derivadas/circunferencia_tangente_normal.png>
-Package pdftex.def Info: ./img/derivadas/circunferencia_tangente_normal.png  used on input line 10787.
+Package pdftex.def Info: ./img/derivadas/circunferencia_tangente_normal.png  used on input line 10863.
 (pdftex.def)             Requested size: 418.25482pt x 168.97308pt.
- [175 <./img/derivadas/circunferencia_tangente_normal.png>] [176]
-<./img/derivadas/tangente_trayectoria_espacio.png, id=2329, 461.47406pt x 344.03531pt>
+ [176 <./img/derivadas/circunferencia_tangente_normal.png>] [177]
+<./img/derivadas/tangente_trayectoria_espacio.png, id=2361, 461.47406pt x 344.03531pt>
 File: ./img/derivadas/tangente_trayectoria_espacio.png Graphic file (type png)
 <use ./img/derivadas/tangente_trayectoria_espacio.png>
-Package pdftex.def Info: ./img/derivadas/tangente_trayectoria_espacio.png  used on input line 10891.
+Package pdftex.def Info: ./img/derivadas/tangente_trayectoria_espacio.png  used on input line 10967.
 (pdftex.def)             Requested size: 418.25911pt x 311.81798pt.
- [177 <./img/derivadas/tangente_trayectoria_espacio.png>]
-<./img/derivadas/polinomio_grado_0.png, id=2337, 450.9347pt x 374.90062pt>
+ [178 <./img/derivadas/tangente_trayectoria_espacio.png>]
+<./img/derivadas/polinomio_grado_0.png, id=2369, 450.9347pt x 374.90062pt>
 File: ./img/derivadas/polinomio_grado_0.png Graphic file (type png)
 <use ./img/derivadas/polinomio_grado_0.png>
-Package pdftex.def Info: ./img/derivadas/polinomio_grado_0.png  used on input line 10952.
+Package pdftex.def Info: ./img/derivadas/polinomio_grado_0.png  used on input line 11028.
 (pdftex.def)             Requested size: 418.27779pt x 347.75014pt.
- [178] [179 <./img/derivadas/polinomio_grado_0.png>]
-<./img/derivadas/polinomio_grado_1.png, id=2351, 450.9347pt x 374.14781pt>
+ [179] [180 <./img/derivadas/polinomio_grado_0.png>]
+<./img/derivadas/polinomio_grado_1.png, id=2383, 450.9347pt x 374.14781pt>
 File: ./img/derivadas/polinomio_grado_1.png Graphic file (type png)
 <use ./img/derivadas/polinomio_grado_1.png>
-Package pdftex.def Info: ./img/derivadas/polinomio_grado_1.png  used on input line 11013.
+Package pdftex.def Info: ./img/derivadas/polinomio_grado_1.png  used on input line 11089.
 (pdftex.def)             Requested size: 418.27779pt x 347.05182pt.
- [180] [181 <./img/derivadas/polinomio_grado_1.png>]
-<./img/derivadas/polinomio_grado_2.png, id=2365, 457.71pt x 376.40625pt>
+ [181] [182 <./img/derivadas/polinomio_grado_1.png>]
+<./img/derivadas/polinomio_grado_2.png, id=2397, 457.71pt x 376.40625pt>
 File: ./img/derivadas/polinomio_grado_2.png Graphic file (type png)
 <use ./img/derivadas/polinomio_grado_2.png>
-Package pdftex.def Info: ./img/derivadas/polinomio_grado_2.png  used on input line 11077.
+Package pdftex.def Info: ./img/derivadas/polinomio_grado_2.png  used on input line 11151.
 (pdftex.def)             Requested size: 418.26976pt x 343.97183pt.
- [182 <./img/derivadas/polinomio_grado_2.png>] [183]
-<./img/derivadas/polinomio_taylor_logaritmo.png, id=2378, 443.40656pt x 368.87813pt>
+ [183 <./img/derivadas/polinomio_grado_2.png>] [184]
+<./img/derivadas/polinomio_taylor_logaritmo.png, id=2410, 443.40656pt x 368.87813pt>
 File: ./img/derivadas/polinomio_taylor_logaritmo.png Graphic file (type png)
 <use ./img/derivadas/polinomio_taylor_logaritmo.png>
-Package pdftex.def Info: ./img/derivadas/polinomio_taylor_logaritmo.png  used on input line 11207.
+Package pdftex.def Info: ./img/derivadas/polinomio_taylor_logaritmo.png  used on input line 11280.
 (pdftex.def)             Requested size: 418.28394pt x 347.97813pt.
- [184]
+ [185]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 11219.
- [185 <./img/derivadas/polinomio_taylor_logaritmo.png>]
-<./img/derivadas/polinomio_mclaurin_seno.png, id=2394, 781.41937pt x 367.3725pt>
+(Font)              <12> on input line 11292.
+ [186 <./img/derivadas/polinomio_taylor_logaritmo.png>]
+<./img/derivadas/polinomio_mclaurin_seno.png, id=2427, 781.41937pt x 367.3725pt>
 File: ./img/derivadas/polinomio_mclaurin_seno.png Graphic file (type png)
 <use ./img/derivadas/polinomio_mclaurin_seno.png>
-Package pdftex.def Info: ./img/derivadas/polinomio_mclaurin_seno.png  used on input line 11269.
+Package pdftex.def Info: ./img/derivadas/polinomio_mclaurin_seno.png  used on input line 11342.
 (pdftex.def)             Requested size: 418.25197pt x 196.63483pt.
- [186] [187 <./img/derivadas/polinomio_mclaurin_seno.png>] [188] (./manual-analisis.aux)
+ [187] [188 <./img/derivadas/polinomio_mclaurin_seno.png>] [189] [190]
+chapter 8.
+<./img/series/paradoja-dicotomia-zenon.png, id=2458, 246.6816pt x 117.5592pt>
+File: ./img/series/paradoja-dicotomia-zenon.png Graphic file (type png)
+<use ./img/series/paradoja-dicotomia-zenon.png>
+Package pdftex.def Info: ./img/series/paradoja-dicotomia-zenon.png  used on input line 11484.
+(pdftex.def)             Requested size: 246.6885pt x 117.56248pt.
+[191
+
+ <./img/series/paradoja-dicotomia-zenon.png>] [192] [193] [194] [195] [196] [197] [198]
+File: ./img/logos/logo-geogebra.png Graphic file (type png)
+<use ./img/logos/logo-geogebra.png>
+Package pdftex.def Info: ./img/logos/logo-geogebra.png  used on input line 12017.
+(pdftex.def)             Requested size: 45.16862pt x 45.16862pt.
+ [199] [200] [201] [202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212] [213] (./manual-analisis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 52424 strings out of 476932
- 1216133 string characters out of 5824858
- 2113064 words of memory out of 5000000
- 70612 multiletter control sequences out of 15000+600000
- 622888 words of font info for 368 fonts, out of 8000000 for 9000
+ 52763 strings out of 476932
+ 1222686 string characters out of 5824858
+ 2116189 words of memory out of 5000000
+ 70740 multiletter control sequences out of 15000+600000
+ 632264 words of font info for 377 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  122i,25n,120p,10682b,2608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/home/alf/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/home/alf/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/home/alf/texmf/fonts/enc/dvips/fontawesome5/fa5free1.enc}</home/alf/texmf/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/alf/texmf/fonts/type1/public/lm/lmbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmex10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi10.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi12.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi6.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi8.pfb></home/alf/texmf/fonts/type1/public/lm/lmmi9.pfb></home/alf/texmf/fonts/type1/public/lm/lmr10.pfb></home/alf/texmf/fonts/type1/public/lm/lmr17.pfb></home/alf/texmf/fonts/type1/public/lm/lmr6.pfb></home/alf/texmf/fonts/type1/public/lm/lmr8.pfb></home/alf/texmf/fonts/type1/public/lm/lmr9.pfb></home/alf/texmf/fonts/type1/public/lm/lmri10.pfb></home/alf/texmf/fonts/type1/public/lm/lmss12.pfb></home/alf/texmf/fonts/type1/public/lm/lmssbx10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy10.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy6.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy8.pfb></home/alf/texmf/fonts/type1/public/lm/lmsy9.pfb></home/alf/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manual-analisis.pdf (188 pages, 1457504 bytes).
+Output written on manual-analisis.pdf (213 pages, 1606947 bytes).
 PDF statistics:
- 3249 PDF objects out of 3580 (max. 8388607)
- 2945 compressed objects within 30 object streams
- 1551 named destinations out of 1728 (max. 500000)
- 85154 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 3617 PDF objects out of 4296 (max. 8388607)
+ 3283 compressed objects within 33 object streams
+ 1747 named destinations out of 2073 (max. 500000)
+ 91383 words of extra memory for PDF output out of 106986 (max. 10000000)
 

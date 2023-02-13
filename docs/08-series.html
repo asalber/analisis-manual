@@ -485,7 +485,7 @@ Demostración
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((A_n)_{n=1}^\infty\)</span> la sucesión de las sumas parciales de <span class="math inline">\(\sum a_n\)</span>. Entonces, <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\((A_n)_{n=1}^\infty\)</span> converge, y por el criterio de convergencia de Cauchy para sucesiones (<a href="#thm-criterio-convergencia-cauchy">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-criterio-convergencia-cauchy</span></a>) esto es equivalente a que <span class="math inline">\((A_n)_{n=1}^\infty\)</span> es una sucesión de Cauchy, de manera que se cumple que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|A_m-A_n|&lt;\varepsilon\)</span> <span class="math inline">\(\forall m&gt;n\geq k\)</span>, lo que es equivalente a que <span class="math inline">\(|a_{n+1}+a_{n+2}+\cdots+a_m|&lt;\varepsilon\ \forall m&gt;n\geq k\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((A_n)_{n=1}^\infty\)</span> la sucesión de las sumas parciales de <span class="math inline">\(\sum a_n\)</span>. Entonces, <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\((A_n)_{n=1}^\infty\)</span> converge, y por el criterio de convergencia de Cauchy para sucesiones (<a href="04-sucesiones.html#thm-criterio-convergencia-cauchy">Teorema&nbsp;<span>4.8</span></a>) esto es equivalente a que <span class="math inline">\((A_n)_{n=1}^\infty\)</span> es una sucesión de Cauchy, de manera que se cumple que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|A_m-A_n|&lt;\varepsilon\)</span> <span class="math inline">\(\forall m&gt;n\geq k\)</span>, lo que es equivalente a que <span class="math inline">\(|a_{n+1}+a_{n+2}+\cdots+a_m|&lt;\varepsilon\ \forall m&gt;n\geq k\)</span>.</p>
 </div>
 </div>
 </div>
@@ -660,7 +660,7 @@ Demostración
 </div>
 </div>
 <div id="exm-convergencia-series-p" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.11 </strong></span>Ya se ha visto que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge, ya que <span class="math inline">\(p=1\)</span>, mientras que la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> converge al ser <span class="math inline">\(p=2&gt;1\)</span>. De hecho, la suma exacta de esta última serie es el famoso <a href="https://es.wikipedia.org/wiki/Problema_de_Basilea">problema de Basilea</a> que consiguió resolver Euler, demostrando que que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}\)</span> (la demostración se escapa de los conocimientos de este curso y puede verse en el enlace anterior).</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.11 </strong></span>Ya se ha visto que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge, ya que <span class="math inline">\(p=1\)</span>, mientras que la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> converge al ser <span class="math inline">\(p=2&gt;1\)</span>. De hecho, la suma exacta de esta última serie es el famoso <a href="https://es.wikipedia.org/wiki/Problema_de_Basilea">problema de Basilea</a> que consiguió resolver Euler, demostrando que que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}\)</span> (la demostración se escapa de los conocimientos de este curso y puede verse en el enlace anterior).</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -865,7 +865,7 @@ A_{2n} &amp;= a_1-a_2+a_3-a_4+\cdots+a_{2n-1}-a_{2n} = A_{2n-2}+a_{2n-1}-a_{2n} 
 <p><span class="math display">\[
 A_{2n} = a_1 -(a_2-a_3)-(a_4-a_5)-\cdots -(a_{2n-2}-a_{2n-1})-a_{2n},
 \]</span></p>
-<p>es fácil ver que <span class="math inline">\(A_{2n}\leq a_1\)</span>, ya que todos los términos entre paréntesis son positivos, y también <span class="math inline">\(a_{2n}\)</span>. Así pues, por el <a href="#thm-criterio-acotacion">Teorema&nbsp;<span class="quarto-unresolved-ref">thm-criterio-acotacion</span></a> la serie converge y <span class="math inline">\(\lim_{n\to\infty} A_{2n} = l\)</span>.</p>
+<p>es fácil ver que <span class="math inline">\(A_{2n}\leq a_1\)</span>, ya que todos los términos entre paréntesis son positivos, y también <span class="math inline">\(a_{2n}\)</span>. Así pues, por el <a href="#thm-criterio-acotacion">Teorema&nbsp;<span>8.3</span></a> la serie converge y <span class="math inline">\(\lim_{n\to\infty} A_{2n} = l\)</span>.</p>
 <p>Si calculamos ahora el límite de la sucesión de las sumas parciales de orden impar, se tiene,</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} A_{2n+1} = \lim_{n\to\infty} A_{2n} + a_{2n+1} = \lim_{n\to\infty} A_{2n} + \lim_{n\to\infty} a_{2n+1} = l + 0 = l.
@@ -1038,7 +1038,7 @@ En muchas ocasiones, aún cuando se pueda probar que una serie converge, puede s
 <p>El número <span class="math inline">\(F_n=\sum_{i=1}^n f_i\)</span> se llama <em>suma funcional parcial de orden</em> <span class="math inline">\(n\)</span> de la serie funcional, y habitualmente utilizaremos la notación <span class="math inline">\(\sum f_n\)</span> para referirnos a la serie funcional de término general <span class="math inline">\(f_n\)</span>.</p>
 </div>
 <div id="-exm-serie-funcional">
-<p>Las primeras sumas funcionales parciales de la serie funcional <span class="math inline">\(\sum \frac{x}{n}\)</span> son</p>
+<p>Las primeras sumas funcionales parciales de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> son</p>
 <p><span class="math display">\[\begin{align*}
 F_1 &amp;= x\\
 F_2 &amp;= x+\frac{x}{2}\\
@@ -1046,6 +1046,34 @@ F_3 &amp;= x+\frac{x}{2}+\frac{x}{3}\\
 \vdots\\
 F_n &amp;= \sum_{i=1}^n \frac{x}{i}
 \end{align*}\]</span></p>
+<div>
+<div id="ggb-serie-funcional">
+
+</div>
+<script>
+var params = {
+            "appName": "graphing", 
+            "width": 600, 
+            "height": 450, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": false,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            //"showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"ef8bz5hr"
+            };
+    var ggbApplet3 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet3.inject('ggb-serie-funcional');
+    });
+</script>
+</div>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -1072,13 +1100,16 @@ Importante
 F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 \]</span></p>
 </div>
+<div id="exm-funcion-suma" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.23 </strong></span>El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
+</div>
 <p>De particular interés son las series que se obtienen a partir de sucesiones de la forma <span class="math inline">\((c_nx^n)_{n=1}^\infty\)</span> que dan lugar a polinomios. Como ya vimos con los <a href="./07-derivadas.html#polinomios-de-taylor">polinomios de Taylor</a>, estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.</p>
 <div id="def-serie-potencias" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 8.11 (Serie de potencias) </strong></span>Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> y una sucesión de números reales <span class="math inline">\((c_n)_{n=0}^\infty\)</span>, se llama <em>serie de potencias centrada en <span class="math inline">\(a\)</span></em> a la serie <span class="math inline">\(\sum c_n(x-a)^n\)</span>.</p>
 <p>La sucesión <span class="math inline">\((c_n)_{n=0}^\infty\)</span> se llama <em>sucesión de coeficientes de la serie</em>, y al término <span class="math inline">\(c_0\)</span> se le llama <em>termino independiente</em>.</p>
 </div>
 <div id="exm-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.23 </strong></span>Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.24 </strong></span>Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
 <p><span class="math display">\[\begin{align*}
 F_1 &amp;= x\\
 F_2 &amp;= x+\frac{x^2}{2}\\
@@ -1087,19 +1118,12 @@ F_3 &amp;= x+\frac{x^2}{2}+\frac{x^3}{3}\\
 F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 \end{align*}\]</span></p>
 </div>
-<p>Para cualquier serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, está claro que <span class="math inline">\(a\)</span> pertenece al dominio de convergencia puntual de la serie, pues para <span class="math inline">\(x=a\)</span> se tiene <span class="math inline">\(\sum_{n=1}^\infty c_n(a-a)^n = c_0\)</span>. Veremos a continuación, para qué otros valores de <span class="math inline">\(x\)</span> la serie de potencias converge.</p>
-<div id="def-radio-convergencia" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.12 (Radio de convergencia de una serie de potencias) </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, se define el <em>radio de convergencia</em> de la serie como</p>
-<p><span class="math display">\[
-R = \frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}
-\]</span></p>
-</div>
-<p>El siguiente teorema nos permite definir el dominio de convergencia puntual de una serie de potencias.</p>
-<div id="thm-dominio-convergencia-serie-potencias" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.10 </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span> con radio de convergencia <span class="math inline">\(R\)</span>, se cumple</p>
+<p>Para cualquier serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, está claro que <span class="math inline">\(a\)</span> pertenece al dominio de convergencia puntual de la serie, pues para <span class="math inline">\(x=a\)</span> se tiene <span class="math inline">\(\sum_{n=1}^\infty c_n(a-a)^n = c_0\)</span>. Veremos a continuación un par resultados que nos ayudarán a ver para qué otros valores de <span class="math inline">\(x\)</span> la serie de potencias converge.</p>
+<div id="prp-intervalo-convergencia-serie-potencias" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 8.6 </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
 <ol type="a">
-<li>La serie converge para todo <span class="math inline">\(|x-a|&lt;R\)</span>.</li>
-<li>La serie diverge para todo <span class="math inline">\(|x-a|&gt;R\)</span>.</li>
+<li>Si la serie converge para <span class="math inline">\(x=b\neq 0\)</span>, entonces converge para cualquier <span class="math inline">\(x\)</span> tal que <span class="math inline">\(|x|&lt;|b|\)</span>.</li>
+<li>Si la serie diverge para <span class="math inline">\(x=d\neq 0\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x|&gt;|d|\)</span>.</li>
 </ol>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -1115,11 +1139,71 @@ Demostración
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Aplicaremos el criterio de la raíz para estudiar la convergencia absoluta de la serie <span class="math inline">\(\sum c_n(x-a)^n\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada parte.</p>
+<ol type="a">
+<li><p>Supongamos <span class="math inline">\(\sum c_nb^n\)</span> converge. Entonces, por el criterio de divergencia se tiene que <span class="math inline">\(\lim_{n\to\infty} c_nb^n=0\)</span>, y, por tanto, tomando <span class="math inline">\(\varepsilon = 1\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|c_nb^n|&lt;1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. De esta manera se cumple</p>
 <p><span class="math display">\[
-\lim_{n\to\infty} \sqrt[n]{|c_n(x-a)^n|} = \lim_{n\to\infty} \sqrt[n]{|c_n|}\sqrt[n]{|(x-a)|^n} = \frac{|x-a|}{R}.
+|c_nx^n| =  \left|\frac{c_nb^nx^n}{b^n}\right| = |c_nb_n|\left|\frac{x}{b}\right|^n &lt; \left|\frac{x}{b}\right|^n,
 \]</span></p>
-<p>Por tanto, la serie converge si <span class="math inline">\(\frac{|x-a|}{R}&lt;1\)</span>, es decir, si <span class="math inline">\(|x-a|&lt;R\)</span>, y diverge si <span class="math inline">\(|x-a|&lt;R\)</span>.</p>
+<p>Como <span class="math inline">\(\sum \left(\frac{x}{b}\right)^n\)</span> es una serie geométrica, converge para <span class="math inline">\(\left|\frac{x}{b}\right|&lt;1\)</span>, es decir, <span class="math inline">\(|x|&lt;|b|\)</span>, y en tal caso, por el criterio de comparación de series, <span class="math inline">\(\sum |c_nx^n|\)</span> converge, de modo que <span class="math inline">\(\sum c_nx^n\)</span> es absolutamente convergente.</p></li>
+<li><p>Supongamos ahora que <span class="math inline">\(\sum c_nd^n\)</span> diverge. Entonces para cualquier <span class="math inline">\(|x|&gt;|d|\)</span> la serie <span class="math inline">\(\sum c_nx^n\)</span> no puede converger porque por el resultado anterior, si <span class="math inline">\(\sum c_nx^n\)</span> converge, también debería converger <span class="math inline">\(\sum c_nd^n\)</span> al ser <span class="math inline">\(|d|&lt;|x|\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-intervalo-convergencia-serie-potencias" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.25 </strong></span>Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
+<p><span class="math display">\[
+\sum \frac{\left(\frac{1}{2}\right)^n}{n} = \sum \frac{1}{n2^n},
+\]</span></p>
+<p>que, por el criterio de comparación de series, converge al ser <span class="math inline">\(\frac{1}{n2^n}\leq\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y ser <span class="math inline">\(\sum \frac{1}{2^n}\)</span> convergente. Eso significa que la serie de potencias también converge para <span class="math inline">\(|x|\leq \frac{1}{2}\)</span>.</p>
+<p>Más adelante se mostrará que el dominio de convergencia puntual de esta serie de potencias es el intervalo <span class="math inline">\([-1,1)\)</span>.</p>
+</div>
+<div id="cor-intervalo-convergencia-serie-potencias" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 8.3 </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span> centrada en el <span class="math inline">\(a\)</span>,</p>
+<ol type="a">
+<li>Si la serie converge para <span class="math inline">\(x=b\neq a\)</span>, entonces converge para cualquier <span class="math inline">\(x\)</span> tal que <span class="math inline">\(|x-a|&lt;|b-a|\)</span>.</li>
+<li>Si la serie diverge para <span class="math inline">\(x=d\neq a\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x-a|&gt;|d-a|\)</span>.</li>
+</ol>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>La demostración es sencilla a partir de la proposición anterior haciendo el cambio de variable <span class="math inline">\(y=x-a\)</span>, y se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<p>El siguiente teorema resulta de gran utilidad a la hora de determinar el dominio de convergencia puntual de una serie de potencias.</p>
+<div id="thm-radio-convergencia" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.10 (Radio de convergencia) </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, se cumple que, o bien el dominio de convergencia puntual es <span class="math inline">\(\mathbb{R}\)</span>, o bien existe un número <span class="math inline">\(R\geq 0\)</span>, llamado <em>radio de convergencia</em> tal que la serie converge si <span class="math inline">\(|x-a|&lt;R\)</span> y diverge si <span class="math inline">\(|x-a|&gt;R\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea el conjunto <span class="math inline">\(A=\{x-a: \sum c_n(x-a)^n \mbox{ converge}\}\)</span>. Entonces <span class="math inline">\(A\neq \emptyset\)</span> ya que <span class="math inline">\(\sum c_n(x-a)^n\)</span> converge, al menos, para <span class="math inline">\(x=a\)</span>, y por tanto <span class="math inline">\(0\in A\)</span>. Supongamos además que <span class="math inline">\(A\neq \mathbb{R}\)</span>. Entonces existe un número <span class="math inline">\(d\neq a\)</span> tal que la serie <span class="math inline">\(\sum c_n(d-a)^n\)</span> diverge, y por el corolario anterior, también diverge para <span class="math inline">\(|x-a|&gt;|d-a|\)</span>, de manera que <span class="math inline">\(|x-a|\leq |d-a|\)</span> <span class="math inline">\(\forall (x-a) \in A\)</span>, y por el axioma de completitud se tiene que existe el supremo de <span class="math inline">\(A\)</span>.</p>
+<p>Sea <span class="math inline">\(R=\sup(A)\)</span>. Si <span class="math inline">\(|x-a|&gt;R\)</span>, entonces <span class="math inline">\((x-a)\not\in A\)</span>, por lo que <span class="math inline">\(\sum c_n(x-a)^n\)</span> diverge. Y si <span class="math inline">\(|x-a|&lt;R\)</span>, entonces <span class="math inline">\(|x-a|\)</span> no es una cota superior de <span class="math inline">\(A\)</span>, de manera que existe <span class="math inline">\((b-a)\in A\)</span> tal que <span class="math inline">\(b-a&gt;|x-a|\)</span>. Como <span class="math inline">\(b-a\in A\)</span>, <span class="math inline">\(\sum c_n(b-a)^n\)</span> converge, y por el corolario anterior, <span class="math inline">\(\sum c_n(x-a)^n\)</span> también converge.</p>
 </div>
 </div>
 </div>
@@ -1134,16 +1218,72 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El teorema anterior no afirma nada sobre los puntos <span class="math inline">\(|x-a|=R\)</span>. De hecho, en estos los puntos la serie puede converger o divergir.</p>
+<p>El teorema anterior no afirma nada sobre los puntos <span class="math inline">\(|x-a|=R\)</span>. De hecho, en estos los puntos la serie puede converger o divergir. Y tampoco proporciona un procedimiento para calcular el radio de convergencia de una serie de potencias. Afortunadamente, los siguientes teoremas permitirán su cálculo la mayoría de las veces.</p>
 </div>
 </div>
-<div id="exm-dominio-convergencia-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.24 </strong></span>Veamos cuál es el dominio de convergencia puntual de la serie <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. El radio de convergencia de la serie es</p>
+<div id="thm-radio-convergencia-raiz" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.11 </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, si la sucesión <span class="math inline">\((\sqrt[n]{|c_n|})_{n=1}^\infty\)</span> converge, entonces el radio de convergencia de la serie de potencias es</p>
+<p><span class="math display">\[
+R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
+\]</span></p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio de la raíz.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-radio-convergencia-raiz" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.26 </strong></span>Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
 R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
 \]</span></p>
-<p>Por tanto, la serie converge para todo <span class="math inline">\(|x-2|&lt;1\)</span>, es decir, <span class="math inline">\(1&lt;x&lt;3\)</span>. En <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span> el teorema anterior no dice nada, pero podemos estudiar la convergencia de estos dos casos particulares. En <span class="math inline">\(x=1\)</span> tenemos la serie <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> que es la serie armónica alternada, y por tanto, converge. Y en <span class="math inline">\(x=3\)</span> tenemos la serie <span class="math inline">\(\sum \frac{1}{n}\)</span> que es la serie armónica, y por tanto diverge.</p>
-<p>Así pues, el dominio de convergencia puntal de la serie es el intervalo <span class="math inline">\([1,3)\)</span>.</p>
+<p>Por tanto, la serie converge para todo <span class="math inline">\(|x-2|&lt;1\)</span>, es decir, <span class="math inline">\(1&lt;x&lt;3\)</span>. En <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span> el teorema del radio de convergencia no dice nada, pero podemos estudiar la convergencia de estos dos casos particulares. En <span class="math inline">\(x=1\)</span> tenemos la serie <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> que es la serie armónica alternada, y por tanto, converge. Y en <span class="math inline">\(x=3\)</span> tenemos la serie <span class="math inline">\(\sum \frac{1}{n}\)</span> que es la serie armónica, y por tanto diverge.</p>
+<p>Así pues, el dominio de convergencia puntal de la serie de potencias es el intervalo <span class="math inline">\([1,3)\)</span>.</p>
+</div>
+<div id="thm-radio-convergencia-cociente" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 8.12 </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, si <span class="math inline">\(c_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y la sucesión <span class="math inline">\(\left(\frac{c_n}{c_{n+1}}\right)_{n=1}^\infty\)</span> converge, entonces el radio de convergencia de la serie de potencias es</p>
+<p><span class="math display">\[
+R = \lim_{n\to\infty} \frac{c_n}{c_{n+1}}.
+\]</span></p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio del cociente.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-radio-convergencia-cociente" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.27 </strong></span>Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
+<p><span class="math display">\[
+R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
+\]</span></p>
+<p>Por tanto, la serie converge para <span class="math inline">\(|x|&lt;1\)</span>. En <span class="math inline">\(x=1\)</span> la serie que resulta es la serie armónica, que es divergente, y en <span class="math inline">\(x=-1\)</span> la serie que resulta es la serie armónica altenada que converge.</p>
+<p>Así pues, el domino de convergencia puntual de la serie de potencias es el intervalo <span class="math inline">\([-1,1)\)</span>.</p>
 </div>
 
 <!-- 

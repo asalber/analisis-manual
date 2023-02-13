@@ -1462,7 +1462,7 @@ Si ahora consideramos la función $-f$, que también es continua en $I$ al ser l
 :::
 
 :::{#thm-bolzano}
-# Bolzano
+## Bolzano
 Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, y $f(a)<0<f(b)$, entonces existe $c\in(a,b)$ tal que $f(c)=0$.
 :::
 
