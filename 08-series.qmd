@@ -679,7 +679,7 @@ y por tanto, la serie es absolutamente convergente.
 :::
 
 :::{.callout-warning}
-$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l>1$, el criterio de la razón no garantiza nada, es decir, la serie podría ser convergente o divergente.
+$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, el criterio de la razón no garantiza nada, es decir, la serie podría ser convergente o divergente.
 :::
 
 :::{#thm-criterio-raiz}
