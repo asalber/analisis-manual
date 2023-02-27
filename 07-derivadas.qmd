@@ -1088,7 +1088,7 @@ $$
 
 <img src="img/logos/logo-geogebra.png#left" /> **<a href="http://ggbtu.be/m156108" target="_blank">Ejemplo interactivo</a>**
 
-## Polinomios de Taylor
+## Polinomios de Taylor {#sec-polinomios-taylor}
 
 ### Aproximación de una función mediante un polinomio
 
@@ -1345,7 +1345,7 @@ e^x & \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
 \end{array}
 $$
 
-### Resto de Taylor
+### Resto de Taylor 
 
 Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $a$, pero siempre se comete un error en dicha aproximación.
 
