@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -232,12 +232,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#rectas-tangente-y-normal-a-una-función" id="toc-rectas-tangente-y-normal-a-una-función" class="nav-link" data-scroll-target="#rectas-tangente-y-normal-a-una-función"><span class="toc-section-number">7.9.3</span>  Rectas tangente y normal a una función</a></li>
   <li><a href="#recta-tangente-a-una-trayectoria-en-el-espacio" id="toc-recta-tangente-a-una-trayectoria-en-el-espacio" class="nav-link" data-scroll-target="#recta-tangente-a-una-trayectoria-en-el-espacio"><span class="toc-section-number">7.9.4</span>  Recta tangente a una trayectoria en el espacio</a></li>
   </ul></li>
-  <li><a href="#polinomios-de-taylor" id="toc-polinomios-de-taylor" class="nav-link" data-scroll-target="#polinomios-de-taylor"><span class="toc-section-number">7.10</span>  Polinomios de Taylor</a>
+  <li><a href="#sec-polinomios-taylor" id="toc-sec-polinomios-taylor" class="nav-link" data-scroll-target="#sec-polinomios-taylor"><span class="toc-section-number">7.10</span>  Polinomios de Taylor</a>
   <ul class="collapse">
   <li><a href="#aproximación-de-una-función-mediante-un-polinomio" id="toc-aproximación-de-una-función-mediante-un-polinomio" class="nav-link" data-scroll-target="#aproximación-de-una-función-mediante-un-polinomio"><span class="toc-section-number">7.10.1</span>  Aproximación de una función mediante un polinomio</a></li>
   <li><a href="#polinomio-de-maclaurin-de-orden-n" id="toc-polinomio-de-maclaurin-de-orden-n" class="nav-link" data-scroll-target="#polinomio-de-maclaurin-de-orden-n"><span class="toc-section-number">7.10.2</span>  Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span></a></li>
   <li><a href="#polinomios-de-maclaurin-de-funciones-elementales" id="toc-polinomios-de-maclaurin-de-funciones-elementales" class="nav-link" data-scroll-target="#polinomios-de-maclaurin-de-funciones-elementales"><span class="toc-section-number">7.10.3</span>  Polinomios de Maclaurin de funciones elementales</a></li>
-  <li><a href="#resto-de-taylor" id="toc-resto-de-taylor" class="nav-link" data-scroll-target="#resto-de-taylor"><span class="toc-section-number">7.10.4</span>  Resto de Taylor</a></li>
+  <li><a href="#sec-resto-taylor" id="toc-sec-resto-taylor" class="nav-link" data-scroll-target="#sec-resto-taylor"><span class="toc-section-number">7.10.4</span>  Resto de Taylor</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1436,8 +1436,8 @@ l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 <p><img src="img/logos/logo-geogebra.png#left"> <strong><a href="http://ggbtu.be/m156108" target="_blank">Ejemplo interactivo</a></strong></p>
 </section>
 </section>
-<section id="polinomios-de-taylor" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="polinomios-de-taylor"><span class="header-section-number">7.10</span> Polinomios de Taylor</h2>
+<section id="sec-polinomios-taylor" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="sec-polinomios-taylor"><span class="header-section-number">7.10</span> Polinomios de Taylor</h2>
 <section id="aproximación-de-una-función-mediante-un-polinomio" class="level3" data-number="7.10.1">
 <h3 data-number="7.10.1" class="anchored" data-anchor-id="aproximación-de-una-función-mediante-un-polinomio"><span class="header-section-number">7.10.1</span> Aproximación de una función mediante un polinomio</h3>
 <p>Una aplicación muy útil de la derivada es la aproximación de funciones mediante polinomios.</p>
@@ -1677,8 +1677,8 @@ e^x &amp; \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!
 \end{array}
 \]</span></p>
 </section>
-<section id="resto-de-taylor" class="level3" data-number="7.10.4">
-<h3 data-number="7.10.4" class="anchored" data-anchor-id="resto-de-taylor"><span class="header-section-number">7.10.4</span> Resto de Taylor</h3>
+<section id="sec-resto-taylor" class="level3" data-number="7.10.4">
+<h3 data-number="7.10.4" class="anchored" data-anchor-id="sec-resto-taylor"><span class="header-section-number">7.10.4</span> Resto de Taylor</h3>
 <p>Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor <span class="math inline">\(a\)</span>, pero siempre se comete un error en dicha aproximación.</p>
 <div id="def-resto-taylor" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7.13 (Resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span>, <span class="math inline">\(p_{f,a}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
