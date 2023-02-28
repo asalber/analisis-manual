@@ -600,6 +600,8 @@ de manera que la segunda condición también se cumple, y por tanto, las serie c
 
 ## Convergencia absoluta
 
+Hemos visto en el caso de series de términos positivos que una serie converge cuando sus términos se hacen pequeños lo suficientemente rápido, o en el caso de series alternadas, cuando, a pesar de que los términos no decrezcan los suficiente mente rápido, los términos positivos se van cancelando con los negativos para obtener una suma finita. En general, si los términos de una serie decrecen lo suficiente mente rápido sin tener en cuenta su signo, es decir, en valor absoluto, se puede asegurar que la serie converge, independientemente de qué términos de la serie son positivos o negativos.
+
 :::{#def-serie-absolutamente-convergente}
 ## Serie absolutamente convergente
 Una serie $\sum a_n$ es _absolutamente convergente_ si la serie de los valores absolutos de sus términos $\sum |a_n|$ converge.
@@ -610,6 +612,8 @@ Si la serie es de términos positivos, entonces $|a_n|=a_n$ $\forall n\in\mathbb
 :::{#exm-serie-absolutamente-convergente}
 La serie $\sum \frac{(-1)^n}{n^2}$ es absolutamente convergente ya que $\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}$, que es convergente al ser una serie $p$ con $p=2$.
 :::
+
+Que una serie sea absolutamente convergente quiere decir que sus términos se hacen pequeños (en valor absoluto) lo suficientemente rápido para garantizar que la suma converge sin tener en cuenta su signo.
 
 :::{#def-serie-condicionalmente-convergente}
 ## Serie condicionalmente convergente
@@ -736,10 +740,10 @@ Las primeras sumas funcionales parciales de la serie funcional $\sum \frac{x}{n^
 
 \begin{align*}
 F_1 &= x\\
-F_2 &= x+\frac{x}{2}\\ 
-F_3 &= x+\frac{x}{2}+\frac{x}{3}\\ 
+F_2 &= x+\frac{x}{4}\\ 
+F_3 &= x+\frac{x}{4}+\frac{x}{9}\\ 
 \vdots\\ 
-F_n &= \sum_{i=1}^n \frac{x}{i}
+F_n &= \sum_{i=1}^n \frac{x}{i^2}
 \end{align*}
 
 ::: {.content-visible when-format="html"}
@@ -871,7 +875,6 @@ La demostración es sencilla a partir de la proposición anterior haciendo el ca
 :::
 :::
 
-
 El siguiente teorema resulta de gran utilidad a la hora de determinar el dominio de convergencia puntual de una serie de potencias.
 
 :::{#thm-radio-convergencia}
@@ -919,29 +922,29 @@ Por tanto, la serie converge para todo $|x-2|<1$, es decir, $1<x<3$. En $x=1$ y 
 Así pues, el dominio de convergencia puntal de la serie de potencias es el intervalo $[1,3)$.
 :::
 
-:::{#thm-radio-convergencia-cociente}
+:::{#thm-radio-convergencia-razon}
 Dada una serie de potencias $\sum c_n(x-a)^n$, si $c_n\neq 0$ $\forall n\in\mathbb{N}$ y la sucesión $\left(\frac{c_n}{c_{n+1}}\right)_{n=1}^\infty$ converge, entonces el radio de convergencia de la serie de potencias es 
 
 $$
-R = \lim_{n\to\infty} \frac{c_n}{c_{n+1}}.
+R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 $$
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Se deja como ejercicio usando el criterio del cociente.
+Se deja como ejercicio usando el criterio de la razón.
 :::
 :::
 
-:::{#exm-radio-convergencia-cociente}
+:::{#exm-radio-convergencia-razon}
 Veamos cuál es el dominio de convergencia puntual de la serie de potencias $\sum \frac{x^n}{n}$. Utilizando el teorema anterior, el radio de convergencia de la serie es 
 
 $$
 R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 $$
 
-Por tanto, la serie converge para $|x|<1$. En $x=1$ la serie que resulta es la serie armónica, que es divergente, y en $x=-1$ la serie que resulta es la serie armónica altenada que converge.
+Por tanto, la serie converge para $|x|<1$. En $x=1$ la serie que resulta es la serie armónica, que es divergente, y en $x=-1$ la serie que resulta es la serie armónica alternada que converge.
 
 Así pues, el domino de convergencia puntual de la serie de potencias es el intervalo $[-1,1)$.
 :::
@@ -1011,7 +1014,7 @@ f'(x)=\frac{1}{(1-x)^2} & & f'(0)=1,\\
 f''(x)=\frac{2}{(1-x)^3} & & f''(0)=2,\\
 f'''(x)=\frac{3!}{(1-x)^4} & & f'''(0)=3!,\\
 \vdots & & \vdots\\
-f^{(n)}(x) = \frac{n!}{(1-x)^n} & & f^{(n)}(0) = n!
+f^{(n)}(x) = \frac{n!}{(1-x)^(n+1)} & & f^{(n)}(0) = n!
 \end{array}
 $$
 
