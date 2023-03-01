@@ -1326,26 +1326,17 @@ $$
 
 ### Polinomios de Maclaurin de funciones elementales
 
-$$
-\renewcommand{\arraystretch}{2.5}
-\begin{array}{|c|c|}
-\hline
-f(x) & p_{f,0}^n(x) \\
-\hline\hline
-\operatorname{sen} x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
-\hline
-\cos x &  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
-\hline
-\operatorname{arctg} x &  \displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ si $n=2k$ o $n=2k-1$}\\
-\hline
-e^x & \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
-\hline
-\log(1+x) & \displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n}\\
-\hline
-\end{array}
-$$
+La siguiente tabla recoge los polinomios de Taylor de orden $n$ de algunas funciones elementales habituales.
 
-### Resto de Taylor 
+| $f(x)$ | $p_{f,0}^n(x)$ |
+|:-:|:-:|
+| $e^x$ | $\displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!}  = \sum_{i=0}^n \frac{x^i}{i!}$ |
+| $\log(1+x)$ | $\displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n} = \sum_{i=0}^n (-1)^{i-1}\frac{x^i}{i}$ |
+| $\operatorname{sen}(x)$ | $\displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!}  = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)!}$  si $n=2k$ o $n=2k-1$ |
+| $\cos(x)$ |  $\displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} = \sum_{i=0}^k (-1)^i\frac{x^{2i}}{(2i)!}$ si $n=2k$ o $n=2k+1$ |
+| $\operatorname{arctg}(x)$ | $\displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)}$ si $n=2k$ o $n=2k-1$ |
+
+### Resto de Taylor
 
 Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $a$, pero siempre se comete un error en dicha aproximación.
 

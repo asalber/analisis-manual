@@ -1658,24 +1658,41 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 </section>
 <section id="polinomios-de-maclaurin-de-funciones-elementales" class="level3" data-number="7.10.3">
 <h3 data-number="7.10.3" class="anchored" data-anchor-id="polinomios-de-maclaurin-de-funciones-elementales"><span class="header-section-number">7.10.3</span> Polinomios de Maclaurin de funciones elementales</h3>
-<p><span class="math display">\[
-\renewcommand{\arraystretch}{2.5}
-\begin{array}{|c|c|}
-\hline
-f(x) &amp; p_{f,0}^n(x) \\
-\hline\hline
-\operatorname{sen} x &amp; \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
-\hline
-\cos x &amp;  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
-\hline
-\operatorname{arctg} x &amp;  \displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ si $n=2k$ o $n=2k-1$}\\
-\hline
-e^x &amp; \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
-\hline
-\log(1+x) &amp; \displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n}\\
-\hline
-\end{array}
-\]</span></p>
+<p>La siguiente tabla recoge los polinomios de Taylor de orden <span class="math inline">\(n\)</span> de algunas funciones elementales habituales.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(f(x)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p_{f,0}^n(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(e^x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} = \sum_{i=0}^n \frac{x^i}{i!}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\log(1+x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n} = \sum_{i=0}^n (-1)^{i-1}\frac{x^i}{i}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\operatorname{sen}(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)!}\)</span> si <span class="math inline">\(n=2k\)</span> o <span class="math inline">\(n=2k-1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\cos(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} = \sum_{i=0}^k (-1)^i\frac{x^{2i}}{(2i)!}\)</span> si <span class="math inline">\(n=2k\)</span> o <span class="math inline">\(n=2k+1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\operatorname{arctg}(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)}\)</span> si <span class="math inline">\(n=2k\)</span> o <span class="math inline">\(n=2k-1\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="resto-de-taylor" class="level3" data-number="7.10.4">
 <h3 data-number="7.10.4" class="anchored" data-anchor-id="resto-de-taylor"><span class="header-section-number">7.10.4</span> Resto de Taylor</h3>
