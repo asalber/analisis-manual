@@ -808,7 +808,7 @@ De particular interés son las series que se obtienen a partir de sucesiones de 
 ## Serie de potencias
 Dado un número real $a\in\mathbb{R}$ y una sucesión de números reales $(c_n)_{n=0}^\infty$, se llama _serie de potencias centrada en $a$_ a la serie $\sum c_n(x-a)^n$.
 
-La sucesión $(c_n)_{n=0}^\infty$ se llama _sucesión de coeficientes de la serie_, y al término $c_0$ se le llama _termino independiente_.
+La sucesión $(c_n)_{n=0}^\infty$ se llama _sucesión de coeficientes de la serie_, y al término $c_0$ se le llama _término independiente_.
 :::
 
 :::{#exm-serie-potencias}
@@ -949,6 +949,23 @@ Por tanto, la serie converge para $|x|<1$. En $x=1$ la serie que resulta es la s
 Así pues, el domino de convergencia puntual de la serie de potencias es el intervalo $[-1,1)$.
 :::
 
+Las funciones que pueden representarse mediante una serie de potencias en un intervalo de su dominio tienen propiedades muy interesantes, como que son infinitamente derivables en ese intervalo. 
+
+:::{#def-funcion-analitica}
+## Función analítica
+Dada una función $f:\mathbb{R}\to\mathbb{R}$, se dice que $f$ es _analítica_ en un intervalo $I$, si para cualquier $a\in I$ $f$ se puede expresar como una serie de potencias centrada en $a$, es decir,  
+
+$$ f(x) = \sum_{n=1}^\infty c_n(x-a)^n$$
+
+para cualquier $x$ en un entorno de $a$.
+:::
+
+:::{#exm-funciones-analiticas}
+Cualquier polinomio de grado $n$ una función analítica en todo $\mathbb{R}$ ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que $n$.
+
+Otras funciones elementales como la función exponencial, la función logarítmica y las trigonométricas son también analíticas en cualquier intervalo abierto de su dominio.
+:::
+
 ## Series de Taylor
 
 En la sección @sec-polinomios-taylor se vio como aproximar el valor de una función en un punto mediante un polinomio de grado $n$. En esta sección veremos como explotar la misma idea para expresar funciones mediante series de potencias. Esta técnica resulta útil para estudiar funciones complicadas usando su expresión como serie de potencias.
@@ -1028,31 +1045,31 @@ que es una serie geométrica de razón $x$, y por tanto, converge para $|x|<1$, 
 :::
 
 :::{#thm-serie-taylor}
-Si $f$ es una función que puede expresarse mediante una serie de potencias centrada en $a$ y con radio de convergencia $R$, entonces 
+Si $f$ es una función analítica en un intervalo $I$, entonces para cualquier $a\in I$ se cumple que
 
 $$
 f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}
 $$
 
-para $|x-a|<R$.
+$\forall x\in\mathcal{C}$.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Supongamos que $f$ puede expresarse mediante una serie de potencias centrada en $a$ con radio de convergencia $R$, es decir, para $|x-a|<R$ se tiene
+Supongamos que $f$ es analítica en el intervalo $I$. Entonces, para cualquier $a\in I$, $f$ puede expresarse mediante una serie de potencias centrada en $a$,
 
 $$
-f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots
+f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots 
 $$
 
-En $x=a$ se tiene
+$\forall x\in\mathcal{C}$. En particular, para $x=a$ se tiene
 
 $$
 f(a) = c_0 + c_1(a-a) + c_2(a-a)^2 + c_3(a-a)^3 + \cdots = c_0.
 $$
 
-Como las series de potencias se pueden derivar termino a término (como si fuesen polinomios) en el interior del dominio de convergencia, es decir, son infinitamente derivables en $|x−a|<R$, se tiene que la primera derivada de $f$ vale 
+Como las series de potencias se pueden derivar término a término (como si fuesen polinomios) en el interior del dominio de convergencia, es decir, son infinitamente derivables en $|x−a|<R$, se tiene que la primera derivada de $f$ vale 
 
 $$
 f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + 4c_4(x-a)^4 \cdots
@@ -1105,7 +1122,7 @@ que es la serie de Taylor de $f$ centrada en $a$.
 :::
 
 :::{.callout-warning}
-El teorema anterior garantiza que si una función se puede representar como la suma de una serie de potencias centrada en $a$, entonces esa serie es la serie de Taylor en $a$, pero no todas las funciones admiten una representación como suma de una serie de potencias.
+El teorema anterior garantiza que si una función es analítica en un intervalo $I$, entonces puede representarse mediante la serie es la serie de Taylor en $a$, $\forall a\in I$, pero no todas las funciones son analíticas.
 :::
 
 :::{#exm-funcion-no-coincidente-serie-taylor}
@@ -1124,7 +1141,7 @@ es infinitamente derivable en $x=0$ y $f^{(n)}(0)=0$ $\forall n\in\mathbb{N}$, d
 
 Cabe preguntarse, ¿cuándo $f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}$?
 
-Evidentemente, esta igualdad no se cumple para los valores de $x$ fuera del dominio de $f$, y tampoco para los valores fuera del dominio de convergencia de la serie. Pero además se tiene que cumplir la siguiente condición.
+Evidentemente, esta igualdad no se cumple para los valores de $x$ fuera del dominio de $f$, y tampoco para los valores fuera del dominio de convergencia puntual de la serie. Pero además se tiene que cumplir la siguiente condición.
 
 :::{#thm-condicion-serie-taylor}
 Si $f(x)=p_{f,a}^n(x) + r_{f,a}^n(x)$, donde $p_{f,a}^n(x)$ es el polinomio de Taylor de grado $n$ de $f$ en $a$ y $r_{f,a}^n(x)$ es su resto, y 
