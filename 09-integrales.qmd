@@ -1,0 +1,340 @@
+---
+title: Integrales de funciones
+crossref:
+    chapters: true
+lang: es
+---
+
+::: {.content-visible unless-format="pdf"}
+{{< include macros.qmd >}}
+:::
+
+En este capítulo se estudian las _integrales_ de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el _teorema fundamental del cálculo_, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.
+
+Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el _[método por agotamiento](https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento)_ para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.
+
+Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue [Bernhard Riemann](https://es.wikipedia.org/wiki/Bernhard_Riemann).
+
+## Sumas de Riemann
+
+:::{#def-particion-intervalo}
+## Partición de un intervalo
+Dado un intervalo $I=[a,b]$ cerrado y acotado en $\mathbb{R}$, una _partición_ de $I$ es un conjunto ordenado y finito $P=\{x_0, x_1, \ldots, x_n\}$ de puntos de $I$ tales que $a=x_0<x_1<x_2<\cdots<x_n=b$.
+
+El conjunto de todas las particiones de un intervalo $I$ se denota $\mathcal{P}(I)$.
+:::
+
+:::{#def-suma-inferior-riemann}
+## Suma inferior de Riemann
+Dada una función $f: I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ y una partición $P=\{x_0, x_1, \ldots, x_n\}$ de $I$, se define la _suma inferior_ de $f$ respecto de $P$, y se denota $s(f,P)$, como
+
+$$
+s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
+$$
+
+donde $m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
+:::
+
+Gráficamente, si $f$ es una función positiva, la suma inferior se puede interpretar como la suma de las areas de los rectángulos con base $[x_{i-1},x_i]$ y altura $m_i$.
+
+:::{#def-suma-superior-riemann}
+## Suma superior de Riemann
+Dada una función $f: I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ y una partición $P=\{x_0, x_1, \ldots, x_n\}$ de $I$, se define la _suma superior_ de $f$ respecto de $P$, y se denota $S(f,P)$, como
+
+$$
+S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
+$$
+
+donde $M_i=\sup\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
+:::
+
+Gráficamente, si $f$ es una función positiva, la suma superior se puede interpretar como la suma de las areas de los rectángulos con base $[x_{i-1},x_i]$ y altura $M_i$.
+
+::: {.content-visible when-format="html"}
+<div id="ggb-suma-riemann-1"></div>
+
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 500, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": false,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            //"showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"m9bz6w25"
+            };
+    var ggbApplet1 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet1.inject('ggb-suma-riemann-1');
+    });
+</script>
+:::
+
+:::{#prp-sumas-riemann-inferior-superior}
+Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$ y $P=\{x_0, x_1, \cdots, x_n\}$ es una partición de $I$, entonces $s(f,P)\leq S(f,P)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Para cada $i=1,\ldots,n$ se tiene que 
+
+$$
+m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}\leq \sup\{f(x): x\in[x_{i-1},x_i]\} = M_i,
+$$
+
+de manera que
+
+$$
+s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1}) \leq \sum_{i=1}^n M_i(x_i-x_{i-1}) = S(f,P),
+$$
+
+ya que $(x_i-x_{i-1})>0$ $\forall i=1,\ldots,n$.
+:::
+:::
+
+:::{#def-refinamiento-particion}
+## Refinamiento de una partición
+Dadas dos particiones $P=\{x_0, x_1, \ldots, x_n\}$ y $Q=\{y_0, y_1, \ldots, y_m\}$ de un intervalo $I=[a,b]$, se dice que $Q$ es un refinamiento de $P$ si todos los puntos de $P$ están en $Q$, es decir, $P\subseteq Q$.
+:::
+
+:::{#prp-sumas-riemann-refinamiento}
+Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$, $P$ es una partición de $I$ y $Q$ es un refinamiento de $P$, entonces
+
+a. $s(f,P)\leq S(f,Q)$
+b. $s(f,Q)\leq S(f,P)$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veremos solo la prueba para las sumas inferiores.
+
+a. Probaremos primero el resultado para un refinamiento con un punto más. Sea $P=\{x_0, x_1, \cdots, x_n\}$ y supongamos que $Q$ solo tiene un punto $c$ más que $P$. Sea $k\in\{1,\ldots,n\}$ tal que $c\in[x_{k-1},x_k]$ y tomemos $m_k'=\inf\{f(x): x\in[x_{k-1},c]\}$ y $m_k''=\inf\{f(x): x\in[c,x_k]\}$. Como $m_k=\inf\{f(x): x\in[x_{k-1},x_k]\}$ resulta evidente que $m_k\leq m_k'$ y $m_k\leq m_k''$, por lo que 
+
+    $$
+    m_k(x_k-x_{k-1}) = m_k(x_k-c)+m_k(c-x_{k-1})\leq m_k''(x_k-c)+m_k'(c-x_{k-1})
+    $$
+
+    y entonces
+
+    \begin{align*}
+    s(f,P) &= \sum_{i=1}^n m_i(x_i-x_{i-1}) = \sum_{i=1,i\neq k}^n m_i(x_i-x_{i-1}) + m_k(x_k-x_{k-1}) \\ &\leq \sum_{i=1,i\neq k}^n m_i(x_i-x_{i-1}) + m_k''(x_k-c) + m_k'(c-x_{k-1}) = s(f,Q).
+    \end{align*}
+    
+    Para probar el caso general, si $Q$ es un refinamiento cualquiera de $P$, entonces existe una sucesión finita de particiones de $I$, $P_1,P_2,\ldots,P_r$ tales que  $P=P_1\subset P_2\subset\cdots \subset P_r=Q$ y cada $P_i$ tiene solo un punto más que $P_{i-1}$. Así pues, por el resultado anterior, 
+
+    $$
+    s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
+    $$
+
+b. La prueba para las sumas superiores es análoga y se deja como ejercicio.
+:::
+:::
+
+:::{#prp-sumas-riemann-particiones}
+Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$ y $P$ y $Q$ son dos particiones de $I$, entonces $s(f,P)\leq S(f,Q)$ y $s(f,Q)\leq S(f,P)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Tomando la partición de $I$ $P'=P\cup Q$, se tiene que $P'$ es un refinamiento de $P$ y $Q$, de manera que, según las proposiciones anteriores se tiene 
+
+$$
+s(f,P)\leq s(f,P')\leq S(f,P')\leq S(f,Q)
+$$
+
+y
+
+$$
+s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
+$$
+:::
+:::
+
+## Integrales de Riemann
+
+:::{#def-integral-inferior-riemann}
+## Integral inferior de Riemann
+Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se define la _integral inferior_ de $f$ en $I$ como el número $\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}$.
+:::
+
+:::{#def-integral-superior-riemann}
+## Integral superior de Riemann
+Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se define la _integral superior_ de $f$ en $I$ como el número $\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}$.
+:::
+
+:::{#prp-integral-riemann-inferior-superior}
+Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$, entonces $\underline{\int_a^b} f\leq \overline{\int_a^b}f$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sean $P$ y $Q$ dos particiones cualesquiera de $I$. Por la proposición anterior, $s(f,P)\leq S(f,Q)$ $\forall P\in\mathcal(P)(I)$, de modo que $S(f,Q)$ es una cota superior de todas las sumas inferiores, y por tanto,
+
+$$
+\underline{\int_a^b} f =  \sup\{s(f,P): P\in\mathcal{P}(I)\}\leq S(f,Q)
+$$
+
+Como esto es cierto para cualquier partición $Q$, se tiene que $\underline{\int_a^b} f$ es una cota inferior de todas las sumas superiores, y por tanto,
+
+$$
+\underline{\int_a^b} f \leq \inf\{S(f,Q): Q\in\mathcal{P}(I)\} = \overline{\int_a^b}f.
+$$
+:::
+:::
+
+:::{#def-integral-riemann}
+Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se dice que $f$ es _integrable Riemann_ en $I$ si 
+
+$$
+\underline{\int_a^b} f = \overline{\int_a^b}f,
+$$ 
+
+y a este valor se le llama _integral de Riemann_ de $f$ en $I$ y se denota por $\int_a^b f$, o bien 
+
+$$
+\int_a^b f(x)\,dx
+$$
+:::
+
+:::{.callout-note}
+Si $f$ es integrable Riemann en $I$, el número $\int_a^b f(x)\,dx$ es el único número real que verifica $s(f,P)\leq \int_a^b f(x)\,dx\leq S(f,P)$ $\forall P\in\mathcal{P}(I)$.
+:::
+
+En ocasiones, omitiremos el "de Riemann" para referirnos a una integral de Riemann y simplemente se escribirá integral, cuando en el contexto esté claro que se trata de la integral de Riemann.
+
+:::{#exm-sumas-riemann}
+a. Veamos que si $f(x)=c$, es una función constante en $I=[a,b]$, entonces $f$ es integrable en $I$.
+
+    Sea $P=\{x_0, x_1, \ldots, x_n\}$ una partición de $[a,b]$, entonces
+
+    \begin{align*}
+    s(f,P) &= \sum_{i=1}^n m_i(x_i-x_{i-1}) = \sum_{i=1}^n c(x_i-x_{i-1}) \\ 
+    &= c\sum_{i=1}^n (x_i-x_{i-1}) = c(x_n-x_0) = c(b-a).
+    \end{align*}
+
+    Del mismo modo, 
+
+    \begin{align*}
+    S(f,P) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) = \sum_{i=1}^n c(x_i-x_{i-1})\\ 
+    & = c\sum_{i=1}^n (x_i-x_{i-1}) = c(x_n-x_0) = c(b-a).
+    \end{align*}
+
+    Así pues, $s(f,P) = S(f,P)=c(b-a)$ $\forall P\in\mathcal{P}(I)$ y $\int_a^b f(x)\,dx = c(b-a)$. 
+
+b. Veamos que $f(x)=x$ es integrable en $[0,1]$.
+
+    Sea $P_n=\{0, \frac{1}{n}, \frac{2}{n}, \ldots, \frac{n}{n}\}$ una partición de $[0,1]$. Vamos a probar primero que $\sup\{s(f,P_n):n\in\mathbb{N}\} = \inf\{S(f,P_n):n\in\mathbb{N}\}$. Como $f$ es creciente y continua en $[0,1]$, se cumple que 
+
+    \begin{align*}
+    m_i &= \inf\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i-1}),\\ 
+    M_i &= \sup\{f(x): x\in[x_{i-1},x_i]\} = f(x_i),
+    \end{align*}
+
+    y por tanto,
+
+    \begin{align*}
+    s(f,P_n) &= \sum_{i=1}^n m_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i=1}^n f\left(\frac{i-1}{n}\right)\frac{1}{n} = \sum_{i=1}^n \frac{i-1}{n}\frac{1}{n}\\
+    & = \frac{1}{n^2}\sum_{i=1}^n (i-1) =\frac{1}{n^2}\frac{(n-1)n}{2} = \frac{1}{2}\left(1-\frac{1}{n}\right),\\
+    S(f,P_n) &= \sum_{i=1}^n M_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i=1}^n f\left(\frac{i}{n}\right)\frac{1}{n} = \sum_{i=1}^n \frac{i}{n}\frac{1}{n}\\
+    & = \frac{1}{n^2}\sum_{i=1}^n i =\frac{1}{n^2}\frac{n(n+1)}{2} = \frac{1}{2}\left(1+\frac{1}{n}\right).\\
+    \end{align*}
+
+    Así pues, 
+
+    $$
+    \begin{gathered}
+    \sup\{s(f,P_n):n\in\mathbb{N}\} = \sup\left\{\frac{1}{2}\left(1-\frac{1}{n}\right):n\in\mathbb{N}\right\} =\frac{1}{2} \\ 
+    = \inf\left\{\frac{1}{2}\left(1+\frac{1}{n}\right):n\in\mathbb{N}\right\} = \inf\{S(f,P_n):n\in\mathbb{N}\}
+    \end{gathered}
+    $$
+
+    Ahora bien, como
+
+    $$
+    \begin{gathered}
+    \sup\{s(f,P_n):n\in\mathbb{N}\}\leq \sup\{s(f,P):P\in\mathcal{P}(I)\} = \underline{\int_0^1} f \\
+    \leq \overline{\int_0^1} f =\inf\{S(f,P):P\in\mathcal{P}(I)\} \leq \inf\{S(f,P_n):n\in\mathbb{N}\}
+    \end{gathered}
+    $$
+
+    se puede concluir que $\underline{\int_0^1} f = \overline{\int_0^1} f$, y por tanto $\int_0^1 f(x)\, dx = \frac{1}{2}$.
+:::
+
+:::{#exm-funcion-no-integrable-riemann}
+La función 
+
+$$
+f(x) = 
+\begin{cases}
+1 & \mbox{si } x\in\mathbb{Q}\cap[0,1]\\
+0 & \mbox{si } x\in\mathbb{R}\setminus\mathbb{Q}\cap[0,1]
+\end{cases}
+$$
+
+no es integrable Riemann ya que para cualquier partición $P=\{x_0, x_1, \ldots, x_n\}$ del intervalo $[0,1]$ se tiene que 
+
+\begin{align*}
+m_i &= \inf\{f(x): x\in [x_{i-1},x_i]\} = 0,\\
+M_i &= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
+\end{align*}
+
+por lo que $s(f,P)=0$ y $S(f,P)=1$ $\forall P\in\mathcal{P}([0,1])$.
+
+Así pues, $\underline{\int_a^b}f = 0 \neq \overline{\int_a^b}f=1$.
+:::
+
+:::{#thm-criterio-integrabilidad-riemann}
+## Criterio de integrabilidad de Riemann
+Una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ es integrable en $I$ si y sólo si para cada $\varepsilon>0$ existe una partición $P_\varepsilon\in\mathcal{P}(I)$ tal que $S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $f$ es integrable Riemann en $I$, es decir, $\underline{\int_a^b}f = \overline{\int_a^b}f$. Dado $\varepsilon>0$ existe $P\in\mathcal{P}(I)$ tal que $\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P)$ por ser $\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}$.
+
+Del mismo modo, por ser $\overline{\int_a^b} f =\sup\{S(f,P): P\in \mathcal{P}(I)\}$, existe una partición $Q\in\mathcal{P}(I)$ tal que $\overline{\int_a^b} f+\frac{\varepsilon}{2} \geq S(f,Q)$.
+
+Tomando $P_\varepsilon = P\cup Q, se tiene que $s(f,P)\leq s(f,P_\varepsilon)$ y $S(f,P_\varepsilon)\leq S(f,Q)$. Así pues, 
+
+$$
+S(f,P_\varepsilon)-s(f,P_\varepsilon) \leq S(f,Q)-s(f,P) \leq \left(\overline{\int_a^b} f+\frac{\varepsilon}{2}\right) - \left(\underline{\int_a^b} f-\frac{\varepsilon}{2}\right) = \varepsilon.
+$$
+
+Para probar el otro sentido de la implicación, supongamos que para cada $\varepsilon>0$ existe una partición $P_\varepsilon\in\mathcal{P}(I)$ tal que $S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon$. Entonces,
+
+$$
+0\leq \overline{\int_a^b} f- \underline{\int_a^b} f \leq S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon,
+$$
+
+y como esto es cierto para cualquier $\varepsilon>0$, se tiene $\overline{\int_a^b} f=\underline{\int_a^b} f$ y $f$ es integrable Riemann.
+:::
+:::
+
+## Propiedades de la integral de Riemann
+
+:::{#thm-linealidad-integral-riemann}
+Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$, entonces
+
+a. $f+g$ es integrable Riemann en $I$ y $\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.$
+b. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+
+:::
+:::
