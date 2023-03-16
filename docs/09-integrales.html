@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>En este capítulo se estudian las <em>integrales</em> de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el <em>teorema fundamental del cálculo</em>, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.</p>
 <p>Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el <em><a href="https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento">método por agotamiento</a></em> para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.</p>
-<p>Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue <a href="https://es.wikipedia.org/wiki/Bernhard_Riemann">Bernhard Riemann</a></p>
+<p>Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue <a href="https://es.wikipedia.org/wiki/Bernhard_Riemann">Bernhard Riemann</a>.</p>
 <section id="sumas-de-riemann" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="sumas-de-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</h2>
 <div id="def-particion-intervalo" class="theorem definition">
@@ -262,6 +262,14 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
 <p>donde <span class="math inline">\(m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>.</p>
 </div>
 <p>Gráficamente, si <span class="math inline">\(f\)</span> es una función positiva, la suma inferior se puede interpretar como la suma de las areas de los rectángulos con base <span class="math inline">\([x_{i-1},x_i]\)</span> y altura <span class="math inline">\(m_i\)</span>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/suma-inferior-riemann.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Suma inferior de Riemann</figcaption><p></p>
+</figure>
+</div>
+</div>
 <div id="def-suma-superior-riemann" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.3 (Suma superior de Riemann) </strong></span>Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma superior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(S(f,P)\)</span>, como</p>
 <p><span class="math display">\[
@@ -270,6 +278,14 @@ S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
 <p>donde <span class="math inline">\(M_i=\sup\{f(x): x\in[x_{i-1},x_i]\}\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>.</p>
 </div>
 <p>Gráficamente, si <span class="math inline">\(f\)</span> es una función positiva, la suma superior se puede interpretar como la suma de las areas de los rectángulos con base <span class="math inline">\([x_{i-1},x_i]\)</span> y altura <span class="math inline">\(M_i\)</span>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/suma-superior-riemann.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Suma superior de Riemann</figcaption><p></p>
+</figure>
+</div>
+</div>
 <div>
 <div id="ggb-suma-riemann-1">
 
@@ -298,6 +314,7 @@ var params = {
     });
 </script>
 </div>
+<p><a href="https://www.geogebra.org/classic/nr6x8pjq"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de sumas de Riemann"> Calculadora de sumas de Riemann</a></p>
 <div id="prp-sumas-riemann-inferior-superior" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 9.1 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
 </div>
@@ -440,7 +457,7 @@ Demostración
 <p><span class="math display">\[
 \underline{\int_a^b} f = \overline{\int_a^b}f,
 \]</span></p>
-<p>y a este valor se le llama <em>integral de Riemann</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> y se denota por <span class="math inline">\(\int_a^b f\)</span>, o bien</p>
+<p>y a este valor se le llama <em>integral de Riemann</em> o <em>integral definida</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> y se denota por <span class="math inline">\(\int_a^b f\)</span>, o bien</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx
 \]</span></p>
@@ -552,15 +569,11 @@ S(f,P_\varepsilon)-s(f,P_\varepsilon) \leq S(f,Q)-s(f,P) \leq \left(\overline{\i
 </div>
 </div>
 </div>
-</section>
-<section id="propiedades-de-la-integral-de-riemann" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="propiedades-de-la-integral-de-riemann"><span class="header-section-number">9.3</span> Propiedades de la integral de Riemann</h2>
-<div id="thm-linealidad-integral-riemann" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
-<ol type="a">
-<li><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></li>
-<li>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></li>
-</ol>
+<div id="cor-criterio-integrabilidad-riemann" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.1 </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, si existe una sucesión de particiones <span class="math inline">\((P_n)_{n=1}^\infty\)</span> de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
+\]</span></p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -573,6 +586,140 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(S(f,P_k)=s(f,P_k)&lt;\varepsilon\)</span>, luego, por el criterio de integrabilidad de Riemann, se tiene que <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p>Para calcular el valor de la integral, se tiene</p>
+<p><span class="math display">\[
+\begin{gathered}
+\lim_{n\to\infty} s(f,P_n) \leq \sup\{s(f,P):n\in\mathbb{N}\} \leq \sup\{s(f,P): P\in \mathcal{P}(I)\} = \int_a^b f(x)\, dx \\
+= \inf\{S(f,P): P\in\mathcal{P}(I)\} \leq \inf\{S(f,P_n): n\in\mathbb{N}\} \leq \lim_{n\to\infty} S(f,P_n),
+\end{gathered}
+\]</span></p>
+<p>y como <span class="math inline">\(\lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n)\)</span>, las desigualdades anteriores se convierten en igualdades y por tanto,</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>Este último resultado nos permite calcular una integral como un límite tomando una sucesión de particiones cada vez más refinada.</p>
+</section>
+<section id="propiedades-de-la-integral-de-riemann" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="propiedades-de-la-integral-de-riemann"><span class="header-section-number">9.3</span> Propiedades de la integral de Riemann</h2>
+<div id="thm-linealidad-integral-riemann" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
+<ol type="a">
+<li><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></li>
+<li>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></li>
+</ol>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-integral-funcion-positiva" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Para cualquier partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> se tiene que <span class="math inline">\(f(x)\)</span> es positiva en cualquier intervalo de la partición y por tanto <span class="math inline">\(s(f,P)\geq 0\)</span>. Asú pues, <span class="math inline">\(\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Consideremos la función <span class="math inline">\(g(x)-f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Como <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son integrables en <span class="math inline">\(I\)</span>, también lo es <span class="math inline">\(g-f\)</span> y</p>
+<p><span class="math display">\[
+\int_a^b g(x)-f(x)\, dx = \int_a^b g(x)\,dx - \int_a^b f(x)\,dx \geq 0 \Rightarrow \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integral-funcion-acotada" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.3 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Por el corolario anterior se tiene <span class="math inline">\(\int_a^b m\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b M\,dx\)</span>.</p>
+<p>Por otro lado, como <span class="math inline">\(\int_a^b m\,dx = m(b-a)\)</span> y <span class="math inline">\(\int_a^b M\,dx = M(b-a)\)</span> por tratarse de funciones constantes, sustituyendo en la desigualdad anterior se tiene</p>
+<p><span class="math display">\[
+m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-aditividad-integral-intervalo" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.3 (Aditividad de la integral respecto del intervalo de integración) </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(c\in(a,b)\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span>. Además, en este caso,</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+\]</span></p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span></p>

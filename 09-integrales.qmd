@@ -37,6 +37,14 @@ donde $m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
 
 Gráficamente, si $f$ es una función positiva, la suma inferior se puede interpretar como la suma de las areas de los rectángulos con base $[x_{i-1},x_i]$ y altura $m_i$.
 
+:::{.content-visible when-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.pdf)
+:::
+
 :::{#def-suma-superior-riemann}
 ## Suma superior de Riemann
 Dada una función $f: I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ y una partición $P=\{x_0, x_1, \ldots, x_n\}$ de $I$, se define la _suma superior_ de $f$ respecto de $P$, y se denota $S(f,P)$, como
@@ -49,6 +57,14 @@ donde $M_i=\sup\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
 :::
 
 Gráficamente, si $f$ es una función positiva, la suma superior se puede interpretar como la suma de las areas de los rectángulos con base $[x_{i-1},x_i]$ y altura $M_i$.
+
+:::{.content-visible when-format="html"}
+![Suma superior de Riemann](img/integrales/suma-superior-riemann.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-superior-riemann.pdf)
+:::
 
 ::: {.content-visible when-format="html"}
 <div id="ggb-suma-riemann-1"></div>
@@ -77,6 +93,8 @@ var params = {
     });
 </script>
 :::
+
+[![Calculadora de sumas de Riemann](/img/logos/logo-geogebra.png) Calculadora de sumas de Riemann](https://www.geogebra.org/classic/nr6x8pjq)
 
 :::{#prp-sumas-riemann-inferior-superior}
 Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$ y $P=\{x_0, x_1, \cdots, x_n\}$ es una partición de $I$, entonces $s(f,P)\leq S(f,P)$.
@@ -201,7 +219,7 @@ $$
 \underline{\int_a^b} f = \overline{\int_a^b}f,
 $$ 
 
-y a este valor se le llama _integral de Riemann_ de $f$ en $I$ y se denota por $\int_a^b f$, o bien 
+y a este valor se le llama _integral de Riemann_ o _integral definida_ de $f$ en $I$ y se denota por $\int_a^b f$, o bien 
 
 $$
 \int_a^b f(x)\,dx
@@ -323,6 +341,38 @@ y como esto es cierto para cualquier $\varepsilon>0$, se tiene $\overline{\int_a
 :::
 :::
 
+:::{#cor-criterio-integrabilidad-riemann}
+Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, si existe una sucesión de particiones $(P_n)_{n=1}^\infty$ de $I$ tal que $\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0$, entonces $f$ es integrable Riemann en $I$ y 
+
+$$
+\int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Dado $\varepsilon>0$, como $\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0$, existe $k\in\mathbb{N}$ tal que $S(f,P_k)=s(f,P_k)<\varepsilon$, luego, por el criterio de integrabilidad de Riemann, se tiene que $f$ es integrable en $I$.
+
+Para calcular el valor de la integral, se tiene
+
+$$
+\begin{gathered}
+\lim_{n\to\infty} s(f,P_n) \leq \sup\{s(f,P):n\in\mathbb{N}\} \leq \sup\{s(f,P): P\in \mathcal{P}(I)\} = \int_a^b f(x)\, dx \\
+= \inf\{S(f,P): P\in\mathcal{P}(I)\} \leq \inf\{S(f,P_n): n\in\mathbb{N}\} \leq \lim_{n\to\infty} S(f,P_n),
+\end{gathered}
+$$
+
+y como $\lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n)$, las desigualdades anteriores se convierten en igualdades y por tanto, 
+
+$$
+\int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
+$$
+:::
+:::
+
+Este último resultado nos permite calcular una integral como un límite tomando una sucesión de particiones cada vez más refinada.
+
 ## Propiedades de la integral de Riemann
 
 :::{#thm-linealidad-integral-riemann}
@@ -335,6 +385,66 @@ b. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#prp-integral-funcion-positiva}
+Si $f:I\to\mathbb{R}$ es una función integrable Riemann en $I=[a,b]$ y $f(x)\geq 0$ $\forall x\in I$, entonces $\int_a^b f(x)\,dx \geq 0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Para cualquier partición $P\in\mathcal{P}(I)$ se tiene que $f(x)$ es positiva en cualquier intervalo de la partición y por tanto $s(f,P)\geq 0$. Asú pues, $\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0$.
+:::
+:::
+
+:::{#cor-integral-funcion-mayor-que-otra}
+Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$ y $f(x)\leq g(x)$ $\forall x\in I$, entonces $\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Consideremos la función $g(x)-f(x)\geq 0$ $\forall x\in\mathbb{R}$. Como $f$ y $g$ son integrables en $I$, también lo es $g-f$ y 
+
+$$
+\int_a^b g(x)-f(x)\, dx = \int_a^b g(x)\,dx - \int_a^b f(x)\,dx \geq 0 \Rightarrow \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx.
+$$
+:::
+:::
+
+:::{#cor-integral-funcion-acotada}
+Si $f:I\to\mathbb{R}$ es una función integrable Riemann en $I=[a,b]$ y $m\leq f(x)\leq M$ $\forall x\in I$, entonces $m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Por el corolario anterior se tiene $\int_a^b m\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b M\,dx$.
+
+Por otro lado, como $\int_a^b m\,dx = m(b-a)$ y $\int_a^b M\,dx = M(b-a)$ por tratarse de funciones constantes, sustituyendo en la desigualdad anterior se tiene
+
+$$
+m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
+$$
+:::
+:::
+
+:::{#thm-aditividad-integral-intervalo}
+## Aditividad de la integral respecto del intervalo de integración
+Si $f:I\to\mathbb{R}$ es una función acotada en $I=[a,b]$ y $c\in(a,b)$, entonces $f$ es integrable Riemann en $I$ si y sólo si $f$ es integrable Riemann en $[a,c]$ y $[c,b]$. Además, en este caso,
+
+$$
+\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
 
 :::
 :::
+
