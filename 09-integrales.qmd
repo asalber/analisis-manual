@@ -66,6 +66,18 @@ Gráficamente, si $f$ es una función positiva, la suma superior se puede interp
 ![Suma inferior de Riemann](img/integrales/suma-superior-riemann.pdf)
 :::
 
+:::{.callout-warning}
+Obsérvese que si una función es negativa en un intervalo $I$, sus sumas de Riemann son negativas, ya que las alturas de los rectángulos son negativas.
+
+:::{.content-visible when-format="html"}
+![Sumas de Riemann de una función con valores positivos y negativos en un intervalo.](img/integrales/sumas-riemann-positivas-negativas.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Sumas de Riemann de una función con valores positivos y negativos en un intervalo.](img/integrales/sumas-riemann-positivas-negativas.pdf)
+:::
+:::
+
 ::: {.content-visible when-format="html"}
 <div id="ggb-suma-riemann-1"></div>
 
@@ -181,6 +193,12 @@ $$
 
 ## Integrales de Riemann
 
+Como acabamos de ver, dada una función $f$ positiva en un intervalo $I$, para cualquier partición $P$ de $I$, la suma inferior de Riemann es una aproximación por defecto del área encerrada entre la gráfica de $f$ y el eje $x$ en el intervalo $I$, mientras que la suma superior de Riemann es una aproximación por exceso. Si al hacer refinamientos de la partición $P$, cada vez con un mayor número de subintervalos, las sumas inferiores crecen y las superiores decrecen, se obtienen aproximaciones cada vez mejores. Podemos explotar esta idea para calcular el area área encerrada entre la gráfica de $f$ y el eje $x$ tomando particiones con subintervalos cada vez más pequeños.
+
+:::{.content-visible when-format="html"}
+![Aproximación del area encerrada entre la gráfica de una función y el eje $x$ mediante sumas de Riemann.](img/integrales/sumas_riemann.gif)
+:::
+
 :::{#def-integral-inferior-riemann}
 ## Integral inferior de Riemann
 Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se define la _integral inferior_ de $f$ en $I$ como el número $\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}$.
@@ -210,7 +228,7 @@ $$
 \underline{\int_a^b} f \leq \inf\{S(f,Q): Q\in\mathcal{P}(I)\} = \overline{\int_a^b}f.
 $$
 :::
-:::
+::: 
 
 :::{#def-integral-riemann}
 Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se dice que $f$ es _integrable Riemann_ en $I$ si 
@@ -315,7 +333,7 @@ Así pues, $\underline{\int_a^b}f = 0 \neq \overline{\int_a^b}f=1$.
 
 :::{#thm-criterio-integrabilidad-riemann}
 ## Criterio de integrabilidad de Riemann
-Una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ es integrable en $I$ si y sólo si para cada $\varepsilon>0$ existe una partición $P_\varepsilon\in\mathcal{P}(I)$ tal que $S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon$.
+Una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ es integrable en $I$ si y sólo si para cada $\varepsilon>0$ existe una partición $P\in\mathcal{P}(I)$ tal que $S(f,P)-s(f,P)<\varepsilon$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -371,7 +389,9 @@ $$
 :::
 :::
 
-Este último resultado nos permite calcular una integral como un límite tomando una sucesión de particiones cada vez más refinada.
+:::{.callout-important}
+Este último resultado nos permite calcular una integral como el límite de las sumas de Riemann tomando una sucesión de particiones cada vez más refinada.
+:::
 
 ## Propiedades de la integral de Riemann
 
@@ -385,7 +405,112 @@ b. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Se deja como ejercicio.
+Veamos la demostración de cada apartado.
+
+a. En primer lugar, resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
+
+    $$
+    \begin{gathered}
+    \inf\{(f+g)(x): x\in J\} \geq \inf\{f(x): x\in J\} + \inf\{g(x): x\in J\}\\
+    \sup\{(f+g)(x): x\in J\} \leq \sup\{f(x): x\in J\} + \sup\{g(x): x\in J\}
+    \end{gathered}
+    $$ {#eq-1}
+
+    Dado $\varepsilon>0$, como $f$ y $g$ son integrables, existen dos particiones $P_1,P_2\in \mathcal{P}(I)$ tales que 
+
+    $$
+    \begin{gathered}
+    S(f,P_1)-s(f,P_1)\leq \frac{\varepsilon}{2}\\
+    S(g,P_2)-s(g,P_2)\leq \frac{\varepsilon}{2}
+    \end{gathered}
+    $$
+
+    Tomando ahora el refinamiento $P=P_1\cup P_2$ de $P_1$ y $P_2$ y la @eq-1 se tiene 
+
+    \begin{align*}
+    s(f+g,P) &\geq s(f,P) + s(g,P) \geq s(f,P_1) + s(g,P_2)\\
+    S(f+g,P) &\leq S(f,P) + S(g,P) \leq S(f,P_1) + S(g,P_2)
+    \end{align*}
+
+    de manera que 
+
+    \begin{align*}
+    S(f+g,P)-s(f+g,P) &\leq (S(f,P_1)+S(g,P_2))-(s(f,P_ 1)+s(g,P_2)) \\
+    &\leq \frac{\varepsilon}{2}+\frac{\varepsilon}{2} =\varepsilon.
+    \end{align*}
+
+    Y, por tanto, $f+g$ es integrable Riemann en $I$.
+
+    Además, 
+
+    $$
+    s(f,P) + s(g,P) \leq s(f+g,P) \leq \int_a^b (f+g) \leq  S(f+g,P) \leq S(f,P) + S(g,P)
+    $$
+
+    y 
+
+    $$
+    s(f,P) + s(g,P) \leq  \int_a^b f + \int_a^b g \leq S(f,P) + S(g,P),
+    $$
+
+    por lo que se tiene
+
+    $$
+    0\leq \left|\int_a^b (f+g) - \left(\int_a^b f + \int_a^b g\right)\right| \leq (S(f,P)+S(g,P)) - (s(f,P)+s(g,P)) \leq \varepsilon,
+    $$
+
+    y por consiguiente, $\int_a^b (f+g) = \int_a^b f + \int_a^b g$.
+
+b. Si $c=0$ entonces $cf=0$, y por tanto, $cf$ es integrable y además $\int_a^b cf = 0 = c\int_a^b f$. 
+
+    Supongamos ahora que $c>0$. Resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
+
+    $$
+    \begin{gathered}
+    \inf\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}\\
+    \sup\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}
+    \end{gathered}
+    $$ {#eq-2}
+
+    de manera que si $P$ es una partición de $I$, entonces $s(cf,P)= cs(f,P)$ y $S(cf,P) = cS(f,P)$.
+
+    Como $f$ es integrable Riemann, dado $\varepsilon>0$ existe una partición $P\in\mathcal{P}(I)$ tal que $S(f,P)-s(f,P)\leq \frac{\varepsilon}{c} >0$. Por otro lado, según la @eq-2,
+
+    $$
+    S(cf,P) - s(cf,P) = c S(f,P) - cs(f,P) = c(S(f,P)-s(f,P)) < c\frac{\varepsilon}{c} = \varepsilon,
+    $$
+
+    de manera que $cf$ es integrable en $I$, y además,
+
+    \begin{align*}
+    \int_a^b cf &= \inf\{S(cf,P): P\in \mathcal{P}(I)\} = \inf\{cS(f,P): P\in \mathcal{P}(I)\} \\
+    &= c\inf\{S(f,P): P\in \mathcal{P}(I)\} = c\int_a^b f.
+    \end{align*}
+
+    Finalmente, si $c<0$, resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
+
+    $$
+    \begin{gathered}
+    \inf\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}\\
+    \sup\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}
+    \end{gathered}
+    $$ {#eq-3}
+
+    de manera que si $P$ es una partición de $I$, entonces $s(cf,P)= cS(f,P)$ y $S(cf,P) = cs(f,P)$.
+
+    Como $f$ es integrable Riemann, dado $\varepsilon>0$ existe una partición $P\in\mathcal{P}(I)$ tal que $S(f,P)-s(f,P)\leq \frac{\varepsilon}{-c} >0$. Por otro lado, según la @eq-3,
+
+    \begin{align*}
+    S(cf,P) - s(cf,P) &= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
+    &= c(S(f,P)-s(f,P)) < -c\frac{\varepsilon}{-c} = \varepsilon,
+    \end{align*}
+
+    de manera que $cf$ es integrable en $I$, y además,
+
+    \begin{align*}
+    \int_a^b cf &= \inf\{S(cf,P): P\in \mathcal{P}(I)\} = \inf\{cs(f,P): P\in \mathcal{P}(I)\} \\
+    &= c\sup\{s(f,P): P\in \mathcal{P}(I)\} = c\int_a^b f.
+    \end{align*}
 :::
 :::
 
@@ -396,9 +521,45 @@ Si $f:I\to\mathbb{R}$ es una función integrable Riemann en $I=[a,b]$ y $f(x)\ge
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Para cualquier partición $P\in\mathcal{P}(I)$ se tiene que $f(x)$ es positiva en cualquier intervalo de la partición y por tanto $s(f,P)\geq 0$. Asú pues, $\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0$.
+Para cualquier partición $P\in\mathcal{P}(I)$ se tiene que $f(x)$ es positiva en cualquier intervalo de la partición y por tanto $s(f,P)\geq 0$. Así pues, $\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0$.
 :::
 :::
+
+:::{#cor-integral-funcion-negativa}
+Si $f:I\to\mathbb{R}$ es una función integrable Riemann en $I=[a,b]$ y $f(x)\leq 0$ $\forall x\in I$, entonces $\int_a^b f(x)\,dx \leq 0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Consideremos la función $-f(x)\geq 0$ $\forall x\in\mathbb{R}$. Como $f$ es integrable en $I$, también lo es $(-1)f$ y 
+
+$$
+\int_a^b f(x)\, dx = \int_a^b (-1)(-f(x))\,dx = - \int_a^b -f(x)\,dx \leq 0,
+$$
+
+ya que por la proposición anterior $\int_a^b -f(x)\,dx \geq 0$.
+:::
+:::
+
+:::{.callout-caution}
+Este resultado nos advierte de que no se puede utilizar directamente la integral de Riemann para calcular el area entre la gráfica de la función y el eje $x$ si la función presenta valores negativos en el intervalo de integración $I$.
+
+En estos casos, el recurso habitual para calcular el área es calcular la integral del valor absoluto de la función.
+:::
+
+:::{.content-visible when-format="html"}
+::: {layout-ncol=2}
+![Integral de una función con valores positivos y negativos en un intervalo $I$](img/integrales/area-funcion-positiva-negativa.png)
+
+![Cálculo del area encerrada entre una función de una función y el eje $x$ mediante la integral del valor absoluto de la función.](img/integrales/integral-valor-absoluto.png)
+:::
+:::
+
+:::{.content-visible unless-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.pdf)
+:::
+
 
 :::{#cor-integral-funcion-mayor-que-otra}
 Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$ y $f(x)\leq g(x)$ $\forall x\in I$, entonces $\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx$.
@@ -444,7 +605,127 @@ $$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
+Supongamos que $f$ es integrable en $I$. Entonces, dado $\varepsilon>0$, existe $P\in\mathcal{P}(I)$ tal que $S(f,P)-s(f,P)<\varepsilon$.
 
+Sea $Q=P\cup\{c\}\in\mathcal{P}(I)$. Como $Q$ es un refinamiento de $P$, se cumple
+
+$$
+S(f,Q)-s(f,Q) \leq S(f,P)-s(f,P) \leq \varepsilon
+$$
+
+Tomando ahora las subparticiones $Q_1=\{t\in Q:t\leq c\}$ y $Q_2=\{t\in Q: t\geq c\}$, se tiene que
+
+$$
+\begin{gathered}
+(S(f,Q_1)-s(f,Q_1)) + (S(f,Q_2)-s(f,Q_2)) \\
+= (S(f,Q_1) + S(f,Q_2)) - (s(f,Q_1) + s(f,Q_2)) \\
+= S(f,P) - s(f,P) \leq S(f,Q) - s(f,Q) < \varepsilon,
+\end{gathered}
+$$
+
+de manera que $S(f,Q_1)-s(f,Q_1)<\varepsilon$ y $S(f,Q_2)-s(f,Q_2)<\varepsilon$, y por tanto, $f$ es integrable en $[a,c]$ y en $[c,b]$. Además, 
+
+$$
+s(f,Q) = s(f,Q_1) + s(f,Q_2) \leq \int_a^c f + \int_c^b f \leq S(f,Q_1) + S(f,Q_2) = S(f,Q)
+$$
+
+para cualquier $Q\in\mathcal{P}(I)$ y $c\in Q$. Si $P\in\mathcal{P}(I)$, tomando $Q=P\cup \{c\}$, $Q$ es un refinamiento de $P$, y por tanto, 
+
+$$
+\begin{gathered}
+s(f,P) \leq s(f,Q) = s(f,Q_1) + s(f,Q_2) \leq \int_a^c f + \int_c^b f \\
+\leq S(f,Q_1) + S(f,Q_2) = S(f,Q) \leq S(f,P),
+\end{gathered}
+$$
+
+por lo que se concluye que $\int_a^b f = \int_a^c f + \int_c^b f$.
+
+Para probar el otro sentido de la implicación, supongamos que $f$ es integrable en $[a,c]$ y $[c,b]$. Dado $\varepsilon>0$ existe $P_1\in\mathcal{P}([a,c])$ tal que $S(f,P_1)-s(f,P_1)<\frac{\varepsilon}{2}$ y existe $P_2\in\mathcal{P}([c,b])$ tal que $S(f,P_2)-s(f,P_2)<\frac{\varepsilon}{2}$. 
+
+Tomando ahora $P=P_1\cup P_2\in \mathcal{P}(I)$, se cumple
+
+$$
+S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) < \frac{\varepsilon}{2}+\frac{\varepsilon}{2} =\varepsilon,
+$$
+
+por lo que $f$ es integrable en $I$.
 :::
 :::
 
+A pesar de que la demostración es bastante larga, cuando $f$ es positiva, es obvio que el área entre la gráfica de $f$ y el eje $x$ en el intervalo $[a,b]$ puede descomponerse en la suma de las áreas en los intervalos $[a,c]$ y $[c,b]$ para cualquier $c\in(a,b)$.
+
+
+:::{.content-visible when-format="html"}
+![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral.pdf)
+:::
+
+
+## Clase de las funciones integrables
+
+A continuación trataremos de estudiar qué tipo de funciones son integrables.
+
+:::{#thm-integrabilidad-funciones-monotonas}
+Si $f:I\to\mathbb{R}$ es una función acotada y monótona en $I=[a,b]$, entonces  $f$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $f$ es creciente en $I$. Dado $\varepsilon>0$ existe un $n\in\mathbb{N}$ tal que
+
+$$
+\frac{(f(b)-f(a))(b-a)}{n} < \varepsilon.
+$$
+
+Sea ahora $P_n\in\mathcal{P}(I)$ la partición que divide $I$ en $n$ subintervalos de igual longitud, es decir, $P=\{x_0, x_1, \ldots, x_n\}$ con $x_i = a+\frac{(b-a)i}{n}$.
+
+Como $f$ es creciente en $I$ se tiene 
+
+\begin{align*}
+m_i &= \inf\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i-1})\\
+M_i &= \sup\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i})
+\end{align*}
+para $i=1,\ldots,n$, de manera que 
+
+\begin{align*}
+S(f,P_n)-s(f,P_n) &= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
+&= \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n} \\
+&= \frac{b-1}{n}(f(x_1)-f(x_0))+(f(x_2)-f(x_1))+ \cdots \\ 
+& \cdots + (f(x_{n-1})-f(x_{n-2})+ (f(x_n)-f(x_{n-1}))) \\
+&= \frac{b-a}{n}(f(b)-f(a)) < \varepsilon.
+\end{align*}
+
+Así pues, $f$ es integrable en $I$.
+:::
+:::
+
+:::{#thm-integrabilidad-funciones-monotonas}
+Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, entonces  $f$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Observemos primero que como $f$ es continua en $I$, entonces es uniformemente continua en $I$ al ser $I$ un intervalo cerrado.
+
+Dado $\varepsilon>0$, como $f$ es uniformemente continua en $I$, para $\varepsilon'=\frac{\varepsilon}{b-a}>0$ existe $\delta>0$ tal que si $|x-y|<\delta$ entonces $|f(x)-f(y)|<\varepsilon'$. 
+
+Sea $P=\{x_0,x_1,\ldots,x_n\}$ una partición que divide $I$ en subintervalos de longitud menor que $\delta$. Entonces, para cad $i=1,\ldots, n$ se tiene 
+
+$$
+M_i-m_i = \sup\{|f(x)-f(y)|: x,y\in[x_{i-1},x_i]\} \leq \varepsilon',
+$$
+ 
+y por tanto,
+
+\begin{align*}
+S(f,P)-s(f,P) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \\
+&= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
+& < \varepsilon' \sum_{i=1}^n (x_i-x_{i-1}) = \varepsilon' (b-a)  = \varepsilon.
+\end{align*}
+:::
+:::

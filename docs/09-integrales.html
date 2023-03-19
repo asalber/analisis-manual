@@ -205,6 +205,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sumas-de-riemann" id="toc-sumas-de-riemann" class="nav-link active" data-scroll-target="#sumas-de-riemann"><span class="toc-section-number">9.1</span>  Sumas de Riemann</a></li>
   <li><a href="#integrales-de-riemann" id="toc-integrales-de-riemann" class="nav-link" data-scroll-target="#integrales-de-riemann"><span class="toc-section-number">9.2</span>  Integrales de Riemann</a></li>
   <li><a href="#propiedades-de-la-integral-de-riemann" id="toc-propiedades-de-la-integral-de-riemann" class="nav-link" data-scroll-target="#propiedades-de-la-integral-de-riemann"><span class="toc-section-number">9.3</span>  Propiedades de la integral de Riemann</a></li>
+  <li><a href="#clase-de-las-funciones-integrables" id="toc-clase-de-las-funciones-integrables" class="nav-link" data-scroll-target="#clase-de-las-funciones-integrables"><span class="toc-section-number">9.4</span>  Clase de las funciones integrables</a></li>
   </ul>
 </nav>
     </div>
@@ -286,6 +287,27 @@ S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
 </figure>
 </div>
 </div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obsérvese que si una función es negativa en un intervalo <span class="math inline">\(I\)</span>, sus sumas de Riemann son negativas, ya que las alturas de los rectángulos son negativas.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/sumas-riemann-positivas-negativas.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sumas de Riemann de una función con valores positivos y negativos en un intervalo.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div>
 <div id="ggb-suma-riemann-1">
 
@@ -319,7 +341,7 @@ var params = {
 <p><span class="theorem-title"><strong>Proposición 9.1 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -328,7 +350,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Para cada <span class="math inline">\(i=1,\ldots,n\)</span> se tiene que</p>
@@ -355,7 +377,7 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1}) \leq \sum_{i=1}^n M_i(x_i-x_{i-1}) = S(f,
 </ol>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -364,7 +386,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veremos solo la prueba para las sumas inferiores.</p>
@@ -391,7 +413,7 @@ s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
 <p><span class="theorem-title"><strong>Proposición 9.3 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son dos particiones de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> y <span class="math inline">\(s(f,Q)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -400,7 +422,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Tomando la partición de <span class="math inline">\(I\)</span> <span class="math inline">\(P'=P\cup Q\)</span>, se tiene que <span class="math inline">\(P'\)</span> es un refinamiento de <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span>, de manera que, según las proposiciones anteriores se tiene</p>
@@ -418,6 +440,15 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 </section>
 <section id="integrales-de-riemann" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="integrales-de-riemann"><span class="header-section-number">9.2</span> Integrales de Riemann</h2>
+<p>Como acabamos de ver, dada una función <span class="math inline">\(f\)</span> positiva en un intervalo <span class="math inline">\(I\)</span>, para cualquier partición <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, la suma inferior de Riemann es una aproximación por defecto del área encerrada entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\(I\)</span>, mientras que la suma superior de Riemann es una aproximación por exceso. Si al hacer refinamientos de la partición <span class="math inline">\(P\)</span>, cada vez con un mayor número de subintervalos, las sumas inferiores crecen y las superiores decrecen, se obtienen aproximaciones cada vez mejores. Podemos explotar esta idea para calcular el area área encerrada entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> tomando particiones con subintervalos cada vez más pequeños.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/sumas_riemann.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Aproximación del area encerrada entre la gráfica de una función y el eje <span class="math inline">\(x\)</span> mediante sumas de Riemann.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <div id="def-integral-inferior-riemann" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.5 (Integral inferior de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
 </div>
@@ -428,7 +459,7 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 <p><span class="theorem-title"><strong>Proposición 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\underline{\int_a^b} f\leq \overline{\int_a^b}f\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -437,7 +468,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sean <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> dos particiones cualesquiera de <span class="math inline">\(I\)</span>. Por la proposición anterior, <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> <span class="math inline">\(\forall P\in\mathcal(P)(I)\)</span>, de modo que <span class="math inline">\(S(f,Q)\)</span> es una cota superior de todas las sumas inferiores, y por tanto,</p>
@@ -539,10 +570,10 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 <p>Así pues, <span class="math inline">\(\underline{\int_a^b}f = 0 \neq \overline{\int_a^b}f=1\)</span>.</p>
 </div>
 <div id="thm-criterio-integrabilidad-riemann" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.1 (Criterio de integrabilidad de Riemann) </strong></span>Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P_\varepsilon\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P_\varepsilon)-s(f,P_\varepsilon)&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 9.1 (Criterio de integrabilidad de Riemann) </strong></span>Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -551,7 +582,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span>, es decir, <span class="math inline">\(\underline{\int_a^b}f = \overline{\int_a^b}f\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P)\)</span> por ser <span class="math inline">\(\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
@@ -576,7 +607,7 @@ S(f,P_\varepsilon)-s(f,P_\varepsilon) \leq S(f,Q)-s(f,P) \leq \left(\overline{\i
 \]</span></p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -585,7 +616,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(S(f,P_k)=s(f,P_k)&lt;\varepsilon\)</span>, luego, por el criterio de integrabilidad de Riemann, se tiene que <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
@@ -604,7 +635,19 @@ Demostración
 </div>
 </div>
 </div>
-<p>Este último resultado nos permite calcular una integral como un límite tomando una sucesión de particiones cada vez más refinada.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este último resultado nos permite calcular una integral como el límite de las sumas de Riemann tomando una sucesión de particiones cada vez más refinada.</p>
+</div>
+</div>
 </section>
 <section id="propiedades-de-la-integral-de-riemann" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="propiedades-de-la-integral-de-riemann"><span class="header-section-number">9.3</span> Propiedades de la integral de Riemann</h2>
@@ -614,48 +657,6 @@ Demostración
 <li><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></li>
 <li>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></li>
 </ol>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Demostración
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="prp-integral-funcion-positiva" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Demostración
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Para cualquier partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> se tiene que <span class="math inline">\(f(x)\)</span> es positiva en cualquier intervalo de la partición y por tanto <span class="math inline">\(s(f,P)\geq 0\)</span>. Asú pues, <span class="math inline">\(\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -670,16 +671,89 @@ Demostración
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Consideremos la función <span class="math inline">\(g(x)-f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Como <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son integrables en <span class="math inline">\(I\)</span>, también lo es <span class="math inline">\(g-f\)</span> y</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Veamos la demostración de cada apartado.</p>
+<ol type="a">
+<li><p>En primer lugar, resulta sencillo ver que para cualquier subintervalo <span class="math inline">\(J\)</span> de <span class="math inline">\(I\)</span> se cumple</p>
+<p><span id="eq-1"><span class="math display">\[
+\begin{gathered}
+\inf\{(f+g)(x): x\in J\} \geq \inf\{f(x): x\in J\} + \inf\{g(x): x\in J\}\\
+\sup\{(f+g)(x): x\in J\} \leq \sup\{f(x): x\in J\} + \sup\{g(x): x\in J\}
+\end{gathered}
+  \tag{9.1}\]</span></span></p>
+<p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son integrables, existen dos particiones <span class="math inline">\(P_1,P_2\in \mathcal{P}(I)\)</span> tales que</p>
 <p><span class="math display">\[
-\int_a^b g(x)-f(x)\, dx = \int_a^b g(x)\,dx - \int_a^b f(x)\,dx \geq 0 \Rightarrow \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx.
+\begin{gathered}
+S(f,P_1)-s(f,P_1)\leq \frac{\varepsilon}{2}\\
+S(g,P_2)-s(g,P_2)\leq \frac{\varepsilon}{2}
+\end{gathered}
 \]</span></p>
+<p>Tomando ahora el refinamiento <span class="math inline">\(P=P_1\cup P_2\)</span> de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span> y la <a href="#eq-1">Ecuación&nbsp;<span>9.1</span></a> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+s(f+g,P) &amp;\geq s(f,P) + s(g,P) \geq s(f,P_1) + s(g,P_2)\\
+S(f+g,P) &amp;\leq S(f,P) + S(g,P) \leq S(f,P_1) + S(g,P_2)
+\end{align*}\]</span></p>
+<p>de manera que</p>
+<p><span class="math display">\[\begin{align*}
+S(f+g,P)-s(f+g,P) &amp;\leq (S(f,P_1)+S(g,P_2))-(s(f,P_ 1)+s(g,P_2)) \\
+&amp;\leq \frac{\varepsilon}{2}+\frac{\varepsilon}{2} =\varepsilon.
+\end{align*}\]</span></p>
+<p>Y, por tanto, <span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span>.</p>
+<p>Además,</p>
+<p><span class="math display">\[
+s(f,P) + s(g,P) \leq s(f+g,P) \leq \int_a^b (f+g) \leq  S(f+g,P) \leq S(f,P) + S(g,P)
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+s(f,P) + s(g,P) \leq  \int_a^b f + \int_a^b g \leq S(f,P) + S(g,P),
+\]</span></p>
+<p>por lo que se tiene</p>
+<p><span class="math display">\[
+0\leq \left|\int_a^b (f+g) - \left(\int_a^b f + \int_a^b g\right)\right| \leq (S(f,P)+S(g,P)) - (s(f,P)+s(g,P)) \leq \varepsilon,
+\]</span></p>
+<p>y por consiguiente, <span class="math inline">\(\int_a^b (f+g) = \int_a^b f + \int_a^b g\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(c=0\)</span> entonces <span class="math inline">\(cf=0\)</span>, y por tanto, <span class="math inline">\(cf\)</span> es integrable y además <span class="math inline">\(\int_a^b cf = 0 = c\int_a^b f\)</span>.</p>
+<p>Supongamos ahora que <span class="math inline">\(c&gt;0\)</span>. Resulta sencillo ver que para cualquier subintervalo <span class="math inline">\(J\)</span> de <span class="math inline">\(I\)</span> se cumple</p>
+<p><span id="eq-2"><span class="math display">\[
+\begin{gathered}
+\inf\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}\\
+\sup\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}
+\end{gathered}
+  \tag{9.2}\]</span></span></p>
+<p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cs(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cS(f,P)\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-2">Ecuación&nbsp;<span>9.2</span></a>,</p>
+<p><span class="math display">\[
+S(cf,P) - s(cf,P) = c S(f,P) - cs(f,P) = c(S(f,P)-s(f,P)) &lt; c\frac{\varepsilon}{c} = \varepsilon,
+\]</span></p>
+<p>de manera que <span class="math inline">\(cf\)</span> es integrable en <span class="math inline">\(I\)</span>, y además,</p>
+<p><span class="math display">\[\begin{align*}
+\int_a^b cf &amp;= \inf\{S(cf,P): P\in \mathcal{P}(I)\} = \inf\{cS(f,P): P\in \mathcal{P}(I)\} \\
+&amp;= c\inf\{S(f,P): P\in \mathcal{P}(I)\} = c\int_a^b f.
+\end{align*}\]</span></p>
+<p>Finalmente, si <span class="math inline">\(c&lt;0\)</span>, resulta sencillo ver que para cualquier subintervalo <span class="math inline">\(J\)</span> de <span class="math inline">\(I\)</span> se cumple</p>
+<p><span id="eq-3"><span class="math display">\[
+\begin{gathered}
+\inf\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}\\
+\sup\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}
+\end{gathered}
+  \tag{9.3}\]</span></span></p>
+<p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cS(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cs(f,P)\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{-c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-3">Ecuación&nbsp;<span>9.3</span></a>,</p>
+<p><span class="math display">\[\begin{align*}
+S(cf,P) - s(cf,P) &amp;= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
+&amp;= c(S(f,P)-s(f,P)) &lt; -c\frac{\varepsilon}{-c} = \varepsilon,
+\end{align*}\]</span></p>
+<p>de manera que <span class="math inline">\(cf\)</span> es integrable en <span class="math inline">\(I\)</span>, y además,</p>
+<p><span class="math display">\[\begin{align*}
+\int_a^b cf &amp;= \inf\{S(cf,P): P\in \mathcal{P}(I)\} = \inf\{cs(f,P): P\in \mathcal{P}(I)\} \\
+&amp;= c\sup\{s(f,P): P\in \mathcal{P}(I)\} = c\int_a^b f.
+\end{align*}\]</span></p></li>
+</ol>
 </div>
 </div>
 </div>
 </div>
-<div id="cor-integral-funcion-acotada" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.3 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
+<div id="prp-integral-funcion-positiva" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
@@ -692,6 +766,112 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Para cualquier partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> se tiene que <span class="math inline">\(f(x)\)</span> es positiva en cualquier intervalo de la partición y por tanto <span class="math inline">\(s(f,P)\geq 0\)</span>. Así pues, <span class="math inline">\(\int_a^b f(x)\,dx = \sup\{s(f,P):P\in \mathcal{P}(I)\}\geq 0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integral-funcion-negativa" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.2 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq 0\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Consideremos la función <span class="math inline">\(-f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, también lo es <span class="math inline">\((-1)f\)</span> y</p>
+<p><span class="math display">\[
+\int_a^b f(x)\, dx = \int_a^b (-1)(-f(x))\,dx = - \int_a^b -f(x)\,dx \leq 0,
+\]</span></p>
+<p>ya que por la proposición anterior <span class="math inline">\(\int_a^b -f(x)\,dx \geq 0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este resultado nos advierte de que no se puede utilizar directamente la integral de Riemann para calcular el area entre la gráfica de la función y el eje <span class="math inline">\(x\)</span> si la función presenta valores negativos en el intervalo de integración <span class="math inline">\(I\)</span>.</p>
+<p>En estos casos, el recurso habitual para calcular el área es calcular la integral del valor absoluto de la función.</p>
+</div>
+</div>
+<div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/area-funcion-positiva-negativa.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Integral de una función con valores positivos y negativos en un intervalo <span class="math inline">\(I\)</span></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/integral-valor-absoluto.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cálculo del area encerrada entre una función de una función y el eje <span class="math inline">\(x\)</span> mediante la integral del valor absoluto de la función.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.3 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Consideremos la función <span class="math inline">\(g(x)-f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Como <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son integrables en <span class="math inline">\(I\)</span>, también lo es <span class="math inline">\(g-f\)</span> y</p>
+<p><span class="math display">\[
+\int_a^b g(x)-f(x)\, dx = \int_a^b g(x)\,dx - \int_a^b f(x)\,dx \geq 0 \Rightarrow \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integral-funcion-acotada" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Por el corolario anterior se tiene <span class="math inline">\(\int_a^b m\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b M\,dx\)</span>.</p>
@@ -710,7 +890,7 @@ m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
 \]</span></p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -719,10 +899,123 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span></p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>. Entonces, dado <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
+<p>Sea <span class="math inline">\(Q=P\cup\{c\}\in\mathcal{P}(I)\)</span>. Como <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span>, se cumple</p>
+<p><span class="math display">\[
+S(f,Q)-s(f,Q) \leq S(f,P)-s(f,P) \leq \varepsilon
+\]</span></p>
+<p>Tomando ahora las subparticiones <span class="math inline">\(Q_1=\{t\in Q:t\leq c\}\)</span> y <span class="math inline">\(Q_2=\{t\in Q: t\geq c\}\)</span>, se tiene que</p>
+<p><span class="math display">\[
+\begin{gathered}
+(S(f,Q_1)-s(f,Q_1)) + (S(f,Q_2)-s(f,Q_2)) \\
+= (S(f,Q_1) + S(f,Q_2)) - (s(f,Q_1) + s(f,Q_2)) \\
+= S(f,P) - s(f,P) \leq S(f,Q) - s(f,Q) &lt; \varepsilon,
+\end{gathered}
+\]</span></p>
+<p>de manera que <span class="math inline">\(S(f,Q_1)-s(f,Q_1)&lt;\varepsilon\)</span> y <span class="math inline">\(S(f,Q_2)-s(f,Q_2)&lt;\varepsilon\)</span>, y por tanto, <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\([a,c]\)</span> y en <span class="math inline">\([c,b]\)</span>. Además,</p>
+<p><span class="math display">\[
+s(f,Q) = s(f,Q_1) + s(f,Q_2) \leq \int_a^c f + \int_c^b f \leq S(f,Q_1) + S(f,Q_2) = S(f,Q)
+\]</span></p>
+<p>para cualquier <span class="math inline">\(Q\in\mathcal{P}(I)\)</span> y <span class="math inline">\(c\in Q\)</span>. Si <span class="math inline">\(P\in\mathcal{P}(I)\)</span>, tomando <span class="math inline">\(Q=P\cup \{c\}\)</span>, <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span>, y por tanto,</p>
+<p><span class="math display">\[
+\begin{gathered}
+s(f,P) \leq s(f,Q) = s(f,Q_1) + s(f,Q_2) \leq \int_a^c f + \int_c^b f \\
+\leq S(f,Q_1) + S(f,Q_2) = S(f,Q) \leq S(f,P),
+\end{gathered}
+\]</span></p>
+<p>por lo que se concluye que <span class="math inline">\(\int_a^b f = \int_a^c f + \int_c^b f\)</span>.</p>
+<p>Para probar el otro sentido de la implicación, supongamos que <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(P_1\in\mathcal{P}([a,c])\)</span> tal que <span class="math inline">\(S(f,P_1)-s(f,P_1)&lt;\frac{\varepsilon}{2}\)</span> y existe <span class="math inline">\(P_2\in\mathcal{P}([c,b])\)</span> tal que <span class="math inline">\(S(f,P_2)-s(f,P_2)&lt;\frac{\varepsilon}{2}\)</span>.</p>
+<p>Tomando ahora <span class="math inline">\(P=P_1\cup P_2\in \mathcal{P}(I)\)</span>, se cumple</p>
+<p><span class="math display">\[
+S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2} =\varepsilon,
+\]</span></p>
+<p>por lo que <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>A pesar de que la demostración es bastante larga, cuando <span class="math inline">\(f\)</span> es positiva, es obvio que el área entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([a,b]\)</span> puede descomponerse en la suma de las áreas en los intervalos <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span> para cualquier <span class="math inline">\(c\in(a,b)\)</span>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/aditividad-integral.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Aditividad de la integral respecto del intervalo de integración</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="clase-de-las-funciones-integrables" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="clase-de-las-funciones-integrables"><span class="header-section-number">9.4</span> Clase de las funciones integrables</h2>
+<p>A continuación trataremos de estudiar qué tipo de funciones son integrables.</p>
+<div id="thm-integrabilidad-funciones-monotonas" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es creciente en <span class="math inline">\(I\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(n\in\mathbb{N}\)</span> tal que</p>
+<p><span class="math display">\[
+\frac{(f(b)-f(a))(b-a)}{n} &lt; \varepsilon.
+\]</span></p>
+<p>Sea ahora <span class="math inline">\(P_n\in\mathcal{P}(I)\)</span> la partición que divide <span class="math inline">\(I\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual longitud, es decir, <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> con <span class="math inline">\(x_i = a+\frac{(b-a)i}{n}\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es creciente en <span class="math inline">\(I\)</span> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+m_i &amp;= \inf\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i-1})\\
+M_i &amp;= \sup\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i})
+\end{align*}\]</span> para <span class="math inline">\(i=1,\ldots,n\)</span>, de manera que</p>
+<p><span class="math display">\[\begin{align*}
+S(f,P_n)-s(f,P_n) &amp;= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
+&amp;= \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n} \\
+&amp;= \frac{b-1}{n}(f(x_1)-f(x_0))+(f(x_2)-f(x_1))+ \cdots \\
+&amp; \cdots + (f(x_{n-1})-f(x_{n-2})+ (f(x_n)-f(x_{n-1}))) \\
+&amp;= \frac{b-a}{n}(f(b)-f(a)) &lt; \varepsilon.
+\end{align*}\]</span></p>
+<p>Así pues, <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-integrabilidad-funciones-monotonas" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Observemos primero que como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces es uniformemente continua en <span class="math inline">\(I\)</span> al ser <span class="math inline">\(I\)</span> un intervalo cerrado.</p>
+<p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(I\)</span>, para <span class="math inline">\(\varepsilon'=\frac{\varepsilon}{b-a}&gt;0\)</span> existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon'\)</span>.</p>
+<p>Sea <span class="math inline">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> una partición que divide <span class="math inline">\(I\)</span> en subintervalos de longitud menor que <span class="math inline">\(\delta\)</span>. Entonces, para cad <span class="math inline">\(i=1,\ldots, n\)</span> se tiene</p>
+<p><span class="math display">\[
+M_i-m_i = \sup\{|f(x)-f(y)|: x,y\in[x_{i-1},x_i]\} \leq \varepsilon',
+\]</span></p>
+<p>y por tanto,</p>
+<p><span class="math display">\[\begin{align*}
+S(f,P)-s(f,P) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \\
+&amp;= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
+&amp; &lt; \varepsilon' \sum_{i=1}^n (x_i-x_{i-1}) = \varepsilon' (b-a)  = \varepsilon.
+\end{align*}\]</span></p>
 </div>
 </div>
 </div>
