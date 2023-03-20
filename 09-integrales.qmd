@@ -557,7 +557,11 @@ En estos casos, el recurso habitual para calcular el área es calcular la integr
 :::
 
 :::{.content-visible unless-format="html"}
-![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.pdf)
+::: {layout-ncol=2}
+![Integral de una función con valores positivos y negativos en un intervalo $I$](img/integrales/area-funcion-positiva-negativa.pdf)
+
+![Cálculo del area encerrada entre una función de una función y el eje $x$ mediante la integral del valor absoluto de la función.](img/integrales/integral-valor-absoluto.pdf)
+:::
 :::
 
 
@@ -729,3 +733,363 @@ S(f,P)-s(f,P) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \
 \end{align*}
 :::
 :::
+
+:::{#thm-integrabilidad-composicion-funciones}
+Si $f:I\to\mathbb{R}$ es una función integrable en $I=[a,b]$ y $g:J\to\mathbb{R}$ es una función continua en $J=[c,d]$ con $f(I)\subseteq J$, entonces $g\circ f$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $g$ es continua en $J$, está acotada en $J$, de manera que podemos tomar $k>\sup\{g(x):x\in J\}-\inf\{f(x):x\in J\}$.
+
+Por otro lado, como $J$ es cerrado, $g$ es uniformemente continua en $J$ y dado $\varepsilon>0$, existe $\delta<\varepsilon$ tal que si $|x-y|<\delta$ entonces $|g(x)-g(y)|<\frac{\varepsilon}{2(b-a)}$.
+
+Como $f$ es integrable en $I$ podemos tomar una partición $P=\{x_0,x_1,\ldots,x_n\}$ de $I$, tal que 
+
+$$
+S(f,P)-s(f,P) < \frac{\delta^2}{2k}.
+$$
+
+Para $i=1,\ldots,n$, sea
+
+\begin{align*}
+m_i &= \inf\{f(x): x\in[x_{i-1},x_i]\}\\
+M_i &= \sup\{f(x): x\in[x_{i-1},x_i]\}\\
+m_i' &= \inf\{g\circ f(x): x\in[x_{i-1},x_i]\}\\
+M_i' &= \sup\{g\circ f(x): x\in[x_{i-1},x_i]\}\\
+\end{align*}
+
+y sea
+
+\begin{align*}
+A &= \{i\in\{1,\ldots, n\}: M_i-m_i<\delta\}\\
+B &= \{i\in\{1,\ldots, n\}: M_i-m_i\geq\delta\}
+\end{align*}
+
+Entonces se cumple que 
+
+$$
+\delta\sum_{i\in B} (x_i-x_{i-1}) \leq \sum_{i\in B} (M_i-m_i)(x_i-x_{i-1}) \leq \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1}) < \frac{\delta^2}{2k}
+$$
+
+de donde se deduce que 
+
+$$
+\sum_{i\in B} (x_i-x_{i-1}) < \frac{\delta}{2k}.
+$$
+
+Y utilizando los resultados anteriores se tiene
+
+\begin{align*}
+S(g\circ f,P)-s(g\circ f,P) &= \sum_{i\in A}(M_i'-m_i')(x_i-x_{i-1}) + \sum_{i\in B}(M_i'-m_i')(x_i-x_{i-1}) \\
+&< \frac{\varepsilon}{2(b-a)} \sum_{i\in A}(x_i-x_{i-1}) + k \sum_{i\in B}(x_i-x_{i-1})\\
+&< \frac{\varepsilon}{2}+\frac{\delta}{2} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} < \varepsilon,
+\end{align*}
+
+por lo que $g\circ f$ es integrable en $I$.
+:::
+:::
+
+:::{#cor-integrabilidad-valor-absoluto}
+Si $f:I\to\mathbb{R}$ es una función integrable en $I=[a,b]$, entonces la función $|f|$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es integrable en $I$, $f$ está acotada en $I$, así que, tomando $c=\sup\{|f(x)|: x\in I\}$, basta aplicar el teorema anterior con $g=|x|$ en el intervalo $J=[-c,c]$.
+:::
+:::
+
+:::{#cor-integrabilidad-potencias}
+Si $f:I\to\mathbb{R}$ es una función integrable en $I=[a,b]$, entonces la función $f^n$ es integrable en $I$ para cualquier $n\in\mathbb{N}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es integrable en $I$, $f$ está acotada en $I$, así que, tomando $c=\sup\{|f(x)|: x\in I\}$, basta aplicar el teorema anterior con $g=x^n$ en el intervalo $J=[-c,c]$.
+:::
+:::
+
+:::{#cor-integrabilidad-funcion-inversa}
+Si $f:I\to\mathbb{R}$ es una función integrable en $I=[a,b]$ tal que $f(x)>0$ $\forall x\in I$, entonces la función $\frac{1}{f}$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es integrable en $I$, $f$ está acotada en $I$, así que, tomando $c=\inf\{f(x): x\in I\}$ y $d=\sup\{f(x): x\in I\}$, basta aplicar el teorema anterior con $g=\frac{1}{f}$ en el intervalo $J=[c,d]$.
+:::
+:::
+
+:::{#cor-integrabilidad-funcion-inversa}
+Si $f,g:I\to\mathbb{R}$ son dos funciones integrable en $I=[a,b]$, entonces la función $fg$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Basta tener en cuenta los resultados anteriores y que 
+
+$$
+fg = \frac{1}{2}((f+g)^2-f^2-g^2)
+$$
+:::
+:::
+
+## Teorema fundamental del cálculo
+
+En las secciones anteriores se ha definido la integral de Riemann y hemos estudiado los tipos de funciones integrables, pero, en general, el cálculo de integrales mediante sumas de Riemann suele ser complicado. En esta sección se presenta un importante teorema, al que llegaron Newton y Leibniz de manera simultánea, que relaciona el cálculo integral con el cálculo diferencial y que nos facilitará enormemente el cálculo de integrales sin tener que recurrir a la aproximación mediante sumas de Riemann. Este teorema es tan importante para el Análisis que se ha denominado _teorema fundamental del Cálculo_.
+
+:::{#def-integral-indefinida}
+Dada $f:I\to\mathbb{R}$ integrable en $I=[a,b]$, se define la _integral indefinida_ de $f$ en $I$ como la función 
+
+$$
+F(x) = \int_a^x f(t)\, dt
+$$
+
+$\forall x\in I$.
+:::
+
+Antes de enunciar el teorema, presentamos un resultado necesario para su demostración.
+
+:::{#prp-integral-valor-absoluto}
+Si $f:I\to\mathbb{R}$ integrable en $I=[a,b]$, entonces 
+
+$$
+\left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
+$$ 
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es integrable en $I$, por el @cor-integrabilidad-valor-absoluto $|f|$ también es integrable en $I$.
+
+Por otro lado, $-|f|\leq f \leq |f|$, y por las propiedades de la integral se tiene
+
+$$
+(-1)\int_a^b |f(x)|\,dx = \int_a^b -|f(x)|\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b |f(x)|\,dx,
+$$
+
+de donde se deduce que 
+
+$$
+\left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx.
+$$
+:::
+:::
+
+:::{#thm-integral-indefinida-continua}
+Si $f:I\to\mathbb{R}$ integrable en $I=[a,b]$ y $F(x)=\int_a^x f(t)\,dt$ es la integral indefinida de $f$ en $I$, entonces $F$ es continua en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como $f$ es integrable en $I$, está acotada en $I$, así que sea $c=\sup\{|f(x)|: x\in I\}$.
+
+Para cualquier $\varepsilon>0$ se puede tomar $\delta =\frac{\varepsilon}{c}>0$, de manera que si $x,y\in I$ con $x<y$ y $|x-y|<\delta$ se tiene, por la proposición anterior,
+
+\begin{align*}
+|F(y)-F(x)| 
+& = \left|\int_a^y f(t)\,dt -\int_a^x f(t)\,dt\right| = \left|\int_x^y f(t)\,dt \right| \\
+& \leq \int_x^y |f(t)|\,dt \leq c(y-x) < c\delta  = \varepsilon.
+\end{align*}
+
+Luego $F$ es uniformemente continua en $I$ y, por tanto, $F$ es continua en $I$.
+:::
+:::
+
+:::{#exm-integral-indefinida-continua}
+Sea 
+
+$$
+f(x)=
+\begin{cases}
+0 & \mbox{si $x\in [-1,0)$}\\
+1 & \mbox{si $x\in [0,1]$}
+\end{cases}
+$$
+
+$f$ es integrable pues es monótona, y su integral indefinida es
+
+$$
+F(x) = 
+\begin{cases}
+0 & \mbox{si $x\in [-1,0)$}\\
+x & \mbox{si $x\in [0,1]$}
+\end{cases}
+$$
+
+ya que para $0<x<1$ se tiene 
+
+$$
+F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
+$$
+:::
+
+Presentamos primero una primera versión del teorema fundamental del cálculo.
+
+:::{#thm-teorema-fundamental-calculo-1}
+## Teorema fundamental del Cálculo I
+Dada $f:I\to\mathbb{R}$ integrable en $I=[a,b]$ y $F(x)=\int_a^x f(t)\,dt$ la integral indefinida de $f$ en $I$, si $f$ es continua en $c\in I$, entonces $F$ es derivable en $c$ y $F'(c)=f(c)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Dado $\varepsilon>0$, como $f$ es continua en $c$, existe $\delta>0$ tal que si $x\in I$ y $|x-c|<\delta$, entonces $|f(x)-f(c)|<\varepsilon$.
+
+Tomando $h\in\mathbb{R}$ con $|h|<\delta$ y tal que $c+h\in I$, se tiene
+
+\begin{align*}
+\left|\frac{F(c+h)-F(c)}{h}-f(c)\right| 
+& = \left|\frac{\int_a^{c+h}f(t)\,dt -\int_a^c f(t)\,dt}{h} -f(c)\right| \\
+& = \left|\left(\frac{1}{h}\int_c^{c+h}f(t)\,dt\right)-f(c)\right| \\
+& = \left|\frac{1}{h}\left(\int_c^{c+h}f(t)\,dt - hf(c)\right)\right| \\
+& = \left|\frac{1}{h}\left(\int_c^{c+h}f(t)\,dt - \int_c^{c+h} f(c)\,dt\right)\right|\\
+& = \left|\frac{1}{h}\int_c^{c+h}(f(t)-f(c))\,dt\right| \\
+& = \frac{1}{|h|} \left|\int_c^{c+h}(f(t)-f(c))\,dt\right|\\
+& \leq \frac{1}{|h|} \varepsilon |h| = \varepsilon.
+\end{align*}
+
+Por tanto, $F'(c) = \lim_{h\to 0} \frac{F(c+h)-F(c)}{h} = f(c)$.
+:::
+:::
+
+La importancia de este teorema radica en que conecta el concepto de derivada, al cuál se llegó mediante el estudio de las tangentes a la gráfica de una función, y el concepto de integral, al cuál hemos llegado mediante el estudio del área encerrada entre la gráfica de la función y el eje $x$. 
+
+:::{.callout-warning}
+Este teorema nos garantiza que si $f$ es continua en en el punto $c$, la integral indefinida $F$ es derivable en ese punto y su derivada coincide con $f(c)$, pero no nos permite calcular la integral definida, ya que, como veremos a continuación, existen infinitas funciones con derivada $f(c)$.
+:::
+
+:::{#def-primitiva}
+## Primitiva de una función
+Dada una función $f:I\to\ \mathbb{R}$ integrable en $I$, a cualquier función $F$ que cumple $F'=f$ se le llama _primitiva_ de $f$.
+:::
+
+:::{.callout-warning}
+Si $F$ es una primitiva de $f$, entonces $f$ tiene infinitas primitivas, ya que $(F+C)' = F'+C' = F'+0 = F' = f$, y por tanto, $(F+C)$ también es una primitiva de $f$ $\forall C\in\mathbb{R}$. 
+:::
+
+:::{#exm-teorema-fundamental-calculo-alternativo}
+Dada la función $f(x)=2x$, es fácil ver que $F(x)=x^2+C$ es una primitiva de $f$ para cualquier $C\in\mathbb{R}$. 
+
+En el @exm-sumas-riemann vimos que $\int_0^1 x\,dx = \frac{1}{2}$, de modo que 
+$$
+\int_0^1 2x\,dx = 2 \int_0^1 x\,dx = 2\frac{1}{2} = 1.
+$$
+
+Si queremos llegar a este resultado usando primitivas, es necesario tomar la primitiva adecuada, es decir, necesitamos saber el valor concreto de la constante $C$ que permite calcular la integral definida. En este caso particular, como $F$ tiene que cumplir que $F(1)=1+C = 1=\int_0^1 2x\,dx$, resulta evidente que debe ser $C=0$, pero si tomamos cualquier otra constante, como por ejemplo $C=1$, entonces $F(1) = 1+1 = 2\neq 1 = \int_0^1 2x\,dx$. 
+:::
+
+Afortunadamente, la segunda parte del teorema fundamental del cálculo resuelve este inconveniente.
+
+:::{#thm-teorema-fundamental-calculo-2}
+## Teorema fundamental del cálculo II
+Si $f:I\to\mathbb{R}$ es integrable en $I=[a,b]$ y $F$ es una primitiva de $f$ en $I$,  entonces
+
+$$
+\int_a^b f(x)\,dx = F(b)-F(a).
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Dado $\varepsilon>0$, sea $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $I$ tal que $S(f,P)-s(f,P)<\varepsilon$.
+
+Como $F$ es continua en $I$, por el @thm-valor-medio, para $i=1,\ldots,n$, existe $t_i \in (x_i,x_{i+1})$ tal que 
+
+$$
+F(x_i)-F(x_{i-1}) = f(t_i)(x_i-x_{i-1}).
+$$
+
+Entonces,
+
+$$
+\sum_{i=1}^n f(t_i)(x_i-x_{i-1}) = \sum_{i=1}^n (F(x_i)-F(x_{i-1})) = F(b)-F(a).
+$$
+
+Pero, 
+
+$$
+s(f,P)\leq \sum_{i=1}^n f(t_i)(x_i-x_{i-1}) \leq S(f,P),
+$$
+
+por lo que 
+
+$$
+\left|F(b)-F(a)-\int_a^b f(x)\,dx\right|<\varepsilon,
+$$
+
+y por tanto, 
+
+$$
+\int_a^b f(x)\,dx = F(b)-F(a).
+$$
+:::
+:::
+
+Este teorema, que también se conoce como al _regla de Barrow_, nos permitirá calcular la integral definida de una función a partir de cualquier primitiva suya, sin necesidad de usar las sumas de Riemann.
+
+:::{#exm-regla-barrow}
+Dada la función $f(x)=x^2$, la función $F_0(x)= \frac{x^3}{3}$ es una primitiva de $f$, y por tanto, podemos usarla para calcular la siguiente integral
+
+$$
+\int_0^1 x^2\, dx = F_0(1)-F_0(0) = \frac{1^3}{3}-\frac{0^3}{3} = \frac{1}{3}.
+$$
+
+Pero podríamos haber utilizado cualquier primitiva de $f$, como por ejemplo $F_1(x) = \frac{x^3}{3}+1$, ya que
+
+$$
+\int_0^1 x^2\, dx = F_1(1)-F_1(0) = \frac{1^3}{3}+1-\left(\frac{0^3}{3}+1\right) = \frac{1}{3}+1-1 = \frac{1}{3}.
+$$
+:::
+
+:::{#exm-regla-barrow-2}
+Dada la función $f(x)=\cos(x)$, la función $F(x)= \operatorname{sen}(x)$ es una primitiva de $f$, y por tanto, podemos usarla para calcular la siguiente integral
+
+$$
+\int_{\pi/2}^\pi \cos(x)\, dx = F(\pi)-F(\pi/2) = \operatorname{sen}(\pi)-\operatorname{sen}(\pi/2) = 0-1 = -1.
+$$
+:::
+
+Hemos visto que si $f$ es continua en un intervalo $I=[a,b]$, entonces $f$ tiene primitiva en $I$, pero no toda función integrable en $I$ tiene primitiva.
+
+:::{#exm-funcion-integrable-sin-primitiva}
+La función 
+
+$$
+f(x) = 
+\begin{cases}
+1 & \mbox{si $x=1/2$}\\
+0 & \mbox{si $x\in [0,1]\setminus\{1/2\}$}
+\end{cases}
+$$
+
+es integrable en el intervalo $[0,1]$, y $\int_0^1 f(x)\,dx = 0$, sin embargo, $f$ no es continua en $[0,1]$ y no verifica el teorema de los valores intermedios, ya que  para cualquier $y\in(0,1/2)$, no existe $x\in[0,1/2]$ tal que $f(x)=y$. Por tanto, según el teorema de Darboux (@thm-darboux), $f$ no es la derivada de ninguna función en $[0,1]$, por lo que no tiene primitiva.
+:::
+
+También puede darse el caso de que $f$ tenga primitiva, y sin embargo, no sea integrable.
+
+:::{#exm-funcion-no-integrable-con-primitiva}
+La función 
+
+$$
+f(x)=
+\begin{cases}
+x^2\operatorname{sen}\left(\frac{1}{x^2}\right) & \mbox{si $x\in[-1,1]\setminus\{0\}$}\\
+0 & \mbox{si $x=0$}
+\end{cases}
+$$
+
+es derivable en cualquier punto de $[-1,1]$ y $f'(x) = 2x\operatorname{sen}\left(\frac{1}{x^2}\right)-\frac{2\cos\left(\frac{1}{^2}\right)}{x}$, que no está acotada en $[-1,1]$, y por tanto no es integrable en $[-1,1]$.
+:::
+
+
+
+
