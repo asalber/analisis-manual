@@ -339,20 +339,20 @@ Una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ es integrable 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Supongamos que $f$ es integrable Riemann en $I$, es decir, $\underline{\int_a^b}f = \overline{\int_a^b}f$. Dado $\varepsilon>0$ existe $P\in\mathcal{P}(I)$ tal que $\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P)$ por ser $\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}$.
+Supongamos que $f$ es integrable Riemann en $I$, es decir, $\underline{\int_a^b}f = \overline{\int_a^b}f$. Dado $\varepsilon>0$ existe $P_1\in\mathcal{P}(I)$ tal que $\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P_1)$ por ser $\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}$.
 
-Del mismo modo, por ser $\overline{\int_a^b} f =\sup\{S(f,P): P\in \mathcal{P}(I)\}$, existe una partición $Q\in\mathcal{P}(I)$ tal que $\overline{\int_a^b} f+\frac{\varepsilon}{2} \geq S(f,Q)$.
+Del mismo modo, por ser $\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}$, existe una partición $P_2\in\mathcal{P}(I)$ tal que $\overline{\int_a^b} f+\frac{\varepsilon}{2} \geq S(f,P_2)$.
 
-Tomando $P_\varepsilon = P\cup Q, se tiene que $s(f,P)\leq s(f,P_\varepsilon)$ y $S(f,P_\varepsilon)\leq S(f,Q)$. Así pues, 
-
-$$
-S(f,P_\varepsilon)-s(f,P_\varepsilon) \leq S(f,Q)-s(f,P) \leq \left(\overline{\int_a^b} f+\frac{\varepsilon}{2}\right) - \left(\underline{\int_a^b} f-\frac{\varepsilon}{2}\right) = \varepsilon.
-$$
-
-Para probar el otro sentido de la implicación, supongamos que para cada $\varepsilon>0$ existe una partición $P_\varepsilon\in\mathcal{P}(I)$ tal que $S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon$. Entonces,
+Tomando $P = P_1\cup P_2$, se tiene que $s(f,P_1)\leq s(f,P)$ y $S(f,P)\leq S(f,P_2)$. Así pues, 
 
 $$
-0\leq \overline{\int_a^b} f- \underline{\int_a^b} f \leq S(f,P_\varepsilon)-s(f,P_\varepsilon)<\varepsilon,
+S(f,P)-s(f,P) \leq S(f,P_2)-s(f,P_1) \leq \left(\overline{\int_a^b} f+\frac{\varepsilon}{2}\right) - \left(\underline{\int_a^b} f-\frac{\varepsilon}{2}\right) = \varepsilon.
+$$
+
+Para probar el otro sentido de la implicación, supongamos que para cada $\varepsilon>0$ existe una partición $P\in\mathcal{P}(I)$ tal que $S(f,P)-s(f,P)<\varepsilon$. Entonces,
+
+$$
+0\leq \overline{\int_a^b} f- \underline{\int_a^b} f \leq S(f,P)-s(f,P)<\varepsilon,
 $$
 
 y como esto es cierto para cualquier $\varepsilon>0$, se tiene $\overline{\int_a^b} f=\underline{\int_a^b} f$ y $f$ es integrable Riemann.
@@ -1005,7 +1005,7 @@ Dado $\varepsilon>0$, sea $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $I$ tal q
 Como $F$ es continua en $I$, por el @thm-valor-medio, para $i=1,\ldots,n$, existe $t_i \in (x_i,x_{i+1})$ tal que 
 
 $$
-F(x_i)-F(x_{i-1}) = f(t_i)(x_i-x_{i-1}).
+F(x_i)-F(x_{i-1}) = F'(t_i)(x_i-x_{i-1}) = f(t_i)(x_i-x_{i-1}).
 $$
 
 Entonces,

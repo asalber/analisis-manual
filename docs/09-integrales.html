@@ -586,15 +586,15 @@ Demostración
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span>, es decir, <span class="math inline">\(\underline{\int_a^b}f = \overline{\int_a^b}f\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P)\)</span> por ser <span class="math inline">\(\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
-<p>Del mismo modo, por ser <span class="math inline">\(\overline{\int_a^b} f =\sup\{S(f,P): P\in \mathcal{P}(I)\}\)</span>, existe una partición <span class="math inline">\(Q\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(\overline{\int_a^b} f+\frac{\varepsilon}{2} \geq S(f,Q)\)</span>.</p>
-<p>Tomando $P_= PQ, se tiene que <span class="math inline">\(s(f,P)\leq s(f,P_\varepsilon)\)</span> y <span class="math inline">\(S(f,P_\varepsilon)\leq S(f,Q)\)</span>. Así pues,</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span>, es decir, <span class="math inline">\(\underline{\int_a^b}f = \overline{\int_a^b}f\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(P_1\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(\underline{\int_a^b} f-\frac{\varepsilon}{2}\leq s(f,P_1)\)</span> por ser <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
+<p>Del mismo modo, por ser <span class="math inline">\(\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}\)</span>, existe una partición <span class="math inline">\(P_2\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(\overline{\int_a^b} f+\frac{\varepsilon}{2} \geq S(f,P_2)\)</span>.</p>
+<p>Tomando <span class="math inline">\(P = P_1\cup P_2\)</span>, se tiene que <span class="math inline">\(s(f,P_1)\leq s(f,P)\)</span> y <span class="math inline">\(S(f,P)\leq S(f,P_2)\)</span>. Así pues,</p>
 <p><span class="math display">\[
-S(f,P_\varepsilon)-s(f,P_\varepsilon) \leq S(f,Q)-s(f,P) \leq \left(\overline{\int_a^b} f+\frac{\varepsilon}{2}\right) - \left(\underline{\int_a^b} f-\frac{\varepsilon}{2}\right) = \varepsilon.
+S(f,P)-s(f,P) \leq S(f,P_2)-s(f,P_1) \leq \left(\overline{\int_a^b} f+\frac{\varepsilon}{2}\right) - \left(\underline{\int_a^b} f-\frac{\varepsilon}{2}\right) = \varepsilon.
 \]</span></p>
-<p>Para probar el otro sentido de la implicación, supongamos que para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P_\varepsilon\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P_\varepsilon)-s(f,P_\varepsilon)&lt;\varepsilon\)</span>. Entonces,</p>
+<p>Para probar el otro sentido de la implicación, supongamos que para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>. Entonces,</p>
 <p><span class="math display">\[
-0\leq \overline{\int_a^b} f- \underline{\int_a^b} f \leq S(f,P_\varepsilon)-s(f,P_\varepsilon)&lt;\varepsilon,
+0\leq \overline{\int_a^b} f- \underline{\int_a^b} f \leq S(f,P)-s(f,P)&lt;\varepsilon,
 \]</span></p>
 <p>y como esto es cierto para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, se tiene <span class="math inline">\(\overline{\int_a^b} f=\underline{\int_a^b} f\)</span> y <span class="math inline">\(f\)</span> es integrable Riemann.</p>
 </div>
@@ -1349,7 +1349,7 @@ Demostración
 <p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> una partición de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 <p>Como <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>, por el <a href="07-derivadas.html#thm-valor-medio">Teorema&nbsp;<span>7.6</span></a>, para <span class="math inline">\(i=1,\ldots,n\)</span>, existe <span class="math inline">\(t_i \in (x_i,x_{i+1})\)</span> tal que</p>
 <p><span class="math display">\[
-F(x_i)-F(x_{i-1}) = f(t_i)(x_i-x_{i-1}).
+F(x_i)-F(x_{i-1}) = F'(t_i)(x_i-x_{i-1}) = f(t_i)(x_i-x_{i-1}).
 \]</span></p>
 <p>Entonces,</p>
 <p><span class="math display">\[
