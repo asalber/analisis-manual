@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -207,6 +207,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#propiedades-de-la-integral-de-riemann" id="toc-propiedades-de-la-integral-de-riemann" class="nav-link" data-scroll-target="#propiedades-de-la-integral-de-riemann"><span class="toc-section-number">9.3</span>  Propiedades de la integral de Riemann</a></li>
   <li><a href="#clase-de-las-funciones-integrables" id="toc-clase-de-las-funciones-integrables" class="nav-link" data-scroll-target="#clase-de-las-funciones-integrables"><span class="toc-section-number">9.4</span>  Clase de las funciones integrables</a></li>
   <li><a href="#teorema-fundamental-del-cálculo" id="toc-teorema-fundamental-del-cálculo" class="nav-link" data-scroll-target="#teorema-fundamental-del-cálculo"><span class="toc-section-number">9.5</span>  Teorema fundamental del cálculo</a></li>
+  <li><a href="#cálculo-de-areas" id="toc-cálculo-de-areas" class="nav-link" data-scroll-target="#cálculo-de-areas"><span class="toc-section-number">9.6</span>  Cálculo de areas</a>
+  <ul class="collapse">
+  <li><a href="#cálculo-del-area-encerrada-por-una-función-y-el-eje-x." id="toc-cálculo-del-area-encerrada-por-una-función-y-el-eje-x." class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-una-función-y-el-eje-x."><span class="toc-section-number">9.6.1</span>  Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</a></li>
+  <li><a href="#area-encerrada-entre-dos-funciones" id="toc-area-encerrada-entre-dos-funciones" class="nav-link" data-scroll-target="#area-encerrada-entre-dos-funciones"><span class="toc-section-number">9.6.2</span>  Area encerrada entre dos funciones</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -989,7 +994,7 @@ S(f,P_n)-s(f,P_n) &amp;= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-
 </div>
 </div>
 </div>
-<div id="thm-integrabilidad-funciones-monotonas" class="theorem">
+<div id="thm-integrabilidad-funciones-continuas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -1021,8 +1026,8 @@ S(f,P)-s(f,P) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1
 </div>
 </div>
 </div>
-<div id="thm-integrabilidad-composicion-funciones" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<div id="thm-integrabilidad-funciones-discontinuas" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -1035,6 +1040,55 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integrabilidad-funciones-discontinuas" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un conjunto finito de puntos de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Haremos la prueba por inducción sobre el número de puntos de discontinuidad.</p>
+<p>El caso para un solo punto de discontinuidad se ha probado en el teorema anterior. Supongamos que si <span class="math inline">\(f\)</span> tiene <span class="math inline">\(n\)</span> puntos de discontinuidad en <span class="math inline">\(I\)</span> entonces es integrable Riemann en <span class="math inline">\(I\)</span>, y supongamos ahora que <span class="math inline">\(f\)</span> tiene <span class="math inline">\(n+1\)</span> puntos de discontinuidad. Sea <span class="math inline">\(c\)</span> el mayor de los puntos de discontinuidad. Tomando <span class="math inline">\(\delta&gt;0\)</span> se tiene que <span class="math inline">\(f\)</span> tiene <span class="math inline">\(n\)</span> puntos de discontinuidad en el intervalo <span class="math inline">\([a, c-\delta]\)</span>, por lo que es integrable en este intervalo.</p>
+<p>Sea ahora <span class="math inline">\(\varepsilon&gt;0\)</span>. Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\([a,c-\delta]\)</span> existe una partición <span class="math inline">\(P_1\)</span> de <span class="math inline">\([a,c-\delta]\)</span> tal que <span class="math inline">\(S(f,P_1)-s(f,P_2)&lt;\frac{\varepsilon}{2}\)</span>. Por otro lado, <span class="math inline">\(f\)</span> está acotada en el intervalo <span class="math inline">\([c-\delta, b]\)</span> y solo tiene una discontinuidad, por el teorema anterior, <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\([c-\delta,b]\)</span>, por lo que existe otra partición <span class="math inline">\(P_2\)</span> de <span class="math inline">\([c-\delta,b]\)</span> tal que <span class="math inline">\(S(f,P_2)-s(f,P_2)&lt;\frac{\varepsilon}{2}\)</span>.</p>
+<p>Tomando la partición <span class="math inline">\(P=P_1\cup P_2\)</span> que es un refinamiento de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span>, se tiene</p>
+<p><span class="math display">\[
+S(f,P)-s(f,P)\leq S(f,P_1)+S(f,P_2)-s(f,P_1)-s(f,P_2) &lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
+\]</span></p>
+<p>Por consiguiente <span class="math inline">\(f\)</span> es integrable Riemann con <span class="math inline">\(n+1\)</span> discontinuidades, y aplicando el principio de inducción queda probado el resultado.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-integrabilidad-composicion-funciones" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(J\)</span>, está acotada en <span class="math inline">\(J\)</span>, de manera que podemos tomar <span class="math inline">\(k&gt;\sup\{g(x):x\in J\}-\inf\{f(x):x\in J\}\)</span>.</p>
@@ -1075,49 +1129,7 @@ S(g\circ f,P)-s(g\circ f,P) &amp;= \sum_{i\in A}(M_i'-m_i')(x_i-x_{i-1}) + \sum_
 </div>
 </div>
 <div id="cor-integrabilidad-valor-absoluto" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Demostración
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\sup\{|f(x)|: x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=|x|\)</span> en el intervalo <span class="math inline">\(J=[-c,c]\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="cor-integrabilidad-potencias" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Demostración
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\sup\{|f(x)|: x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=x^n\)</span> en el intervalo <span class="math inline">\(J=[-c,c]\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
@@ -1132,13 +1144,13 @@ Demostración
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\inf\{f(x): x\in I\}\)</span> y <span class="math inline">\(d=\sup\{f(x): x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=\frac{1}{f}\)</span> en el intervalo <span class="math inline">\(J=[c,d]\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\sup\{|f(x)|: x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=|x|\)</span> en el intervalo <span class="math inline">\(J=[-c,c]\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 9.8 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<div id="cor-integrabilidad-potencias" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
@@ -1151,6 +1163,48 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\sup\{|f(x)|: x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=x^n\)</span> en el intervalo <span class="math inline">\(J=[-c,c]\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>, así que, tomando <span class="math inline">\(c=\inf\{f(x): x\in I\}\)</span> y <span class="math inline">\(d=\sup\{f(x): x\in I\}\)</span>, basta aplicar el teorema anterior con <span class="math inline">\(g=\frac{1}{f}\)</span> en el intervalo <span class="math inline">\(J=[c,d]\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 9.9 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Basta tener en cuenta los resultados anteriores y que</p>
@@ -1180,7 +1234,7 @@ F(x) = \int_a^x f(t)\, dt
 \]</span></p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1189,10 +1243,10 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, por el <a href="#cor-integrabilidad-valor-absoluto">Corolario&nbsp;<span>9.5</span></a> <span class="math inline">\(|f|\)</span> también es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, por el <a href="#cor-integrabilidad-valor-absoluto">Corolario&nbsp;<span>9.6</span></a> <span class="math inline">\(|f|\)</span> también es integrable en <span class="math inline">\(I\)</span>.</p>
 <p>Por otro lado, <span class="math inline">\(-|f|\leq f \leq |f|\)</span>, y por las propiedades de la integral se tiene</p>
 <p><span class="math display">\[
 (-1)\int_a^b |f(x)|\,dx = \int_a^b -|f(x)|\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b |f(x)|\,dx,
@@ -1206,10 +1260,10 @@ Demostración
 </div>
 </div>
 <div id="thm-integral-indefinida-continua" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 9.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1218,7 +1272,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, está acotada en <span class="math inline">\(I\)</span>, así que sea <span class="math inline">\(c=\sup\{|f(x)|: x\in I\}\)</span>.</p>
@@ -1257,10 +1311,10 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 </div>
 <p>Presentamos primero una primera versión del teorema fundamental del cálculo.</p>
 <div id="thm-teorema-fundamental-calculo-1" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.8 (Teorema fundamental del Cálculo I) </strong></span>Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 9.9 (Teorema fundamental del Cálculo I) </strong></span>Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1269,7 +1323,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\)</span>, existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(x\in I\)</span> y <span class="math inline">\(|x-c|&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x)-f(c)|&lt;\varepsilon\)</span>.</p>
@@ -1328,13 +1382,13 @@ Advertencia
 </div>
 <p>Afortunadamente, la segunda parte del teorema fundamental del cálculo resuelve este inconveniente.</p>
 <div id="thm-teorema-fundamental-calculo-2" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.9 (Teorema fundamental del cálculo II) </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F\)</span> es una primitiva de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 9.10 (Teorema fundamental del cálculo II) </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F\)</span> es una primitiva de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx = F(b)-F(a).
 \]</span></p>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1343,7 +1397,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> una partición de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
@@ -1412,8 +1466,80 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 \]</span></p>
 <p>es derivable en cualquier punto de <span class="math inline">\([-1,1]\)</span> y <span class="math inline">\(f'(x) = 2x\operatorname{sen}\left(\frac{1}{x^2}\right)-\frac{2\cos\left(\frac{1}{^2}\right)}{x}\)</span>, que no está acotada en <span class="math inline">\([-1,1]\)</span>, y por tanto no es integrable en <span class="math inline">\([-1,1]\)</span>.</p>
 </div>
+</section>
+<section id="cálculo-de-areas" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="cálculo-de-areas"><span class="header-section-number">9.6</span> Cálculo de areas</h2>
+<p>Tal y como se ha definido la integral de una función a partir de las sumas de Riemann, no resulta extraño que la principal aplicación de las integrales definidas sea el cálculo del areas encerrada por la gráfica de una función y el eje <span class="math inline">\(x\)</span> en un intervalo de <span class="math inline">\(I\)</span>. Ya hemos visto que cuando <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, si <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\, dx\geq 0\)</span> es el área encerrada entre la gráfica de la función <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\(I\)</span>. En esta sección veremos cómo calcular áreas de funciones que también presentan valores negativos en el intervalo de integración y generalizamos el resultado para calcular áreas encerradas entre las gráficas de dos funciones.</p>
+<section id="cálculo-del-area-encerrada-por-una-función-y-el-eje-x." class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="cálculo-del-area-encerrada-por-una-función-y-el-eje-x."><span class="header-section-number">9.6.1</span> Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</h3>
+<p>Ya hemos visto que cuando una función <span class="math inline">\(f(x)&lt;0\)</span> <span class="math inline">\(\forall x\in I=[a,b]\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\, dx&lt;0\)</span>, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. En general, para evitar este problema, si queremos calcular el área encerrada por la gráfica de una función <span class="math inline">\(f(x)\)</span> en un intervalo <span class="math inline">\(I=[a,b]\)</span> debemos calcular la integral definida en <span class="math inline">\(I\)</span> del valor absoluto de la función, es decir,</p>
+<p><span class="math display">\[
+\int_a^b |f(x)|\,dx.
+\]</span></p>
+<p>Ahora bien, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, normalmente se recurre a descomponer el intervalo de integración en subintervalos donde la función sea positiva o negativa, integrar <span class="math inline">\(f\)</span> en los intervalos donde la función es positiva, integrar <span class="math inline">\(-f\)</span> en los intervalos donde la función es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/area-funcion-positiva-negativa-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Area encerrada por una función positiva y negativa.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="exm-area-funcion-positiva-negativa" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.9 </strong></span>Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
+<p>Si resolvemos la ecuación <span class="math inline">\(f(x)=0\)</span> obtenemos dos raíces <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span>, de manera que la función es positiva en el intervalo <span class="math inline">\((0,1)\)</span> y <span class="math inline">\((3,4)\)</span> y negativa en el intervalo <span class="math inline">\((1,3)\)</span>. Por tanto, el área encerrada entre la gráfica de la función y el eje <span class="math inline">\(x\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^4 |f(x)|\,dx
+&amp;= \int_0^1 x^2-4x+3\,dx -\int_1^3 x^2-4x+3\,dx + \int_3^4 x^2+4x+3\,dx\\
+&amp;= \left[\frac{x^3}{3}-2x^2+3x\right]_0^1 + \left[\frac{x^3}{3}-2x^2+3x\right]_1^3 + \left[\frac{x^3}{3}-2x^2+3x\right]_3^4 \\
+&amp;= \frac{4}{3} - \frac{-4}{3} + \frac{4}{3} = 4
+\end{align*}\]</span></p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/area-parabola.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Area encerrada por la parábola <span class="math inline">\(f(x)=x^2-4x+3\)</span>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="area-encerrada-entre-dos-funciones" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="area-encerrada-entre-dos-funciones"><span class="header-section-number">9.6.2</span> Area encerrada entre dos funciones</h3>
+<p>Si en lugar de calcular el área encerrada entre la gráfica de una función <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en un intervalo <span class="math inline">\(I=[a,b]\)</span>, se quiere calcular el area encerrada entre dos funciones <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en un intervalo <span class="math inline">\(I=[a,b]\)</span>, basta con integrar la diferencia entre las dos funciones <span class="math inline">\(f-g\)</span>. Pero como <span class="math inline">\(f\)</span> puede ser mayor que <span class="math inline">\(g\)</span> en algún subintervalo de <span class="math inline">\(I\)</span> y menor en otros, para asegurarnos de calcular el area correcta, hay que integrar el valor absoluto de la diferencia, es decir,</p>
+<p><span class="math display">\[
+\int_a^b |f(x)-g(x)|\, dx
+\]</span></p>
+<p>Al igual que antes, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, tendremos que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/area-entre-funciones.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Area encerrada entre dos funciones.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="exm-area-funcion-positiva-negativa" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.10 </strong></span>Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
+<p>Si resolvemos la ecuación <span class="math inline">\(f(x)-g(x)=0\)</span> obtenemos una raíz en <span class="math inline">\(x=\pi/4\)</span> en el intervalo de integración. Se cumple que <span class="math inline">\(f(x)&lt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(0,\frac{\pi}{4}\right)\)</span> y <span class="math inline">\(f(x)&gt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(\frac{\pi}{4},\pi\right)\)</span>. Por tanto, el área comprendida entre las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^\pi |f(x)-g(x)|\,dx
+&amp;= \int_0^{\pi/4} \cos(x)-\operatorname{sen}(x)\,dx +\int_{\pi/4}^{\pi} \operatorname{sen}(x)-\cos(x)\,dx\\
+&amp;= \left[\operatorname{sen}(x)+\cos(x)\right]_0^{\pi/4} + \left[-\cos(x)-\operatorname{sen}(x)\right]_{\pi/4}^{\pi} \\
+&amp;= \sqrt{2}-1 +\sqrt{2}+1 = 2\sqrt{2}
+\end{align*}\]</span></p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/area-entre-seno-coseno.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Area encerrada entre el seno y el coseno.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

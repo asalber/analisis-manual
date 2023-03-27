@@ -707,7 +707,7 @@ Así pues, $f$ es integrable en $I$.
 :::
 :::
 
-:::{#thm-integrabilidad-funciones-monotonas}
+:::{#thm-integrabilidad-funciones-continuas}
 Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, entonces  $f$ es integrable en $I$.
 :::
 
@@ -731,6 +731,40 @@ S(f,P)-s(f,P) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \
 &= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
 & < \varepsilon' \sum_{i=1}^n (x_i-x_{i-1}) = \varepsilon' (b-a)  = \varepsilon.
 \end{align*}
+:::
+:::
+
+:::{#thm-integrabilidad-funciones-discontinuas}
+Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, salvo en un punto $c\in I$, entonces $f$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Se deja como ejercicio.
+:::
+:::
+
+:::{#cor-integrabilidad-funciones-discontinuas}
+Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, salvo en un conjunto finito de puntos de $I$, entonces $f$ es integrable en $I$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Haremos la prueba por inducción sobre el número de puntos de discontinuidad.
+
+El caso para un solo punto de discontinuidad se ha probado en el teorema anterior. Supongamos que si $f$ tiene $n$ puntos de discontinuidad en $I$ entonces es integrable Riemann en $I$, y supongamos ahora que $f$ tiene $n+1$ puntos de discontinuidad. Sea $c$ el mayor de los puntos de discontinuidad. Tomando $\delta>0$ se tiene que $f$ tiene $n$ puntos de discontinuidad en el intervalo $[a, c-\delta]$, por lo que es integrable en este intervalo. 
+
+Sea ahora $\varepsilon>0$. Como $f$ es integrable en $[a,c-\delta]$ existe una partición $P_1$ de $[a,c-\delta]$ tal que $S(f,P_1)-s(f,P_2)<\frac{\varepsilon}{2}$. Por otro lado, $f$ está acotada en el intervalo $[c-\delta, b]$ y solo tiene una discontinuidad, por el teorema anterior, $f$ es integrable en $[c-\delta,b]$, por lo que existe otra partición $P_2$ de $[c-\delta,b]$ tal que $S(f,P_2)-s(f,P_2)<\frac{\varepsilon}{2}$.
+
+Tomando la partición $P=P_1\cup P_2$ que es un refinamiento de $P_1$ y $P_2$, se tiene
+
+$$
+S(f,P)-s(f,P)\leq S(f,P_1)+S(f,P_2)-s(f,P_1)-s(f,P_2) < \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
+$$
+
+Por consiguiente $f$ es integrable Riemann con $n+1$ discontinuidades, y aplicando el principio de inducción queda probado el resultado.
 :::
 :::
 
@@ -1088,6 +1122,88 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) & \mbox{si $x\in[-1,1]\setminus\
 $$
 
 es derivable en cualquier punto de $[-1,1]$ y $f'(x) = 2x\operatorname{sen}\left(\frac{1}{x^2}\right)-\frac{2\cos\left(\frac{1}{^2}\right)}{x}$, que no está acotada en $[-1,1]$, y por tanto no es integrable en $[-1,1]$.
+:::
+
+## Cálculo de areas
+
+Tal y como se ha definido la integral de una función a partir de las sumas de Riemann, no resulta extraño que la principal aplicación de las integrales definidas sea el cálculo del areas encerrada por la gráfica de una función y el eje $x$ en un intervalo de $I$. Ya hemos visto que cuando $f(x)\geq 0$ $\forall x\in I$, si $f$ es integrable en $I=[a,b]$, entonces $\int_a^b f(x)\, dx\geq 0$ es el área encerrada entre la gráfica de la función $f$ y el eje $x$ en el intervalo $I$. En esta sección veremos cómo calcular áreas de funciones que también presentan valores negativos en el intervalo de integración y generalizamos el resultado para calcular áreas encerradas entre las gráficas de dos funciones.
+
+### Cálculo del area encerrada por una función y el eje $x$.
+
+Ya hemos visto que cuando una función $f(x)<0$ $\forall x\in I=[a,b]$, entonces $\int_a^b f(x)\, dx<0$, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. En general, para evitar este problema, si queremos calcular el área encerrada por la gráfica de una función $f(x)$ en un intervalo $I=[a,b]$ debemos calcular la integral definida en $I$ del valor absoluto de la función, es decir, 
+
+$$
+\int_a^b |f(x)|\,dx.
+$$
+
+Ahora bien, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, normalmente se recurre a descomponer el intervalo de integración en subintervalos donde la función sea positiva o negativa, integrar $f$ en los intervalos donde la función es positiva, integrar $-f$ en los intervalos donde la función es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+
+:::{.content-visible when-format="html"}
+![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.pdf)
+:::
+
+:::{#exm-area-funcion-positiva-negativa}
+Veamos cómo calcular el area encerrada entre la gráfica de la función $f(x)=x^2-4x+3$ y el eje $x$ en el intervalo $[0,4]$.
+
+Si resolvemos la ecuación $f(x)=0$ obtenemos dos raíces $x=1$ y $x=3$, de manera que la función es positiva en el intervalo $(0,1)$ y $(3,4)$ y negativa en el intervalo $(1,3)$. Por tanto, el área encerrada entre la gráfica de la función y el eje $x$ es 
+
+\begin{align*}
+\int_0^4 |f(x)|\,dx 
+&= \int_0^1 x^2-4x+3\,dx -\int_1^3 x^2-4x+3\,dx + \int_3^4 x^2+4x+3\,dx\\
+&= \left[\frac{x^3}{3}-2x^2+3x\right]_0^1 + \left[\frac{x^3}{3}-2x^2+3x\right]_1^3 + \left[\frac{x^3}{3}-2x^2+3x\right]_3^4 \\
+&= \frac{4}{3} - \frac{-4}{3} + \frac{4}{3} = 4
+\end{align*}
+
+:::{.content-visible when-format="html"}
+![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.pdf)
+:::
+:::
+
+### Area encerrada entre dos funciones
+
+Si en lugar de calcular el área encerrada entre la gráfica de una función $f$ y el eje $x$ en un intervalo $I=[a,b]$, se quiere calcular el area encerrada entre dos funciones $f$ y $g$ en un intervalo $I=[a,b]$, basta con integrar la diferencia entre las dos funciones $f-g$. Pero como $f$ puede ser mayor que $g$ en algún subintervalo de $I$ y menor en otros, para asegurarnos de calcular el area correcta, hay que integrar el valor absoluto de la diferencia, es decir,
+
+$$
+\int_a^b |f(x)-g(x)|\, dx
+$$
+
+Al igual que antes, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, tendremos que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+
+:::{.content-visible when-format="html"}
+![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.pdf)
+:::
+
+:::{#exm-area-funcion-positiva-negativa}
+Veamos cómo calcular el area encerrada entre las gráficas de las funciones $f(x)=\operatorname{sen}(x)$ y $g(x)=\cos(x)$ en el intervalo $[0,\pi]$.
+
+Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el intervalo de integración. Se cumple que $f(x)<g(x)$ $\forall x\in\left(0,\frac{\pi}{4}\right)$ y $f(x)>g(x)$ $\forall x\in\left(\frac{\pi}{4},\pi\right)$. Por tanto, el área comprendida entre las gráficas de $f$ y $g$ en el intervalo $[0,\pi]$ es
+
+\begin{align*}
+\int_0^\pi |f(x)-g(x)|\,dx 
+&= \int_0^{\pi/4} \cos(x)-\operatorname{sen}(x)\,dx +\int_{\pi/4}^{\pi} \operatorname{sen}(x)-\cos(x)\,dx\\
+&= \left[\operatorname{sen}(x)+\cos(x)\right]_0^{\pi/4} + \left[-\cos(x)-\operatorname{sen}(x)\right]_{\pi/4}^{\pi} \\
+&= \sqrt{2}-1 +\sqrt{2}+1 = 2\sqrt{2}
+\end{align*}
+
+:::{.content-visible when-format="html"}
+![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.pdf)
+:::
 :::
 
 

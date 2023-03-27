@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.22)  27 MAR 2023 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.22)  27 MAR 2023 20:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -694,7 +694,7 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-No file external/area-funcion-positiva-negativa.aux.
+No file external/area-entre-funciones.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
@@ -736,7 +736,7 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into
 your preamble.
  on input line 35.
 
-\openout4 = `external/area-funcion-positiva-negativa.dpth'.
+\openout4 = `external/area-entre-funciones.dpth'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
  42.
@@ -765,66 +765,60 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
 
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
 
-( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
+( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ( FP-SUB ) ( FP-SIN ) ( FP-MUL ) ( FP
+-ADD ) ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ( FP-SUB ) ( FP-SIN ) ( FP
+-MUL ) ( FP-ADD ) ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) 
+( FP-DIV )
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
 
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
-
-( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
-
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
 
 ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
 
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
 
-( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
 
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
 
-( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
-\openout3 = `external/area-funcion-positiva-negativa.tkzfonct.gnuplot'.
+( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL 
+( FP-UPN ) ) ( FP-DIV ) ( FP-DIV )
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
 
-runsystem(gnuplot external/area-funcion-positiva-negativa.tkzfonct.gnuplot)...e
-xecuted.
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
 
-( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ( FP-SUB ) ( FP-DIV ) ( FP-SIN ) ( FP
--MUL ) ( FP-COS ) ( FP-MUL ) ( FP-ADD ) ( FP-SUB ) ) )
+\openout3 = `external/area-entre-funciones.tkzfonct.gnuplot'.
+
+runsystem(gnuplot external/area-entre-funciones.tkzfonct.gnuplot)...executed.
+
+( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] ) 
 Here is how much of TeX's memory you used:
- 28341 strings out of 478238
- 732697 string characters out of 5850456
- 1127467 words of memory out of 5000000
- 46013 multiletter control sequences out of 15000+600000
+ 27838 strings out of 478238
+ 721960 string characters out of 5850456
+ 1120166 words of memory out of 5000000
+ 45510 multiletter control sequences out of 15000+600000
  488694 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,8n,114p,758b,883s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 104i,8n,114p,758b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/alf/texmf/fonts/en
 c/dvips/base/8r.enc}</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </home/alf/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/alf/texmf/font
 s/type1/public/amsfonts/cm/cmsy10.pfb></home/alf/texmf/fonts/type1/urw/times/ut
-mr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on external/area-funcion-positiva-negativa.pdf (1 page, 52125 by
-tes).
+mri8a.pfb>
+Output written on external/area-entre-funciones.pdf (1 page, 46438 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

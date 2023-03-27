@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.12)  19 MAR 2023 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.22)  27 MAR 2023 20:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -211,22 +211,22 @@ File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
-(/usr/local/share/texmf/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
@@ -400,12 +400,12 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (/usr/local/share/texmf/tex/latex/pgfplots/pgfplots.sty
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.revision.tex)
+))) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
 \t@pgfplots@toka=\toks34
 \t@pgfplots@tokb=\toks35
 \t@pgfplots@tokc=\toks36
@@ -413,50 +413,49 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 \c@pgfplots@coordindex=\count292
 \c@pgfplots@scanlineindex=\count293
 
-(/usr/local/share/texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
-(/usr/local/share/texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_
-loader.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_l
+oader.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex))
-(/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructur
-e.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructur
-eext.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsarray.code.t
-ex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
+.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
+ext.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.te
+x
 \c@pgfplotsarray@tmp=\count294
 )
-(/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.
-tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/numtable/pgfplotstableshared.code.
-tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.t
+ex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.t
+ex
 \c@pgfplotstable@counta=\count295
 \t@pgfplotstable@a=\toks37
 )
-(/usr/local/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.t
-ex) (/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)
-) (/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
-
-(/usr/local/share/texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshadin
-g.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading
+.code.tex
 \c@pgfplotslibrarysurf@no=\count296
 
-(/usr/local/share/texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading
-.pgfsys-pdftex.def)))
-(/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex)))
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.markers.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(/usr/local/share/texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.
+pgfsys-pdftex.def)))
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex)))
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 decorations.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
@@ -479,8 +478,8 @@ ons.pathmorphing.code.tex))
 decorations.pathreplacing.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
 ons.pathreplacing.code.tex))
-(/usr/local/share/texmf/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlu
-a.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua
+.code.tex)
 \pgfplots@numplots=\count298
 \pgfplots@xmin@reg=\dimen264
 \pgfplots@xmax@reg=\dimen265
@@ -495,13 +494,13 @@ File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (/usr/local/share/texmf/tex/latex/tkz-fct/tkz-fct.sty
+))) (/usr/share/texmf-dist/tex/latex/tkz-fct/tkz-fct.sty
 2022/01/27 1.7c function tkz-fct
 Package: tkz-fct 2022/01/27 1.7c function 
 \tkz@tkzf@fct=\count299
-(/usr/local/share/texmf/tex/latex/tkz-base/tkz-base.sty
-2022/07/14 4.2c tkz-base.sty
-Package: tkz-base 2022/07/14 4.2c tkz-base
+(/usr/share/texmf-dist/tex/latex/tkz-base/tkz-base.sty
+2022/01/28 4.05b tkz-base.sty
+Package: tkz-base 2022/01/28 4.05b tkz-base
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 angles.code.tex
@@ -523,12 +522,6 @@ File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowlinewidth=\dimen274
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-backgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@layerbox@background=\box64
-\pgf@layerboxsaved@background=\box65
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 calc.code.tex
 File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -544,9 +537,9 @@ ons.shapes.code.tex))
 decorations.text.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
 ons.text.code.tex
-\pgf@lib@dec@text@box=\box66
+\pgf@lib@dec@text@box=\box64
 )
-\tikz@lib@dec@te@box=\box67
+\tikz@lib@dec@te@box=\box65
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 intersections.code.tex
@@ -554,17 +547,6 @@ intersections.code.tex
 ex
 \pgf@intersect@solutions=\count300
 ))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-patterns.code.tex
-File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
-File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-positioning.code.tex
-File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 quotes.code.tex
 File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -578,6 +560,10 @@ ode.tex
 File: pgflibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+positioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shadows.code.tex
 File: tikzlibraryshadows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
@@ -589,20 +575,27 @@ File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+patterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 through.code.tex
 File: tikzlibrarythrough.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (/usr/local/share/texmf/tex/latex/numprint/numprint.sty
+) (/usr/share/texmf-dist/tex/latex/numprint/numprint.sty
 Package: numprint 2012/08/20 v1.39 Print numbers (HH)
 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen275
-\ar@mcellbox=\box68
+\ar@mcellbox=\box66
 \extrarowheight=\dimen276
 \NC@list=\toks38
 \extratabsurround=\skip52
 \backup@length=\skip53
-\ar@cellbox=\box69
+\ar@cellbox=\box67
 )
 \c@nprt@mantissa@digitsbefore=\count301
 \c@nprt@mantissa@digitsafter=\count302
@@ -630,7 +623,7 @@ Package: expl3 2022-04-10 L3 programming layer (loader)
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
-\l__pdf_internal_box=\box70
+\l__pdf_internal_box=\box68
 ))
 Package: xfp 2022-01-12 L3 Floating point unit
 )
@@ -701,41 +694,41 @@ Package: fp-eval 1995/04/03
 \tkz@cntmk=\count323
 
 Local configuration file tkz-base.cfg found and used
-(/usr/local/share/texmf/tex/latex/tkz-base/tkz-base.cfg
-2022/07/14 4.2c tkz-base.cfg
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-modules.tex
-2022/07/14 4.2c tkz-tools-modules.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-lib-marks.tex
-2022/07/14 4.2c tkz-lib-marks.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-lib-shape.tex
-2022/07/14 4.2c tkz-lib-shape.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-base.tex
-2022/07/14 4.2c tkz-tools-base.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-utilities.tex
-2022/07/14 4.2c tkz-tools-utilities.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-colors.tex
-2022/07/14 4.2c tkz-tools-colors
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-text.tex
-2022/07/14 4.2c tkz-tools-text.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-BB.tex
-2022/07/14 4.2c tkz-obj-BB.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-arith.tex
-2022/07/14 4.2c tkz-tools-arith.tex
+(/usr/share/texmf-dist/tex/latex/tkz-base/tkz-base.cfg
+2022/01/28 4.05b tkz-base.cfg
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-modules.tex
+2022/01/28 4.05b tkz-tools-modules.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-lib-marks.tex
+2022/01/28 4.05b tkz-lib-marks.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-lib-shape.tex
+2022/01/28 4.05b tkz-lib-shape.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-base.tex
+2022/01/28 4.05b tkz-tools-base.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-utilities.tex
+2022/01/28 4.05b tkz-tools-utilities.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-colors.tex
+2022/01/28 4.05b tkz-tools-colors
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-text.tex
+2022/01/28 4.05b tkz-tools-text.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-BB.tex
+2022/01/28 4.05b tkz-obj-BB.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-arith.tex
+2022/01/28 4.05b tkz-tools-arith.tex
 File: tkz-tool-arith.tex tkz-tool-arith 3.02 c
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-print.tex
-2022/07/14 4.2c tkz-tools-print
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-tools-misc.tex
-2022/07/14 4.2c tkz-tools-misc.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-obj-axes.tex
-2022/07/14 4.2c tkz-obj-axes
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-obj-grids.tex
-2022/07/14 4.2c tkz-obj-grids.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-obj-marks.tex
-2022/07/14 4.2c tkz-obj-marks.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-obj-points.tex
-2022/07/14 4.2c tkz-obj-points.tex
-) (/usr/local/share/texmf/tex/latex/tkz-base/tkz-obj-rep.tex
-2022/07/14 4.2c tkz-obj-rep.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-print.tex
+2022/01/28 4.05b tkz-tools-print
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-tools-misc.tex
+2022/01/28 4.05b tkz-tools-misc.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-obj-axes.tex
+2022/01/28 4.05b tkz-obj-axes
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-obj-grids.tex
+2022/01/28 4.05b tkz-obj-grids.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-obj-marks.tex
+2022/01/28 4.05b tkz-obj-marks.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-obj-points.tex
+2022/01/28 4.05b tkz-obj-eu-points.tex
+) (/usr/share/texmf-dist/tex/latex/tkz-base/tkz-obj-rep.tex
+2022/01/28 4.05b tkz-obj-rep.tex
 )) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ( FP-SUB )
 ) ) ( FP-EVAL ( FP-UPN ) ) ( FP-EVAL ( FP-UPN ( FP-SUB ) ) ) ( FP-EVAL
 ( FP-UPN ) ))
@@ -795,7 +788,7 @@ LaTeX Font Info:    ... okay on input line 35.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
 \scratchdimen=\dimen293
-\scratchbox=\box71
+\scratchbox=\box69
 \nofMPsegments=\count325
 \nofMParguments=\count326
 \everyMPshowfont=\toks42
@@ -819,43 +812,42 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into
 your preamble.
  on input line 35.
 
-\openout3 = `external/sumas-riemann-positivas-negativas.md5'.
+\openout3 = `external/area-parabola.md5'.
 
 \openout3 = `prueba.auxlock'.
 
 ===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "external/sumas-riemann-positivas-negat
-ivas" "\def\tikzexternalrealjob{prueba}\input{prueba}" && convert -density 200 
--transparent white "external/sumas-riemann-positivas-negativas.pdf" "external/s
-umas-riemann-positivas-negativas.png" ' ========
+n-error -interaction=batchmode -jobname "external/area-parabola" "\def\tikzexte
+rnalrealjob{prueba}\input{prueba}" && convert -density 200 -transparent white "
+external/area-parabola.pdf" "external/area-parabola.png" ' ========
 runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "external/sumas-riemann-positivas-negativas" "\def\tikzexternalrealjob{prueba}
-\input{prueba}" && convert -density 200 -transparent white "external/sumas-riem
-ann-positivas-negativas.pdf" "external/sumas-riemann-positivas-negativas.png" )
-...executed.
+ "external/area-parabola" "\def\tikzexternalrealjob{prueba}\input{prueba}" && c
+onvert -density 200 -transparent white "external/area-parabola.pdf" "external/a
+rea-parabola.png" )...executed.
 
 \openout3 = `prueba.auxlock'.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./external/sumas-riemann-p
-ositivas-negativas.pdf>] (./prueba.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./external/area-parabola.p
+df>] (./prueba.aux) ) 
 Here is how much of TeX's memory you used:
- 27661 strings out of 478238
- 719135 string characters out of 5850456
- 1082175 words of memory out of 5000000
- 45360 multiletter control sequences out of 15000+600000
+ 27549 strings out of 478238
+ 715925 string characters out of 5850456
+ 1079068 words of memory out of 5000000
+ 45252 multiletter control sequences out of 15000+600000
  470844 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,5n,111p,722b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/alf/texmf/fonts/enc/dvips/base/
-8r.enc}</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/alf/tex
-mf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/alf/texmf/fonts/type1/urw/t
-imes/utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on prueba.pdf (1 page, 33929 bytes).
+{/home/alf/texmf/fonts/enc/dvips/base/8r.enc}</home/alf/te
+xmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/alf/texmf/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb></home/alf/texmf/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></home/alf/texmf/fonts/type1/urw/times/utmr8a.pfb></home/alf/texmf/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on prueba.pdf (1 page, 51937 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
