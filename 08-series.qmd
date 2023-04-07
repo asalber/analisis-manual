@@ -984,7 +984,7 @@ Veamos cuál es la serie de Taylor de la función $f(x)=\ln(x)$ en $a=1$. Para e
 
 $$
 \begin{array}{lll}
-f(x)=\log x & \quad & f(1)=\log 1 =0,\\
+f(x)=\ln x & \quad & f(1)=\ln 1 =0,\\
 f'(x)=1/x & & f'(1)=1/1=1,\\
 f''(x)=-1/x^2 & & f''(1)=-1/1^2=-1,\\
 f'''(x)=2/x^3 & & f'''(1)=2/1^3=2,\\
@@ -1048,7 +1048,7 @@ que es una serie geométrica de razón $x$, y por tanto, converge para $|x|<1$, 
 Si $f$ es una función analítica en un intervalo $I$, entonces para cualquier $a\in I$ se cumple que
 
 $$
-f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}
+f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n
 $$
 
 $\forall x\in\mathcal{C}$.
@@ -1108,13 +1108,13 @@ $$
 Continuando con este proceso, se deduce que 
 
 $$
-c_n = \frac{f^{(n)}}{n!},
+c_n = \frac{f^{(n)}(a)}{n!},
 $$
 
 por lo que la suma que se obtiene es
 
 $$
-f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!},
+f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
 $$
 
 que es la serie de Taylor de $f$ centrada en $a$.
@@ -1139,7 +1139,7 @@ $$
 es infinitamente derivable en $x=0$ y $f^{(n)}(0)=0$ $\forall n\in\mathbb{N}$, de manera que su serie de Maclaurin es $\sum 0$, que obviamente, converge para cualquier número $x\in\mathbb{R}$, pero su suma, que es nula, no coincide con $f$ salvo en $x=0$.
 :::
 
-Cabe preguntarse, ¿cuándo $f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}$?
+Cabe preguntarse, ¿cuándo $f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n$?
 
 Evidentemente, esta igualdad no se cumple para los valores de $x$ fuera del dominio de $f$, y tampoco para los valores fuera del dominio de convergencia puntual de la serie. Pero además se tiene que cumplir la siguiente condición.
 
@@ -1211,7 +1211,7 @@ La siguiente tabla recoge las series de Maclaurin de algunas funciones elemental
 | $\ln(1+x)$ | $x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots = \sum_{n=0}^\infty (-1)^{n-1}\frac{x^n}{n}$ | $(-1,1]$ |
 | $\operatorname{sen}(x)$ | $x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}$ | $\mathbb{R}$ |
 | $\cos(x)$ |  $1-\frac{x^2}{2!}+\frac{x^4}{4!}- \cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$ | $\mathbb{R}$ |
-| $\operatorname{arctg}(x)$ | $x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots = \sum_{n=0}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)}$ | $(-1,1)$ |
+| $\operatorname{arctg}(x)$ | $x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)}$ | $(-1,1)$ |
 | $(1+x)^k$ | $1+kx+\frac{k(k-1)}{2!}x^2+ \frac{k(k-1)(k-2)}{3!}x^3 + \cdots = \sum_{n=0}^\infty \binom{k}{n}x^n$ | $(-1,1)$ |
 
 
