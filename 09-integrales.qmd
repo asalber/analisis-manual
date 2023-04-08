@@ -201,7 +201,7 @@ Como acabamos de ver, dada una función $f$ positiva en un intervalo $I$, para c
 
 :::{#def-integral-inferior-riemann}
 ## Integral inferior de Riemann
-Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se define la _integral inferior_ de $f$ en $I$ como el número $\underline{\int_a^b} f =\inf\{s(f,P): P\in \mathcal{P}(I)\}$.
+Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se define la _integral inferior_ de $f$ en $I$ como el número $\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}$.
 :::
 
 :::{#def-integral-superior-riemann}
@@ -1206,6 +1206,151 @@ Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el 
 :::
 :::
 
+### Cálculo del area encerrada por una curva en coordenadas polares
 
+En ocasiones, para calcular el area encerrada por una curva, especialmente para curvas dadas mediante una ecuación implícita, resulta más sencillo trabajar en coordenadas polares. 
 
+:::{.content-visible when-format="html"}
+![Coordenadas polares.](img/integrales/coordenadas-polares.png)
+:::
 
+:::{.content-visible unless-format="html"}
+![Coordenadas polares.](img/integrales/coordenadas-polares.pdf)
+:::
+
+Para pasar de coordenadas cartesianas a coordenadas polares, primero se obtiene el valor de $r$ aplicando el teorema de Pitágoras
+
+$$
+r = \sqrt{x^2+y^2}
+$$
+
+y después se obtiene el ángulo aplicando relaciones trigonométricas
+
+$$
+\theta =
+\begin{cases}
+\operatorname{arccos}\left(\frac{x}{r}\right) & \mbox{si $y\geq 0$}\\
+-\operatorname{arccos}\left(\frac{x}{r}\right) & \mbox{si $y<0$}
+\end{cases}
+$$
+
+suponiendo $r\neq 0$.
+
+Y para pasar de coordenadas polares a coordenadas cartesianas se aplican las siguientes relaciones trigonométricas
+
+\begin{align*}
+x &= r \cos(\theta)\\
+y &= r \operatorname{sen}(\theta)
+\end{align*}
+
+Para calcular el area encerrada por una curva dada en coordenadas polares $r=f(\theta)$ y las rectas $\theta=a$ y $\theta=b$, se puede utilizar una aproximación similar a las sumas de Riemann, descomponiendo el area en sectores de círculo con ángulos en una partición $P=\{\theta_0=a, \theta_1, \ldots, \theta_n=b\}$ de $I=[a,b]$. Si para cada uno de estos sectores se toma como radio el ínfimo de $f(\theta)$ en el correspondiente subintervalo, surgen las sumas inferiores
+
+$$
+s(f,P) = \sum_{i=1}^n \pi m_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}^n \frac{m_i^2}{2}(\theta_i-\theta_{i-1}) 
+$$
+
+donde $m_i=\inf\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}$ para $i=1,\ldots,n$.
+
+Mientras que si para cada uno de estos sectores se toma como radio el supremo de $f(\theta)$ en el correspondiente subintervalo, surgen las sumas superiores
+
+$$
+S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}^n \frac{M_i^2}{2}(\theta_i-\theta_{i-1}) 
+$$
+
+donde $M_i=\sup\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}$ para $i=1,\ldots,n$.
+
+:::{.content-visible when-format="html"}
+![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.pdf)
+:::
+
+De forma análoga se puede definir _integral inferior_ de $f$ en $I$ como $\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}$ y la _integral superior_ de $f$ en $I$ como el número $\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}$, de manera que, si la integral inferior coincide con la superior, la función es integrable y 
+
+$$
+\int_a^b \frac{f(\theta)^2}{2}\,d\theta
+$$
+
+mide el área encerrada por la curva $r=f(\theta)$ y las rectas $\theta=a$ y $\theta=b$.
+
+:::{.content-visible when-format="html"}
+![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.pdf)
+:::
+
+:::{#exm-area-semicirculo-polares}
+Un semicírculo de radio $r$ puede expresarse en coordenadas polares mediante la función $f(\theta)=r$ para $0\leq \theta\leq \pi$. Por tanto, el área encerrada por este semicírculo es 
+
+$$
+\int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
+$$.
+:::
+
+:::{#exm-area-curva-polar}
+Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.
+
+$$
+\int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
+$$.
+
+:::{.content-visible when-format="html"}
+![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.pdf)
+:::
+:::
+
+### Cálculo del area encerrada por dos curvas en coordenadas polares
+
+También es posible calcular el area encerrada por dos curvas en coordenadas polares de forma análoga a como se hizo para el area encerrada entre dos funciones en coordenadas cartesianas. 
+
+Si tenemos dos curvas polares $r=f(\theta)$ y $r=g(\theta)$, con $f(\theta)\leq g(\theta)$ $\forall \theta\in[a,b]$, el area encerrada entre estas dos curvas en el intervalo $[a,b]$ puede calcularse restando el area encerrada por $g$ al area encerrada por $f$, es decir,
+
+$$
+\frac{1}{2} \int_a^b f(\theta)^2\,d\theta - \frac{1}{2} \int_a^b g(\theta)^2\,d\theta = \frac{1}{2} \int_a^b f(\theta)^2-g(\theta)^2\,d\theta
+$$
+
+:::{.content-visible when-format="html"}
+![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.pdf)
+:::
+
+En general, cuando $f$ es mayor que $g$ en algunos subintervalos de $I$ y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+
+:::{#exr-area-entre-curvas-polares}
+Vamos a calcular el area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas. 
+
+$$
+3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{6}
+$$
+
+Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Como en este intervalo $1+\cos(\theta) \leq 3\cos(\theta)$, el area encerrada entre estas dos curvas es
+
+\begin{align*}
+\frac{1}{2}\int_{-\pi/6}^{\pi/6}f(\theta)^2-g(\theta)^2\,d\theta 
+&= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
+&= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(8\cos(\theta))^2 - 2\cos(\theta) - 1 \,d\theta \\
+&= \frac{1}{2}\left(8\int_{-\pi/6}^{\pi/6}\cos(\theta)^2\,d\theta - 2\int_{-\pi/6}^{\pi/6}\cos(\theta)\,d\theta - \int_{-\pi/6}^{\pi/6}\,d\theta \right) \\
+&= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/6}^{\pi/6} - 2[\operatorname{sen}(\theta)]_{-\pi/6}^{\pi/6} - [\theta]_{-\pi/6}^{\pi/6} \right) \\
+&= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{6} +\sqrt{3} +\frac{4\pi}{6}\right)\\
+&= \frac{\pi}{2}+\sqrt{3}-1 \approx 2.3028
+\end{align*}
+
+:::{.content-visible when-format="html"}
+![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.pdf)
+:::
+:::

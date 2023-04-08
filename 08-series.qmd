@@ -961,7 +961,7 @@ para cualquier $x$ en un entorno de $a$.
 :::
 
 :::{#exm-funciones-analiticas}
-Cualquier polinomio de grado $n$ una función analítica en todo $\mathbb{R}$ ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que $n$.
+Cualquier polinomio de grado $n$ es una función analítica en todo $\mathbb{R}$ ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que $n$.
 
 Otras funciones elementales como la función exponencial, la función logarítmica y las trigonométricas son también analíticas en cualquier intervalo abierto de su dominio.
 :::

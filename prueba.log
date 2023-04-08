@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.22)  9 APR 2023 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.22)  7 APR 2023 20:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**prueba.tex
-(./prueba.tex
+**img/tikz/prueba.tex
+(./img/tikz/prueba.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-04-10>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -494,9 +494,7 @@ File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)))
-(/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.polar.code
-.tex) (/usr/share/texmf-dist/tex/latex/tkz-fct/tkz-fct.sty
+))) (/usr/share/texmf-dist/tex/latex/tkz-fct/tkz-fct.sty
 2022/01/27 1.7c function tkz-fct
 Package: tkz-fct 2022/01/27 1.7c function 
 \tkz@tkzf@fct=\count299
@@ -763,29 +761,29 @@ lshared.code.tex))
 
 \symsymbolsb=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `symbolsb' in version `bold'
-(Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 25.
+(Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 24.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-6.
+5.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (./prueba.aux)
 \openout1 = `prueba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
@@ -812,46 +810,18 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 36.
+ on input line 35.
 
-\openout3 = `external/area-entre-curvas-polares-2.md5'.
+\openout3 = `img/tikz/external/coordenadas-polares.md5'.
 
 \openout3 = `prueba.auxlock'.
 
 ===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "external/area-entre-curvas-polares-2" 
-"\def\tikzexternalrealjob{prueba}\input{prueba}" && convert -density 200 -trans
-parent white "external/area-entre-curvas-polares-2.pdf" "external/area-entre-cu
-rvas-polares-2.png" ' ========
+n-error -interaction=batchmode -jobname "img/tikz/external/coordenadas-polares"
+ "\def\tikzexternalrealjob{prueba}\input{prueba}" && convert -density 200 -tran
+sparent white "img/tikz/external/coordenadas-polares.pdf" "img/tikz/external/co
+ordenadas-polares.png" ' ========
 runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "external/area-entre-curvas-polares-2" "\def\tikzexternalrealjob{prueba}\input
-{prueba}" && convert -density 200 -transparent white "external/area-entre-curva
-s-polares-2.pdf" "external/area-entre-curvas-polares-2.png" )...executed.
-
-\openout3 = `prueba.auxlock'.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./external/area-entre-curv
-as-polares-2.pdf>] (./prueba.aux) ) 
-Here is how much of TeX's memory you used:
- 27619 strings out of 478238
- 718382 string characters out of 5850456
- 1083389 words of memory out of 5000000
- 45319 multiletter control sequences out of 15000+600000
- 470844 words of font info for 30 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 100i,5n,111p,728b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/alf/texmf/fonts/enc/dvips/base/8r.enc
-}</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/alf/texmf/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></home/alf/texmf/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></home/alf/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/home/alf/texmf/fonts/type1/urw/symbol/usyr.pfb></home/alf/texmf/fonts/type1/ur
-w/times/utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on prueba.pdf (1 page, 67846 bytes).
-PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ "img/tikz/external/coordenadas-polares" "\def\tikzexternalrealjob{prueba}\inpu
+t{prueba}" && convert -density 200 -transparent white "img/tikz/external/coorde
+nadas-polares.pdf" "img/tikz
