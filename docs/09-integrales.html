@@ -214,6 +214,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares"><span class="toc-section-number">9.6.3</span>  Cálculo del area encerrada por una curva en coordenadas polares</a></li>
   <li><a href="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares"><span class="toc-section-number">9.6.4</span>  Cálculo del area encerrada por dos curvas en coordenadas polares</a></li>
   </ul></li>
+  <li><a href="#integrales-impropias" id="toc-integrales-impropias" class="nav-link" data-scroll-target="#integrales-impropias"><span class="toc-section-number">9.7</span>  Integrales impropias</a></li>
+  <li><a href="#cálculo-de-volúmenes" id="toc-cálculo-de-volúmenes" class="nav-link" data-scroll-target="#cálculo-de-volúmenes"><span class="toc-section-number">9.8</span>  Cálculo de volúmenes</a>
+  <ul class="collapse">
+  <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="toc-section-number">9.8.1</span>  Cálculo de volúmenes de sólidos de revolución</a></li>
+  <li><a href="#cálculo-de-volúmenes-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="toc-section-number">9.8.2</span>  Cálculo de volúmenes con envoltorios cilíndricos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1637,8 +1643,8 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 </div>
 </div>
 <p>En general, cuando <span class="math inline">\(f\)</span> es mayor que <span class="math inline">\(g\)</span> en algunos subintervalos de <span class="math inline">\(I\)</span> y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
-<div id="exr-area-entre-curvas-polares" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 9.1 </strong></span>Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
+<div id="exm-area-entre-curvas-polares" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.13 </strong></span>Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
 <p><span class="math display">\[
 3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{6}
 \]</span></p>
@@ -1660,6 +1666,156 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 </figure>
 </div>
 </div>
+</div>
+</section>
+</section>
+<section id="integrales-impropias" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="integrales-impropias"><span class="header-section-number">9.7</span> Integrales impropias</h2>
+<p>El concepto de integral definida de una función en un intervalo cerrado <span class="math inline">\([a,b\)</span>] y se puede generalizar a intervalos no acotados y también a funciones con discontinuidades de salto infinito.</p>
+<div id="def-integral-impropia-1" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 9.10 (Integral impropia de primer tipo) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,t]\)</span> para <span class="math inline">\(\forall t&gt;a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,\infty)\)</span> como el límite</p>
+<p><span class="math display">\[
+\int_a^\infty f(x)\,dx = \lim_{t\to\infty} \int_a^t f(x)\,dx
+\]</span></p>
+<p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
+<p>Del mismo modo, si <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I=[t,a]\)</span> para <span class="math inline">\(\forall t&lt;a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\((-\infty, a]\)</span> como el límite</p>
+<p><span class="math display">\[
+\int_{-\infty}^a f(x)\,dx = \lim_{t\to\infty} \int_t^a f(x)\,dx.
+\]</span></p>
+<p>Finalmente, si <span class="math inline">\(\int_{-\infty}^a f(x)\,dx\)</span> y <span class="math inline">\(\int_a^\infty f(x)\,dx\)</span> convergen, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\((-\infty, \infty)\)</span> como</p>
+<p><span class="math display">\[
+\int_{-\infty}^\infty f(x)\,dx = \int_{-\infty}^a f(x)\,dx + \int_a^\infty f(x)\,dx
+\]</span></p>
+</div>
+<p>Para funciones positivas en los dominios de integración, estas integrales impropias pueden interpretarse también como áreas. En particular, <span class="math inline">\(\int_a^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([a,\infty)\)</span>, <span class="math inline">\(\int_{-\infty}^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\((-\infty,a]\)</span> y <span class="math inline">\(\int_{-\infty}^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div id="exm-integrales-impropias-1" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.14 </strong></span>La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p><span class="math display">\[
+\int_1^\infty \frac{1}{x^2}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x^2}\,dx = \lim_{t\to\infty}\left[\frac{-1}{x}\right]_1^t = \lim_{n\to\infty} 1-\frac{1}{t} = 1.
+\]</span></p>
+<p>Por tanto, el área que queda encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> por encima de <span class="math inline">\(1\)</span> es finita y vale <span class="math inline">\(1\)</span>.</p>
+<p>Sin embargo, la integral impropia de la función <span class="math inline">\(g(x)=\frac{1}{x}\)</span> diverge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p><span class="math display">\[
+\int_1^\infty \frac{1}{x}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x}\,dx = \lim_{t\to\infty}\left[\ln(x)\right]_1^t = \lim_{n\to\infty} \ln(t) = \infty.
+\]</span></p>
+<p>Y por tanto, el área que queda encerrada por la gráfica de <span class="math inline">\(g\)</span> y el eje <span class="math inline">\(x\)</span> por encima de <span class="math inline">\(1\)</span> es infinita.</p>
+</div>
+<p>En estos casos la región encerrada por la gráfica de la función y el eje <span class="math inline">\(x\)</span> se extiende de manera infinita a lo largo del eje <span class="math inline">\(x\)</span>. La misma idea puede aplicarse para calcular areas de regiones encerradas por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(y\)</span> cuando estas regiones se extienden de manera infinita porque la función no está acotada en algún valor del dominio de integración.</p>
+<div id="def-integral-impropia-2" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 9.11 (Integral impropia de segundo tipo) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> continua en <span class="math inline">\(I=[a,b)\)</span> y discontinua en <span class="math inline">\(b\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el límite</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = \lim_{t\to b^-} \int_a^t f(x)\,dx
+\]</span></p>
+<p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
+</div>
+</section>
+<section id="cálculo-de-volúmenes" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="cálculo-de-volúmenes"><span class="header-section-number">9.8</span> Cálculo de volúmenes</h2>
+<p>Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos. Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/seccion-transversal-piramide.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>En general, si disponemos de una función <span class="math inline">\(A(x)\)</span> que nos da el área de la sección transversal del sólido para cada <span class="math inline">\(x\in[a,b]\)</span>, podemos tomar una partición <span class="math inline">\(P_n=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann</p>
+<p><span class="math display">\[\begin{align*}
+s(A,P_n) &amp;= \sum_{i=1}^n m_i(x_i-x_{i-1}),\quad m_i=\inf\{A(x): x\in(x_{i-1},x_i)\}\\
+S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i)\}
+\end{align*}\]</span></p>
+<p>donde <span class="math inline">\(m_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(m_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>, y <span class="math inline">\(M_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(M_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>.</p>
+<div>
+<div id="ggb-volumen-revolucion">
+
+</div>
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 800, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": true,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            "showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"drndnm2u"
+            };
+    var ggbApplet2 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet2.inject('ggb-volumen-revolucion');
+    });
+</script>
+</div>
+<p>Como ya hemos visto, si <span class="math inline">\(\lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n)\)</span>, la función <span class="math inline">\(A(x)\)</span> es integrable Riemann en el intervalo <span class="math inline">\([a,b]\)</span> y</p>
+<p><span class="math display">\[
+\int_a^b A(x)\,dx = \lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n),
+\]</span></p>
+<p>mide el volumen del cuerpo sólido con secciones transversales de área <span class="math inline">\(A(x)\)</span> en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
+<div id="exm-volumen-esfera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.15 </strong></span>Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_0\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_0^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_0^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_0^2}\right)^2= \pi (r^2-x_0^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
+<p><span class="math display">\[\begin{align*}
+\int_{-r}^r \pi(r^2-x^2)\,dx
+&amp;= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
+&amp;= \pi\left(r^2r-\frac{r^3}{3}-\left(r^2(-r)-\frac{(-r)^3}{3}\right)\right) \\
+&amp;= 2r^3 - \frac{2r^3}{3}
+= \frac{4}{3}\pi r^3.
+\end{align*}\]</span></p>
+</div>
+<section id="cálculo-de-volúmenes-de-sólidos-de-revolución" class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="header-section-number">9.8.1</span> Cálculo de volúmenes de sólidos de revolución</h3>
+<p>Cuando el sólido se obtiene rotando una función <span class="math inline">\(f(x)\)</span> alrededor del eje <span class="math inline">\(x\)</span>, se dice que el sólido resultante es un <em>sólido de revolución</em>. Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
+<p><span class="math display">\[
+\int_a^b \pi f(x)^2\,dx
+\]</span></p>
+<div id="exm-volumen-cono-revolucion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.16 </strong></span>Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^2 \pi f(x)^2\,dx
+&amp;= \int_0^2 \pi (2-x)^2\,dx
+= \pi \int_0^2 x^2-4x+4\,dx \\
+&amp;= \pi \left[\frac{x^3}{3}-2x^2+4x\right]_0^2
+= \pi\left(\frac{2^3}{3}-2\cdot 2^2+4\cdot 2\right)
+= \frac{8}{3}\pi.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="level3" data-number="9.8.2">
+<h3 data-number="9.8.2" class="anchored" data-anchor-id="cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes con envoltorios cilíndricos</h3>
+<div>
+<div id="ggb-volumen-revolucion-envoltorios">
+
+</div>
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 800, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": true,
+            "showZoomButtons": true,
+            "showResetIcon": true,
+            "showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"bcpdxmpf"
+            };
+    var ggbApplet3 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
+    });
+</script>
 </div>
 
 

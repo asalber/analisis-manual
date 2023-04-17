@@ -1327,7 +1327,7 @@ $$
 
 En general, cuando $f$ es mayor que $g$ en algunos subintervalos de $I$ y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
 
-:::{#exr-area-entre-curvas-polares}
+:::{#exm-area-entre-curvas-polares}
 Vamos a calcular el area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas. 
 
 $$
@@ -1353,4 +1353,185 @@ Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Com
 :::{.content-visible unless-format="html"}
 ![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.pdf)
 :::
+:::
+
+## Integrales impropias
+
+El concepto de integral definida de una función en un intervalo cerrado $[a,b$] y se puede generalizar a intervalos no acotados y también a funciones con discontinuidades de salto infinito.
+
+:::{#def-integral-impropia-1}
+## Integral impropia de primer tipo
+Dada una función $f:I\to\mathbb{R}$ integrable en $I=[a,t]$ para $\forall t>a$, se define la _integral impropia_ de $f$ en el intervalo $[a,\infty)$ como el límite
+
+$$
+\int_a^\infty f(x)\,dx = \lim_{t\to\infty} \int_a^t f(x)\,dx
+$$
+
+siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.
+
+Del mismo modo, si $f$ es integrable en $I=[t,a]$ para $\forall t<a$, se define la _integral impropia_ de $f$ en el intervalo $(-\infty, a]$ como el límite
+
+$$
+\int_{-\infty}^a f(x)\,dx = \lim_{t\to\infty} \int_t^a f(x)\,dx.
+$$
+
+Finalmente, si $\int_{-\infty}^a f(x)\,dx$ y $\int_a^\infty f(x)\,dx$ convergen, se define la _integral impropia_ de $f$ en el intervalo $(-\infty, \infty)$ como
+
+$$
+\int_{-\infty}^\infty f(x)\,dx = \int_{-\infty}^a f(x)\,dx + \int_a^\infty f(x)\,dx
+$$
+:::
+
+Para funciones positivas en los dominios de integración, estas integrales impropias pueden interpretarse también como áreas. En particular, $\int_a^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en el intervalo $[a,\infty)$, $\int_{-\infty}^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en el intervalo $(-\infty,a]$ y $\int_{-\infty}^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en todo $\mathbb{R}$.
+
+:::{#exm-integrales-impropias-1}
+La integral impropia de la función $f(x)=\frac{1}{x^2}$ converge en el intervalo $[1,\infty]$ ya que 
+
+$$
+\int_1^\infty \frac{1}{x^2}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x^2}\,dx = \lim_{t\to\infty}\left[\frac{-1}{x}\right]_1^t = \lim_{n\to\infty} 1-\frac{1}{t} = 1.
+$$
+
+Por tanto, el área que queda encerrada por la gráfica de $f$ y el eje $x$ por encima de $1$ es finita y vale $1$.
+
+Sin embargo, la integral impropia de la función $g(x)=\frac{1}{x}$ diverge en el intervalo $[1,\infty]$ ya que 
+
+$$
+\int_1^\infty \frac{1}{x}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x}\,dx = \lim_{t\to\infty}\left[\ln(x)\right]_1^t = \lim_{n\to\infty} \ln(t) = \infty.
+$$
+
+Y por tanto, el área que queda encerrada por la gráfica de $g$ y el eje $x$ por encima de $1$ es infinita.
+:::
+
+En estos casos la región encerrada por la gráfica de la función y el eje $x$ se extiende de manera infinita a lo largo del eje $x$. La misma idea puede aplicarse para calcular areas de regiones encerradas por la gráfica de $f$ y el eje $y$ cuando estas regiones se extienden de manera infinita porque la función no está acotada en algún valor del dominio de integración.
+
+:::{#def-integral-impropia-2}
+## Integral impropia de segundo tipo
+Dada una función $f:I\to\mathbb{R}$ continua en $I=[a,b)$ y discontinua en $b$, se define la _integral impropia_ de $f$ en $I$ como el límite
+
+$$
+\int_a^b f(x)\,dx = \lim_{t\to b^-} \int_a^t f(x)\,dx
+$$
+
+siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.
+:::
+
+## Cálculo de volúmenes
+
+Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos.
+Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.
+
+:::{.content-visible when-format="html"}
+![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.pdf)
+:::
+
+En general, si disponemos de una función $A(x)$ que nos da el área de la sección transversal del sólido para cada $x\in[a,b]$, podemos tomar una partición $P_n=\{x_0=a,x_1,\ldots, x_n=b\}$ del intervalo $[a,b]$ y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann
+
+\begin{align*}
+s(A,P_n) &= \sum_{i=1}^n m_i(x_i-x_{i-1}),\quad m_i=\inf\{A(x): x\in(x_{i-1},x_i)\}\\
+S(A,P_n) &= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i)\}
+\end{align*}
+
+donde $m_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $m_i$ y altura $x_i-x_{i-1}$, y $M_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $M_i$ y altura $x_i-x_{i-1}$.
+
+::: {.content-visible when-format="html"}
+<div id="ggb-volumen-revolucion"></div>
+
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 800, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": true,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            "showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"drndnm2u"
+            };
+    var ggbApplet2 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet2.inject('ggb-volumen-revolucion');
+    });
+</script>
+:::
+
+Como ya hemos visto, si $\lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n)$, la función $A(x)$ es integrable Riemann en el intervalo $[a,b]$ y 
+
+$$
+\int_a^b A(x)\,dx = \lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n),
+$$
+
+mide el volumen del cuerpo sólido con secciones transversales de área $A(x)$ en el intervalo $[a,b]$.
+
+:::{#exm-volumen-esfera}
+Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el origen con ecuación $x^2+y^2+z^2=r^2$. Si cortamos la esfera con planos $x=x_0$ perpendiculares al eje $x$, sustituyendo en la ecuación de la esfera, se tiene $y^2+z^2=r^2-x_0^2$, por lo que se obtienen secciones transversales circulares con radio $\sqrt{r^2-x_0^2}$, y, por tanto, el área de estas secciones circulares será $\pi \left(\sqrt{r^2-x_0^2}\right)^2= \pi (r^2-x_0^2)$. Así pues, la función que nos da el área de la sección transversal para cualquier $x\in[-r,r]$ es $A(x)=\pi(r^2-x^2)$, y por tanto, podemos calcular el volumen de la esfera con la integral definida
+
+\begin{align*}
+\int_{-r}^r \pi(r^2-x^2)\,dx 
+&= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
+&= \pi\left(r^2r-\frac{r^3}{3}-\left(r^2(-r)-\frac{(-r)^3}{3}\right)\right) \\
+&= 2r^3 - \frac{2r^3}{3} 
+= \frac{4}{3}\pi r^3.
+\end{align*}
+:::
+
+### Cálculo de volúmenes de sólidos de revolución
+
+Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio $f(x)$, por lo que el área de las secciones transversales es $A(x)=\pi f(x)^2$, y su volumen en el intervalo $[a,b]$ puede calcularse mediante la integral definida
+
+$$
+\int_a^b \pi f(x)^2\,dx
+$$
+
+:::{#exm-volumen-cono-revolucion}
+Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondiente al intervalo $x\in[0,2]$, se obtiene un cono con base de radio $2$ y altura $2$. El volumen de este cono es
+
+\begin{align*}
+\int_0^2 \pi f(x)^2\,dx 
+&= \int_0^2 \pi (2-x)^2\,dx 
+= \pi \int_0^2 x^2-4x+4\,dx \\
+&= \pi \left[\frac{x^3}{3}-2x^2+4x\right]_0^2
+= \pi\left(\frac{2^3}{3}-2\cdot 2^2+4\cdot 2\right) 
+= \frac{8}{3}\pi.
+\end{align*}
+:::
+
+### Cálculo de volúmenes con envoltorios cilíndricos
+
+::: {.content-visible when-format="html"}
+<div id="ggb-volumen-revolucion-envoltorios"></div>
+
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 800, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": true,
+            "showZoomButtons": true,
+            "showResetIcon": true,
+            "showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"bcpdxmpf"
+            };
+    var ggbApplet3 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
+    });
+</script>
 :::
