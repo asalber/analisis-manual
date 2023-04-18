@@ -1760,7 +1760,7 @@ var params = {
 \]</span></p>
 <p>mide el volumen del cuerpo sólido con secciones transversales de área <span class="math inline">\(A(x)\)</span> en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
 <div id="exm-volumen-esfera" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.15 </strong></span>Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_0\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_0^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_0^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_0^2}\right)^2= \pi (r^2-x_0^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.15 </strong></span>Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r \pi(r^2-x^2)\,dx
 &amp;= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
@@ -1789,6 +1789,11 @@ var params = {
 </section>
 <section id="cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="level3" data-number="9.8.2">
 <h3 data-number="9.8.2" class="anchored" data-anchor-id="cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes con envoltorios cilíndricos</h3>
+<p>Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios cilíndricos como los de figura de mas abajo.</p>
+<p>El envoltorio cilíndrico para un valor <span class="math inline">\(x\)</span> cualquiera tiene un area dada por <span class="math inline">\(2\pi x f(x)\)</span>, de manera que sumando estas infinitas áreas, se puede llegar al volumen del cuerpo sólido en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
+<p><span class="math display">\[
+\int_a^b 2\pi x f(x)\,dx
+\]</span></p>
 <div>
 <div id="ggb-volumen-revolucion-envoltorios">
 

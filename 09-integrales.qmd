@@ -1474,7 +1474,7 @@ $$
 mide el volumen del cuerpo sólido con secciones transversales de área $A(x)$ en el intervalo $[a,b]$.
 
 :::{#exm-volumen-esfera}
-Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el origen con ecuación $x^2+y^2+z^2=r^2$. Si cortamos la esfera con planos $x=x_0$ perpendiculares al eje $x$, sustituyendo en la ecuación de la esfera, se tiene $y^2+z^2=r^2-x_0^2$, por lo que se obtienen secciones transversales circulares con radio $\sqrt{r^2-x_0^2}$, y, por tanto, el área de estas secciones circulares será $\pi \left(\sqrt{r^2-x_0^2}\right)^2= \pi (r^2-x_0^2)$. Así pues, la función que nos da el área de la sección transversal para cualquier $x\in[-r,r]$ es $A(x)=\pi(r^2-x^2)$, y por tanto, podemos calcular el volumen de la esfera con la integral definida
+Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el origen con ecuación $x^2+y^2+z^2=r^2$. Si cortamos la esfera con planos $x=x_i$ perpendiculares al eje $x$, sustituyendo en la ecuación de la esfera, se tiene $y^2+z^2=r^2-x_i^2$, por lo que se obtienen secciones transversales circulares con radio $\sqrt{r^2-x_i^2}$, y, por tanto, el área de estas secciones circulares será $\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)$. Así pues, la función que nos da el área de la sección transversal para cualquier $x\in[-r,r]$ es $A(x)=\pi(r^2-x^2)$, y por tanto, podemos calcular el volumen de la esfera con la integral definida
 
 \begin{align*}
 \int_{-r}^r \pi(r^2-x^2)\,dx 
@@ -1507,6 +1507,14 @@ Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondie
 :::
 
 ### Cálculo de volúmenes con envoltorios cilíndricos
+
+Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios cilíndricos como los de figura de mas abajo. 
+
+El envoltorio cilíndrico para un valor $x$ cualquiera tiene un area dada por $2\pi x f(x)$, de manera que sumando estas infinitas áreas, se puede llegar al volumen del cuerpo sólido en el intervalo $[a,b]$ mediante la integral definida
+
+$$
+\int_a^b 2\pi x f(x)\,dx
+$$
 
 ::: {.content-visible when-format="html"}
 <div id="ggb-volumen-revolucion-envoltorios"></div>
