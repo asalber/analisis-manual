@@ -1435,7 +1435,7 @@ s(A,P_n) &= \sum_{i=1}^n m_i(x_i-x_{i-1}),\quad m_i=\inf\{A(x): x\in(x_{i-1},x_i
 S(A,P_n) &= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i)\}
 \end{align*}
 
-donde $m_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $m_i$ y altura $x_i-x_{i-1}$, y $M_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $M_i$ y altura $x_i-x_{i-1}$.
+donde $m_i (x_i-x_{i-1})$ es el volumen de un disco cilíndrico de base $m_i$ y altura $x_i-x_{i-1}$, y $M_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $M_i$ y altura $x_i-x_{i-1}$.
 
 ::: {.content-visible when-format="html"}
 <div id="ggb-volumen-revolucion"></div>
@@ -1487,7 +1487,17 @@ Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el orige
 
 ### Cálculo de volúmenes de sólidos de revolución
 
-Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio $f(x)$, por lo que el área de las secciones transversales es $A(x)=\pi f(x)^2$, y su volumen en el intervalo $[a,b]$ puede calcularse mediante la integral definida
+Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. 
+
+:::{.content-visible when-format="html"}
+![Sólido de revolución.](img/integrales/disco-solido-revolucion.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Sólido de revolución.](img/integrales/disco-solido-revolucion.pdf)
+:::
+
+Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio $f(x)$, por lo que el área de las secciones transversales es $A(x)=\pi f(x)^2$, y su volumen en el intervalo $[a,b]$ puede calcularse mediante la integral definida
 
 $$
 \int_a^b \pi f(x)^2\,dx
@@ -1508,9 +1518,17 @@ Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondie
 
 ### Cálculo de volúmenes con envoltorios cilíndricos
 
-Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios cilíndricos como los de figura de mas abajo. 
+Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo. 
 
-El envoltorio cilíndrico para un valor $x$ cualquiera tiene un area dada por $2\pi x f(x)$, de manera que sumando estas infinitas áreas, se puede llegar al volumen del cuerpo sólido en el intervalo $[a,b]$ mediante la integral definida
+:::{.content-visible when-format="html"}
+![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion.pdf)
+:::
+
+Los envoltorios se construyen de forma que su base es un círculo de radio $x\in [a,b]$ y perpendicular al eje de rotación del sólido de revolución y su altura es $f(x)$, de manera que su área (sin contar el área de las bases) es $2\pi x f(x)$. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada $x\in[a,b]$ se obtiene al volumen del cuerpo sólido de revolución en el intervalo $[a,b]$ mediante la integral definida
 
 $$
 \int_a^b 2\pi x f(x)\,dx
@@ -1542,4 +1560,93 @@ var params = {
         ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
     });
 </script>
+:::
+
+:::{#exm-volumen-revolucion-envoltorios}
+El volumen del sólido de revolución que se obtiene al rotar alrededor del eje $y$ la función $f(x)=x^2$ en el intervalo $[0,2]$ puede calcularse usando tanto discos como envoltorios cilíndricos.
+
+Si usamos discos discos cilíndricos debemos expresar $x$ en función de $y$, es decir $x=\sqrt{y}$ y calcular la siguiente integral definida en el intervalo $[f(0),f(2)]$
+
+$$
+\int_0^4 \pi g(y)^2\,dy 
+= \int_0^4 \pi \left(\sqrt{y}\right)^2\,dy 
+= \left[\pi\frac{y^2}{2}\right]_0^4 
+= \pi\frac{4^2}{2} = 8\pi.
+$$
+
+Mientras que si usamos envoltorios cilíndricos hay que calcular la integral 
+
+$$
+\int_0^2 2\pi x f(x)\,dx
+= \int_0^2 2\pi x\cdot  x^2\,dx 
+= 2\pi\left[\frac{x^4}{4}\right]_0^2
+= 2\pi \frac{2^4}{4} 
+= 8\pi.
+$$
+:::
+
+## Cálculo de la longitud de una curva
+
+Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. Una vez más, la idea consiste en tomar una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
+
+:::{.content-visible when-format="html"}
+![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.pdf)
+:::
+
+Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo $[x_{i-1},x_i]$ es $\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2}$. 
+
+Por otro lado, si $f$ es diferenciable en $[x_{i-1},x_{i}]$, según el teorema del valor medio, se tiene que existe un $x'_i\in [x_{i-1},x_i]$ tal que 
+
+$$
+f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
+$$
+
+de manera que $f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1})$, y la longitud del segmento puede expresarse como 
+
+\begin{align*}
+\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2} 
+&= \sqrt{(x_i-x_{i-1})^2+(f'(x'_i)(x_i-x_{i-1}))^2}\\
+&= (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2},
+\end{align*}
+
+y la suma de todos los segmentos resulta
+
+$$
+\sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2}
+$$
+
+Resulta evidente, que a medida que aumentemos el número de subintervalos $n$ de la partición, la aproximación de la longitud de la curva será mejor y en el límite tendremos su valor exacto, que puede calcularse mediante la integral definida
+
+$$
+\lim_{n\to\infty} \sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2} = \int_a^b \sum_{i=1}^n \sqrt{1+f'(x)^2},
+$$
+
+siempre y cuando $f'(x)$ sea integrable en $[a,b]$.
+
+:::{#exm-longitud-circunferencia}
+Veamos cómo calcular la longitud de una circunferencia de radio $1$ centrada en el origen con ecuación $x^2+y^2=1$. Resolviendo esta ecuación para $y$ se tiene que $y=\pm \sqrt{1-x^2}$, y podemos tomar la función $f(x)=\sqrt{1-x^2}$ cuya gráfica es la semicircunferencia superior.
+
+La derivada de $f$ es $f'(x)=\frac{-x}{\sqrt{1-x^2}}$, de manera que la longitud de la semicircunferencia es 
+
+\begin{align*}
+\int_{-1}^1 \sqrt{1+\left(\frac{-x}{\sqrt{1-x^2}}\right)^2}\,dx 
+&= \int_{-1}^1 \sqrt{1+\frac{x^2}{1-x^2}}\,dx 
+= \int_{-1}^1 \sqrt{\frac{1}{1-x^2}}\,dx
+\end{align*}
+
+Esta integral es impropia ya que $\frac{1}{1-x^2}$ tiende a $\infty$ cuando $x$ tiende a $\pm 1$, por lo que se tiene
+
+\begin{align*}
+\int_{-1}^1 \sqrt{\frac{1}{1-x^2}}\,dx
+&= \lim_{t\to -1^+}\int_{t}^0 \sqrt{\frac{1}{1-x^2}}\,dx + \lim_{t\to 1^+}\int_0^t \sqrt{\frac{1}{1-x^2}}\,dx \\
+&= -\lim_{t\to -1^+} \operatorname{arcsen}(t) + \lim_{t\to 1^+} \operatorname{arcsen}(t) 
+= -\left(-\frac{\pi}{2}\right)+\frac{\pi}{2}
+= \pi
+\end{align*}
+
+Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$.
 :::

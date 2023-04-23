@@ -220,6 +220,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="toc-section-number">9.8.1</span>  Cálculo de volúmenes de sólidos de revolución</a></li>
   <li><a href="#cálculo-de-volúmenes-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="toc-section-number">9.8.2</span>  Cálculo de volúmenes con envoltorios cilíndricos</a></li>
   </ul></li>
+  <li><a href="#cálculo-de-la-longitud-de-una-curva" id="toc-cálculo-de-la-longitud-de-una-curva" class="nav-link" data-scroll-target="#cálculo-de-la-longitud-de-una-curva"><span class="toc-section-number">9.9</span>  Cálculo de la longitud de una curva</a></li>
   </ul>
 </nav>
     </div>
@@ -1725,7 +1726,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 s(A,P_n) &amp;= \sum_{i=1}^n m_i(x_i-x_{i-1}),\quad m_i=\inf\{A(x): x\in(x_{i-1},x_i)\}\\
 S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i)\}
 \end{align*}\]</span></p>
-<p>donde <span class="math inline">\(m_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(m_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>, y <span class="math inline">\(M_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(M_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>.</p>
+<p>donde <span class="math inline">\(m_i (x_i-x_{i-1})\)</span> es el volumen de un disco cilíndrico de base <span class="math inline">\(m_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>, y <span class="math inline">\(M_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(M_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>.</p>
 <div>
 <div id="ggb-volumen-revolucion">
 
@@ -1771,7 +1772,16 @@ var params = {
 </div>
 <section id="cálculo-de-volúmenes-de-sólidos-de-revolución" class="level3" data-number="9.8.1">
 <h3 data-number="9.8.1" class="anchored" data-anchor-id="cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="header-section-number">9.8.1</span> Cálculo de volúmenes de sólidos de revolución</h3>
-<p>Cuando el sólido se obtiene rotando una función <span class="math inline">\(f(x)\)</span> alrededor del eje <span class="math inline">\(x\)</span>, se dice que el sólido resultante es un <em>sólido de revolución</em>. Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
+<p>Cuando el sólido se obtiene rotando una función <span class="math inline">\(f(x)\)</span> alrededor del eje <span class="math inline">\(x\)</span>, se dice que el sólido resultante es un <em>sólido de revolución</em>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/disco-solido-revolucion.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sólido de revolución.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
 <p><span class="math display">\[
 \int_a^b \pi f(x)^2\,dx
 \]</span></p>
@@ -1789,8 +1799,16 @@ var params = {
 </section>
 <section id="cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="level3" data-number="9.8.2">
 <h3 data-number="9.8.2" class="anchored" data-anchor-id="cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes con envoltorios cilíndricos</h3>
-<p>Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios cilíndricos como los de figura de mas abajo.</p>
-<p>El envoltorio cilíndrico para un valor <span class="math inline">\(x\)</span> cualquiera tiene un area dada por <span class="math inline">\(2\pi x f(x)\)</span>, de manera que sumando estas infinitas áreas, se puede llegar al volumen del cuerpo sólido en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
+<p>Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/envoltorio-cilindrico-solido-revolucion.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Envoltorio cilíndrico de un sólido de revolución.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>Los envoltorios se construyen de forma que su base es un círculo de radio <span class="math inline">\(x\in [a,b]\)</span> y perpendicular al eje de rotación del sólido de revolución y su altura es <span class="math inline">\(f(x)\)</span>, de manera que su área (sin contar el área de las bases) es <span class="math inline">\(2\pi x f(x)\)</span>. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada <span class="math inline">\(x\in[a,b]\)</span> se obtiene al volumen del cuerpo sólido de revolución en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
 <p><span class="math display">\[
 \int_a^b 2\pi x f(x)\,dx
 \]</span></p>
@@ -1822,9 +1840,77 @@ var params = {
     });
 </script>
 </div>
-
-
+<div id="exm-volumen-revolucion-envoltorios" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.17 </strong></span>El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
+<p>Si usamos discos discos cilíndricos debemos expresar <span class="math inline">\(x\)</span> en función de <span class="math inline">\(y\)</span>, es decir <span class="math inline">\(x=\sqrt{y}\)</span> y calcular la siguiente integral definida en el intervalo <span class="math inline">\([f(0),f(2)]\)</span></p>
+<p><span class="math display">\[
+\int_0^4 \pi g(y)^2\,dy
+= \int_0^4 \pi \left(\sqrt{y}\right)^2\,dy
+= \left[\pi\frac{y^2}{2}\right]_0^4
+= \pi\frac{4^2}{2} = 8\pi.
+\]</span></p>
+<p>Mientras que si usamos envoltorios cilíndricos hay que calcular la integral</p>
+<p><span class="math display">\[
+\int_0^2 2\pi x f(x)\,dx
+= \int_0^2 2\pi x\cdot  x^2\,dx
+= 2\pi\left[\frac{x^4}{4}\right]_0^2
+= 2\pi \frac{2^4}{4}
+= 8\pi.
+\]</span></p>
+</div>
 </section>
+</section>
+<section id="cálculo-de-la-longitud-de-una-curva" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="cálculo-de-la-longitud-de-una-curva"><span class="header-section-number">9.9</span> Cálculo de la longitud de una curva</h2>
+<p>Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo <span class="math inline">\([a,b]\)</span>. Una vez más, la idea consiste en tomar una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span> y para cada subintervalo <span class="math inline">\([x_{i-1}, x_i]\)</span> tomar el segmento que une los puntos <span class="math inline">\((x_{i-1}, f(x_{i-1}))\)</span> y <span class="math inline">\((x_i,f(x_i))\)</span>. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/aproximacion-longitud-curva.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Aproximación de la longitud de una curva mediante segmentos.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> es <span class="math inline">\(\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2}\)</span>.</p>
+<p>Por otro lado, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\([x_{i-1},x_{i}]\)</span>, según el teorema del valor medio, se tiene que existe un <span class="math inline">\(x'_i\in [x_{i-1},x_i]\)</span> tal que</p>
+<p><span class="math display">\[
+f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
+\]</span></p>
+<p>de manera que <span class="math inline">\(f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1})\)</span>, y la longitud del segmento puede expresarse como</p>
+<p><span class="math display">\[\begin{align*}
+\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2}
+&amp;= \sqrt{(x_i-x_{i-1})^2+(f'(x'_i)(x_i-x_{i-1}))^2}\\
+&amp;= (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2},
+\end{align*}\]</span></p>
+<p>y la suma de todos los segmentos resulta</p>
+<p><span class="math display">\[
+\sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2}
+\]</span></p>
+<p>Resulta evidente, que a medida que aumentemos el número de subintervalos <span class="math inline">\(n\)</span> de la partición, la aproximación de la longitud de la curva será mejor y en el límite tendremos su valor exacto, que puede calcularse mediante la integral definida</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2} = \int_a^b \sum_{i=1}^n \sqrt{1+f'(x)^2},
+\]</span></p>
+<p>siempre y cuando <span class="math inline">\(f'(x)\)</span> sea integrable en <span class="math inline">\([a,b]\)</span>.</p>
+<div id="exm-longitud-circunferencia" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.18 </strong></span>Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
+<p>La derivada de <span class="math inline">\(f\)</span> es <span class="math inline">\(f'(x)=\frac{-x}{\sqrt{1-x^2}}\)</span>, de manera que la longitud de la semicircunferencia es</p>
+<p><span class="math display">\[\begin{align*}
+\int_{-1}^1 \sqrt{1+\left(\frac{-x}{\sqrt{1-x^2}}\right)^2}\,dx
+&amp;= \int_{-1}^1 \sqrt{1+\frac{x^2}{1-x^2}}\,dx
+= \int_{-1}^1 \sqrt{\frac{1}{1-x^2}}\,dx
+\end{align*}\]</span></p>
+<p>Esta integral es impropia ya que <span class="math inline">\(\frac{1}{1-x^2}\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(\pm 1\)</span>, por lo que se tiene</p>
+<p><span class="math display">\[\begin{align*}
+\int_{-1}^1 \sqrt{\frac{1}{1-x^2}}\,dx
+&amp;= \lim_{t\to -1^+}\int_{t}^0 \sqrt{\frac{1}{1-x^2}}\,dx + \lim_{t\to 1^+}\int_0^t \sqrt{\frac{1}{1-x^2}}\,dx \\
+&amp;= -\lim_{t\to -1^+} \operatorname{arcsen}(t) + \lim_{t\to 1^+} \operatorname{arcsen}(t)
+= -\left(-\frac{\pi}{2}\right)+\frac{\pi}{2}
+= \pi
+\end{align*}\]</span></p>
+<p>Y por tanto, la longitud de la circunferencia de radio <span class="math inline">\(1\)</span> es el doble <span class="math inline">\(2\pi\)</span>.</p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
