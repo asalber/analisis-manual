@@ -221,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cálculo-de-volúmenes-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="toc-section-number">9.8.2</span>  Cálculo de volúmenes con envoltorios cilíndricos</a></li>
   </ul></li>
   <li><a href="#cálculo-de-la-longitud-de-una-curva" id="toc-cálculo-de-la-longitud-de-una-curva" class="nav-link" data-scroll-target="#cálculo-de-la-longitud-de-una-curva"><span class="toc-section-number">9.9</span>  Cálculo de la longitud de una curva</a></li>
+  <li><a href="#cálculo-de-superficies-de-sólidos-de-revolución" id="toc-cálculo-de-superficies-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-superficies-de-sólidos-de-revolución"><span class="toc-section-number">9.10</span>  Cálculo de superficies de sólidos de revolución</a></li>
   </ul>
 </nav>
     </div>
@@ -1908,6 +1909,84 @@ f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 = \pi
 \end{align*}\]</span></p>
 <p>Y por tanto, la longitud de la circunferencia de radio <span class="math inline">\(1\)</span> es el doble <span class="math inline">\(2\pi\)</span>.</p>
+</div>
+</section>
+<section id="cálculo-de-superficies-de-sólidos-de-revolución" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="cálculo-de-superficies-de-sólidos-de-revolución"><span class="header-section-number">9.10</span> Cálculo de superficies de sólidos de revolución</h2>
+<p>A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje <span class="math inline">\(x\)</span>. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje <span class="math inline">\(x\)</span> cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.</p>
+<p>Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono <span class="math inline">\(l\)</span> y con arco de circunferencia el perímetro del círculo de la base del cono <span class="math inline">\(2\pi r\)</span>.</p>
+<div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/integrales/cono.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cono con radio <span class="math inline">\(r\)</span> y generatriz <span class="math inline">\(l\)</span>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/integrales/superficie-cono.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Suferficie del envolvente del cono.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>El ángulo que describe este sector de círculo es <span class="math inline">\(\theta = \frac{2\pi r}{l}\)</span>, y por tanto, su área es <span class="math inline">\(\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl\)</span>.</p>
+<p>Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con rádio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>, basta con restar a la superficie del cono de radio <span class="math inline">\(r_2\)</span> y generatriz <span class="math inline">\(l_2\)</span>, la superficie del cono de radio <span class="math inline">\(r_1\)</span> y generatriz <span class="math inline">\(l_1\)</span>.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/cono-truncado.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>La superficie del tronco de cono es, por tanto,</p>
+<p><span class="math display">\[
+\pi r_2 l_2 - \pi r_1 l_1 = \pi (r_2l_2-r_1l_1) = \pi(r_2(l+l_1)-r_1l_1) = \pi ((r_2-r_1)l_1+r_2l)
+\]</span></p>
+<p>Para poder expresar la superficie en función de <span class="math inline">\(l\)</span>, como por semejanza de triángulos rectángulos se tiene que</p>
+<p><span class="math display">\[
+\frac{l_1}{r_1}=\frac{l_2}{r_2}=\frac{l+l_1}{r_2} \Leftrightarrow r_2l_1 = r_1(l+l_1) \Leftrightarrow r_1l = (r_2-r_1)l_1,
+\]</span></p>
+<p>de manera que sustituyendo en la expresión de la superficie del tronco del cono, se tiene</p>
+<p><span class="math display">\[
+\pi ((r_2-r_1)l_1+r_2l) =  \pi (r_1l+r_2l) = \pi (r_1+r_2) l.
+\]</span></p>
+<p>Así pues, si tomamos una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span>, la superficie del tronco de cono correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> es</p>
+<p><span class="math display">\[
+S_i = \pi (f(x_{i-1}+f(x_i))l_i,
+\]</span></p>
+<p>donde <span class="math inline">\(l_i\)</span> es la longitud del segmento que une los puntos <span class="math inline">\((x_{i-1},f(x_{i-1}))\)</span> y <span class="math inline">\((x_i,f(x_i))\)</span>, que como vimos en la sección anterior, puede expresarse, gracias al teorema del valor medio, como <span class="math inline">\(\sqrt{1+f'(x'_i)^2}\)</span> para algún <span class="math inline">\(x'_i \in [x_{i-1},x_i]\)</span>. Por tanto, la superficie del tronco de cono correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> puede expresarse finalmente como</p>
+<p><span class="math display">\[
+S_i = \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2}
+\]</span> para algún <span class="math inline">\(x'_i\in [x_{i-1},x_i]\)</span>.</p>
+<p>Si sumamos las superficies de todos los troncos de cono que se obtienen para la partición <span class="math inline">\(P_n\)</span>,</p>
+<p><span class="math display">\[
+\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2},
+\]</span></p>
+<p>se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función <span class="math inline">\(f\)</span> alrededor del eje <span class="math inline">\(x\)</span>. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto <span class="math inline">\(n\)</span> tiende a <span class="math inline">\(\infty\)</span>, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de rieman de las superficie del tronco de cono, es decir,</p>
+<p><span class="math display">\[
+S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
+\]</span></p>
+<p>ya que, cuando los intervalos se hacen infinitamente pequeños, <span class="math inline">\(f(x_{i_1})\)</span> y <span class="math inline">\(f(x_i)\)</span> se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor <span class="math inline">\(f(x)\)</span>, por lo que en la integral se pone <span class="math inline">\(2 f(x)\)</span>.</p>
+<div id="exm-superficie-circunferencia" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.19 </strong></span>Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su suferficie puede calularse mediante la integral</p>
+<p><span class="math display">\[\begin{align*}
+\int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2} \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\frac{x^2}{r^2-x^2}} \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{\frac{r^2}{r^2-x^2}} \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2\frac{r^2}{r^2-x^2}} \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2} = \int_{-r}^r 2 \pi r \\
+&amp;= 2 \pi r [x]_{-r}^r  = 2\pi r(r-(-r)) = 4\pi r^2.
+\end{align*}\]</span></p>
 </div>
 
 

@@ -1650,3 +1650,97 @@ Esta integral es impropia ya que $\frac{1}{1-x^2}$ tiende a $\infty$ cuando $x$ 
 
 Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$.
 :::
+
+## Cálculo de superficies de sólidos de revolución
+
+A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje $x$. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje $x$ cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono. 
+
+Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono $l$ y con arco de circunferencia el perímetro del círculo de la base del cono $2\pi r$.
+
+::: {.content-visible when-format="html"}
+:::{layout-ncol="2"}
+![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.png)
+
+![Suferficie del envolvente del cono.](./img/integrales/superficie-cono.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+:::{layout-ncol="2"}
+![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.pdf)
+
+![Suferficie del envolvente del cono.](./img/integrales/superficie-cono.pdf)
+:::
+:::
+
+El ángulo que describe este sector de círculo es $\theta = \frac{2\pi r}{l}$, y por tanto, su área es $\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl$.
+
+Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con rádio menor $r_1$ y radio mayor $r_2$, basta con restar a la superficie del cono de radio $r_2$ y generatriz $l_2$, la superficie del cono de radio $r_1$ y generatriz $l_1$.
+
+:::{.content-visible when-format="html"}
+![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.pdf)
+:::
+
+La superficie del tronco de cono es, por tanto, 
+
+$$
+\pi r_2 l_2 - \pi r_1 l_1 = \pi (r_2l_2-r_1l_1) = \pi(r_2(l+l_1)-r_1l_1) = \pi ((r_2-r_1)l_1+r_2l)
+$$
+
+Para poder expresar la superficie en función de $l$, como por semejanza de triángulos rectángulos se tiene que 
+
+$$
+\frac{l_1}{r_1}=\frac{l_2}{r_2}=\frac{l+l_1}{r_2} \Leftrightarrow r_2l_1 = r_1(l+l_1) \Leftrightarrow r_1l = (r_2-r_1)l_1,
+$$ 
+
+de manera que sustituyendo en la expresión de la superficie del tronco del cono, se tiene
+
+$$
+\pi ((r_2-r_1)l_1+r_2l) =  \pi (r_1l+r_2l) = \pi (r_1+r_2) l.
+$$
+
+Así pues, si tomamos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ del intervalo $[a,b]$, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ es 
+
+$$ 
+S_i = \pi (f(x_{i-1}+f(x_i))l_i,
+$$
+
+donde $l_i$ es la longitud del segmento que une los puntos $(x_{i-1},f(x_{i-1}))$ y $(x_i,f(x_i))$, que como vimos en la sección anterior, puede expresarse, gracias al teorema del valor medio, como $\sqrt{1+f'(x'_i)^2}$ para algún $x'_i \in [x_{i-1},x_i]$. Por tanto, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ puede expresarse finalmente como
+
+$$
+S_i = \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2}
+$$
+para algún $x'_i\in [x_{i-1},x_i]$.
+
+Si sumamos las superficies de todos los troncos de cono que se obtienen para la partición $P_n$, 
+
+$$
+\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2},
+$$
+
+se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de rieman de las superficie del tronco de cono, es decir, 
+
+$$
+S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
+$$
+
+ya que, cuando los intervalos se hacen infinitamente pequeños, $f(x_{i_1})$ y $f(x_i)$ se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor $f(x)$, por lo que en la integral se pone $2 f(x)$.
+
+:::{#exm-superficie-circunferencia}
+Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función $f(x)=\sqrt{r^2-x^2}$ alrededor del eje $x$, por lo que su suferficie puede calularse mediante la integral
+
+
+\begin{align*}
+\int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx 
+&= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2} \\
+&= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\frac{x^2}{r^2-x^2}} \\
+&= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{\frac{r^2}{r^2-x^2}} \\
+&= \int_{-r}^r 2 \pi \sqrt{r^2-x^2\frac{r^2}{r^2-x^2}} \\
+&= \int_{-r}^r 2 \pi \sqrt{r^2} = \int_{-r}^r 2 \pi r \\
+&= 2 \pi r [x]_{-r}^r  = 2\pi r(r-(-r)) = 4\pi r^2.
+\end{align*}
+:::
