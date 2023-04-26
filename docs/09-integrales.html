@@ -1980,11 +1980,11 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \
 <p><span class="theorem-title"><strong>Ejemplo 9.19 </strong></span>Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su suferficie puede calularse mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
-&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2} \\
-&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\frac{x^2}{r^2-x^2}} \\
-&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{\frac{r^2}{r^2-x^2}} \\
-&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2\frac{r^2}{r^2-x^2}} \\
-&amp;= \int_{-r}^r 2 \pi \sqrt{r^2} = \int_{-r}^r 2 \pi r \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2}\,dx \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\frac{x^2}{r^2-x^2}}\,dx \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{\frac{r^2}{r^2-x^2}}\,dx \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2\frac{r^2}{r^2-x^2}}\,dx \\
+&amp;= \int_{-r}^r 2 \pi \sqrt{r^2}\,dx = \int_{-r}^r 2 \pi r\,dx \\
 &amp;= 2 \pi r [x]_{-r}^r  = 2\pi r(r-(-r)) = 4\pi r^2.
 \end{align*}\]</span></p>
 </div>
