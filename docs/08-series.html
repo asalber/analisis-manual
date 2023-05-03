@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -67,26 +67,34 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="Manual de Análisis Matemático Real - 8&nbsp; Series de números reales">
-<meta property="og:description" content="En este capítulo se estudian las series de números reales, un tipo especial de sucesiones que se construyen a partir de la suma de los términos de otras sucesiones.">
+<meta property="og:description" content="">
+<meta property="og:image" content="img/series/paradoja-dicotomia-zenon.png">
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 8&nbsp; Series de números reales">
-<meta name="twitter:description" content="En este capítulo se estudian las series de números reales, un tipo especial de sucesiones que se construyen a partir de la suma de los términos de otras sucesiones.">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="img/series/paradoja-dicotomia-zenon.png">
 <meta name="twitter:site" content="@aprendeconalf">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-series.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -94,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -102,119 +110,134 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-            <i class="bi bi-bi-linkedin pe-1"></i>
-          LinkedIn
-          </a>
-        </li>
-    </ul>
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
+  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-limites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
+  <a href="./06-limites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-series.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></a>
+  <a href="./08-series.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a>
+  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#concepto-de-serie" id="toc-concepto-de-serie" class="nav-link active" data-scroll-target="#concepto-de-serie"><span class="toc-section-number">8.1</span>  Concepto de serie</a></li>
-  <li><a href="#convergencia-de-series" id="toc-convergencia-de-series" class="nav-link" data-scroll-target="#convergencia-de-series"><span class="toc-section-number">8.2</span>  Convergencia de series</a></li>
-  <li><a href="#series-geométricas" id="toc-series-geométricas" class="nav-link" data-scroll-target="#series-geométricas"><span class="toc-section-number">8.3</span>  Series geométricas</a></li>
-  <li><a href="#series-p" id="toc-series-p" class="nav-link" data-scroll-target="#series-p"><span class="toc-section-number">8.4</span>  Series <span class="math inline">\(p\)</span></a></li>
-  <li><a href="#series-telescópicas" id="toc-series-telescópicas" class="nav-link" data-scroll-target="#series-telescópicas"><span class="toc-section-number">8.5</span>  Series telescópicas</a></li>
-  <li><a href="#convergencia-de-series-de-términos-positivos" id="toc-convergencia-de-series-de-términos-positivos" class="nav-link" data-scroll-target="#convergencia-de-series-de-términos-positivos"><span class="toc-section-number">8.6</span>  Convergencia de series de términos positivos</a></li>
-  <li><a href="#convergencia-de-series-alternadas" id="toc-convergencia-de-series-alternadas" class="nav-link" data-scroll-target="#convergencia-de-series-alternadas"><span class="toc-section-number">8.7</span>  Convergencia de series alternadas</a></li>
-  <li><a href="#convergencia-absoluta" id="toc-convergencia-absoluta" class="nav-link" data-scroll-target="#convergencia-absoluta"><span class="toc-section-number">8.8</span>  Convergencia absoluta</a></li>
-  <li><a href="#series-de-potencias" id="toc-series-de-potencias" class="nav-link" data-scroll-target="#series-de-potencias"><span class="toc-section-number">8.9</span>  Series de potencias</a></li>
-  <li><a href="#series-de-taylor" id="toc-series-de-taylor" class="nav-link" data-scroll-target="#series-de-taylor"><span class="toc-section-number">8.10</span>  Series de Taylor</a>
+  <li><a href="#concepto-de-serie" id="toc-concepto-de-serie" class="nav-link active" data-scroll-target="#concepto-de-serie"><span class="header-section-number">8.1</span> Concepto de serie</a></li>
+  <li><a href="#convergencia-de-series" id="toc-convergencia-de-series" class="nav-link" data-scroll-target="#convergencia-de-series"><span class="header-section-number">8.2</span> Convergencia de series</a></li>
+  <li><a href="#series-geométricas" id="toc-series-geométricas" class="nav-link" data-scroll-target="#series-geométricas"><span class="header-section-number">8.3</span> Series geométricas</a></li>
+  <li><a href="#series-p" id="toc-series-p" class="nav-link" data-scroll-target="#series-p"><span class="header-section-number">8.4</span> Series <span class="math inline">\(p\)</span></a></li>
+  <li><a href="#series-telescópicas" id="toc-series-telescópicas" class="nav-link" data-scroll-target="#series-telescópicas"><span class="header-section-number">8.5</span> Series telescópicas</a></li>
+  <li><a href="#convergencia-de-series-de-términos-positivos" id="toc-convergencia-de-series-de-términos-positivos" class="nav-link" data-scroll-target="#convergencia-de-series-de-términos-positivos"><span class="header-section-number">8.6</span> Convergencia de series de términos positivos</a></li>
+  <li><a href="#convergencia-de-series-alternadas" id="toc-convergencia-de-series-alternadas" class="nav-link" data-scroll-target="#convergencia-de-series-alternadas"><span class="header-section-number">8.7</span> Convergencia de series alternadas</a></li>
+  <li><a href="#convergencia-absoluta" id="toc-convergencia-absoluta" class="nav-link" data-scroll-target="#convergencia-absoluta"><span class="header-section-number">8.8</span> Convergencia absoluta</a></li>
+  <li><a href="#series-de-potencias" id="toc-series-de-potencias" class="nav-link" data-scroll-target="#series-de-potencias"><span class="header-section-number">8.9</span> Series de potencias</a></li>
+  <li><a href="#series-de-taylor" id="toc-series-de-taylor" class="nav-link" data-scroll-target="#series-de-taylor"><span class="header-section-number">8.10</span> Series de Taylor</a>
   <ul class="collapse">
-  <li><a href="#series-de-maclaurin-de-funciones-elementales" id="toc-series-de-maclaurin-de-funciones-elementales" class="nav-link" data-scroll-target="#series-de-maclaurin-de-funciones-elementales"><span class="toc-section-number">8.10.1</span>  Series de Maclaurin de funciones elementales</a></li>
+  <li><a href="#series-de-maclaurin-de-funciones-elementales" id="toc-series-de-maclaurin-de-funciones-elementales" class="nav-link" data-scroll-target="#series-de-maclaurin-de-funciones-elementales"><span class="header-section-number">8.10.1</span> Series de Maclaurin de funciones elementales</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -224,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></h1>
 </div>
 
 
@@ -239,7 +262,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div>
 <div class="hidden">
 <p><span class="math display">\[
 \newcommand{\mathbb{N}}{\mathbb{N}}
@@ -255,13 +277,12 @@ ul.task-list li input[type="checkbox"] {
 \DeclareMathOperator{\sen}{sen}
 \]</span></p>
 </div>
-</div>
 <p>En este capítulo se estudian las <em>series</em> de números reales, un tipo especial de sucesiones que se construyen a partir de la suma de los términos de otras sucesiones. Este tipo de sucesiones son las más importantes del Análisis pues, como se verá más adelante, aparecen en multitud de contextos reales.</p>
 <p>Como ejemplo introductorio puede servir la <a href="https://es.wikipedia.org/wiki/Paradojas_de_Zen%C3%B3n#Paradoja_de_la_dicotom%C3%ADa">paradoja de la dicotomía de Zenon</a>, que establece que para que un corredor pueda recorrer una distancia hasta la meta, primero tiene que recorrer la mitad de la distancia, después la mitad de la distancia restante, después la mitad de la distancia restante, y así hasta el infinito, por lo que, aparentemente, nunca llegaría a la meta.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/series/paradoja-dicotomia-zenon.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Paradoja de la dicotomía de Zenon.(imagen tomada de Wikipedia)</figcaption><p></p>
+<figcaption class="figure-caption">Paradoja de la dicotomía de Zenon.(imagen tomada de Wikipedia)</figcaption>
 </figure>
 </div>
 <p>La distancia recorrida por el corredor puede expresarse como una suma infinita</p>
@@ -286,12 +307,12 @@ ul.task-list li input[type="checkbox"] {
 \]</span></p>
 <p>El número <span class="math inline">\(A_n=\sum_{i=1}^n a_i\)</span> se llama <em>suma parcial de orden</em> <span class="math inline">\(n\)</span> de la serie, y habitualmente utilizaremos la notación <span class="math inline">\(\sum a_n\)</span> para referirnos a la serie de término general <span class="math inline">\(n\)</span>.</p>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -309,7 +330,6 @@ A_3 &amp;= 1+\frac{1}{2}+\frac{1}{3}\\
 A_n &amp;= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i}
 \end{align*}\]</span></p>
 <p>Esta serie se conoce como <em>serie armónica</em>. En la siguiente gráfica se puede apreciar cómo evoluciona la sucesión de sus sumas parciales.</p>
-<div>
 <div id="ggb-serie-armonica">
 
 </div>
@@ -337,7 +357,6 @@ var params = {
     });
 </script>
 </div>
-</div>
 <p>En ocasiones es posible expresar el valor de la suma parcial de orden <span class="math inline">\(n\)</span> mediante una fórmula explícita que depende de <span class="math inline">\(n\)</span> y que se conoce como <em>forma cerrada</em> de la serie. Si una serie puede expresarse mediante una forma cerrada, resulta más rápido calcular el valor de la suma parcial de orden <span class="math inline">\(n\)</span> mediante la forma cerrada, que haciendo la propia suma de los <span class="math inline">\(n\)</span> primeros términos de la sucesión.</p>
 <div id="exm-serie-forma-cerrada" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8.2 </strong></span>Dada la serie <span class="math inline">\(\sum n\)</span>, su suma parcial de orden <span class="math inline">\(n\)</span> <span class="math inline">\(A_n=\sum_{i=1}^n n\)</span> puede expresarse mediante la forma cerrada <span class="math inline">\(A_n = \frac{1}{2}n(n+1)\)</span>.</p>
@@ -362,7 +381,6 @@ var params = {
 <p><span class="math display">\[
 \sum_{n=1}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=1}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
 \]</span></p>
-<div>
 <div id="ggb-series-paradoja-zenon">
 
 </div>
@@ -389,7 +407,6 @@ var params = {
         ggbApplet2.inject('ggb-series-paradoja-zenon');
     });
 </script>
-</div>
 </div>
 <div id="exm-serie-divergente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8.4 </strong></span>La serie <span class="math inline">\(\sum (-1)^n\)</span> diverge. Para probarlo, basta con ver que las sumas parciales de orden <span class="math inline">\(n\)</span> forman una sucesión alternada.</p>
@@ -421,12 +438,12 @@ A_4 &amp;= -1+ (-1)^2 + (-1)^3 + (-1)^4= 0\\
 \sum_{n=1}^\infty a_n-\sum_{i=1}^{k}a_i=\sum_{n=1}^\infty b_n-\sum_{i=1}^{k}b_i.
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -454,12 +471,12 @@ Demostración
 <li>La serie <span class="math inline">\(\sum (c\cdot a_n)\)</span> es convergente y <span class="math inline">\(\sum_{n=1}^\infty (c\cdot a_n) = c\sum_{n=1}^\infty a_n\)</span>.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -482,12 +499,12 @@ Demostración
 |a_{n+1}+a_{n+2}+\cdots+a_m|&lt;\varepsilon\ \forall m&gt;n\geq k.
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -504,12 +521,12 @@ Demostración
 <div id="thm-criterio-divergencia-series" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8.2 (Criterio de divergencia) </strong></span>Dada una serie <span class="math inline">\(\sum a_n\)</span>, si <span class="math inline">\(\lim_{n\to\infty} a_n \neq 0\)</span>, entonces la serie diverge.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -527,12 +544,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -547,12 +564,12 @@ Advertencia
 <div id="cor-divergencia-serie-inversa-convergente" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 8.1 </strong></span>Dada una serie <span class="math inline">\(\sum a_n\)</span> convergente, si <span class="math inline">\(a_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, entonces la serie de los términos inversos <span class="math inline">\(\sum a_n^{-1}\)</span> diverge.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -581,12 +598,12 @@ Demostración
 A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -616,12 +633,12 @@ A_n-rA_n = a - a^{n+1} \Leftrightarrow A_n = \frac{a-a^{n+1}}{1-r}.
 <div id="cor-convergencia-series-geometricas" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 8.2 </strong></span>Una serie geométrica <span class="math inline">\(\sum ar^n\)</span> de razón <span class="math inline">\(r\)</span> converge si y solo si <span class="math inline">\(|r|&lt;1\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -650,12 +667,12 @@ Demostración
 <div id="prp-convergencia-series-p" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 8.4 </strong></span>Una serie <span class="math inline">\(p\)</span> <span class="math inline">\(\sum \frac{1}{n^p}\)</span> converge si y solo si <span class="math inline">\(p&gt;1\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -675,7 +692,7 @@ Demostración
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://www.geogebra.org/classic/e4ynyzhn"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Graficador de Series</figcaption><p></p>
+<figcaption class="figure-caption">Graficador de Series</figcaption>
 </figure>
 </div>
 </section>
@@ -694,12 +711,12 @@ Demostración
 <div id="prp-convergencia-series-telescopicas" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 8.5 </strong></span>Una serie telescópica <span class="math inline">\(\sum (a_n-a_{n+1})\)</span> converge si y solo si la sucesión <span class="math inline">\((a_n)_{n=1}^\infty\)</span> converge.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -732,12 +749,12 @@ A_n &amp;= \sum_{i=1}^n (a_i-a_{i+1})\\
 <div id="thm-criterio-acotacion" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8.3 (Criterio de acotación) </strong></span>Una serie <span class="math inline">\(\sum a_n\)</span> de términos positivos converge si y solo si la sucesión de sus sumas parciales está acotada.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -757,12 +774,12 @@ Demostración
 <li>Si <span class="math inline">\(\sum a_n\)</span> diverge, <span class="math inline">\(\sum b_n\)</span> diverge.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -792,12 +809,12 @@ Demostración
 \]</span></p>
 <p>con <span class="math inline">\(l&gt;0\)</span>, entonces <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\(\sum b_n\)</span> converge.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -822,12 +839,12 @@ Demostración
 \]</span></p>
 <p>por lo que, como <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> también.</p>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -849,12 +866,12 @@ Advertencia
 <div id="thm-criterio-serie-alternada" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8.6 (Criterio de la serie alternada (Leibniz)) </strong></span>Dada una serie alternada <span class="math inline">\(\sum (-1)^{n-1} a_n\)</span>, con <span class="math inline">\(a_n&gt;0\)</span>, si <span class="math inline">\((a_n)_{n=1}^\infty\)</span> es monótona decreciente y <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>, entonces la serie converge.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -921,12 +938,12 @@ A_{2n} = a_1 -(a_2-a_3)-(a_4-a_5)-\cdots -(a_{2n-2}-a_{2n-1})-a_{2n},
 <div id="thm-condicion-convergencia-absoluta" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8.7 </strong></span>Si una serie es absolutamente convergente, entonces es convergente.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -949,12 +966,12 @@ Demostración
 <li>Si <span class="math inline">\(\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=l&gt;1\)</span> o <span class="math inline">\(\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty\)</span>, entonces la serie es divergente.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -987,12 +1004,12 @@ Demostración
 &amp;= \lim_{n\to\infty}\frac{1}{2}\left(\frac{n+1}{n}\right)^2 = \frac{1}{2}\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^2 = \frac{1}{2}&lt;1,
 \end{align*}\]</span> y por tanto, la serie es absolutamente convergente.</p>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1007,12 +1024,12 @@ Advertencia
 <li>Si <span class="math inline">\(\lim_{n\to\infty}\sqrt[n]{|a_n|}=l&gt;1\)</span>, o <span class="math inline">\(\lim_{n\to\infty}\sqrt[n]{|a_n|}=\infty\)</span>, entonces la serie es divergente.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1058,7 +1075,6 @@ F_3 &amp;= x+\frac{x}{4}+\frac{x}{9}\\
 \vdots\\
 F_n &amp;= \sum_{i=1}^n \frac{x}{i^2}
 \end{align*}\]</span></p>
-<div>
 <div id="ggb-serie-funcional">
 
 </div>
@@ -1086,13 +1102,12 @@ var params = {
     });
 </script>
 </div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -1138,12 +1153,12 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq 0\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x|&gt;|d|\)</span>.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1179,12 +1194,12 @@ Demostración
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq a\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x-a|&gt;|d-a|\)</span>.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1201,12 +1216,12 @@ Demostración
 <div id="thm-radio-convergencia" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8.10 (Radio de convergencia) </strong></span>Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, se cumple que, o bien el dominio de convergencia puntual es <span class="math inline">\(\mathbb{R}\)</span>, o bien existe un número <span class="math inline">\(R\geq 0\)</span>, llamado <em>radio de convergencia</em> tal que la serie converge si <span class="math inline">\(|x-a|&lt;R\)</span> y diverge si <span class="math inline">\(|x-a|&gt;R\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1220,12 +1235,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1239,12 +1254,12 @@ Advertencia
 R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1271,12 +1286,12 @@ R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
 R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1373,12 +1388,12 @@ f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n
 \]</span></p>
 <p><span class="math inline">\(\forall x\in\mathcal{C}\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1431,12 +1446,12 @@ f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
 </div>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1464,12 +1479,12 @@ e^{-1/x^2} &amp; \mbox{si $x\neq 0$}\\
 \]</span></p>
 <p>para <span class="math inline">\(|x-a|&lt;R\)</span>, entonces <span class="math inline">\(f(x)\)</span> es igual a la suma de su serie de Taylor centrada en <span class="math inline">\(a\)</span> en el intervalo <span class="math inline">\(|x-a|&lt;R\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1711,9 +1726,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1778,6 +1807,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -67,26 +67,34 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="Manual de Análisis Matemático Real - 6&nbsp; Límites de funciones">
-<meta property="og:description" content="En este capítulo se introduce el concepto de límite de una función real de variable real, que es parecido al que ya se vio para sucesiones de números reales, y resulta imprescindible para llegar al…">
+<meta property="og:description" content="">
+<meta property="og:image" content="./img/limites/limite-no-existe-1.png">
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 6&nbsp; Límites de funciones">
-<meta name="twitter:description" content="En este capítulo se introduce el concepto de límite de una función real de variable real, que es parecido al que ya se vio para sucesiones de números reales, y resulta imprescindible para llegar al…">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="./img/limites/limite-no-existe-1.png">
 <meta name="twitter:site" content="@aprendeconalf">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-limites.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -94,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -102,146 +110,161 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-            <i class="bi bi-bi-linkedin pe-1"></i>
-          LinkedIn
-          </a>
-        </li>
-    </ul>
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
+  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-limites.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
+  <a href="./06-limites.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-series.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></a>
+  <a href="./08-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a>
+  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#el-concepto-de-límite" id="toc-el-concepto-de-límite" class="nav-link active" data-scroll-target="#el-concepto-de-límite"><span class="toc-section-number">6.1</span>  El concepto de límite</a>
+  <li><a href="#el-concepto-de-límite" id="toc-el-concepto-de-límite" class="nav-link active" data-scroll-target="#el-concepto-de-límite"><span class="header-section-number">6.1</span> El concepto de límite</a>
   <ul class="collapse">
-  <li><a href="#aproximación-al-concepto-de-límite" id="toc-aproximación-al-concepto-de-límite" class="nav-link" data-scroll-target="#aproximación-al-concepto-de-límite"><span class="toc-section-number">6.1.1</span>  Aproximación al concepto de límite</a></li>
-  <li><a href="#límites-laterales" id="toc-límites-laterales" class="nav-link" data-scroll-target="#límites-laterales"><span class="toc-section-number">6.1.2</span>  Límites laterales</a></li>
-  <li><a href="#límites-que-no-existen-i" id="toc-límites-que-no-existen-i" class="nav-link" data-scroll-target="#límites-que-no-existen-i"><span class="toc-section-number">6.1.3</span>  Límites que no existen (I)</a></li>
-  <li><a href="#límites-que-no-existen-ii" id="toc-límites-que-no-existen-ii" class="nav-link" data-scroll-target="#límites-que-no-existen-ii"><span class="toc-section-number">6.1.4</span>  Límites que no existen (II)</a></li>
-  <li><a href="#límites-que-no-existen-iii" id="toc-límites-que-no-existen-iii" class="nav-link" data-scroll-target="#límites-que-no-existen-iii"><span class="toc-section-number">6.1.5</span>  Límites que no existen (III)</a></li>
-  <li><a href="#límites-que-no-existen-iv" id="toc-límites-que-no-existen-iv" class="nav-link" data-scroll-target="#límites-que-no-existen-iv"><span class="toc-section-number">6.1.6</span>  Límites que no existen (IV)</a></li>
-  <li><a href="#límites-en-el-infinito" id="toc-límites-en-el-infinito" class="nav-link" data-scroll-target="#límites-en-el-infinito"><span class="toc-section-number">6.1.7</span>  Límites en el infinito</a></li>
+  <li><a href="#aproximación-al-concepto-de-límite" id="toc-aproximación-al-concepto-de-límite" class="nav-link" data-scroll-target="#aproximación-al-concepto-de-límite"><span class="header-section-number">6.1.1</span> Aproximación al concepto de límite</a></li>
+  <li><a href="#límites-laterales" id="toc-límites-laterales" class="nav-link" data-scroll-target="#límites-laterales"><span class="header-section-number">6.1.2</span> Límites laterales</a></li>
+  <li><a href="#límites-que-no-existen-i" id="toc-límites-que-no-existen-i" class="nav-link" data-scroll-target="#límites-que-no-existen-i"><span class="header-section-number">6.1.3</span> Límites que no existen (I)</a></li>
+  <li><a href="#límites-que-no-existen-ii" id="toc-límites-que-no-existen-ii" class="nav-link" data-scroll-target="#límites-que-no-existen-ii"><span class="header-section-number">6.1.4</span> Límites que no existen (II)</a></li>
+  <li><a href="#límites-que-no-existen-iii" id="toc-límites-que-no-existen-iii" class="nav-link" data-scroll-target="#límites-que-no-existen-iii"><span class="header-section-number">6.1.5</span> Límites que no existen (III)</a></li>
+  <li><a href="#límites-que-no-existen-iv" id="toc-límites-que-no-existen-iv" class="nav-link" data-scroll-target="#límites-que-no-existen-iv"><span class="header-section-number">6.1.6</span> Límites que no existen (IV)</a></li>
+  <li><a href="#límites-en-el-infinito" id="toc-límites-en-el-infinito" class="nav-link" data-scroll-target="#límites-en-el-infinito"><span class="header-section-number">6.1.7</span> Límites en el infinito</a></li>
   </ul></li>
-  <li><a href="#definición-de-límite" id="toc-definición-de-límite" class="nav-link" data-scroll-target="#definición-de-límite"><span class="toc-section-number">6.2</span>  Definición de límite</a></li>
-  <li><a href="#álgebra-de-límites" id="toc-álgebra-de-límites" class="nav-link" data-scroll-target="#álgebra-de-límites"><span class="toc-section-number">6.3</span>  Álgebra de límites</a></li>
-  <li><a href="#límites-laterales-1" id="toc-límites-laterales-1" class="nav-link" data-scroll-target="#límites-laterales-1"><span class="toc-section-number">6.4</span>  Límites laterales</a></li>
-  <li><a href="#límites-infinitos" id="toc-límites-infinitos" class="nav-link" data-scroll-target="#límites-infinitos"><span class="toc-section-number">6.5</span>  Límites infinitos</a></li>
-  <li><a href="#límites-en-el-infinito-1" id="toc-límites-en-el-infinito-1" class="nav-link" data-scroll-target="#límites-en-el-infinito-1"><span class="toc-section-number">6.6</span>  Límites en el infinito</a></li>
-  <li><a href="#límites-de-las-funciones-elementales" id="toc-límites-de-las-funciones-elementales" class="nav-link" data-scroll-target="#límites-de-las-funciones-elementales"><span class="toc-section-number">6.7</span>  Límites de las funciones elementales</a></li>
-  <li><a href="#indeterminaciones-y-su-resolución" id="toc-indeterminaciones-y-su-resolución" class="nav-link" data-scroll-target="#indeterminaciones-y-su-resolución"><span class="toc-section-number">6.8</span>  Indeterminaciones y su resolución</a>
+  <li><a href="#definición-de-límite" id="toc-definición-de-límite" class="nav-link" data-scroll-target="#definición-de-límite"><span class="header-section-number">6.2</span> Definición de límite</a></li>
+  <li><a href="#álgebra-de-límites" id="toc-álgebra-de-límites" class="nav-link" data-scroll-target="#álgebra-de-límites"><span class="header-section-number">6.3</span> Álgebra de límites</a></li>
+  <li><a href="#límites-laterales-1" id="toc-límites-laterales-1" class="nav-link" data-scroll-target="#límites-laterales-1"><span class="header-section-number">6.4</span> Límites laterales</a></li>
+  <li><a href="#límites-infinitos" id="toc-límites-infinitos" class="nav-link" data-scroll-target="#límites-infinitos"><span class="header-section-number">6.5</span> Límites infinitos</a></li>
+  <li><a href="#límites-en-el-infinito-1" id="toc-límites-en-el-infinito-1" class="nav-link" data-scroll-target="#límites-en-el-infinito-1"><span class="header-section-number">6.6</span> Límites en el infinito</a></li>
+  <li><a href="#límites-de-las-funciones-elementales" id="toc-límites-de-las-funciones-elementales" class="nav-link" data-scroll-target="#límites-de-las-funciones-elementales"><span class="header-section-number">6.7</span> Límites de las funciones elementales</a></li>
+  <li><a href="#indeterminaciones-y-su-resolución" id="toc-indeterminaciones-y-su-resolución" class="nav-link" data-scroll-target="#indeterminaciones-y-su-resolución"><span class="header-section-number">6.8</span> Indeterminaciones y su resolución</a>
   <ul class="collapse">
-  <li><a href="#tipos-de-indeterminaciones" id="toc-tipos-de-indeterminaciones" class="nav-link" data-scroll-target="#tipos-de-indeterminaciones"><span class="toc-section-number">6.8.1</span>  Tipos de indeterminaciones</a></li>
-  <li><a href="#resolución-de-una-indeterminación-de-tipo-cociente" id="toc-resolución-de-una-indeterminación-de-tipo-cociente" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-cociente"><span class="toc-section-number">6.8.2</span>  Resolución de una indeterminación de tipo cociente</a></li>
-  <li><a href="#resolución-de-una-indeterminación-de-tipo-producto" id="toc-resolución-de-una-indeterminación-de-tipo-producto" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-producto"><span class="toc-section-number">6.8.3</span>  Resolución de una indeterminación de tipo producto</a></li>
-  <li><a href="#resolución-de-una-indeterminación-de-tipo-potencia" id="toc-resolución-de-una-indeterminación-de-tipo-potencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-potencia"><span class="toc-section-number">6.8.4</span>  Resolución de una indeterminación de tipo potencia</a></li>
-  <li><a href="#resolución-de-una-indeterminación-de-tipo-diferencia" id="toc-resolución-de-una-indeterminación-de-tipo-diferencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-diferencia"><span class="toc-section-number">6.8.5</span>  Resolución de una indeterminación de tipo diferencia</a></li>
+  <li><a href="#tipos-de-indeterminaciones" id="toc-tipos-de-indeterminaciones" class="nav-link" data-scroll-target="#tipos-de-indeterminaciones"><span class="header-section-number">6.8.1</span> Tipos de indeterminaciones</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-cociente" id="toc-resolución-de-una-indeterminación-de-tipo-cociente" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-cociente"><span class="header-section-number">6.8.2</span> Resolución de una indeterminación de tipo cociente</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-producto" id="toc-resolución-de-una-indeterminación-de-tipo-producto" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-producto"><span class="header-section-number">6.8.3</span> Resolución de una indeterminación de tipo producto</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-potencia" id="toc-resolución-de-una-indeterminación-de-tipo-potencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-potencia"><span class="header-section-number">6.8.4</span> Resolución de una indeterminación de tipo potencia</a></li>
+  <li><a href="#resolución-de-una-indeterminación-de-tipo-diferencia" id="toc-resolución-de-una-indeterminación-de-tipo-diferencia" class="nav-link" data-scroll-target="#resolución-de-una-indeterminación-de-tipo-diferencia"><span class="header-section-number">6.8.5</span> Resolución de una indeterminación de tipo diferencia</a></li>
   </ul></li>
-  <li><a href="#asíntotas-de-una-función" id="toc-asíntotas-de-una-función" class="nav-link" data-scroll-target="#asíntotas-de-una-función"><span class="toc-section-number">6.9</span>  Asíntotas de una función</a>
+  <li><a href="#asíntotas-de-una-función" id="toc-asíntotas-de-una-función" class="nav-link" data-scroll-target="#asíntotas-de-una-función"><span class="header-section-number">6.9</span> Asíntotas de una función</a>
   <ul class="collapse">
-  <li><a href="#asíntotas-verticales" id="toc-asíntotas-verticales" class="nav-link" data-scroll-target="#asíntotas-verticales"><span class="toc-section-number">6.9.1</span>  Asíntotas verticales</a></li>
-  <li><a href="#asíntotas-horizontales" id="toc-asíntotas-horizontales" class="nav-link" data-scroll-target="#asíntotas-horizontales"><span class="toc-section-number">6.9.2</span>  Asíntotas horizontales</a></li>
-  <li><a href="#asíntotas-oblicuas" id="toc-asíntotas-oblicuas" class="nav-link" data-scroll-target="#asíntotas-oblicuas"><span class="toc-section-number">6.9.3</span>  Asíntotas oblicuas</a></li>
+  <li><a href="#asíntotas-verticales" id="toc-asíntotas-verticales" class="nav-link" data-scroll-target="#asíntotas-verticales"><span class="header-section-number">6.9.1</span> Asíntotas verticales</a></li>
+  <li><a href="#asíntotas-horizontales" id="toc-asíntotas-horizontales" class="nav-link" data-scroll-target="#asíntotas-horizontales"><span class="header-section-number">6.9.2</span> Asíntotas horizontales</a></li>
+  <li><a href="#asíntotas-oblicuas" id="toc-asíntotas-oblicuas" class="nav-link" data-scroll-target="#asíntotas-oblicuas"><span class="header-section-number">6.9.3</span> Asíntotas oblicuas</a></li>
   </ul></li>
-  <li><a href="#continuidad" id="toc-continuidad" class="nav-link" data-scroll-target="#continuidad"><span class="toc-section-number">6.10</span>  Continuidad</a></li>
-  <li><a href="#tipos-de-discontinuidades" id="toc-tipos-de-discontinuidades" class="nav-link" data-scroll-target="#tipos-de-discontinuidades"><span class="toc-section-number">6.11</span>  Tipos de discontinuidades</a>
+  <li><a href="#continuidad" id="toc-continuidad" class="nav-link" data-scroll-target="#continuidad"><span class="header-section-number">6.10</span> Continuidad</a></li>
+  <li><a href="#tipos-de-discontinuidades" id="toc-tipos-de-discontinuidades" class="nav-link" data-scroll-target="#tipos-de-discontinuidades"><span class="header-section-number">6.11</span> Tipos de discontinuidades</a>
   <ul class="collapse">
-  <li><a href="#discontinuidad-evitable" id="toc-discontinuidad-evitable" class="nav-link" data-scroll-target="#discontinuidad-evitable"><span class="toc-section-number">6.11.1</span>  Discontinuidad evitable</a></li>
-  <li><a href="#discontinuidad-de-1ª-especie-de-salto-finito" id="toc-discontinuidad-de-1ª-especie-de-salto-finito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-finito"><span class="toc-section-number">6.11.2</span>  Discontinuidad de 1ª especie de salto finito</a></li>
-  <li><a href="#discontinuidad-de-1ª-especie-de-salto-infinito" id="toc-discontinuidad-de-1ª-especie-de-salto-infinito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-infinito"><span class="toc-section-number">6.11.3</span>  Discontinuidad de 1ª especie de salto infinito</a></li>
-  <li><a href="#discontinuidad-de-2ª-especie" id="toc-discontinuidad-de-2ª-especie" class="nav-link" data-scroll-target="#discontinuidad-de-2ª-especie"><span class="toc-section-number">6.11.4</span>  Discontinuidad de 2ª especie</a></li>
+  <li><a href="#discontinuidad-evitable" id="toc-discontinuidad-evitable" class="nav-link" data-scroll-target="#discontinuidad-evitable"><span class="header-section-number">6.11.1</span> Discontinuidad evitable</a></li>
+  <li><a href="#discontinuidad-de-1ª-especie-de-salto-finito" id="toc-discontinuidad-de-1ª-especie-de-salto-finito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-finito"><span class="header-section-number">6.11.2</span> Discontinuidad de 1ª especie de salto finito</a></li>
+  <li><a href="#discontinuidad-de-1ª-especie-de-salto-infinito" id="toc-discontinuidad-de-1ª-especie-de-salto-infinito" class="nav-link" data-scroll-target="#discontinuidad-de-1ª-especie-de-salto-infinito"><span class="header-section-number">6.11.3</span> Discontinuidad de 1ª especie de salto infinito</a></li>
+  <li><a href="#discontinuidad-de-2ª-especie" id="toc-discontinuidad-de-2ª-especie" class="nav-link" data-scroll-target="#discontinuidad-de-2ª-especie"><span class="header-section-number">6.11.4</span> Discontinuidad de 2ª especie</a></li>
   </ul></li>
-  <li><a href="#funciones-continuas-en-intervalos" id="toc-funciones-continuas-en-intervalos" class="nav-link" data-scroll-target="#funciones-continuas-en-intervalos"><span class="toc-section-number">6.12</span>  Funciones continuas en intervalos</a></li>
+  <li><a href="#funciones-continuas-en-intervalos" id="toc-funciones-continuas-en-intervalos" class="nav-link" data-scroll-target="#funciones-continuas-en-intervalos"><span class="header-section-number">6.12</span> Funciones continuas en intervalos</a></li>
   </ul>
 </nav>
     </div>
@@ -250,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></h1>
 </div>
 
 
@@ -266,7 +289,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!-- LTeX: language = es-ES -->
-<div>
 <div class="hidden">
 <p><span class="math display">\[
 \newcommand{\mathbb{N}}{\mathbb{N}}
@@ -282,7 +304,6 @@ ul.task-list li input[type="checkbox"] {
 \DeclareMathOperator{\sen}{sen}
 \]</span></p>
 </div>
-</div>
 <p>En este capítulo se introduce el concepto de límite de una función real de variable real, que es parecido al que ya se vio para sucesiones de números reales, y resulta imprescindible para llegar al concepto de derivada que se verá en el siguiente capítulo.</p>
 <p>Se presentan también algunas propiedades de los límites, distintas técnicas para calcularlos y algunas aplicaciones importantes. Finalmente se introduce también el concepto de continuidad y se estudian los distintos tipos de discontinuidades que puede presentar una función.</p>
 <section id="el-concepto-de-límite" class="level2" data-number="6.1">
@@ -291,12 +312,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="aproximación-al-concepto-de-límite"><span class="header-section-number">6.1.1</span> Aproximación al concepto de límite</h3>
 <p>El concepto de límite está ligado al de tendencia.</p>
 <p>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, se dice que <span class="math inline">\(x\in A\)</span> <em>tiende</em> a un número <span class="math inline">\(a\in\mathbb{R}\)</span>, y lo escribimos <span class="math inline">\(x\to a\)</span>, si se pueden tomar valores de <span class="math inline">\(x\)</span> tan próximos a <span class="math inline">\(a\)</span> como se quiera, pero sin llegar a valer <span class="math inline">\(a\)</span>.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -399,13 +420,11 @@ x      &amp; f(x)   \\
 \Downarrow\\
 \displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{\sqrt{x^2-1}}
 \end{array}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/limite-no-existe-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -449,13 +468,11 @@ x      &amp; f(x)   \\
 \displaystyle \textrm{No existe }\lim_{x\to 0}\frac{|x|}{x}
 \end{array}
 \]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/limite-no-existe-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -501,13 +518,11 @@ x      &amp; f(x)   \\
 \displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{x^2}=\infty
 \end{array}
 \]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/limite-no-existe-3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -564,13 +579,11 @@ x      &amp; f(x)   \\
 \displaystyle \textrm{No existe }\lim_{x\to 0}\operatorname{sen} \frac{1}{x}
 \end{array}
 \]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/limite-no-existe-4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Límite que no existe en <span class="math inline">\(x=0\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -614,13 +627,11 @@ x      &amp; f(x)=1/x   \\
 \lim_{x\to -\infty}\frac{1}{x}=0
 \end{array}
 \]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/limite-en-infinito.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límites en el infinito.</figcaption><p></p>
+<figcaption class="figure-caption">Límites en el infinito.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -632,20 +643,18 @@ x      &amp; f(x)=1/x   \\
 <p><span class="math display">\[\lim_{x\to a} f(x) = l\]</span></p>
 <p>si para cualquier número <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p>
 </div>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/definicion-limite.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Límite de una función.</figcaption><p></p>
+<figcaption class="figure-caption">Límite de una función.</figcaption>
 </figure>
 </div>
-</div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -662,12 +671,12 @@ Advertencia
 <div id="thm-unicidad-limite-funcion" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.1 (Unicidad del límite) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces es único.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -686,12 +695,12 @@ Demostración
 <div id="thm-criterio-sucesiones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.2 (Criterio de las sucesiones) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\(A\setminus\{a\}\)</span> que converge a <span class="math inline">\(a\)</span>, se tiene que <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> converge a <span class="math inline">\(l\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -707,12 +716,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -748,12 +757,12 @@ Importante
 <div id="prp-limite-funcion-acotada" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.1 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -786,12 +795,12 @@ Demostración
 <li><p>Si <span class="math inline">\(g(x)\neq 0\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to a}g(x)\neq 0\)</span>, entonces <span class="math inline">\(\lim_{x\to a}\dfrac{f(x)}{g(x)}=\frac{\displaystyle \lim_{x\to a}f(x)}{\displaystyle \lim_{x\to a}g(x)}\)</span>.</p></li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -826,12 +835,12 @@ Demostración
 <div id="thm-compresión-funciones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.3 (Compresión de funciones) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, tres funciones <span class="math inline">\(f,g,h:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f(x)\leq g(x)\leq h(x)\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g(x)=l\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -850,12 +859,12 @@ Demostración
 <div id="thm-limite-composicion-funciones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.4 (Límite de la composición de funciones) </strong></span>Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y un punto de acumulación <span class="math inline">\(b\)</span> de <span class="math inline">\(B\)</span>, si <span class="math inline">\(\lim_{x\to a}f(x)=b\)</span> y <span class="math inline">\(\lim_{x\to b}g(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g\circ f(x)=l\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -879,12 +888,12 @@ Demostración
 <div id="prp-limite-valor-absoluto" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.3 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -901,12 +910,12 @@ Demostración
 <div id="prp-limite-raiz" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.4 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -922,12 +931,12 @@ Demostración
 <div id="thm-criterio-cauchy" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.5 (Criterio de Cauchy) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -962,12 +971,12 @@ Demostración
 <div id="thm-limites-laterales" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.6 (Límites laterales) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de los conjuntos <span class="math inline">\(\{x\in A: x&gt;a\}\)</span> y <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si <span class="math inline">\(\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1015,12 +1024,12 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <li><p>Si <span class="math inline">\(\lim_{x\to a}g(x)=-\infty\)</span> entonces <span class="math inline">\(\lim_{x\to a}f(x)=-\infty\)</span>.</p></li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1048,12 +1057,12 @@ Demostración
 <div id="thm-criterio-sucesiones-divergente" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.7 (Criterio de las sucesiones divergentes) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, entonces <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\((a,\infty)\)</span> que diverja a <span class="math inline">\(\infty\)</span>, <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1084,12 +1093,12 @@ Demostración
 <li><p>Si <span class="math inline">\(l&lt;0\)</span>, <span class="math inline">\(\lim_{x\to\infty}f(x)=-\infty\)</span> si y solo si <span class="math inline">\(\lim_{x\to\infty}g(x)=\infty\)</span>.</p></li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1115,12 +1124,12 @@ Demostración
 <div id="prp-limite-funcion-polinomica" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.7 (Límite de una función polinómica) </strong></span>Si <span class="math inline">\(f\)</span> es una función polinómica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1137,12 +1146,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.8 (Límite de una función racional) </strong></span>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> con <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> funciones polinómicas, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> que no sea una raíz de <span class="math inline">\(q(x)\)</span>, y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 <p>Si <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(q(x)\)</span> entonces el límite puede existir o no.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1158,12 +1167,12 @@ Demostración
 <div id="prp-limite-funcion-potencial" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.9 (Límite de una función potencial) </strong></span>Si <span class="math inline">\(f(x)=x^r\)</span> con <span class="math inline">\(r\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\)</span> tal que exista un intervalo <span class="math inline">\((a-\delta,a+\delta)\subset \textrm{Dom}(f)\)</span> para algún <span class="math inline">\(\delta &gt;0\)</span>, y en ese caso, <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1179,12 +1188,12 @@ Demostración
 <div id="prp-limite-funcion-exponencial" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.10 (Límite de una función exponencial) </strong></span>Si <span class="math inline">\(f(x)=c^x\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span> entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1200,12 +1209,12 @@ Demostración
 <div id="prp-limite-funcion-logarítmica" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.11 (Límite de una función logarítmica) </strong></span>Si <span class="math inline">\(f(x)=\log_c(x)\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}^+\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1221,12 +1230,12 @@ Demostración
 <div id="prp-limite-funcion-trigonometrica" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.12 </strong></span>Si <span class="math inline">\(f(x)\)</span> es una función trigonométrica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \textrm{Dom}(f)\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1327,12 +1336,12 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <li>Si <span class="math inline">\(h\)</span> es una función acotada en un entorno de <span class="math inline">\(a\)</span>, <span class="math inline">\(f\cdot h\)</span> es un infinitésimo en <span class="math inline">\(a\)</span>.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1381,12 +1390,12 @@ e^x-1 \approx x\\
 \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}.
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1399,12 +1408,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1504,13 +1513,11 @@ Advertencia
 <div id="exm-asintota-vertical" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.28 </strong></span>La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
 <p><span class="math display">\[\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/asintota-vertical.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Asíntota vertical.</figcaption><p></p>
+<figcaption class="figure-caption">Asíntota vertical.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1526,13 +1533,11 @@ Advertencia
 \lim_{x\to -\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
 \lim_{x\to +\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/asintota-horizontal.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Asíntota horizontal.</figcaption><p></p>
+<figcaption class="figure-caption">Asíntota horizontal.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1550,13 +1555,11 @@ Advertencia
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &amp;=
 \lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/asintota-oblicua.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Asíntota oblicua.</figcaption><p></p>
+<figcaption class="figure-caption">Asíntota oblicua.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1613,13 +1616,11 @@ Advertencia
 <div id="exm-discontinuiada-evitable" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.34 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
 <p><span class="math display">\[\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/discontinuidad-evitable.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Discontinuidad evitable en <span class="math inline">\(x=1\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Discontinuidad evitable en <span class="math inline">\(x=1\)</span></figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1637,13 +1638,11 @@ Advertencia
 \lim_{x\to 0^+}\frac{|x|}{x}&amp;= 1
 \end{align*}\]</span></p>
 <p>Salto <span class="math inline">\(= 1-(-1)=2\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/discontinuidad-salto-finito.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Discontinuidad de primera especie de salto finito en <span class="math inline">\(x=0\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Discontinuidad de primera especie de salto finito en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1660,13 +1659,11 @@ Advertencia
 \lim_{x\to 0^-}e^{1/x}&amp;= 0\\
 \lim_{x\to 0^+}e^{1/x}&amp;= \infty
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/discontinuidad-salto-infinito.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Discontinuidad de primera especie de salto infinito en <span class="math inline">\(x=0\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Discontinuidad de primera especie de salto infinito en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1682,13 +1679,11 @@ Advertencia
 &amp; \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
 &amp; \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/discontinuidad-segunda-especie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Discontinuidad de segunda especie en <span class="math inline">\(x=0\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Discontinuidad de segunda especie en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
-</div>
 </div>
 </div>
 <div id="prp-algebra-funciones-continuas" class="theorem proposition">
@@ -1700,12 +1695,12 @@ Advertencia
 <li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(x)\neq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1725,12 +1720,12 @@ Demostración
 <div id="prp-continuidad-composicion-funciones" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6.15 </strong></span>Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1753,12 +1748,12 @@ Demostración
 <div id="thm-funcion-continua-intervalo-cerrado" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.9 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1787,12 +1782,12 @@ f(x)=
 <div id="thm-extremos-funcion-continua-intervalo-cerrado" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.10 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1812,12 +1807,12 @@ Demostración
 <div id="thm-bolzano" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.11 (Bolzano) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, y <span class="math inline">\(f(a)&lt;0&lt;f(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f(c)=0\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1836,12 +1831,12 @@ Demostración
 <div id="thm-valores-intermedios" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.12 (Valores intermedios) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y si <span class="math inline">\(c,d\in I\)</span>, entonces para cualquier <span class="math inline">\(k\mathbb{R}\)</span> con <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1858,12 +1853,12 @@ Demostración
 <div id="thm-valores-intermedios" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.13 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y <span class="math inline">\(k\in\mathbb{R}\)</span> es tal que <span class="math inline">\(\inf(f(I))\leq k\leq \sup(f(I))\)</span>, entonces existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1880,12 +1875,12 @@ Demostración
 <div id="thm-imagen-funcion-continua-intervalo-cerrado-acotado" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6.14 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(f(I)\)</span> es un intervalo cerrado y acotado.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -2054,9 +2049,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2121,6 +2130,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

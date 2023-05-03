@@ -1128,7 +1128,7 @@ es derivable en cualquier punto de $[-1,1]$ y $f'(x) = 2x\operatorname{sen}\left
 
 Tal y como se ha definido la integral de una función a partir de las sumas de Riemann, no resulta extraño que la principal aplicación de las integrales definidas sea el cálculo del areas encerrada por la gráfica de una función y el eje $x$ en un intervalo de $I$. Ya hemos visto que cuando $f(x)\geq 0$ $\forall x\in I$, si $f$ es integrable en $I=[a,b]$, entonces $\int_a^b f(x)\, dx\geq 0$ es el área encerrada entre la gráfica de la función $f$ y el eje $x$ en el intervalo $I$. En esta sección veremos cómo calcular áreas de funciones que también presentan valores negativos en el intervalo de integración y generalizamos el resultado para calcular áreas encerradas entre las gráficas de dos funciones.
 
-### Cálculo del area encerrada por una función y el eje $x$.
+### Cálculo del area encerrada por una función y el eje $x$. {#sec-calculo-area-funcion-ejex}
 
 Ya hemos visto que cuando una función $f(x)<0$ $\forall x\in I=[a,b]$, entonces $\int_a^b f(x)\, dx<0$, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. En general, para evitar este problema, si queremos calcular el área encerrada por la gráfica de una función $f(x)$ en un intervalo $I=[a,b]$ debemos calcular la integral definida en $I$ del valor absoluto de la función, es decir, 
 
@@ -1744,3 +1744,129 @@ Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el or
 &= 2 \pi r [x]_{-r}^r  = 2\pi r(r-(-r)) = 4\pi r^2.
 \end{align*}
 :::
+
+## Aplicaciones físicas
+
+En esta sección presentamos varias apliaciones de las integrales en distintas áreas de la Física. 
+
+### Cinemática
+
+Como ya ese vió en la [interpretación cimenática de la derivada](https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada), cuando $s(t)$ es una función que describe la posición de un objeto que se mueve a lo largo del eje $x$, $s'(t)$ es la velocidad instantánea del objeto en cada instante $t$ y $s''(t)$ es la aceleración en cada instante $t$. 
+
+Así pues, si conocemos la velocidad instantánea $v(t)$ de un objeto en cada instante $t$, podemos averiguar su posición integrando la velocidad. Como $s(t) es una primitiva de $v(t)$, según el teorema fundamental del cálculo, se tiene 
+
+$$
+\int_a^b v(t)\, dt = s(a)-s(b),
+$$
+
+es decir, la diferencia entre la posición el objeto en los instantes $t=b$ y $t=a$.
+
+:::{.callout-warning}
+La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo $[a, b]$, es necesario integrar el valor aboluto de la velocidad, tal y como se hizo para el cálculo de áreas en la @sec-calculo-area-funcion-ejex.
+:::
+
+En general, suponiendo que el instante incial en el que comienza el movimiento es el instante $t=0$, y por tanto, la posición inicial del objeto es $s(0)$, la posición que ocupa el objeto en cualquier instante $t$ viene dada por la integral
+
+$$
+s(t) = s(0) + \int_{0}^t v(x)\,dx.
+$$
+
+Del mismo modo, si conocemos la aceleración del objeto $a(t)$ en cada instante $t$, podemos averiguar su velocidad integrando la aceleración. Como $v(t)$ es una primitiva de $a(t)$, según el teorema fundamental del cálculo, se tiene 
+
+$$
+\int_a^b a(t)\, dt = v(t_1)-v(t_0),
+$$
+
+es decir, la diferencia entre la velocidades en los instantes $a$ y $b$.
+
+Si suponemos como antes, que el instante incial en el que comienza el movimiento es el instante $t=0$, y por tanto, la velocidad inicial del objeto es $v(0)$, la velocidad del objeto en cualquier instante $t$ viene dada por la integral
+
+$$
+v(t) = v(0) + \int_{0}^t a(x)\,dx.
+$$
+
+Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.
+
+:::{#exm-caida-libre}
+Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición incicial del objeto es $s(0)=s_0$ m y su velocidad inicial es $v(0)=v_0$ m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actua sobre el objeto es la gravedad, con una aceleración constante $g=9.8$ m/s$^2$.
+
+Integrando la acelaración obtenemos la velocidad del objeto en cada instante $t$.
+
+$$
+v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
+$$
+
+Ahora, integrando la velocidad obtenemos la posición el objeto en cada instante $t$.
+
+$$
+s(t) = s(0) + \int_{0}^t v_0-gx\,dx = s_0 + \left[v_0 x-g\frac{x^2}{2}\right]_0^t = s_0+v_0 t-g\frac{t^2}{2}.
+$$
+
+En el caso de que la posición inicial sea $s_0=0$ m, y se parta de una situación de reposo, es decir, $v_0=0$ m/s, se llega a 
+
+$$
+s(t) = -g\frac{t^2}{2}.
+$$
+:::
+
+### Trabajo
+
+Otra aplicación importante de las integrales en Físcia es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función $s(t)$, la _fuerza_ $F$ ejercicida sobre el objeto viene dada por la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica)
+
+$$
+F = m\cdot a
+$$
+
+donde $m$ es la masa del objeto y $a$ es la aceleración. 
+
+La unidad de medida de la fuerza en el Sistema Internacional (SI) es el _newton_ N=kg$\cdot$ m /s$^2$, es decir, si se aplica $1$ N a un objeto de masa $1$ kg, este sufrirá una aceleración de $1$ m/s$^2$.
+
+Cuando se aplica una fuerza sobre un objeto desplazándolo en línea recta una determinada distancia, el _trabajo_ $W$ realizado en ese desplazamiento viene dado por el producto de la fuerza y la distancia que recorre el objeto, es decir,
+
+$$
+W = F\cdot d
+$$
+
+Como la fuerza se mide en newtons, la unidad del trabajo en el SI es el _julio_ $J = N\cdot m$. 
+
+Cuando la fuerza es constante, el trabajo es proporcional a la distancia recorrida.
+
+:::{#exm-trabajo-gravedad}
+Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir, 
+
+$$
+F = m\cdot g = 1 \mbox{ kg} \cdot 9.81 \mbox{ m/s$^2$} = 9.8 \mbox{ N},
+$$
+
+y el trabajo realizado es
+
+$$
+W = F\cdot d = 9.81 \mbox{ N} \cdot 2 \mbox{ m} = 19.62 \mbox{ J}
+$$
+:::
+
+Cuando la fuerza que se aplica sobre el objeto no es constante, sino que viene dada por una función $f(x)$, el cálculo no es tan sencillo, pero podemos aplicar la misma estrategia utilizada con las sumas de Riemann. Si se quiere calcular el trabajo realizado al desplazar el objeto desde la posición $x=a$ hasta $x=b$ aplicando una fuerza $f(x)$, podemos tomar una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ de $n$ intervalos de igual amplitud $\Delta x$ y aproximar el trabajo realizado en el intervalo $[x_{i-1},x_i]$ con $W_i= f(x'_i)(x_i-x_{i-1}) = f(x'_i)\Delta x$, donde $x'_i$ es cualquier valor del intervalo $[x_{i-1},x_i]$. De este modo, el trabajo realizado en el intervalo $[a,b]$ puede aproximarse mediante la suma
+
+$$
+W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
+$$
+
+Como ya se ha visto, cuando el número de subintervalos tiende da $\infty$, en el límite, si la función $f$ es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral
+
+$$
+\int_a^b f(x)\,dx
+$$
+
+:::{.callout-warning}
+La integral anterior mide el trabajo realizado al aplicar una fuerza en el sentido del desplazamiento, es decir, cuando es positiva.
+:::
+
+:::{#exm-trabajo-fuerza-variable}
+La función $f(x)=\frac{1}{1+x}$ determina la fuerza que actúa sobre una partícula situada a una distancia $x$ del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto $1$ es
+
+$$
+W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
+$$
+:::
+
+

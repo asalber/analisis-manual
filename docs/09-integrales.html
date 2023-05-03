@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -66,26 +66,34 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="Manual de Análisis Matemático Real - 9&nbsp; Integrales de funciones">
-<meta property="og:description" content="En este capítulo se estudian las integrales de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes.">
+<meta property="og:description" content="">
+<meta property="og:image" content="img/integrales/suma-inferior-riemann.png">
 <meta property="og:site-name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 9&nbsp; Integrales de funciones">
-<meta name="twitter:description" content="En este capítulo se estudian las integrales de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes.">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="img/integrales/suma-inferior-riemann.png">
 <meta name="twitter:site" content="@aprendeconalf">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-integrales.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -93,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -101,127 +109,147 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-            <i class="bi bi-bi-linkedin pe-1"></i>
-          LinkedIn
-          </a>
-        </li>
-    </ul>
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a>
+  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></a>
+  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a>
+  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></a>
+  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a>
+  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-limites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></a>
+  <a href="./06-limites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a>
+  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-series.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></a>
+  <a href="./08-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a>
+  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#sumas-de-riemann" id="toc-sumas-de-riemann" class="nav-link active" data-scroll-target="#sumas-de-riemann"><span class="toc-section-number">9.1</span>  Sumas de Riemann</a></li>
-  <li><a href="#integrales-de-riemann" id="toc-integrales-de-riemann" class="nav-link" data-scroll-target="#integrales-de-riemann"><span class="toc-section-number">9.2</span>  Integrales de Riemann</a></li>
-  <li><a href="#propiedades-de-la-integral-de-riemann" id="toc-propiedades-de-la-integral-de-riemann" class="nav-link" data-scroll-target="#propiedades-de-la-integral-de-riemann"><span class="toc-section-number">9.3</span>  Propiedades de la integral de Riemann</a></li>
-  <li><a href="#clase-de-las-funciones-integrables" id="toc-clase-de-las-funciones-integrables" class="nav-link" data-scroll-target="#clase-de-las-funciones-integrables"><span class="toc-section-number">9.4</span>  Clase de las funciones integrables</a></li>
-  <li><a href="#teorema-fundamental-del-cálculo" id="toc-teorema-fundamental-del-cálculo" class="nav-link" data-scroll-target="#teorema-fundamental-del-cálculo"><span class="toc-section-number">9.5</span>  Teorema fundamental del cálculo</a></li>
-  <li><a href="#cálculo-de-areas" id="toc-cálculo-de-areas" class="nav-link" data-scroll-target="#cálculo-de-areas"><span class="toc-section-number">9.6</span>  Cálculo de areas</a>
+  <li><a href="#sumas-de-riemann" id="toc-sumas-de-riemann" class="nav-link active" data-scroll-target="#sumas-de-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</a></li>
+  <li><a href="#integrales-de-riemann" id="toc-integrales-de-riemann" class="nav-link" data-scroll-target="#integrales-de-riemann"><span class="header-section-number">9.2</span> Integrales de Riemann</a></li>
+  <li><a href="#propiedades-de-la-integral-de-riemann" id="toc-propiedades-de-la-integral-de-riemann" class="nav-link" data-scroll-target="#propiedades-de-la-integral-de-riemann"><span class="header-section-number">9.3</span> Propiedades de la integral de Riemann</a></li>
+  <li><a href="#clase-de-las-funciones-integrables" id="toc-clase-de-las-funciones-integrables" class="nav-link" data-scroll-target="#clase-de-las-funciones-integrables"><span class="header-section-number">9.4</span> Clase de las funciones integrables</a></li>
+  <li><a href="#teorema-fundamental-del-cálculo" id="toc-teorema-fundamental-del-cálculo" class="nav-link" data-scroll-target="#teorema-fundamental-del-cálculo"><span class="header-section-number">9.5</span> Teorema fundamental del cálculo</a></li>
+  <li><a href="#cálculo-de-areas" id="toc-cálculo-de-areas" class="nav-link" data-scroll-target="#cálculo-de-areas"><span class="header-section-number">9.6</span> Cálculo de areas</a>
   <ul class="collapse">
-  <li><a href="#cálculo-del-area-encerrada-por-una-función-y-el-eje-x." id="toc-cálculo-del-area-encerrada-por-una-función-y-el-eje-x." class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-una-función-y-el-eje-x."><span class="toc-section-number">9.6.1</span>  Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</a></li>
-  <li><a href="#area-encerrada-entre-dos-funciones" id="toc-area-encerrada-entre-dos-funciones" class="nav-link" data-scroll-target="#area-encerrada-entre-dos-funciones"><span class="toc-section-number">9.6.2</span>  Area encerrada entre dos funciones</a></li>
-  <li><a href="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares"><span class="toc-section-number">9.6.3</span>  Cálculo del area encerrada por una curva en coordenadas polares</a></li>
-  <li><a href="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares"><span class="toc-section-number">9.6.4</span>  Cálculo del area encerrada por dos curvas en coordenadas polares</a></li>
+  <li><a href="#sec-calculo-area-funcion-ejex" id="toc-sec-calculo-area-funcion-ejex" class="nav-link" data-scroll-target="#sec-calculo-area-funcion-ejex"><span class="header-section-number">9.6.1</span> Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</a></li>
+  <li><a href="#area-encerrada-entre-dos-funciones" id="toc-area-encerrada-entre-dos-funciones" class="nav-link" data-scroll-target="#area-encerrada-entre-dos-funciones"><span class="header-section-number">9.6.2</span> Area encerrada entre dos funciones</a></li>
+  <li><a href="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares"><span class="header-section-number">9.6.3</span> Cálculo del area encerrada por una curva en coordenadas polares</a></li>
+  <li><a href="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares"><span class="header-section-number">9.6.4</span> Cálculo del area encerrada por dos curvas en coordenadas polares</a></li>
   </ul></li>
-  <li><a href="#integrales-impropias" id="toc-integrales-impropias" class="nav-link" data-scroll-target="#integrales-impropias"><span class="toc-section-number">9.7</span>  Integrales impropias</a></li>
-  <li><a href="#cálculo-de-volúmenes" id="toc-cálculo-de-volúmenes" class="nav-link" data-scroll-target="#cálculo-de-volúmenes"><span class="toc-section-number">9.8</span>  Cálculo de volúmenes</a>
+  <li><a href="#integrales-impropias" id="toc-integrales-impropias" class="nav-link" data-scroll-target="#integrales-impropias"><span class="header-section-number">9.7</span> Integrales impropias</a></li>
+  <li><a href="#cálculo-de-volúmenes" id="toc-cálculo-de-volúmenes" class="nav-link" data-scroll-target="#cálculo-de-volúmenes"><span class="header-section-number">9.8</span> Cálculo de volúmenes</a>
   <ul class="collapse">
-  <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="toc-section-number">9.8.1</span>  Cálculo de volúmenes de sólidos de revolución</a></li>
-  <li><a href="#cálculo-de-volúmenes-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="toc-section-number">9.8.2</span>  Cálculo de volúmenes con envoltorios cilíndricos</a></li>
+  <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="header-section-number">9.8.1</span> Cálculo de volúmenes de sólidos de revolución</a></li>
+  <li><a href="#cálculo-de-volúmenes-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes con envoltorios cilíndricos</a></li>
   </ul></li>
-  <li><a href="#cálculo-de-la-longitud-de-una-curva" id="toc-cálculo-de-la-longitud-de-una-curva" class="nav-link" data-scroll-target="#cálculo-de-la-longitud-de-una-curva"><span class="toc-section-number">9.9</span>  Cálculo de la longitud de una curva</a></li>
-  <li><a href="#cálculo-de-superficies-de-sólidos-de-revolución" id="toc-cálculo-de-superficies-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-superficies-de-sólidos-de-revolución"><span class="toc-section-number">9.10</span>  Cálculo de superficies de sólidos de revolución</a></li>
+  <li><a href="#cálculo-de-la-longitud-de-una-curva" id="toc-cálculo-de-la-longitud-de-una-curva" class="nav-link" data-scroll-target="#cálculo-de-la-longitud-de-una-curva"><span class="header-section-number">9.9</span> Cálculo de la longitud de una curva</a></li>
+  <li><a href="#cálculo-de-superficies-de-sólidos-de-revolución" id="toc-cálculo-de-superficies-de-sólidos-de-revolución" class="nav-link" data-scroll-target="#cálculo-de-superficies-de-sólidos-de-revolución"><span class="header-section-number">9.10</span> Cálculo de superficies de sólidos de revolución</a></li>
+  <li><a href="#aplicaciones-físicas" id="toc-aplicaciones-físicas" class="nav-link" data-scroll-target="#aplicaciones-físicas"><span class="header-section-number">9.11</span> Aplicaciones físicas</a>
+  <ul class="collapse">
+  <li><a href="#cinemática" id="toc-cinemática" class="nav-link" data-scroll-target="#cinemática"><span class="header-section-number">9.11.1</span> Cinemática</a></li>
+  <li><a href="#trabajo" id="toc-trabajo" class="nav-link" data-scroll-target="#trabajo"><span class="header-section-number">9.11.2</span> Trabajo</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></h1>
 </div>
 
 
@@ -245,7 +273,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div>
 <div class="hidden">
 <p><span class="math display">\[
 \newcommand{\mathbb{N}}{\mathbb{N}}
@@ -260,7 +287,6 @@ ul.task-list li input[type="checkbox"] {
 \DeclareMathOperator{\Ac}{Ac}
 \DeclareMathOperator{\sen}{sen}
 \]</span></p>
-</div>
 </div>
 <p>En este capítulo se estudian las <em>integrales</em> de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el <em>teorema fundamental del cálculo</em>, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.</p>
 <p>Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el <em><a href="https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento">método por agotamiento</a></em> para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.</p>
@@ -279,13 +305,11 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
 <p>donde <span class="math inline">\(m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>.</p>
 </div>
 <p>Gráficamente, si <span class="math inline">\(f\)</span> es una función positiva, la suma inferior se puede interpretar como la suma de las areas de los rectángulos con base <span class="math inline">\([x_{i-1},x_i]\)</span> y altura <span class="math inline">\(m_i\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/suma-inferior-riemann.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Suma inferior de Riemann</figcaption><p></p>
+<figcaption class="figure-caption">Suma inferior de Riemann</figcaption>
 </figure>
-</div>
 </div>
 <div id="def-suma-superior-riemann" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.3 (Suma superior de Riemann) </strong></span>Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma superior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(S(f,P)\)</span>, como</p>
@@ -295,36 +319,31 @@ S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
 <p>donde <span class="math inline">\(M_i=\sup\{f(x): x\in[x_{i-1},x_i]\}\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>.</p>
 </div>
 <p>Gráficamente, si <span class="math inline">\(f\)</span> es una función positiva, la suma superior se puede interpretar como la suma de las areas de los rectángulos con base <span class="math inline">\([x_{i-1},x_i]\)</span> y altura <span class="math inline">\(M_i\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/suma-superior-riemann.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Suma superior de Riemann</figcaption><p></p>
+<figcaption class="figure-caption">Suma superior de Riemann</figcaption>
 </figure>
 </div>
-</div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Obsérvese que si una función es negativa en un intervalo <span class="math inline">\(I\)</span>, sus sumas de Riemann son negativas, ya que las alturas de los rectángulos son negativas.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas-riemann-positivas-negativas.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sumas de Riemann de una función con valores positivos y negativos en un intervalo.</figcaption><p></p>
+<figcaption class="figure-caption">Sumas de Riemann de una función con valores positivos y negativos en un intervalo.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</div>
-<div>
 <div id="ggb-suma-riemann-1">
 
 </div>
@@ -351,17 +370,16 @@ var params = {
         ggbApplet1.inject('ggb-suma-riemann-1');
     });
 </script>
-</div>
 <p><a href="https://www.geogebra.org/classic/nr6x8pjq"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de sumas de Riemann"> Calculadora de sumas de Riemann</a></p>
 <div id="prp-sumas-riemann-inferior-superior" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 9.1 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -392,12 +410,12 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1}) \leq \sum_{i=1}^n M_i(x_i-x_{i-1}) = S(f,
 <li><span class="math inline">\(s(f,Q)\leq S(f,P)\)</span></li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -428,12 +446,12 @@ s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
 <div id="prp-sumas-riemann-particiones" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 9.3 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son dos particiones de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> y <span class="math inline">\(s(f,Q)\leq S(f,P)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -457,13 +475,11 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 <section id="integrales-de-riemann" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="integrales-de-riemann"><span class="header-section-number">9.2</span> Integrales de Riemann</h2>
 <p>Como acabamos de ver, dada una función <span class="math inline">\(f\)</span> positiva en un intervalo <span class="math inline">\(I\)</span>, para cualquier partición <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, la suma inferior de Riemann es una aproximación por defecto del área encerrada entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\(I\)</span>, mientras que la suma superior de Riemann es una aproximación por exceso. Si al hacer refinamientos de la partición <span class="math inline">\(P\)</span>, cada vez con un mayor número de subintervalos, las sumas inferiores crecen y las superiores decrecen, se obtienen aproximaciones cada vez mejores. Podemos explotar esta idea para calcular el area área encerrada entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> tomando particiones con subintervalos cada vez más pequeños.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas_riemann.gif" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Aproximación del area encerrada entre la gráfica de una función y el eje <span class="math inline">\(x\)</span> mediante sumas de Riemann.</figcaption><p></p>
+<figcaption class="figure-caption">Aproximación del area encerrada entre la gráfica de una función y el eje <span class="math inline">\(x\)</span> mediante sumas de Riemann.</figcaption>
 </figure>
-</div>
 </div>
 <div id="def-integral-inferior-riemann" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.5 (Integral inferior de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
@@ -474,12 +490,12 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 <div id="prp-integral-riemann-inferior-superior" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\underline{\int_a^b} f\leq \overline{\int_a^b}f\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -509,12 +525,12 @@ Demostración
 \int_a^b f(x)\,dx
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Nota
 </div>
 </div>
@@ -588,12 +604,12 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 <div id="thm-criterio-integrabilidad-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.1 (Criterio de integrabilidad de Riemann) </strong></span>Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -622,12 +638,12 @@ S(f,P)-s(f,P) \leq S(f,P_2)-s(f,P_1) \leq \left(\overline{\int_a^b} f+\frac{\var
 \int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -651,12 +667,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -674,12 +690,12 @@ Importante
 <li>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></li>
 </ol>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -771,12 +787,12 @@ S(cf,P) - s(cf,P) &amp;= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
 <div id="prp-integral-funcion-positiva" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -792,12 +808,12 @@ Demostración
 <div id="cor-integral-funcion-negativa" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.2 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq 0\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -814,12 +830,12 @@ Demostración
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Precaución
 </div>
 </div>
@@ -828,14 +844,13 @@ Precaución
 <p>En estos casos, el recurso habitual para calcular el área es calcular la integral del valor absoluto de la función.</p>
 </div>
 </div>
-<div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-funcion-positiva-negativa.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Integral de una función con valores positivos y negativos en un intervalo <span class="math inline">\(I\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Integral de una función con valores positivos y negativos en un intervalo <span class="math inline">\(I\)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -843,9 +858,8 @@ Precaución
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/integral-valor-absoluto.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cálculo del area encerrada entre una función de una función y el eje <span class="math inline">\(x\)</span> mediante la integral del valor absoluto de la función.</figcaption><p></p>
+<figcaption class="figure-caption">Cálculo del area encerrada entre una función de una función y el eje <span class="math inline">\(x\)</span> mediante la integral del valor absoluto de la función.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -853,12 +867,12 @@ Precaución
 <div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.3 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -877,12 +891,12 @@ Demostración
 <div id="cor-integral-funcion-acotada" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -905,12 +919,12 @@ m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
 \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -954,13 +968,11 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 </div>
 </div>
 <p>A pesar de que la demostración es bastante larga, cuando <span class="math inline">\(f\)</span> es positiva, es obvio que el área entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([a,b]\)</span> puede descomponerse en la suma de las áreas en los intervalos <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span> para cualquier <span class="math inline">\(c\in(a,b)\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/aditividad-integral.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Aditividad de la integral respecto del intervalo de integración</figcaption><p></p>
+<figcaption class="figure-caption">Aditividad de la integral respecto del intervalo de integración</figcaption>
 </figure>
-</div>
 </div>
 </section>
 <section id="clase-de-las-funciones-integrables" class="level2" data-number="9.4">
@@ -969,12 +981,12 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 <div id="thm-integrabilidad-funciones-monotonas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1007,12 +1019,12 @@ S(f,P_n)-s(f,P_n) &amp;= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-
 <div id="thm-integrabilidad-funciones-continuas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1039,12 +1051,12 @@ S(f,P)-s(f,P) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1
 <div id="thm-integrabilidad-funciones-discontinuas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1060,12 +1072,12 @@ Demostración
 <div id="cor-integrabilidad-funciones-discontinuas" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un conjunto finito de puntos de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1088,12 +1100,12 @@ S(f,P)-s(f,P)\leq S(f,P_1)+S(f,P_2)-s(f,P_1)-s(f,P_2) &lt; \frac{\varepsilon}{2}
 <div id="thm-integrabilidad-composicion-funciones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1141,12 +1153,12 @@ S(g\circ f,P)-s(g\circ f,P) &amp;= \sum_{i\in A}(M_i'-m_i')(x_i-x_{i-1}) + \sum_
 <div id="cor-integrabilidad-valor-absoluto" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1162,12 +1174,12 @@ Demostración
 <div id="cor-integrabilidad-potencias" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1183,12 +1195,12 @@ Demostración
 <div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1204,12 +1216,12 @@ Demostración
 <div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9.9 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1243,12 +1255,12 @@ F(x) = \int_a^x f(t)\, dt
 \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1272,12 +1284,12 @@ Demostración
 <div id="thm-integral-indefinida-continua" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1323,12 +1335,12 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 <div id="thm-teorema-fundamental-calculo-1" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.9 (Teorema fundamental del Cálculo I) </strong></span>Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1354,12 +1366,12 @@ Demostración
 </div>
 </div>
 <p>La importancia de este teorema radica en que conecta el concepto de derivada, al cuál se llegó mediante el estudio de las tangentes a la gráfica de una función, y el concepto de integral, al cuál hemos llegado mediante el estudio del área encerrada entre la gráfica de la función y el eje <span class="math inline">\(x\)</span>.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1370,12 +1382,12 @@ Advertencia
 <div id="def-primitiva" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.9 (Primitiva de una función) </strong></span>Dada una función <span class="math inline">\(f:I\to\ \mathbb{R}\)</span> integrable en <span class="math inline">\(I\)</span>, a cualquier función <span class="math inline">\(F\)</span> que cumple <span class="math inline">\(F'=f\)</span> se le llama <em>primitiva</em> de <span class="math inline">\(f\)</span>.</p>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Advertencia
 </div>
 </div>
@@ -1397,12 +1409,12 @@ Advertencia
 \int_a^b f(x)\,dx = F(b)-F(a).
 \]</span></p>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1480,20 +1492,18 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <section id="cálculo-de-areas" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="cálculo-de-areas"><span class="header-section-number">9.6</span> Cálculo de areas</h2>
 <p>Tal y como se ha definido la integral de una función a partir de las sumas de Riemann, no resulta extraño que la principal aplicación de las integrales definidas sea el cálculo del areas encerrada por la gráfica de una función y el eje <span class="math inline">\(x\)</span> en un intervalo de <span class="math inline">\(I\)</span>. Ya hemos visto que cuando <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, si <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\, dx\geq 0\)</span> es el área encerrada entre la gráfica de la función <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\(I\)</span>. En esta sección veremos cómo calcular áreas de funciones que también presentan valores negativos en el intervalo de integración y generalizamos el resultado para calcular áreas encerradas entre las gráficas de dos funciones.</p>
-<section id="cálculo-del-area-encerrada-por-una-función-y-el-eje-x." class="level3" data-number="9.6.1">
-<h3 data-number="9.6.1" class="anchored" data-anchor-id="cálculo-del-area-encerrada-por-una-función-y-el-eje-x."><span class="header-section-number">9.6.1</span> Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</h3>
+<section id="sec-calculo-area-funcion-ejex" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="sec-calculo-area-funcion-ejex"><span class="header-section-number">9.6.1</span> Cálculo del area encerrada por una función y el eje <span class="math inline">\(x\)</span>.</h3>
 <p>Ya hemos visto que cuando una función <span class="math inline">\(f(x)&lt;0\)</span> <span class="math inline">\(\forall x\in I=[a,b]\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\, dx&lt;0\)</span>, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. En general, para evitar este problema, si queremos calcular el área encerrada por la gráfica de una función <span class="math inline">\(f(x)\)</span> en un intervalo <span class="math inline">\(I=[a,b]\)</span> debemos calcular la integral definida en <span class="math inline">\(I\)</span> del valor absoluto de la función, es decir,</p>
 <p><span class="math display">\[
 \int_a^b |f(x)|\,dx.
 \]</span></p>
 <p>Ahora bien, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, normalmente se recurre a descomponer el intervalo de integración en subintervalos donde la función sea positiva o negativa, integrar <span class="math inline">\(f\)</span> en los intervalos donde la función es positiva, integrar <span class="math inline">\(-f\)</span> en los intervalos donde la función es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-funcion-positiva-negativa-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada por una función positiva y negativa.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada por una función positiva y negativa.</figcaption>
 </figure>
-</div>
 </div>
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.9 </strong></span>Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
@@ -1504,13 +1514,11 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 &amp;= \left[\frac{x^3}{3}-2x^2+3x\right]_0^1 + \left[\frac{x^3}{3}-2x^2+3x\right]_1^3 + \left[\frac{x^3}{3}-2x^2+3x\right]_3^4 \\
 &amp;= \frac{4}{3} - \frac{-4}{3} + \frac{4}{3} = 4
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-parabola.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada por la parábola <span class="math inline">\(f(x)=x^2-4x+3\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada por la parábola <span class="math inline">\(f(x)=x^2-4x+3\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1521,13 +1529,11 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 \int_a^b |f(x)-g(x)|\, dx
 \]</span></p>
 <p>Al igual que antes, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, tendremos que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-funciones.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada entre dos funciones.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada entre dos funciones.</figcaption>
 </figure>
-</div>
 </div>
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.10 </strong></span>Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
@@ -1538,26 +1544,22 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 &amp;= \left[\operatorname{sen}(x)+\cos(x)\right]_0^{\pi/4} + \left[-\cos(x)-\operatorname{sen}(x)\right]_{\pi/4}^{\pi} \\
 &amp;= \sqrt{2}-1 +\sqrt{2}+1 = 2\sqrt{2}
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-seno-coseno.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada entre el seno y el coseno.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada entre el seno y el coseno.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
 <section id="cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares" class="level3" data-number="9.6.3">
 <h3 data-number="9.6.3" class="anchored" data-anchor-id="cálculo-del-area-encerrada-por-una-curva-en-coordenadas-polares"><span class="header-section-number">9.6.3</span> Cálculo del area encerrada por una curva en coordenadas polares</h3>
 <p>En ocasiones, para calcular el area encerrada por una curva, especialmente para curvas dadas mediante una ecuación implícita, resulta más sencillo trabajar en coordenadas polares.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/coordenadas-polares.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Coordenadas polares.</figcaption><p></p>
+<figcaption class="figure-caption">Coordenadas polares.</figcaption>
 </figure>
-</div>
 </div>
 <p>Para pasar de coordenadas cartesianas a coordenadas polares, primero se obtiene el valor de <span class="math inline">\(r\)</span> aplicando el teorema de Pitágoras</p>
 <p><span class="math display">\[
@@ -1587,26 +1589,22 @@ s(f,P) = \sum_{i=1}^n \pi m_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}^n \frac{M_i^2}{2}(\theta_i-\theta_{i-1})
 \]</span></p>
 <p>donde <span class="math inline">\(M_i=\sup\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas-riemann-polares.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Descomposición en sectores de círculos del area encerrada por una curva en polares.</figcaption><p></p>
+<figcaption class="figure-caption">Descomposición en sectores de círculos del area encerrada por una curva en polares.</figcaption>
 </figure>
-</div>
 </div>
 <p>De forma análoga se puede definir <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span> y la <em>integral superior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}\)</span>, de manera que, si la integral inferior coincide con la superior, la función es integrable y</p>
 <p><span class="math display">\[
 \int_a^b \frac{f(\theta)^2}{2}\,d\theta
 \]</span></p>
 <p>mide el área encerrada por la curva <span class="math inline">\(r=f(\theta)\)</span> y las rectas <span class="math inline">\(\theta=a\)</span> y <span class="math inline">\(\theta=b\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/integral-riemann-polares.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada por una curva en coordenadas polares.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada por una curva en coordenadas polares.</figcaption>
 </figure>
-</div>
 </div>
 <div id="exm-area-semicirculo-polares" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.11 </strong></span>Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
@@ -1619,13 +1617,11 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <p><span class="math display">\[
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
 \]</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-curva-polar.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1636,13 +1632,11 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <p><span class="math display">\[
 \frac{1}{2} \int_a^b f(\theta)^2\,d\theta - \frac{1}{2} \int_a^b g(\theta)^2\,d\theta = \frac{1}{2} \int_a^b f(\theta)^2-g(\theta)^2\,d\theta
 \]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-curvas-polares.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada entre dos curvas polares$.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada entre dos curvas polares$.</figcaption>
 </figure>
-</div>
 </div>
 <p>En general, cuando <span class="math inline">\(f\)</span> es mayor que <span class="math inline">\(g\)</span> en algunos subintervalos de <span class="math inline">\(I\)</span> y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
 <div id="exm-area-entre-curvas-polares" class="theorem example">
@@ -1660,13 +1654,11 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 &amp;= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{6} +\sqrt{3} +\frac{4\pi}{6}\right)\\
 &amp;= \frac{\pi}{2}+\sqrt{3}-1 \approx 2.3028
 \end{align*}\]</span></p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-curvas-polares-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </section>
@@ -1714,13 +1706,11 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section id="cálculo-de-volúmenes" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="cálculo-de-volúmenes"><span class="header-section-number">9.8</span> Cálculo de volúmenes</h2>
 <p>Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos. Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/seccion-transversal-piramide.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></figcaption><p></p>
+<figcaption class="figure-caption">Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></figcaption>
 </figure>
-</div>
 </div>
 <p>En general, si disponemos de una función <span class="math inline">\(A(x)\)</span> que nos da el área de la sección transversal del sólido para cada <span class="math inline">\(x\in[a,b]\)</span>, podemos tomar una partición <span class="math inline">\(P_n=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann</p>
 <p><span class="math display">\[\begin{align*}
@@ -1728,7 +1718,6 @@ s(A,P_n) &amp;= \sum_{i=1}^n m_i(x_i-x_{i-1}),\quad m_i=\inf\{A(x): x\in(x_{i-1}
 S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i)\}
 \end{align*}\]</span></p>
 <p>donde <span class="math inline">\(m_i (x_i-x_{i-1})\)</span> es el volumen de un disco cilíndrico de base <span class="math inline">\(m_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>, y <span class="math inline">\(M_i (x_i-x_{i-1})\)</span> es el volumen de un cilindro de base <span class="math inline">\(M_i\)</span> y altura <span class="math inline">\(x_i-x_{i-1}\)</span>.</p>
-<div>
 <div id="ggb-volumen-revolucion">
 
 </div>
@@ -1755,7 +1744,6 @@ var params = {
         ggbApplet2.inject('ggb-volumen-revolucion');
     });
 </script>
-</div>
 <p>Como ya hemos visto, si <span class="math inline">\(\lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n)\)</span>, la función <span class="math inline">\(A(x)\)</span> es integrable Riemann en el intervalo <span class="math inline">\([a,b]\)</span> y</p>
 <p><span class="math display">\[
 \int_a^b A(x)\,dx = \lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n),
@@ -1774,13 +1762,11 @@ var params = {
 <section id="cálculo-de-volúmenes-de-sólidos-de-revolución" class="level3" data-number="9.8.1">
 <h3 data-number="9.8.1" class="anchored" data-anchor-id="cálculo-de-volúmenes-de-sólidos-de-revolución"><span class="header-section-number">9.8.1</span> Cálculo de volúmenes de sólidos de revolución</h3>
 <p>Cuando el sólido se obtiene rotando una función <span class="math inline">\(f(x)\)</span> alrededor del eje <span class="math inline">\(x\)</span>, se dice que el sólido resultante es un <em>sólido de revolución</em>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/disco-solido-revolucion.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sólido de revolución.</figcaption><p></p>
+<figcaption class="figure-caption">Sólido de revolución.</figcaption>
 </figure>
-</div>
 </div>
 <p>Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
 <p><span class="math display">\[
@@ -1801,19 +1787,16 @@ var params = {
 <section id="cálculo-de-volúmenes-con-envoltorios-cilíndricos" class="level3" data-number="9.8.2">
 <h3 data-number="9.8.2" class="anchored" data-anchor-id="cálculo-de-volúmenes-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes con envoltorios cilíndricos</h3>
 <p>Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/envoltorio-cilindrico-solido-revolucion.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Envoltorio cilíndrico de un sólido de revolución.</figcaption><p></p>
+<figcaption class="figure-caption">Envoltorio cilíndrico de un sólido de revolución.</figcaption>
 </figure>
-</div>
 </div>
 <p>Los envoltorios se construyen de forma que su base es un círculo de radio <span class="math inline">\(x\in [a,b]\)</span> y perpendicular al eje de rotación del sólido de revolución y su altura es <span class="math inline">\(f(x)\)</span>, de manera que su área (sin contar el área de las bases) es <span class="math inline">\(2\pi x f(x)\)</span>. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada <span class="math inline">\(x\in[a,b]\)</span> se obtiene al volumen del cuerpo sólido de revolución en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
 <p><span class="math display">\[
 \int_a^b 2\pi x f(x)\,dx
 \]</span></p>
-<div>
 <div id="ggb-volumen-revolucion-envoltorios">
 
 </div>
@@ -1840,7 +1823,6 @@ var params = {
         ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
     });
 </script>
-</div>
 <div id="exm-volumen-revolucion-envoltorios" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.17 </strong></span>El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
 <p>Si usamos discos discos cilíndricos debemos expresar <span class="math inline">\(x\)</span> en función de <span class="math inline">\(y\)</span>, es decir <span class="math inline">\(x=\sqrt{y}\)</span> y calcular la siguiente integral definida en el intervalo <span class="math inline">\([f(0),f(2)]\)</span></p>
@@ -1864,13 +1846,11 @@ var params = {
 <section id="cálculo-de-la-longitud-de-una-curva" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="cálculo-de-la-longitud-de-una-curva"><span class="header-section-number">9.9</span> Cálculo de la longitud de una curva</h2>
 <p>Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo <span class="math inline">\([a,b]\)</span>. Una vez más, la idea consiste en tomar una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span> y para cada subintervalo <span class="math inline">\([x_{i-1}, x_i]\)</span> tomar el segmento que une los puntos <span class="math inline">\((x_{i-1}, f(x_{i-1}))\)</span> y <span class="math inline">\((x_i,f(x_i))\)</span>. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/aproximacion-longitud-curva.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Aproximación de la longitud de una curva mediante segmentos.</figcaption><p></p>
+<figcaption class="figure-caption">Aproximación de la longitud de una curva mediante segmentos.</figcaption>
 </figure>
-</div>
 </div>
 <p>Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> es <span class="math inline">\(\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2}\)</span>.</p>
 <p>Por otro lado, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\([x_{i-1},x_{i}]\)</span>, según el teorema del valor medio, se tiene que existe un <span class="math inline">\(x'_i\in [x_{i-1},x_i]\)</span> tal que</p>
@@ -1915,14 +1895,13 @@ f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 <h2 data-number="9.10" class="anchored" data-anchor-id="cálculo-de-superficies-de-sólidos-de-revolución"><span class="header-section-number">9.10</span> Cálculo de superficies de sólidos de revolución</h2>
 <p>A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje <span class="math inline">\(x\)</span>. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje <span class="math inline">\(x\)</span> cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.</p>
 <p>Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono <span class="math inline">\(l\)</span> y con arco de circunferencia el perímetro del círculo de la base del cono <span class="math inline">\(2\pi r\)</span>.</p>
-<div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/integrales/cono.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Cono con radio <span class="math inline">\(r\)</span> y generatriz <span class="math inline">\(l\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Cono con radio <span class="math inline">\(r\)</span> y generatriz <span class="math inline">\(l\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -1930,22 +1909,19 @@ f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/integrales/superficie-cono.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Suferficie del envolvente del cono.</figcaption><p></p>
+<figcaption class="figure-caption">Suferficie del envolvente del cono.</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
 </div>
 <p>El ángulo que describe este sector de círculo es <span class="math inline">\(\theta = \frac{2\pi r}{l}\)</span>, y por tanto, su área es <span class="math inline">\(\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl\)</span>.</p>
 <p>Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con rádio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>, basta con restar a la superficie del cono de radio <span class="math inline">\(r_2\)</span> y generatriz <span class="math inline">\(l_2\)</span>, la superficie del cono de radio <span class="math inline">\(r_1\)</span> y generatriz <span class="math inline">\(l_1\)</span>.</p>
-<div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/cono-truncado.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</figcaption><p></p>
+<figcaption class="figure-caption">Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</figcaption>
 </figure>
-</div>
 </div>
 <p>La superficie del tronco de cono es, por tanto,</p>
 <p><span class="math display">\[
@@ -1988,8 +1964,115 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \
 &amp;= 2 \pi r [x]_{-r}^r  = 2\pi r(r-(-r)) = 4\pi r^2.
 \end{align*}\]</span></p>
 </div>
+</section>
+<section id="aplicaciones-físicas" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="aplicaciones-físicas"><span class="header-section-number">9.11</span> Aplicaciones físicas</h2>
+<p>En esta sección presentamos varias apliaciones de las integrales en distintas áreas de la Física.</p>
+<section id="cinemática" class="level3" data-number="9.11.1">
+<h3 data-number="9.11.1" class="anchored" data-anchor-id="cinemática"><span class="header-section-number">9.11.1</span> Cinemática</h3>
+<p>Como ya ese vió en la <a href="https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada">interpretación cimenática de la derivada</a>, cuando <span class="math inline">\(s(t)\)</span> es una función que describe la posición de un objeto que se mueve a lo largo del eje <span class="math inline">\(x\)</span>, <span class="math inline">\(s'(t)\)</span> es la velocidad instantánea del objeto en cada instante <span class="math inline">\(t\)</span> y <span class="math inline">\(s''(t)\)</span> es la aceleración en cada instante <span class="math inline">\(t\)</span>.</p>
+<p>Así pues, si conocemos la velocidad instantánea <span class="math inline">\(v(t)\)</span> de un objeto en cada instante <span class="math inline">\(t\)</span>, podemos averiguar su posición integrando la velocidad. Como $s(t) es una primitiva de <span class="math inline">\(v(t)\)</span>, según el teorema fundamental del cálculo, se tiene</p>
+<p><span class="math display">\[
+\int_a^b v(t)\, dt = s(a)-s(b),
+\]</span></p>
+<p>es decir, la diferencia entre la posición el objeto en los instantes <span class="math inline">\(t=b\)</span> y <span class="math inline">\(t=a\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo <span class="math inline">\([a, b]\)</span>, es necesario integrar el valor aboluto de la velocidad, tal y como se hizo para el cálculo de áreas en la <a href="#sec-calculo-area-funcion-ejex"><span>Sección&nbsp;9.6.1</span></a>.</p>
+</div>
+</div>
+<p>En general, suponiendo que el instante incial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la posición inicial del objeto es <span class="math inline">\(s(0)\)</span>, la posición que ocupa el objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
+<p><span class="math display">\[
+s(t) = s(0) + \int_{0}^t v(x)\,dx.
+\]</span></p>
+<p>Del mismo modo, si conocemos la aceleración del objeto <span class="math inline">\(a(t)\)</span> en cada instante <span class="math inline">\(t\)</span>, podemos averiguar su velocidad integrando la aceleración. Como <span class="math inline">\(v(t)\)</span> es una primitiva de <span class="math inline">\(a(t)\)</span>, según el teorema fundamental del cálculo, se tiene</p>
+<p><span class="math display">\[
+\int_a^b a(t)\, dt = v(t_1)-v(t_0),
+\]</span></p>
+<p>es decir, la diferencia entre la velocidades en los instantes <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p>
+<p>Si suponemos como antes, que el instante incial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la velocidad inicial del objeto es <span class="math inline">\(v(0)\)</span>, la velocidad del objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
+<p><span class="math display">\[
+v(t) = v(0) + \int_{0}^t a(x)\,dx.
+\]</span></p>
+<p>Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.</p>
+<div id="exm-caida-libre" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.20 </strong></span>Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición incicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actua sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p>Integrando la acelaración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
+<p><span class="math display">\[
+v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
+\]</span></p>
+<p>Ahora, integrando la velocidad obtenemos la posición el objeto en cada instante <span class="math inline">\(t\)</span>.</p>
+<p><span class="math display">\[
+s(t) = s(0) + \int_{0}^t v_0-gx\,dx = s_0 + \left[v_0 x-g\frac{x^2}{2}\right]_0^t = s_0+v_0 t-g\frac{t^2}{2}.
+\]</span></p>
+<p>En el caso de que la posición inicial sea <span class="math inline">\(s_0=0\)</span> m, y se parta de una situación de reposo, es decir, <span class="math inline">\(v_0=0\)</span> m/s, se llega a</p>
+<p><span class="math display">\[
+s(t) = -g\frac{t^2}{2}.
+\]</span></p>
+</div>
+</section>
+<section id="trabajo" class="level3" data-number="9.11.2">
+<h3 data-number="9.11.2" class="anchored" data-anchor-id="trabajo"><span class="header-section-number">9.11.2</span> Trabajo</h3>
+<p>Otra aplicación importante de las integrales en Físcia es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función <span class="math inline">\(s(t)\)</span>, la <em>fuerza</em> <span class="math inline">\(F\)</span> ejercicida sobre el objeto viene dada por la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a></p>
+<p><span class="math display">\[
+F = m\cdot a
+\]</span></p>
+<p>donde <span class="math inline">\(m\)</span> es la masa del objeto y <span class="math inline">\(a\)</span> es la aceleración.</p>
+<p>La unidad de medida de la fuerza en el Sistema Internacional (SI) es el <em>newton</em> N=kg<span class="math inline">\(\cdot\)</span> m /s<span class="math inline">\(^2\)</span>, es decir, si se aplica <span class="math inline">\(1\)</span> N a un objeto de masa <span class="math inline">\(1\)</span> kg, este sufrirá una aceleración de <span class="math inline">\(1\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p>Cuando se aplica una fuerza sobre un objeto desplazándolo en línea recta una determinada distancia, el <em>trabajo</em> <span class="math inline">\(W\)</span> realizado en ese desplazamiento viene dado por el producto de la fuerza y la distancia que recorre el objeto, es decir,</p>
+<p><span class="math display">\[
+W = F\cdot d
+\]</span></p>
+<p>Como la fuerza se mide en newtons, la unidad del trabajo en el SI es el <em>julio</em> <span class="math inline">\(J = N\cdot m\)</span>.</p>
+<p>Cuando la fuerza es constante, el trabajo es proporcional a la distancia recorrida.</p>
+<div id="exm-trabajo-gravedad" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.21 </strong></span>Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
+<p><span class="math display">\[
+F = m\cdot g = 1 \mbox{ kg} \cdot 9.81 \mbox{ m/s$^2$} = 9.8 \mbox{ N},
+\]</span></p>
+<p>y el trabajo realizado es</p>
+<p><span class="math display">\[
+W = F\cdot d = 9.81 \mbox{ N} \cdot 2 \mbox{ m} = 19.62 \mbox{ J}
+\]</span></p>
+</div>
+<p>Cuando la fuerza que se aplica sobre el objeto no es constante, sino que viene dada por una función <span class="math inline">\(f(x)\)</span>, el cálculo no es tan sencillo, pero podemos aplicar la misma estrategia utilizada con las sumas de Riemann. Si se quiere calcular el trabajo realizado al desplazar el objeto desde la posición <span class="math inline">\(x=a\)</span> hasta <span class="math inline">\(x=b\)</span> aplicando una fuerza <span class="math inline">\(f(x)\)</span>, podemos tomar una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span> de <span class="math inline">\(n\)</span> intervalos de igual amplitud <span class="math inline">\(\Delta x\)</span> y aproximar el trabajo realizado en el intervalo <span class="math inline">\([x_{i-1},x_i]\)</span> con <span class="math inline">\(W_i= f(x'_i)(x_i-x_{i-1}) = f(x'_i)\Delta x\)</span>, donde <span class="math inline">\(x'_i\)</span> es cualquier valor del intervalo <span class="math inline">\([x_{i-1},x_i]\)</span>. De este modo, el trabajo realizado en el intervalo <span class="math inline">\([a,b]\)</span> puede aproximarse mediante la suma</p>
+<p><span class="math display">\[
+W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
+\]</span></p>
+<p>Como ya se ha visto, cuando el número de subintervalos tiende da <span class="math inline">\(\infty\)</span>, en el límite, si la función <span class="math inline">\(f\)</span> es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx
+\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La integral anterior mide el trabajo realizado al aplicar una fuerza en el sentido del desplazamiento, es decir, cuando es positiva.</p>
+</div>
+</div>
+<div id="exm-trabajo-fuerza-variable" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.22 </strong></span>La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
+<p><span class="math display">\[
+W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
+\]</span></p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -2135,9 +2218,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2202,6 +2299,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
