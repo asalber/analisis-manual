@@ -250,6 +250,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cinemática" id="toc-cinemática" class="nav-link" data-scroll-target="#cinemática"><span class="header-section-number">9.11.1</span> Cinemática</a></li>
   <li><a href="#trabajo" id="toc-trabajo" class="nav-link" data-scroll-target="#trabajo"><span class="header-section-number">9.11.2</span> Trabajo</a></li>
   </ul></li>
+  <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">9.12</span> Aplicaciones estadísticas</a>
+  <ul class="collapse">
+  <li><a href="#cálculo-de-la-media-de-una-función" id="toc-cálculo-de-la-media-de-una-función" class="nav-link" data-scroll-target="#cálculo-de-la-media-de-una-función"><span class="header-section-number">9.12.1</span> Cálculo de la media de una función</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -978,7 +982,7 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 <section id="clase-de-las-funciones-integrables" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="clase-de-las-funciones-integrables"><span class="header-section-number">9.4</span> Clase de las funciones integrables</h2>
 <p>A continuación trataremos de estudiar qué tipo de funciones son integrables.</p>
-<div id="thm-integrabilidad-funciones-monotonas" class="theorem">
+<div id="thm-integrabilidad-funciones-monótonas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1606,7 +1610,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <figcaption class="figure-caption">Area encerrada por una curva en coordenadas polares.</figcaption>
 </figure>
 </div>
-<div id="exm-area-semicirculo-polares" class="theorem example">
+<div id="exm-area-semicírculo-polares" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.11 </strong></span>Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
 <p><span class="math display">\[
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
@@ -1888,7 +1892,7 @@ f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 = -\left(-\frac{\pi}{2}\right)+\frac{\pi}{2}
 = \pi
 \end{align*}\]</span></p>
-<p>Y por tanto, la longitud de la circunferencia de radio <span class="math inline">\(1\)</span> es el doble <span class="math inline">\(2\pi\)</span>.</p>
+<p>Y por tanto, la longitud de la circunferencia de radio <span class="math inline">\(1\)</span> es el doble <span class="math inline">\(2\pi\)</span></p>
 </div>
 </section>
 <section id="cálculo-de-superficies-de-sólidos-de-revolución" class="level2" data-number="9.10">
@@ -1909,14 +1913,14 @@ f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/integrales/superficie-cono.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Suferficie del envolvente del cono.</figcaption>
+<figcaption class="figure-caption">Superficie del envolvente del cono.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <p>El ángulo que describe este sector de círculo es <span class="math inline">\(\theta = \frac{2\pi r}{l}\)</span>, y por tanto, su área es <span class="math inline">\(\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl\)</span>.</p>
-<p>Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con rádio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>, basta con restar a la superficie del cono de radio <span class="math inline">\(r_2\)</span> y generatriz <span class="math inline">\(l_2\)</span>, la superficie del cono de radio <span class="math inline">\(r_1\)</span> y generatriz <span class="math inline">\(l_1\)</span>.</p>
+<p>Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>, basta con restar a la superficie del cono de radio <span class="math inline">\(r_2\)</span> y generatriz <span class="math inline">\(l_2\)</span>, la superficie del cono de radio <span class="math inline">\(r_1\)</span> y generatriz <span class="math inline">\(l_1\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/cono-truncado.png" class="img-fluid figure-img"></p>
@@ -1953,7 +1957,7 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \
 \]</span></p>
 <p>ya que, cuando los intervalos se hacen infinitamente pequeños, <span class="math inline">\(f(x_{i_1})\)</span> y <span class="math inline">\(f(x_i)\)</span> se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor <span class="math inline">\(f(x)\)</span>, por lo que en la integral se pone <span class="math inline">\(2 f(x)\)</span>.</p>
 <div id="exm-superficie-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.19 </strong></span>Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su suferficie puede calularse mediante la integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.19 </strong></span>Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
 &amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2}\,dx \\
@@ -1967,10 +1971,10 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \
 </section>
 <section id="aplicaciones-físicas" class="level2" data-number="9.11">
 <h2 data-number="9.11" class="anchored" data-anchor-id="aplicaciones-físicas"><span class="header-section-number">9.11</span> Aplicaciones físicas</h2>
-<p>En esta sección presentamos varias apliaciones de las integrales en distintas áreas de la Física.</p>
+<p>En esta sección presentamos varias aplicaciones de las integrales en distintas áreas de la Física.</p>
 <section id="cinemática" class="level3" data-number="9.11.1">
 <h3 data-number="9.11.1" class="anchored" data-anchor-id="cinemática"><span class="header-section-number">9.11.1</span> Cinemática</h3>
-<p>Como ya ese vió en la <a href="https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada">interpretación cimenática de la derivada</a>, cuando <span class="math inline">\(s(t)\)</span> es una función que describe la posición de un objeto que se mueve a lo largo del eje <span class="math inline">\(x\)</span>, <span class="math inline">\(s'(t)\)</span> es la velocidad instantánea del objeto en cada instante <span class="math inline">\(t\)</span> y <span class="math inline">\(s''(t)\)</span> es la aceleración en cada instante <span class="math inline">\(t\)</span>.</p>
+<p>Como ya ese vió en la <a href="https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada">interpretación cinemática de la derivada</a>, cuando <span class="math inline">\(s(t)\)</span> es una función que describe la posición de un objeto que se mueve a lo largo del eje <span class="math inline">\(x\)</span>, <span class="math inline">\(s'(t)\)</span> es la velocidad instantánea del objeto en cada instante <span class="math inline">\(t\)</span> y <span class="math inline">\(s''(t)\)</span> es la aceleración en cada instante <span class="math inline">\(t\)</span>.</p>
 <p>Así pues, si conocemos la velocidad instantánea <span class="math inline">\(v(t)\)</span> de un objeto en cada instante <span class="math inline">\(t\)</span>, podemos averiguar su posición integrando la velocidad. Como $s(t) es una primitiva de <span class="math inline">\(v(t)\)</span>, según el teorema fundamental del cálculo, se tiene</p>
 <p><span class="math display">\[
 \int_a^b v(t)\, dt = s(a)-s(b),
@@ -1986,10 +1990,10 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo <span class="math inline">\([a, b]\)</span>, es necesario integrar el valor aboluto de la velocidad, tal y como se hizo para el cálculo de áreas en la <a href="#sec-calculo-area-funcion-ejex"><span>Sección&nbsp;9.6.1</span></a>.</p>
+<p>La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo <span class="math inline">\([a, b]\)</span>, es necesario integrar el valor absoluto de la velocidad, tal y como se hizo para el cálculo de áreas en la <a href="#sec-calculo-area-funcion-ejex"><span>Sección&nbsp;9.6.1</span></a>.</p>
 </div>
 </div>
-<p>En general, suponiendo que el instante incial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la posición inicial del objeto es <span class="math inline">\(s(0)\)</span>, la posición que ocupa el objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
+<p>En general, suponiendo que el instante inicial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la posición inicial del objeto es <span class="math inline">\(s(0)\)</span>, la posición que ocupa el objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
 <p><span class="math display">\[
 s(t) = s(0) + \int_{0}^t v(x)\,dx.
 \]</span></p>
@@ -1998,14 +2002,14 @@ s(t) = s(0) + \int_{0}^t v(x)\,dx.
 \int_a^b a(t)\, dt = v(t_1)-v(t_0),
 \]</span></p>
 <p>es decir, la diferencia entre la velocidades en los instantes <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p>
-<p>Si suponemos como antes, que el instante incial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la velocidad inicial del objeto es <span class="math inline">\(v(0)\)</span>, la velocidad del objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
+<p>Si suponemos como antes, que el instante inicial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la velocidad inicial del objeto es <span class="math inline">\(v(0)\)</span>, la velocidad del objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
 <p><span class="math display">\[
 v(t) = v(0) + \int_{0}^t a(x)\,dx.
 \]</span></p>
 <p>Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.</p>
 <div id="exm-caida-libre" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.20 </strong></span>Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición incicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actua sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
-<p>Integrando la acelaración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.20 </strong></span>Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p>Integrando la aceleración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
 <p><span class="math display">\[
 v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
 \]</span></p>
@@ -2021,7 +2025,7 @@ s(t) = -g\frac{t^2}{2}.
 </section>
 <section id="trabajo" class="level3" data-number="9.11.2">
 <h3 data-number="9.11.2" class="anchored" data-anchor-id="trabajo"><span class="header-section-number">9.11.2</span> Trabajo</h3>
-<p>Otra aplicación importante de las integrales en Físcia es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función <span class="math inline">\(s(t)\)</span>, la <em>fuerza</em> <span class="math inline">\(F\)</span> ejercicida sobre el objeto viene dada por la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a></p>
+<p>Otra aplicación importante de las integrales en Física es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función <span class="math inline">\(s(t)\)</span>, la <em>fuerza</em> <span class="math inline">\(F\)</span> ejercida sobre el objeto viene dada por la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a></p>
 <p><span class="math display">\[
 F = m\cdot a
 \]</span></p>
@@ -2047,7 +2051,7 @@ W = F\cdot d = 9.81 \mbox{ N} \cdot 2 \mbox{ m} = 19.62 \mbox{ J}
 <p><span class="math display">\[
 W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
 \]</span></p>
-<p>Como ya se ha visto, cuando el número de subintervalos tiende da <span class="math inline">\(\infty\)</span>, en el límite, si la función <span class="math inline">\(f\)</span> es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral</p>
+<p>Como ya se ha visto, cuando el número de subintervalos tiende a <span class="math inline">\(\infty\)</span>, en el límite, si la función <span class="math inline">\(f\)</span> es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx
 \]</span></p>
@@ -2069,6 +2073,44 @@ Advertencia
 <p><span class="math display">\[
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 \]</span></p>
+</div>
+</section>
+</section>
+<section id="aplicaciones-estadísticas" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="aplicaciones-estadísticas"><span class="header-section-number">9.12</span> Aplicaciones estadísticas</h2>
+<p>Veremos a continuación otras aplicaciones de la integral más relacionadas con la Estadística.</p>
+<section id="cálculo-de-la-media-de-una-función" class="level3" data-number="9.12.1">
+<h3 data-number="9.12.1" class="anchored" data-anchor-id="cálculo-de-la-media-de-una-función"><span class="header-section-number">9.12.1</span> Cálculo de la media de una función</h3>
+<p>Resulta sencillo calcular la media de un conjunto finito de números, pero la cosa se complica cuando el conjunto de números es infinito, como por ejemplo, cuando queremos calcular la temperatura media de un día.</p>
+<p>En esta sección veremos cómo calcular el valor medio de una función <span class="math inline">\(f\)</span> en un intervalo <span class="math inline">\([a,b]\)</span>, siempre y cuando la función sea integrable en el intervalo. La estrategia que seguiremos será la de siempre. Tomaremos una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span> de <span class="math inline">\(n\)</span> intervalos de igual amplitud <span class="math inline">\(\Delta x = \frac{b-a}{n}\)</span> y aproximar el valor medio de la función mediante la suma finita</p>
+<p><span class="math display">\[
+\sum_{i=1}^n \frac{f(x'_i)}{n} = \sum_{i=1}^n \frac{f(x'_i)}{\frac{b-a}{\Delta x}} = \frac{1}{b-a}\sum_{i=1}^n f(x'_i)\Delta x,
+\]</span></p>
+<p>donde <span class="math inline">\(x'_i\)</span> es cualquier valor del intervalo <span class="math inline">\([x_{i-1},x_i]\)</span>.</p>
+<p>Cuando el número de subintervalos tiende a <span class="math inline">\(\infty\)</span>, la suma anterior se parecerá cada vez más al verdadero valor medio de la función en el intervalo, y en el límite, si la función <span class="math inline">\(f\)</span> es integrable Riemann, se puede obtener el valor medio de la función mediante la integral definida</p>
+<p><span class="math display">\[
+\bar f[a,b] = \int_a^b f(x)\,dx
+\]</span></p>
+<div id="exm-valor-medio" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.23 </strong></span>El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\bar f[0,\pi/2]
+&amp;= \frac{1}{\pi/2} \int_0^{\pi/2} f(x)\, dx
+= \frac{1}{\pi/2} \int_0^{\pi/2} \operatorname{sen}(x)\, dx \\
+&amp;= \frac{2}{\pi}[-\cos(x)]_0^{\pi/2}
+= \frac{2}{\pi}(0+1)
+= \frac{2}{\pi}
+\end{align*}\]</span></p>
+<p>Y el valor medio de esta misma función en el intervalo <span class="math inline">\([0,\pi]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\bar f[0,\pi]
+&amp;= \frac{1}{\pi} \int_0^{\pi} f(x)\, dx
+= \frac{1}{\pi} \int_0^{\pi} \operatorname{sen}(x)\, dx \\
+&amp;= \frac{2}{\pi}[-\cos(x)]_0^{\pi}
+= \frac{2}{\pi}(-1+1)
+= 0,
+\end{align*}\]</span></p>
+<p>por que la función seno es positiva en <span class="math inline">\([0,\pi/2]\)</span> y negativa en <span class="math inline">\([\pi/2, \pi]\)</span>, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.</p>
 </div>
 
 

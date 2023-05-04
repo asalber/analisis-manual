@@ -672,7 +672,7 @@ A pesar de que la demostración es bastante larga, cuando $f$ es positiva, es ob
 
 A continuación trataremos de estudiar qué tipo de funciones son integrables.
 
-:::{#thm-integrabilidad-funciones-monotonas}
+:::{#thm-integrabilidad-funciones-monótonas}
 Si $f:I\to\mathbb{R}$ es una función acotada y monótona en $I=[a,b]$, entonces  $f$ es integrable en $I$.
 :::
 
@@ -1283,7 +1283,7 @@ mide el área encerrada por la curva $r=f(\theta)$ y las rectas $\theta=a$ y $\t
 ![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.pdf)
 :::
 
-:::{#exm-area-semicirculo-polares}
+:::{#exm-area-semicírculo-polares}
 Un semicírculo de radio $r$ puede expresarse en coordenadas polares mediante la función $f(\theta)=r$ para $0\leq \theta\leq \pi$. Por tanto, el área encerrada por este semicírculo es 
 
 $$
@@ -1648,12 +1648,12 @@ Esta integral es impropia ya que $\frac{1}{1-x^2}$ tiende a $\infty$ cuando $x$ 
 = \pi
 \end{align*}
 
-Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$.
+Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$
 :::
 
 ## Cálculo de superficies de sólidos de revolución
 
-A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje $x$. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje $x$ cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono. 
+A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje $x$. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje $x$ cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.
 
 Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono $l$ y con arco de circunferencia el perímetro del círculo de la base del cono $2\pi r$.
 
@@ -1661,7 +1661,7 @@ Para calcular la superficie del envolvente del tronco de cono, veremos primero c
 :::{layout-ncol="2"}
 ![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.png)
 
-![Suferficie del envolvente del cono.](./img/integrales/superficie-cono.png)
+![Superficie del envolvente del cono.](./img/integrales/superficie-cono.png)
 :::
 :::
 
@@ -1669,13 +1669,13 @@ Para calcular la superficie del envolvente del tronco de cono, veremos primero c
 :::{layout-ncol="2"}
 ![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.pdf)
 
-![Suferficie del envolvente del cono.](./img/integrales/superficie-cono.pdf)
+![Superficie del envolvente del cono.](./img/integrales/superficie-cono.pdf)
 :::
 :::
 
 El ángulo que describe este sector de círculo es $\theta = \frac{2\pi r}{l}$, y por tanto, su área es $\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl$.
 
-Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con rádio menor $r_1$ y radio mayor $r_2$, basta con restar a la superficie del cono de radio $r_2$ y generatriz $l_2$, la superficie del cono de radio $r_1$ y generatriz $l_1$.
+Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con radio menor $r_1$ y radio mayor $r_2$, basta con restar a la superficie del cono de radio $r_2$ y generatriz $l_2$, la superficie del cono de radio $r_1$ y generatriz $l_1$.
 
 :::{.content-visible when-format="html"}
 ![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.png)
@@ -1691,7 +1691,7 @@ $$
 \pi r_2 l_2 - \pi r_1 l_1 = \pi (r_2l_2-r_1l_1) = \pi(r_2(l+l_1)-r_1l_1) = \pi ((r_2-r_1)l_1+r_2l)
 $$
 
-Para poder expresar la superficie en función de $l$, como por semejanza de triángulos rectángulos se tiene que 
+Para poder expresar la superficie en función de $l$, como por semejanza de triángulos rectángulos se tiene que
 
 $$
 \frac{l_1}{r_1}=\frac{l_2}{r_2}=\frac{l+l_1}{r_2} \Leftrightarrow r_2l_1 = r_1(l+l_1) \Leftrightarrow r_1l = (r_2-r_1)l_1,
@@ -1731,7 +1731,7 @@ $$
 ya que, cuando los intervalos se hacen infinitamente pequeños, $f(x_{i_1})$ y $f(x_i)$ se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor $f(x)$, por lo que en la integral se pone $2 f(x)$.
 
 :::{#exm-superficie-circunferencia}
-Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función $f(x)=\sqrt{r^2-x^2}$ alrededor del eje $x$, por lo que su suferficie puede calularse mediante la integral
+Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función $f(x)=\sqrt{r^2-x^2}$ alrededor del eje $x$, por lo que su superficie puede calcularse mediante la integral
 
 
 \begin{align*}
@@ -1747,11 +1747,11 @@ Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el or
 
 ## Aplicaciones físicas
 
-En esta sección presentamos varias apliaciones de las integrales en distintas áreas de la Física. 
+En esta sección presentamos varias aplicaciones de las integrales en distintas áreas de la Física. 
 
 ### Cinemática
 
-Como ya ese vió en la [interpretación cimenática de la derivada](https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada), cuando $s(t)$ es una función que describe la posición de un objeto que se mueve a lo largo del eje $x$, $s'(t)$ es la velocidad instantánea del objeto en cada instante $t$ y $s''(t)$ es la aceleración en cada instante $t$. 
+Como ya ese vió en la [interpretación cinemática de la derivada](https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada), cuando $s(t)$ es una función que describe la posición de un objeto que se mueve a lo largo del eje $x$, $s'(t)$ es la velocidad instantánea del objeto en cada instante $t$ y $s''(t)$ es la aceleración en cada instante $t$. 
 
 Así pues, si conocemos la velocidad instantánea $v(t)$ de un objeto en cada instante $t$, podemos averiguar su posición integrando la velocidad. Como $s(t) es una primitiva de $v(t)$, según el teorema fundamental del cálculo, se tiene 
 
@@ -1762,10 +1762,10 @@ $$
 es decir, la diferencia entre la posición el objeto en los instantes $t=b$ y $t=a$.
 
 :::{.callout-warning}
-La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo $[a, b]$, es necesario integrar el valor aboluto de la velocidad, tal y como se hizo para el cálculo de áreas en la @sec-calculo-area-funcion-ejex.
+La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo $[a, b]$, es necesario integrar el valor absoluto de la velocidad, tal y como se hizo para el cálculo de áreas en la @sec-calculo-area-funcion-ejex.
 :::
 
-En general, suponiendo que el instante incial en el que comienza el movimiento es el instante $t=0$, y por tanto, la posición inicial del objeto es $s(0)$, la posición que ocupa el objeto en cualquier instante $t$ viene dada por la integral
+En general, suponiendo que el instante inicial en el que comienza el movimiento es el instante $t=0$, y por tanto, la posición inicial del objeto es $s(0)$, la posición que ocupa el objeto en cualquier instante $t$ viene dada por la integral
 
 $$
 s(t) = s(0) + \int_{0}^t v(x)\,dx.
@@ -1779,7 +1779,7 @@ $$
 
 es decir, la diferencia entre la velocidades en los instantes $a$ y $b$.
 
-Si suponemos como antes, que el instante incial en el que comienza el movimiento es el instante $t=0$, y por tanto, la velocidad inicial del objeto es $v(0)$, la velocidad del objeto en cualquier instante $t$ viene dada por la integral
+Si suponemos como antes, que el instante inicial en el que comienza el movimiento es el instante $t=0$, y por tanto, la velocidad inicial del objeto es $v(0)$, la velocidad del objeto en cualquier instante $t$ viene dada por la integral
 
 $$
 v(t) = v(0) + \int_{0}^t a(x)\,dx.
@@ -1788,9 +1788,9 @@ $$
 Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.
 
 :::{#exm-caida-libre}
-Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición incicial del objeto es $s(0)=s_0$ m y su velocidad inicial es $v(0)=v_0$ m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actua sobre el objeto es la gravedad, con una aceleración constante $g=9.8$ m/s$^2$.
+Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es $s(0)=s_0$ m y su velocidad inicial es $v(0)=v_0$ m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante $g=9.8$ m/s$^2$.
 
-Integrando la acelaración obtenemos la velocidad del objeto en cada instante $t$.
+Integrando la aceleración obtenemos la velocidad del objeto en cada instante $t$.
 
 $$
 v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
@@ -1811,7 +1811,7 @@ $$
 
 ### Trabajo
 
-Otra aplicación importante de las integrales en Físcia es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función $s(t)$, la _fuerza_ $F$ ejercicida sobre el objeto viene dada por la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica)
+Otra aplicación importante de las integrales en Física es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función $s(t)$, la _fuerza_ $F$ ejercida sobre el objeto viene dada por la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica)
 
 $$
 F = m\cdot a
@@ -1851,7 +1851,7 @@ $$
 W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
 $$
 
-Como ya se ha visto, cuando el número de subintervalos tiende da $\infty$, en el límite, si la función $f$ es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral
+Como ya se ha visto, cuando el número de subintervalos tiende a $\infty$, en el límite, si la función $f$ es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral
 
 $$
 \int_a^b f(x)\,dx
@@ -1867,6 +1867,54 @@ La función $f(x)=\frac{1}{1+x}$ determina la fuerza que actúa sobre una partí
 $$
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 $$
+:::
+
+## Aplicaciones estadísticas
+
+Veremos a continuación otras aplicaciones de la integral más relacionadas con la Estadística.
+
+### Cálculo de la media de una función
+
+Resulta sencillo calcular la media de un conjunto finito de números, pero la cosa se complica cuando el conjunto de números es infinito, como por ejemplo, cuando queremos calcular la temperatura media de un día.
+
+En esta sección veremos cómo calcular el valor medio de una función $f$ en un intervalo $[a,b]$, siempre y cuando la función sea integrable en el intervalo. La estrategia que seguiremos será la de siempre. Tomaremos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ de $n$ intervalos de igual amplitud $\Delta x = \frac{b-a}{n}$ y aproximar el valor medio de la función mediante la suma finita
+
+$$
+\sum_{i=1}^n \frac{f(x'_i)}{n} = \sum_{i=1}^n \frac{f(x'_i)}{\frac{b-a}{\Delta x}} = \frac{1}{b-a}\sum_{i=1}^n f(x'_i)\Delta x,
+$$
+
+donde $x'_i$ es cualquier valor del intervalo $[x_{i-1},x_i]$.
+
+Cuando el número de subintervalos tiende a $\infty$, la suma anterior se parecerá cada vez más al verdadero valor medio de la función en el intervalo, y en el límite, si la función $f$ es integrable Riemann, se puede obtener el valor medio de la función mediante la integral definida
+
+$$
+\bar f[a,b] = \int_a^b f(x)\,dx
+$$
+
+:::{#exm-valor-medio}
+El valor medio de la función $f(x)=\operatorname{sen}(x)$ en el intervalo $[0,\pi/2]$ es 
+
+\begin{align*}
+\bar f[0,\pi/2]
+&= \frac{1}{\pi/2} \int_0^{\pi/2} f(x)\, dx 
+= \frac{1}{\pi/2} \int_0^{\pi/2} \operatorname{sen}(x)\, dx \\
+&= \frac{2}{\pi}[-\cos(x)]_0^{\pi/2}
+= \frac{2}{\pi}(0+1)
+= \frac{2}{\pi}
+\end{align*}
+
+Y el valor medio de esta misma función en el intervalo $[0,\pi]$ es 
+
+\begin{align*}
+\bar f[0,\pi] 
+&= \frac{1}{\pi} \int_0^{\pi} f(x)\, dx 
+= \frac{1}{\pi} \int_0^{\pi} \operatorname{sen}(x)\, dx \\
+&= \frac{2}{\pi}[-\cos(x)]_0^{\pi}
+= \frac{2}{\pi}(-1+1)
+= 0,
+\end{align*}
+
+por que la función seno es positiva en $[0,\pi/2]$ y negativa en $[\pi/2, \pi]$, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.
 :::
 
 
