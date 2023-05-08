@@ -249,6 +249,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#cinemática" id="toc-cinemática" class="nav-link" data-scroll-target="#cinemática"><span class="header-section-number">9.11.1</span> Cinemática</a></li>
   <li><a href="#trabajo" id="toc-trabajo" class="nav-link" data-scroll-target="#trabajo"><span class="header-section-number">9.11.2</span> Trabajo</a></li>
+  <li><a href="#centro-de-masas" id="toc-centro-de-masas" class="nav-link" data-scroll-target="#centro-de-masas"><span class="header-section-number">9.11.3</span> Centro de masas</a></li>
   </ul></li>
   <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">9.12</span> Aplicaciones estadísticas</a>
   <ul class="collapse">
@@ -2073,6 +2074,49 @@ Advertencia
 <p><span class="math display">\[
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 \]</span></p>
+</div>
+</section>
+<section id="centro-de-masas" class="level3" data-number="9.11.3">
+<h3 data-number="9.11.3" class="anchored" data-anchor-id="centro-de-masas"><span class="header-section-number">9.11.3</span> Centro de masas</h3>
+<p>El centro de masas de un objeto o sistema de objetos es el punto geométrico que dinámicamente se comporta como si en él estuvieran aplicadas las fuerzas que actúan sobre el objeto. En el caso de un sistema discreto, como por ejemplo una palanca sobre la que se coloca un número finito de pesos, como en la figura de más abajo, determinar el centro de gravedad es sencillo, ya que basta aplicar la <a href="https://es.wikipedia.org/wiki/Palanca">ley de la palanca de Arquímedes</a>, que establece</p>
+<p><span class="math display">\[
+m_1d_1 = m_2d_2
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales/palanca.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Ley de la palanca.</figcaption>
+</figure>
+</div>
+<p>Si colocamos las dos masas <span class="math inline">\(m_1\)</span> y <span class="math inline">\(m_2\)</span> sobre el eje <span class="math inline">\(x\)</span> en las posiciones <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> respectivamente, el centro de masas <span class="math inline">\(\bar x\)</span>, que se correspondería con la posición donde habría que poner el punto de apoyo de la palanca para que las dos masas la equilibraran, se puede calcular aplicando la ley de la palanca,</p>
+<p><span class="math display">\[
+m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{m_1+m_2},
+\]</span></p>
+<p>que, en realidad, es la media de las posiciones de <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> ponderada de las masas.</p>
+<p>Debido a la fuerza de la gravedad, cada objeto ejerce una fuerza sobre la palanca que tiende a rotarla alrededor del punto de apoyo (si el objeto está a la izquierda del punto de apoyo provocará una rotación en sentido antihorario, mientras que si está a la derecha lo hará en sentido horario). Esta efecto de rotación se conoce como <em>momento</em> o <em>torque</em>, y para un objeto de masa <span class="math inline">\(m\)</span> colocado en la posición <span class="math inline">\(x\)</span> de la palanca, toma el valor <span class="math inline">\(m\cdot x\cdot g\)</span>, y sus unidades en el sistema internacional son <span class="math inline">\(N\cdot m\)</span> (aunque ya hemos visto que <span class="math inline">\(N\cdot m\)</span> son julios, en este caso las unidades de los momentos no se expresan en julios para distinguirlos del trabajo, ya que el trabajo es una magnitud escalar, mientras que el momento es una magnitud vectorial).</p>
+<p>En general, si hay <span class="math inline">\(n\)</span> objetos sobre la balanza, el centro de masas se alcanzará en el punto <span class="math inline">\(\bar x\)</span> que cumpla,</p>
+<p><span class="math display">\[
+\sum_{i=1}^n m_i(x_i-\bar x) = 0 \Leftrightarrow \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i}.
+\]</span></p>
+<p>Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una barilla metálica sobre un intervalo <span class="math inline">\([a,b]\)</span>, tal que su densidad viene dada por la función <span class="math inline">\(f(x)\)</span> kg/m, se puede descomponer el intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual amplitud mediante una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\)</span>}$, con <span class="math inline">\(\Delta x=x_i-x_{i-1}\)</span> <span class="math inline">\(i=1, \ldots, n\)</span>. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante <span class="math inline">\(f(x_i)\)</span>, como <span class="math inline">\(m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x\)</span>, y por tanto,su momento será <span class="math inline">\(x_im_i = x_i f(x_i)\Delta x\)</span>. De este modo, el centro de masas de la barilla será aproximadamente, según la fórmula anterior,</p>
+<p><span class="math display">\[
+\bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i} = \frac{\sum_{i=1}^n x_if(x_i)\Delta x}{\sum_{i=1}^n f(x_i)\Delta x},
+\]</span></p>
+<p>que es el cociente de dos sumas de Riemann. De nuevo, si aumentamos el número de subintervalos, cuando <span class="math inline">\(n\)</span> tiende a <span class="math inline">\(\infty\)</span>, en el límite se obtiene el valor exacto del centro de masas mediante el cociente de dos integrales definidas</p>
+<p><span class="math display">\[
+\bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
+\]</span></p>
+<div class="{exm-centro-masas}$">
+<p>El centro de masas de una barilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\bar x
+&amp;= \frac{\int_5^{10} xf(x)\,dx}{\int_5^{10} f(x)\,dx}
+= \frac{\int_5^{10} x(2x-1)\,dx}{\int_5^{10} 2x-1\,dx} \\
+&amp;= \frac{\left[2\frac{x^3}{3}-\frac{x^2}{2}\right]_5^{10}}{[x^2-x]_5^{10}}
+= \frac{\left(2\frac{10^3}{3}-\frac{10^2}{2}-2\frac{5^3}{3}+\frac{5^2}{2}\right)}{10^2-10-5^2+5} \\
+&amp;= \frac{3275/6}{70}
+= 7.7976.
+\end{align*}\]</span></p>
 </div>
 </section>
 </section>

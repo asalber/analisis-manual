@@ -1869,6 +1869,64 @@ W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 $$
 :::
 
+### Centro de masas
+
+El centro de masas de un objeto o sistema de objetos es el punto geométrico que dinámicamente se comporta como si en él estuvieran aplicadas las fuerzas que actúan sobre el objeto. En el caso de un sistema discreto, como por ejemplo una palanca sobre la que se coloca un número finito de pesos, como en la figura de más abajo, determinar el centro de gravedad es sencillo, ya que basta aplicar la [ley de la palanca de Arquímedes](https://es.wikipedia.org/wiki/Palanca), que establece
+
+$$
+m_1d_1 = m_2d_2
+$$
+
+:::{.content-visible when-format="html"}
+![Ley de la palanca.](img/integrales/palanca.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Ley de la palanca.](img/integrales/palanca.pdf)
+:::
+
+Si colocamos las dos masas $m_1$ y $m_2$ sobre el eje $x$ en las posiciones $x_1$ y $x_2$ respectivamente, el centro de masas $\bar x$, que se correspondería con la posición donde habría que poner el punto de apoyo de la palanca para que las dos masas la equilibraran, se puede calcular aplicando la ley de la palanca,
+
+$$
+m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{m_1+m_2},
+$$
+
+que, en realidad, es la media de las posiciones de $x_1$ y $x_2$ ponderada de las masas.
+
+Debido a la fuerza de la gravedad, cada objeto ejerce una fuerza sobre la palanca que tiende a rotarla alrededor del punto de apoyo (si el objeto está a la izquierda del punto de apoyo provocará una rotación en sentido antihorario, mientras que si está a la derecha lo hará en sentido horario). Esta efecto de rotación se conoce como _momento_ o _torque_, y para un objeto de masa $m$ colocado en la posición $x$ de la palanca, toma el valor $m\cdot x\cdot g$, y sus unidades en el sistema internacional son $N\cdot m$ (aunque ya hemos visto que $N\cdot m$ son julios, en este caso las unidades de los momentos no se expresan en julios para distinguirlos del trabajo, ya que el trabajo es una magnitud escalar, mientras que el momento es una magnitud vectorial).
+
+En general, si hay $n$ objetos sobre la balanza, el centro de masas se alcanzará en el punto $\bar x$ que cumpla, 
+
+$$
+\sum_{i=1}^n m_i(x_i-\bar x) = 0 \Leftrightarrow \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i}.
+$$
+
+Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una barilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la barilla será aproximadamente, según la fórmula anterior, 
+
+$$
+\bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i} = \frac{\sum_{i=1}^n x_if(x_i)\Delta x}{\sum_{i=1}^n f(x_i)\Delta x},
+$$
+
+que es el cociente de dos sumas de Riemann. De nuevo, si aumentamos el número de subintervalos, cuando $n$ tiende a $\infty$, en el límite se obtiene el valor exacto del centro de masas mediante el cociente de dos integrales definidas
+
+$$
+\bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
+$$
+
+:::{exm-centro-masas}$
+El centro de masas de una barilla situada sobre el intervalo $[5, 10]$ con una densidad en cada punto $x$ dada por la función $f(x)=2x-1$ es
+
+\begin{align*}
+\bar x 
+&= \frac{\int_5^{10} xf(x)\,dx}{\int_5^{10} f(x)\,dx} 
+= \frac{\int_5^{10} x(2x-1)\,dx}{\int_5^{10} 2x-1\,dx} \\
+&= \frac{\left[2\frac{x^3}{3}-\frac{x^2}{2}\right]_5^{10}}{[x^2-x]_5^{10}}
+= \frac{\left(2\frac{10^3}{3}-\frac{10^2}{2}-2\frac{5^3}{3}+\frac{5^2}{2}\right)}{10^2-10-5^2+5} \\
+&= \frac{3275/6}{70} 
+= 7.7976.
+\end{align*}
+:::
+
 ## Aplicaciones estadísticas
 
 Veremos a continuación otras aplicaciones de la integral más relacionadas con la Estadística.
