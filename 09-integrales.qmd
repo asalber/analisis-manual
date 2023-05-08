@@ -1901,7 +1901,7 @@ $$
 \sum_{i=1}^n m_i(x_i-\bar x) = 0 \Leftrightarrow \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i}.
 $$
 
-Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una barilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la barilla será aproximadamente, según la fórmula anterior, 
+Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
 
 $$
 \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i} = \frac{\sum_{i=1}^n x_if(x_i)\Delta x}{\sum_{i=1}^n f(x_i)\Delta x},
@@ -1914,7 +1914,7 @@ $$
 $$
 
 :::{exm-centro-masas}$
-El centro de masas de una barilla situada sobre el intervalo $[5, 10]$ con una densidad en cada punto $x$ dada por la función $f(x)=2x-1$ es
+El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una densidad en cada punto $x$ dada por la función $f(x)=2x-1$ es
 
 \begin{align*}
 \bar x 
