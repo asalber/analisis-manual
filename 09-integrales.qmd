@@ -1587,7 +1587,7 @@ $$
 
 ## Cálculo de la longitud de una curva
 
-Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. Una vez más, la idea consiste en tomar una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
+Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. Una vez más, la idea consiste en dividir el intervalo $[a,b]$ en $n$ subinvervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ con $\Delta x = x_i-x{i-1}$ $i=1,\ldots,n$, y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
 
 :::{.content-visible when-format="html"}
 ![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.png)
@@ -1597,7 +1597,11 @@ Otra importante aplicación geométrica de las integrales es el cálculo de la l
 ![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.pdf)
 :::
 
-Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo $[x_{i-1},x_i]$ es $\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2}$. 
+Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo $[x_{i-1},x_i]$ es 
+
+$$
+\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2} = \sqrt{\Delta x^2+(f(x_i)-f(x_{i-1}))^2}.
+$$ 
 
 Por otro lado, si $f$ es diferenciable en $[x_{i-1},x_{i}]$, según el teorema del valor medio, se tiene que existe un $x'_i\in [x_{i-1},x_i]$ tal que 
 
@@ -1605,24 +1609,30 @@ $$
 f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 $$
 
-de manera que $f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1})$, y la longitud del segmento puede expresarse como 
+de manera que 
+
+$$
+f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
+$$
+
+y la longitud del segmento puede expresarse como 
 
 \begin{align*}
-\sqrt{(x_i-x_{i-1})^2+(f(x_i)-f(x_{i-1}))^2} 
-&= \sqrt{(x_i-x_{i-1})^2+(f'(x'_i)(x_i-x_{i-1}))^2}\\
-&= (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2},
+\sqrt{\Delta x^2+(f(x_i)-f(x_{i-1}))^2}
+&= \sqrt{\Delta x^2+(f'(x'_i)\Delta x^2}\\
+&= \Delta x\sqrt{1+f'(x'_i)^2},
 \end{align*}
 
 y la suma de todos los segmentos resulta
 
 $$
-\sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2}
+\sum_{i=1}^n \sqrt{1+f'(x'_i)^2}\Delta x
 $$
 
 Resulta evidente, que a medida que aumentemos el número de subintervalos $n$ de la partición, la aproximación de la longitud de la curva será mejor y en el límite tendremos su valor exacto, que puede calcularse mediante la integral definida
 
 $$
-\lim_{n\to\infty} \sum_{i=1}^n (x_i-x_{i-1})\sqrt{1+f'(x'_i)^2} = \int_a^b \sum_{i=1}^n \sqrt{1+f'(x)^2},
+\lim_{n\to\infty} \sum_{i=1}^n \sqrt{1+f'(x'_i)^2} \Delta x = \int_a^b \sqrt{1+f'(x)^2}\, dx,
 $$
 
 siempre y cuando $f'(x)$ sea integrable en $[a,b]$.
@@ -1901,6 +1911,8 @@ $$
 \sum_{i=1}^n m_i(x_i-\bar x) = 0 \Leftrightarrow \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i}.
 $$
 
+#### Centro de masas de una varilla con densidad variable
+
 Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
 
 $$
@@ -1925,6 +1937,124 @@ El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una d
 &= \frac{3275/6}{70} 
 = 7.7976.
 \end{align*}
+:::
+
+#### Centro de masas de una región plana con densidad fija
+
+Cuando se tiene una región plana en $\mathbb{R}^2$, su centro de masas se conoce como _centroide_ y sus coordenadas se representan como $(\bar x, \bar y)$. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad $\delta$, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.
+
+Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
+
+:::{.content-visible when-format="html"}
+![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.pdf)
+:::
+
+El momento del rectángulo $i$-ésimo con respecto al eje $y$ es 
+
+$$
+\bar x_i M_i = x_i \delta f(\bar x_i)\Delta x 
+$$
+
+de manera que podemos aproximar el momento de la región con respecto al eje $y$ mediante la suma de Riemann
+
+$$
+\sum_{i=1}^n x_i \delta f(\bar x_i)\Delta x = \delta \sum_{i=1}^n x_i f(\bar x_i)\Delta x,
+$$
+
+y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $y$ mediante la integral definida
+
+$$
+\delta \lim_{n\to \infty}\sum_{i=1}^n x_i f(\bar x_i)\Delta x = \delta \int_a^b x f(x)\, dx,
+$$
+
+por lo que se tiene
+
+$$
+\bar x = \frac{\delta \int_a^b x f(x)\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b x f(x)\, dx,}{\int_a^b f(x)\, dx,} 
+$$
+
+Del mismo modo, el momento del rectángulo $i$-ésimo con respecto al eje $x$ es
+
+$$
+\frac{1}{2}f(\bar x_i) M_i = \frac{1}{2}f(\bar x_i) \delta f(\bar x_i)\Delta x = \frac{1}{2}\delta f(\bar x_i)^2\Delta x
+$$
+
+de manera que podemos aproximar el momento de la región con respecto al eje $x$ mediante la suma de Riemann
+
+$$
+\sum_{i=1}^n \frac{1}{2}\delta f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \sum_{i=1}^n f(\bar x_i)^2\Delta x,
+$$
+
+y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $y$ mediante la integral definida
+
+$$
+\frac{1}{2}\delta \lim_{n\to \infty}\sum_{i=1}^n f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \int_a^b f(x)^2\, dx,
+$$
+
+por lo que se tiene
+
+$$
+\bar y = \frac{\frac{1}{2}\delta \int_a^b f(x)^2\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b f(x)^2\, dx,}{2\int_a^b f(x)\, dx,}
+$$
+
+:::{#exm-centroide}
+Veamos cómo calcular el centroide del semicírculo de ecuación $f(x)=\sqrt{1-x^2}$. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable $x=\operatorname{sen}(\theta)$, $dx = \cos(\theta)d\theta$, se tiene
+
+\begin{align*}
+\int_{-1}^1 f(x)\,dx 
+&= \int_{-1}^1 \sqrt{1-x^2}\,dx 
+= \int_{-\pi/2}^{\pi/2} \sqrt{1-\operatorname{sen}(\theta)^2}\cos(\theta)\,d\theta \\
+&= \int_{-\pi/2}^{\pi/2} \sqrt{\cos(\theta)^2}\cos(\theta)\,d\theta
+= \int_{-\pi/2}^{\pi/2} \cos(\theta)^2\,d\theta \\
+&= \int_{-\pi/2}^{\pi/2} \frac{1+\cos(\theta)}{2}\,d\theta
+= \frac{1}{2}\left[\theta + \frac{1}{2}\operatorname{sen}(2\theta) \right]_{-\pi/2}^{\pi/2} \\
+&= \frac{1}{2}\left(\frac{\pi}{2}+\frac{1}{2}\operatorname{sen}(\pi)+\frac{\pi}{2}-\frac{1}{2}\operatorname{sen}(-\pi)\right)\\
+&= \frac{1}{2}\left(\frac{\pi}{2}+\frac{\pi}{2}\right)
+= \frac{\pi}{2}.
+\end{align*}
+
+Y ahora calculamos el momento con respecto al eje $x$.
+
+\begin{align*}
+\int_{-1}^1 xf(x)\,dx 
+&= \int_{-1}^1 x\sqrt{1-x^2}\,dx 
+= \int_{-\pi/2}^{\pi/2} \operatorname{sen}(\theta)\sqrt{1-\operatorname{sen}(\theta)^2}\cos(\theta)\,d\theta \\
+&= \int_{-\pi/2}^{\pi/2} \operatorname{sen}(\theta)\sqrt{\cos(\theta)^2}\cos(\theta)\,d\theta
+= \int_{-\pi/2}^{\pi/2} \operatorname{sen}(\theta)\cos(\theta)^2\,d\theta \\
+&= \left[\frac{\cos(\theta)^3}{3} \right]_{-\pi/2}^{\pi/2} 
+= \frac{1}{3}(\cos(\pi/2)^3-\cos(-\pi/2)^3)
+= 0.
+\end{align*}
+
+De manera que 
+
+$$
+\bar x = \frac{\int_{-1}^1 x f(x)\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{0}{\pi/2} = 0
+$$
+
+Finalmente calculamos el momento con respecto al eje $y$.
+
+\begin{align*}
+\frac{1}{2}\int_{-1}^1 f(x)^2\,dx 
+&= \frac{1}{2}\int_{-1}^1 \sqrt{1-x^2}^2\,dx 
+= \frac{1}{2}\int_{-1}^1 1-x^2\,dx
+= \frac{1}{2}\left[x - \frac{x^3}{3}\right]_{-1}^1 \\
+&= \frac{1}{2}\left(1-\frac{1^3}{3}-(-1)+\frac{(-1)^3}{3}\right)
+= \frac{1}{2}\frac{4}{3}
+= \frac{4}{6}. 
+\end{align*}
+
+y
+
+$$
+\bar y = \frac{1}{2}\frac{\int_{-1}^1 f(x)^2\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{4/6}{\pi/2} = \frac{4}{3\pi}.
+$$
+
+Luego el centroide es $(0, \frac{4}{3\pi})$.
 :::
 
 ## Aplicaciones estadísticas
