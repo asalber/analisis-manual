@@ -1288,15 +1288,22 @@ Un semicírculo de radio $r$ puede expresarse en coordenadas polares mediante la
 
 $$
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
-$$.
+$$
 :::
 
 :::{#exm-area-curva-polar}
 Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.
 
-$$
-\int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
-$$.
+\begin{align*}
+\int_0^{2\pi} \frac{r^2}{2} 
+&= \frac{1}{2}\int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta
+= \frac{9}{2}\int_0^{2\pi} \operatorname{sen}(2\theta)^2\,d\theta \\
+&= \frac{9}{2}\int_0^{2\pi} \frac{1 - \cos(2\theta)}{2}\,d\theta 
+= \frac{9}{4}\left[\theta - \frac{\operatorname{sen}(2\theta)}{2}\right]_0^{2\pi} \\
+&= \frac{9}{4}\left(2\pi - \frac{\operatorname{sen}(4\pi)}{2}\right)
+= \frac{9}{4}2\pi 
+= \frac{9}{2}\pi.
+\end{align*}
 
 :::{.content-visible when-format="html"}
 ![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.png)
@@ -1485,7 +1492,7 @@ Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el orige
 \end{align*}
 :::
 
-### Cálculo de volúmenes de sólidos de revolución
+### Cálculo de volúmenes de sólidos de revolución con discos cilíndricos
 
 Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. 
 
@@ -1516,7 +1523,7 @@ Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondie
 \end{align*}
 :::
 
-### Cálculo de volúmenes con envoltorios cilíndricos
+### Cálculo de volúmenes de sólidos de revolución con envoltorios cilíndricos
 
 Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo. 
 
@@ -1943,7 +1950,7 @@ El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una d
 
 Cuando se tiene una región plana en $\mathbb{R}^2$, su centro de masas se conoce como _centroide_ y sus coordenadas se representan como $(\bar x, \bar y)$. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad $\delta$, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.
 
-Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
+Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
 
 :::{.content-visible when-format="html"}
 ![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.png)
@@ -2076,7 +2083,7 @@ donde $x'_i$ es cualquier valor del intervalo $[x_{i-1},x_i]$.
 Cuando el número de subintervalos tiende a $\infty$, la suma anterior se parecerá cada vez más al verdadero valor medio de la función en el intervalo, y en el límite, si la función $f$ es integrable Riemann, se puede obtener el valor medio de la función mediante la integral definida
 
 $$
-\bar f[a,b] = \int_a^b f(x)\,dx
+\bar f[a,b] = \frac{1}{b-a}\int_a^b f(x)\,dx
 $$
 
 :::{#exm-valor-medio}
