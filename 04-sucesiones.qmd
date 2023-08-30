@@ -1,12 +1,13 @@
 ---
+title: Sucesiones de números reales
+crossref:
+    chapters: true
 lang: es
 ---
-<!-- LTeX: language = es-ES -->
 
 ::: {.content-visible unless-format="pdf"}
 {{< include macros.qmd >}}
 :::
-# Sucesiones de números reales
 
 Las sucesiones de números reales son claves para comprender el concepto de límite que es fundamental en el Análisis Matemático. En este capítulo se presenta el concepto de sucesión de números reales, el concepto de límite y algunos resultados importantes sobre la convergencia de sucesiones.
 

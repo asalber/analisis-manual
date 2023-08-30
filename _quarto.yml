@@ -47,6 +47,7 @@ book:
     - 07-derivadas.qmd
     - 08-series.qmd
     - 09-integrales.qmd
+    - 11-geometria-plano-espacio.qmd
     
 #bibliography: references.bib
 

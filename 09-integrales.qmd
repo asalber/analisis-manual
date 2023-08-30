@@ -9,7 +9,7 @@ lang: es
 {{< include macros.qmd >}}
 :::
 
-En este capítulo se estudian las _integrales_ de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el _teorema fundamental del cálculo_, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.
+En este capítulo se estudian las _integrales_ de funciones de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el _teorema fundamental del cálculo_, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.
 
 Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el _[método por agotamiento](https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento)_ para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.
 

@@ -1,13 +1,13 @@
 ---
+title: Límites de funciones
+crossref:
+    chapters: true
 lang: es
 ---
-<!-- LTeX: language = es-ES -->
 
 ::: {.content-visible unless-format="pdf"}
 {{< include macros.qmd >}}
 :::
-
-# Límites de funciones
 
 En este capítulo se introduce el concepto de límite de una función real de variable real, que es parecido al que ya se vio para sucesiones de números reales, y resulta imprescindible para llegar al concepto de derivada que se verá en el siguiente capítulo. 
 

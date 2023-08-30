@@ -1,9 +1,13 @@
 ---
+title: Teoría de conjuntos
+crossref:
+    chapters: true
 lang: es
 ---
-<!-- LTeX: language = es-ES -->
 
-# Teoría de conjuntos
+::: {.content-visible unless-format="pdf"}
+{{< include macros.qmd >}}
+:::
 
 Los conjuntos son entes matemáticos que se usan habitualmente para modelar situaciones reales en las que aparecen colecciones de objetos de cualquier naturaleza, así como las relaciones entre ellos, y por tanto, aparecen en la mayor parte de los problemas de Ciencia o Ingeniería. 
 

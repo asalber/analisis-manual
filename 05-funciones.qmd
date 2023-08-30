@@ -1,7 +1,9 @@
 ---
+title: Funciones reales de variable real
+crossref:
+    chapters: true
 lang: es
 ---
-<!-- LTeX: language = es-ES -->
 
 ::: {.content-visible unless-format="pdf"}
 {{< include macros.qmd >}}

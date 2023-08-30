@@ -1,4 +1,7 @@
 ---
+title: Derivadas de funciones
+crossref:
+    chapters: true
 lang: es
 ---
 
@@ -6,7 +9,7 @@ lang: es
 {{< include macros.qmd >}}
 :::
 
-# Derivadas de funciones
+En la mayoría de los problemas reales, las magnitudes que intervienen están relacionadas mediante ecuaciones o funciones. Para construir estos modelos matemáticos resulta imprescindible entender cómo varían unas magnitudes con respecto a las otras. En este capítulo abordamos el concepto de _derivada_, que surge de estudiar cómo varía una función cuando cambia la variable de la que depende. El concepto de derivada, junto al de integral, son los dos pilares fundamentales del Análisis Matemático, sobre los que se sostienen la mayor parte de las aplicaciones en Ciencia e Ingeniería.
 
 ## El concepto de derivada
 

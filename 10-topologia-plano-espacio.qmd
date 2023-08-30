@@ -1,0 +1,47 @@
+---
+title: Topología del plano y el espacio reales
+crossref:
+    chapters: true
+lang: es
+---
+
+::: {.content-visible unless-format="pdf"}
+{{< include macros.qmd >}}
+:::
+
+En este capítulo se estudian las _integrales_ de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el _teorema fundamental del cálculo_, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.
+
+Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el _[método por agotamiento](https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento)_ para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.
+
+Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue [Bernhard Riemann](https://es.wikipedia.org/wiki/Bernhard_Riemann).
+
+## Sumas de Riemann
+
+:::{#def-particion-intervalo}
+## Partición de un intervalo
+Dado un intervalo $I=[a,b]$ cerrado y acotado en $\mathbb{R}$, una _partición_ de $I$ es un conjunto ordenado y finito $P=\{x_0, x_1, \ldots, x_n\}$ de puntos de $I$ tales que $a=x_0<x_1<x_2<\cdots<x_n=b$.
+
+El conjunto de todas las particiones de un intervalo $I$ se denota $\mathcal{P}(I)$.
+:::
+
+:::{#def-suma-inferior-riemann}
+## Suma inferior de Riemann
+Dada una función $f: I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$ y una partición $P=\{x_0, x_1, \ldots, x_n\}$ de $I$, se define la _suma inferior_ de $f$ respecto de $P$, y se denota $s(f,P)$, como
+
+$$
+s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
+$$
+
+donde $m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
+:::
+
+Gráficamente, si $f$ es una función positiva, la suma inferior se puede interpretar como la suma de las areas de los rectángulos con base $[x_{i-1},x_i]$ y altura $m_i$.
+
+:::{.content-visible when-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.pdf)
+:::
+

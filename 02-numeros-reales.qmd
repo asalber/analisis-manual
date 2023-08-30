@@ -1,12 +1,13 @@
 ---
+title: El sistema de los números reales
+crossref:
+    chapters: true
 lang: es
 ---
 
 ::: {.content-visible unless-format="pdf"}
 {{< include macros.qmd >}}
 :::
-
-# El sistema de los números reales
 
 En este capítulo se estudia el conjunto de los números reales $\mathbb{R}$ ya que el Análisis Matemático estudia conceptos y construcciones realizadas a partir de este conjunto de números y sus propiedades.
 

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual de Análisis Matemático Real - 10&nbsp; Geometría vectorial del plano y del espacio reales</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-integrales.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Manual de Análisis Matemático Real - 10&nbsp; Geometría vectorial del plano y del espacio reales">
+<meta property="og:description" content="">
+<meta property="og:image" content="img/geometria-plano-espacio/vector.png">
+<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta name="twitter:title" content="Manual de Análisis Matemático Real - 10&nbsp; Geometría vectorial del plano y del espacio reales">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="img/geometria-plano-espacio/vector.png">
+<meta name="twitter:site" content="@aprendeconalf">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11-geometria-plano-espacio.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual de Análisis Matemático Real</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-teoria-conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-numeros-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-topologia-reales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-sucesiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-limites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-derivadas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-geometria-plano-espacio.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#escalares-y-vectores" id="toc-escalares-y-vectores" class="nav-link active" data-scroll-target="#escalares-y-vectores"><span class="header-section-number">10.1</span> Escalares y vectores</a>
+  <ul class="collapse">
+  <li><a href="#escalares" id="toc-escalares" class="nav-link" data-scroll-target="#escalares"><span class="header-section-number">10.1.1</span> Escalares</a></li>
+  <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores"><span class="header-section-number">10.1.2</span> Vectores</a></li>
+  <li><a href="#representación-de-un-vector" id="toc-representación-de-un-vector" class="nav-link" data-scroll-target="#representación-de-un-vector"><span class="header-section-number">10.1.3</span> Representación de un vector</a></li>
+  <li><a href="#vector-a-partir-de-dos-puntos" id="toc-vector-a-partir-de-dos-puntos" class="nav-link" data-scroll-target="#vector-a-partir-de-dos-puntos"><span class="header-section-number">10.1.4</span> Vector a partir de dos puntos</a></li>
+  <li><a href="#módulo-de-un-vector" id="toc-módulo-de-un-vector" class="nav-link" data-scroll-target="#módulo-de-un-vector"><span class="header-section-number">10.1.5</span> Módulo de un vector</a></li>
+  <li><a href="#vectores-unitarios" id="toc-vectores-unitarios" class="nav-link" data-scroll-target="#vectores-unitarios"><span class="header-section-number">10.1.6</span> Vectores unitarios</a></li>
+  <li><a href="#suma-de-vectores" id="toc-suma-de-vectores" class="nav-link" data-scroll-target="#suma-de-vectores"><span class="header-section-number">10.1.7</span> Suma de vectores</a></li>
+  <li><a href="#producto-de-un-vector-por-un-escalar" id="toc-producto-de-un-vector-por-un-escalar" class="nav-link" data-scroll-target="#producto-de-un-vector-por-un-escalar"><span class="header-section-number">10.1.8</span> Producto de un vector por un escalar</a></li>
+  <li><a href="#expresión-de-un-vector-como-combinación-lineal-de-los-vectores-coordenados" id="toc-expresión-de-un-vector-como-combinación-lineal-de-los-vectores-coordenados" class="nav-link" data-scroll-target="#expresión-de-un-vector-como-combinación-lineal-de-los-vectores-coordenados"><span class="header-section-number">10.1.9</span> Expresión de un vector como combinación lineal de los vectores coordenados</a></li>
+  <li><a href="#producto-escalar" id="toc-producto-escalar" class="nav-link" data-scroll-target="#producto-escalar"><span class="header-section-number">10.1.10</span> Producto escalar</a></li>
+  <li><a href="#vectores-paralelos" id="toc-vectores-paralelos" class="nav-link" data-scroll-target="#vectores-paralelos"><span class="header-section-number">10.1.11</span> Vectores paralelos</a></li>
+  <li><a href="#vectores-ortogonales-y-ortonormales" id="toc-vectores-ortogonales-y-ortonormales" class="nav-link" data-scroll-target="#vectores-ortogonales-y-ortonormales"><span class="header-section-number">10.1.12</span> Vectores ortogonales y ortonormales</a></li>
+  </ul></li>
+  <li><a href="#rectas" id="toc-rectas" class="nav-link" data-scroll-target="#rectas"><span class="header-section-number">10.2</span> Rectas</a>
+  <ul class="collapse">
+  <li><a href="#ecuación-vectorial-de-la-recta" id="toc-ecuación-vectorial-de-la-recta" class="nav-link" data-scroll-target="#ecuación-vectorial-de-la-recta"><span class="header-section-number">10.2.1</span> Ecuación vectorial de la recta</a></li>
+  <li><a href="#ecuaciones-paramétricas-y-cartesianas-de-la-recta" id="toc-ecuaciones-paramétricas-y-cartesianas-de-la-recta" class="nav-link" data-scroll-target="#ecuaciones-paramétricas-y-cartesianas-de-la-recta"><span class="header-section-number">10.2.2</span> Ecuaciones paramétricas y cartesianas de la recta</a></li>
+  <li><a href="#ecuación-punto-pendiente-de-una-recta-en-el-plano" id="toc-ecuación-punto-pendiente-de-una-recta-en-el-plano" class="nav-link" data-scroll-target="#ecuación-punto-pendiente-de-una-recta-en-el-plano"><span class="header-section-number">10.2.3</span> Ecuación punto-pendiente de una recta en el plano</a></li>
+  <li><a href="#pendiente-de-una-recta-en-el-plano-real" id="toc-pendiente-de-una-recta-en-el-plano-real" class="nav-link" data-scroll-target="#pendiente-de-una-recta-en-el-plano-real"><span class="header-section-number">10.2.4</span> Pendiente de una recta en el plano real</a></li>
+  </ul></li>
+  <li><a href="#planos" id="toc-planos" class="nav-link" data-scroll-target="#planos"><span class="header-section-number">10.3</span> Planos</a>
+  <ul class="collapse">
+  <li><a href="#ecuación-vectorial-del-plano-en-el-espacio-real" id="toc-ecuación-vectorial-del-plano-en-el-espacio-real" class="nav-link" data-scroll-target="#ecuación-vectorial-del-plano-en-el-espacio-real"><span class="header-section-number">10.3.1</span> Ecuación vectorial del plano en el espacio real</a></li>
+  <li><a href="#ecuación-escalar-de-un-plano-en-el-espacio" id="toc-ecuación-escalar-de-un-plano-en-el-espacio" class="nav-link" data-scroll-target="#ecuación-escalar-de-un-plano-en-el-espacio"><span class="header-section-number">10.3.2</span> Ecuación escalar de un plano en el espacio</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\mathbb{N}}{\mathbb{N}}
+\newcommand{\mathbb{Z}}{\mathbb{Z}}
+\newcommand{\mathbb{Q}}{\mathbb{Q}}
+\newcommand{\mathbb{R}}{\mathbb{R}}
+\newcommand{\mathbb{C}}{\mathbb{C}}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
+\]</span></p>
+</div>
+<p>Para proceder al estudio analítico de las funciones de varias variables y de las funciones vectoriales se necesita introducir el concepto de vector y algunas propiedades geométricas del plano euclídeo <span class="math inline">\(\mathbb{R}^2\)</span> y del espacio euclídeo <span class="math inline">\(\mathbb{R}^3\)</span>. Muchas de estas propiedades se pueden generalizar fácilmente a espacios de cualquier dimensión. En este capítulo introducimos estos los conceptos básicos de geometría vectorial necesarios para los próximos capítulos.</p>
+<section id="escalares-y-vectores" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="escalares-y-vectores"><span class="header-section-number">10.1</span> Escalares y vectores</h2>
+<section id="escalares" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="escalares"><span class="header-section-number">10.1.1</span> Escalares</h3>
+<p>Algunos fenómenos de la naturaleza pueden describirse mediante un número referido a una unidad de medida.</p>
+<div id="def-escalar" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.1 (Escalar) </strong></span>Un <em>escalar</em> es un número que sirve para expresar una magnitud sin dirección.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.1 </strong></span>La estatura o el peso de una persona, el volumen de un depósito, la temperatura de un gas, el trabajo realizado por una fuerza sobre un objeto, la carga eléctrica o el tiempo que tarda un móvil en recorrer una distancia, son escalares.</p>
+</div>
+<p>Sin embargo, existen otros fenómenos que no pueden describirse adecuadamente mediante un escalar. Si, por ejemplo, un navegante quiere poner rumbo a puerto y sólo conoce de la intensidad del viento, no sabrá qué dirección tomar. La descripción del viento requiere dos elementos, su intensidad y su dirección.</p>
+</section>
+<section id="vectores" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="vectores"><span class="header-section-number">10.1.2</span> Vectores</h3>
+<div id="def-vector" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.2 (Vector) </strong></span>Un <em>vector</em> es un número que sirve para expresar una magnitud y tiene asociada una dirección y un sentido.</p>
+</div>
+<div id="exm-vector" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.2 </strong></span>La velocidad y la aceleración de un móvil o la fuerza que se aplica sobre un objeto, son vectores.</p>
+</div>
+<p>Geométricamente, un vector se representa mediante un segmento orientado, es decir, una flecha.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/vector.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Vector.</figcaption>
+</figure>
+</div>
+</section>
+<section id="representación-de-un-vector" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="representación-de-un-vector"><span class="header-section-number">10.1.3</span> Representación de un vector</h3>
+<p>Un segmento orientado puede ubicarse en diferentes lugares dentro de un espacio euclídeo. Sin embargo, con independencia de donde esté situado, si la longitud y la dirección no varían, dicho segmento representará siempre el mismo vector.</p>
+<p>Esto permite representar todos los vectores con un mismo origen, el origen en sistema de coordenadas cartesianas. Así, en cualquier espacio euclídeo, un vector queda determinado por las <em>coordenadas</em> del punto que determina su extremo final.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/coordenadas-vector.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Coordenadas de un vector.</figcaption>
+</figure>
+</div>
+</section>
+<section id="vector-a-partir-de-dos-puntos" class="level3" data-number="10.1.4">
+<h3 data-number="10.1.4" class="anchored" data-anchor-id="vector-a-partir-de-dos-puntos"><span class="header-section-number">10.1.4</span> Vector a partir de dos puntos</h3>
+<p>Dados dos puntos <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de un espacio euclídeo, el vector con origen en <span class="math inline">\(P\)</span> y final en <span class="math inline">\(Q\)</span> tiene coordenadas <span class="math inline">\(\vec{PQ}=Q-P\)</span>.</p>
+<div id="exm-vector-dos-puntos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.3 </strong></span>Sean los puntos <span class="math inline">\(P=(2,1)\)</span> y <span class="math inline">\(Q=(3,4)\)</span> del plano real <span class="math inline">\(\mathbb{R}^2\)</span>, entonces</p>
+<p><span class="math display">\[\vec{PQ} = Q-P = (3,4)-(2,1) = (3-2,4-1) = (1,3).\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/vector-puntos.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Definción de un vector a partir de dos puntos.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="módulo-de-un-vector" class="level3" data-number="10.1.5">
+<h3 data-number="10.1.5" class="anchored" data-anchor-id="módulo-de-un-vector"><span class="header-section-number">10.1.5</span> Módulo de un vector</h3>
+<div id="def-modulo-vector" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.3 (Módulo de un vector) </strong></span>Dado un vector <span class="math inline">\(\mathbf{v}=(v_1,\cdots,v_n)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define el <em>módulo</em> de <span class="math inline">\(\mathbf{v}\)</span> como</p>
+<p><span class="math display">\[
+\lvert \mathbf{v} \rvert = \sqrt{v_1^2+ \cdots + v_n^2}.
+\]</span></p>
+</div>
+<p>El módulo de un vector coincide con la longitud del segmento que representa al vector.</p>
+<div id="exm-modulo-vector" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.4 </strong></span>Sea <span class="math inline">\(\mathbf{u}=(3,4)\)</span> un vector en <span class="math inline">\(\mathbb{R}^2\)</span>, entonces</p>
+<p><span class="math display">\[
+\lvert \mathbf{u} \rvert = \sqrt{3^2+4^2} = \sqrt{25} = 5.
+\]</span></p>
+<p>Sea <span class="math inline">\(\lvert \mathbf{v}\rvert =(4,7,4)\)</span> un vector en <span class="math inline">\(\mathbb{R}^3\)</span>, entonces</p>
+<p><span class="math display">\[
+\lvert \mathbf{v} \vert = \sqrt{4^2+7^2+4^2} = \sqrt{81} = 9.
+\]</span></p>
+</div>
+</section>
+<section id="vectores-unitarios" class="level3" data-number="10.1.6">
+<h3 data-number="10.1.6" class="anchored" data-anchor-id="vectores-unitarios"><span class="header-section-number">10.1.6</span> Vectores unitarios</h3>
+<div id="def-vector-unitario" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.4 (Vector unitario) </strong></span>Se dice que un vector <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es <em>unitario</em> si su módulo es 1, es decir <span class="math inline">\(\lvert \mathbf{v}\rvert=1\)</span>.</p>
+</div>
+<p>Especial atención merecen los vectores unitarios que siguen la dirección de los ejes de coordenadas, estos vectores se llaman <em>vectores coordenados</em>.</p>
+<p>En <span class="math inline">\(\mathbb{R}^2\)</span> los vectores coordenados son</p>
+<p><span class="math display">\[\mathbf{i}=(1,0)\mbox{ y }\mathbf{j}=(0,1)\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/vectores-coordenados-plano.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Vectores coordenados en el plano real.</figcaption>
+</figure>
+</div>
+<p>En <span class="math inline">\(\mathbb{R}^3\)</span> los vectores coordenados son</p>
+<p><span class="math display">\[\mathbf{i}=(1,0,0)\mbox{, }\mathbf{j}=(0,1,0) \mbox{ y } \mathbf{k}=(0,0,1)\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/vectores-coordenados-espacio.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Vectores coordenados en el espacio real.</figcaption>
+</figure>
+</div>
+</section>
+<section id="suma-de-vectores" class="level3" data-number="10.1.7">
+<h3 data-number="10.1.7" class="anchored" data-anchor-id="suma-de-vectores"><span class="header-section-number">10.1.7</span> Suma de vectores</h3>
+<div id="def-suma-vectores" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.5 (Suma de vectores) </strong></span>Dados dos vectores <span class="math inline">\(\mathbf{u}=(u_1,\cdots,u_n)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,\cdots,v_n)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>suma</em> de <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> como</p>
+<p><span class="math display">\[
+\mathbf{u}+\mathbf{v} = (u_1+v_1,\ldots, u_n+v_n).
+\]</span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/suma-vectores.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Suma de vectores.</figcaption>
+</figure>
+</div>
+<div id="exm-suma-vectores" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.5 </strong></span>Sean <span class="math inline">\(\mathbf{u}=(3,1)\)</span> y <span class="math inline">\(\mathbf{v}=(2,3)\)</span> dos vectores en <span class="math inline">\(\mathbb{R}^2\)</span>, entonces</p>
+<p><span class="math display">\[
+\mathbf{u}+\mathbf{v} = (3+2,1+3) = (5,4).
+\]</span></p>
+</div>
+</section>
+<section id="producto-de-un-vector-por-un-escalar" class="level3" data-number="10.1.8">
+<h3 data-number="10.1.8" class="anchored" data-anchor-id="producto-de-un-vector-por-un-escalar"><span class="header-section-number">10.1.8</span> Producto de un vector por un escalar</h3>
+<div id="def-producto-por-escalar" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.6 (Producto de un vector por un escalar) </strong></span>Dado un vector <span class="math inline">\(\mathbf{v}=(v_1,\cdots,v_n)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, y un escalar <span class="math inline">\(a\in \mathbb{R}\)</span>, se define el <em>producto</em> de <span class="math inline">\(a\)</span> por <span class="math inline">\(\mathbf{v}\)</span> como</p>
+<p><span class="math display">\[
+a\mathbf{v} = (av_1,\ldots, av_n).
+\]</span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/producto-vector-por-escalar.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Producto de un vector por un escalar.</figcaption>
+</figure>
+</div>
+<div id="exm-producto-por-escalar" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.6 </strong></span>Sean el vector <span class="math inline">\(\mathbf{v}=(2,1)\)</span> en <span class="math inline">\(\mathbb{R}^2\)</span> y el escalar <span class="math inline">\(a=2\)</span>, entonces</p>
+<p><span class="math display">\[
+a\mathbf{v} = 2(2,1) = (4,2).
+\]</span></p>
+</div>
+</section>
+<section id="expresión-de-un-vector-como-combinación-lineal-de-los-vectores-coordenados" class="level3" data-number="10.1.9">
+<h3 data-number="10.1.9" class="anchored" data-anchor-id="expresión-de-un-vector-como-combinación-lineal-de-los-vectores-coordenados"><span class="header-section-number">10.1.9</span> Expresión de un vector como combinación lineal de los vectores coordenados</h3>
+<p>La suma de vectores y el producto de un vector por un escalar permite expresar cualquier vector como una combinación lineal de los vectores coordenados.</p>
+<p>En el caso del espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, cualquier vector <span class="math inline">\(\mathbf{v}=(v_1,v_2,v_3)\)</span> puede expresarse como</p>
+<p><span class="math display">\[\mathbf{v}=(v_1,v_2,v_3) = v_1\mathbf{i}+v_2\mathbf{j}+v_3\mathbf{k}.\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/combinacion-lineal-vectores-coordenados.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Expresión de un vector como combinación lineal de los vectores coordenados.</figcaption>
+</figure>
+</div>
+</section>
+<section id="producto-escalar" class="level3" data-number="10.1.10">
+<h3 data-number="10.1.10" class="anchored" data-anchor-id="producto-escalar"><span class="header-section-number">10.1.10</span> Producto escalar</h3>
+<div id="def-producto-escalar" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.7 (Producto escalar) </strong></span>Dados dos vectores <span class="math inline">\(\mathbf{u}=(u_1,\cdots,u_n)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,\cdots,v_n)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define el <em>producto escalar</em> de <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> como</p>
+<p><span class="math display">\[
+\mathbf{u}\cdot \mathbf{v} = u_1v_1 + \cdots + u_nv_n.
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El resultado del producto escalar de dos vectores no es un vector, sino un escalar.</p>
+</div>
+</div>
+<div id="exm-producto-escalar" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.7 </strong></span>Sean <span class="math inline">\(\mathbf{u}=(3,1)\)</span> y <span class="math inline">\(\mathbf{v}=(2,3)\)</span> dos vectores en <span class="math inline">\(\mathbb{R}^2\)</span>, entonces</p>
+<p><span class="math display">\[
+\mathbf{u}\cdot\mathbf{v} = 3\cdot 2 +1\cdot 3 = 9.
+\]</span></p>
+</div>
+<div id="thm-producto-escalar" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 10.1 (Producto escalar) </strong></span>Dados dos vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se cumple que</p>
+<p><span class="math display">\[
+\mathbf{u}\cdot\mathbf{v} =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \cos\alpha
+\]</span></p>
+<p>donde <span class="math inline">\(\alpha\)</span> es el ángulo que forman los vectores.</p>
+</div>
+</section>
+<section id="vectores-paralelos" class="level3" data-number="10.1.11">
+<h3 data-number="10.1.11" class="anchored" data-anchor-id="vectores-paralelos"><span class="header-section-number">10.1.11</span> Vectores paralelos</h3>
+<div id="def-vectores-paralelos" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.8 (Vectores paralelos) </strong></span>Dos vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> son <em>paralelos</em> si existe un valor <span class="math inline">\(a\in\mathbb{R}\)</span> tal que</p>
+<p><span class="math display">\[
+\mathbf{u} = a\mathbf{v}.
+\]</span></p>
+</div>
+<div id="exm-vectores-paralelos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.8 </strong></span>Los vectores <span class="math inline">\(\mathbf{u}=(-4,2)\)</span> y <span class="math inline">\(\mathbf{v}=(2,-1)\)</span> en <span class="math inline">\(\mathbb{R}^2\)</span> son paralelos, ya que</p>
+<p><span class="math display">\[
+\mathbf{v}= (-4,2) = -2(2,-1) = -2\mathbf{v}.
+\]</span></p>
+</div>
+</section>
+<section id="vectores-ortogonales-y-ortonormales" class="level3" data-number="10.1.12">
+<h3 data-number="10.1.12" class="anchored" data-anchor-id="vectores-ortogonales-y-ortonormales"><span class="header-section-number">10.1.12</span> Vectores ortogonales y ortonormales</h3>
+<div id="def-vectores-ortogonales" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.9 (Vectores ortogonales y ortonormales) </strong></span>Dos vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> son <em>ortogonales</em> si su producto escalar es nulo</p>
+<p><span class="math display">\[ç
+\mathbf{u}\cdot \mathbf{v} = 0.
+\]</span></p>
+<p>Si además el módulo de ambos vectores es la unidad <span class="math inline">\(\lvert\mathbf{u}\rvert=\lvert\mathbf{v}\rvert=1\)</span>, entonces se dice que son <em>ortonormales</em>.</p>
+</div>
+<p>Los vectores ortogonales son perpendiculares entre sí, es decir, forman un ángulo de <span class="math inline">\(90^\circ\)</span>.</p>
+<div id="exm-vectores-ortogonales" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.9 </strong></span>Los vectores <span class="math inline">\(\mathbf{u}=(2,1)\)</span> y <span class="math inline">\(\mathbf{v}=(-2,4)\)</span> en <span class="math inline">\(\mathbb{R}^2\)</span> son ortogonales, ya que</p>
+<p><span class="math display">\[
+\mathbf{u}\mathbf{v} = 2\cdot -2 +1\cdot 4 = 0,
+\]</span></p>
+<p>pero no son ortonormales ya que <span class="math inline">\(\lvert\mathbf{u}\rvert = \sqrt{2^2+1^2} \neq 1\)</span> y <span class="math inline">\(\lvert \mathbf{v}\rvert = \sqrt{-2^2+4^2} \neq 1\)</span>.</p>
+<p>Los vectores <span class="math inline">\(\mathbf{i}=(1,0)\)</span> y <span class="math inline">\(\mathbf{j}=(0,1)\)</span> en <span class="math inline">\(\mathbb{R}^2\)</span> son ortonormales, ya que</p>
+<p><span class="math display">\[
+\mathbf{i}\mathbf{j} = 1\cdot 0 +0\cdot 1 = 0, \quad \lvert\mathbf{i}\rvert = \sqrt{1^2+0^2} = 1,  \quad \lvert \mathbf j\rvert = \sqrt{0^2+1^2} = 1.
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="rectas" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="rectas"><span class="header-section-number">10.2</span> Rectas</h2>
+<section id="ecuación-vectorial-de-la-recta" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="ecuación-vectorial-de-la-recta"><span class="header-section-number">10.2.1</span> Ecuación vectorial de la recta</h3>
+<div id="def-ecuacion-vectorial-recta" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.10 (Ecuación vectorial de la recta) </strong></span>Sea <span class="math inline">\(l\)</span> una recta en el espacio <span class="math inline">\(\mathbb{R}^n\)</span> y sean <span class="math inline">\(P=(p_1,\ldots,p_n)\)</span> un punto cualquiera de la recta y <span class="math inline">\(\mathbf{v}=(v_1,\ldots,v_n)\)</span> un vector cualquiera con la misma dirección que la recta. La ecuación</p>
+<p><span class="math display">\[
+l: X = P + t\mathbf{v} = (p_1,\ldots,p_n)+t(v_1,\ldots,v_n) = (p_1+tv_1,\ldots,p_n+tv_n),
+\]</span></p>
+<p>parametriza a <span class="math inline">\(l\)</span> en función de <span class="math inline">\(t\in \mathbb{R}\)</span>, y se conoce como <em>ecuación vectorial de la recta</em>.</p>
+</div>
+<div id="exm-ecuacion-vectorial-recta" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.10 </strong></span>Considérese la recta del espacio real <span class="math inline">\(\mathbb{R}^3\)</span> que aparece en la siguiente gráfica.</p>
+<div id="ecuacion-vectorial-recta">
+
+</div>
+<script>
+var params = {
+            "appName": "classic", 
+            "width": 800, 
+            "height": 800, 
+            "showToolBar": false, 
+            "showAlgebraInput": false, 
+            "showMenuBar": false,
+            "borderColor": "#FFFFFF",
+            "enableRightClick": false,
+            "enableLabelDrags": false,
+            "enableShiftDragZoom": true,
+            "showZoomButtons": false,
+            "showResetIcon": true,
+            "showFullscreenButton": true,
+            "transparentGraphics": true,
+            "material_id":"hfsnsnky"
+            };
+    var ggbApplet1 = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet1.inject('ecuacion-vectorial-recta');
+    });
+</script>
+<p>Un punto de la recta es <span class="math inline">\(P=(1,1,2)\)</span> y un vector director es <span class="math inline">\(\mathbf{v}=(-1,2,2)\)</span>, luego su ecuación vectorial es</p>
+<p><span class="math display">\[
+l: X= P + t\mathbf{v} = (1,1,2)+t(-1,2,1)=(1-t,1+2t,2+t)\quad t\in\mathbb{R}.
+\]</span></p>
+</div>
+</section>
+<section id="ecuaciones-paramétricas-y-cartesianas-de-la-recta" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="ecuaciones-paramétricas-y-cartesianas-de-la-recta"><span class="header-section-number">10.2.2</span> Ecuaciones paramétricas y cartesianas de la recta</h3>
+<p>De la ecuación vectorial de una recta <span class="math inline">\(l: X=P + t\mathbf{v}=(p_1+tv_1,\ldots,p_n+tv_n)\)</span> se obtienen fácilmente las coordenadas de los puntos que forman parte de la recta mediante <span class="math inline">\(n\)</span> ecuaciones paramétricas:</p>
+<p><span class="math display">\[
+x_1(t)=p_1+tv_1, \ldots, x_n(t)=p_n+tv_n
+\]</span></p>
+<p>donde, si <span class="math inline">\(\mathbf{v}\)</span> es un vector cuyas coordenadas son no nulas (<span class="math inline">\(v_i\neq 0\)</span> <span class="math inline">\(\forall i\)</span>), se puede despejar el parámetro <span class="math inline">\(t\)</span> en cada una de ellas e igualarlas,</p>
+<p><span class="math display">\[
+\frac{x_1-p_1}{v_1} = \cdots = \frac{x_n-p_n}{v_n}
+\]</span></p>
+<div id="exm-ecuaciones-parametrica-cartesiana-recta" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.11 </strong></span>Dada la ecuación vectorial de la recta <span class="math inline">\(l: X=(1,1,2)+t(-1,2,1) =(1-t,1+2t,2+t)\)</span> en el espacio real <span class="math inline">\(\mathbb{R^3}\)</span>, sus ecuaciones paramétricas son</p>
+<p><span class="math display">\[
+x(t) = 1-t, \quad y(t)=1+2t, \quad z(t)=2+t,
+\]</span></p>
+<p>y sus ecuaciones cartesianas son</p>
+<p><span class="math display">\[
+\frac{x-1}{-1}=\frac{y-1}{2}=\frac{z-2}{1}
+\]</span></p>
+</div>
+</section>
+<section id="ecuación-punto-pendiente-de-una-recta-en-el-plano" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="ecuación-punto-pendiente-de-una-recta-en-el-plano"><span class="header-section-number">10.2.3</span> Ecuación punto-pendiente de una recta en el plano</h3>
+<p>En el caso particular del plano real <span class="math inline">\(\mathbb{R^2}\)</span>, si se tiene una recta con ecuación vectorial</p>
+<p><span class="math display">\[
+l: X=P+t\mathbf{v}=(x_0,y_0)+t(a,b) = (x_0+ta,y_0+tb),
+\]</span></p>
+<p>sus ecuaciones paramétricas son</p>
+<p><span class="math display">\[
+x(t)=x_0+ta,\quad y(t)=y_0+tb
+\]</span></p>
+<p>y sus ecuación cartesiana es</p>
+<p><span class="math display">\[
+\frac{x-x_0}{a} = \frac{y-y_0}{b}.
+\]</span></p>
+<p>A partir de aquí, pasando <span class="math inline">\(b\)</span> multiplicando al otro lado de la ecuación, se obtiene</p>
+<p><span class="math display">\[
+y-y_0 = \frac{b}{a}(x-x_0) \mbox{ o bien } y-y_0+m(x-x_0),
+\]</span></p>
+<p>llamando <span class="math inline">\(m=b/a\)</span>.</p>
+<p>Esta ecuación se conoce como ecuación en la forma <em>punto-pendiente</em>.</p>
+<p><a href="https://www.geogebra.org/m/JquQZ68R"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Ejemplo interactivo">Ejemplo interactivo</a></p>
+</section>
+<section id="pendiente-de-una-recta-en-el-plano-real" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="pendiente-de-una-recta-en-el-plano-real"><span class="header-section-number">10.2.4</span> Pendiente de una recta en el plano real</h3>
+<div id="def-pendiente-recta" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.11 (Pendiente de una recta) </strong></span>Dada una recta <span class="math inline">\(l: X=P+t\mathbf{v}\)</span> en el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, con vector director <span class="math inline">\(\mathbf{v}=(a,b)\)</span>, se define la pendiente de <span class="math inline">\(l\)</span> como <span class="math inline">\(b/a\)</span>.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/pendiente-recta.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Pendiente de una recta en el plano real.</figcaption>
+</figure>
+</div>
+<p><a href="https://www.geogebra.org/m/cCZKeYCe"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Ejemplo interactivo">Ejemplo interactivo</a></p>
+<p>Recordar que dados dos puntos <span class="math inline">\(P=(x_1,y_1)\)</span> y <span class="math inline">\(Q=(x_2,y_2)\)</span> de la recta <span class="math inline">\(l\)</span>, se puede tomar como vector director el vector que los une, que tiene coordenadas <span class="math inline">\(\vec{PQ}=Q-P=(x_2-x_1,y_2-y_1)\)</span>, de manera que la pendiente de <span class="math inline">\(l\)</span> será <span class="math inline">\(\dfrac{y_2-y_1}{x_2-x_1}\)</span>, es decir, el cociente entre lo que cambia la coordenada <span class="math inline">\(y\)</span> y lo que cambia la coordenada <span class="math inline">\(x\)</span>.</p>
+</section>
+</section>
+<section id="planos" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="planos"><span class="header-section-number">10.3</span> Planos</h2>
+<section id="ecuación-vectorial-del-plano-en-el-espacio-real" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="ecuación-vectorial-del-plano-en-el-espacio-real"><span class="header-section-number">10.3.1</span> Ecuación vectorial del plano en el espacio real</h3>
+<p>Para llegar a la ecuación de un plano en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span> se puede partir de un punto del plano <span class="math inline">\(P=(x_0,y_0,z_0)\)</span> y de un vector perpendicular al plano <span class="math inline">\(\mathbf{v}=(a,b,c)\)</span>. Entonces, para cualquier punto del plano <span class="math inline">\(Q=(x,y,z)\)</span> se cumple que el vector <span class="math inline">\(\vec{PQ} = (x-x_0,y-y_0,z-z_0)\)</span> es ortogonal a <span class="math inline">\(\mathbf{v}\)</span>, por lo que su producto escalar se anulará.</p>
+<div id="def-ecuacion-vectorial-plano" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.12 (Ecuación vectorial de un plano en el espacio) </strong></span>Dado un punto <span class="math inline">\(P=(x_0,y_0,z_0)\)</span> y un vector <span class="math inline">\(\mathbf{v}=(a,b,c)\)</span> en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, la <em>ecuación vectorial del plano</em> que pasa por <span class="math inline">\(P\)</span> perpendicular a <span class="math inline">\(\mathbf{v}=(a,b,c)\)</span> es</p>
+<p><span class="math display">\[
+\vec{PQ}\cdot\mathbf{v} = (x-x_0,y-y_0,z-z_0)(a,b,c) = a(x-x_0)+b(y-y_0)+c(z-z_0) = 0.
+\]</span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/ecuacion-plano.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Ecuación vectorial del plano.</figcaption>
+</figure>
+</div>
+</section>
+<section id="ecuación-escalar-de-un-plano-en-el-espacio" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="ecuación-escalar-de-un-plano-en-el-espacio"><span class="header-section-number">10.3.2</span> Ecuación escalar de un plano en el espacio</h3>
+<p>De la ecuación vectorial del plano se obtiene</p>
+<p><span class="math display">\[
+a(x-x_0)+b(y-y_0)+c(z-z_0) = 0 \Leftrightarrow ax+by+cz=ax_0+by_0+cz_0,
+\]</span></p>
+<p>que, renombrando <span class="math inline">\(d=ax_0+by_0+cz_0\)</span>, puede reescribirse como</p>
+<p><span class="math display">\[
+ax+by+cz=d,
+\]</span></p>
+<p>y se conoce como <em>ecuación escalar del plano</em>.</p>
+<p>:::{#exm-ecuacion-plano} Dado el punto <span class="math inline">\(P=(2,1,1)\)</span> y el vector <span class="math inline">\(\mathbf{v}=(2,1,2)\)</span>, la ecuación vectorial del plano qu pasa por <span class="math inline">\(P\)</span> y es ortogonal a <span class="math inline">\(\mathbf{v}\)</span> es</p>
+<p><span class="math display">\[
+(x-2,y-1,z-1)(2,1,2)=2(x-2)+(y-1)+2(z-1)=0,
+\]</span></p>
+<p>y su ecuación escalar es</p>
+<p><span class="math display">\[
+2x+y+2z=7.
+\]</span></p>
+<iframe width="780" height="500" src="img/geometria-plano-espacio/helix.html" title="Webpage example"></iframe>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-integrales.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

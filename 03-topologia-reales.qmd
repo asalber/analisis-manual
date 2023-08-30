@@ -1,4 +1,7 @@
 ---
+title: Topología de la recta real
+crossref:
+    chapters: true
 lang: es
 ---
 
@@ -6,11 +9,9 @@ lang: es
 {{< include macros.qmd >}}
 :::
 
-# Topología de la recta real
+En este capítulo presentamos, sin profundizar demasiado, los principales conceptos topológicos del conjunto de los números reales, que serán necesarios en futuros capítulos.
 
-En este capítulo presentamos, sin profundizar demasiado, los principales conceptos topológicos del conjunto de los números reales, que se serán necesarios en futuros capítulos.
-
-Los números reales pueden representarse geométricamente como puntos de una línea recta que se conoce como la _recta real_. Existe una biyección entre los puntos de una recta y el conjunto $\mathbb{R}$  de los números reales, de modo que a cada número real le corresponde un solo punto, y a cada punto, exactamente un número real. Para establecer esta correspondencia se fija un punto $O$ en la recta correspondiente al número real $0$ y otro punto $A$ a la derecha de $0$, correspondiente al número real $1$, de manera que se dice que la _abscisa_ de $A$ es $1$ y se denota $A(1)$. A partir de estos dos puntos, hy considerando la distancia entre $O$ y $A$ como unidad de medida,  se pueden representar cualquier otro punto $B$ correspondiente al número real $x$, dibujando a $B$ a la derecha de $O$ si $x>0$ y a la izquierda si $x<0$, a una distancia $|x|$ de $O$.
+Los números reales pueden representarse geométricamente como puntos de una línea recta que se conoce como la _recta real_. Existe una biyección entre los puntos de una recta y el conjunto $\mathbb{R}$  de los números reales, de modo que a cada número real le corresponde un solo punto, y a cada punto, exactamente un número real. Para establecer esta correspondencia se fija un punto $O$ en la recta correspondiente al número real $0$ y otro punto $A$ a la derecha de $0$, correspondiente al número real $1$, de manera que se dice que la _abscisa_ de $A$ es $1$ y se denota $A(1)$. A partir de estos dos puntos, y considerando la distancia entre $O$ y $A$ como unidad de medida,  se pueden representar cualquier otro punto $B$ correspondiente al número real $x$, dibujando a $B$ a la derecha de $O$ si $x>0$ y a la izquierda si $x<0$, a una distancia $|x|$ de $O$.
 
 ![La recta real](img/topologia-reales/recta-real.png)
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -217,6 +217,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-geometria-plano-espacio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -227,61 +233,64 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#el-concepto-de-función" id="toc-el-concepto-de-función" class="nav-link active" data-scroll-target="#el-concepto-de-función"><span class="header-section-number">5.1</span> El concepto de función</a>
+  <li><a href="#funciones-reales-de-variable-real" id="toc-funciones-reales-de-variable-real" class="nav-link active" data-scroll-target="#funciones-reales-de-variable-real"><span class="header-section-number">6</span> Funciones reales de variable real</a>
   <ul class="collapse">
-  <li><a href="#formas-de-representar-una-función" id="toc-formas-de-representar-una-función" class="nav-link" data-scroll-target="#formas-de-representar-una-función"><span class="header-section-number">5.1.1</span> Formas de representar una función</a></li>
+  <li><a href="#el-concepto-de-función" id="toc-el-concepto-de-función" class="nav-link" data-scroll-target="#el-concepto-de-función"><span class="header-section-number">6.1</span> El concepto de función</a>
+  <ul class="collapse">
+  <li><a href="#formas-de-representar-una-función" id="toc-formas-de-representar-una-función" class="nav-link" data-scroll-target="#formas-de-representar-una-función"><span class="header-section-number">6.1.1</span> Formas de representar una función</a></li>
   </ul></li>
-  <li><a href="#dominio-de-una-función" id="toc-dominio-de-una-función" class="nav-link" data-scroll-target="#dominio-de-una-función"><span class="header-section-number">5.2</span> Dominio de una función</a></li>
-  <li><a href="#imagen-de-una-función" id="toc-imagen-de-una-función" class="nav-link" data-scroll-target="#imagen-de-una-función"><span class="header-section-number">5.3</span> Imagen de una función</a></li>
-  <li><a href="#álgebra-de-funciones" id="toc-álgebra-de-funciones" class="nav-link" data-scroll-target="#álgebra-de-funciones"><span class="header-section-number">5.4</span> Álgebra de funciones</a>
+  <li><a href="#dominio-de-una-función" id="toc-dominio-de-una-función" class="nav-link" data-scroll-target="#dominio-de-una-función"><span class="header-section-number">6.2</span> Dominio de una función</a></li>
+  <li><a href="#imagen-de-una-función" id="toc-imagen-de-una-función" class="nav-link" data-scroll-target="#imagen-de-una-función"><span class="header-section-number">6.3</span> Imagen de una función</a></li>
+  <li><a href="#álgebra-de-funciones" id="toc-álgebra-de-funciones" class="nav-link" data-scroll-target="#álgebra-de-funciones"><span class="header-section-number">6.4</span> Álgebra de funciones</a>
   <ul class="collapse">
-  <li><a href="#función-constante" id="toc-función-constante" class="nav-link" data-scroll-target="#función-constante"><span class="header-section-number">5.4.1</span> Función constante</a></li>
-  <li><a href="#función-identidad" id="toc-función-identidad" class="nav-link" data-scroll-target="#función-identidad"><span class="header-section-number">5.4.2</span> Función identidad</a></li>
+  <li><a href="#función-constante" id="toc-función-constante" class="nav-link" data-scroll-target="#función-constante"><span class="header-section-number">6.4.1</span> Función constante</a></li>
+  <li><a href="#función-identidad" id="toc-función-identidad" class="nav-link" data-scroll-target="#función-identidad"><span class="header-section-number">6.4.2</span> Función identidad</a></li>
   </ul></li>
-  <li><a href="#composición-de-funciones" id="toc-composición-de-funciones" class="nav-link" data-scroll-target="#composición-de-funciones"><span class="header-section-number">5.5</span> Composición de funciones</a></li>
-  <li><a href="#función-inversa" id="toc-función-inversa" class="nav-link" data-scroll-target="#función-inversa"><span class="header-section-number">5.6</span> Función inversa</a></li>
-  <li><a href="#crecimiento-de-una-función" id="toc-crecimiento-de-una-función" class="nav-link" data-scroll-target="#crecimiento-de-una-función"><span class="header-section-number">5.7</span> Crecimiento de una función</a></li>
-  <li><a href="#extremos-de-una-función" id="toc-extremos-de-una-función" class="nav-link" data-scroll-target="#extremos-de-una-función"><span class="header-section-number">5.8</span> Extremos de una función</a></li>
-  <li><a href="#concavidad-de-una-función" id="toc-concavidad-de-una-función" class="nav-link" data-scroll-target="#concavidad-de-una-función"><span class="header-section-number">5.9</span> Concavidad de una función</a></li>
-  <li><a href="#funciones-periódicas" id="toc-funciones-periódicas" class="nav-link" data-scroll-target="#funciones-periódicas"><span class="header-section-number">5.10</span> Funciones periódicas</a></li>
-  <li><a href="#funciones-polinómicas" id="toc-funciones-polinómicas" class="nav-link" data-scroll-target="#funciones-polinómicas"><span class="header-section-number">5.11</span> Funciones polinómicas</a>
+  <li><a href="#composición-de-funciones" id="toc-composición-de-funciones" class="nav-link" data-scroll-target="#composición-de-funciones"><span class="header-section-number">6.5</span> Composición de funciones</a></li>
+  <li><a href="#función-inversa" id="toc-función-inversa" class="nav-link" data-scroll-target="#función-inversa"><span class="header-section-number">6.6</span> Función inversa</a></li>
+  <li><a href="#crecimiento-de-una-función" id="toc-crecimiento-de-una-función" class="nav-link" data-scroll-target="#crecimiento-de-una-función"><span class="header-section-number">6.7</span> Crecimiento de una función</a></li>
+  <li><a href="#extremos-de-una-función" id="toc-extremos-de-una-función" class="nav-link" data-scroll-target="#extremos-de-una-función"><span class="header-section-number">6.8</span> Extremos de una función</a></li>
+  <li><a href="#concavidad-de-una-función" id="toc-concavidad-de-una-función" class="nav-link" data-scroll-target="#concavidad-de-una-función"><span class="header-section-number">6.9</span> Concavidad de una función</a></li>
+  <li><a href="#funciones-periódicas" id="toc-funciones-periódicas" class="nav-link" data-scroll-target="#funciones-periódicas"><span class="header-section-number">6.10</span> Funciones periódicas</a></li>
+  <li><a href="#funciones-polinómicas" id="toc-funciones-polinómicas" class="nav-link" data-scroll-target="#funciones-polinómicas"><span class="header-section-number">6.11</span> Funciones polinómicas</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-funciones-polinómicas" id="toc-propiedades-de-las-funciones-polinómicas" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-polinómicas"><span class="header-section-number">5.11.1</span> Propiedades de las funciones polinómicas</a></li>
+  <li><a href="#propiedades-de-las-funciones-polinómicas" id="toc-propiedades-de-las-funciones-polinómicas" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-polinómicas"><span class="header-section-number">6.11.1</span> Propiedades de las funciones polinómicas</a></li>
   </ul></li>
-  <li><a href="#funciones-racionales" id="toc-funciones-racionales" class="nav-link" data-scroll-target="#funciones-racionales"><span class="header-section-number">5.12</span> Funciones racionales</a>
+  <li><a href="#funciones-racionales" id="toc-funciones-racionales" class="nav-link" data-scroll-target="#funciones-racionales"><span class="header-section-number">6.12</span> Funciones racionales</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-funciones-racionales" id="toc-propiedades-de-las-funciones-racionales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-racionales"><span class="header-section-number">5.12.1</span> Propiedades de las funciones racionales</a></li>
+  <li><a href="#propiedades-de-las-funciones-racionales" id="toc-propiedades-de-las-funciones-racionales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-racionales"><span class="header-section-number">6.12.1</span> Propiedades de las funciones racionales</a></li>
   </ul></li>
-  <li><a href="#funciones-potenciales" id="toc-funciones-potenciales" class="nav-link" data-scroll-target="#funciones-potenciales"><span class="header-section-number">5.13</span> Funciones potenciales</a>
+  <li><a href="#funciones-potenciales" id="toc-funciones-potenciales" class="nav-link" data-scroll-target="#funciones-potenciales"><span class="header-section-number">6.13</span> Funciones potenciales</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-funciones-potenciales" id="toc-propiedades-de-las-funciones-potenciales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-potenciales"><span class="header-section-number">5.13.1</span> Propiedades de las funciones potenciales</a></li>
+  <li><a href="#propiedades-de-las-funciones-potenciales" id="toc-propiedades-de-las-funciones-potenciales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-potenciales"><span class="header-section-number">6.13.1</span> Propiedades de las funciones potenciales</a></li>
   </ul></li>
-  <li><a href="#funciones-exponenciales" id="toc-funciones-exponenciales" class="nav-link" data-scroll-target="#funciones-exponenciales"><span class="header-section-number">5.14</span> Funciones exponenciales</a>
+  <li><a href="#funciones-exponenciales" id="toc-funciones-exponenciales" class="nav-link" data-scroll-target="#funciones-exponenciales"><span class="header-section-number">6.14</span> Funciones exponenciales</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-funciones-exponenciales" id="toc-propiedades-de-las-funciones-exponenciales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-exponenciales"><span class="header-section-number">5.14.1</span> Propiedades de las funciones exponenciales</a></li>
+  <li><a href="#propiedades-de-las-funciones-exponenciales" id="toc-propiedades-de-las-funciones-exponenciales" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-exponenciales"><span class="header-section-number">6.14.1</span> Propiedades de las funciones exponenciales</a></li>
   </ul></li>
-  <li><a href="#funciones-logarítmicas" id="toc-funciones-logarítmicas" class="nav-link" data-scroll-target="#funciones-logarítmicas"><span class="header-section-number">5.15</span> Funciones logarítmicas</a>
+  <li><a href="#funciones-logarítmicas" id="toc-funciones-logarítmicas" class="nav-link" data-scroll-target="#funciones-logarítmicas"><span class="header-section-number">6.15</span> Funciones logarítmicas</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-funciones-logarítmicas" id="toc-propiedades-de-las-funciones-logarítmicas" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-logarítmicas"><span class="header-section-number">5.15.1</span> Propiedades de las funciones logarítmicas</a></li>
+  <li><a href="#propiedades-de-las-funciones-logarítmicas" id="toc-propiedades-de-las-funciones-logarítmicas" class="nav-link" data-scroll-target="#propiedades-de-las-funciones-logarítmicas"><span class="header-section-number">6.15.1</span> Propiedades de las funciones logarítmicas</a></li>
   </ul></li>
-  <li><a href="#funciones-trigonométricas" id="toc-funciones-trigonométricas" class="nav-link" data-scroll-target="#funciones-trigonométricas"><span class="header-section-number">5.16</span> Funciones trigonométricas</a>
+  <li><a href="#funciones-trigonométricas" id="toc-funciones-trigonométricas" class="nav-link" data-scroll-target="#funciones-trigonométricas"><span class="header-section-number">6.16</span> Funciones trigonométricas</a>
   <ul class="collapse">
-  <li><a href="#seno-de-un-ángulo" id="toc-seno-de-un-ángulo" class="nav-link" data-scroll-target="#seno-de-un-ángulo"><span class="header-section-number">5.16.1</span> Seno de un ángulo</a></li>
-  <li><a href="#función-seno" id="toc-función-seno" class="nav-link" data-scroll-target="#función-seno"><span class="header-section-number">5.16.2</span> Función seno</a></li>
-  <li><a href="#propiedades-de-la-función-seno" id="toc-propiedades-de-la-función-seno" class="nav-link" data-scroll-target="#propiedades-de-la-función-seno"><span class="header-section-number">5.16.3</span> Propiedades de la función seno</a></li>
-  <li><a href="#coseno-de-un-ángulo" id="toc-coseno-de-un-ángulo" class="nav-link" data-scroll-target="#coseno-de-un-ángulo"><span class="header-section-number">5.16.4</span> Coseno de un ángulo</a></li>
-  <li><a href="#función-coseno" id="toc-función-coseno" class="nav-link" data-scroll-target="#función-coseno"><span class="header-section-number">5.16.5</span> Función coseno</a></li>
-  <li><a href="#propiedades-de-la-función-coseno" id="toc-propiedades-de-la-función-coseno" class="nav-link" data-scroll-target="#propiedades-de-la-función-coseno"><span class="header-section-number">5.16.6</span> Propiedades de la función coseno</a></li>
-  <li><a href="#tangente-de-un-ángulo" id="toc-tangente-de-un-ángulo" class="nav-link" data-scroll-target="#tangente-de-un-ángulo"><span class="header-section-number">5.16.7</span> Tangente de un ángulo</a></li>
-  <li><a href="#función-tangente" id="toc-función-tangente" class="nav-link" data-scroll-target="#función-tangente"><span class="header-section-number">5.16.8</span> Función tangente</a></li>
-  <li><a href="#propiedades-de-la-función-tangente" id="toc-propiedades-de-la-función-tangente" class="nav-link" data-scroll-target="#propiedades-de-la-función-tangente"><span class="header-section-number">5.16.9</span> Propiedades de la función tangente</a></li>
-  <li><a href="#función-arcoseno" id="toc-función-arcoseno" class="nav-link" data-scroll-target="#función-arcoseno"><span class="header-section-number">5.16.10</span> Función arcoseno</a></li>
-  <li><a href="#propiedades-de-la-función-arcoseno" id="toc-propiedades-de-la-función-arcoseno" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcoseno"><span class="header-section-number">5.16.11</span> Propiedades de la función arcoseno</a></li>
-  <li><a href="#función-arcocoseno" id="toc-función-arcocoseno" class="nav-link" data-scroll-target="#función-arcocoseno"><span class="header-section-number">5.16.12</span> Función arcocoseno</a></li>
-  <li><a href="#propiedades-de-la-función-arcoseno-1" id="toc-propiedades-de-la-función-arcoseno-1" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcoseno-1"><span class="header-section-number">5.16.13</span> Propiedades de la función arcoseno</a></li>
-  <li><a href="#función-arcotangente" id="toc-función-arcotangente" class="nav-link" data-scroll-target="#función-arcotangente"><span class="header-section-number">5.16.14</span> Función arcotangente</a></li>
-  <li><a href="#propiedades-de-la-función-arcotangente" id="toc-propiedades-de-la-función-arcotangente" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcotangente"><span class="header-section-number">5.16.15</span> Propiedades de la función arcotangente</a></li>
-  <li><a href="#algunas-relaciones-trigonométricas" id="toc-algunas-relaciones-trigonométricas" class="nav-link" data-scroll-target="#algunas-relaciones-trigonométricas"><span class="header-section-number">5.16.16</span> Algunas relaciones trigonométricas</a></li>
+  <li><a href="#seno-de-un-ángulo" id="toc-seno-de-un-ángulo" class="nav-link" data-scroll-target="#seno-de-un-ángulo"><span class="header-section-number">6.16.1</span> Seno de un ángulo</a></li>
+  <li><a href="#función-seno" id="toc-función-seno" class="nav-link" data-scroll-target="#función-seno"><span class="header-section-number">6.16.2</span> Función seno</a></li>
+  <li><a href="#propiedades-de-la-función-seno" id="toc-propiedades-de-la-función-seno" class="nav-link" data-scroll-target="#propiedades-de-la-función-seno"><span class="header-section-number">6.16.3</span> Propiedades de la función seno</a></li>
+  <li><a href="#coseno-de-un-ángulo" id="toc-coseno-de-un-ángulo" class="nav-link" data-scroll-target="#coseno-de-un-ángulo"><span class="header-section-number">6.16.4</span> Coseno de un ángulo</a></li>
+  <li><a href="#función-coseno" id="toc-función-coseno" class="nav-link" data-scroll-target="#función-coseno"><span class="header-section-number">6.16.5</span> Función coseno</a></li>
+  <li><a href="#propiedades-de-la-función-coseno" id="toc-propiedades-de-la-función-coseno" class="nav-link" data-scroll-target="#propiedades-de-la-función-coseno"><span class="header-section-number">6.16.6</span> Propiedades de la función coseno</a></li>
+  <li><a href="#tangente-de-un-ángulo" id="toc-tangente-de-un-ángulo" class="nav-link" data-scroll-target="#tangente-de-un-ángulo"><span class="header-section-number">6.16.7</span> Tangente de un ángulo</a></li>
+  <li><a href="#función-tangente" id="toc-función-tangente" class="nav-link" data-scroll-target="#función-tangente"><span class="header-section-number">6.16.8</span> Función tangente</a></li>
+  <li><a href="#propiedades-de-la-función-tangente" id="toc-propiedades-de-la-función-tangente" class="nav-link" data-scroll-target="#propiedades-de-la-función-tangente"><span class="header-section-number">6.16.9</span> Propiedades de la función tangente</a></li>
+  <li><a href="#función-arcoseno" id="toc-función-arcoseno" class="nav-link" data-scroll-target="#función-arcoseno"><span class="header-section-number">6.16.10</span> Función arcoseno</a></li>
+  <li><a href="#propiedades-de-la-función-arcoseno" id="toc-propiedades-de-la-función-arcoseno" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcoseno"><span class="header-section-number">6.16.11</span> Propiedades de la función arcoseno</a></li>
+  <li><a href="#función-arcocoseno" id="toc-función-arcocoseno" class="nav-link" data-scroll-target="#función-arcocoseno"><span class="header-section-number">6.16.12</span> Función arcocoseno</a></li>
+  <li><a href="#propiedades-de-la-función-arcoseno-1" id="toc-propiedades-de-la-función-arcoseno-1" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcoseno-1"><span class="header-section-number">6.16.13</span> Propiedades de la función arcoseno</a></li>
+  <li><a href="#función-arcotangente" id="toc-función-arcotangente" class="nav-link" data-scroll-target="#función-arcotangente"><span class="header-section-number">6.16.14</span> Función arcotangente</a></li>
+  <li><a href="#propiedades-de-la-función-arcotangente" id="toc-propiedades-de-la-función-arcotangente" class="nav-link" data-scroll-target="#propiedades-de-la-función-arcotangente"><span class="header-section-number">6.16.15</span> Propiedades de la función arcotangente</a></li>
+  <li><a href="#algunas-relaciones-trigonométricas" id="toc-algunas-relaciones-trigonométricas" class="nav-link" data-scroll-target="#algunas-relaciones-trigonométricas"><span class="header-section-number">6.16.16</span> Algunas relaciones trigonométricas</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -306,7 +315,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<!-- LTeX: language = es-ES -->
 <div class="hidden">
 <p><span class="math display">\[
 \newcommand{\mathbb{N}}{\mathbb{N}}
@@ -322,12 +330,14 @@ ul.task-list li input[type="checkbox"] {
 \DeclareMathOperator{\sen}{sen}
 \]</span></p>
 </div>
+<section id="funciones-reales-de-variable-real" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Funciones reales de variable real</h1>
 <p>El concepto de función es fundamental para poder modelizar las relaciones que se dan en muchos fenómenos del mundo real, donde una magnitud depende de otras de acuerdo a un determinado patrón, y por ello, gran parte del Análisis Matemático se centra en estudiar las características de las funciones.</p>
 <p>En el capítulo sobre teoría de conjuntos se introdujo ya el <a href="https://aprendeconalf.es/analisis-manual/teoria-conjuntos.html#funciones">concepto de función</a> y se estudiaron algunas de sus propiedades desde el enfoque de una relación entre conjuntos. En este capítulo se estudian las principales propiedades de una función y se introducen varias funciones básicas que se conocen como <em>funciones elementales</em>.</p>
-<section id="el-concepto-de-función" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="el-concepto-de-función"><span class="header-section-number">5.1</span> El concepto de función</h2>
+<section id="el-concepto-de-función" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="el-concepto-de-función"><span class="header-section-number">6.1</span> El concepto de función</h2>
 <div id="def-funcion-real" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.1 (Función de una variable) </strong></span>Una <em>función</em> <span class="math inline">\(f\)</span> de un conjunto <span class="math inline">\(A\)</span> en otro <span class="math inline">\(B\)</span> es una <em>relación</em> que asocia cada elemento <span class="math inline">\(a\in A\)</span>, con un <em>único</em> elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a)\)</span>, y se llama <em>imagen</em> de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.1 (Función de una variable) </strong></span>Una <em>función</em> <span class="math inline">\(f\)</span> de un conjunto <span class="math inline">\(A\)</span> en otro <span class="math inline">\(B\)</span> es una <em>relación</em> que asocia cada elemento <span class="math inline">\(a\in A\)</span>, con un <em>único</em> elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a)\)</span>, y se llama <em>imagen</em> de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 f:\,&amp;A\longrightarrow B\\
 &amp;a\longrightarrow f(a)
@@ -340,8 +350,8 @@ f:\,&amp;A\longrightarrow B\\
 </figure>
 </div>
 <p>Cuando el conjunto inicial y final es el de los números reales <span class="math inline">\(\mathbb{R}\)</span>, entonces se dice que <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>función real de variable real</em>.</p>
-<section id="formas-de-representar-una-función" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="formas-de-representar-una-función"><span class="header-section-number">5.1.1</span> Formas de representar una función</h3>
+<section id="formas-de-representar-una-función" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="formas-de-representar-una-función"><span class="header-section-number">6.1.1</span> Formas de representar una función</h3>
 <p>Existen distintas formas de representar los pares de elementos que forman parte de una función.</p>
 <section id="por-extensión" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="por-extensión">Por extensión</h4>
@@ -399,14 +409,14 @@ Precaución
 </section>
 </section>
 </section>
-<section id="dominio-de-una-función" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="dominio-de-una-función"><span class="header-section-number">5.2</span> Dominio de una función</h2>
+<section id="dominio-de-una-función" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="dominio-de-una-función"><span class="header-section-number">6.2</span> Dominio de una función</h2>
 <div id="def-dominio-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.2 (Dominio de una función) </strong></span>El <em>dominio</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores para los que la función está definida</p>
+<p><span class="theorem-title"><strong>Definición 6.2 (Dominio de una función) </strong></span>El <em>dominio</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores para los que la función está definida</p>
 <p><span class="math display">\[Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}\]</span></p>
 </div>
 <div id="exm-dominio-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.1 </strong></span>Dada la función <span class="math display">\[f(x)=\frac{1}{\sqrt{x^2-1}}\]</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 6.1 </strong></span>Dada la función <span class="math display">\[f(x)=\frac{1}{\sqrt{x^2-1}}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/ejemplo-dominio.png" class="img-fluid figure-img"></p>
@@ -417,14 +427,14 @@ Precaución
 <p><span class="math display">\[\mbox{Dom}(f)=(-\infty,-1)\cup(1,\infty)\]</span></p>
 </div>
 </section>
-<section id="imagen-de-una-función" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="imagen-de-una-función"><span class="header-section-number">5.3</span> Imagen de una función</h2>
+<section id="imagen-de-una-función" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="imagen-de-una-función"><span class="header-section-number">6.3</span> Imagen de una función</h2>
 <div id="def-imagen-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.3 (Imagenñ de una función) </strong></span>La <em>imagen</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores que la función puede tomar</p>
+<p><span class="theorem-title"><strong>Definición 6.3 (Imagenñ de una función) </strong></span>La <em>imagen</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores que la función puede tomar</p>
 <p><span class="math display">\[Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}\]</span></p>
 </div>
 <div id="exm-imagen-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.2 </strong></span>Dada la función <span class="math inline">\(f(x)=x^2-2\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 6.2 </strong></span>Dada la función <span class="math inline">\(f(x)=x^2-2\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/ejemplo-imagen.png" class="img-fluid figure-img"></p>
@@ -436,12 +446,12 @@ Precaución
 <p>ya que la función cuadrática <span class="math inline">\(x^2\)</span> puede tomar cualquier valor de <span class="math inline">\(0\)</span> a <span class="math inline">\(\infty\)</span> (no toma nunca valores negativos), y al restarle 2, el mínimo valor que puede tomar la función <span class="math inline">\(f\)</span> es <span class="math inline">\(-2\)</span>.</p>
 </div>
 </section>
-<section id="álgebra-de-funciones" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="álgebra-de-funciones"><span class="header-section-number">5.4</span> Álgebra de funciones</h2>
-<section id="función-constante" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="función-constante"><span class="header-section-number">5.4.1</span> Función constante</h3>
+<section id="álgebra-de-funciones" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="álgebra-de-funciones"><span class="header-section-number">6.4</span> Álgebra de funciones</h2>
+<section id="función-constante" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="función-constante"><span class="header-section-number">6.4.1</span> Función constante</h3>
 <div id="def-funcion-constante" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.4 (Función constante) </strong></span>Se dice que una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>funcion constante</em>, cuando asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con el mismo número <span class="math inline">\(c\in\mathbb{R}\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 6.4 (Función constante) </strong></span>Se dice que una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>funcion constante</em>, cuando asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con el mismo número <span class="math inline">\(c\in\mathbb{R}\)</span>, es decir,</p>
 <p><span class="math display">\[f(x)=c\ \forall x\in\mathbb{R}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -452,10 +462,10 @@ Precaución
 </div>
 <p>El dominio de la función constante <span class="math inline">\(f(x)=c\)</span> es <span class="math inline">\(\mathbb{R}\)</span> y su imagen <span class="math inline">\(\{c\}\)</span>.</p>
 </section>
-<section id="función-identidad" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="función-identidad"><span class="header-section-number">5.4.2</span> Función identidad</h3>
+<section id="función-identidad" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="función-identidad"><span class="header-section-number">6.4.2</span> Función identidad</h3>
 <div id="def-funcion-identidad" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.5 (Función Identidad) </strong></span>Se llama <em>función identidad</em>, a la función <span class="math inline">\(Id: \mathbb{R}\rightarrow \mathbb{R}\)</span> que asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con sigo mismo, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 6.5 (Función Identidad) </strong></span>Se llama <em>función identidad</em>, a la función <span class="math inline">\(Id: \mathbb{R}\rightarrow \mathbb{R}\)</span> que asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con sigo mismo, es decir,</p>
 <p><span class="math display">\[Id(x)=x.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -466,7 +476,7 @@ Precaución
 </div>
 <p>El dominio y la imagen de la función identidad es <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="def-funcion-suma-resta-producto-cociente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.6 (Funciones suma, resta, producto y cociente) </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen las siguientes funciones:</p>
+<p><span class="theorem-title"><strong>Definición 6.6 (Funciones suma, resta, producto y cociente) </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen las siguientes funciones:</p>
 <ul>
 <li><em>Función suma</em>: <span class="math inline">\((f+g)(x) = f(x)+g(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
 <li><em>Función resta</em>: <span class="math inline">\((f-g)(x) = f(x)-g(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
@@ -475,7 +485,7 @@ Precaución
 </ul>
 </div>
 <div id="prp-dominio-funcion-suma-resta-producto-cociente" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5.1 </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple:</p>
+<p><span class="theorem-title"><strong>Proposición 6.1 </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{Dom}(f+g)=\operatorname{Dom}(f)\cap \operatorname{Dom}(g)\)</span></li>
 <li><span class="math inline">\(\operatorname{Dom}(f-g)=\operatorname{Dom}(f)\cap \operatorname{Dom}(g)\)</span></li>
@@ -484,13 +494,13 @@ Precaución
 </ul>
 </div>
 <div id="def-funcion-raiz" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.7 (Función raíz) </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen la _función raíz <span class="math inline">\(n\)</span>-ésima, como</p>
+<p><span class="theorem-title"><strong>Definición 6.7 (Función raíz) </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen la _función raíz <span class="math inline">\(n\)</span>-ésima, como</p>
 <p><span class="math display">\[
 \sqrt[n]{f}(x) = \sqrt[n]{f(x)}\ \forall x \in \mathbb{R}.
 \]</span></p>
 </div>
 <div id="prp-dominio-funcion-raiz" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5.2 </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple que</p>
+<p><span class="theorem-title"><strong>Proposición 6.2 </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple que</p>
 <p><span class="math display">\[
 \operatorname{Dom}(\sqrt[n]{f})=
 \begin{cases}
@@ -501,10 +511,10 @@ Precaución
 </div>
 </section>
 </section>
-<section id="composición-de-funciones" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="composición-de-funciones"><span class="header-section-number">5.5</span> Composición de funciones</h2>
+<section id="composición-de-funciones" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="composición-de-funciones"><span class="header-section-number">6.5</span> Composición de funciones</h2>
 <div id="def-composicion-funciones" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.8 (Composición de funciones) </strong></span>Dadas dos funciones <span class="math inline">\(g:A\rightarrow B\)</span> y <span class="math inline">\(f:B\rightarrow C\)</span>, se define la <em>función compuesta</em> <span class="math inline">\(f\circ g\)</span>, (leído <span class="math inline">\(g\)</span> compuesto con <span class="math inline">\(f\)</span>) como la función</p>
+<p><span class="theorem-title"><strong>Definición 6.8 (Composición de funciones) </strong></span>Dadas dos funciones <span class="math inline">\(g:A\rightarrow B\)</span> y <span class="math inline">\(f:B\rightarrow C\)</span>, se define la <em>función compuesta</em> <span class="math inline">\(f\circ g\)</span>, (leído <span class="math inline">\(g\)</span> compuesto con <span class="math inline">\(f\)</span>) como la función</p>
 <p><span class="math display">\[\begin{aligned}
 f\circ g:\,&amp; A\longrightarrow C\\
 &amp; x\longrightarrow f(g(x))\end{aligned}\]</span></p>
@@ -512,14 +522,14 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <p>Para calcular la función compuesta <span class="math inline">\(f\circ g(x)\)</span>, primero se aplica <span class="math inline">\(g\)</span> sobre <span class="math inline">\(x\)</span> y luego, se aplica <span class="math inline">\(f\)</span> sobre <span class="math inline">\(g(x)\)</span>:</p>
 <p><span class="math display">\[x\stackrel{g}{\longrightarrow}g(x)\stackrel{f}{\longrightarrow}f(g(x))\]</span></p>
 <div id="exm-composicion-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.3 </strong></span>Si <span class="math inline">\(g(x)=\sqrt x\)</span> y <span class="math inline">\(f(x)=\operatorname{sen} x\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.3 </strong></span>Si <span class="math inline">\(g(x)=\sqrt x\)</span> y <span class="math inline">\(f(x)=\operatorname{sen} x\)</span>, entonces</p>
 <p><span class="math display">\[f\circ g(x)=f(g(x))=f(\sqrt x)=\operatorname{sen} \sqrt x.\]</span></p>
 </div>
 </section>
-<section id="función-inversa" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="función-inversa"><span class="header-section-number">5.6</span> Función inversa</h2>
+<section id="función-inversa" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="función-inversa"><span class="header-section-number">6.6</span> Función inversa</h2>
 <div id="def-funcion-inversa" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.9 (Función inversa) </strong></span>Se llama <em>función inversa</em> de <span class="math inline">\(f:A\rightarrow B\)</span> a la función <span class="math inline">\(f^{-1}:B\rightarrow A\)</span> (cuando exista) que cumple</p>
+<p><span class="theorem-title"><strong>Definición 6.9 (Función inversa) </strong></span>Se llama <em>función inversa</em> de <span class="math inline">\(f:A\rightarrow B\)</span> a la función <span class="math inline">\(f^{-1}:B\rightarrow A\)</span> (cuando exista) que cumple</p>
 <p><span class="math display">\[f\circ f^{-1}=f^{-1}\circ f=Id(x)\]</span></p>
 </div>
 <p>La función inversa de <span class="math inline">\(f\)</span> deshace o revierte el efecto de <span class="math inline">\(f\)</span>. Es decir, si <span class="math inline">\(f:A\rightarrow B\)</span> asocia un elemento <span class="math inline">\(x\in A\)</span> con otro <span class="math inline">\(y\in B\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> asocia el elemento <span class="math inline">\(y\)</span> con el <span class="math inline">\(x\)</span>.</p>
@@ -530,13 +540,13 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </figure>
 </div>
 <div id="exm-funcion-inversa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.4 </strong></span>La inversa de <span class="math inline">\(f(x)=x^3\)</span> es la función <span class="math inline">\(f^{-1}(x)=\sqrt[3]{x}.\)</span> Sin embargo, la inversa de la función <span class="math inline">\(x^2\)</span> no es <span class="math inline">\(\sqrt{x}\)</span> ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="theorem-title"><strong>Ejemplo 6.4 </strong></span>La inversa de <span class="math inline">\(f(x)=x^3\)</span> es la función <span class="math inline">\(f^{-1}(x)=\sqrt[3]{x}.\)</span> Sin embargo, la inversa de la función <span class="math inline">\(x^2\)</span> no es <span class="math inline">\(\sqrt{x}\)</span> ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
 </section>
-<section id="crecimiento-de-una-función" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="crecimiento-de-una-función"><span class="header-section-number">5.7</span> Crecimiento de una función</h2>
+<section id="crecimiento-de-una-función" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="crecimiento-de-una-función"><span class="header-section-number">6.7</span> Crecimiento de una función</h2>
 <div id="def-crecimiento-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.10 (Función creciente y decreciente) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.10 (Función creciente y decreciente) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>decreciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\geq f(x_2)\)</span>.</p>
 </div>
 <div class="quarto-layout-panel">
@@ -560,10 +570,10 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 </div>
 </section>
-<section id="extremos-de-una-función" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="extremos-de-una-función"><span class="header-section-number">5.8</span> Extremos de una función</h2>
+<section id="extremos-de-una-función" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="extremos-de-una-función"><span class="header-section-number">6.8</span> Extremos de una función</h2>
 <div id="def-extremos-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.11 (Máximo y mínimo relativo) </strong></span>Se dice que una función <span class="math inline">\(f:\\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.11 (Máximo y mínimo relativo) </strong></span>Se dice que una función <span class="math inline">\(f:\\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
 <p>Y se dice que <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\leq f(x)\)</span>.</p>
 </div>
 <div class="quarto-layout-panel">
@@ -587,10 +597,10 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 </div>
 </section>
-<section id="concavidad-de-una-función" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="concavidad-de-una-función"><span class="header-section-number">5.9</span> Concavidad de una función</h2>
+<section id="concavidad-de-una-función" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="concavidad-de-una-función"><span class="header-section-number">6.9</span> Concavidad de una función</h2>
 <div id="def-concavidad-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.12 (Función cóncava hacia arriba y hacia abajo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia arriba</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por encima de la gráfica de <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6.12 (Función cóncava hacia arriba y hacia abajo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia arriba</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por encima de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia abajo</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por debajo de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Al punto donde cambia la concavidad de una función se le llama <em>punto de inflexión</em>.</p>
 </div>
@@ -615,10 +625,10 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 </div>
 </section>
-<section id="funciones-periódicas" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="funciones-periódicas"><span class="header-section-number">5.10</span> Funciones periódicas</h2>
+<section id="funciones-periódicas" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="funciones-periódicas"><span class="header-section-number">6.10</span> Funciones periódicas</h2>
 <div id="def-funcion-periodica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.13 (Función periódica y periodo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>periódica</em> si existe un valor <span class="math inline">\(h&gt;0\)</span> tal que</p>
+<p><span class="theorem-title"><strong>Definición 6.13 (Función periódica y periodo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>periódica</em> si existe un valor <span class="math inline">\(h&gt;0\)</span> tal que</p>
 <p><span class="math display">\[f(x+h)=f(x)\]</span></p>
 <p>para todo <span class="math inline">\(x\in \textrm{Dom}(f)\)</span>.</p>
 <p>Al menor valor de <span class="math inline">\(h\)</span> que verifica la igualdad anterior se le llama <em>periodo</em> de <span class="math inline">\(f\)</span>, y a la diferencia entre el máximo y el mínimo de la función se le llama <em>amplitud</em> de <span class="math inline">\(f\)</span>.</p>
@@ -630,15 +640,15 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </figure>
 </div>
 </section>
-<section id="funciones-polinómicas" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="funciones-polinómicas"><span class="header-section-number">5.11</span> Funciones polinómicas</h2>
+<section id="funciones-polinómicas" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="funciones-polinómicas"><span class="header-section-number">6.11</span> Funciones polinómicas</h2>
 <div id="def-funcion-polinomica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.14 (Función polinómica) </strong></span>Una <em>función polinómica</em> es una función de la forma</p>
+<p><span class="theorem-title"><strong>Definición 6.14 (Función polinómica) </strong></span>Una <em>función polinómica</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n,\]</span></p>
 <p>donde <span class="math inline">\(n\)</span> es un entero no negativo que se llama <em>grado del polinomio</em>, y <span class="math inline">\(a_0,\ldots,a_n\)</span> son constantes reales (<span class="math inline">\(a_n\neq 0\)</span>) que se llaman <em>coeficientes del polinomio</em>.</p>
 </div>
 <div id="exm-funcion-polinomica" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.5 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.5 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-polinomica.png" class="img-fluid figure-img"></p>
@@ -646,8 +656,8 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </figure>
 </div>
 </div>
-<section id="propiedades-de-las-funciones-polinómicas" class="level3" data-number="5.11.1">
-<h3 data-number="5.11.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-polinómicas"><span class="header-section-number">5.11.1</span> Propiedades de las funciones polinómicas</h3>
+<section id="propiedades-de-las-funciones-polinómicas" class="level3" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-polinómicas"><span class="header-section-number">6.11.1</span> Propiedades de las funciones polinómicas</h3>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Si el grado es impar, su imagen es <span class="math inline">\(\mathbb{R}\)</span>.</li>
@@ -657,15 +667,15 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </ul>
 </section>
 </section>
-<section id="funciones-racionales" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="funciones-racionales"><span class="header-section-number">5.12</span> Funciones racionales</h2>
+<section id="funciones-racionales" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="funciones-racionales"><span class="header-section-number">6.12</span> Funciones racionales</h2>
 <div id="def-funcion-racional" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.15 (Función racional) </strong></span>Una <em>función racional</em> es una función de la forma</p>
+<p><span class="theorem-title"><strong>Definición 6.15 (Función racional) </strong></span>Una <em>función racional</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=\frac{p(x)}{q(x)}\]</span></p>
 <p>donde <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> son funcione polinómicas con <span class="math inline">\(q(x)\neq 0\)</span>.</p>
 </div>
 <div id="exm-funcion-racional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.6 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.6 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-racional.png" class="img-fluid figure-img"></p>
@@ -673,8 +683,8 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </figure>
 </div>
 </div>
-<section id="propiedades-de-las-funciones-racionales" class="level3" data-number="5.12.1">
-<h3 data-number="5.12.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-racionales"><span class="header-section-number">5.12.1</span> Propiedades de las funciones racionales</h3>
+<section id="propiedades-de-las-funciones-racionales" class="level3" data-number="6.12.1">
+<h3 data-number="6.12.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-racionales"><span class="header-section-number">6.12.1</span> Propiedades de las funciones racionales</h3>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span> menos las raíces del polinomio del denominador. En estos puntos suele haber asíntotas verticales.</li>
 <li>La tendencia en <span class="math inline">\(\infty\)</span> y <span class="math inline">\(-\infty\)</span> depende del grado del numerador y del denominador. Si <span class="math inline">\(f(x)=\dfrac{a_0+\cdots +a_nx^n}{b_0+\cdots+b_mx^m}\)</span>, entonces
@@ -688,13 +698,13 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </ul>
 </section>
 </section>
-<section id="funciones-potenciales" class="level2" data-number="5.13">
-<h2 data-number="5.13" class="anchored" data-anchor-id="funciones-potenciales"><span class="header-section-number">5.13</span> Funciones potenciales</h2>
+<section id="funciones-potenciales" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="funciones-potenciales"><span class="header-section-number">6.13</span> Funciones potenciales</h2>
 <div id="def-funcion-potencial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.16 (Función potencial) </strong></span>Una <em>función potencial</em> es una función de la forma <span class="math display">\[f(x)=x^r,\]</span> donde <span class="math inline">\(r\)</span> es un número real.</p>
+<p><span class="theorem-title"><strong>Definición 6.16 (Función potencial) </strong></span>Una <em>función potencial</em> es una función de la forma <span class="math display">\[f(x)=x^r,\]</span> donde <span class="math inline">\(r\)</span> es un número real.</p>
 </div>
 <div id="exm-funcion-potencial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.7 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.7 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-potencial.png" class="img-fluid figure-img"></p>
@@ -702,8 +712,8 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </figure>
 </div>
 </div>
-<section id="propiedades-de-las-funciones-potenciales" class="level3" data-number="5.13.1">
-<h3 data-number="5.13.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-potenciales"><span class="header-section-number">5.13.1</span> Propiedades de las funciones potenciales</h3>
+<section id="propiedades-de-las-funciones-potenciales" class="level3" data-number="6.13.1">
+<h3 data-number="6.13.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-potenciales"><span class="header-section-number">6.13.1</span> Propiedades de las funciones potenciales</h3>
 <ul>
 <li>Si el exponente es un número racional <span class="math inline">\(n/m\)</span>, entonces <span class="math display">\[x^{n/m}=\sqrt[m]{x^n}.\]</span> Estas funciones se llaman <em>irracionales</em>. En este caso,
 <ul>
@@ -723,13 +733,13 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </ul>
 </section>
 </section>
-<section id="funciones-exponenciales" class="level2" data-number="5.14">
-<h2 data-number="5.14" class="anchored" data-anchor-id="funciones-exponenciales"><span class="header-section-number">5.14</span> Funciones exponenciales</h2>
+<section id="funciones-exponenciales" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="funciones-exponenciales"><span class="header-section-number">6.14</span> Funciones exponenciales</h2>
 <div id="def-funcion-exponencial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.17 (Función exponencial) </strong></span>Una <em>función exponencial</em> de base <span class="math inline">\(a\)</span> es una función de la forma <span class="math display">\[f(x)=a^x,\]</span> donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
+<p><span class="theorem-title"><strong>Definición 6.17 (Función exponencial) </strong></span>Una <em>función exponencial</em> de base <span class="math inline">\(a\)</span> es una función de la forma <span class="math display">\[f(x)=a^x,\]</span> donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
 <div id="exm-funcion-exponencial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.8 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-exponencial.png" class="img-fluid figure-img"></p>
@@ -737,8 +747,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </figure>
 </div>
 </div>
-<section id="propiedades-de-las-funciones-exponenciales" class="level3" data-number="5.14.1">
-<h3 data-number="5.14.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-exponenciales"><span class="header-section-number">5.14.1</span> Propiedades de las funciones exponenciales</h3>
+<section id="propiedades-de-las-funciones-exponenciales" class="level3" data-number="6.14.1">
+<h3 data-number="6.14.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-exponenciales"><span class="header-section-number">6.14.1</span> Propiedades de las funciones exponenciales</h3>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Su imagen es <span class="math inline">\(\mathbb{R}^+\)</span>.</li>
@@ -754,15 +764,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </ul>
 </section>
 </section>
-<section id="funciones-logarítmicas" class="level2" data-number="5.15">
-<h2 data-number="5.15" class="anchored" data-anchor-id="funciones-logarítmicas"><span class="header-section-number">5.15</span> Funciones logarítmicas</h2>
+<section id="funciones-logarítmicas" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="funciones-logarítmicas"><span class="header-section-number">6.15</span> Funciones logarítmicas</h2>
 <div id="def-funcion-logaritmica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.18 (Función logarítmica) </strong></span>Dada una función exponencial <span class="math inline">\(f(x)=a^x\)</span>, se define la <em>función logarítmica</em> de base <span class="math inline">\(a\)</span> como la función inversa de <span class="math inline">\(f\)</span>, y se denota</p>
+<p><span class="theorem-title"><strong>Definición 6.18 (Función logarítmica) </strong></span>Dada una función exponencial <span class="math inline">\(f(x)=a^x\)</span>, se define la <em>función logarítmica</em> de base <span class="math inline">\(a\)</span> como la función inversa de <span class="math inline">\(f\)</span>, y se denota</p>
 <p><span class="math display">\[f^{-1}(x)=\log_a x,\]</span></p>
 <p>donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
 <div id="exm-funcion-logaritmica" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.9 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.9 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-logaritmica.png" class="img-fluid figure-img"></p>
@@ -770,8 +780,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </figure>
 </div>
 </div>
-<section id="propiedades-de-las-funciones-logarítmicas" class="level3" data-number="5.15.1">
-<h3 data-number="5.15.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-logarítmicas"><span class="header-section-number">5.15.1</span> Propiedades de las funciones logarítmicas</h3>
+<section id="propiedades-de-las-funciones-logarítmicas" class="level3" data-number="6.15.1">
+<h3 data-number="6.15.1" class="anchored" data-anchor-id="propiedades-de-las-funciones-logarítmicas"><span class="header-section-number">6.15.1</span> Propiedades de las funciones logarítmicas</h3>
 <ul>
 <li>Por ser la inversa de la función exponencial, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -790,8 +800,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </ul>
 </section>
 </section>
-<section id="funciones-trigonométricas" class="level2" data-number="5.16">
-<h2 data-number="5.16" class="anchored" data-anchor-id="funciones-trigonométricas"><span class="header-section-number">5.16</span> Funciones trigonométricas</h2>
+<section id="funciones-trigonométricas" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="funciones-trigonométricas"><span class="header-section-number">6.16</span> Funciones trigonométricas</h2>
 <p>Surgen en geometría al medir las relaciones entre los catetos de un triángulo rectángulo, que dependen del ángulo del cateto contiguo y la hipotenusa de dicho triángulo. No obstante, esta no es la única definición posible, sino que también pueden definirse a partir de la función exponencial compleja.</p>
 <ul>
 <li>Seno</li>
@@ -801,10 +811,10 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Arcocoseno</li>
 <li>Arcotangente</li>
 </ul>
-<section id="seno-de-un-ángulo" class="level3" data-number="5.16.1">
-<h3 data-number="5.16.1" class="anchored" data-anchor-id="seno-de-un-ángulo"><span class="header-section-number">5.16.1</span> Seno de un ángulo</h3>
+<section id="seno-de-un-ángulo" class="level3" data-number="6.16.1">
+<h3 data-number="6.16.1" class="anchored" data-anchor-id="seno-de-un-ángulo"><span class="header-section-number">6.16.1</span> Seno de un ángulo</h3>
 <div id="def-seno-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.19 (Seno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
+<p><span class="theorem-title"><strong>Definición 6.19 (Seno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -815,15 +825,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.</p>
 <!-- <img src="img/funciones/seno_circunferencia.png" width="200px" alt="Definición del seno en la circunferencia" /> -->
 </section>
-<section id="función-seno" class="level3" data-number="5.16.2">
-<h3 data-number="5.16.2" class="anchored" data-anchor-id="función-seno"><span class="header-section-number">5.16.2</span> Función seno</h3>
+<section id="función-seno" class="level3" data-number="6.16.2">
+<h3 data-number="6.16.2" class="anchored" data-anchor-id="función-seno"><span class="header-section-number">6.16.2</span> Función seno</h3>
 <div id="def-funcion-seno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.20 (Función seno) </strong></span>Se define la función <em>seno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.20 (Función seno) </strong></span>Se define la función <em>seno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{sen}(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su seno.</p>
 </div>
 <div id="exm-funcion-seno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.10 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.10 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-seno.png" class="img-fluid figure-img"></p>
@@ -832,8 +842,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-seno" class="level3" data-number="5.16.3">
-<h3 data-number="5.16.3" class="anchored" data-anchor-id="propiedades-de-la-función-seno"><span class="header-section-number">5.16.3</span> Propiedades de la función seno</h3>
+<section id="propiedades-de-la-función-seno" class="level3" data-number="6.16.3">
+<h3 data-number="6.16.3" class="anchored" data-anchor-id="propiedades-de-la-función-seno"><span class="header-section-number">6.16.3</span> Propiedades de la función seno</h3>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Su imagen es el intervalo <span class="math inline">\([-1,1]\)</span>.</li>
@@ -845,10 +855,10 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es una función impar: <span class="math inline">\(\operatorname{sen}(-x)=-\operatorname{sen} x\)</span>.</li>
 </ul>
 </section>
-<section id="coseno-de-un-ángulo" class="level3" data-number="5.16.4">
-<h3 data-number="5.16.4" class="anchored" data-anchor-id="coseno-de-un-ángulo"><span class="header-section-number">5.16.4</span> Coseno de un ángulo</h3>
+<section id="coseno-de-un-ángulo" class="level3" data-number="6.16.4">
+<h3 data-number="6.16.4" class="anchored" data-anchor-id="coseno-de-un-ángulo"><span class="header-section-number">6.16.4</span> Coseno de un ángulo</h3>
 <div id="def-coseno-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.21 (Coseno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
+<p><span class="theorem-title"><strong>Definición 6.21 (Coseno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -859,15 +869,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.</p>
 <!-- <img src="img/funciones/coseno_circunferencia.png" width="200px" alt="Definición del coseno en la circunferencia" /> -->
 </section>
-<section id="función-coseno" class="level3" data-number="5.16.5">
-<h3 data-number="5.16.5" class="anchored" data-anchor-id="función-coseno"><span class="header-section-number">5.16.5</span> Función coseno</h3>
+<section id="función-coseno" class="level3" data-number="6.16.5">
+<h3 data-number="6.16.5" class="anchored" data-anchor-id="función-coseno"><span class="header-section-number">6.16.5</span> Función coseno</h3>
 <div id="def-funcion-coseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.22 (Función coseno) </strong></span>Se define la función <em>coseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.22 (Función coseno) </strong></span>Se define la función <em>coseno</em>,</p>
 <p><span class="math display">\[f(x)=\cos(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su coseno.</p>
 </div>
 <div id="exm-grafica-funcion-coseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.11 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.11 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-coseno.png" class="img-fluid figure-img"></p>
@@ -876,8 +886,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-coseno" class="level3" data-number="5.16.6">
-<h3 data-number="5.16.6" class="anchored" data-anchor-id="propiedades-de-la-función-coseno"><span class="header-section-number">5.16.6</span> Propiedades de la función coseno</h3>
+<section id="propiedades-de-la-función-coseno" class="level3" data-number="6.16.6">
+<h3 data-number="6.16.6" class="anchored" data-anchor-id="propiedades-de-la-función-coseno"><span class="header-section-number">6.16.6</span> Propiedades de la función coseno</h3>
 <ul>
 <li><p>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
 <li><p>Su imagen es el intervalo <span class="math inline">\([-1,1]\)</span>.</p></li>
@@ -887,10 +897,10 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li><p>Es una función par: <span class="math inline">\(\cos(-x)=\cos x\)</span>.</p></li>
 </ul>
 </section>
-<section id="tangente-de-un-ángulo" class="level3" data-number="5.16.7">
-<h3 data-number="5.16.7" class="anchored" data-anchor-id="tangente-de-un-ángulo"><span class="header-section-number">5.16.7</span> Tangente de un ángulo</h3>
+<section id="tangente-de-un-ángulo" class="level3" data-number="6.16.7">
+<h3 data-number="6.16.7" class="anchored" data-anchor-id="tangente-de-un-ángulo"><span class="header-section-number">6.16.7</span> Tangente de un ángulo</h3>
 <div id="def-tangente-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.23 (Tangente de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
+<p><span class="theorem-title"><strong>Definición 6.23 (Tangente de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -901,15 +911,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.</p>
 <!-- <img src="img/funciones/tangente_circunferencia.png" width="200px" alt="Definición de la tangente en la circunferencia" /> -->
 </section>
-<section id="función-tangente" class="level3" data-number="5.16.8">
-<h3 data-number="5.16.8" class="anchored" data-anchor-id="función-tangente"><span class="header-section-number">5.16.8</span> Función tangente</h3>
+<section id="función-tangente" class="level3" data-number="6.16.8">
+<h3 data-number="6.16.8" class="anchored" data-anchor-id="función-tangente"><span class="header-section-number">6.16.8</span> Función tangente</h3>
 <div id="def-funcion-tangente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.24 (Función tangente) </strong></span>Se define la función <em>tangente</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.24 (Función tangente) </strong></span>Se define la función <em>tangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su tangente.</p>
 </div>
 <div id="exm-funcion-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.12 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.12 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-tangente.png" class="img-fluid figure-img"></p>
@@ -918,8 +928,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-tangente" class="level3" data-number="5.16.9">
-<h3 data-number="5.16.9" class="anchored" data-anchor-id="propiedades-de-la-función-tangente"><span class="header-section-number">5.16.9</span> Propiedades de la función tangente</h3>
+<section id="propiedades-de-la-función-tangente" class="level3" data-number="6.16.9">
+<h3 data-number="6.16.9" class="anchored" data-anchor-id="propiedades-de-la-función-tangente"><span class="header-section-number">6.16.9</span> Propiedades de la función tangente</h3>
 <ul>
 <li><p>Su dominio es <span class="math inline">\(\mathbb{R}\)</span> menos las raíces del coseno, es decir <span class="math inline">\(\mathbb{R}-\{2k\pi/2: k\in \mathbb{Z}\}\)</span>.</p></li>
 <li><p>Su imagen es <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
@@ -928,15 +938,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li><p>Algunos valores para recordar: <span class="math inline">\(\operatorname{tg} 0=0\)</span>, <span class="math inline">\(\operatorname{tg} \pi/6= 1/\sqrt{3}\)</span>, <span class="math inline">\(\operatorname{tg} \pi/4=1\)</span>, <span class="math inline">\(\operatorname{tg} \pi/3= \sqrt{3}\)</span>, <span class="math inline">\(\operatorname{tg} \pi =0\)</span>, <span class="math inline">\(\operatorname{tg} 2\pi=0\)</span>.</p></li>
 </ul>
 </section>
-<section id="función-arcoseno" class="level3" data-number="5.16.10">
-<h3 data-number="5.16.10" class="anchored" data-anchor-id="función-arcoseno"><span class="header-section-number">5.16.10</span> Función arcoseno</h3>
+<section id="función-arcoseno" class="level3" data-number="6.16.10">
+<h3 data-number="6.16.10" class="anchored" data-anchor-id="función-arcoseno"><span class="header-section-number">6.16.10</span> Función arcoseno</h3>
 <div id="def-funcion-arcoseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.25 (Función arcoseno) </strong></span>Se define la función <em>arcoseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.25 (Función arcoseno) </strong></span>Se define la función <em>arcoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arcsen}(x)\]</span></p>
 <p>como la función inversa de la función seno.</p>
 </div>
 <div id="exm-funcion-arcoseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.13 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.13 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcoseno.png" class="img-fluid figure-img"></p>
@@ -945,8 +955,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-arcoseno" class="level3" data-number="5.16.11">
-<h3 data-number="5.16.11" class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno"><span class="header-section-number">5.16.11</span> Propiedades de la función arcoseno</h3>
+<section id="propiedades-de-la-función-arcoseno" class="level3" data-number="6.16.11">
+<h3 data-number="6.16.11" class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno"><span class="header-section-number">6.16.11</span> Propiedades de la función arcoseno</h3>
 <ul>
 <li>Por ser la inversa de la función seno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -956,15 +966,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es creciente en todo el dominio.</li>
 </ul>
 </section>
-<section id="función-arcocoseno" class="level3" data-number="5.16.12">
-<h3 data-number="5.16.12" class="anchored" data-anchor-id="función-arcocoseno"><span class="header-section-number">5.16.12</span> Función arcocoseno</h3>
+<section id="función-arcocoseno" class="level3" data-number="6.16.12">
+<h3 data-number="6.16.12" class="anchored" data-anchor-id="función-arcocoseno"><span class="header-section-number">6.16.12</span> Función arcocoseno</h3>
 <div id="def-funcion-arcocoseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.26 (Función arcocoseno) </strong></span>Se define la función <em>arcocoseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.26 (Función arcocoseno) </strong></span>Se define la función <em>arcocoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arccos}(x)\]</span></p>
 <p>como la función inversa de la función coseno.</p>
 </div>
 <div id="exm-funcion-arcocoseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.14 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.14 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcocoseno.png" class="img-fluid figure-img"></p>
@@ -973,8 +983,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-arcoseno-1" class="level3" data-number="5.16.13">
-<h3 data-number="5.16.13" class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno-1"><span class="header-section-number">5.16.13</span> Propiedades de la función arcoseno</h3>
+<section id="propiedades-de-la-función-arcoseno-1" class="level3" data-number="6.16.13">
+<h3 data-number="6.16.13" class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno-1"><span class="header-section-number">6.16.13</span> Propiedades de la función arcoseno</h3>
 <ul>
 <li>Por ser la inversa de la función coseno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -984,15 +994,15 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es decreciente en todo el dominio.</li>
 </ul>
 </section>
-<section id="función-arcotangente" class="level3" data-number="5.16.14">
-<h3 data-number="5.16.14" class="anchored" data-anchor-id="función-arcotangente"><span class="header-section-number">5.16.14</span> Función arcotangente</h3>
+<section id="función-arcotangente" class="level3" data-number="6.16.14">
+<h3 data-number="6.16.14" class="anchored" data-anchor-id="función-arcotangente"><span class="header-section-number">6.16.14</span> Función arcotangente</h3>
 <div id="def-funcion-arcotangente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.27 (Función arcotangente) </strong></span>Se define la función <em>arcotangente</em>,</p>
+<p><span class="theorem-title"><strong>Definición 6.27 (Función arcotangente) </strong></span>Se define la función <em>arcotangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arctg}(x)\]</span></p>
 <p>como la función inversa de la función tangente.</p>
 </div>
 <div id="exm-funcion-arcotangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.15 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.15 </strong></span>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcotangente.png" class="img-fluid figure-img"></p>
@@ -1001,8 +1011,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </div>
 </div>
 </section>
-<section id="propiedades-de-la-función-arcotangente" class="level3" data-number="5.16.15">
-<h3 data-number="5.16.15" class="anchored" data-anchor-id="propiedades-de-la-función-arcotangente"><span class="header-section-number">5.16.15</span> Propiedades de la función arcotangente</h3>
+<section id="propiedades-de-la-función-arcotangente" class="level3" data-number="6.16.15">
+<h3 data-number="6.16.15" class="anchored" data-anchor-id="propiedades-de-la-función-arcotangente"><span class="header-section-number">6.16.15</span> Propiedades de la función arcotangente</h3>
 <ul>
 <li>Por ser la inversa de la función tangente, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -1012,8 +1022,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es creciente en todo el dominio.</li>
 </ul>
 </section>
-<section id="algunas-relaciones-trigonométricas" class="level3" data-number="5.16.16">
-<h3 data-number="5.16.16" class="anchored" data-anchor-id="algunas-relaciones-trigonométricas"><span class="header-section-number">5.16.16</span> Algunas relaciones trigonométricas</h3>
+<section id="algunas-relaciones-trigonométricas" class="level3" data-number="6.16.16">
+<h3 data-number="6.16.16" class="anchored" data-anchor-id="algunas-relaciones-trigonométricas"><span class="header-section-number">6.16.16</span> Algunas relaciones trigonométricas</h3>
 <ul>
 <li><span class="math inline">\(\operatorname{sen}^2 x+\cos^2 x=1\)</span></li>
 <li><span class="math inline">\(\operatorname{sen}(x+y)=\operatorname{sen} x \cos y+\cos x \operatorname{sen} y\)</span></li>
@@ -1026,6 +1036,7 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <p><strong>Notas</strong></p>
 
 
+</section>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
