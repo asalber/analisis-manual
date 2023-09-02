@@ -2,6 +2,7 @@
 % example!
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{ amssymb}
 \usepackage{mathptmx}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -37,33 +38,27 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{ecuacion-plano}
-\begin{tikzpicture}[x=5cm, y=5cm, trim axis left, trim axis right]
+\tikzsetnextfilename{plano-normal-trayectoria-espacio}
+\begin{tikzpicture}
     \begin{axis}[
-      2dfun, 
-      xmin=0, xmax=4,
-      ymin=0, ymax=4, 
-      %axis equal=true,
-      clip=false,
-      height=4cm,
-      color = myblack,
-      ]
-      \coordinate (O) at (0,0);
-      \coordinate (P) at (1,1);
-      \coordinate (Q) at (3,4);
-      \fill (P) circle (1.2pt) node[anchor=north east] {$P$};
-      \fill (Q) circle (1.2pt) node[anchor=south west] {$Q$};
-      \draw[->, myblue, thick] (P) -- (Q) node[midway, above, anchor=east] {$\vec{PQ}=(2,3)$} ;
-      \draw[mygray, dotted] (P) -- (P|-O);
-      \draw[mygray, dotted] (P) -- (P-|O);
-      \draw[mygray, dotted] (Q) -- (Q|-O);
-      \draw[mygray, dotted] (Q) -- (Q-|O);
-      \draw[mygray, dashed] (Q) -- (Q|-P);
-      \draw[mygray, dashed] (P) -- (P-|Q);
-      \draw[decorate, decoration={brace, amplitude=5pt}] (Q) -- (Q|-P) node [midway, right, xshift=4pt] {3};
-      \draw[decorate, decoration={brace, amplitude=5pt, mirror}] (P) -- (P-|Q) node [midway, below, yshift=-4pt] {2};
+    3dfun,
+    height=5cm,
+    xmin = -1, xmax=1,
+    ymin=-1, ymax=1,
+    zmin=0, zmax=2,
+    axis equal = true,
+    clip=false,
+    color = myblack, 
+    ]
+      \addplot3+[domain=0:pi, myblue, samples y=0] ({cos(deg(x))}, {sin(deg(x))}, {x});
+      \addplot3+[surf, domain=-pi/2:pi/2, myred, samples=2, opacity=0.5] {x+pi/2};
+      \coordinate (P) at (0,1,pi/2);
+      \draw [->, mygreen, thick] (P) -- (-1,1,2.57) node[anchor=west] {$\textbf{v}=f'(\pi/2)$};
+      \fill (P) circle (1.2pt) node[anchor=west] {$P=f(\pi/2)=(0,1,\pi/2)$};
+      \node [myblue] at (0.3,0,-0.4) {$f(t)=(\cos(t), \operatorname{sen}(t), t)$};
+      \node [myred] at (-2,1.4,0.8) {$(-x+z-\pi/2=0)$};
     \end{axis}
-  \end{tikzpicture} 
+  \end{tikzpicture}
 \end{document}
 
 
