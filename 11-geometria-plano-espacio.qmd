@@ -22,7 +22,7 @@ Algunos fenómenos de la naturaleza pueden describirse mediante un número refer
 Un *escalar* es un número que sirve para expresar una magnitud sin dirección.
 :::
 
-:::{#exm-}
+:::{#exm-escalar}
 La estatura o el peso de una persona, el volumen de un depósito, la temperatura de un gas, el trabajo realizado por una fuerza sobre un objeto, la carga eléctrica o el tiempo que tarda un móvil en recorrer una distancia, son escalares.
 :::
 
@@ -34,14 +34,15 @@ La descripción del viento requiere dos elementos, su intensidad y su dirección
 
 :::{#def-vector}
 ## Vector
-Un *vector* es un número que sirve para expresar una magnitud y tiene asociada una dirección y un sentido.
+Un *vector* es un objeto geométrico que tiene asociada una magnitud o longitud y una dirección.
+El vector con longitud 0 se conoce como _vector nulo_, se representa $\mathbf{O}$ y es el único vector que no tiene dirección.
 :::
 
 :::{#exm-vector}
 La velocidad y la aceleración de un móvil o la fuerza que se aplica sobre un objeto, son vectores.
 :::
 
-Geométricamente, un vector se representa mediante un segmento orientado, es decir, una flecha.
+Geométricamente, en un espacio euclídeo, un vector se representa mediante un segmento orientado, es decir, una flecha.
 
 :::{.content-visible when-format="html"}
 ![Vector.](img/geometria-plano-espacio/vector.png)
@@ -51,12 +52,12 @@ Geométricamente, un vector se representa mediante un segmento orientado, es dec
 ![Vector.](img/geometria-plano-espacio/vector.pdf)
 :::
 
+
 ### Representación de un vector
 
 Un segmento orientado puede ubicarse en diferentes lugares dentro de un espacio euclídeo. Sin embargo, con independencia de donde esté situado, si la longitud y la dirección no varían, dicho segmento representará siempre el mismo vector.
 
-Esto permite representar todos los vectores con un mismo origen, el origen en sistema de coordenadas cartesianas.
-Así, en cualquier espacio euclídeo, un vector queda determinado por las _coordenadas_ del punto que determina su extremo final.
+Esto permite representar todos los vectores con un mismo origen, el origen en sistema de coordenadas cartesianas. Así, en cualquier espacio euclídeo, un vector queda determinado por las _coordenadas_ del punto que determina su extremo final.
 
 :::{.content-visible when-format="html"}
 ![Coordenadas de un vector.](img/geometria-plano-espacio/coordenadas-vector.png)
@@ -95,7 +96,48 @@ $$
 $$
 :::
 
-El módulo de un vector coincide con la longitud del segmento que representa al vector.
+:::{#prp-modulo-vector}
+El módulo de un vector coincide con la longitud del segmento que representa el vector.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Probaremos primero la proposición para el plano real $\mathbb{R}^2$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $v_1$ y $v2$.
+
+:::{.content-visible when-format="html"}
+![Módulo de un vector en el plano.](img/geometria-plano-espacio/modulo-vector-plano.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Módulo de un vector en el plano.](img/geometria-plano-espacio/modulo-vector-plano.pdf)
+:::
+
+Por tanto, aplicando el teorema de Pitágoras, se tiene que la longitud de $\mathbf{v}$ es 
+
+$$
+\sqrt{(v_1^2+v_2^2} = |\mathbf{v}|.
+$$
+
+Veamos ahora que también es cierto en el espacio real $\mathbb{R}^3$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2,v_3)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $|\mathbf{w}|$ y $v3$, donde $\mathbf{w}$ es el vector que resulta de proyectar $\mathbf{v}$ sobre el plano $xy$, es decir, $\mathbf{w}=(v_1,v_2)$. 
+
+:::{.content-visible when-format="html"}
+![Módulo de un vector en el espacio.](img/geometria-plano-espacio/modulo-vector-espacio.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Módulo de un vector en el espacio.](img/geometria-plano-espacio/modulo-vector-espacio.png)
+:::
+
+Como hemos visto para el plano real, se cumple que $|\mathbf{w}| = \sqrt{v_1^2+v_2^2}$, y aplicando de nuevo el teorema de Pitágoras, se tiene que la longitud de $\mathbf{v}$ es 
+
+$$
+\sqrt{|\mathbf{w}|^2+v_3^2} = \sqrt{v_1^2+v_2^2+v_3^2} = |\mathbf{v}|.
+$$
+
+El caso general para el espacio $\mathbb{R}^n$ puede probarse fácilmente por inducción y se deja como ejercicio.
+:::
+:::
 
 :::{#exm-modulo-vector}
 
@@ -218,6 +260,8 @@ $$\mathbf{v}=(v_1,v_2,v_3) = v_1\mathbf{i}+v_2\mathbf{j}+v_3\mathbf{k}.$$
 
 ### Producto escalar
 
+Ya hemos visto como sumar y restar vectores, y cómo multiplicarlos por un escalar, pero no hemos visto cómo multiplicar vectores. Existen diferentes formas de multiplicar dos vectores, una de ellas es el _producto escalar_ que tiene aplicaciones muy interesantes.
+
 :::{#def-producto-escalar}
 ## Producto escalar
 Dados dos vectores $\mathbf{u}=(u_1,\cdots,u_n)$ y $\mathbf{v}=(v_1,\cdots,v_n)$ en $\mathbb{R}^n$, se define el _producto escalar_ de $\mathbf{u}$ y $\mathbf{v}$ como
@@ -239,22 +283,110 @@ $$
 $$
 :::
 
+:::{#prp-propiedades-producto-escalar}
+## Propiedades del producto escalar
+Dados los vectores $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{w}$ en $\mathbb{R}^n$, se cumple que
+
+a. $\mathbf{v}\cdot\mathbf{v} = |\mathbf{v}|^2$.
+a. $\mathbf{u}\cdot\mathbf{v} = \mathbf{v}\cdot\mathbf{u}$.
+a. $\mathbf{u}\cdot(\mathbf{v}+\mathbf{w}) = \mathbf{u}\cdot\mathbf{v} + \mathbf{u}\cdot\mathbf{w}$.
+a. $(a\mathbf{u})\cdot\mathbf{v} = a(\mathbf{u}\cdot\mathbf{v})$ $\forall a\in\mathbb{R}$.
+a. $\mathbf{0} \cdot \mathbf{v} = 0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sean $$\mathbf{u}=(u_1,\cdots,u_n)$, $\mathbf{v}=(v_1,\ldots,v_n)$ y $\mathbf{w}=(w_1,\cdots,w_n)$. 
+
+a. $\mathbf{v}\cdot\mathbf{v} = v_1v_1+\cdots+v_nv_n = v_1^2+\cdots+v_n^2 =|\mathbf{v}|^2$.
+
+a. $\mathbf{u}\cdot\mathbf{v} = u_1v_1+\cdots+u_nv_n = v_1u_1+\cdots+v_nu_n =\mathbf{v}\cdot\mathbf{u}$.
+
+a. 
+
+\begin{align*}
+\mathbf{u}\cdot(\mathbf{v}+\mathbf{w}) 
+&= \mathbf{u}(v_1+w_1,\ldots,v_n+w_n) \\ 
+&= u_1(v_1+w_1)+\cdots+u_n(v_n+w_n) \\
+&= u_1v_1+u_1w_1+\cdots+u_nv_n+u_nw_n \\
+&= (u_1v_1+\cdots+u_nv_n)+(u_1w_1+\cdots+u_nw_n) \\
+&= \mathbf{u}\cdot\mathbf{v} + \mathbf{u}\cdot\mathbf{w}
+\end{align*}
+
+a. $(a\mathbf{u})\cdot\mathbf{v} = (au_1,\ldots,au_n)(v_1+\cdots+v_n) = au_1v_1+\cdots+au_nv_n = a(\mathbf{u}\cdot\mathbf{v})$.
+
+a. $\mathbf{0} \cdot \mathbf{v} = 0v_1+\cdots+0v_n = 0$.
+:::
+:::
+
 :::{#thm-producto-escalar}
 ## Producto escalar
-Dados dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$, se cumple que
+Dados dos vectores no nulos $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$, se cumple que
 
 $$
-\mathbf{u}\cdot\mathbf{v} =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \cos\alpha
+\mathbf{u}\cdot\mathbf{v} =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \cos(\alpha)
 $$
 
 donde $\alpha$ es el ángulo que forman los vectores.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos $\mathbf{u}$, $\mathbf{v}$ forman un ángulo $\alpha$. Considerando el triángulo formado por los vectores $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{u-v}$, el [teorema del coseno](https://es.wikipedia.org/wiki/Teorema_del_coseno) establece que 
+
+$$
+|\mathbf{u}-\mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2 - 2|\mathbf{u}||\mathbf{v}|\cos(\alpha)
+$$
+
+Usando las propiedades del producto escalar, se tiene que 
+
+\begin{align*}
+|\mathbf{u}-\mathbf{v}|^2 
+&= (\mathbf{u}-\mathbf{v})\cdot (\mathbf{u}-\mathbf{v}) \\
+&= \mathbf{u}\cdot \mathbf{u} - \mathbf{u}\cdot \mathbf{v} - \mathbf{v}\cdot \mathbf{u} + \mathbf{v}\cdot \mathbf{v} \\
+&= |\mathbf{u}|^2 - 2 \mathbf{u}\cdot \mathbf{v} + |\mathbf{v}|^2
+\end{align*}
+
+De manera que sustituyendo en la fórmula del teorema del coseno resulta
+
+$$
+\begin{gathered}
+|\mathbf{u}|^2 - 2 \mathbf{u}\cdot \mathbf{v} + |\mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2 - 2|\mathbf{u}||\mathbf{v}|\cos(\alpha) \\
+\Leftrightarrow - 2 \mathbf{u}\cdot \mathbf{v} = - 2|\mathbf{u}||\mathbf{v}|\cos(\alpha) \\
+\Leftrightarrow \mathbf{u}\cdot \mathbf{v} = |\mathbf{u}||\mathbf{v}|\cos(\alpha).
+\end{gathered}
+$$
+:::
+:::
+
+Este teorema permite calcular fácilmente el ángulo entre dos vectores a partir de su producto escalar. 
+
+:::{#cor-producto-escalar}
+Si $\alpha$ es el ángulo entre dos vectores no nulos $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$, entonces
+
+$$
+\alpha = \operatorname{arccos}\left(\frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}||\mathbf{v}|}\right).
+$$
+:::
+
+:::{#exm-angulo-entre-vectores}
+El ángulo entre los vectores $\mathbf{u}=(1,0,2)$ y $\mathbf{v}=(-2,1,-3)$ es
+
+\begin{align*}
+\alpha 
+&= \operatorname{arccos}\left(\frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}||\mathbf{v}|}\right) \\
+&= \operatorname{arccos}\left(\frac{1\cdot(-2)+0\cdot 1+2\cdot (-3)}{\sqrt{1^2+0^2+2^2}\sqrt{(-2)^2+1^2+(-3)^2}}\right)\\
+& = \operatorname{arccos}\left(\frac{-8}{\sqrt{5}\sqrt{14}} \right) \approx 2.84 \mbox{ rad}.
+\end{align*}
 :::
 
 ### Vectores paralelos
 
 :::{#def-vectores-paralelos}
 ## Vectores paralelos
-Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un valor $a\in\mathbb{R}$ tal que
+Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un escalar $a\in\mathbb{R}$ tal que
 
 $$
 \mathbf{u} = a\mathbf{v}.
@@ -265,7 +397,7 @@ $$
 Los vectores $\mathbf{u}=(-4,2)$ y $\mathbf{v}=(2,-1)$ en $\mathbb{R}^2$ son paralelos, ya que
 
 $$
-\mathbf{v}= (-4,2) = -2(2,-1) = -2\mathbf{v}.
+\mathbf{u}= (-4,2) = -2(2,-1) = -2\mathbf{v}.
 $$
 :::
 
@@ -273,19 +405,29 @@ $$
 
 :::{#def-vectores-ortogonales}
 ## Vectores ortogonales y ortonormales
-Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _ortogonales_ si su producto escalar es nulo
-
-$$ç
-\mathbf{u}\cdot \mathbf{v} = 0.
-$$
+Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _ortogonales_ forman un ángulo de de $90^\circ$, es decir, si son perpendiculares.
 
 Si además el módulo de ambos vectores es la unidad $\lvert\mathbf{u}\rvert=\lvert\mathbf{v}\rvert=1$, entonces se dice que son _ortonormales_.
 :::
 
-Los vectores ortogonales son perpendiculares entre sí, es decir, forman un ángulo de $90^\circ$.
+:::{#thm-vectores-ortogonales}
+Dos vectores no nulos $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son ortogonales si y sólo si $\mathbf{u}\cdot \mathbf{v}=0$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\mathbf{u}$ y $\mathbf{v}$ son dos vectores no nulos ortogonales. Entonces el ángulo que forman es $\alpha = \pi/2$, y por tanto, su producto escalar vale
+
+$$
+\mathbf{u}\cdot\mathbf{v} = |\mathbf{u}||\mathbf{v}|\cos(\pi/2) = 0.
+$$
+
+Para probar el otro sentido de la implicación, supongamos que $\mathbf{u}\cdot\mathbf{v}=0$, entonces $|\mathbf{u}||\mathbf{v}|\cos(\pi/2) = 0$, pero como $\mathbf{u}$ y $\mathbf{v}$ son no nulos, su módulo no puede ser 0, por lo que necesariamente debe ser $\cos(\alpha)=0$, de donde se deduce que $\alpha=\pi/2$ o $\alpha=3\pi/2$, y en cualquiera de los casos $\mathbf{u}$ y $\mathbf{v}$ son perpendiculares.
+:::
+:::
 
 :::{#exm-vectores-ortogonales}
-
 Los vectores $\mathbf{u}=(2,1)$ y $\mathbf{v}=(-2,4)$ en $\mathbb{R}^2$ son ortogonales, ya que
 
 $$
@@ -299,6 +441,108 @@ Los vectores $\mathbf{i}=(1,0)$ y $\mathbf{j}=(0,1)$ en $\mathbb{R}^2$ son orton
 $$
 \mathbf{i}\mathbf{j} = 1\cdot 0 +0\cdot 1 = 0, \quad \lvert\mathbf{i}\rvert = \sqrt{1^2+0^2} = 1,  \quad \lvert \mathbf j\rvert = \sqrt{0^2+1^2} = 1.
 $$
+:::
+
+### Producto vectorial
+
+Dados dos vectores $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ en el espacio real $\mathbb{R}^3$, en muchas ocasiones interesa obtener un vector ortogonal a ellos. Afortunadamente existe otra producto entre vectores que nos permite obtener este vector fácilmente.
+
+:::{#def-producto-vectorial}
+## Producto vectorial
+Dados dos vectores $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ en $\mathbb{R}^3$, se define el _producto vectorial_ de $\mathbf{u}$ y $\mathbf{v}$ como el vector
+
+$$
+\mathbf{u}\times \mathbf{v} = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
+$$
+:::
+
+El producto vectorial también puede expresarse de las siguiente manera utilizando determinantes de matrices 2x2.
+
+$$
+\mathbf{u}\times \mathbf{v} = 
+\left|
+\begin{array}{cc}
+u_2 & u_3 \\
+v_2 & v_3 
+\end{array}
+\right|\mathbf{i} +
+\left|
+\begin{array}{cc}
+u_1 & u_3 \\
+v_1 & v_3 
+\end{array}
+\right|\mathbf{j} +
+\left|
+\begin{array}{cc}
+u_1 & u_2 \\
+v_1 & v_2 
+\end{array}
+\right|\mathbf{k}.
+$$
+
+O, abusando un poco de la notación como 
+
+$$
+\mathbf{u}\times \mathbf{v} = 
+\left|
+\begin{array}{ccc}
+\mathbf{i} & \mathbf{j} & \mathbf{j}\\
+u_1 & u_2 & u_3\\
+v_1 & v_2 & v_3\\
+\end{array}
+\right|
+$$
+
+:::{#exm-producto-vectorial}
+El producto vectorial de los vectores $\mathbf{u}=(1,2,0)$ y $\mathbf{v}=(-1,1,0)$ es 
+
+(u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
+$$
+\mathbf{u}\times \mathbf{v} 
+= (2\cdot 0-0\cdot 1, 0\cdot (-2)-1\cdot 0, 1\cdot 1-2\cdot (-1) 
+= (0, 0, 3).
+$$
+
+Como se puede observar en el siguiente gráfico, el vector resultante es perpendicular a $\mathbf{u}$ $\mathbf{v}$, algo que se debe al siguiente resultado. 
+
+:::{.content-visible when-format="html"}
+![Producto vectorial de dos vectores en el espacio real.](img/geometria-plano-espacio/producto-vectorial.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Producto vectorial de dos vectores en el espacio real.](img/geometria-plano-espacio/producto-vectorial.pdf)
+:::
+:::
+
+:::{#prp-producto-vectorial}
+Si $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ son dos vectores no nulos ni paralelos en $\mathbb{R}^3$, el vector $\mathbf{u}\times \mathbf{v}$ es ortogonal a ellos.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\mathbf{w}=\mathbf{u}\times \mathbf{v}$.
+
+Veamos primero que $\mathbf{w}$ es ortogonal a $\mathbf{u}$.
+
+\begin{align*}
+\mathbf{u}\cdot \mathbf{w} 
+&= u_1(u_2v_3-u_3v_2)+u_2(u_3v_1-u_1v_3)+u_3(u_1v_2-u_2v_1)\\
+&= u_1u_2v_3-u_1u_3v_2+u_2u_3v_1-u_2u_1v_3+u_3u_1v_2-u_3u_2v_1 = 0\\
+\end{align*}
+
+por lo que $\mathbf{w}$ es ortogonal a $\mathbf{u}$.
+
+Del mismo modo, para ver que $\mathbf{w}$ es ortogonal a $\mathbf{v}$ tenemos
+
+\begin{align*}
+\mathbf{v}\cdot \mathbf{w} 
+&= v_1(u_2v_3-u_3v_2)+v_2(u_3v_1-u_1v_3)+v_3(u_1v_2-u_2v_1)\\
+&= v_1u_2v_3-v_1u_3v_2+v_2u_3v_1-v_2u_1v_3+v_3u_1v_2-v_3u_2v_1 = 0\\
+\end{align*}
+
+por lo que $\mathbf{w}$ también es ortogonal a $\mathbf{v}$.
+:::
 :::
 
 ## Rectas

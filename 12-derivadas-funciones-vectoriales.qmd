@@ -24,20 +24,22 @@ f: & \mathbb{R} & \longrightarrow & \mathbb{R}^n \\
 \end{array}
 $$
 
-donde $x_i(t)$, $i=1,\ldots,n$, son funciones reales de una variable real conocidas como _funciones coordenadas_.
+donde $x_i(t)$, $i=1,\ldots,n$, son funciones reales de una variable real conocidas como _funciones coordenadas_ o _funciones componentes_.
 :::
 
-Los campos vectoriales más habituales se dan en plano real $\mathbb{R}^2$, donde se suelen representar así
+Los campos vectoriales más habituales se dan en plano real $\mathbb{R}^2$, donde también se suelen representar así
 
 $$
-f(t) = x(t)\mathbf{i}+y(t)\mathbf{j},
+\mathbf{f}(t) = x(t)\mathbf{i}+y(t)\mathbf{j},
 $$
 
-y en el espacio real $\mathbb{R}^3$, donde ser representan así
+y en el espacio real $\mathbb{R}^3$, donde se representan así
 
 $$
-f(t) = x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{k},
+\mathbf{f}(t) = x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{k},
 $$
+
+siendo $\mathbf{i}$, $\mathbf{j}$ y $\mathbf{k}$ los vectores coordenados.
 
 ### Representación gráfica de una función vectorial
 
@@ -61,12 +63,58 @@ La representación gráfica de una función vectorial en $\mathbb{R}^3$ es una t
 ![Trayectoria de una función vectorial en el espacio real.](img/derivadas-funciones-vectoriales/trayectoria-espacio.pdf)
 :::
 
+## Límites y continuidad de una función vectorial
+
+Puesto que una función vectorial se compone de funciones reales de variable real, muchos de los conceptos vistos para estas funciones se pueden extender fácilmente a las funciones vectoriales. El límite de una función vectorial, por ejemplo, se define mediante el vector de los límites de las funciones componentes.
+
+:::{#def-limite-funcion-vectorial}
+Dada una función vectorial  $\mathbf{f}(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$, se define el _límite_ de $\mathbf{f}$ cuando $t$ se aproxima a $a$ como el vector
+
+$$
+\lim_{t\to a} \mathbf{f}(t) = \left(\lim_{t\to a} x_1(t), \ldots, \lim_{t\to a} x_n(t)\right),
+$$
+
+siempre que existan los límites de las funciones componentes.
+:::
+
+:::{#exm-limite-funciones-vectoriales}
+El límite de la función vectorial $\mathbf{f}(t)=\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right)$ es
+
+\begin{align*}
+\lim_{t\to 0} \mathbf{f}(t)
+&= \lim_{t\to 0}\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right) \\
+&= \left(\lim_{t\to 0} t^2+1, \lim_{t\to 0} \frac{\operatorname{sen}(t)}{t}, \lim_{t\to 0} t\cos\left(\frac{1}{t}\right)\right) \\
+&= (1, 1, 0)
+\end{align*}
+:::
+
+Lo mismo pasa con el concepto de continuidad.
+
+:::{#def-funcion-vectorial-continua}
+Dada una función vectorial  $\mathbf{f}(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$, se dice que $\mathbf{f}$ es continua en $t=a$ si 
+
+$$
+\lim_{t\to a} \mathbf{f}(t) = \mathbf{f}(a).
+$$
+:::
+
+:::{#prp-funcion-vectorial-continua}
+Una función vectorial  $\mathbf{f}(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$ es continua en $t=a$ si y solo si sus funciones componentes son continuas en $t=a$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La demostración es sencilla y se deja como ejercicio.
+:::
+:::
+
 ## Derivada de una función vectorial
-El concepto de derivada como límite de la tasa de variación instantánea puede extenderse fácilmente a campos vectoriales. 
+El concepto de derivada como límite de la tasa de variación instantánea puede extenderse fácilmente a funciones vectoriales. 
 
 :::{#def-derivada-funcion-vectorial}
 ## Derivada de una función vectorial
-Se dice que una función vectorial $f(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$ es _derivable_ o _diferenciable_ en un punto $t=a$ si existe el límite
+Se dice que una función vectorial $\mathbf{f}(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$ es _derivable_ o _diferenciable_ en un punto $t=a$ si existe el límite
 
 $$
 \lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t}.
@@ -78,7 +126,7 @@ En tal caso, el valor del límite se conoce como _derivada_ del campo vectorial 
 Muchas de las propiedades de las funciones reales de variable real pueden extenderse a las funciones vectoriales de variable real a través de sus componentes. Así, por ejemplo, la derivada de una función vectorial puede obtenerse a partir de las derivadas de sus funciones componentes.
 
 :::{#thm-derivada-funciones-vectoriales}
-Dada una función vectorial $f(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$, si $x_i(t)$ es derivable en $t=a$ para cada $i=1,\ldots,n$, entonces $f$ es derivable en $a$ y su derivada vale
+Dada una función vectorial $\mathbf{f}(t)=(x_1(t),\ldots,x_n(t))$ en $\mathbb{R}^n$, si $x_i(t)$ es derivable en $t=a$ para cada $i=1,\ldots,n$, entonces $\mathbf{f}$ es derivable en $a$ y su derivada vale
 
 $$
 f'(a)=(x_1'(a),\ldots,x_n'(a))
@@ -107,7 +155,7 @@ Se deja como ejercicio la demostración para espacios de mayor orden.
 
 La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo $\mathbb{R}^n$.
 	
-Para el caso del plano real $\mathbb{R}^2$, si la función vectorial $f(t)$ describe la posición de un objeto móvil en el plano en el instante $t$, tomando como referencia el origen de coordenadas $O$ y los vectores coordenados $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, se puede representar la posición $P$ del móvil en cada instante $t$ mediante un	vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$ cuyas coordenadas
+Para el caso del plano real $\mathbb{R}^2$, si la función vectorial $\mathbf{f}(t)$ describe la posición de un objeto móvil en el plano en el instante $t$, tomando como referencia el origen de coordenadas $O$ y los vectores coordenados $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, se puede representar la posición $P$ del móvil en cada instante $t$ mediante un	vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$ cuyas coordenadas
 
 $$
 \begin{cases}
@@ -118,7 +166,7 @@ y=y(t)
 t\in \mbox{Dom}(f)
 $$
 
-son las funciones coordenadas de $f$.
+son las funciones coordenadas de $\mathbf{f}$.
 
 :::{.content-visible when-format="html"}
 ![Trayectoria de un movimiento curvilíneo en el plano real.](img/derivadas-funciones-vectoriales/movimiento-curvilineo-plano.png)
@@ -129,7 +177,7 @@ son las funciones coordenadas de $f$.
 :::
 
 :::{.callout-important}
-En este contexto, la derivada de la función vectorial $f'(a)=(x_1'(a),\ldots,x_n'(a))$ es el _vector velocidad_ de la trayectoria descrita por $f$ en el instante $t=a$.
+En este contexto, la derivada de la función vectorial $f'(a)=(x_1'(a),\ldots,x_n'(a))$ es el _vector velocidad_ de la trayectoria descrita por $\mathbf{f}$ en el instante $t=a$.
 :::
 
 :::{.callout-warning}
@@ -137,7 +185,7 @@ No debe confundirse el vector velocidad $\mathbf{v}=f'(a)$ con la velocidad del 
 :::
 
 :::{#exm-movimiento-curvilineo-plano}
-Dada la función vectorial $f(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son $x(t) = \cos(t)$, $y(t) = \operatorname{sen}(t)$, $t\in \mathbb{R}$, y su velocidad es
+Dada la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son $x(t) = \cos(t)$, $y(t) = \operatorname{sen}(t)$, $t\in \mathbb{R}$, y su velocidad es
 
 $$
 \mathbf{v} = f'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
@@ -158,11 +206,11 @@ Obsérvese que el módulo del vector velocidad siempre será 1 ya que $|\mathbf{
 
 ### Recta tangente a una trayectoria en el plano real
 
-Los vectores paralelos a al vector velocidad $\mathbf{v}$ se denominan _vectores tangentes_ a la trayectoria de $f$ en el instante $t=a$, y la recta que pasa por $P=f(a)$ dirigida por $\mathbf{v}$ es la recta tangente a $f$ cuando $t=a$.
+Los vectores paralelos a al vector velocidad $\mathbf{v}$ se denominan _vectores tangentes_ a la trayectoria de $\mathbf{f}$ en el instante $t=a$, y la recta que pasa por $P=f(a)$ dirigida por $\mathbf{v}$ es la recta tangente a $\mathbf{f}$ cuando $t=a$.
 
 :::{#def-tangente-trayectoria-plano}
 ### Recta tangente a una trayectoria en el plano real
-Dada una función vectorial $f(t)=(x(t),y(t))$ en el plano real $\mathbb{R}^2$, se llama _recta tangente a la trayectoria_ de $f$ en $t=a$, a la recta de ecuación vectorial
+Dada una función vectorial $\mathbf{f}(t)=(x(t),y(t))$ en el plano real $\mathbb{R}^2$, se llama _recta tangente a la trayectoria_ de $\mathbf{f}$ en $t=a$, a la recta de ecuación vectorial
 
 \begin{align*}
 (x(t),y(t)) 
@@ -171,7 +219,7 @@ Dada una función vectorial $f(t)=(x(t),y(t))$ en el plano real $\mathbb{R}^2$, 
 \end{align*}
 :::
 
-De la ecuación vectorial de la recta tangente a la trayectoria de $f$ en $t=a$, se obtiene que sus funciones cartesianas son
+De la ecuación vectorial de la recta tangente a la trayectoria de $\mathbf{f}$ en $t=a$, se obtiene que sus funciones cartesianas son
 
 $$
 \begin{cases}
@@ -196,7 +244,7 @@ y-y(a)=\frac{y'(a)}{x'(a)}(x-x(a)).
 $$
 
 :::{#exm-tangente-trayectoria-plano}
-Hemos visto que para la función vectorial $f(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, cuya cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, en el instante $t=\pi/4$ la posición del móvil era $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ y su velocidad $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$, de modo que la recta tangente a la trayectoria de $f$ en ese instante es
+Hemos visto que para la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, cuya cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, en el instante $t=\pi/4$ la posición del móvil era $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ y su velocidad $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$, de modo que la recta tangente a la trayectoria de $\mathbf{f}$ en ese instante es
 
 \begin{align*}
 l: (x(t),y(t)) 
@@ -229,11 +277,11 @@ $$
 
 ### Recta normal a una trayectoria en el plano real
 
-Como acabamos de ver, la recta tangente a la trayectoria de la función vectorial $f$ en $t=a$, está dirigida por el vector velocidad $\mathbf{v}=f'(a)=(x'(a),y'(a))$. Si en lugar de tomar ese vector se toma como vector director el vector $\mathbf{w}=(y'(a),-x'(a))$, que es ortogonal a $\mathbf{v}$, se obtiene otra	recta que se conoce como _recta normal a la trayectoria_.
+Como acabamos de ver, la recta tangente a la trayectoria de la función vectorial $\mathbf{f}$ en $t=a$, está dirigida por el vector velocidad $\mathbf{v}=f'(a)=(x'(a),y'(a))$. Si en lugar de tomar ese vector se toma como vector director el vector $\mathbf{w}=(y'(a),-x'(a))$, que es ortogonal a $\mathbf{v}$, se obtiene otra	recta que se conoce como _recta normal a la trayectoria_.
 
 :::{#def-normal-trayectoria-plano}
 ## Recta normal a una trayectoria en el plano real
-Dada una función vectorial $f(t)=(x(t),y(t))$ sobre el plano real $\mathbb{R}^2$, se llama _recta normal_ a la trayectoria de $f$ en $t=a$ a la recta de ecuación
+Dada una función vectorial $\mathbf{f}(t)=(x(t),y(t))$ sobre el plano real $\mathbb{R}^2$, se llama _recta normal_ a la trayectoria de $\mathbf{f}$ en $t=a$ a la recta de ecuación
 
 $$
 (x(t),y(t)) = (x(a),y(a))+t(y'(a),-x'(a)) = (x(a)+ty'(a),y(a)-tx'(a)).
@@ -257,7 +305,7 @@ La recta normal es perpendicular a la recta tangente ya que sus vectores directo
 :::
 
 :::{#exm-normal-tangente-plano}
-Siguiendo con el ejemplo de la trayectoria circular de la función vectorial $f(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, la ecuación vectorial de la recta normal en el instante $t=\pi/4$ es
+Siguiendo con el ejemplo de la trayectoria circular de la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, la ecuación vectorial de la recta normal en el instante $t=\pi/4$ es
 
 \begin{align*}
 n: (x(t),y(t)) 
@@ -287,7 +335,7 @@ $$
 :::
 :::
 
-Un caso particular de las rectas tangente y normal a una trayectoria en el plano son la rectas tangente y normal a una función real de una variable real. Si se tiene la función $y=f(x)$, $x\in I\subseteq \mathbb{R}$, una función vectorial cuya trayectoria traza la gráfica de $f$ es
+Un caso particular de las rectas tangente y normal a una trayectoria en el plano son la rectas tangente y normal a una función real de una variable real. Si se tiene la función $y=f(x)$, $x\in I\subseteq \mathbb{R}$, una función vectorial cuya trayectoria traza la gráfica de $\mathbf{f}$ es
 
 $$
 g(x) = (x,f(x))  \quad x\in \mathbb{R}.
@@ -331,7 +379,7 @@ El concepto de recta tangente a una trayectoria en el plano real puede extenders
 	
 :::{#def-tangente-trayectoria-espacio}
 ### Recta tangente a una trayectoria en el espacio real
-Dada una función vectorial $f(t)=(x(t),y(t),z(t))$ en el espacio real $\mathbb{R}^3$, se llama _recta tangente a la trayectoria_ de $f$ en $t=a$, a la recta de ecuación vectorial
+Dada una función vectorial $\mathbf{f}(t)=(x(t),y(t),z(t))$ en el espacio real $\mathbb{R}^3$, se llama _recta tangente a la trayectoria_ de $\mathbf{f}$ en $t=a$, a la recta de ecuación vectorial
 
 \begin{align*}
 (x(t), y(t), z(t)) 
@@ -349,7 +397,7 @@ $$
 siempre que $x'(a)\neq 0$, $y'(a)\neq 0$ y $z'(a)\neq 0$.
 
 :::{#exm-tangente-trayectoria-espacio}
-Dada la función vectorial $f(t)=(\cos t, \operatorname{sen}(t), t)$, $t\in \mathbb{R}$ en el espacio real, en el instante $t=\pi/2$, la trayectoria pasará por el punto
+Dada la función vectorial $\mathbf{f}(t)=(\cos t, \operatorname{sen}(t), t)$, $t\in \mathbb{R}$ en el espacio real, en el instante $t=\pi/2$, la trayectoria pasará por el punto
 
 $$
 f(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
@@ -361,7 +409,7 @@ $$
 \mathbf{v}=f'(\pi/2)=(-\sin(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
 $$
 
-y la recta tangente a la trayectoria de $f$ en ese instante es
+y la recta tangente a la trayectoria de $\mathbf{f}$ en ese instante es
 
 $$
 (x(t),y(t),z(t))=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
@@ -380,7 +428,7 @@ $$
 
 En el espacio tridimensional $\mathbb{R}^3$, la recta normal a una trayectoria no es única, sino que hay infinitas, todas ellas en el mismo plano, por lo que en vez de hablar de recta normal a la trayectoria, se habla de _plano normal a la trayectoria_.
 
-Si $f(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is una función vectorial en el espacio real $\mathbb{R}^3$, en el instante $t=a$, el móvil que sigue la trayectoria de $f$ estará en la posición $P=(x(a),y(a),z(a))$ con vector velocidad $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$. Así, tomando el vector velocidad como ortogonal al plano, cualquier vector del plano normal será ortogonal al vector velocidad, por lo que su producto escalar será nulo, de lo que se deduce la siguiente ecuación
+Si $\mathbf{f}(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is una función vectorial en el espacio real $\mathbb{R}^3$, en el instante $t=a$, el móvil que sigue la trayectoria de $\mathbf{f}$ estará en la posición $P=(x(a),y(a),z(a))$ con vector velocidad $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$. Así, tomando el vector velocidad como ortogonal al plano, cualquier vector del plano normal será ortogonal al vector velocidad, por lo que su producto escalar será nulo, de lo que se deduce la siguiente ecuación
 
 $$
 \begin{gathered}
@@ -391,7 +439,7 @@ $$
 
 :::{#def-plano-normal-trayectoria-espacio}
 ### Plano normal a una trayectoria en el espacio real
-Dada una función vectorial $f(t)=(x(t),y(t),z(t))$ en el espacio real $\mathbb{R}^3$, se llama _plano normal a la trayectoria_ de $f$ en $t=a$, al plano de ecuación
+Dada una función vectorial $\mathbf{f}(t)=(x(t),y(t),z(t))$ en el espacio real $\mathbb{R}^3$, se llama _plano normal a la trayectoria_ de $\mathbf{f}$ en $t=a$, al plano de ecuación
 
 $$
 x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
@@ -399,7 +447,7 @@ $$
 :::
 
 :::{#exm-plano-normal-trayectoria-espacio}
-Para la trayectoria de la función vectorial del ejemplo anterior $f(t)=(\cos t, \sin t, t)$, $t\in \mathbb{R}$, en el instante $t=\pi/2$ la trayectoria pasa por el punto 
+Para la trayectoria de la función vectorial del ejemplo anterior $\mathbf{f}(t)=(\cos t, \sin t, t)$, $t\in \mathbb{R}$, en el instante $t=\pi/2$ la trayectoria pasa por el punto 
 
 $$
 f(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
@@ -411,7 +459,7 @@ $$
 \mathbf{v}=f'(\pi/2)=(-\sin(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
 $$
 
-y el plano normal a la trayectoria de $f$ en ese instante tiene ecuación
+y el plano normal a la trayectoria de $\mathbf{f}$ en ese instante tiene ecuación
 
 $$
 \left(x-0,y-1,z-\frac{\pi}{2}\right)(-1,0,1) =0 \Leftrightarrow -x+z-\frac{\pi}{2}=0.

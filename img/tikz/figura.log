@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  2 SEP 2023 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  5 SEP 2023 00:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -909,28 +909,27 @@ e
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
-\openout3 = `external/plano-normal-trayectoria-espacio.md5'.
+\openout3 = `external/producto-vectorial.md5'.
 
 \openout3 = `figura.auxlock'.
 
 ===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "external/plano-normal-trayectoria-espa
-cio" "\def\tikzexternalrealjob{figura}\input{figura}" && convert -density 200 -
-transparent white "external/plano-normal-trayectoria-espacio.pdf" "external/pla
-no-normal-trayectoria-espacio.png" ' ========
+n-error -interaction=batchmode -jobname "external/producto-vectorial" "\def\tik
+zexternalrealjob{figura}\input{figura}" && convert -density 200 -transparent wh
+ite "external/producto-vectorial.pdf" "external/producto-vectorial.png" ' =====
+===
 runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "external/plano-normal-trayectoria-espacio" "\def\tikzexternalrealjob{figura}\
-input{figura}" && convert -density 200 -transparent white "external/plano-norma
-l-trayectoria-espacio.pdf" "external/plano-normal-trayectoria-espacio.png" )...
-executed.
+ "external/producto-vectorial" "\def\tikzexternalrealjob{figura}\input{figura}"
+ && convert -density 200 -transparent white "external/producto-vectorial.pdf" "
+external/producto-vectorial.png" )...executed.
 
 \openout3 = `figura.auxlock'.
 
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/al
-f/texmf/fonts/enc/dvips/base/8r.enc} <./external/plano-normal-trayectoria-espac
-io.pdf>] (./figura.aux)
+f/texmf/fonts/enc/dvips/base/8r.enc} <./external/producto-vectorial.pdf>]
+(./figura.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-16>
@@ -938,7 +937,7 @@ L3 programming layer <2023-06-16>
  ) 
 Here is how much of TeX's memory you used:
  28136 strings out of 477580
- 726090 string characters out of 5827698
+ 726076 string characters out of 5827698
  1852769 words of memory out of 5000000
  48104 multiletter control sequences out of 15000+600000
  514972 words of font info for 36 fonts, out of 8000000 for 9000
@@ -946,13 +945,13 @@ Here is how much of TeX's memory you used:
  102i,5n,111p,722b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/alf/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/alf/texmf/f
 onts/type1/public/amsfonts/cm/cmr10.pfb></home/alf/texmf/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></home/alf/texmf/fonts/type1/urw/symbol/usyr.pfb></home/alf
-/texmf/fonts/type1/urw/times/utmb8a.pfb></home/alf/texmf/fonts/type1/urw/times/
-utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on figura.pdf (1 page, 52877 bytes).
+fonts/cm/cmsy10.pfb></home/alf/texmf/fonts/type1/urw/times/utmb8a.pfb></home/al
+f/texmf/fonts/type1/urw/times/utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on figura.pdf (1 page, 51686 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

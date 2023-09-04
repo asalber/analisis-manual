@@ -2,6 +2,7 @@
 
 \begin{tikzpicture}
     \begin{axis}[
+        height=4cm,
         gen2dfun, 
         xmin=-0.1, xmax=3,
         ymin=-0.1, ymax=3,
@@ -10,7 +11,6 @@
         xticklabels={$1$,$x(t)$},
         ytick={1,2.041471},
         yticklabels={$1$,$y(t)$}, 
-        height=2cm,
         clip=false,
         color = myblack,
         ]
@@ -21,9 +21,9 @@
         \draw [->, myblue, thick] (O) -- (I) node[above] {$\mathbf{i}$};
         \draw [->, myblue, thick] (O) -- (J) node[right] {$\mathbf{j}$};
         \coordinate (P) at (2,2.041471);
-        \fill (P) circle (1.2pt) node[anchor=south, myblue] (Plabel) {$f(t) = (x(t), y(t))$};
+        \fill (P) circle (1.2pt) node[anchor=south, myblue, inner sep=5cm] (Plabel) {$f(t) = (x(t), y(t))$};
         \draw[mygray, dotted] (P) -- (P|-O);
         \draw[mygray, dotted] (P) -- (P-|O);
-        \node at (3.5,3.5) {$\mathbb{R}^2$};
+        \node at (3.5,3) {$\mathbb{R}^2$};
     \end{axis};
     \end{tikzpicture}
