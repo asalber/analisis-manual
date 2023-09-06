@@ -322,7 +322,7 @@ a. $\mathbf{0} \cdot \mathbf{v} = 0v_1+\cdots+0v_n = 0$.
 
 :::{#thm-producto-escalar}
 ## Producto escalar
-Dados dos vectores no nulos $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$, se cumple que
+Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores no nulos en $\mathbb{R}^n$, entonces
 
 $$
 \mathbf{u}\cdot\mathbf{v} =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \cos(\alpha)
@@ -335,6 +335,8 @@ donde $\alpha$ es el ángulo que forman los vectores.
 ## Demostración
 :::{.proof}
 Supongamos $\mathbf{u}$, $\mathbf{v}$ forman un ángulo $\alpha$. Considerando el triángulo formado por los vectores $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{u-v}$, el [teorema del coseno](https://es.wikipedia.org/wiki/Teorema_del_coseno) establece que 
+
+TODO Meter diagrama del triángulo formado por u, v y u-v.
 
 $$
 |\mathbf{u}-\mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2 - 2|\mathbf{u}||\mathbf{v}|\cos(\alpha)
@@ -380,6 +382,49 @@ El ángulo entre los vectores $\mathbf{u}=(1,0,2)$ y $\mathbf{v}=(-2,1,-3)$ es
 &= \operatorname{arccos}\left(\frac{1\cdot(-2)+0\cdot 1+2\cdot (-3)}{\sqrt{1^2+0^2+2^2}\sqrt{(-2)^2+1^2+(-3)^2}}\right)\\
 & = \operatorname{arccos}\left(\frac{-8}{\sqrt{5}\sqrt{14}} \right) \approx 2.84 \mbox{ rad}.
 \end{align*}
+:::
+
+Una interesante aplicación geométrica del producto escalar permite calcular la proyección de un vector sobre otro. 
+
+:::{#prp-proyeccion-producto-escalar}
+Si $\mathbf{u}$ y $\mathbf{v}$ son dos no nulos vectores en $\mathbb{R}^n$, entonces la longitud de la proyección de $\mathbf{v}$ sobre $\mathbf{u}$ es
+
+$$
+\frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}|}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\mathbf{u}$ y $\mathbf{v}$ forman un ángulo $\alpha$. Entonces la proyección de $\mathbf{v}$ sobre $\mathbf{u}$ es el segmento representado la siguiente gráfica,
+
+:::{.content-visible when-format="html"}
+![Proyección de un vector sobre otro.](img/geometria-plano-espacio/proyeccion-producto-escalar.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Proyección de un vector sobre otro.](img/geometria-plano-espacio/proyeccion-producto-escalar.pdf)
+:::
+
+que es la base de un triángulo rectángulo con hipotenusa $\mathbf{v}$, por lo que, aplicando relaciones trigonométricas se tiene que su longitud es
+
+$$
+|\mathbf{v}|\cos(\alpha).
+$$
+
+Ahora bien, como 
+
+$$
+\mathbf{u}\cdot \mathbf{v} = |\mathbf{u}| (|\mathbf{v}|\cos(\alpha)),
+$$
+
+de donde se deduce que 
+
+$$
+|\mathbf{v}|\cos(\alpha) = \frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}|}.
+$$
+:::
 :::
 
 ### Vectores paralelos
@@ -443,6 +488,8 @@ $$
 $$
 :::
 
+
+
 ### Producto vectorial
 
 Dados dos vectores $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ en el espacio real $\mathbb{R}^3$, en muchas ocasiones interesa obtener un vector ortogonal a ellos. Afortunadamente existe otra producto entre vectores que nos permite obtener este vector fácilmente.
@@ -496,7 +543,6 @@ $$
 :::{#exm-producto-vectorial}
 El producto vectorial de los vectores $\mathbf{u}=(1,2,0)$ y $\mathbf{v}=(-1,1,0)$ es 
 
-(u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
 $$
 \mathbf{u}\times \mathbf{v} 
 = (2\cdot 0-0\cdot 1, 0\cdot (-2)-1\cdot 0, 1\cdot 1-2\cdot (-1) 
@@ -515,13 +561,13 @@ Como se puede observar en el siguiente gráfico, el vector resultante es perpend
 :::
 
 :::{#prp-producto-vectorial}
-Si $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ son dos vectores no nulos ni paralelos en $\mathbb{R}^3$, el vector $\mathbf{u}\times \mathbf{v}$ es ortogonal a ellos.
+Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores no nulos ni paralelos en el espacio real $\mathbb{R}^3$, el vector $\mathbf{u}\times \mathbf{v}$ es ortogonal a ellos.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sea $\mathbf{w}=\mathbf{u}\times \mathbf{v}$.
+Sean $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$ dos vectores no nulos en $\mathbb{R}^3$ y $\mathbf{w}=\mathbf{u}\times \mathbf{v}$.
 
 Veamos primero que $\mathbf{w}$ es ortogonal a $\mathbf{u}$.
 
@@ -542,6 +588,121 @@ Del mismo modo, para ver que $\mathbf{w}$ es ortogonal a $\mathbf{v}$ tenemos
 \end{align*}
 
 por lo que $\mathbf{w}$ también es ortogonal a $\mathbf{v}$.
+:::
+:::
+
+:::{#thm-angulo-producto-vectorial}
+Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores no nulos en el espacio real $\mathbb{R}^3$, entonces
+
+$$
+|\mathbf{u}\times\mathbf{v}| =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha)
+$$
+
+donde $\alpha$ es el ángulo que forman los vectores.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sean $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$. Entonces
+
+\begin{align*}
+|\mathbf{u}\times \mathbf{v}|^2 
+&= (u_2v_3-u_3v_2)^2 + (u_3v_1-u_1v_3)^2 + (u_1v_2-u_2v_1)^2 \\
+&= u_2^2v_3^2 - 2u_2v_3u_3v_2 + u_3^2v_2^2 + u_3^2v_1^2 - 2u_3v_1u_1v_3 \\
+&+ u_1^2v_3^2 + u_1^2v_2^2 - 2u_1v_2u_2v_1 + u_2^2v_1^2 \\
+&= (u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2) - (u_1v_1+u_2v_2+u_3v_3)^2 \\
+&= |\mathbf{u}|^2|\mathbf{v}|^2 - (\mathbf{u}\cdot\mathbf{v})^2 
+= |\mathbf{u}|^2|\mathbf{v}|^2 - |\mathbf{u}|^2|\mathbf{v}|^2 \cos(\alpha)^2 \tag{1} \\
+&= |\mathbf{u}|^2|\mathbf{v}|^2 (1-\cos(\alpha)^2) 
+= |\mathbf{u}|^2|\mathbf{v}|^2 \operatorname{sen}(\alpha)^2, 
+\end{align*}
+(1) @thm-producto-escalar.
+
+y por tanto, 
+
+$$
+|\mathbf{u}\times \mathbf{v}| 
+= \sqrt{|\mathbf{u}|^2|\mathbf{v}|^2 \operatorname{sen}(\alpha)^2} 
+= |\mathbf{u}||\mathbf{v}| \operatorname{sen}(\alpha).
+$$
+:::
+:::
+
+:::{#cor-vectores-paralelos}
+Dos vectores no nulos $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^3$ son paralelos si y sólo si $\mathbf{u}\times \mathbf{v}=\mathbf{0}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $\mathbf{u}$ y $\mathbf{v}$ son paralelos, entonces el ángulo que forman es $\alpha=0$ o $\alpha=\pi$, pero en ambos casos $\operatorname{sen}(\alpha)=0$, por lo que 
+
+$$
+|\mathbf{u}\times\mathbf{v}| =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha) = 0,
+$$
+
+y el único vector con módulo 0 es el vector nulo, de lo que se deduce que $\mathbf{u}\times\mathbf{v} = \mathbf{0}$.
+
+Para probar el otro sentido de la implicación, supongamos que $\mathbf{u}\times\mathbf{v} =  \mathbf{0}$. Entonces
+
+$$
+|\mathbf{u}\times\mathbf{v}| = \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha) = |\mathbf{0}| = 0.
+$$
+
+Pero como $\mathbf{u}$ y $\mathbf{v}$ son vectores no nulos, su módulo no puede valer cero, por lo que necesariamente $\operatorname{sen}(\alpha)=0$, de lo que se deduce que $\alpha=0$ o $\alpha=\pi$, lo que significa que los vectores son paralelos.
+:::
+:::
+
+A continuación se presenta una interesante interpretación geométrica del producto vectorial.
+
+:::{#prp-paralelogramo-producto-vectorial}
+Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores no nulos en el espacio real $\mathbb{R}^3$, entonces $|\mathbf{u}\times \mathbf{v}|$ es el área del paralelogramo definido por $\mathbf{u}$ y $\mathbf{v}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como se puede observar en la gráfica de más abajo, el paralelogramo formado por los vectores $\mathbf{u}$ y $\mathbf{v}$ tiene altura $|v|\operatorname{sen}(\alpha)$, por lo que, de acuerdo al la fórmula del área de un paralelogramo (base $\times$ altura) se tiene que el su área es
+
+$$
+|\mathbf{u}|(|\mathbf{v}|\operatorname{sen}(\alpha)) = |\mathbf{u}\times \mathbf{v}|.
+$$
+
+:::{.content-visible when-format="html"}
+![Paralelogramo definido por dos vectores.](img/geometria-plano-espacio/paralelogramo-producto-vectorial.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Paralelogramo definido por dos vectores.](img/geometria-plano-espacio/paralelogramo-producto-vectorial.pdf)
+:::
+:::
+:::
+
+:::{#prp-propiedades-producto-vectorial}
+Dados los vectores $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{w}$ en $\mathbb{R}^n$, se cumple que
+
+a. $\mathbf{u}\times \mathbf{v} = -\mathbf{v}\times\mathbf{u}$.
+a. $(a\mathbf{u})\times\mathbf{v} = a(\mathbf{u}\times\mathbf{v})$ $\forall a\in\mathbb{R}$.
+a. $\mathbf{u}\times(\mathbf{v}+\mathbf{w}) = \mathbf{u}\times\mathbf{v} + \mathbf{u}\times\mathbf{w}$.
+a. $\mathbf{u}\cdot(\mathbf{v}\times \mathbf{w}) = (\mathbf{u}\times \mathbf{v})\cdot \mathbf{w}$.
+a. $\mathbf{u}\times (\mathbf{v}\times \mathbf{w}) = (\mathbf{u}\cdot \mathbf{w})\mathbf{v}-(\mathbf{u}\cdot\mathbf{v})\mathbf{w}$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Las demostraciones son sencillas simplemente aplicando la definición de producto vectorial y operando las componentes de los vectores. Daremos la prueba de la primera propiedad y el resto se dejan como ejercicios.
+
+Sean $\mathbf{u}=(u_1,u_2,u_3)$ y $\mathbf{v}=(v_1,v_2,v_3)$. Entonces
+
+\begin{align*}
+\mathbf{u}\times \mathbf{v} 
+&= (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1) \\
+&= -(u_3v_2-u_2v_3, u_1v_3-u_3v_1, u_2v_1-u_1v_2) \\
+&= -(v_2u_3-v_3u_2, v_3u_1-v_1u_3, v_1u_2-v_2u_1) \\
+&= - \mathbf{v}\times \mathbf{u}.
+\end{align*}
 :::
 :::
 
@@ -735,3 +896,4 @@ y su ecuación escalar es
 $$
 2x+y+2z=7.
 $$
+:::

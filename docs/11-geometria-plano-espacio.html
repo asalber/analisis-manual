@@ -573,7 +573,7 @@ Demostración
 </div>
 </div>
 <div id="thm-producto-escalar" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 10.1 (Producto escalar) </strong></span>Dados dos vectores no nulos <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se cumple que</p>
+<p><span class="theorem-title"><strong>Teorema 10.1 (Producto escalar) </strong></span>Si <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos vectores no nulos en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
 <p><span class="math display">\[
 \mathbf{u}\cdot\mathbf{v} =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \cos(\alpha)
 \]</span></p>
@@ -593,6 +593,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos <span class="math inline">\(\mathbf{u}\)</span>, <span class="math inline">\(\mathbf{v}\)</span> forman un ángulo <span class="math inline">\(\alpha\)</span>. Considerando el triángulo formado por los vectores <span class="math inline">\(\mathbf{u}\)</span>, <span class="math inline">\(\mathbf{v}\)</span> y <span class="math inline">\(\mathbf{u-v}\)</span>, el <a href="https://es.wikipedia.org/wiki/Teorema_del_coseno">teorema del coseno</a> establece que</p>
+<p>TODO Meter diagrama del triángulo formado por u, v y u-v.</p>
 <p><span class="math display">\[
 |\mathbf{u}-\mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2 - 2|\mathbf{u}||\mathbf{v}|\cos(\alpha)
 \]</span></p>
@@ -631,6 +632,49 @@ Demostración
 &amp; = \operatorname{arccos}\left(\frac{-8}{\sqrt{5}\sqrt{14}} \right) \approx 2.84 \mbox{ rad}.
 \end{align*}\]</span></p>
 </div>
+<p>Una interesante aplicación geométrica del producto escalar permite calcular la proyección de un vector sobre otro.</p>
+<div id="prp-proyeccion-producto-escalar" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 10.3 </strong></span>Si <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos no nulos vectores en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces la longitud de la proyección de <span class="math inline">\(\mathbf{v}\)</span> sobre <span class="math inline">\(\mathbf{u}\)</span> es</p>
+<p><span class="math display">\[
+\frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}|}.
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> forman un ángulo <span class="math inline">\(\alpha\)</span>. Entonces la proyección de <span class="math inline">\(\mathbf{v}\)</span> sobre <span class="math inline">\(\mathbf{u}\)</span> es el segmento representado la siguiente gráfica,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/proyeccion-producto-escalar.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Proyección de un vector sobre otro.</figcaption>
+</figure>
+</div>
+<p>que es la base de un triángulo rectángulo con hipotenusa <span class="math inline">\(\mathbf{v}\)</span>, por lo que, aplicando relaciones trigonométricas se tiene que su longitud es</p>
+<p><span class="math display">\[
+|\mathbf{v}|\cos(\alpha).
+\]</span></p>
+<p>Ahora bien, como</p>
+<p><span class="math display">\[
+\mathbf{u}\cdot \mathbf{v} = |\mathbf{u}| (|\mathbf{v}|\cos(\alpha)),
+\]</span></p>
+<p>de donde se deduce que</p>
+<p><span class="math display">\[
+|\mathbf{v}|\cos(\alpha) = \frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{u}|}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="vectores-paralelos" class="level3" data-number="10.1.11">
 <h3 data-number="10.1.11" class="anchored" data-anchor-id="vectores-paralelos"><span class="header-section-number">10.1.11</span> Vectores paralelos</h3>
@@ -657,7 +701,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 10.2 </strong></span>Dos vectores no nulos <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> son ortogonales si y sólo si <span class="math inline">\(\mathbf{u}\cdot \mathbf{v}=0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -666,7 +710,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos vectores no nulos ortogonales. Entonces el ángulo que forman es <span class="math inline">\(\alpha = \pi/2\)</span>, y por tanto, su producto escalar vale</p>
@@ -734,7 +778,7 @@ v_1 &amp; v_2 &amp; v_3\\
 \]</span></p>
 <div id="exm-producto-vectorial" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10.11 </strong></span>El producto vectorial de los vectores <span class="math inline">\(\mathbf{u}=(1,2,0)\)</span> y <span class="math inline">\(\mathbf{v}=(-1,1,0)\)</span> es</p>
-<p>(u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1) <span class="math display">\[
+<p><span class="math display">\[
 \mathbf{u}\times \mathbf{v}
 = (2\cdot 0-0\cdot 1, 0\cdot (-2)-1\cdot 0, 1\cdot 1-2\cdot (-1)
 = (0, 0, 3).
@@ -748,10 +792,10 @@ v_1 &amp; v_2 &amp; v_3\\
 </div>
 </div>
 <div id="prp-producto-vectorial" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 10.3 </strong></span>Si <span class="math inline">\(\mathbf{u}=(u_1,u_2,u_3)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,v_2,v_3)\)</span> son dos vectores no nulos ni paralelos en <span class="math inline">\(\mathbb{R}^3\)</span>, el vector <span class="math inline">\(\mathbf{u}\times \mathbf{v}\)</span> es ortogonal a ellos.</p>
+<p><span class="theorem-title"><strong>Proposición 10.4 </strong></span>Si <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos vectores no nulos ni paralelos en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, el vector <span class="math inline">\(\mathbf{u}\times \mathbf{v}\)</span> es ortogonal a ellos.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -760,10 +804,10 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(\mathbf{w}=\mathbf{u}\times \mathbf{v}\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sean <span class="math inline">\(\mathbf{u}=(u_1,u_2,u_3)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,v_2,v_3)\)</span> dos vectores no nulos en <span class="math inline">\(\mathbb{R}^3\)</span> y <span class="math inline">\(\mathbf{w}=\mathbf{u}\times \mathbf{v}\)</span>.</p>
 <p>Veamos primero que <span class="math inline">\(\mathbf{w}\)</span> es ortogonal a <span class="math inline">\(\mathbf{u}\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \mathbf{u}\cdot \mathbf{w}
@@ -778,6 +822,145 @@ Demostración
 &amp;= v_1u_2v_3-v_1u_3v_2+v_2u_3v_1-v_2u_1v_3+v_3u_1v_2-v_3u_2v_1 = 0\\
 \end{align*}\]</span></p>
 <p>por lo que <span class="math inline">\(\mathbf{w}\)</span> también es ortogonal a <span class="math inline">\(\mathbf{v}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-angulo-producto-vectorial" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 10.3 </strong></span>Si <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos vectores no nulos en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, entonces</p>
+<p><span class="math display">\[
+|\mathbf{u}\times\mathbf{v}| =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha)
+\]</span></p>
+<p>donde <span class="math inline">\(\alpha\)</span> es el ángulo que forman los vectores.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sean <span class="math inline">\(\mathbf{u}=(u_1,u_2,u_3)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,v_2,v_3)\)</span>. Entonces</p>
+<p><span class="math display">\[\begin{align*}
+|\mathbf{u}\times \mathbf{v}|^2
+&amp;= (u_2v_3-u_3v_2)^2 + (u_3v_1-u_1v_3)^2 + (u_1v_2-u_2v_1)^2 \\
+&amp;= u_2^2v_3^2 - 2u_2v_3u_3v_2 + u_3^2v_2^2 + u_3^2v_1^2 - 2u_3v_1u_1v_3 \\
+&amp;+ u_1^2v_3^2 + u_1^2v_2^2 - 2u_1v_2u_2v_1 + u_2^2v_1^2 \\
+&amp;= (u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2) - (u_1v_1+u_2v_2+u_3v_3)^2 \\
+&amp;= |\mathbf{u}|^2|\mathbf{v}|^2 - (\mathbf{u}\cdot\mathbf{v})^2
+= |\mathbf{u}|^2|\mathbf{v}|^2 - |\mathbf{u}|^2|\mathbf{v}|^2 \cos(\alpha)^2 \tag{1} \\
+&amp;= |\mathbf{u}|^2|\mathbf{v}|^2 (1-\cos(\alpha)^2)
+= |\mathbf{u}|^2|\mathbf{v}|^2 \operatorname{sen}(\alpha)^2,
+\end{align*}\]</span> (1) <a href="#thm-producto-escalar">Teorema&nbsp;<span>10.1</span></a>.</p>
+<p>y por tanto,</p>
+<p><span class="math display">\[
+|\mathbf{u}\times \mathbf{v}|
+= \sqrt{|\mathbf{u}|^2|\mathbf{v}|^2 \operatorname{sen}(\alpha)^2}
+= |\mathbf{u}||\mathbf{v}| \operatorname{sen}(\alpha).
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cor-vectores-paralelos" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corolario 10.2 </strong></span>Dos vectores no nulos <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(\mathbb{R}^3\)</span> son paralelos si y sólo si <span class="math inline">\(\mathbf{u}\times \mathbf{v}=\mathbf{0}\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son paralelos, entonces el ángulo que forman es <span class="math inline">\(\alpha=0\)</span> o <span class="math inline">\(\alpha=\pi\)</span>, pero en ambos casos <span class="math inline">\(\operatorname{sen}(\alpha)=0\)</span>, por lo que</p>
+<p><span class="math display">\[
+|\mathbf{u}\times\mathbf{v}| =  \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha) = 0,
+\]</span></p>
+<p>y el único vector con módulo 0 es el vector nulo, de lo que se deduce que <span class="math inline">\(\mathbf{u}\times\mathbf{v} = \mathbf{0}\)</span>.</p>
+<p>Para probar el otro sentido de la implicación, supongamos que <span class="math inline">\(\mathbf{u}\times\mathbf{v} = \mathbf{0}\)</span>. Entonces</p>
+<p><span class="math display">\[
+|\mathbf{u}\times\mathbf{v}| = \lvert \mathbf{u}\rvert \lvert\mathbf{v}\rvert \operatorname{sen}(\alpha) = |\mathbf{0}| = 0.
+\]</span></p>
+<p>Pero como <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son vectores no nulos, su módulo no puede valer cero, por lo que necesariamente <span class="math inline">\(\operatorname{sen}(\alpha)=0\)</span>, de lo que se deduce que <span class="math inline">\(\alpha=0\)</span> o <span class="math inline">\(\alpha=\pi\)</span>, lo que significa que los vectores son paralelos.</p>
+</div>
+</div>
+</div>
+</div>
+<p>A continuación se presenta una interesante interpretación geométrica del producto vectorial.</p>
+<div id="prp-paralelogramo-producto-vectorial" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 10.5 </strong></span>Si <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> son dos vectores no nulos en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, entonces <span class="math inline">\(|\mathbf{u}\times \mathbf{v}|\)</span> es el área del paralelogramo definido por <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como se puede observar en la gráfica de más abajo, el paralelogramo formado por los vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> tiene altura <span class="math inline">\(|v|\operatorname{sen}(\alpha)\)</span>, por lo que, de acuerdo al la fórmula del área de un paralelogramo (base <span class="math inline">\(\times\)</span> altura) se tiene que el su área es</p>
+<p><span class="math display">\[
+|\mathbf{u}|(|\mathbf{v}|\operatorname{sen}(\alpha)) = |\mathbf{u}\times \mathbf{v}|.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/geometria-plano-espacio/paralelogramo-producto-vectorial.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Paralelogramo definido por dos vectores.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="prp-propiedades-producto-vectorial" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 10.6 </strong></span>Dados los vectores <span class="math inline">\(\mathbf{u}\)</span>, <span class="math inline">\(\mathbf{v}\)</span> y <span class="math inline">\(\mathbf{w}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se cumple que</p>
+<ol type="a">
+<li><span class="math inline">\(\mathbf{u}\times \mathbf{v} = -\mathbf{v}\times\mathbf{u}\)</span>.</li>
+<li><span class="math inline">\((a\mathbf{u})\times\mathbf{v} = a(\mathbf{u}\times\mathbf{v})\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{u}\times(\mathbf{v}+\mathbf{w}) = \mathbf{u}\times\mathbf{v} + \mathbf{u}\times\mathbf{w}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{u}\cdot(\mathbf{v}\times \mathbf{w}) = (\mathbf{u}\times \mathbf{v})\cdot \mathbf{w}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{u}\times (\mathbf{v}\times \mathbf{w}) = (\mathbf{u}\cdot \mathbf{w})\mathbf{v}-(\mathbf{u}\cdot\mathbf{v})\mathbf{w}\)</span>.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Las demostraciones son sencillas simplemente aplicando la definición de producto vectorial y operando las componentes de los vectores. Daremos la prueba de la primera propiedad y el resto se dejan como ejercicios.</p>
+<p>Sean <span class="math inline">\(\mathbf{u}=(u_1,u_2,u_3)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,v_2,v_3)\)</span>. Entonces</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{u}\times \mathbf{v}
+&amp;= (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1) \\
+&amp;= -(u_3v_2-u_2v_3, u_1v_3-u_3v_1, u_2v_1-u_1v_2) \\
+&amp;= -(v_2u_3-v_3u_2, v_3u_1-v_1u_3, v_1u_2-v_2u_1) \\
+&amp;= - \mathbf{v}\times \mathbf{u}.
+\end{align*}\]</span></p>
 </div>
 </div>
 </div>
@@ -916,7 +1099,8 @@ a(x-x_0)+b(y-y_0)+c(z-z_0) = 0 \Leftrightarrow ax+by+cz=ax_0+by_0+cz_0,
 ax+by+cz=d,
 \]</span></p>
 <p>y se conoce como <em>ecuación escalar del plano</em>.</p>
-<p>:::{#exm-ecuacion-plano} Dado el punto <span class="math inline">\(P=(2,1,1)\)</span> y el vector <span class="math inline">\(\mathbf{v}=(2,1,2)\)</span>, la ecuación vectorial del plano qu pasa por <span class="math inline">\(P\)</span> y es ortogonal a <span class="math inline">\(\mathbf{v}\)</span> es</p>
+<div id="exm-ecuacion-plano" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.14 </strong></span>Dado el punto <span class="math inline">\(P=(2,1,1)\)</span> y el vector <span class="math inline">\(\mathbf{v}=(2,1,2)\)</span>, la ecuación vectorial del plano qu pasa por <span class="math inline">\(P\)</span> y es ortogonal a <span class="math inline">\(\mathbf{v}\)</span> es</p>
 <p><span class="math display">\[
 (x-2,y-1,z-1)(2,1,2)=2(x-2)+(y-1)+2(z-1)=0,
 \]</span></p>
@@ -924,6 +1108,7 @@ ax+by+cz=d,
 <p><span class="math display">\[
 2x+y+2z=7.
 \]</span></p>
+</div>
 
 
 </section>
