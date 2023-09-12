@@ -399,7 +399,8 @@ Este último resultado nos permite calcular una integral como el límite de las 
 Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$, entonces
 
 a. $f+g$ es integrable Riemann en $I$ y $\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.$
-b. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.$
+
+a. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.$
 :::
 
 :::{.callout-note collapse="true"}
@@ -407,7 +408,7 @@ b. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a
 :::{.proof}
 Veamos la demostración de cada apartado.
 
-a. En primer lugar, resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
+a.  En primer lugar, resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
 
     $$
     \begin{gathered}
@@ -461,7 +462,7 @@ a. En primer lugar, resulta sencillo ver que para cualquier subintervalo $J$ de 
 
     y por consiguiente, $\int_a^b (f+g) = \int_a^b f + \int_a^b g$.
 
-b. Si $c=0$ entonces $cf=0$, y por tanto, $cf$ es integrable y además $\int_a^b cf = 0 = c\int_a^b f$. 
+b.  Si $c=0$ entonces $cf=0$, y por tanto, $cf$ es integrable y además $\int_a^b cf = 0 = c\int_a^b f$. 
 
     Supongamos ahora que $c>0$. Resulta sencillo ver que para cualquier subintervalo $J$ de $I$ se cumple
 

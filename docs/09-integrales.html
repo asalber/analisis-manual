@@ -225,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-derivadas-funciones-vectoriales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Derivadas de funciones vectoriales</span></span></a>
+  <a href="./12-funciones-vectoriales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Análisis de funciones vectoriales</span></span></a>
   </div>
 </li>
     </ul>
@@ -705,8 +705,8 @@ Importante
 <div id="thm-linealidad-integral-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
 <ol type="a">
-<li><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></li>
-<li>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></li>
+<li><p><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></p></li>
+<li><p>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></p></li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -730,7 +730,7 @@ Demostración
 \inf\{(f+g)(x): x\in J\} \geq \inf\{f(x): x\in J\} + \inf\{g(x): x\in J\}\\
 \sup\{(f+g)(x): x\in J\} \leq \sup\{f(x): x\in J\} + \sup\{g(x): x\in J\}
 \end{gathered}
-  \tag{9.1}\]</span></span></p>
+\tag{9.1}\]</span></span></p>
 <p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son integrables, existen dos particiones <span class="math inline">\(P_1,P_2\in \mathcal{P}(I)\)</span> tales que</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -769,7 +769,7 @@ s(f,P) + s(g,P) \leq  \int_a^b f + \int_a^b g \leq S(f,P) + S(g,P),
 \inf\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}\\
 \sup\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}
 \end{gathered}
-  \tag{9.2}\]</span></span></p>
+\tag{9.2}\]</span></span></p>
 <p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cs(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cS(f,P)\)</span>.</p>
 <p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-2">Ecuación&nbsp;<span>9.2</span></a>,</p>
 <p><span class="math display">\[
@@ -786,7 +786,7 @@ S(cf,P) - s(cf,P) = c S(f,P) - cs(f,P) = c(S(f,P)-s(f,P)) &lt; c\frac{\varepsilo
 \inf\{(cf)(x): x\in J\} = c\sup\{f(x): x\in J\}\\
 \sup\{(cf)(x): x\in J\} = c\inf\{f(x): x\in J\}
 \end{gathered}
-  \tag{9.3}\]</span></span></p>
+\tag{9.3}\]</span></span></p>
 <p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cS(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cs(f,P)\)</span>.</p>
 <p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{-c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-3">Ecuación&nbsp;<span>9.3</span></a>,</p>
 <p><span class="math display">\[\begin{align*}

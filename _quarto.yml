@@ -48,7 +48,7 @@ book:
     - 08-series.qmd
     - 09-integrales.qmd
     - 11-geometria-plano-espacio.qmd
-    - 12-derivadas-funciones-vectoriales.qmd
+    - 12-funciones-vectoriales.qmd
     
 #bibliography: references.bib
 
