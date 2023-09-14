@@ -42,8 +42,7 @@ $$
 siendo $\mathbf{i}$, $\mathbf{j}$ y $\mathbf{k}$ los vectores coordenados.
 
 ### Representación gráfica de una función vectorial
-
-La representación gráfica de una función vectorial en $\mathbb{R}^2$ es una trayectoria en el plano real.
+Las representaciones gráficas de las funciones vectoriales se conocen como _trayectorias_ o _curvas_. Así, la gráfica de una función vectorial en $\mathbb{R}^2$ es una trayectoria en el plano real.
 
 :::{.content-visible when-format="html"}
 ![Trayectoria de una función vectorial en el plano real.](img/funciones-vectoriales/trayectoria-plano.png)
@@ -53,7 +52,7 @@ La representación gráfica de una función vectorial en $\mathbb{R}^2$ es una t
 ![Trayectoria de una función vectorial en el plano real.](img/funciones-vectoriales/trayectoria-plano.pdf)
 :::
 
-La representación gráfica de una función vectorial en $\mathbb{R}^3$ es una trayectoria en el espacio real.
+Y la gráfica de una función vectorial en $\mathbb{R}^3$ es una trayectoria en el espacio real.
 
 :::{.content-visible when-format="html"}
 ![Trayectoria de una función vectorial en el espacio real.](img/funciones-vectoriales/trayectoria-espacio.png)
@@ -61,6 +60,29 @@ La representación gráfica de una función vectorial en $\mathbb{R}^3$ es una t
 
 :::{.content-visible unless-format="html"}
 ![Trayectoria de una función vectorial en el espacio real.](img/funciones-vectoriales/trayectoria-espacio.pdf)
+:::
+
+Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.
+
+:::{#exm-parametrizacion-trayectorias}
+Las función vectorial $\mathbf{f}(\operatorname{sen}(t),\cos(t)$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
+
+:::{.content-visible when-format="html"}
+![Parametrización de una trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Parametrización de una trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular.pdf)
+:::
+
+
+:::{.content-visible when-format="html"}
+![Otra parametrización de la trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular-2.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Otra parametrización de la trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular-2.pdf)
+:::
 :::
 
 ## Límites y continuidad de una función vectorial
@@ -120,7 +142,7 @@ $$
 \lim_{\Delta t\rightarrow 0} \frac{\mathbf{f}(a+\Delta t)-\mathbf{f}(a)}{\Delta t}.
 $$
 
-En tal caso, el valor del límite se conoce como _derivada_ del campo vectorial en el punto $a$ y se representa por $\mathbf{f}'(a)$.
+En tal caso, el valor del límite se conoce como _derivada_ de la función vectorial en el punto $a$ y se representa por $\mathbf{f}'(a)$ o bien $\frac{d\mathbf{f}}{dt}$.
 :::
 
 Muchas de las propiedades de las funciones reales de variable real pueden extenderse a las funciones vectoriales de variable real a través de sus componentes. Así, por ejemplo, la derivada de una función vectorial puede obtenerse a partir de las derivadas de sus funciones componentes.
@@ -152,7 +174,7 @@ Se deja como ejercicio la demostración para espacios de mayor orden.
 :::
 
 :::{#exm-derivada-funcion-vectorial}
-La derivada de la función vectorial $\mathbf{f}(t)= (\ln(t), t^2+1, e^{t/2})$ es
+La derivada de la función vectorial $\mathbf{f}(t)= (\ln(t^2), t^3-t, e^{t/2})$ es
 
 $$
 \mathbf{f}'(t) 
@@ -169,27 +191,50 @@ $$
 $$
 :::
 
-
 :::{#prp-propiedades-derivada-funciones-vectoriales}
-Si $\mathbf{f}(t)$ y $\mathbf{g}(t)$ son dos funciones vectoriales derivables, entonces
+Si $\mathbf{f}(t)$ y $\mathbf{g}(t)$ son dos funciones vectoriales derivables, y $f(t)$ es una función real derivable, entonces
 
 a. $(\mathbf{f}(t)+\mathbf{g}(t))' = \mathbf{f}'(t) + \mathbf{g}'(t)$.
 
 a. $(c \mathbf{f}(t))' = c \mathbf{f}'(t) \forall c\in\mathbb{R}$.
 
-a. $(f(t)\mathbf{f}(t)) = f'(t)\mathbf{f}(t) + f(t)\mathbf{f}'(t)$.
+a. $(f(t)\mathbf{f}(t))' = f'(t)\mathbf{f}(t) + f(t)\mathbf{f}'(t)$.
 
 a. $(\mathbf{f}(t)\cdot \mathbf{g}(t)))' = \mathbf{f}'(t)\cdot \mathbf{g}(t) + \mathbf{f}(t) \cdot \mathbf{g}'(t)$.
 
 a. $(\mathbf{f}(t)\times \mathbf{g}(t)))' = \mathbf{f}'(t)\times \mathbf{g}(t) + \mathbf{f}(t) \times \mathbf{g}'(t)$.
-
-a. $\mathbf{f}(f(t))' = \mathbf{f}'(f(t))f'(t)$.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
 La demostración es sencilla usando el teorema anterior y aplicando las propiedades de la derivada de funciones reales de variable real, por lo que se deja como ejercicio.
+:::
+:::
+
+:::{#thm-regla-cadena-funciones-vectoriales}
+## Regla de la cadena de funciones vectoriales
+Si $f(t)$ es una función real derivable en $t=a$ y $\mathbf{f}(t)$ es una función vectorial derivable en $t=f(a)$, entonces 
+
+$$
+(\mathbf{f}\circ f)'(a) = \mathbf{f}'(f(a))f'(a).
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $\mathbf{f}(t) = (f_1(t),\ldots,f_n(t))$. Aplicando el @thm-derivada-funciones-vectoriales se tiene
+
+\begin{align*}
+(\mathbf{f}\circ f)'(a) 
+&= \mathbf{f}(f(a))' 
+= (f_1(f(a))', \ldots f_n(f(a))') \\
+&= (f_1'(f(a))f'(a), \ldots, f_n'(f(a))f'(a))\tag{1}\\
+&= (f_1'(f(a)), \ldots, f_n'(f(a)))f'(a)\\
+&= \mathbf{f}'(f(a))f'(a).
+\end{align*}
+(1) Regla de la cadena de funciones reales.
 :::
 :::
 
@@ -236,7 +281,7 @@ De la ecuación vectorial de la recta tangente a la trayectoria de $\mathbf{f}$ 
 $$
 \begin{cases}
 x(t) = x(a) + tx'(a) \\
-y(t)v= y(a) + ty'(a) 
+y(t) = y(a) + ty'(a) 
 \end{cases}
 \quad t\in \mathbb{R},
 $$
@@ -648,8 +693,6 @@ Veamos cuánto mide la trayectoria descrita por la función vectorial $\mathbf{f
 \end{align*}
 :::
 
-Una curva puede ser la trayectoria de más de una función vectorial. Por ejemplo, la función vectorial $\mathbf{f}(t)=(t,e^t,2t)$ describe la misma trayectoria en el intervalo $t\in[0,1]$, que la función $\mathbf{g}(x)=(\ln(x), x, \ln(x^2))$ en el intervalo $x\in[1,e]$. Es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable (en el ejemplo anterior, se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=\ln(x)$, y de la segunda a la primera mediante el cambio de variable $x=e^t$). Como es lógico, el cambio de parametrización no afecta a la longitud de la trayectoria, ya que al hacer el cambio de variable en la integral de la definición, se acaba obteniendo el mismo resultado.
-
 En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.
 
 :::{#def-funcion-longitud-arco}
@@ -664,6 +707,87 @@ siempre y cuando la trayectoria se recorra exactamente una vez para $t\in[a,b]$.
 
 A partir de la función longitud de arco se puede reparametrizar $\mathbf{f}(t)$ como $\mathbf{f}(t(s))$, donde $t(s)$ es la función inversa de $s(t)$.
 
+:::{#exm-parametrización-longitud-arco}
+La función vectorial $\mathbf{f}(t)=(3t+1, 4t-2)$ traza la siguiente gráfica en el intervalo $t\in[0,2]$.
+
+:::{.content-visible when-format="html"}
+![Parametrización de una trayectoria recta.](img/funciones-vectoriales/parametrizacion-longitud-arco-1.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Parametrización de una trayectoria recta.](img/funciones-vectoriales/parametrizacion-longitud-arco-1.pdf)
+:::
+
+La función longitud de arco de esta función vectorial es
+
+$$
+s(t) 
+= \int_0^t |\mathbf{f}'(x)|\,dx
+= \int_0^t |(3,4)|\,dx
+= \int_0^t \sqrt{25}\,dx
+= \int_0^t 5 \,dx
+= [5x]_0^t
+= 5t.
+$$
+
+Así que, tomando la función inversa $t=s/5$, y haciendo el cambio de variable en la parametrización anterior, obtenemos la parametrización longitud de arco de esta trayectoria.
+
+$$
+\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right).
+$$
+:::
+
+:::{#prp-parametrizacion-longitud-arco}
+Si $\mathbf{f}(s)$ es una función vectorial parametrizada con la longitud de arco de curva, entonces $\mathbf{f}'(s)$ es un vector unitario.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $s$ el parámetro dado por la función arco de la trayectoria de la función vectorial $\mathbf{f}(t)$ para $t\in[a,b]$, es decir,
+
+$$
+s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
+$$
+
+Entonces, por el teorema fundamental del cálculo para funciones vectoriales se tiene que 
+
+$$
+\frac{ds}{t} = s'(t) = |\mathbf{f}'(t)|.
+$$
+
+Por otro lado, al realizar el cambio de variable para la parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene
+
+$$
+\mathbf{f}'(t) 
+= \frac{d\mathbf{f}}{dt} 
+= \frac{d\mathbf{f}}{ds}\frac{ds}{dt}
+= \mathbf{f}'(s) |\mathbf{f}'(t)|,
+$$
+
+de donde se deduce que
+
+$$
+\mathbf{f}'(s) 
+= \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|},
+$$
+
+y por tanto, 
+
+$$
+|\mathbf{f}'(s)| 
+= \left|\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right|
+= \frac{|\mathbf{f}'(t)|}{|\mathbf{f}'(t)|}
+= 1.
+$$
+:::
+:::
+
+Una de las ventajas de la parametrización de longitud de arco de la trayectoria de una función vectorial $\mathbf{f}(s)$, es que la longitud de la trayectoria en el intervalo $s\in[a,b]$ es $b-a$, ya que 
+
+$$
+\int_a^b |\mathbf{f}'(s)|\,ds = \int_a^b 1\,dx = [s]_a^b = b-a.
+$$
 
 ## Cinemática: Movimiento curvilíneo
 

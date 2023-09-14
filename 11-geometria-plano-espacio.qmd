@@ -814,7 +814,7 @@ $$
 A partir de aquí, pasando $b$ multiplicando al otro lado de la ecuación, se obtiene
 
 $$
-y-y_0 = \frac{b}{a}(x-x_0) \mbox{ o bien } y-y_0+m(x-x_0),
+y-y_0 = \frac{b}{a}(x-x_0) \mbox{ o bien } y-y_0=m(x-x_0),
 $$
 
 llamando $m=b/a$.

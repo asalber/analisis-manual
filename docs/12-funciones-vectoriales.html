@@ -315,19 +315,35 @@ ul.task-list li input[type="checkbox"] {
 <p>siendo <span class="math inline">\(\mathbf{i}\)</span>, <span class="math inline">\(\mathbf{j}\)</span> y <span class="math inline">\(\mathbf{k}\)</span> los vectores coordenados.</p>
 <section id="representación-gráfica-de-una-función-vectorial" class="level3" data-number="11.1.1">
 <h3 data-number="11.1.1" class="anchored" data-anchor-id="representación-gráfica-de-una-función-vectorial"><span class="header-section-number">11.1.1</span> Representación gráfica de una función vectorial</h3>
-<p>La representación gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^2\)</span> es una trayectoria en el plano real.</p>
+<p>Las representaciones gráficas de las funciones vectoriales se conocen como <em>trayectorias</em> o <em>curvas</em>. Así, la gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^2\)</span> es una trayectoria en el plano real.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/trayectoria-plano.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Trayectoria de una función vectorial en el plano real.</figcaption>
 </figure>
 </div>
-<p>La representación gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span> es una trayectoria en el espacio real.</p>
+<p>Y la gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span> es una trayectoria en el espacio real.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/trayectoria-espacio.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Trayectoria de una función vectorial en el espacio real.</figcaption>
 </figure>
+</div>
+<p>Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.</p>
+<div id="exm-parametrizacion-trayectorias" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.1 </strong></span>Las función vectorial <span class="math inline">\(\mathbf{f}(\operatorname{sen}(t),\cos(t)\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,2\pi]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))\)</span> en el intervalo <span class="math inline">\(x\in[0,\pi]\)</span>. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=2x\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=t/2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/funciones-vectoriales/parametrizacion-trayectoria-circular.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Parametrización de una trayectoria circular.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/funciones-vectoriales/parametrizacion-trayectoria-circular-2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Otra parametrización de la trayectoria circular.</figcaption>
+</figure>
+</div>
 </div>
 </section>
 </section>
@@ -342,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
 <p>siempre que existan los límites de las funciones componentes.</p>
 </div>
 <div id="exm-limite-funciones-vectoriales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.1 </strong></span>El límite de la función vectorial <span class="math inline">\(\mathbf{f}(t)=\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.2 </strong></span>El límite de la función vectorial <span class="math inline">\(\mathbf{f}(t)=\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{t\to 0} \mathbf{f}(t)
 &amp;= \lim_{t\to 0}\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right) \\
@@ -387,7 +403,7 @@ Demostración
 <p><span class="math display">\[
 \lim_{\Delta t\rightarrow 0} \frac{\mathbf{f}(a+\Delta t)-\mathbf{f}(a)}{\Delta t}.
 \]</span></p>
-<p>En tal caso, el valor del límite se conoce como <em>derivada</em> del campo vectorial en el punto <span class="math inline">\(a\)</span> y se representa por <span class="math inline">\(\mathbf{f}'(a)\)</span>.</p>
+<p>En tal caso, el valor del límite se conoce como <em>derivada</em> de la función vectorial en el punto <span class="math inline">\(a\)</span> y se representa por <span class="math inline">\(\mathbf{f}'(a)\)</span> o bien <span class="math inline">\(\frac{d\mathbf{f}}{dt}\)</span>.</p>
 </div>
 <p>Muchas de las propiedades de las funciones reales de variable real pueden extenderse a las funciones vectoriales de variable real a través de sus componentes. Así, por ejemplo, la derivada de una función vectorial puede obtenerse a partir de las derivadas de sus funciones componentes.</p>
 <div id="thm-derivada-funciones-vectoriales" class="theorem">
@@ -424,7 +440,7 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.2 </strong></span>La derivada de la función vectorial <span class="math inline">\(\mathbf{f}(t)= (\ln(t), t^2+1, e^{t/2})\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.3 </strong></span>La derivada de la función vectorial <span class="math inline">\(\mathbf{f}(t)= (\ln(t^2), t^3-t, e^{t/2})\)</span> es</p>
 <p><span class="math display">\[
 \mathbf{f}'(t)
 = ((\ln(t^2))', (t^3-t)', (e^{t/2})')
@@ -438,14 +454,13 @@ Demostración
 \]</span></p>
 </div>
 <div id="prp-propiedades-derivada-funciones-vectoriales" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11.2 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{g}(t)\)</span> son dos funciones vectoriales derivables, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 11.2 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{g}(t)\)</span> son dos funciones vectoriales derivables, y <span class="math inline">\(f(t)\)</span> es una función real derivable, entonces</p>
 <ol type="a">
 <li><p><span class="math inline">\((\mathbf{f}(t)+\mathbf{g}(t))' = \mathbf{f}'(t) + \mathbf{g}'(t)\)</span>.</p></li>
 <li><p><span class="math inline">\((c \mathbf{f}(t))' = c \mathbf{f}'(t) \forall c\in\mathbb{R}\)</span>.</p></li>
-<li><p><span class="math inline">\((f(t)\mathbf{f}(t)) = f'(t)\mathbf{f}(t) + f(t)\mathbf{f}'(t)\)</span>.</p></li>
+<li><p><span class="math inline">\((f(t)\mathbf{f}(t))' = f'(t)\mathbf{f}(t) + f(t)\mathbf{f}'(t)\)</span>.</p></li>
 <li><p><span class="math inline">\((\mathbf{f}(t)\cdot \mathbf{g}(t)))' = \mathbf{f}'(t)\cdot \mathbf{g}(t) + \mathbf{f}(t) \cdot \mathbf{g}'(t)\)</span>.</p></li>
 <li><p><span class="math inline">\((\mathbf{f}(t)\times \mathbf{g}(t)))' = \mathbf{f}'(t)\times \mathbf{g}(t) + \mathbf{f}(t) \times \mathbf{g}'(t)\)</span>.</p></li>
-<li><p><span class="math inline">\(\mathbf{f}(f(t))' = \mathbf{f}'(f(t))f'(t)\)</span>.</p></li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -462,6 +477,38 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>La demostración es sencilla usando el teorema anterior y aplicando las propiedades de la derivada de funciones reales de variable real, por lo que se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-regla-cadena-funciones-vectoriales" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.2 (Regla de la cadena de funciones vectoriales) </strong></span>Si <span class="math inline">\(f(t)\)</span> es una función real derivable en <span class="math inline">\(t=a\)</span> y <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial derivable en <span class="math inline">\(t=f(a)\)</span>, entonces</p>
+<p><span class="math display">\[
+(\mathbf{f}\circ f)'(a) = \mathbf{f}'(f(a))f'(a).
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(\mathbf{f}(t) = (f_1(t),\ldots,f_n(t))\)</span>. Aplicando el <a href="#thm-derivada-funciones-vectoriales">Teorema&nbsp;<span>11.1</span></a> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+(\mathbf{f}\circ f)'(a)
+&amp;= \mathbf{f}(f(a))'
+= (f_1(f(a))', \ldots f_n(f(a))') \\
+&amp;= (f_1'(f(a))f'(a), \ldots, f_n'(f(a))f'(a))\tag{1}\\
+&amp;= (f_1'(f(a)), \ldots, f_n'(f(a)))f'(a)\\
+&amp;= \mathbf{f}'(f(a))f'(a).
+\end{align*}\]</span> (1) Regla de la cadena de funciones reales.</p>
 </div>
 </div>
 </div>
@@ -497,7 +544,7 @@ Demostración
 <p><span class="math display">\[
 \begin{cases}
 x(t) = x(a) + tx'(a) \\
-y(t)v= y(a) + ty'(a)
+y(t) = y(a) + ty'(a)
 \end{cases}
 \quad t\in \mathbb{R},
 \]</span></p>
@@ -511,7 +558,7 @@ y(t)v= y(a) + ty'(a)
 y-y(a)=\frac{y'(a)}{x'(a)}(x-x(a)).
 \]</span></p>
 <div id="exm-tangente-trayectoria-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.3 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su derivada es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.4 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su derivada es</p>
 <p><span class="math display">\[
 \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>
@@ -570,7 +617,7 @@ Nota
 </div>
 </div>
 <div id="exm-normal-tangente-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.4 </strong></span>Siguiendo con el ejemplo de la trayectoria circular de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la ecuación vectorial de la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.5 </strong></span>Siguiendo con el ejemplo de la trayectoria circular de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la ecuación vectorial de la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 (x(t),y(t))
 &amp;= (\cos(\pi/4),\operatorname{sen}(\pi/4)) + t(\cos(\pi/4),\operatorname{sen}(\pi/4)) \\
@@ -610,7 +657,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 \]</span></p>
 <p>que como se puede comprobar, coinciden con las ecuaciones vistas en <a href="07-derivadas.html#def-tangente-funcion">Definición&nbsp;<span>7.6</span></a> y <a href="07-derivadas.html#def-normal-funcion">Definición&nbsp;<span>7.7</span></a>.</p>
 <div id="exm-tangente-normal-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.5 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la función vectorial cuya trayectoria traza la gráfica de esta función es <span class="math inline">\(\mathbf{f}(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(\mathbf{f}'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.6 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la función vectorial cuya trayectoria traza la gráfica de esta función es <span class="math inline">\(\mathbf{f}(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(\mathbf{f}'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
 <p><span class="math display">\[
 \frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
 \]</span></p>
@@ -637,7 +684,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 \]</span></p>
 <p>siempre que <span class="math inline">\(x'(a)\neq 0\)</span>, <span class="math inline">\(y'(a)\neq 0\)</span> y <span class="math inline">\(z'(a)\neq 0\)</span>.</p>
 <div id="exm-tangente-trayectoria-espacio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.6 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos t, \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span> en el espacio real, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.7 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos t, \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span> en el espacio real, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
 <p><span class="math display">\[
 \mathbf{f}(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
 \]</span></p>
@@ -674,7 +721,7 @@ x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 \]</span></p>
 </div>
 <div id="exm-plano-normal-trayectoria-espacio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.7 </strong></span>Para la trayectoria de la función vectorial del ejemplo anterior <span class="math inline">\(\mathbf{f}(t)=(\cos t, \sin t, t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span> la trayectoria pasa por el punto</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.8 </strong></span>Para la trayectoria de la función vectorial del ejemplo anterior <span class="math inline">\(\mathbf{f}(t)=(\cos t, \sin t, t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span> la trayectoria pasa por el punto</p>
 <p><span class="math display">\[
 \mathbf{f}(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
 \]</span></p>
@@ -723,13 +770,13 @@ Observación
 <p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es cualquier función vectorial primitiva de <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{C}\)</span> es un vector constante en <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 </div>
 <div id="thm-integral-indefinida-funcion-vectorial" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.2 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))\)</span> es una función vectorial integrable en <span class="math inline">\(\mathbb{R}^n\)</span> entonces</p>
+<p><span class="theorem-title"><strong>Teorema 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))\)</span> es una función vectorial integrable en <span class="math inline">\(\mathbb{R}^n\)</span> entonces</p>
 <p><span class="math display">\[
 \int \mathbf{f}(t)\, dt = \left(\int f_1(t)\, dt, \ldots, \int f_n(t)\,dt\right).
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -738,7 +785,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\mathbf{F}(t)=(F_1(t),\ldots,F_n(t))\)</span> es una primitiva de <span class="math inline">\(\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))\)</span>.Entonces,</p>
@@ -753,7 +800,7 @@ Demostración
 </div>
 </div>
 <div id="exm-integral-indefinida-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.8 </strong></span>La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.9 </strong></span>La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int \mathbf{f}(t)
 &amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
@@ -821,7 +868,7 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 <p>siempre y cuando la trayectoria se recorra exactamente una vez para <span class="math inline">\(t\in[a,b]\)</span>.</p>
 </div>
 <div id="exm-longitud-trayectoria-espiral" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.9 </strong></span>Veamos cuánto mide la trayectoria descrita por la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t), t)\)</span> en el intervalo <span class="math inline">\([0,2\pi]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.10 </strong></span>Veamos cuánto mide la trayectoria descrita por la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t), t)\)</span> en el intervalo <span class="math inline">\([0,2\pi]\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^{2\pi} |\mathbf{f}'(t)|\, dt
 &amp;= \int_0^{2\pi} |(-\operatorname{sen}(t), \cos(t), 1)|\, dt \\
@@ -831,7 +878,6 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 = 2\sqrt{2}\pi.
 \end{align*}\]</span></p>
 </div>
-<p>Una curva puede ser la trayectoria de más de una función vectorial. Por ejemplo, la función vectorial <span class="math inline">\(\mathbf{f}(t)=(t,e^t,2t)\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,1]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x)=(\ln(x), x, \ln(x^2))\)</span> en el intervalo <span class="math inline">\(x\in[1,e]\)</span>. Es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable (en el ejemplo anterior, se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=\ln(x)\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=e^t\)</span>). Como es lógico, el cambio de parametrización no afecta a la longitud de la trayectoria, ya que al hacer el cambio de variable en la integral de la definición, se acaba obteniendo el mismo resultado.</p>
 <p>En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.</p>
 <div id="def-funcion-longitud-arco" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11.14 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>funcion longitud de arco</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
@@ -841,6 +887,80 @@ s(t) = \int_a^t |\mathbf{f}'(x)|\, dx,
 <p>siempre y cuando la trayectoria se recorra exactamente una vez para <span class="math inline">\(t\in[a,b]\)</span>.</p>
 </div>
 <p>A partir de la función longitud de arco se puede reparametrizar <span class="math inline">\(\mathbf{f}(t)\)</span> como <span class="math inline">\(\mathbf{f}(t(s))\)</span>, donde <span class="math inline">\(t(s)\)</span> es la función inversa de <span class="math inline">\(s(t)\)</span>.</p>
+<div id="exm-parametrización-longitud-arco" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.11 </strong></span>La función vectorial <span class="math inline">\(\mathbf{f}(t)=(3t+1, 4t-2)\)</span> traza la siguiente gráfica en el intervalo <span class="math inline">\(t\in[0,2]\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/funciones-vectoriales/parametrizacion-longitud-arco-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Parametrización de una trayectoria recta.</figcaption>
+</figure>
+</div>
+<p>La función longitud de arco de esta función vectorial es</p>
+<p><span class="math display">\[
+s(t)
+= \int_0^t |\mathbf{f}'(x)|\,dx
+= \int_0^t |(3,4)|\,dx
+= \int_0^t \sqrt{25}\,dx
+= \int_0^t 5 \,dx
+= [5x]_0^t
+= 5t.
+\]</span></p>
+<p>Así que, tomando la función inversa <span class="math inline">\(t=s/5\)</span>, y haciendo el cambio de variable en la parametrización anterior, obtenemos la parametrización longitud de arco de esta trayectoria.</p>
+<p><span class="math display">\[
+\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right).
+\]</span></p>
+</div>
+<div id="prp-parametrizacion-longitud-arco" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(s)\)</span> es una función vectorial parametrizada con la longitud de arco de curva, entonces <span class="math inline">\(\mathbf{f}'(s)\)</span> es un vector unitario.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(s\)</span> el parámetro dado por la función arco de la trayectoria de la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> para <span class="math inline">\(t\in[a,b]\)</span>, es decir,</p>
+<p><span class="math display">\[
+s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
+\]</span></p>
+<p>Entonces, por el teorema fundamental del cálculo para funciones vectoriales se tiene que</p>
+<p><span class="math display">\[
+\frac{ds}{t} = s'(t) = |\mathbf{f}'(t)|.
+\]</span></p>
+<p>Por otro lado, al realizar el cambio de variable para la parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene</p>
+<p><span class="math display">\[
+\mathbf{f}'(t)
+= \frac{d\mathbf{f}}{dt}
+= \frac{d\mathbf{f}}{ds}\frac{ds}{dt}
+= \mathbf{f}'(s) |\mathbf{f}'(t)|,
+\]</span></p>
+<p>de donde se deduce que</p>
+<p><span class="math display">\[
+\mathbf{f}'(s)
+= \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|},
+\]</span></p>
+<p>y por tanto,</p>
+<p><span class="math display">\[
+|\mathbf{f}'(s)|
+= \left|\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right|
+= \frac{|\mathbf{f}'(t)|}{|\mathbf{f}'(t)|}
+= 1.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>Una de las ventajas de la parametrización de longitud de arco de la trayectoria de una función vectorial <span class="math inline">\(\mathbf{f}(s)\)</span>, es que la longitud de la trayectoria en el intervalo <span class="math inline">\(s\in[a,b]\)</span> es <span class="math inline">\(b-a\)</span>, ya que</p>
+<p><span class="math display">\[
+\int_a^b |\mathbf{f}'(s)|\,ds = \int_a^b 1\,dx = [s]_a^b = b-a.
+\]</span></p>
 </section>
 <section id="cinemática-movimiento-curvilíneo" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="cinemática-movimiento-curvilíneo"><span class="header-section-number">11.6</span> Cinemática: Movimiento curvilíneo</h2>
@@ -888,7 +1008,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-movimiento-curvilineo-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.10 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.12 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
 <p><span class="math display">\[
 \mathbf{v} = \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>
