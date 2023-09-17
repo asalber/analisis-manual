@@ -252,7 +252,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#integral-de-una-función-vectorial" id="toc-integral-de-una-función-vectorial" class="nav-link" data-scroll-target="#integral-de-una-función-vectorial"><span class="header-section-number">11.4</span> Integral de una función vectorial</a></li>
   <li><a href="#longitud-de-la-trayectoria-de-una-función-vectorial" id="toc-longitud-de-la-trayectoria-de-una-función-vectorial" class="nav-link" data-scroll-target="#longitud-de-la-trayectoria-de-una-función-vectorial"><span class="header-section-number">11.5</span> Longitud de la trayectoria de una función vectorial</a></li>
-  <li><a href="#cinemática-movimiento-curvilíneo" id="toc-cinemática-movimiento-curvilíneo" class="nav-link" data-scroll-target="#cinemática-movimiento-curvilíneo"><span class="header-section-number">11.6</span> Cinemática: Movimiento curvilíneo</a></li>
+  <li><a href="#curvatura" id="toc-curvatura" class="nav-link" data-scroll-target="#curvatura"><span class="header-section-number">11.6</span> Curvatura</a></li>
+  <li><a href="#cinemática-movimiento-curvilíneo" id="toc-cinemática-movimiento-curvilíneo" class="nav-link" data-scroll-target="#cinemática-movimiento-curvilíneo"><span class="header-section-number">11.7</span> Cinemática: Movimiento curvilíneo</a></li>
   </ul>
 </nav>
     </div>
@@ -880,13 +881,20 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 </div>
 <p>En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.</p>
 <div id="def-funcion-longitud-arco" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.14 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>funcion longitud de arco</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.14 (Función longitud de arco de una trayectoria) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>funcion longitud de arco</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
 s(t) = \int_a^t |\mathbf{f}'(x)|\, dx,
 \]</span></p>
-<p>siempre y cuando la trayectoria se recorra exactamente una vez para <span class="math inline">\(t\in[a,b]\)</span>.</p>
+<p>siempre y cuando la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> se recorra exactamente una vez para <span class="math inline">\(t\in[a,b]\)</span>.</p>
 </div>
-<p>A partir de la función longitud de arco se puede reparametrizar <span class="math inline">\(\mathbf{f}(t)\)</span> como <span class="math inline">\(\mathbf{f}(t(s))\)</span>, donde <span class="math inline">\(t(s)\)</span> es la función inversa de <span class="math inline">\(s(t)\)</span>.</p>
+<p>A partir de la función longitud de arco se puede reparametrizar <span class="math inline">\(\mathbf{f}(t)\)</span> como <span class="math inline">\(\mathbf{f}(t(s))\)</span>, donde <span class="math inline">\(t(s)\)</span> es la función inversa de <span class="math inline">\(s(t)\)</span>. A esta parametrización de la trayectoria se le conoce como <em>parametrización de la longitud de arco</em>.</p>
+<div id="def-parametrizacion-longitud-arco-funcion-vectorial" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.15 (Parametrización longitud de arco de una trayectoria) </strong></span>Dada una trayectoria de función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>. Se define la <em>parametrización de la longitud de arco</em> de la trayectoria como la función vectorial</p>
+<p><span class="math display">\[
+\tilde{\mathbf{f}}(s) = \mathbf{f}(t(s)),
+\]</span></p>
+<p>donde <span class="math inline">\(t(s)\)</span> es la inversa de la función longitud de arco de <span class="math inline">\(\mathbf{f}\)</span>.</p>
+</div>
 <div id="exm-parametrización-longitud-arco" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11.11 </strong></span>La función vectorial <span class="math inline">\(\mathbf{f}(t)=(3t+1, 4t-2)\)</span> traza la siguiente gráfica en el intervalo <span class="math inline">\(t\in[0,2]\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -907,11 +915,11 @@ s(t)
 \]</span></p>
 <p>Así que, tomando la función inversa <span class="math inline">\(t=s/5\)</span>, y haciendo el cambio de variable en la parametrización anterior, obtenemos la parametrización longitud de arco de esta trayectoria.</p>
 <p><span class="math display">\[
-\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right).
+\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right) = \tilde{\mathbf{f}}(s).
 \]</span></p>
 </div>
 <div id="prp-parametrizacion-longitud-arco" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(s)\)</span> es una función vectorial parametrizada con la longitud de arco de curva, entonces <span class="math inline">\(\mathbf{f}'(s)\)</span> es un vector unitario.</p>
+<p><span class="theorem-title"><strong>Proposición 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial que admite una parametrización de longitud de arco de su trayectoria, entonces <span class="math inline">\(\tilde{\mathbf{f}}'(s)\)</span> es un vector unitario.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -926,29 +934,27 @@ Demostración
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(s\)</span> el parámetro dado por la función arco de la trayectoria de la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> para <span class="math inline">\(t\in[a,b]\)</span>, es decir,</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(s\)</span> el parámetro dado por la función longitud de arco de la trayectoria de la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> para <span class="math inline">\(t\in[a,b]\)</span>, es decir,</p>
 <p><span class="math display">\[
 s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
 \]</span></p>
 <p>Entonces, por el teorema fundamental del cálculo para funciones vectoriales se tiene que</p>
 <p><span class="math display">\[
-\frac{ds}{t} = s'(t) = |\mathbf{f}'(t)|.
+\frac{ds}{dt} = s'(t) = |\mathbf{f}'(t)|.
 \]</span></p>
-<p>Por otro lado, al realizar el cambio de variable para la parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene</p>
+<p>Por otro lado, al realizar el cambio de variable para parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene</p>
 <p><span class="math display">\[
-\mathbf{f}'(t)
-= \frac{d\mathbf{f}}{dt}
-= \frac{d\mathbf{f}}{ds}\frac{ds}{dt}
-= \mathbf{f}'(s) |\mathbf{f}'(t)|,
-\]</span></p>
-<p>de donde se deduce que</p>
-<p><span class="math display">\[
-\mathbf{f}'(s)
+\tilde{\mathbf{f}}'(s)
+= (\mathbf{f}\circ t)'(s)
+= \mathbf{f}'(t(s)) t'(s)
+= \frac{d\mathbf{f}}{dt}\frac{dt}{ds}
+= \frac{\frac{d\mathbf{f}}{dt}}{\frac{ds}{dt}}
+= \frac{\mathbf{f}'(t)}{\mathbf{s}'(t)}
 = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|},
 \]</span></p>
 <p>y por tanto,</p>
 <p><span class="math display">\[
-|\mathbf{f}'(s)|
+|\tilde{\mathbf{f}}'(s)|
 = \left|\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right|
 = \frac{|\mathbf{f}'(t)|}{|\mathbf{f}'(t)|}
 = 1.
@@ -962,8 +968,160 @@ s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
 \int_a^b |\mathbf{f}'(s)|\,ds = \int_a^b 1\,dx = [s]_a^b = b-a.
 \]</span></p>
 </section>
-<section id="cinemática-movimiento-curvilíneo" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="cinemática-movimiento-curvilíneo"><span class="header-section-number">11.6</span> Cinemática: Movimiento curvilíneo</h2>
+<section id="curvatura" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="curvatura"><span class="header-section-number">11.6</span> Curvatura</h2>
+<p>Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva, que si habrá que girar el volante para trazar la curva. Cuanto mayor se la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.</p>
+<p>Para estudiar la curvatura de la trayectoria de una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span>, analizaremos la variación que experimenta la dirección del vector tangente a la trayectoria, que recordemos es <span class="math inline">\(\mathbf{f}'(t)\)</span>, y por tanto, vendrá dada por la segunda derivada <span class="math inline">\(\mathbf{f}''(t)\)</span>. Sin embargo, este valor depende de la parametrización de la trayectoria.</p>
+<div id="exm-curvatura-dependiente-parametrizacion" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.12 </strong></span>Ya hemos visto que la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))\)</span> describe una trayectoria circular de radio 1 centrada en el origen. Su derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t))\)</span> y su segunda derivada <span class="math inline">\(\mathbf{f}''(t)=(-\cos(t),-\operatorname{sen}(t))\)</span>, que tiene módulo <span class="math inline">\(|\mathbf{f}''(t)| = \sqrt{(-\cos(t))^2+(-\operatorname{sen}(t))^2} = 1\)</span> para cualquier valor de <span class="math inline">\(t\)</span>.</p>
+<p>Sin embargo, si tomamos una parametrización distinta <span class="math inline">\(\mathbf{g}(t)=(\cos(2t), \operatorname{sen}(2t))\)</span> de esta misma trayectoria, se tiene que <span class="math inline">\(\mathbf{g}'(t)=(-2\operatorname{sen}(2t),2\cos(2t))\)</span> y <span class="math inline">\(\mathbf{g}''(t)=(-4\cos(2t), -4\operatorname{sen}(2t))\)</span>, que tiene módulo <span class="math inline">\(|\mathbf{g}''(t)| = \sqrt{(-4\cos(t))^2+(-4\operatorname{sen}(t))^2} = 4\)</span> para cualquier valor de <span class="math inline">\(t\)</span>.</p>
+</div>
+<p>Así pues, para hacer independiente la curvatura de una trayectoria de su parametrización, utilizaremos la parametrización de la longitud de arco.</p>
+<div id="def-curvatura-trayectoria" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.16 (Curvatura de una trayectoria) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>curvatura</em> de su trayectoria como</p>
+<p><span class="math display">\[
+\kappa(s) = |\tilde{f}''(s)|
+\]</span></p>
+</div>
+<p>El inconveniente de esta definición es que nos obliga a usar la parametrización longitud de arco, que, a su vez, requiere calcular la longitud de arco de la trayectoria, lo cual no siempre es fácil. Afortunadamente, es posible calcular la curvatura de la trayectoria de cualquier función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> sin necesidad de hacer el cambio a la parametrización longitud de arco. Para ello necesitamos normalizar el vector velocidad.</p>
+<div id="def-vector-tangente-unitario" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.17 (Vector tangente unitario de una función vectorial) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se llama <em>vector tangente unitario</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
+<p><span class="math display">\[
+\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}.
+\]</span></p>
+</div>
+<div id="thm-curvatura-trayectoria" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.4 </strong></span>Si <span class="math inline">\(\mathbf{f}{t}\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> entonces la curvatura de su trayectoria es</p>
+<p><span class="math display">\[
+\kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|},
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{T}'(t)\)</span> es el vector tangente unitario de <span class="math inline">\(\mathbf{f}(t)\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(s(t)\)</span> la función longitud de arco de la trayectoria de <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\tilde{\mathbf{f}}(s)\)</span> su parametrización longitud de arco. Entonces,</p>
+<p><span class="math display">\[\begin{align*}
+\tilde{\mathbf{f}}''(s)
+&amp;= \frac{d}{ds}\left(\frac{d\tilde{\mathbf{f}}}{ds}\right)
+= \frac{d}{ds}\left(\frac{d(\mathbf{f}\circ t)}{ds}\right) \\
+&amp;= \frac{d}{ds}\left(\frac{d\mathbf{f}}{dt}\frac{dt}{ds}\right)
+= \frac{d}{ds}\left(\frac{d\mathbf{f}/dt}{ds/dt}\right) \tag{Regla cadena} \\
+&amp;= \frac{d}{ds}\left(\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right)
+= \frac{d}{ds}(\mathbf{T}(t)) \\
+&amp;= \frac{dT}{dt}\frac{dt}{ds}
+= \frac{dT/dt}{ds/dt} \tag{Regla cadena} \\
+&amp;= \frac{\mathbf{T}'(t)}{|\mathbf{f}'(t)|}.
+\end{align*}\]</span></p>
+<p>Y por tanto,</p>
+<p><span class="math display">\[
+\kappa(s)
+= |\tilde{\mathbf{f}}''(s)|
+= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-curvatura-trayectoria" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.13 </strong></span>Veamos cuál es la curvatura de la espiral que describe la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)\)</span>. Su primera derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)\)</span>, y su módulo es <span class="math inline">\(|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}\)</span>, de manera que el vector tangente unitario es</p>
+<p><span class="math display">\[
+T(t)
+= \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}
+= \frac{1}{\sqrt{2}}(-\operatorname{sen}(t),\cos(t),1).
+\]</span></p>
+<p>Así pues, su curvatura es</p>
+<p><span class="math display">\[\begin{align*}
+\kappa(t)
+&amp;= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}
+= \frac{|\frac{1}{\sqrt{2}}(-\cos(t),-\operatorname{sen}(t), 0)|}{\sqrt{2}} \\
+&amp;= \frac{\frac{1}{\sqrt{2}}((-\cos(t))^2+(-\operatorname{sen}(t))^2+0^2)}{\sqrt{2}}
+= \frac{1}{2}.
+\end{align*}\]</span></p>
+</div>
+<p>En el caso de una trayectoria en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span> se puede utilizar la siguiente fórmula, que suele ser más rápida de calcular, para calcular su curvatura.</p>
+<div id="thm-curvatura-trayectoria-espacio-real" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 11.5 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span>, entonces la curvatura de su trayectoria vale</p>
+<p><span class="math display">\[
+\kappa(t)
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Como el vector tangente unitario de <span class="math inline">\(\mathbf{f}(t)\)</span> es <span class="math inline">\(\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\)</span>, se tiene que</p>
+<p><span class="math display">\[
+\mathbf{f}'(t) = |\mathbf{f}'(t)|\mathbf{T}(t).
+\]</span></p>
+<p>Por otro lado, si <span class="math inline">\(s(t)\)</span> es la función longitud de arco de <span class="math inline">\(\mathbf{f}(t)\)</span>, por el teorema fundamental del cálculo vimos que <span class="math inline">\(s'(t)=|\mathbf{f}'(t)|\)</span>, por lo que sustituyendo en la expresión anterior se tiene</p>
+<p><span class="math display">\[
+\mathbf{f}'(t) = s'(t)\mathbf{T}(t).
+\]</span></p>
+<p>Así pues,</p>
+<p><span class="math display">\[
+\mathbf{f}''(t)
+= (s'(t)\mathbf{T}(t))'
+= s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t).
+\]</span></p>
+<p>Si ahora hacemos el producto vectorial de la primera y segunda derivada de <span class="math inline">\(\mathbf{f}\)</span> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+&amp;= (s'(t)\mathbf{T}(t))\times (s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t))\\
+&amp;= s'(t)s''(t)(\mathbf{T}(t)\times \mathbf{T}(t)) + s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
+\end{align*}\]</span></p>
+<p>Ahora bien, como <span class="math inline">\(\mathbf{T}(t)\times \mathbf{T}(t)=0\)</span>, la expresión anterior se simplifica a</p>
+<p><span class="math display">\[
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+= s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
+\]</span></p>
+<p>Y como <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{T}'(t)\)</span> son ortogonales, se cumple que</p>
+<p><span class="math display">\[
+|\mathbf{T}(t)\times \mathbf{T}'(t)| = |\mathbf{T}(t)||\mathbf{T}'(t)|\operatorname{sen}(\pi/2) = |\mathbf{T}'(t)|,
+\]</span></p>
+<p>por lo que se tiene</p>
+<p><span class="math display">\[
+|\mathbf{f}'(t)\times \mathbf{f}''(t)|
+= s'(t)^2 |\mathbf{T}'(t)|,
+\]</span></p>
+<p>de donde se deduce</p>
+<p><span class="math display">\[
+|\mathbf{T}'(t)|
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{s'(t)^2}
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^2}.
+\]</span></p>
+<p>Y finalmente, la curvatura es</p>
+<p><span class="math display">\[
+= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cinemática-movimiento-curvilíneo" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="cinemática-movimiento-curvilíneo"><span class="header-section-number">11.7</span> Cinemática: Movimiento curvilíneo</h2>
 <p>La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>Para el caso del plano real <span class="math inline">\(\mathbb{R}^2\)</span>, si la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> describe la posición de un objeto móvil en el plano en el instante <span class="math inline">\(t\)</span>, tomando como referencia el origen de coordenadas <span class="math inline">\(O\)</span> y los vectores coordenados <span class="math inline">\(\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}\)</span>, se puede representar la posición <span class="math inline">\(P\)</span> del móvil en cada instante <span class="math inline">\(t\)</span> mediante un vector <span class="math inline">\(\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}\)</span> cuyas coordenadas</p>
 <p><span class="math display">\[
@@ -1008,7 +1166,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-movimiento-curvilineo-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.12 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.14 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
 <p><span class="math display">\[
 \mathbf{v} = \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>

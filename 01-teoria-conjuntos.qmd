@@ -300,6 +300,14 @@ La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden 
 Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se dice que un elemento $c\in A$ es una _cota superior_ de $B$, si todos los elementos de $B$ son menores o iguales a $c$ según la relación de orden, es decir, 
 
 $$\forall x \in B, x\preceq c.$$
+
+El conjunto de todas las cotas superiores de $B$ se denota $\operatorname{CS}(B)$.
+:::
+
+:::{#exm-cota-superior}
+Para el conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, $5$ es una cota superior. El conjunto de todas sus cotas superiores es $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+
+Para el intervalo $(0,1)\subseteq \mathbb{R}$, cualquier número real $x\geq 1$ es una cota superior, por lo que $\operatorname{CS}([0,1)) = \{x:x\geq 1\}$.
 :::
 
 :::{#def-cota-inferior-conjunto}
@@ -307,20 +315,40 @@ $$\forall x \in B, x\preceq c.$$
 Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se dice que un elemento $c\in A$ es una _cota inferior_ de $B$, si todos los elementos de $B$ son mayores o iguales a $c$ según la relación de orden, es decir, 
 
 $$\forall x \in B, c\preceq x.$$
+
+El conjunto de todas las cotas inferiores de $B$ se denota $\operatorname{CI}(B)$.
+:::
+
+:::{#exm-cota-inferior}
+El conjunto de las cotas inferiores de $B=\{3, 4, 5\}\subseteq \mathbb{N}$ es $\operatorname{CI}(B)=\{1, 2, 3\}$.
+
+El conjunto de las cotas inferiores de $[0,1)\subseteq \mathbb{R}$ es $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$. 
 :::
 
 :::{#def-maximo-conjunto}
 ## Máximo
-Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _máximo_ de $A$, si cualquier otro elemento de $A$ es mayor o igual que él según la relación de orden, es decir, 
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _máximo_ de $A$, y se denota $\max(A)$, si cualquier otro elemento de $A$ es mayor o igual que él según la relación de orden, es decir, 
 
 $$\forall x \in A, x\preceq m.$$
 :::
 
+:::{#exm-maximo}
+El máximo de $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$.
+
+El intervalo $[0,1)\subseteq \mathbb{R}$ no tiene máximo. 
+:::
+
 :::{#def-minimo-conjunto}
 ## Mínimo
-Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _mínimo_ de $A$, si y cualquier otro elemento de $A$ es menor o igual que él según la relación de orden, es decir, 
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _mínimo_ de $A$, y se denota $\min(A)$, si y cualquier otro elemento de $A$ es menor o igual que él según la relación de orden, es decir, 
 
 $$\forall x \in A, m\preceq x.$$
+:::
+
+:::{#exm-maximo}
+El mínimo de $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $3$.
+
+El mínimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$.
 :::
 
 :::{#thm-unicidad-extremos}
@@ -328,41 +356,34 @@ $$\forall x \in A, m\preceq x.$$
 Dado un conjunto con una relación de orden parcial $(A,\preceq)$, si existe el máximo de $A$ entonces es único. Lo mismo es cierto para el mínimo.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Supongamos que el conjunto $A$ tienen dos máximos $m_1\neq m_2$. Puesto que $m_1$ es un máximo de $A$, se cumple que $\forall x \in A, x\preceq m_1.$ y, en particular, $m_2\preceq m_1$. Del mismo modo, como $m_2$ es un máximo de $A$, se cumple que $\forall x \in A, x\preceq m_2.$ y, en particular, $m_1\preceq m_2$. 
-
-Así pues, se tiene que 
-
-$$m_2\preceq m_1 \mbox{ y } m_1\preceq m_2,$$ 
-
-pero como $\preceq$ es un orden parcial, por la propiedad antisimétrica se concluye que $m_1=m_2$, por lo que el máximo es único.
-
-De manera análoga se puede probar que el mínimo es único.
-:::
-:::
-
-Dado que el máximo y mínimo de un conjunto, cuando existen, son únicos, es común referirse a ellos como $max$ y $min$ respectivamente. Obsérvese, no obstante, que un conjunto puede no tener máximo o mínimo.
-
 :::{#def-supremo-conjunto}
 ## Supremo
-Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _supremo_ de $B$ y se denota $\sup(B)$ a la menor de las cotas superiores de $B$.
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _supremo_ de $B$, y se denota $\sup(B)$, a la menor de las cotas superiores de $B$.
+:::
+
+:::{#exm-supremo}
+El supremo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+
+El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1) = \{x:x\geq 1\}$.
 :::
 
 :::{#def-infimo-conjunto}
 ## Ínfimo
-Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _ínfimo_ de $B$ y se denota $\inf(B)$ a la mayor de las cotas inferiores de $B$.
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _ínfimo_ de $B$, y se denota $\inf(B)$, a la mayor de las cotas inferiores de $B$.
 :::
 
-Obsérvese que un conjunto puede no tener supremo o ínfimo. 
+:::{#exm-infimo}
+El ínfimo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $3$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}(B)=\{1, 2, 3\}$.
 
-:::{#exm-supremo-infimo-maximo-minimo}
-Si se toma el conjunto de los números naturales con la relación de orden total $(\mathbb{N},\leq)$, para el conjunto $B=\{1, 2, 3\}\subseteq \mathbb{N}$ se tiene que cualquier $x\in\mathbb{N}$ tal que $3\leq x$ es una cota superior de $B$, por tanto $3$ es el supremo de $B$, y además es un máximo puesto que $3\in B$.
+El ínfimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$.
+:::
 
-Por otro lado, si se considera el conjunto de los números reales con la relación de orden total $(\mathbb{R},\leq)$, para el intervalo $(0,1)$ se tiene que cualquier $x\in\mathbb{R}$ tal que $x\leq 0$ es una cota inferior y $x\in\mathbb{R}$ tal que $1\leq x$ es una cota superior, de modo que $0$ es el ínfimo y $1$ el supremo. Sin embargo, este conjunto no tiene mínimo ni tampoco máximo puesto que $0\not\in (0,1)$ y $1\not\in (0,1)$. 
+:::{.callout-warning}
+Obsérvese que un conjunto puede no tener cotas superiores o inferiores y, por tanto, no tener supremo o ínfimo. 
+:::
 
-Finalmente, si se considera el conjunto de los números enteros con la relación de orden total $(\mathbb{Z},\leq)$, para el conjunto $B=\{x\in\mathbb{Z}: x \mbox{ es par}\}$, no existen cotas superiores ni inferiores, y por tanto tampoco tiene supremo, ínfimo, máximo ni mínimo.
+:::{#exm-no-supremo-infimio}
+El conjunto $B=\{x\in\mathbb{Z}: x \mbox{ es par}\}$, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.
 :::
 
 ## Funciones
@@ -371,7 +392,7 @@ El concepto de función es uno de los más importantes en el Análisis Matemáti
 
 :::{#def-funcion}
 ## Función
-Se dice que una relación binaria $f \subseteq A \times B$, con $A$ y $B$ conjuntos no vacios, es una _función_ o _aplicación_, y se denota $f:A\rightarrow B$, si $f$ no contiene dos pares ordenados distintos con la misma primera componente, es decir,
+Se dice que una relación binaria $f \subseteq A \times B$, con $A$ y $B$ conjuntos no vacíos, es una _función_ o _aplicación_, y se denota $f:A\rightarrow B$, si $f$ no contiene dos pares ordenados distintos con la misma primera componente, es decir,
 
 $$\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.$$
 :::
@@ -380,7 +401,9 @@ Es habitual representar los pares de una función con la notación $y=f(x)$ dond
 
 
 :::{#exm-funcion} 
-La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
+La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. 
+
+Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
 :::
 
 ::: {.content-visible when-format="html"}
@@ -482,7 +505,7 @@ $$g\circ f(a) = g(f(a)), \forall a\in A.$$
 :::
 
 :::{#prp-composicion-inversa}
-Dada una función $f:A\rightarrow B$, si existe $^{-1}, entonces $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
+Dada una función $f:A\rightarrow B$, si existe $f^{-1}$, entonces $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
 :::
 
 ## Cardinalidad de un conjunto 
@@ -492,7 +515,7 @@ Dada una función $f:A\rightarrow B$, si existe $^{-1}, entonces $f\circ f^{-1} 
 Dado un conjunto $A$, se llama _cardinal_ de $A$, y se denota $|A|$, al número de elementos de $A$.
 :::
 
-De manera informal, se puede decir Que el cardinal de un conjunto es su tamaño.
+De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.
 
 :::{#exm-cardinal}
 El cardinal del conjunto $A=\{a, b, c\}$ es $|A|=3$.
@@ -564,7 +587,7 @@ Se dice que un conjunto $A$ es _finito_ si es que existe un $n\in\mathbb{N}$ tal
 Se dice que un conjunto $A$ es _infinito_ si no es finito. En tal caso su cardinal se denota $|A|=\infty$.
 :::
 
-Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia que no es ningún número.
+Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia y no representa a ningún número.
 
 :::{#exm-conjunto-finito-infinito}
 El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 

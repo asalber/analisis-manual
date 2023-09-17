@@ -696,16 +696,28 @@ Veamos cuánto mide la trayectoria descrita por la función vectorial $\mathbf{f
 En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.
 
 :::{#def-funcion-longitud-arco}
+## Función longitud de arco de una trayectoria
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, tal que $\mathbf{f}'(t)$ es continua en el intervalo $I=[a,b]$, se define la _funcion longitud de arco_ de $\mathbf{f}$ en $I$ como 
 
 $$
 s(t) = \int_a^t |\mathbf{f}'(x)|\, dx,
 $$
 
-siempre y cuando la trayectoria se recorra exactamente una vez para $t\in[a,b]$.
+siempre y cuando la trayectoria de $\mathbf{f}$ se recorra exactamente una vez para $t\in[a,b]$.
 :::
 
-A partir de la función longitud de arco se puede reparametrizar $\mathbf{f}(t)$ como $\mathbf{f}(t(s))$, donde $t(s)$ es la función inversa de $s(t)$.
+A partir de la función longitud de arco se puede reparametrizar $\mathbf{f}(t)$ como $\mathbf{f}(t(s))$, donde $t(s)$ es la función inversa de $s(t)$. A esta parametrización de la trayectoria se le conoce como _parametrización de la longitud de arco_.
+
+:::{#def-parametrizacion-longitud-arco-funcion-vectorial}
+## Parametrización longitud de arco de una trayectoria
+Dada una trayectoria de función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, tal que $\mathbf{f}'(t)$ es continua en el intervalo $I=[a,b]$. Se define la _parametrización de la longitud de arco_ de la trayectoria como la función vectorial
+
+$$
+\tilde{\mathbf{f}}(s) = \mathbf{f}(t(s)), 
+$$
+
+donde $t(s)$ es la inversa de la función longitud de arco de $\mathbf{f}$.
+:::
 
 :::{#exm-parametrización-longitud-arco}
 La función vectorial $\mathbf{f}(t)=(3t+1, 4t-2)$ traza la siguiente gráfica en el intervalo $t\in[0,2]$.
@@ -733,18 +745,18 @@ $$
 Así que, tomando la función inversa $t=s/5$, y haciendo el cambio de variable en la parametrización anterior, obtenemos la parametrización longitud de arco de esta trayectoria.
 
 $$
-\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right).
+\mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right) = \tilde{\mathbf{f}}(s).
 $$
 :::
 
 :::{#prp-parametrizacion-longitud-arco}
-Si $\mathbf{f}(s)$ es una función vectorial parametrizada con la longitud de arco de curva, entonces $\mathbf{f}'(s)$ es un vector unitario.
+Si $\mathbf{f}(t)$ es una función vectorial que admite una parametrización de longitud de arco de su trayectoria, entonces $\tilde{\mathbf{f}}'(s)$ es un vector unitario.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sea $s$ el parámetro dado por la función arco de la trayectoria de la función vectorial $\mathbf{f}(t)$ para $t\in[a,b]$, es decir,
+Sea $s$ el parámetro dado por la función longitud de arco de la trayectoria de la función vectorial $\mathbf{f}(t)$ para $t\in[a,b]$, es decir,
 
 $$
 s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
@@ -753,29 +765,25 @@ $$
 Entonces, por el teorema fundamental del cálculo para funciones vectoriales se tiene que 
 
 $$
-\frac{ds}{t} = s'(t) = |\mathbf{f}'(t)|.
+\frac{ds}{dt} = s'(t) = |\mathbf{f}'(t)|.
 $$
 
-Por otro lado, al realizar el cambio de variable para la parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene
+Por otro lado, al realizar el cambio de variable para parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene
 
 $$
-\mathbf{f}'(t) 
-= \frac{d\mathbf{f}}{dt} 
-= \frac{d\mathbf{f}}{ds}\frac{ds}{dt}
-= \mathbf{f}'(s) |\mathbf{f}'(t)|,
-$$
-
-de donde se deduce que
-
-$$
-\mathbf{f}'(s) 
+\tilde{\mathbf{f}}'(s) 
+= (\mathbf{f}\circ t)'(s)
+= \mathbf{f}'(t(s)) t'(s)
+= \frac{d\mathbf{f}}{dt}\frac{dt}{ds}
+= \frac{\frac{d\mathbf{f}}{dt}}{\frac{ds}{dt}}
+= \frac{\mathbf{f}'(t)}{\mathbf{s}'(t)}
 = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|},
 $$
 
 y por tanto, 
 
 $$
-|\mathbf{f}'(s)| 
+|\tilde{\mathbf{f}}'(s)| 
 = \left|\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right|
 = \frac{|\mathbf{f}'(t)|}{|\mathbf{f}'(t)|}
 = 1.
@@ -788,6 +796,178 @@ Una de las ventajas de la parametrización de longitud de arco de la trayectoria
 $$
 \int_a^b |\mathbf{f}'(s)|\,ds = \int_a^b 1\,dx = [s]_a^b = b-a.
 $$
+
+## Curvatura
+
+Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva, que si habrá que girar el volante para trazar la curva. Cuanto mayor se la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.
+
+Para estudiar la curvatura de la trayectoria de una función vectorial $\mathbf{f}(t)$, analizaremos la variación que experimenta la dirección del vector tangente a la trayectoria, que recordemos es $\mathbf{f}'(t)$, y por tanto, vendrá dada por la segunda derivada $\mathbf{f}''(t)$. Sin embargo, este valor depende de la parametrización de la trayectoria. 
+
+:::{#exm-curvatura-dependiente-parametrizacion}
+Ya hemos visto que la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))$ describe una trayectoria circular de radio 1 centrada en el origen. Su derivada vale $\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t))$ y su segunda derivada $\mathbf{f}''(t)=(-\cos(t),-\operatorname{sen}(t))$, que tiene módulo $|\mathbf{f}''(t)| = \sqrt{(-\cos(t))^2+(-\operatorname{sen}(t))^2} = 1$ para cualquier valor de $t$.
+
+Sin embargo, si tomamos una parametrización distinta $\mathbf{g}(t)=(\cos(2t), \operatorname{sen}(2t))$ de esta misma trayectoria, se tiene que $\mathbf{g}'(t)=(-2\operatorname{sen}(2t),2\cos(2t))$ y $\mathbf{g}''(t)=(-4\cos(2t), -4\operatorname{sen}(2t))$, que tiene módulo 
+$|\mathbf{g}''(t)| = \sqrt{(-4\cos(t))^2+(-4\operatorname{sen}(t))^2} = 4$ para cualquier valor de $t$.
+:::
+
+Así pues, para hacer independiente la curvatura de una trayectoria de su parametrización, utilizaremos la parametrización de la longitud de arco. 
+
+:::{#def-curvatura-trayectoria}
+## Curvatura de una trayectoria
+Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se define la _curvatura_ de su trayectoria como 
+
+$$
+\kappa(s) = |\tilde{f}''(s)|
+$$
+:::
+
+El inconveniente de esta definición es que nos obliga a usar la parametrización longitud de arco, que, a su vez, requiere calcular la longitud de arco de la trayectoria, lo cual no siempre es fácil. Afortunadamente, es posible calcular la curvatura de la trayectoria de cualquier función vectorial $\mathbf{f}(t)$ sin necesidad de hacer el cambio a la parametrización longitud de arco. Para ello necesitamos normalizar el vector velocidad.
+
+:::{#def-vector-tangente-unitario}
+## Vector tangente unitario de una función vectorial
+Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se llama _vector tangente unitario_ de $\mathbf{f}$ al vector
+
+$$
+\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}.
+$$ 
+:::
+
+:::{#thm-curvatura-trayectoria}
+Si $\mathbf{f}{t}$ es una función vectorial en $\mathbb{R}^n$ entonces la curvatura de su trayectoria es 
+
+$$
+\kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|},
+$$
+
+donde $\mathbf{T}'(t)$ es el vector tangente unitario de $\mathbf{f}(t)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $s(t)$ la función longitud de arco de la trayectoria de $\mathbf{f}(t)$ y $\tilde{\mathbf{f}}(s)$ su parametrización longitud de arco. Entonces,
+
+\begin{align*}
+\tilde{\mathbf{f}}''(s) 
+&= \frac{d}{ds}\left(\frac{d\tilde{\mathbf{f}}}{ds}\right)
+= \frac{d}{ds}\left(\frac{d(\mathbf{f}\circ t)}{ds}\right) \\
+&= \frac{d}{ds}\left(\frac{d\mathbf{f}}{dt}\frac{dt}{ds}\right)
+= \frac{d}{ds}\left(\frac{d\mathbf{f}/dt}{ds/dt}\right) \tag{Regla cadena} \\
+&= \frac{d}{ds}\left(\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right)
+= \frac{d}{ds}(\mathbf{T}(t)) \\
+&= \frac{dT}{dt}\frac{dt}{ds} 
+= \frac{dT/dt}{ds/dt} \tag{Regla cadena} \\
+&= \frac{\mathbf{T}'(t)}{|\mathbf{f}'(t)|}.
+\end{align*}
+
+Y por tanto,
+
+$$
+\kappa(s) 
+= |\tilde{\mathbf{f}}''(s)| 
+= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}.
+$$
+:::
+:::
+
+:::{#exm-curvatura-trayectoria}
+Veamos cuál es la curvatura de la espiral que describe la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)$. Su primera derivada vale $\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)$, y su módulo es $|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}$, de manera que el vector tangente unitario es
+
+$$
+T(t) 
+= \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}
+= \frac{1}{\sqrt{2}}(-\operatorname{sen}(t),\cos(t),1).
+$$
+
+Así pues, su curvatura es
+
+\begin{align*}
+\kappa(t) 
+&= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}
+= \frac{|\frac{1}{\sqrt{2}}(-\cos(t),-\operatorname{sen}(t), 0)|}{\sqrt{2}} \\
+&= \frac{\frac{1}{\sqrt{2}}((-\cos(t))^2+(-\operatorname{sen}(t))^2+0^2)}{\sqrt{2}}
+= \frac{1}{2}.
+\end{align*}
+:::
+
+En el caso de una trayectoria en el espacio real $\mathbb{R}^3$ se puede utilizar la siguiente fórmula, que suele ser más rápida de calcular, para calcular su curvatura. 
+
+:::{#thm-curvatura-trayectoria-espacio-real}
+Si $\mathbf{f}(t)$ es una función vectorial en $\mathbb{R}^3$, entonces la curvatura de su trayectoria vale
+
+$$
+\kappa(t) 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Como el vector tangente unitario de $\mathbf{f}(t)$ es $\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}$, se tiene que 
+
+$$
+\mathbf{f}'(t) = |\mathbf{f}'(t)|\mathbf{T}(t).
+$$
+
+Por otro lado, si $s(t)$ es la función longitud de arco de $\mathbf{f}(t)$, por el teorema fundamental del cálculo vimos que $s'(t)=|\mathbf{f}'(t)|$, por lo que sustituyendo en la expresión anterior se tiene
+
+$$
+\mathbf{f}'(t) = s'(t)\mathbf{T}(t).
+$$
+
+Así pues, 
+
+$$
+\mathbf{f}''(t) 
+= (s'(t)\mathbf{T}(t))'
+= s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t).
+$$
+
+Si ahora hacemos el producto vectorial de la primera y segunda derivada de $\mathbf{f}$ se tiene
+
+\begin{align*}
+\mathbf{f}'(t)\times \mathbf{f}''(t) 
+&= (s'(t)\mathbf{T}(t))\times (s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t))\\
+&= s'(t)s''(t)(\mathbf{T}(t)\times \mathbf{T}(t)) + s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
+\end{align*}
+
+Ahora bien, como $\mathbf{T}(t)\times \mathbf{T}(t)=0$, la expresión anterior se simplifica a 
+
+$$
+\mathbf{f}'(t)\times \mathbf{f}''(t) 
+= s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
+$$
+
+Y como $\mathbf{T}(t)$ y $\mathbf{T}'(t)$ son ortogonales, se cumple que 
+
+$$
+|\mathbf{T}(t)\times \mathbf{T}'(t)| = |\mathbf{T}(t)||\mathbf{T}'(t)|\operatorname{sen}(\pi/2) = |\mathbf{T}'(t)|,
+$$
+
+por lo que se tiene 
+
+$$
+|\mathbf{f}'(t)\times \mathbf{f}''(t)| 
+= s'(t)^2 |\mathbf{T}'(t)|,
+$$
+
+de donde se deduce
+
+$$
+|\mathbf{T}'(t)| 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{s'(t)^2}
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^2}.
+$$
+
+Y finalmente, la curvatura es
+
+$$
+= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|} 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+$$
+:::
+:::
 
 ## Cinemática: Movimiento curvilíneo
 
