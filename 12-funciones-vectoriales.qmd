@@ -1086,7 +1086,53 @@ que es justo el vector opuesto al vector posición $\mathbf{f}(t)$, por lo que e
 :::
 :::
 
-### Fuerzas
+En este ejemplo, tanto el vector aceleración resulta ser ortogonal al vector velocidad, pero en general no tiene por qué ser así. Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que $\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}$ y, por tanto podemos expresar el vector velocidad como $\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)$. Haciendo la derivada de esta expresión, se llega  a
+
+$$
+\mathbf{a}(t) 
+= |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)|\mathbf{T}'(t).
+$$
+
+Esta expresión puede reescribirse, a su vez, aprovechando que $\mathbf{T}'(t)$ es ortogonal a $\mathbf{T}(t)$, y por tanto, el vector $\mathbf{N}(t)=\frac{\mathbf{T}'(t)}{|\mathbf{T}'(t)|}$ es un vector unitario ortogonal a la velocidad, por lo que llegamos a 
+
+$$
+\mathbf{a}(t) 
+= |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)||\mathbf{T}'(t)|\mathbf{N}(t).
+$$
+
+Y finalmente, si recordamos la definición de curvatura que vimos en la sección anterior, $\kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|} = \frac{|\mathbf{T}'(t)|}{|\mathbf{v}(t)|}$, se puede concluir que
+
+$$
+\mathbf{a}(t) 
+= |\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t).
+$$
+
+Esta fórmula descompone el vector aceleración como combinación lineal de los vectores tangente y normal unitarios. 
+
+:::{#def-componente-tangencial-normal-aceleracion}
+## Componentes tangencial y normal del vector aceleración
+Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$ que describe el movimiento de un objeto en función del tiempo $t$, se llama _componente tangencial del vector aceleración_ de $\mathbf{f}$ a
+
+$$
+a_T(t) = |\mathbf{v}(t)|',
+$$
+
+y se llama _componente normal del vector aceleración_ de $\mathbf{f}$ a
+
+$$
+a_N(t) = \kappa(t)|\mathbf{v}(t)|^2.
+$$
+:::
+
+Usando las componentes tangencial y normal de la aceleración podemos expresarla de la siguiente manera
+
+$$
+a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
+$$
+
+donde $\mathbf{T}(t)$ y $\mathbf{N}(t)$ son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.
+
+### Vector fuerza
 
 Como ya vimos en el capítulo de integrales, la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica) relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula 
 
@@ -1107,3 +1153,10 @@ $$
 
 Esta fuerza actúa en dirección opuesta al vector posición $\mathbf{f}(t)$, es decir, apunta hacia el centro de la circunferencia, y se conoce como _fuerza centrípeta_.
 :::
+
+Al igual que el vector aceleración, el vector fuerza también puede descomponerse en la componente tangencial y normal.
+
+<!-- :::{#exr-componentes-tangencial-normal-fuerza}
+Supongamos que un coche de 1000 kg recorre la trayectoria dada por la función vectorial $f(t)=(t^2, t^3) -->
+
+

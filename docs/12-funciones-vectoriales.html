@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#vector-velocidad" id="toc-vector-velocidad" class="nav-link" data-scroll-target="#vector-velocidad"><span class="header-section-number">11.7.1</span> Vector velocidad</a></li>
   <li><a href="#vector-aceleración" id="toc-vector-aceleración" class="nav-link" data-scroll-target="#vector-aceleración"><span class="header-section-number">11.7.2</span> Vector aceleración</a></li>
-  <li><a href="#fuerzas" id="toc-fuerzas" class="nav-link" data-scroll-target="#fuerzas"><span class="header-section-number">11.7.3</span> Fuerzas</a></li>
+  <li><a href="#vector-fuerza" id="toc-vector-fuerza" class="nav-link" data-scroll-target="#vector-fuerza"><span class="header-section-number">11.7.3</span> Vector fuerza</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1218,9 +1218,40 @@ Advertencia
 </figure>
 </div>
 </div>
+<p>En este ejemplo, tanto el vector aceleración resulta ser ortogonal al vector velocidad, pero en general no tiene por qué ser así. Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que <span class="math inline">\(\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}\)</span> y, por tanto podemos expresar el vector velocidad como <span class="math inline">\(\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)\)</span>. Haciendo la derivada de esta expresión, se llega a</p>
+<p><span class="math display">\[
+\mathbf{a}(t)
+= |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)|\mathbf{T}'(t).
+\]</span></p>
+<p>Esta expresión puede reescribirse, a su vez, aprovechando que <span class="math inline">\(\mathbf{T}'(t)\)</span> es ortogonal a <span class="math inline">\(\mathbf{T}(t)\)</span>, y por tanto, el vector <span class="math inline">\(\mathbf{N}(t)=\frac{\mathbf{T}'(t)}{|\mathbf{T}'(t)|}\)</span> es un vector unitario ortogonal a la velocidad, por lo que llegamos a</p>
+<p><span class="math display">\[
+\mathbf{a}(t)
+= |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)||\mathbf{T}'(t)|\mathbf{N}(t).
+\]</span></p>
+<p>Y finalmente, si recordamos la definición de curvatura que vimos en la sección anterior, <span class="math inline">\(\kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|} = \frac{|\mathbf{T}'(t)|}{|\mathbf{v}(t)|}\)</span>, se puede concluir que</p>
+<p><span class="math display">\[
+\mathbf{a}(t)
+= |\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t).
+\]</span></p>
+<p>Esta fórmula descompone el vector aceleración como combinación lineal de los vectores tangente y normal unitarios.</p>
+<div id="def-componente-tangencial-normal-aceleracion" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.20 (Componentes tangencial y normal del vector aceleración) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>componente tangencial del vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> a</p>
+<p><span class="math display">\[
+a_T(t) = |\mathbf{v}(t)|',
+\]</span></p>
+<p>y se llama <em>componente normal del vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> a</p>
+<p><span class="math display">\[
+a_N(t) = \kappa(t)|\mathbf{v}(t)|^2.
+\]</span></p>
+</div>
+<p>Usando las componentes tangencial y normal de la aceleración podemos expresarla de la siguiente manera</p>
+<p><span class="math display">\[
+a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.</p>
 </section>
-<section id="fuerzas" class="level3" data-number="11.7.3">
-<h3 data-number="11.7.3" class="anchored" data-anchor-id="fuerzas"><span class="header-section-number">11.7.3</span> Fuerzas</h3>
+<section id="vector-fuerza" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="vector-fuerza"><span class="header-section-number">11.7.3</span> Vector fuerza</h3>
 <p>Como ya vimos en el capítulo de integrales, la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a> relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula</p>
 <p><span class="math display">\[
 \mathbf{F}(t) = m\mathbf{a}(t).
@@ -1234,6 +1265,9 @@ Advertencia
 \]</span></p>
 <p>Esta fuerza actúa en dirección opuesta al vector posición <span class="math inline">\(\mathbf{f}(t)\)</span>, es decir, apunta hacia el centro de la circunferencia, y se conoce como <em>fuerza centrípeta</em>.</p>
 </div>
+<p>Al igual que el vector aceleración, el vector fuerza también puede descomponerse en la componente tangencial y normal.</p>
+<!-- :::{#exr-componentes-tangencial-normal-fuerza}
+Supongamos que un coche de 1000 kg recorre la trayectoria dada por la función vectorial $f(t)=(t^2, t^3) -->
 
 
 </section>
