@@ -644,7 +644,7 @@ $$
 \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j(t_i)-f_j(t_{i-1}))^2}.
 $$
 
-Por otro lado, si las funciones componentes $f_j(t)$ son continuas en $[a,b]$ y diferenciables en $(a,b)$, el teorema del valore medio asegura que existe un valor $t_{ij}\in(t_{i-1},t_i)$ tal que 
+Por otro lado, si las funciones componentes $f_j(t)$ son continuas en $[a,b]$ y diferenciables en $(a,b)$, el teorema del valor medio asegura que existe un valor $t_{ij}\in(t_{i-1},t_i)$ tal que 
 
 $$
 f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
@@ -971,9 +971,13 @@ $$
 
 ## Cinemática: Movimiento curvilíneo
 
+Una de las principales aplicaciones de las funciones vectoriales la encontramos en la Cinemática, que es la rama de la mecánica que estudia el movimiento de los cuerpos. 
+
+### Vector velocidad 
+
 La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo $\mathbb{R}^n$.
 	
-Para el caso del plano real $\mathbb{R}^2$, si la función vectorial $\mathbf{f}(t)$ describe la posición de un objeto móvil en el plano en el instante $t$, tomando como referencia el origen de coordenadas $O$ y los vectores coordenados $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, se puede representar la posición $P$ del móvil en cada instante $t$ mediante un	vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$ cuyas coordenadas
+Para el caso del plano real $\mathbb{R}^2$, si la función vectorial $\mathbf{f}(t)$ describe la posición de un objeto móvil en el plano en el instante $t$, tomando como referencia el origen de coordenadas $O$ y los vectores coordenados $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, se puede representar la posición $P$ del móvil en cada instante $t$ mediante un vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$ cuyas coordenadas
 
 $$
 \begin{cases}
@@ -994,19 +998,46 @@ son las funciones coordenadas de $\mathbf{f}$.
 ![Trayectoria de un movimiento curvilíneo en el plano real.](img/funciones-vectoriales/movimiento-curvilineo-plano.pdf)
 :::
 
-:::{.callout-important}
-En este contexto, la derivada de la función vectorial $f'(a)=(f_1'(a),\ldots,f_n'(a))$ es el _vector velocidad_ de la trayectoria descrita por $\mathbf{f}$ en el instante $t=a$.
-:::
-
-:::{.callout-warning}
-No debe confundirse el vector velocidad $\mathbf{v}=f'(a)$ con la velocidad del móvil dada por $|\mathbf{v}|$.
-:::
-
-:::{#exm-movimiento-curvilineo-plano}
-Dada la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, $t\in \mathbb{R}$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son $x(t) = \cos(t)$, $y(t) = \operatorname{sen}(t)$, $t\in \mathbb{R}$, y su velocidad es
+En este contexto, para incrementos pequeños de tiempo, el vector $\mathbf{f}(t+\Delta t)-\mathbf{f}(t)$ aproxima la dirección del desplazamiento y su módulo la longitud de la trayectoria desde el punto $\mathbf{f}(t)$ al punto $\mathbf{f}(t+\Delta t)$, es decir, el espacio recorrido entre estos dos instantes, de manera que el cociente
 
 $$
-\mathbf{v} = \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
+\frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t}
+$$
+
+mide la velocidad media durante ese desplazamiento. Tomando el límite para incrementos de tiempo cada vez menores, se obtiene
+
+$$
+\lim_{\Delta t\to 0} \frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t} = \mathbf{f}'(t),
+$$
+
+que es el vector derivada de la función vectorial, y que recordemos es tangente a la trayectoria.
+
+:::{#def-vector-velocidad-funcion-vectorial}
+## Vector velocidad
+Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$ que describe el movimiento de un objeto en función del tiempo $t$, se llama _vector velocidad_ de $\mathbf{f}$ al vector 
+
+$$
+\mathbf{v}(t) = \mathbf{f}'(t).
+$$
+
+Y se define la _rapidez_ del objeto como la longitud del vector velocidad, es decir, $|\mathbf{v}(t)|$.
+:::
+
+Esta definición tiene sentido ya que $|v(t)|' = |\mathbf{f}'(t)| = \frac{ds}{dt}$, donde $s(t)$ es la función longitud de arco, y por tanto, mide la variación instantánea del espacio recorrido con respecto al tiempo.
+
+:::{.callout-warning}
+No debe confundirse el vector velocidad $\mathbf{v}=f'(t)$ con la rapidez del móvil dada por $|\mathbf{v}|$.
+:::
+
+El vector velocidad explica cómo cambia la posición del objeto con respecto al tiempo. Por ejemplo, si tenemos que en un instante $t=a$ el vector velocidad es $\mathbf{v}=(1,-2)$, eso indica que la tendencia de cambio del objeto es a avanzar una unidad en eje $x$ y retroceder dos unidades en el eje $y$ por cada unidad de tiempo que pase. 
+
+:::{#exm-movimiento-curvilineo-plano}
+El vector velocidad de la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es
+
+$$
+\mathbf{v} 
+= \mathbf{f}'(t) 
+= (-\operatorname{sen}(t), \cos(t)).
 $$
 	
 En el instante $t=\pi/4$, el móvil estará en la posición $\mathbf{f}(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$ y se moverá con una velocidad $\mathbf{v}=\mathbf{f}'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
@@ -1020,4 +1051,59 @@ En el instante $t=\pi/4$, el móvil estará en la posición $\mathbf{f}(\pi/4) =
 :::
 
 Obsérvese que el módulo del vector velocidad siempre será 1 ya que $|\mathbf{v}|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1$, y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.
+:::
+
+### Vector aceleración
+
+Del mismo modo que el vector velocidad $\mathbf{v}(t)=\mathbf{f}'(t)$ explica la variación de la posición de un objeto dada por $\mathbf{f}(t)$, la segunda derivada $\mathbf{f}''(t)$ explica la variación de la velocidad $\mathbf{v}(t)$.
+
+:::{#def-vector-aceleracion-funcion-vectorial}
+## Vector aceleración
+Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$ que describe el movimiento de un objeto en función del tiempo $t$, se llama _vector aceleración_ de $\mathbf{f}$ al vector derivada del vector velocidad, es decir,
+
+$$
+\mathbf{a}(t) = \mathbf{v}(t) = \mathbf{f}''(t).
+$$
+:::
+
+El vector aceleración explica cómo cambia la velocidad de un objeto móvil, tanto en dirección como en magnitud. De este modo, la trayectoria que describe el objeto siempre se curva en la dirección que indica el vector aceleración.
+
+:::{#exm-vector-aceleración-función-vectorial}
+Siguiendo con el ejemplo anterior de la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, hemos visto que el vector velocidad es $\mathbf{v}(t)=(-\operatorname{sen}(t), \cos(t))$, y por tanto el vector aceleración es 
+
+$$
+\mathbf{a}(t) = (-\cos(t), -\operatorname{sen}(t)),
+$$
+
+que es justo el vector opuesto al vector posición $\mathbf{f}(t)$, por lo que en el caso del movimiento circular uniforme, el vector aceleración siempre apunta hacia el centro de la circunferencia. En particular en el instante $\pi/4$, se tiene el vector aceleración $\mathbf{a}(\pi/4)=(-\sqrt{2}/2,-\sqrt{2}/2)$.
+
+:::{.content-visible when-format="html"}
+![Aceleración de una trayectoria circular en el plano.](img/funciones-vectoriales/aceleracion-trayectoria-circular.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Aceleración de una trayectoria circular en el plano.](img/funciones-vectoriales/aceleracion-trayectoria-circular.pdf)
+:::
+:::
+
+### Fuerzas
+
+Como ya vimos en el capítulo de integrales, la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica) relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula 
+
+$$
+\mathbf{F}(t) = m\mathbf{a}(t).
+$$
+
+donde $\mathbf{F}(t)$ es fuerza que actúa sobre el objeto en el instante $t$, $m$ es su masa y $\mathbf{a}(t)$ es la aceleración del objeto en ese instante.
+
+Como hemos visto, en el caso del movimiento curvilíneo, la aceleración es un vector, y por tanto la fuerza será otro vector proporcional a él.
+
+:::{#exm-fuerza-centrípeta}
+En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$ tenía una aceleración $\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))$. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa $m$, la fuerza que actúa sobre él es 
+
+$$
+\mathbf{F}(t) = -m(\cos(t), \operatorname{sen}(t)).
+$$
+
+Esta fuerza actúa en dirección opuesta al vector posición $\mathbf{f}(t)$, es decir, apunta hacia el centro de la circunferencia, y se conoce como _fuerza centrípeta_.
 :::

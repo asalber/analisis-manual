@@ -422,16 +422,21 @@ El concepto de función es uno de los más importantes en el Análisis Matemáti
 
 :::{#def-funcion}
 ## Función
-Se dice que una relación binaria $f \subseteq A \times B$, con $A$ y $B$ conjuntos no vacíos, es una _función_ o _aplicación_, y se denota $f:A\rightarrow B$, si $f$ no contiene dos pares ordenados distintos con la misma primera componente, es decir,
+Se dice que una relación binaria $f \subseteq A \times B$, con $A$ y $B$ conjuntos no vacíos, es una _función parcial_ o _aplicación parcial_, y se denota $f:A\rightarrow B$, si $f$ no contiene dos pares ordenados distintos con la misma primera componente, es decir,
 
-$$\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.$$
+$$
+\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.
+$$
+
+Si además, la relación es total en $A$, es decir, todos los elementos de $A$ aparecen en la relación, se dice que $f$ es una _función total_ o simplemente _función_.
 :::
+
+De manera más informal podemos decir que una función es una correspondencia entre los elementos de dos conjuntos $A$ y $B$ que asocia a cada elemento de $A$ un elemento, y solo uno, de $B$.
 
 Es habitual representar los pares de una función con la notación $y=f(x)$ donde $x$ es la primera componente del par e $y$ la segunda.
 
-
 :::{#exm-funcion} 
-La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. 
+La relación binaria $f=\{(1,d), (2,c), (3,a), (4,c)\}$ es una función, pero la relación $g=\{(1,d), (2,b), (3,a), (3,c)\}$ no lo es porque existen dos pares cuya primera componente es $3$. 
 
 Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
 :::
@@ -580,12 +585,34 @@ Se dice que dos conjuntos $A$ y $B$ son _equipotentes_, y se denota $A\approx B$
 Dos conjuntos $A$ y $B$ son equipotentes si y solo si cada elemento de $A$ puede emparejarse con uno de $B$, de manera que todos los elementos de $B$ sean pareja de uno de $A$ y solo de uno, es decir, existe una aplicación biyectiva $f:A\rightarrow B$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Si $A$ y $B$ son equipotentes, es trivial construir una biyección entre ellos, ya que podemos construir una función que empareje cada elemento de $A$ con un único elemento de $B$ y cada elemento de $B$ con un único elemento de $A$.
+
+Por otro lado, si existe una aplicación biyectiva $f$ entre $A$ y $B$, la asociación entre elementos es uno a uno, es decir, para cada elemento de $A$ está emparejado exactamente con un uno de $B$, y cada elemento de $B$ está emparejado exactamente con uno de $A$, con lo que necesariamente $A$ y $B$ deben tener el mismo número de elementos.
+:::
+:::
+
 :::{#prp-equipotencia-relacion-equivalencia}
 La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:
 
 - _Reflexiva:_ $A\approx A$ para todo conjunto $A$.
 - _Simétrica:_ Si $A\approx B$, entonces $B\approx A$, para cualesquiera conjuntos $A$ y $B$.
 - _Transitiva:_ Si $A\approx B$ y $B\approx C$, entonces $A\approx C$ para cualesquiera conjuntos $A$, $B$ y $C$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veamos que la relación de equipotencia cumple las propiedades reflexiva, simétrica y transitiva.
+
+Reflexiva: Es trivial ya que cualquier conjunto tiene el mismo número de elementos que él mismo, luego $A\approx A$.
+
+Simétrica: Si $A\approx B$ entonces, por la proposición anterior, existe una una biyección $f:A\longrightarrow B$. Pero entonces, la función inversa $f^{-1}:B\longrightarrow A$ es también una biyección entre $B$ y $A$, por lo que $B\approx A$.
+
+Transitiva: Si $A\approx B$ y $B\approx C$, entonces, por la proposición anterior, existen dos biyecciones $f:A\longrightarrow B$ y $g:B\longrightarrow C$. Pero entonces, la función $g\circ f:A\longrightarrow C$ es también biyectiva, por lo que $A\approx C$.
+:::
 :::
 
 De igual modo se puede definir una relación que capture la noción de que un conjunto es de menor tamaño que otro.
@@ -599,12 +626,34 @@ Dados dos conjuntos $A$ y $B$, se dice que $A$ es _minuspotente_ a $B$, y se den
 El conjunto $A$ es minuspotente al conjunto $B$ si y solo si existe una aplicación inyectiva $f:A\rightarrow B$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $A\preceq B$, entonces podemos tomar un subconjunto $C\subseteq B$ con el mismo cardinal que $A$ y crear una biyección entre $A$ y $C$. Tomando esta misma aplicación entre $A$ y $B$, la aplicación será inyectiva.
+
+Para probar el otro sentido de la implicación, supongamos que existe una aplicación inyectiva $f:A\longrightarrow B$, eso significa que todos los elementos de $A$ están emparejados con elementos de $B$ distintos entre sí, por lo que $B$ tiene al menos el mismo número de elementos que $A$, y por tanto, $A\preceq B$.
+:::
+:::
+
 :::{#prp-minuspotencia-relacion-orden}
 La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:
 
 - Reflexiva: $A\preceq A$ para todo conjunto $A$.
-- Simétrica: Si $A\preceq B$ y $B\preceq A$, entonces $A\approx B$, para cualesquiera conjuntos $A$ y $B$.
+- Antisimétrica: Si $A\preceq B$ y $B\preceq A$, entonces $A\approx B$, para cualesquiera conjuntos $A$ y $B$.
 - Transitiva: Si $A\preceq B$ y $B\preceq C$, entonces $A\preceq C$ para cualesquiera conjuntos $A$, $B$ y $C$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veamos que la relación de minuspotencia satisface las propiedades reflexiva, antisimétrica y transitiva.
+
+Reflexiva: Es trivial, ya que $|A|\leq |A|$ para cualquier conjunto $A$, por lo que $A\preceq A$.
+
+Antisimétrica: Si $A\preceq B$ y $B\preceq A$, entonces $|A|\leq |B|$ y $|B|\leq |A|$, y como la relación $\leq$ es una relación de orden en $\mathbb{N}$, se deduce que $|A|=|B|$, por lo que $A\approx B$.
+
+Transitiva: Si $A\preceq B$ y $B\preceq C$, entonces $|A|\leq |B|$ y $|B|\leq |C|$, y como la relación $\leq$ es una relación de orden en $\mathbb{N}$, se deduce que $|A|\leq |C|$, por lo que $A\preceq C$.
+:::
 :::
 
 :::{#def-conjunto-finito}
@@ -642,7 +691,7 @@ Se dice que un conjunto $A$ es _numerable_ si tiene el mismo cardinal que el con
 Un conjunto $A$ es numerable si existe una aplicación biyectiva $f:\mathbb{N}\rightarrow A$. 
 :::
 
-En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales $\mathbb{N}$. 
+En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales $\mathbb{N}$, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.
 
 La prueba de este resultado es inmediata aplicando la @prp-biyeccion-conjuntos-equipotentes.
 
@@ -680,7 +729,7 @@ $$B = \{x\in A: x\not \in f(x)\},$$
 
 es decir, el conjunto de los elementos de $A$ que no están contenidos en el subconjunto de $A$ que le corresponde mediante $f$, se puede probar por reducción al absurdo que $B$ no puede ser la imagen mediante $f$ de ningún elemento de $A$. 
 
-Sunpóngase que que existe $a\in A$ tal que $B=f(a)$. Como $B$ es un subconjunto de $A$, pueden darse dos casos:
+Supóngase que que existe $a\in A$ tal que $B=f(a)$. Como $B$ es un subconjunto de $A$, pueden darse dos casos:
  
 - Si $a\in B$, entonces por la definición de $B$ se tiene que $a\not \in f(a)=B$, lo cual es contradictorio.
 - Si $a\not\in B$, entonces por la definición de $B$ se tiene que $a\in f(a)=B$, que también es contradictorio.

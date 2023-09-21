@@ -598,12 +598,16 @@ Advertencia
 <h2 data-number="1.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.5</span> Funciones</h2>
 <p>El concepto de función es uno de los más importantes en el Análisis Matemático, ya que muchos de los fenómenos naturales en los que una magnitud depende de otra se modelizan mediante funciones.</p>
 <div id="def-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.27 (Función) </strong></span>Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacíos, es una <em>función</em> o <em>aplicación</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
-<p><span class="math display">\[\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.\]</span></p>
+<p><span class="theorem-title"><strong>Definición 1.27 (Función) </strong></span>Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacíos, es una <em>función parcial</em> o <em>aplicación parcial</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
+<p><span class="math display">\[
+\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.
+\]</span></p>
+<p>Si además, la relación es total en <span class="math inline">\(A\)</span>, es decir, todos los elementos de <span class="math inline">\(A\)</span> aparecen en la relación, se dice que <span class="math inline">\(f\)</span> es una <em>función total</em> o simplemente <em>función</em>.</p>
 </div>
+<p>De manera más informal podemos decir que una función es una correspondencia entre los elementos de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> que asocia a cada elemento de <span class="math inline">\(A\)</span> un elemento, y solo uno, de <span class="math inline">\(B\)</span>.</p>
 <p>Es habitual representar los pares de una función con la notación <span class="math inline">\(y=f(x)\)</span> donde <span class="math inline">\(x\)</span> es la primera componente del par e <span class="math inline">\(y\)</span> la segunda.</p>
 <div id="exm-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.22 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,a), (2,c), (3,c), (4,b)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,a), (2,c), (3,c), (2,b)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.22 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,d), (2,c), (3,a), (4,c)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,d), (2,b), (3,a), (3,c)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(3\)</span>.</p>
 <p>Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
 </div>
 <div class="quarto-layout-panel">
@@ -741,6 +745,25 @@ Demostración
 <div id="prp-biyeccion-conjuntos-equipotentes" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.6 </strong></span>Dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes si y solo si cada elemento de <span class="math inline">\(A\)</span> puede emparejarse con uno de <span class="math inline">\(B\)</span>, de manera que todos los elementos de <span class="math inline">\(B\)</span> sean pareja de uno de <span class="math inline">\(A\)</span> y solo de uno, es decir, existe una aplicación biyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes, es trivial construir una biyección entre ellos, ya que podemos construir una función que empareje cada elemento de <span class="math inline">\(A\)</span> con un único elemento de <span class="math inline">\(B\)</span> y cada elemento de <span class="math inline">\(B\)</span> con un único elemento de <span class="math inline">\(A\)</span>.</p>
+<p>Por otro lado, si existe una aplicación biyectiva <span class="math inline">\(f\)</span> entre <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, la asociación entre elementos es uno a uno, es decir, para cada elemento de <span class="math inline">\(A\)</span> está emparejado exactamente con un uno de <span class="math inline">\(B\)</span>, y cada elemento de <span class="math inline">\(B\)</span> está emparejado exactamente con uno de <span class="math inline">\(A\)</span>, con lo que necesariamente <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> deben tener el mismo número de elementos.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="prp-equipotencia-relacion-equivalencia" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.7 </strong></span>La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:</p>
 <ul>
@@ -749,6 +772,27 @@ Demostración
 <li><em>Transitiva:</em> Si <span class="math inline">\(A\approx B\)</span> y <span class="math inline">\(B\approx C\)</span>, entonces <span class="math inline">\(A\approx C\)</span> para cualesquiera conjuntos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>.</li>
 </ul>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Veamos que la relación de equipotencia cumple las propiedades reflexiva, simétrica y transitiva.</p>
+<p>Reflexiva: Es trivial ya que cualquier conjunto tiene el mismo número de elementos que él mismo, luego <span class="math inline">\(A\approx A\)</span>.</p>
+<p>Simétrica: Si <span class="math inline">\(A\approx B\)</span> entonces, por la proposición anterior, existe una una biyección <span class="math inline">\(f:A\longrightarrow B\)</span>. Pero entonces, la función inversa <span class="math inline">\(f^{-1}:B\longrightarrow A\)</span> es también una biyección entre <span class="math inline">\(B\)</span> y <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(B\approx A\)</span>.</p>
+<p>Transitiva: Si <span class="math inline">\(A\approx B\)</span> y <span class="math inline">\(B\approx C\)</span>, entonces, por la proposición anterior, existen dos biyecciones <span class="math inline">\(f:A\longrightarrow B\)</span> y <span class="math inline">\(g:B\longrightarrow C\)</span>. Pero entonces, la función <span class="math inline">\(g\circ f:A\longrightarrow C\)</span> es también biyectiva, por lo que <span class="math inline">\(A\approx C\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <p>De igual modo se puede definir una relación que capture la noción de que un conjunto es de menor tamaño que otro.</p>
 <div id="def-conjuntos-minuspotentes" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.38 (Conjunto minuspotente) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que <span class="math inline">\(A\)</span> es <em>minuspotente</em> a <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\preceq B\)</span>, si el cardinal de <span class="math inline">\(A\)</span> es menor o igual que el de <span class="math inline">\(B\)</span>, es decir, si <span class="math inline">\(|A| \leq |B|\)</span>.</p>
@@ -756,13 +800,53 @@ Demostración
 <div id="prp-inyeccion-conjuntos-minuspotentes" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.8 </strong></span>El conjunto <span class="math inline">\(A\)</span> es minuspotente al conjunto <span class="math inline">\(B\)</span> si y solo si existe una aplicación inyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(A\preceq B\)</span>, entonces podemos tomar un subconjunto <span class="math inline">\(C\subseteq B\)</span> con el mismo cardinal que <span class="math inline">\(A\)</span> y crear una biyección entre <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span>. Tomando esta misma aplicación entre <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, la aplicación será inyectiva.</p>
+<p>Para probar el otro sentido de la implicación, supongamos que existe una aplicación inyectiva <span class="math inline">\(f:A\longrightarrow B\)</span>, eso significa que todos los elementos de <span class="math inline">\(A\)</span> están emparejados con elementos de <span class="math inline">\(B\)</span> distintos entre sí, por lo que <span class="math inline">\(B\)</span> tiene al menos el mismo número de elementos que <span class="math inline">\(A\)</span>, y por tanto, <span class="math inline">\(A\preceq B\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="prp-minuspotencia-relacion-orden" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.9 </strong></span>La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:</p>
 <ul>
 <li>Reflexiva: <span class="math inline">\(A\preceq A\)</span> para todo conjunto <span class="math inline">\(A\)</span>.</li>
-<li>Simétrica: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq A\)</span>, entonces <span class="math inline">\(A\approx B\)</span>, para cualesquiera conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
+<li>Antisimétrica: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq A\)</span>, entonces <span class="math inline">\(A\approx B\)</span>, para cualesquiera conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
 <li>Transitiva: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq C\)</span>, entonces <span class="math inline">\(A\preceq C\)</span> para cualesquiera conjuntos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>.</li>
 </ul>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Veamos que la relación de minuspotencia satisface las propiedades reflexiva, antisimétrica y transitiva.</p>
+<p>Reflexiva: Es trivial, ya que <span class="math inline">\(|A|\leq |A|\)</span> para cualquier conjunto <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(A\preceq A\)</span>.</p>
+<p>Antisimétrica: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq A\)</span>, entonces <span class="math inline">\(|A|\leq |B|\)</span> y <span class="math inline">\(|B|\leq |A|\)</span>, y como la relación <span class="math inline">\(\leq\)</span> es una relación de orden en <span class="math inline">\(\mathbb{N}\)</span>, se deduce que <span class="math inline">\(|A|=|B|\)</span>, por lo que <span class="math inline">\(A\approx B\)</span>.</p>
+<p>Transitiva: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq C\)</span>, entonces <span class="math inline">\(|A|\leq |B|\)</span> y <span class="math inline">\(|B|\leq |C|\)</span>, y como la relación <span class="math inline">\(\leq\)</span> es una relación de orden en <span class="math inline">\(\mathbb{N}\)</span>, se deduce que <span class="math inline">\(|A|\leq |C|\)</span>, por lo que <span class="math inline">\(A\preceq C\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="def-conjunto-finito" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.39 (Conjunto finito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>finito</em> si es que existe un <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(|A| = |\{1,2,3,\ldots,n \}|\)</span>. Cuando esto ocurre, el cardinal de <span class="math inline">\(A\)</span> es <span class="math inline">\(|A|=n\)</span>.</p>
@@ -786,7 +870,7 @@ Demostración
 <div id="cor-biyeccion-conjunto-numerable" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 1.1 </strong></span>Un conjunto <span class="math inline">\(A\)</span> es numerable si existe una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow A\)</span>.</p>
 </div>
-<p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.</p>
 <p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-enteros-equipotentes-naturales" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1.26 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
@@ -800,7 +884,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 1.2 (Cantor) </strong></span>El conjunto potencia de cualquier conjunto <span class="math inline">\(A\)</span> tiene un cardinal estrictamente mayor que el cardinal de <span class="math inline">\(A\)</span>, es decir, <span class="math inline">\(|A| &lt; |\mathcal{P}(A)|\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -809,14 +893,14 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Basta con demostrar que no existe una aplicación <span class="math inline">\(f:A\rightarrow \mathcal{P}(A)\)</span> sobreyectiva, y para ello basta con encontrar un subconjunto <span class="math inline">\(B\)</span> de <span class="math inline">\(A\)</span> que no sea la imagen mediante <span class="math inline">\(f\)</span> de ningún elemento de <span class="math inline">\(A\)</span>.</p>
 <p>Tomando el siguiente subconjunto de <span class="math inline">\(A\)</span></p>
 <p><span class="math display">\[B = \{x\in A: x\not \in f(x)\},\]</span></p>
 <p>es decir, el conjunto de los elementos de <span class="math inline">\(A\)</span> que no están contenidos en el subconjunto de <span class="math inline">\(A\)</span> que le corresponde mediante <span class="math inline">\(f\)</span>, se puede probar por reducción al absurdo que <span class="math inline">\(B\)</span> no puede ser la imagen mediante <span class="math inline">\(f\)</span> de ningún elemento de <span class="math inline">\(A\)</span>.</p>
-<p>Sunpóngase que que existe <span class="math inline">\(a\in A\)</span> tal que <span class="math inline">\(B=f(a)\)</span>. Como <span class="math inline">\(B\)</span> es un subconjunto de <span class="math inline">\(A\)</span>, pueden darse dos casos:</p>
+<p>Supóngase que que existe <span class="math inline">\(a\in A\)</span> tal que <span class="math inline">\(B=f(a)\)</span>. Como <span class="math inline">\(B\)</span> es un subconjunto de <span class="math inline">\(A\)</span>, pueden darse dos casos:</p>
 <ul>
 <li>Si <span class="math inline">\(a\in B\)</span>, entonces por la definición de <span class="math inline">\(B\)</span> se tiene que <span class="math inline">\(a\not \in f(a)=B\)</span>, lo cual es contradictorio.</li>
 <li>Si <span class="math inline">\(a\not\in B\)</span>, entonces por la definición de <span class="math inline">\(B\)</span> se tiene que <span class="math inline">\(a\in f(a)=B\)</span>, que también es contradictorio.</li>
@@ -830,7 +914,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 1.3 (Cardinalidad del continuo) </strong></span>El conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span> tiene un cardinal igual al del conjunto potencia del conjunto de los números naturales <span class="math inline">\(\mathcal{P}(\mathbb{N})\)</span>, es decir, <span class="math inline">\(|\mathbb{R}|=2^{|\mathbb{N}|}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -839,7 +923,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Daremos una demostración partiendo del hecho de que cada número real tiene una expansión decimal infinita de la forma <span class="math inline">\(e.d\)</span> donde <span class="math inline">\(e\)</span> es la parte entera y <span class="math inline">\(d\)</span> la decimal infinita (por ejemplo, <span class="math inline">\(3/2\)</span> se puede representar por la expansión decimal infinita <span class="math inline">\(1.5000\ldots\)</span>).</p>

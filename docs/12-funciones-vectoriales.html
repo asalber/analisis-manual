@@ -253,7 +253,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#integral-de-una-función-vectorial" id="toc-integral-de-una-función-vectorial" class="nav-link" data-scroll-target="#integral-de-una-función-vectorial"><span class="header-section-number">11.4</span> Integral de una función vectorial</a></li>
   <li><a href="#longitud-de-la-trayectoria-de-una-función-vectorial" id="toc-longitud-de-la-trayectoria-de-una-función-vectorial" class="nav-link" data-scroll-target="#longitud-de-la-trayectoria-de-una-función-vectorial"><span class="header-section-number">11.5</span> Longitud de la trayectoria de una función vectorial</a></li>
   <li><a href="#curvatura" id="toc-curvatura" class="nav-link" data-scroll-target="#curvatura"><span class="header-section-number">11.6</span> Curvatura</a></li>
-  <li><a href="#cinemática-movimiento-curvilíneo" id="toc-cinemática-movimiento-curvilíneo" class="nav-link" data-scroll-target="#cinemática-movimiento-curvilíneo"><span class="header-section-number">11.7</span> Cinemática: Movimiento curvilíneo</a></li>
+  <li><a href="#cinemática-movimiento-curvilíneo" id="toc-cinemática-movimiento-curvilíneo" class="nav-link" data-scroll-target="#cinemática-movimiento-curvilíneo"><span class="header-section-number">11.7</span> Cinemática: Movimiento curvilíneo</a>
+  <ul class="collapse">
+  <li><a href="#vector-velocidad" id="toc-vector-velocidad" class="nav-link" data-scroll-target="#vector-velocidad"><span class="header-section-number">11.7.1</span> Vector velocidad</a></li>
+  <li><a href="#vector-aceleración" id="toc-vector-aceleración" class="nav-link" data-scroll-target="#vector-aceleración"><span class="header-section-number">11.7.2</span> Vector aceleración</a></li>
+  <li><a href="#fuerzas" id="toc-fuerzas" class="nav-link" data-scroll-target="#fuerzas"><span class="header-section-number">11.7.3</span> Fuerzas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -843,7 +848,7 @@ Demostración
 \lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| =
 \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j(t_i)-f_j(t_{i-1}))^2}.
 \]</span></p>
-<p>Por otro lado, si las funciones componentes <span class="math inline">\(f_j(t)\)</span> son continuas en <span class="math inline">\([a,b]\)</span> y diferenciables en <span class="math inline">\((a,b)\)</span>, el teorema del valore medio asegura que existe un valor <span class="math inline">\(t_{ij}\in(t_{i-1},t_i)\)</span> tal que</p>
+<p>Por otro lado, si las funciones componentes <span class="math inline">\(f_j(t)\)</span> son continuas en <span class="math inline">\([a,b]\)</span> y diferenciables en <span class="math inline">\((a,b)\)</span>, el teorema del valor medio asegura que existe un valor <span class="math inline">\(t_{ij}\in(t_{i-1},t_i)\)</span> tal que</p>
 <p><span class="math display">\[
 f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 \]</span></p>
@@ -1122,6 +1127,9 @@ Demostración
 </section>
 <section id="cinemática-movimiento-curvilíneo" class="level2" data-number="11.7">
 <h2 data-number="11.7" class="anchored" data-anchor-id="cinemática-movimiento-curvilíneo"><span class="header-section-number">11.7</span> Cinemática: Movimiento curvilíneo</h2>
+<p>Una de las principales aplicaciones de las funciones vectoriales la encontramos en la Cinemática, que es la rama de la mecánica que estudia el movimiento de los cuerpos.</p>
+<section id="vector-velocidad" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="vector-velocidad"><span class="header-section-number">11.7.1</span> Vector velocidad</h3>
 <p>La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>Para el caso del plano real <span class="math inline">\(\mathbb{R}^2\)</span>, si la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> describe la posición de un objeto móvil en el plano en el instante <span class="math inline">\(t\)</span>, tomando como referencia el origen de coordenadas <span class="math inline">\(O\)</span> y los vectores coordenados <span class="math inline">\(\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}\)</span>, se puede representar la posición <span class="math inline">\(P\)</span> del móvil en cada instante <span class="math inline">\(t\)</span> mediante un vector <span class="math inline">\(\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}\)</span> cuyas coordenadas</p>
 <p><span class="math display">\[
@@ -1139,19 +1147,23 @@ t\in \mbox{Dom}(f)
 <figcaption class="figure-caption">Trayectoria de un movimiento curvilíneo en el plano real.</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>En este contexto, para incrementos pequeños de tiempo, el vector <span class="math inline">\(\mathbf{f}(t+\Delta t)-\mathbf{f}(t)\)</span> aproxima la dirección del desplazamiento y su módulo la longitud de la trayectoria desde el punto <span class="math inline">\(\mathbf{f}(t)\)</span> al punto <span class="math inline">\(\mathbf{f}(t+\Delta t)\)</span>, es decir, el espacio recorrido entre estos dos instantes, de manera que el cociente</p>
+<p><span class="math display">\[
+\frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t}
+\]</span></p>
+<p>mide la velocidad media durante ese desplazamiento. Tomando el límite para incrementos de tiempo cada vez menores, se obtiene</p>
+<p><span class="math display">\[
+\lim_{\Delta t\to 0} \frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t} = \mathbf{f}'(t),
+\]</span></p>
+<p>que es el vector derivada de la función vectorial, y que recordemos es tangente a la trayectoria.</p>
+<div id="def-vector-velocidad-funcion-vectorial" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.18 (Vector velocidad) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector velocidad</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
+<p><span class="math display">\[
+\mathbf{v}(t) = \mathbf{f}'(t).
+\]</span></p>
+<p>Y se define la <em>rapidez</em> del objeto como la longitud del vector velocidad, es decir, <span class="math inline">\(|\mathbf{v}(t)|\)</span>.</p>
 </div>
-<div class="callout-title-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En este contexto, la derivada de la función vectorial <span class="math inline">\(f'(a)=(f_1'(a),\ldots,f_n'(a))\)</span> es el <em>vector velocidad</em> de la trayectoria descrita por <span class="math inline">\(\mathbf{f}\)</span> en el instante <span class="math inline">\(t=a\)</span>.</p>
-</div>
-</div>
+<p>Esta definición tiene sentido ya que <span class="math inline">\(|v(t)|' = |\mathbf{f}'(t)| = \frac{ds}{dt}\)</span>, donde <span class="math inline">\(s(t)\)</span> es la función longitud de arco, y por tanto, mide la variación instantánea del espacio recorrido con respecto al tiempo.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1162,13 +1174,16 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No debe confundirse el vector velocidad <span class="math inline">\(\mathbf{v}=f'(a)\)</span> con la velocidad del móvil dada por <span class="math inline">\(|\mathbf{v}|\)</span>.</p>
+<p>No debe confundirse el vector velocidad <span class="math inline">\(\mathbf{v}=f'(t)\)</span> con la rapidez del móvil dada por <span class="math inline">\(|\mathbf{v}|\)</span>.</p>
 </div>
 </div>
+<p>El vector velocidad explica cómo cambia la posición del objeto con respecto al tiempo. Por ejemplo, si tenemos que en un instante <span class="math inline">\(t=a\)</span> el vector velocidad es <span class="math inline">\(\mathbf{v}=(1,-2)\)</span>, eso indica que la tendencia de cambio del objeto es a avanzar una unidad en eje <span class="math inline">\(x\)</span> y retroceder dos unidades en el eje <span class="math inline">\(y\)</span> por cada unidad de tiempo que pase.</p>
 <div id="exm-movimiento-curvilineo-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.14 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.14 </strong></span>El vector velocidad de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es</p>
 <p><span class="math display">\[
-\mathbf{v} = \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
+\mathbf{v}
+= \mathbf{f}'(t)
+= (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>
 <p>En el instante <span class="math inline">\(t=\pi/4\)</span>, el móvil estará en la posición <span class="math inline">\(\mathbf{f}(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)\)</span> y se moverá con una velocidad <span class="math inline">\(\mathbf{v}=\mathbf{f}'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1179,8 +1194,49 @@ Advertencia
 </div>
 <p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que <span class="math inline">\(|\mathbf{v}|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1\)</span>, y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.</p>
 </div>
+</section>
+<section id="vector-aceleración" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="vector-aceleración"><span class="header-section-number">11.7.2</span> Vector aceleración</h3>
+<p>Del mismo modo que el vector velocidad <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t)\)</span> explica la variación de la posición de un objeto dada por <span class="math inline">\(\mathbf{f}(t)\)</span>, la segunda derivada <span class="math inline">\(\mathbf{f}''(t)\)</span> explica la variación de la velocidad <span class="math inline">\(\mathbf{v}(t)\)</span>.</p>
+<div id="def-vector-aceleracion-funcion-vectorial" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 11.19 (Vector aceleración) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector derivada del vector velocidad, es decir,</p>
+<p><span class="math display">\[
+\mathbf{a}(t) = \mathbf{v}(t) = \mathbf{f}''(t).
+\]</span></p>
+</div>
+<p>El vector aceleración explica cómo cambia la velocidad de un objeto móvil, tanto en dirección como en magnitud. De este modo, la trayectoria que describe el objeto siempre se curva en la dirección que indica el vector aceleración.</p>
+<div id="exm-vector-aceleración-función-vectorial" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.15 </strong></span>Siguiendo con el ejemplo anterior de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, hemos visto que el vector velocidad es <span class="math inline">\(\mathbf{v}(t)=(-\operatorname{sen}(t), \cos(t))\)</span>, y por tanto el vector aceleración es</p>
+<p><span class="math display">\[
+\mathbf{a}(t) = (-\cos(t), -\operatorname{sen}(t)),
+\]</span></p>
+<p>que es justo el vector opuesto al vector posición <span class="math inline">\(\mathbf{f}(t)\)</span>, por lo que en el caso del movimiento circular uniforme, el vector aceleración siempre apunta hacia el centro de la circunferencia. En particular en el instante <span class="math inline">\(\pi/4\)</span>, se tiene el vector aceleración <span class="math inline">\(\mathbf{a}(\pi/4)=(-\sqrt{2}/2,-\sqrt{2}/2)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/funciones-vectoriales/aceleracion-trayectoria-circular.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Aceleración de una trayectoria circular en el plano.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="fuerzas" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="fuerzas"><span class="header-section-number">11.7.3</span> Fuerzas</h3>
+<p>Como ya vimos en el capítulo de integrales, la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a> relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula</p>
+<p><span class="math display">\[
+\mathbf{F}(t) = m\mathbf{a}(t).
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es fuerza que actúa sobre el objeto en el instante <span class="math inline">\(t\)</span>, <span class="math inline">\(m\)</span> es su masa y <span class="math inline">\(\mathbf{a}(t)\)</span> es la aceleración del objeto en ese instante.</p>
+<p>Como hemos visto, en el caso del movimiento curvilíneo, la aceleración es un vector, y por tanto la fuerza será otro vector proporcional a él.</p>
+<div id="exm-fuerza-centrípeta" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
+<p><span class="math display">\[
+\mathbf{F}(t) = -m(\cos(t), \operatorname{sen}(t)).
+\]</span></p>
+<p>Esta fuerza actúa en dirección opuesta al vector posición <span class="math inline">\(\mathbf{f}(t)\)</span>, es decir, apunta hacia el centro de la circunferencia, y se conoce como <em>fuerza centrípeta</em>.</p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
