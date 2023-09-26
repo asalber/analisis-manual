@@ -74,7 +74,20 @@ $a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Q}$.
 
 Al introducir el inverso del producto, se puede definir la división como $a/b = a\cdot b^{-1}\ \forall a, b \in \mathbb{Q}$.
 
-A diferencia de los enteros, aunque los racionales también tienen un orden total, el orden es _denso_, es decir, entre dos números racionales cualesquiera siempre existe otro número racional (en realidad infinitos), por lo que no existe el anterior y el posterior de cualquier número racional.
+
+:::{#thm-densidad-racionales}
+## Densidad de los números racionales
+El conjunto de los números racionales es _denso_, es decir, entre dos números racionales siempre existe un número racional.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Dados dos números racionales $a<b\in \mathbb{Q}$, el número $\frac{a+b}{2}\in \mathbb{Q}$, y se cumple que $a<\frac{a+b}{2}<b$.
+:::
+:::
+
+Al ser un conjunto denso, cualquier número racional no tiene un número anterior ni uno posterior como ocurría con los enteros.
 
 ## El conjunto de los números irracionales
 
@@ -176,7 +189,7 @@ Existe un subconjunto no vacío $\mathbb{R}^+\subset\mathbb{R}$, llamado el conj
 
 El último axioma es el que diferencia el conjunto de los números reales de otros cuerpos totalmente ordenados como los racionales.
 
-A partir de las propiedades de las suma y el producto se pueden definir nos nuevas operaciones en $\mathbb{R}$.
+A partir de las propiedades de las suma y el producto se pueden definir dos nuevas operaciones en $\mathbb{R}$.
 
 :::{#def-resta}
 ## Resta
@@ -194,7 +207,7 @@ $$\frac{a}{b} = a\cdot b^{-1}.$$
 
 :::{#def-potencia}
 ## Potencia
-Dado un número reale $a\in \mathbb{R}$ y un número $n\in\mathbb{N}$, se define la _potencia_ de $a$ elevado a $n$, y se denota $a^n$, como el producto de $a$ por sí mismo $n$ veces,
+Dado un número reales $a\in \mathbb{R}$ y un número $n\in\mathbb{N}$, se define la _potencia_ de $a$ elevado a $n$, y se denota $a^n$, como el producto de $a$ por sí mismo $n$ veces,
 
 $$a^n = a\cdot \stackrel{n}{\cdots} \cdot a.$$
 
@@ -221,7 +234,7 @@ a. El producto de cualquier número real por el opuesto de $1$ es el opuesto del
 
 a. El opuesto del opuesto de un número real es el propio número: $\forall a\in\mathbb{R}$, $-(-a)=a$.
 
-a. El producto de los opestos de dos números reales es igual al producto de los números: $\forall a,b\in\mathbb{R}$, $(-a) \cdot (-b) = a\cdot b$.
+a. El producto de los opuestos de dos números reales es igual al producto de los números: $\forall a,b\in\mathbb{R}$, $(-a) \cdot (-b) = a\cdot b$.
 
 a. El inverso de un número real distinto de $0$ también es distinto de $0$: $\forall a,\in\mathbb{R}$, si $a\neq 0$, entonces $a^{-1}\neq 0$.
 

@@ -833,7 +833,7 @@ $$
 :::
 
 :::{#thm-curvatura-trayectoria}
-Si $\mathbf{f}{t}$ es una función vectorial en $\mathbb{R}^n$ entonces la curvatura de su trayectoria es 
+Si $\mathbf{f}(t)$ es una función vectorial en $\mathbb{R}^n$ entonces la curvatura de su trayectoria es 
 
 $$
 \kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|},
@@ -1023,10 +1023,10 @@ $$
 Y se define la _rapidez_ del objeto como la longitud del vector velocidad, es decir, $|\mathbf{v}(t)|$.
 :::
 
-Esta definición tiene sentido ya que $|v(t)|' = |\mathbf{f}'(t)| = \frac{ds}{dt}$, donde $s(t)$ es la función longitud de arco, y por tanto, mide la variación instantánea del espacio recorrido con respecto al tiempo.
+Esta definición tiene sentido ya que $|v(t)| = |\mathbf{f}'(t)| = \frac{ds}{dt}$, donde $s(t)$ es la función longitud de arco, y por tanto, mide la variación instantánea del espacio recorrido con respecto al tiempo.
 
 :::{.callout-warning}
-No debe confundirse el vector velocidad $\mathbf{v}=f'(t)$ con la rapidez del móvil dada por $|\mathbf{v}|$.
+No debe confundirse el vector velocidad $\mathbf{v}(t)=f'(t)$ con la rapidez del móvil dada por $|\mathbf{v}(t)|$.
 :::
 
 El vector velocidad explica cómo cambia la posición del objeto con respecto al tiempo. Por ejemplo, si tenemos que en un instante $t=a$ el vector velocidad es $\mathbf{v}=(1,-2)$, eso indica que la tendencia de cambio del objeto es a avanzar una unidad en eje $x$ y retroceder dos unidades en el eje $y$ por cada unidad de tiempo que pase. 
@@ -1035,12 +1035,12 @@ El vector velocidad explica cómo cambia la posición del objeto con respecto al
 El vector velocidad de la función vectorial $\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es
 
 $$
-\mathbf{v} 
+\mathbf{v}(t) 
 = \mathbf{f}'(t) 
 = (-\operatorname{sen}(t), \cos(t)).
 $$
 	
-En el instante $t=\pi/4$, el móvil estará en la posición $\mathbf{f}(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$ y se moverá con una velocidad $\mathbf{v}=\mathbf{f}'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
+En el instante $t=\pi/4$, el móvil estará en la posición $\mathbf{f}(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$ y se moverá con una velocidad $\mathbf{v}(\pi/4)=\mathbf{f}'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
 
 :::{.content-visible when-format="html"}
 ![Velocidad de una trayectoria circular en el plano.](img/funciones-vectoriales/velocidad-trayectoria-circular.png)
@@ -1050,7 +1050,13 @@ En el instante $t=\pi/4$, el móvil estará en la posición $\mathbf{f}(\pi/4) =
 ![Velocidad de una trayectoria circular en el plano.](img/funciones-vectoriales/velocidad-trayectoria-circular.pdf)
 :::
 
-Obsérvese que el módulo del vector velocidad siempre será 1 ya que $|\mathbf{v}|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1$, y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.
+Obsérvese que el módulo del vector velocidad siempre será 1 ya que 
+
+$$
+|\mathbf{v}(t)|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1,
+$$
+
+y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.
 :::
 
 ### Vector aceleración
@@ -1062,7 +1068,7 @@ Del mismo modo que el vector velocidad $\mathbf{v}(t)=\mathbf{f}'(t)$ explica la
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$ que describe el movimiento de un objeto en función del tiempo $t$, se llama _vector aceleración_ de $\mathbf{f}$ al vector derivada del vector velocidad, es decir,
 
 $$
-\mathbf{a}(t) = \mathbf{v}(t) = \mathbf{f}''(t).
+\mathbf{a}(t) = \mathbf{v}'(t) = \mathbf{f}''(t).
 $$
 :::
 
@@ -1086,7 +1092,7 @@ que es justo el vector opuesto al vector posición $\mathbf{f}(t)$, por lo que e
 :::
 :::
 
-En este ejemplo, tanto el vector aceleración resulta ser ortogonal al vector velocidad, pero en general no tiene por qué ser así. Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que $\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}$ y, por tanto podemos expresar el vector velocidad como $\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)$. Haciendo la derivada de esta expresión, se llega  a
+En este ejemplo, el vector aceleración resulta ser ortogonal al vector velocidad, pero en general no tiene por qué ser así. Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que $\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}$ y, por tanto, podemos expresar el vector velocidad como $\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)$. Haciendo la derivada de esta expresión, se llega  a
 
 $$
 \mathbf{a}(t) 
@@ -1131,6 +1137,87 @@ a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 $$
 
 donde $\mathbf{T}(t)$ y $\mathbf{N}(t)$ son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.
+
+Según esto, la componente tangencial  $|v(t)|'$, que apunta al igual que el vector velocidad en la misma dirección del movimiento, depende de cómo varía la rapidez con la que se mueve el objeto, pero no de cómo cambia su dirección. Mientras que la componente normal $\kappa(t)|\mathbf{v}(t)|^2$, depende de la rapidez con la que se mueve el objeto, pero también de la curvatura de la trayectoria que recorre. Esto es fácil de experimentar al conducir un coche por una carretera curva. Cuanto más cerrada sea la curva o cuanto mayor sea la rapidez con la que se toma, mayor será la aceleración en el sentido normal, lo que, como veremos en la próxima sección, se traduce en una mayor fuerza centrífuga que nos empujará hacia la puerta del exterior de la curva.
+
+:::{#exm-componente-tangentcial-normal-aceleracion}
+Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial $f(t)=(t^2,2t)$ en el instante $t=1$. 
+
+El vector velocidad es $\mathbf{v}(t) = \mathbf{f}'(t) = (2t,2)$, y la rapidez 
+
+$$
+|\mathbf{v}(t)|=\sqrt{(2t)^2+2^2} = \sqrt{4t^4+4} = 2\sqrt{t^2+1},
+$$ 
+
+por lo que la componente tangencial de la aceleración vale
+
+$$
+a_T(t) = |\mathbf{v}(t)|' = \frac{2t}{\sqrt{t^2+1}},
+$$
+
+que en $t=1$ vale $a_T(1) = \sqrt{2}$.
+
+Por otro lado, el vector tangente unitario es 
+
+$$
+\mathbf{T}(t) 
+= \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|} 
+= \frac{(2t,2)}{2\sqrt{t^2+1}}
+= \left(\frac{t}{\sqrt{t^2+1}},\frac{1}{\sqrt{t^2+1}}\right),
+$$
+
+con derivada
+
+$$
+\mathbf{T}'(t) =
+\left(\frac{1}{t^2\sqrt{t^2+1} + \sqrt{t^2 + 1}}, \frac{-t}{t^2\sqrt{t^2 + 1} + \sqrt{t^2 + 1}} \right)
+$$
+
+y módulo 
+
+$$
+|\mathbf{T}'(t)| =
+\sqrt{\left(\frac{1}{t^2\sqrt{t^2+1} + \sqrt{t^2 + 1}}\right)^2 +\left(\frac{-t}{t^2\sqrt{t^2 + 1} + \sqrt{t^2 + 1}} \right)^2}
+= \frac{1}{t^2+1},
+$$
+
+por lo que la curvatura es
+
+$$
+\kappa(t) 
+= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}
+= \frac{\frac{1}{t^2+1}}{2\sqrt{t^2+1}} 
+= \frac{1}{2(t^2+1)^{3/2}}.
+$$
+
+Por tanto, la componente normal de la aceleración es
+
+$$
+a_N(t) 
+= \kappa(t)|\mathbf{v}(t)|^2 
+= \frac{1}{2(t^2+1)^{3/2}} (2\sqrt{t^2+1})^2 
+= \frac{2}{\sqrt{t^2+1}},
+$$
+
+que en $t=1$ vale $a_N(1)=\frac{2}{\sqrt{2}}=\sqrt{2}$.
+
+Así pues, el vector aceleración es
+
+$$
+a(1) 
+= \sqrt{2}\mathbf{T}(1) + \sqrt{2}\mathbf{N}(1) 
+= \sqrt{2}\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) + \sqrt{2}\left(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\right) 
+= (2, 0).
+$$
+
+:::{.content-visible when-format="html"}
+![Componentes tangencial y normal de la aceleración.](img/funciones-vectoriales/componentes-aceleracion.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Componentes tangencial y normal de la aceleración.](img/funciones-vectoriales/componentes-aceleracion.pdf)
+:::
+:::
 
 ### Vector fuerza
 
