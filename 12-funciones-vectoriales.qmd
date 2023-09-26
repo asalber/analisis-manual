@@ -1140,7 +1140,7 @@ donde $\mathbf{T}(t)$ y $\mathbf{N}(t)$ son los vectores unitarios tangente y no
 
 Según esto, la componente tangencial  $|v(t)|'$, que apunta al igual que el vector velocidad en la misma dirección del movimiento, depende de cómo varía la rapidez con la que se mueve el objeto, pero no de cómo cambia su dirección. Mientras que la componente normal $\kappa(t)|\mathbf{v}(t)|^2$, depende de la rapidez con la que se mueve el objeto, pero también de la curvatura de la trayectoria que recorre. Esto es fácil de experimentar al conducir un coche por una carretera curva. Cuanto más cerrada sea la curva o cuanto mayor sea la rapidez con la que se toma, mayor será la aceleración en el sentido normal, lo que, como veremos en la próxima sección, se traduce en una mayor fuerza centrífuga que nos empujará hacia la puerta del exterior de la curva.
 
-:::{#exm-componente-tangentcial-normal-aceleracion}
+:::{#exm-componente-tangencial-normal-aceleracion}
 Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial $f(t)=(t^2,2t)$ en el instante $t=1$. 
 
 El vector velocidad es $\mathbf{v}(t) = \mathbf{f}'(t) = (2t,2)$, y la rapidez 
@@ -1217,6 +1217,74 @@ $$
 :::{.content-visible unless-format="html"}
 ![Componentes tangencial y normal de la aceleración.](img/funciones-vectoriales/componentes-aceleracion.pdf)
 :::
+:::
+
+En el caso de una función vectorial en el espacio real $\mathbb{R}^3$, el cálculo de las componentes tangencial y normal de la aceleración se puede simplificar teniendo en cuenta que 
+
+\begin{align*}
+\mathbf{v}(t)\mathbf{a}(t)
+&= |\mathbf{v}(t)|\mathbf{T}(t) (|\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t))\\
+&= |\mathbf{v}(t)||\mathbf{v}(t)|'\mathbf{T}(t)\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^3\mathbf{T}(t)\mathbf{N}(t) \\ 
+&=  |\mathbf{v}(t)||\mathbf{v}(t)|'
+\end{align*}
+ 
+ya que $\mathbf{T}(t)\mathbf{T}(t)= |\mathbf{T}(t)|^2 = 1$ al ser $\mathbf{T}(t)$ un vector unitario y $\mathbf{T}(t)\mathbf{N}(t)=0$ al ser $\mathbf{T}(t)$ y $\mathbf{N}(t)$ vectores ortogonales.
+
+De este modo, se tiene que 
+
+$$
+a_T(t) 
+= |\mathbf{v}(t)|' 
+= \frac{\mathbf{v}(t)\mathbf{a}(t)}{|\mathbf{v}(t)|}
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}.
+$$
+
+Y por otro lado, usando la fórmula de la curvatura del @thm-curvatura-trayectoria-espacio-real, se tiene que la componente normal es
+
+$$
+a_N 
+= \kappa(t)|\mathbf{v}(t)|^2 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}|.
+$$
+
+:::{#exm-componente-tangencial-normal-trayectoria}
+Un objeto se mueve en el espacio real de acuerdo a la función vectorial $\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}$.
+
+Su vector velocidad es $\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)$  y su vector aceleración $\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)$.
+
+Así pues, la componente tangencial de la aceleración es 
+
+$$
+a_T
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}
+= \frac{18t^3+16t^2}{\sqrt{(3t^2)^2 + 3^2 + (4t)^2}}
+= \frac{18t^3+16t^2}{\sqrt{9t^3+16t^2+9}}.
+$$
+
+Para obtener la componente normal, se tiene que 
+
+$$
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+=
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} &\mathbf{k}\\
+3t^2 & 3 & 4t \\
+6t & 0 & 4
+\end{vmatrix}
+= 12\mathbf{i}+12t^2\mathbf{j}-18t\mathbf{k}.
+$$
+
+de manera que la componente normal vale
+
+\begin{align*}
+a_N 
+&= \kappa(t)|\mathbf{v}(t)|^2 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|} \\
+&= \frac{|(12, 12t^2, -18t)|}{|(3t^2,3,4t)|}
+= \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
+&= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
+\end{align*}
 :::
 
 ### Vector fuerza

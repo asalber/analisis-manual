@@ -1253,6 +1253,7 @@ a_N(t) = \kappa(t)|\mathbf{v}(t)|^2.
 a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 \]</span></p>
 <p>donde <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.</p>
+<<<<<<< HEAD
 <p>Según esto, la componente tangencial <span class="math inline">\(|v(t)|'\)</span>, que apunta al igual que el vector velocidad en la misma dirección del movimiento, depende de cómo varía la rapidez con la que se mueve el objeto, pero no de cómo cambia su dirección. Mientras que la componente normal <span class="math inline">\(\kappa(t)|\mathbf{v}(t)|^2\)</span>, depende de la rapidez con la que se mueve el objeto, pero también de la curvatura de la trayectoria que recorre. Esto es fácil de experimentar al conducir un coche por una carretera curva. Cuanto más cerrada sea la curva o cuanto mayor sea la rapidez con la que se toma, mayor será la aceleración en el sentido normal, lo que, como veremos en la próxima sección, se traduce en una mayor fuerza centrífuga que nos empujará hacia la puerta del exterior de la curva.</p>
 <div id="exm-componente-tangentcial-normal-aceleracion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial <span class="math inline">\(f(t)=(t^2,2t)\)</span> en el instante <span class="math inline">\(t=1\)</span>.</p>
@@ -1312,6 +1313,62 @@ a(1)
 </figure>
 </div>
 </div>
+||||||| 9d4b60e
+=======
+<p>En el caso de una función vectorial en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, el cálculo de las componentes tangencial y normal de la aceleración se puede simplificar teniendo en cuenta que</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{v}(t)\mathbf{a}(t)
+&amp;= |\mathbf{v}(t)|\mathbf{T}(t) (|\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t))\\
+&amp;= |\mathbf{v}(t)||\mathbf{v}(t)|'\mathbf{T}(t)\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^3\mathbf{T}(t)\mathbf{N}(t) \\
+&amp;=  |\mathbf{v}(t)||\mathbf{v}(t)|'
+\end{align*}\]</span></p>
+<p>ya que <span class="math inline">\(\mathbf{T}(t)\mathbf{T}(t)= |\mathbf{T}(t)|^2 = 1\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> un vector unitario y <span class="math inline">\(\mathbf{T}(t)\mathbf{N}(t)=0\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> vectores ortogonales.</p>
+<p>De este modo, se tiene que</p>
+<p><span class="math display">\[
+a_T(t)
+= |\mathbf{v}(t)|'
+= \frac{\mathbf{v}(t)\mathbf{a}(t)}{|\mathbf{v}(t)|}
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}.
+\]</span></p>
+<p>Y por otro lado, usando la fórmula de la curvatura del <a href="#thm-curvatura-trayectoria-espacio-real">Teorema&nbsp;<span>11.5</span></a>, se tiene que la componente normal es</p>
+<p><span class="math display">\[
+a_N
+= \kappa(t)|\mathbf{v}(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}|.
+\]</span></p>
+<div id="exm-componente-tangencial-normal-trayectoria" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>Un objeto se mueve en el espacio real de acuerdo a la función vectorial <span class="math inline">\(\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}\)</span>.</p>
+<p>Su vector velocidad es <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)\)</span> y su vector aceleración <span class="math inline">\(\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)\)</span>.</p>
+<p>Así pues, la componente tangencial de la aceleración es</p>
+<p><span class="math display">\[
+a_T
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}
+= \frac{18t^3+16t^2}{\sqrt{(3t^2)^2 + 3^2 + (4t)^2}}
+= \frac{18t^3+16t^2}{\sqrt{9t^3+16t^2+9}}.
+\]</span></p>
+<p>Para obtener la componente normal, se tiene que</p>
+<p><span class="math display">\[
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+=
+\begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp;\mathbf{k}\\
+3t^2 &amp; 3 &amp; 4t \\
+6t &amp; 0 &amp; 4
+\end{vmatrix}
+= 12\mathbf{i}+12t^2\mathbf{j}-18t\mathbf{k}.
+\]</span></p>
+<p>de manera que la componente normal vale</p>
+<p><span class="math display">\[\begin{align*}
+a_N
+&amp;= \kappa(t)|\mathbf{v}(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|} \\
+&amp;= \frac{|(12, 12t^2, -18t)|}{|(3t^2,3,4t)|}
+= \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
+&amp;= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
+\end{align*}\]</span></p>
+</div>
+>>>>>>> 69b3899ac85a61a9eff0fc741fe411de3de2141b
 </section>
 <section id="vector-fuerza" class="level3" data-number="11.7.3">
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="vector-fuerza"><span class="header-section-number">11.7.3</span> Vector fuerza</h3>
