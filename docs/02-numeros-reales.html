@@ -335,13 +335,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Propiedad distributiva del producto sobre la suma: <span class="math inline">\(a\cdot (b+c) = (a\cdot b) + (a\cdot c)\ \forall a, b, c \in \mathbb{Q}\)</span>.</li>
 </ol>
 <p>Al introducir el inverso del producto, se puede definir la división como <span class="math inline">\(a/b = a\cdot b^{-1}\ \forall a, b \in \mathbb{Q}\)</span>.</p>
-<p>A diferencia de los enteros, aunque los racionales también tienen un orden total, el orden es <em>denso</em>, es decir, entre dos números racionales cualesquiera siempre existe otro número racional (en realidad infinitos), por lo que no existe el anterior y el posterior de cualquier número racional.</p>
-</section>
-<section id="el-conjunto-de-los-números-irracionales" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="el-conjunto-de-los-números-irracionales"><span class="header-section-number">2.4</span> El conjunto de los números irracionales</h2>
-<p>Muy pronto los griegos se dieron cuenta de que había otra clase de números que no podían representarse como cociente de números enteros y por tanto no pertenecían al conjunto de los números racionales, de manera que este conjunto es incompleto. El ejemplo clásico es el número <span class="math inline">\(\sqrt{2}\)</span> que se obtiene al aplicar el teorema de Pitágoras para calcular la longitud de la hipotenusa de un triángulo rectángulo con ambos lados de longitud 1.</p>
-<div id="thm-irracionalidad-raiz-2" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.1 (Irracionalidad de <span class="math inline">\(\sqrt{2}\)</span>) </strong></span>El número <span class="math inline">\(\sqrt{2}\)</span> no es racional.</p>
+<div id="thm-densidad-racionales" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.1 (Densidad de los números racionales) </strong></span>El conjunto de los números racionales es <em>denso</em>, es decir, entre dos números racionales siempre existe un número racional.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -356,17 +351,18 @@ Demostración
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Probar que <span class="math inline">\(\sqrt{2}\)</span> no es racional es equivalente a probar que no existe un número racional <span class="math inline">\(m/n\)</span> tal que <span class="math inline">\((m/n)^2 = 2\)</span>. La demostración de este último resultado es sencilla por reducción al absurdo.</p>
-<p>Supongamos que existe un número <span class="math inline">\(m/n\)</span> con <span class="math inline">\(n,m\in\mathbb{Z}\)</span> primos entre si, tal que <span class="math inline">\((m/n)^2 = 2\)</span>, o lo que es lo mismo,</p>
-<p><span class="math display">\[m^2 = 2n^2.\]</span></p>
-<p>De aquí se puede deducir que <span class="math inline">\(m^2\)</span> es par, lo que implica que <span class="math inline">\(m\)</span> también es par, pues si <span class="math inline">\(m\)</span> fuese impar, su cuadrado también sería impar. En tal caso, <span class="math inline">\(m\)</span> podría escribirse como <span class="math inline">\(m=2k\)</span> con <span class="math inline">\(k\in\mathbb{Z}\)</span> y se tendría <span class="math inline">\(m^2=4k^2\)</span>. Sustituyendo ahora en la ecuación inicial se tiene <span class="math inline">\(4k^2 = 2n^2\)</span>, lo que implica que <span class="math inline">\(2k^2 = n^2\)</span>. Siguiendo el mismo razonamiento anterior, se tendría que <span class="math inline">\(n\)</span> también sería un número par, por lo se obtiene un absurdo ya que partimos de que <span class="math inline">\(m\)</span> y <span class="math inline">\(n\)</span> eran primos entre sí.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Dados dos números racionales <span class="math inline">\(a&lt;b\in \mathbb{Q}\)</span>, el número <span class="math inline">\(\frac{a+b}{2}\in \mathbb{Q}\)</span>, y se cumple que <span class="math inline">\(a&lt;\frac{a+b}{2}&lt;b\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<p>Estos números que no son racionales se denominan <em>irracionales</em>, y, al igual que los números racionales, es un conjunto denso.</p>
-<div id="thm-densidad-irracionales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.2 </strong></span>Entre dos números racionales siempre existe un número irracional.</p>
+<p>Al ser un conjunto denso, cualquier número racional no tiene un número anterior ni uno posterior como ocurría con los enteros.</p>
+</section>
+<section id="el-conjunto-de-los-números-irracionales" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="el-conjunto-de-los-números-irracionales"><span class="header-section-number">2.4</span> El conjunto de los números irracionales</h2>
+<p>Muy pronto los griegos se dieron cuenta de que había otra clase de números que no podían representarse como cociente de números enteros y por tanto no pertenecían al conjunto de los números racionales, de manera que este conjunto es incompleto. El ejemplo clásico es el número <span class="math inline">\(\sqrt{2}\)</span> que se obtiene al aplicar el teorema de Pitágoras para calcular la longitud de la hipotenusa de un triángulo rectángulo con ambos lados de longitud 1.</p>
+<div id="thm-irracionalidad-raiz-2" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.2 (Irracionalidad de <span class="math inline">\(\sqrt{2}\)</span>) </strong></span>El número <span class="math inline">\(\sqrt{2}\)</span> no es racional.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -379,6 +375,31 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Probar que <span class="math inline">\(\sqrt{2}\)</span> no es racional es equivalente a probar que no existe un número racional <span class="math inline">\(m/n\)</span> tal que <span class="math inline">\((m/n)^2 = 2\)</span>. La demostración de este último resultado es sencilla por reducción al absurdo.</p>
+<p>Supongamos que existe un número <span class="math inline">\(m/n\)</span> con <span class="math inline">\(n,m\in\mathbb{Z}\)</span> primos entre si, tal que <span class="math inline">\((m/n)^2 = 2\)</span>, o lo que es lo mismo,</p>
+<p><span class="math display">\[m^2 = 2n^2.\]</span></p>
+<p>De aquí se puede deducir que <span class="math inline">\(m^2\)</span> es par, lo que implica que <span class="math inline">\(m\)</span> también es par, pues si <span class="math inline">\(m\)</span> fuese impar, su cuadrado también sería impar. En tal caso, <span class="math inline">\(m\)</span> podría escribirse como <span class="math inline">\(m=2k\)</span> con <span class="math inline">\(k\in\mathbb{Z}\)</span> y se tendría <span class="math inline">\(m^2=4k^2\)</span>. Sustituyendo ahora en la ecuación inicial se tiene <span class="math inline">\(4k^2 = 2n^2\)</span>, lo que implica que <span class="math inline">\(2k^2 = n^2\)</span>. Siguiendo el mismo razonamiento anterior, se tendría que <span class="math inline">\(n\)</span> también sería un número par, por lo se obtiene un absurdo ya que partimos de que <span class="math inline">\(m\)</span> y <span class="math inline">\(n\)</span> eran primos entre sí.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Estos números que no son racionales se denominan <em>irracionales</em>, y, al igual que los números racionales, es un conjunto denso.</p>
+<div id="thm-densidad-irracionales" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.3 </strong></span>Entre dos números racionales siempre existe un número irracional.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Tomemos para empezar un número irracional entre 0 y 1, como por ejemplo, <span class="math inline">\(1/\sqrt{2}=0.7071\ldots\)</span>, y consideremos dos números racionales cualesquiera <span class="math inline">\(a,b\in\mathbb{Q}\)</span>, tales que <span class="math inline">\(a&lt;b\)</span>. Como <span class="math inline">\(0&lt;1/\sqrt{2}&lt;1\)</span> y <span class="math inline">\(b-a&gt;0\)</span>, se tiene que</p>
@@ -425,7 +446,7 @@ Demostración
 </ul>
 </div>
 <p>El último axioma es el que diferencia el conjunto de los números reales de otros cuerpos totalmente ordenados como los racionales.</p>
-<p>A partir de las propiedades de las suma y el producto se pueden definir nos nuevas operaciones en <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>A partir de las propiedades de las suma y el producto se pueden definir dos nuevas operaciones en <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="def-resta" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 2.2 (Resta) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span>, se define la <em>resta</em> de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\(a-b\)</span>, como la suma de <span class="math inline">\(a\)</span> y el opuesto de <span class="math inline">\(b\)</span>,</p>
 <p><span class="math display">\[a-b = a + (-b).\]</span></p>
@@ -435,7 +456,7 @@ Demostración
 <p><span class="math display">\[\frac{a}{b} = a\cdot b^{-1}.\]</span></p>
 </div>
 <div id="def-potencia" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 2.4 (Potencia) </strong></span>Dado un número reale <span class="math inline">\(a\in \mathbb{R}\)</span> y un número <span class="math inline">\(n\in\mathbb{N}\)</span>, se define la <em>potencia</em> de <span class="math inline">\(a\)</span> elevado a <span class="math inline">\(n\)</span>, y se denota <span class="math inline">\(a^n\)</span>, como el producto de <span class="math inline">\(a\)</span> por sí mismo <span class="math inline">\(n\)</span> veces,</p>
+<p><span class="theorem-title"><strong>Definición 2.4 (Potencia) </strong></span>Dado un número reales <span class="math inline">\(a\in \mathbb{R}\)</span> y un número <span class="math inline">\(n\in\mathbb{N}\)</span>, se define la <em>potencia</em> de <span class="math inline">\(a\)</span> elevado a <span class="math inline">\(n\)</span>, y se denota <span class="math inline">\(a^n\)</span>, como el producto de <span class="math inline">\(a\)</span> por sí mismo <span class="math inline">\(n\)</span> veces,</p>
 <p><span class="math display">\[a^n = a\cdot \stackrel{n}{\cdots} \cdot a.\]</span></p>
 <p>A <span class="math inline">\(a\)</span> se le llama la <em>base</em> y a <span class="math inline">\(n\)</span> el <em>exponente</em> de la potencia.</p>
 <p><span class="math display">\[\frac{a}{b} = a\cdot b^{-1}.\]</span></p>
@@ -450,7 +471,7 @@ Demostración
 <li><p>El producto de cualquier número real por el elemento neutro de la suma, es el elemento neutro de la suma: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(a\cdot 0 = 0\)</span>.</p></li>
 <li><p>El producto de cualquier número real por el opuesto de <span class="math inline">\(1\)</span> es el opuesto del número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span> <span class="math inline">\((-1)\cdot a = -a\)</span>.</p></li>
 <li><p>El opuesto del opuesto de un número real es el propio número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(-(-a)=a\)</span>.</p></li>
-<li><p>El producto de los opestos de dos números reales es igual al producto de los números: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\((-a) \cdot (-b) = a\cdot b\)</span>.</p></li>
+<li><p>El producto de los opuestos de dos números reales es igual al producto de los números: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\((-a) \cdot (-b) = a\cdot b\)</span>.</p></li>
 <li><p>El inverso de un número real distinto de <span class="math inline">\(0\)</span> también es distinto de <span class="math inline">\(0\)</span>: <span class="math inline">\(\forall a,\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(a^{-1}\neq 0\)</span>.</p></li>
 <li><p>El inverso del inverso de un número real distinto de 0 es el propio número: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\((a^{-1})^{-1}=a\)</span>.</p></li>
 <li><p><span class="math inline">\(\forall a,b,c\in \mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b=a\cdot c\)</span> y <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(b=c\)</span>.</p></li>
@@ -459,7 +480,7 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -468,7 +489,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada propiedad.</p>
@@ -603,7 +624,7 @@ a\cdot b = 0 &amp;\Leftrightarrow a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0\\
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -612,7 +633,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos que la relación <span class="math inline">\(\leq\)</span> cumple las propiedades reflexiva, antisimétrica y transitiva.</p>
@@ -650,7 +671,7 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -659,7 +680,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada propiedad.</p>
@@ -784,7 +805,7 @@ a &amp; \mbox{si } a\geq 0,\\
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -793,7 +814,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada propiedad.</p>
@@ -863,27 +884,6 @@ a&gt;-b &amp;\Rightarrow (-1)\cdot a&lt;(-1)\cdot (-b) \tag{\small{prop. orden g
 <p><span class="theorem-title"><strong>Proposición 2.5 </strong></span>Si un subconjunto no vacío <span class="math inline">\(A\subset \mathbb{R}\)</span> tiene una cota inferior, entonces tiene un ínfimo <span class="math inline">\(m\in \mathbb{R}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Demostración
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="thm-propiedad-arquimediana" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.3 (Propiedad arquimediana) </strong></span>Dado un número real <span class="math inline">\(a\in \mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número natural <span class="math inline">\(n\in \mathbb{N}\)</span> tal que <span class="math inline">\(a&lt;n\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -894,6 +894,27 @@ Demostración
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="thm-propiedad-arquimediana" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2.4 (Propiedad arquimediana) </strong></span>Dado un número real <span class="math inline">\(a\in \mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número natural <span class="math inline">\(n\in \mathbb{N}\)</span> tal que <span class="math inline">\(a&lt;n\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Vamos a demostrarlo por reducción al absurdo. Supongamos que no existe <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(x&lt;n\)</span>. Entonces, <span class="math inline">\(x\)</span> es una cota superior de <span class="math inline">\(\mathbb{N}\)</span>. Por tanto, por el axioma del supremo existe un número <span class="math inline">\(s=\sup(\mathbb{N})\)</span>. Por ser supremo, se cumple que existe un número natural <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(s-1&lt;m\)</span>, pero entonces se tiene que <span class="math inline">\(s&lt;m+1\)</span>, y como <span class="math inline">\(m\in\mathbb{N}\)</span> también <span class="math inline">\(m+1\in\mathbb{N}\)</span>, lo que contradice que <span class="math inline">\(s\)</span> sea cota superior de <span class="math inline">\(\mathbb{N}\)</span>.</p>
@@ -909,10 +930,10 @@ Demostración
 </ol>
 </div>
 <div id="thm-raiz-cuadrada" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.4 (Raíz cuadrada) </strong></span>Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^2=a\)</span>. A este número se le llama <em>raíz cuadrada</em> de <span class="math inline">\(a\)</span> y se denota por <span class="math inline">\(\sqrt{a}\)</span> o <span class="math inline">\(a^{1/2}\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 2.5 (Raíz cuadrada) </strong></span>Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^2=a\)</span>. A este número se le llama <em>raíz cuadrada</em> de <span class="math inline">\(a\)</span> y se denota por <span class="math inline">\(\sqrt{a}\)</span> o <span class="math inline">\(a^{1/2}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -921,7 +942,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(A=\{y\in\mathbb{R}: y&gt;0, y^2&lt;a\}\)</span>. <span class="math inline">\(A\)</span> está acotado superiormente ya que si <span class="math inline">\(a&gt;1\)</span>, el propio <span class="math inline">\(a\)</span> es una cota superior y si no <span class="math inline">\(1\)</span> es una cota superior. Por tanto, según el axioma del supremo, existe <span class="math inline">\(x\in \mathbb{R}\)</span> tal que <span class="math inline">\(x=\sup(A)&gt;0\)</span>. Vamos a probar que <span class="math inline">\(x^2=a\)</span>.</p>
@@ -945,10 +966,10 @@ Demostración
 </div>
 <p>Del mismo modo se puede probar que para cualquier número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span> y para cualquier número natural <span class="math inline">\(n\in\mathbb{N}\)</span> existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^n=a\)</span>. A este número se le llama <em>raíz <span class="math inline">\(n\)</span>-ésima</em> de <span class="math inline">\(a\)</span>.</p>
 <div id="thm-densidad-racionales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.5 (Densidad de los números racionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número racional <span class="math inline">\(q\in \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;q&lt;b\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 2.6 (Densidad de los números racionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número racional <span class="math inline">\(q\in \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;q&lt;b\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -957,7 +978,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(a&lt;b\)</span> se tiene que <span class="math inline">\(b-a&gt;0\)</span>, de manera que por la propiedad arquimediana existe un número natural <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{1}{n}&lt;b-a\)</span>. Por otro lado, como <span class="math inline">\(a&gt;0\)</span> también <span class="math inline">\(na\)</span>&gt;0, y de nuevo por la propiedad arquimediana existe otro número real <span class="math inline">\(m\in \mathbb{N}\)</span> tal que <span class="math inline">\(m-1\leq a&lt;m\)</span>, de donde se deduce que <span class="math inline">\(\frac{m-1}\leq a&lt; \frac{m}{n}\)</span>.</p>
@@ -973,7 +994,7 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 2.2 (Densidad de los números irracionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número irracional <span class="math inline">\(p\in \mathbb{R}\setminus \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;p&lt;b\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -982,7 +1003,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sabemos que <span class="math inline">\(\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}\)</span> y que <span class="math inline">\(\sqrt{2}&gt;0\)</span>, por lo que al aplicar el teorema anterior a los números reales <span class="math inline">\(\frac{a}{\sqrt{2}}\)</span> y <span class="math inline">\(\frac{b}{\sqrt{2}}\)</span> se tiene que existe un número racional <span class="math inline">\(q\in\mathbb{Q}\)</span> tal que <span class="math inline">\(\frac{a}{\sqrt{2}}&lt;q&lt;\frac{b}{\sqrt{2}}\)</span>, lo que implica que <span class="math inline">\(a&lt;q\sqrt{2}&lt;b\)</span>. Finalmente, si tomamos <span class="math inline">\(p=q\sqrt{2}\)</span>, tenemos que es un número irracional que cumple que <span class="math inline">\(a&lt;p&lt;q\)</span>.</p>
