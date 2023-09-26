@@ -1249,6 +1249,59 @@ a_N(t) = \kappa(t)|\mathbf{v}(t)|^2.
 a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 \]</span></p>
 <p>donde <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.</p>
+<p>En el caso de una función vectorial en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, el cálculo de las componentes tangencial y normal de la aceleración se puede simplificar teniendo en cuenta que</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{v}(t)\mathbf{a}(t)
+&amp;= |\mathbf{v}(t)|\mathbf{T}(t) (|\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t))\\
+&amp;= |\mathbf{v}(t)||\mathbf{v}(t)|'\mathbf{T}(t)\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^3\mathbf{T}(t)\mathbf{N}(t) \\
+&amp;=  |\mathbf{v}(t)||\mathbf{v}(t)|'
+\end{align*}\]</span></p>
+<p>ya que <span class="math inline">\(\mathbf{T}(t)\mathbf{T}(t)= |\mathbf{T}(t)|^2 = 1\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> un vector unitario y <span class="math inline">\(\mathbf{T}(t)\mathbf{N}(t)=0\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> vectores ortogonales.</p>
+<p>De este modo, se tiene que</p>
+<p><span class="math display">\[
+a_T(t)
+= |\mathbf{v}(t)|'
+= \frac{\mathbf{v}(t)\mathbf{a}(t)}{|\mathbf{v}(t)|}
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}.
+\]</span></p>
+<p>Y por otro lado, usando la fórmula de la curvatura del <a href="#thm-curvatura-trayectoria-espacio-real">Teorema&nbsp;<span>11.5</span></a>, se tiene que la componente normal es</p>
+<p><span class="math display">\[
+a_N
+= \kappa(t)|\mathbf{v}(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}|.
+\]</span></p>
+<div id="exm-componente-tangencial-normal-trayectoria" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>Un objeto se mueve en el espacio real de acuerdo a la función vectorial <span class="math inline">\(\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}\)</span>.</p>
+<p>Su vector velocidad es <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)\)</span> y su vector aceleración <span class="math inline">\(\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)\)</span>.</p>
+<p>Así pues, la componente tangencial de la aceleración es</p>
+<p><span class="math display">\[
+a_T
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}
+= \frac{18t^3+16t^2}{\sqrt{(3t^2)^2 + 3^2 + (4t)^2}}
+= \frac{18t^3+16t^2}{\sqrt{9t^3+16t^2+9}}.
+\]</span></p>
+<p>Para obtener la componente normal, se tiene que</p>
+<p><span class="math display">\[
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+=
+\begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp;\mathbf{k}\\
+3t^2 &amp; 3 &amp; 4t \\
+6t &amp; 0 &amp; 4
+\end{vmatrix}
+= 12\mathbf{i}+12t^2\mathbf{j}-18t\mathbf{k}.
+\]</span></p>
+<p>de manera que la componente normal vale</p>
+<p><span class="math display">\[\begin{align*}
+a_N
+&amp;= \kappa(t)|\mathbf{v}(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|} \\
+&amp;= \frac{|(12, 12t^2, -18t)|}{|(3t^2,3,4t)|}
+= \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
+&amp;= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
+\end{align*}\]</span></p>
+</div>
 </section>
 <section id="vector-fuerza" class="level3" data-number="11.7.3">
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="vector-fuerza"><span class="header-section-number">11.7.3</span> Vector fuerza</h3>
@@ -1259,7 +1312,7 @@ a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 <p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es fuerza que actúa sobre el objeto en el instante <span class="math inline">\(t\)</span>, <span class="math inline">\(m\)</span> es su masa y <span class="math inline">\(\mathbf{a}(t)\)</span> es la aceleración del objeto en ese instante.</p>
 <p>Como hemos visto, en el caso del movimiento curvilíneo, la aceleración es un vector, y por tanto la fuerza será otro vector proporcional a él.</p>
 <div id="exm-fuerza-centrípeta" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.17 </strong></span>En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
 <p><span class="math display">\[
 \mathbf{F}(t) = -m(\cos(t), \operatorname{sen}(t)).
 \]</span></p>

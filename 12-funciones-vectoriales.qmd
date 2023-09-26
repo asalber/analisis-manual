@@ -1132,6 +1132,74 @@ $$
 
 donde $\mathbf{T}(t)$ y $\mathbf{N}(t)$ son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.
 
+En el caso de una función vectorial en el espacio real $\mathbb{R}^3$, el cálculo de las componentes tangencial y normal de la aceleración se puede simplificar teniendo en cuenta que 
+
+\begin{align*}
+\mathbf{v}(t)\mathbf{a}(t)
+&= |\mathbf{v}(t)|\mathbf{T}(t) (|\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t))\\
+&= |\mathbf{v}(t)||\mathbf{v}(t)|'\mathbf{T}(t)\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^3\mathbf{T}(t)\mathbf{N}(t) \\ 
+&=  |\mathbf{v}(t)||\mathbf{v}(t)|'
+\end{align*}
+ 
+ya que $\mathbf{T}(t)\mathbf{T}(t)= |\mathbf{T}(t)|^2 = 1$ al ser $\mathbf{T}(t)$ un vector unitario y $\mathbf{T}(t)\mathbf{N}(t)=0$ al ser $\mathbf{T}(t)$ y $\mathbf{N}(t)$ vectores ortogonales.
+
+De este modo, se tiene que 
+
+$$
+a_T(t) 
+= |\mathbf{v}(t)|' 
+= \frac{\mathbf{v}(t)\mathbf{a}(t)}{|\mathbf{v}(t)|}
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}.
+$$
+
+Y por otro lado, usando la fórmula de la curvatura del @thm-curvatura-trayectoria-espacio-real, se tiene que la componente normal es
+
+$$
+a_N 
+= \kappa(t)|\mathbf{v}(t)|^2 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}|.
+$$
+
+:::{#exm-componente-tangencial-normal-trayectoria}
+Un objeto se mueve en el espacio real de acuerdo a la función vectorial $\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}$.
+
+Su vector velocidad es $\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)$  y su vector aceleración $\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)$.
+
+Así pues, la componente tangencial de la aceleración es 
+
+$$
+a_T
+= \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}
+= \frac{18t^3+16t^2}{\sqrt{(3t^2)^2 + 3^2 + (4t)^2}}
+= \frac{18t^3+16t^2}{\sqrt{9t^3+16t^2+9}}.
+$$
+
+Para obtener la componente normal, se tiene que 
+
+$$
+\mathbf{f}'(t)\times \mathbf{f}''(t)
+=
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} &\mathbf{k}\\
+3t^2 & 3 & 4t \\
+6t & 0 & 4
+\end{vmatrix}
+= 12\mathbf{i}+12t^2\mathbf{j}-18t\mathbf{k}.
+$$
+
+de manera que la componente normal vale
+
+\begin{align*}
+a_N 
+&= \kappa(t)|\mathbf{v}(t)|^2 
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|} \\
+&= \frac{|(12, 12t^2, -18t)|}{|(3t^2,3,4t)|}
+= \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
+&= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
+\end{align*}
+:::
+
 ### Vector fuerza
 
 Como ya vimos en el capítulo de integrales, la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica) relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula 
