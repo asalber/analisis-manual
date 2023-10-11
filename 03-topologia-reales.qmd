@@ -138,7 +138,7 @@ Sin embargo, $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que no
 :::
 
 :::{.callout-warning}
-El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)$, y tampoco de su complementario $\overline{(0,1)}=(-\infty, 0]\cup[ñ1,\infty)$.
+El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)$, y tampoco de su complementario $\overline{(0,1)}=(-\infty, 0]\cup[1,\infty)$.
 :::
 
 :::{#def-punto-frontera}

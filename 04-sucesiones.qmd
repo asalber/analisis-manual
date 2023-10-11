@@ -75,7 +75,7 @@ Dadas las sucesiones $(n)_{n=1}^\infty$ y $((-1)^n)_{n=1}^\infty$ se tiene:
 ## Límite de una sucesión
 Dada una sucesión $(a_n)_{n=1}^\infty$, se dice que un número $a\in\mathbb{R}$ es el _límite de la sucesión_, si para cada $\varepsilon>0$ existe un $k\in\mathbb{N}$ a partir del cuál todos los términos de la sucesión caen en el entorno $(a-\varepsilon, a+\varepsilon)$, es decir, $|a_n-a|<\varepsilon$ $\forall n\geq k$.
 
-Si $a$ es el límite de la sucesión, se dice que la suceción _converge_ a $a$, y se denota $\lim_{n\to\infty}a_n = a$.
+Si $a$ es el límite de la sucesión, se dice que la sucesión _converge_ a $a$, y se denota $\lim_{n\to\infty}a_n = a$.
 :::
 
 Si una sucesión tiene límite se dice que es _convergente_, y en caso contrario se dice que es _divergente_.
@@ -141,9 +141,29 @@ Dado $\varepsilon>0$, sea $\varepsilon'=\frac{\varepsilon}{c}>0$. Como $(b_n)_{n
 :::
 
 :::{#exm-convergencia-sucesion-acotada}
-Veamos que la sucesión $\left(\frac{1}{2^n}\right)_{n=1}^\infty$ converge a 0. Para cualquier $n\in\mathbb{N}$ se cumple que $0<n<2^n$, de donde se deduce $0<\frac{1}{2^n}<\frac{1}{n}$, lo que equivale a $|\frac{1}{2^n}-0|<\frac{1}{n}$. Así pues, aplicando el teorema anterior, se concluye que $\lim_{n\to\infty}\frac{1}{2^n}=0$.
+Veamos que la sucesión $\left(\frac{1}{2^n}\right)_{n=1}^\infty$ converge a 0. Para cualquier $n\in\mathbb{N}$ se cumple que $0<n<2^n$, de donde se deduce $0<\frac{1}{2^n}<\frac{1}{n}$, lo que equivale a $|\frac{1}{2^n}-0|<\frac{1}{n}$. Así pues, aplicando el teorema anterior y tomando $c=1$, se concluye que $\lim_{n\to\infty}\frac{1}{2^n}=0$.
 
-Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Para cualquier $n\in\mathbb{N}$, con $n>1$, se cumple que $n^{1/n}>1$, de manera que se puede escribir $n^{1/n} = 1+k_n$, donde $k_n=n^{1/n}-1$. Aplicando ahora el teorema del binomio, se tiene que $0<k_n<\sqrt{2/n}$ $\forall n\in\mathbb{N}$. Por tanto, $|n^{1/n}-1| = k_n < \sqrt{2/n}=\sqrt{2}\frac{1}{\sqrt{n}}$, y como $\sqrt{2}>0$ y $\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$, por el teorema anterior se tiene que $\lim_{n\to\infty} n^{1/n} = 1$.
+Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Aplicando el teorema del binomio, para cualquier $n\in\mathbb{N}$, con $n>1$, se tiene que
+
+\begin{align*}
+(1+\sqrt{\frac{2}{n}})^n 
+&= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{n}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \tag{1} \\
+& > 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
+= 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\
+&= \sqrt{2n} + n
+> n 
+\end{align*}
+(1) Los restantes términos del desarrollo del binomio son positivos.
+
+Así pues, 
+
+$$
+n^{1/n} < 1+\sqrt{\frac{2}{n}} 
+\Leftrightarrow n^{1/n} - 1 < \sqrt{2}{\frac{1}{\sqrt{n}}} 
+\Leftrightarrow |n^{1/n} - 1| < \sqrt{2}\frac{1}{\sqrt{n}},
+$$
+
+y como $\sqrt{2}>0$ y $\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$, por la proposición anterior teorema anterior se tiene que $\lim_{n\to\infty} n^{1/n} = 1$.
 :::
 
 :::{#def-sucesion-acotada}
@@ -182,7 +202,7 @@ b. $(a_n)_{n=1}^\infty$ - $(b_n)_{n=1}^\infty$ converge a $a-b$.
 
 c. $(a_n)_{n=1}^\infty$ $(b_n)_{n=1}^\infty$ converge a $ab$.
 
-d. $c(a_n)_{n=1}^\infty$ converge a $cx$.
+d. $c(a_n)_{n=1}^\infty$ converge a $ca$.
 
 e. Si $b_n\neq 0$ $\forall n\in\mathbb{N}$ y $b\neq 0$, $\frac{(a_n)_{n=1}^\infty}{(b_n)_{n=1}^\infty}$ converge a $\frac{a}{b}$.
 :::
