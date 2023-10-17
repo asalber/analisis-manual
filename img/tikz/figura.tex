@@ -38,26 +38,32 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{componentes-aceleracion}
+\tikzsetnextfilename{entorno-punto-espacio}
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \begin{tikzpicture}
-    \begin{axis}[
-        height=5cm,
-        2dfun, 
-        xmin=-0.1, xmax=3.5,
-        ymin=-0.1, ymax=3.5,
-        axis equal=true,  
-        clip=false,
-        color = myblack,
-        ]
-        \addplot+[domain=0.3:1.8, samples=100, smooth, name path=F] ({x^2}, {2*x});
-        \coordinate (P) at (1,2);
-        \fill (P) circle (1.2pt) node[anchor=south east, myblue] {$P = \mathbf{f}(1)$};
-        \draw[->, myred, thick] (P) -- (2, 3) node[anchor=east] {$a_T$};
-        \draw[->, mygreen, thick] (P) -- (2, 1) node[anchor=east] {$a_N$};
-        \draw[mygray, dashed] (2, 3) -- (3, 2) -- (2, 1);
-        \draw[->, mypurple, thick] (P) -- (3, 2) node[anchor=west] {$\mathbf{a}(1)$};
-        \node at (3.5,3) {$\mathbb{R}^2$};
-    \end{axis};
-    \end{tikzpicture}
+  \begin{axis}[
+  height=5cm,
+  gen3dfun,
+  xmin=-1.5, xmax=1.5,
+  ymin=-1.5, ymax=1.5,
+  zmin=-1.5, zmax=1.5,
+  xtick = {0},
+  ytick = {0},
+  ztick = {0},
+  xticklabels = {},
+  yticklabels = {},
+  zticklabels = {},
+  clip=false,
+  color = myblack,
+  %view/h=135,
+  %x={(-0.6cm,-0.6cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+  ]
+  \filldraw[ball color=myblue!50, opacity=0.5] (axis cs:0, 0, 0) circle [radius=1cm];  
+  \fill (0, 0, 0) circle (1.2pt) node[anchor=north, myblue] {$(x_0, y_0, z_0)$};
+  \draw[<->] (0, 0, 0) -- (0.45, 0.45, 0.45) node[anchor=south, midway, myblue] {$\varepsilon$};
+  \node at (2, 0, 3) {$\mathbb{R}^3$};
+  \end{axis}
+\end{tikzpicture}
+   
+
 \end{document}
