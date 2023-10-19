@@ -406,8 +406,8 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <div id="exm-curvas-nivel" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12.3 </strong></span>La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
-<div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
@@ -443,10 +443,10 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 <h2 class="unnumbered anchored" data-anchor-id="límites-y-continuidad">Límites y continuidad</h2>
 <p>El concepto de límite de una función de una variable se puede extender fácilmente a funciones de varias variables, pero antes necesitamos introducir, desde un punto de vista topológico, el concepto equivalente a un entorno de un punto en la recta real, en espacios de mayor dimensión.</p>
 <div id="def-entorno-punto-plano" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.3 (Entorno de un punto en el plano real) </strong></span>Dado un punto del plano <span class="math inline">\((x_0,y_0)\in \mathbb{R}^2\)</span>, se llama <em>entorno</em> de <span class="math inline">\((x_0,y_0)\)</span> a cualquier disco abierto <span class="math inline">\(\{(x,y):\sqrt{(x-x_0)^2+(y-y_0)^2}&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
-<p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y):\sqrt{(x-x_0)^2+(y-y_0)^2}&lt;\varepsilon\}\setminus \{(x_0,y_0)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((x_0,y_0)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 12.3 (Entorno de un punto en el plano real) </strong></span>Dado un punto del plano <span class="math inline">\((a_x,a_y)\in \mathbb{R}^2\)</span>, se llama <em>entorno</em> de <span class="math inline">\((x_0,y_0)\)</span> a cualquier disco abierto <span class="math inline">\(\{(x,y):|(x,y)-(a_x,a_y)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
+<p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y):|(x,y)-(a_x,a_y)|&lt;\varepsilon\}\setminus \{(a_x,a_y)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((a_x,a_y)\)</span>.</p>
 </div>
-<p>Geométricamente, un entorno de <span class="math inline">\((x_0,y_0)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores del círculo de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((x_0,y_0)\)</span>.</p>
+<p>Geométricamente, un entorno de <span class="math inline">\((a_x,a_y)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores del círculo de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((a_x,a_y)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/entorno-punto-plano.png" class="img-fluid figure-img"></p>
@@ -457,10 +457,10 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <p>De manera similar se define un entorno en el espacio real.</p>
 <div id="def-entorno-punto-espacio" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.4 (Entorno de un punto en el espacio real) </strong></span>Dado un punto del espacio <span class="math inline">\((x_0,y_0,z_0)\in \mathbb{R}^3\)</span>, se llama <em>entorno</em> de <span class="math inline">\((x_0,y_0z_0)\)</span> a cualquier bola abierta <span class="math inline">\(\{(x,y,z):\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
-<p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y,z):\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}&lt;\varepsilon\}\setminus \{(x_0,y_0,z_0)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((x_0,y_0,z_0)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 12.4 (Entorno de un punto en el espacio real) </strong></span>Dado un punto del espacio <span class="math inline">\((a_x,a_y,a_z)\in \mathbb{R}^3\)</span>, se llama <em>entorno</em> de <span class="math inline">\((a_x,a_y,a_z)\)</span> a cualquier bola abierta <span class="math inline">\(\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
+<p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|&lt;\varepsilon\}\setminus \{(x_0,y_0,z_0)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((a_x,a_y,a_z)\)</span>.</p>
 </div>
-<p>Geométricamente, un entorno de <span class="math inline">\((x_0,y_0,z_0)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores de la esfera de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((x_0,y_0,z_0)\)</span>.</p>
+<p>Geométricamente, un entorno de <span class="math inline">\((a_x,a_y,a_z)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores de la esfera de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((a_x,a_y,a_z)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/entorno-punto-espacio.png" class="img-fluid figure-img"></p>
@@ -468,14 +468,31 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </figure>
 </div>
 <div id="def-limite-funcion-varias-variables" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.5 (Límite de una función de varias variables) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> definida en un entorno reducido del punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(0&lt;\sqrt{(x_1-a_1)^2+\cdots+(x_n-a_n)^2}&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x_1,\ldots,x_n)-l|&lt;\varepsilon\)</span>, y en tal caso, se denota</p>
+<p><span class="theorem-title"><strong>Definición 12.5 (Límite de una función de varias variables) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> definida en un entorno reducido del punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(0&lt;|(x_1,\ldots,x_n)-(a_1,\ldots,a_n)|&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x_1,\ldots,x_n)-l|&lt;\varepsilon\)</span>, y en tal caso, se denota</p>
 <p><span class="math display">\[
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = l.
 \]</span></p>
 </div>
+<div id="exm-limite-funcion-dos-variables" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12.5 </strong></span>Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
+<p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como</p>
+<p><span class="math display">\[
+|f(x,y)-0|
+= \left|\frac{2xy^2}{x^2+y^2}\right|
+= |2x|\left|\frac{y^2}{x^2+y^2}\right|
+\leq 2|x|
+= 2\sqrt{x^2}
+\leq 2\sqrt{x^2+y^2}
+= 2|(x,y)-(0,0)|
+\]</span></p>
+<p>Por tanto, si tomamos <span class="math inline">\(\delta = \epsilon/2\)</span>, se tiene que si <span class="math inline">\(|(x,y)-(0,0)|&lt;\delta = \epsilon/2\)</span>, entonces</p>
+<p><span class="math display">\[
+|f(x,y)-0| \leq 2|(x,y)-(0,0)| &lt; 2\frac{\varepsilon}{2} = \varepsilon.
+\]</span></p>
+</div>
 <p>En el caso de una función de una variable <span class="math inline">\(f(x)\)</span>, vimos que para que existiese el límite de la función en el punto <span class="math inline">\(a\)</span>, bastaba con ver que existía el límite por la izquierda (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores menores que <span class="math inline">\(a\)</span>) y el límite por la derecha (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores mayores que <span class="math inline">\(a\)</span>) y que eran iguales. Sin embargo, para funciones de varias variables esto no es así, ya que para demostrar la existencia del límite es necesario probar que el límite existe cuando nos acercamos a <span class="math inline">\((x_0,\ldots,y_0)\)</span> por cualquier posible trayectoria en <span class="math inline">\(\mathbb{R}^n\)</span>, y todos los límites coinciden.</p>
 <div id="exm-no-existencia-limite" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.5 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.6 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 &amp;= \lim_{x\to 0} \frac{xmx}{x^2+(mx)^2}
@@ -499,27 +516,30 @@ Precaución
 </div>
 </div>
 <div id="exm-no-existencia-limite-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.6 </strong></span>Para la función <span class="math inline">\(f(x,y)=\frac{\operatorname{sen}(xy)}{x+y}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="theorem-title"><strong>Ejemplo 12.7 </strong></span>Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
+<p><span class="math display">\[
 \lim_{(x,mx)\to(0,0)} f(x,mx)
-&amp;= \lim_{x\to 0} \frac{\operatorname{sen}(xmx)}{x+mx} \\
-&amp;= \lim_{x\to 0} \frac{\operatorname{sen}(mx^2)}{(m+1)x} \\
-&amp; \lim_{x\to 0} \frac{m2x\cos(mx^2)}{m+1} \tag{L'Hôpital}
+= \lim_{x\to 0} \frac{x(mx)^2}{x^2+(mx)^4}
+= \lim_{x\to 0} \frac{m^2x}{1+m^4x^2}
 = 0.
-\end{align*}\]</span></p>
-<p>Por tanto, el límite existe y valeo <span class="math inline">\(0\)</span> cuando nos aproximamos a <span class="math inline">\((0,0)\)</span> siguiendo trayectorias rectas. Sin embargo, existen otras trayectorias de aproximación donde el límite no existe, como por ejemplo, la trayectoria <span class="math inline">\(y=-\operatorname{sen}(x)\)</span>.</p>
-<p><span class="math display">\[\begin{align*}
-\lim_{(x,-\operatorname{sen}(x))\to(0,0)} f(x,-\operatorname{sen}(x))
-&amp;= \lim_{x\to 0} \frac{\operatorname{sen}(-x\operatorname{sen}(x))}{x-\operatorname{sen}(x)} \\
-&amp;= \lim_{x\to 0} \frac{\cos(-x\operatorname{sen}(x))(-\operatorname{sen}(x)-x\cos(x))}{1-\cos(x)}  \tag{1} \\
-&amp;= \lim_{x\to 0} \frac{-\operatorname{sen}(-x\operatorname{sen}(x))(-\operatorname{sen}(x)-x\cos(x))^2+\cos(-x\operatorname{sen}(x))(-2\cos(x)+x\operatorname{sen}(x))}{\operatorname{sen}(x)}  \tag{2} \\
-&amp;= \infty.
-\end{align*}\]</span> (1 y 2) Aplicando la regla de L’Hôpital.</p>
+\]</span></p>
+<p>Por tanto, el límite existe y vale <span class="math inline">\(0\)</span> cuando nos aproximamos a <span class="math inline">\((0,0)\)</span> siguiendo trayectorias rectas. Sin embargo, existen otras trayectorias de aproximación donde el límite no existe, como por ejemplo, la trayectoria <span class="math inline">\(y = \sqrt{x}\)</span>.</p>
+<p><span class="math display">\[
+\lim_{(x,\sqrt{x})\to(0,0)} f(x,\sqrt{x})
+= \lim_{x\to 0} \frac{x(\sqrt{x})^2}{x^2+(\sqrt{x})^4}
+= \lim_{x\to 0} \frac{x^2}{2x^2}
+= \frac{1}{2}.
+\]</span></p>
 <p>Por consiguiente, no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\((0,0)\)</span>.</p>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="11">
+<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
 </div>
 <p>Afortunadamente, el álgebra de límites visto en la <a href="06-limites.html#prp-limite-suma-resta-producto-cociente-funciones">Proposición&nbsp;<span>6.2</span></a> también es válido para funciones de varias variables.</p>
 <div id="exm-algebra-limites-funciones-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.7 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.8 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,y)\to(2,1)} f(x,y)
 &amp;= \lim_{(x,y)\to(2,1)} \frac{3xy^2}{x^2+y^3} \\
@@ -539,6 +559,9 @@ Precaución
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = f(a_1,\ldots, a_n).
 \]</span></p>
 </div>
+<div id="exr-funcion-varias-variables-discontinua" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12.1 </strong></span>Hemos visto en el <span class="quarto-unresolved-ref">?exm-exm-limite-funcion-dos-variables</span> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
+</div>
 </section>
 <section id="funciones-parciales" class="level3" data-number="12.1.3">
 <h3 data-number="12.1.3" class="anchored" data-anchor-id="funciones-parciales"><span class="header-section-number">12.1.3</span> Funciones parciales</h3>
@@ -548,7 +571,7 @@ Precaución
 <p>con <span class="math inline">\(c_j\)</span> <span class="math inline">\((j=1,\ldots, n,\ j\neq i)\)</span> constantes.</p>
 </div>
 <div id="exm-funcion-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.8 </strong></span>Si consideramos la función del área de un triángulo</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.9 </strong></span>Si consideramos la función del área de un triángulo</p>
 <p><span class="math display">\[f(x,y)=\frac{xy}{2},\]</span></p>
 <p>y fijamos el valor de la base <span class="math inline">\(x=c\)</span>, entonces el área del triángulo ya sólo depende de la altura y <span class="math inline">\(f\)</span> se convierte en una función de una sola variable, que es la función parcial:</p>
 <p><span class="math display">\[
@@ -561,26 +584,25 @@ f_1(y)=f(c,y)=\frac{cy}{2},
 <section id="derivadas-parciales" class="level2" data-number="12.2">
 <h2 data-number="12.2" class="anchored" data-anchor-id="derivadas-parciales"><span class="header-section-number">12.2</span> Derivadas parciales</h2>
 <p>Al igual que vimos cómo calcular la variación de una función de una variable, tiene sentido medir la variación de una función de varias variables con respecto a cada una de sus variables.</p>
-<p>Sea <span class="math inline">\(f(x,y)\)</span> una función de varias variables de <span class="math inline">\(\mathbb{R}^2\)</span>. Si estamos en el punto <span class="math inline">\((x_0,y_0)\)</span> y nos movemos una cantidad <span class="math inline">\(\Delta x\)</span> en la dirección del eje <span class="math inline">\(X\)</span>, entonces, al mantenerse la coordenada <span class="math inline">\(y\)</span> constante, pasaremos desde el punto <span class="math inline">\((x_0,y_0)\)</span> al punto <span class="math inline">\((x_0+\Delta x,y_0)\)</span>, y la variación que experimenta la función será</p>
-<p><span class="math display">\[\Delta z=f(x_0+\Delta x,y_0)-f (x_0,y_0).\]</span></p>
+<p>Sea <span class="math inline">\(f(x,y)\)</span> una función de varias variables en <span class="math inline">\(\mathbb{R}^2\)</span>. Si estamos en el punto <span class="math inline">\((a,b)\)</span> y nos movemos una cantidad <span class="math inline">\(\Delta x\)</span> en la dirección del eje <span class="math inline">\(X\)</span>, entonces, al mantenerse la coordenada <span class="math inline">\(y\)</span> constante, pasaremos desde el punto <span class="math inline">\((a,b)\)</span> al punto <span class="math inline">\((a+\Delta x,b)\)</span>, y la variación que experimenta la función será</p>
+<p><span class="math display">\[
+\Delta z=f(a+\Delta x,b)-f(a,b).
+\]</span></p>
 <p>La variación relativa que experimenta la función con respecto a la variable <span class="math inline">\(x\)</span> vendrá dada por el cociente</p>
-<p><span class="math display">\[\frac{\Delta z}{\Delta x}=\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.\]</span></p>
+<p><span class="math display">\[
+\frac{\Delta z}{\Delta x}=\frac{f(a+\Delta x,b)-f(a,b)}{\Delta x}.
+\]</span></p>
 <p>Si en lugar de medir la variación de una función con respecto a una variable en un intervalo, medimos la variación en un punto, es decir, cuando <span class="math inline">\(\Delta x\)</span> tiende a 0, entonces obtenemos una tasa de variación instantánea:</p>
-<p><span class="math display">\[\lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.\]</span></p>
-<p>Al valor del límite, cuando existe, también se le conoce como <em>derivada parcial</em> de <span class="math inline">\(f\)</span> con respecto a la variable <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((x_0,y_0)\)</span> y se nota</p>
-<p><span class="math display">\[\frac{\partial f}{\partial x}(x_0,y_0).\]</span></p>
-<p>Esta derivada parcial mide la tasa de variación instantánea de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P=(x_0,y_0)\)</span> cuando <span class="math inline">\(P\)</span> se mueve en la dirección del eje <span class="math inline">\(X\)</span>.</p>
-<section id="interpretación-geométrica-de-la-derivada-parcial" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="interpretación-geométrica-de-la-derivada-parcial"><span class="header-section-number">12.2.1</span> Interpretación geométrica de la derivada parcial</h3>
-<p>Geométricamente, <span class="math inline">\(z=f(x,y)\)</span> define una superficie. Si se corta esta superficie con el plano de ecuación <span class="math inline">\(y=y_0\)</span> (es decir, si <span class="math inline">\(y\)</span> se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto <span class="math inline">\((x_0,y_0)\)</span> es la derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((x_0,y_0)\)</span>.</p>
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.pdf)
-::: -->
-<p>El concepto de derivada parcial visto para funciones de dos variables puede extenderse fácilmente para funciones de <span class="math inline">\(n\)</span> variables.</p>
+<p><span class="math display">\[
+\lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(a+\Delta x,b)-f(a,b)}{\Delta x}.
+\]</span></p>
+<p>Al valor del límite, cuando existe, también se le conoce como <em>derivada parcial</em> de <span class="math inline">\(f\)</span> con respecto a la variable <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>, y mide la tasa de variación instantánea de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> cuando el punto se mueve en la dirección del eje <span class="math inline">\(X\)</span>.</p>
+<p>Del mismo modo, si estamos en el punto <span class="math inline">\((a,b)\)</span> y nos movemos una cantidad <span class="math inline">\(\Delta y\)</span> en la dirección del eje <span class="math inline">\(Y\)</span>, manteniendo la coordenada <span class="math inline">\(x\)</span> constante, pasaremos desde el punto <span class="math inline">\((a,b)\)</span> al punto <span class="math inline">\((a,b+\Delta y)\)</span>, y la tasa de variación instantánea de la función en ese punto viene dada por el límite</p>
+<p><span class="math display">\[
+\lim_{\Delta y\rightarrow 0}\frac{\Delta z}{\Delta y}=\lim_{\Delta y \rightarrow 0}\frac{f(a,b+\Delta y)-f(a,b)}{\Delta y},
+\]</span></p>
+<p>que cuando existe se conoce como <em>derivada parcial</em> de <span class="math inline">\(f\)</span> con respecto a la variable <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((a,b)\)</span>, y mide la tasa de variación instantánea de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> cuando el punto se mueve en la dirección del eje <span class="math inline">\(Y\)</span>.</p>
+<p>El concepto de derivada parcial puede extenderse fácilmente para funciones de <span class="math inline">\(n\)</span> variables.</p>
 <div id="def-derivada-parcial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12.8 (Derivada parcial) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>derivable parcialmente</em> con respecto a la variable <span class="math inline">\(x_i\)</span> en el punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> si existe el límite</p>
 <p><span class="math display">\[
@@ -591,22 +613,60 @@ f_1(y)=f(c,y)=\frac{cy}{2},
 f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 \]</span></p>
 </div>
+<section id="interpretación-geométrica-de-la-derivada-parcial" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="interpretación-geométrica-de-la-derivada-parcial"><span class="header-section-number">12.2.1</span> Interpretación geométrica de la derivada parcial</h3>
+<p>Geométricamente, <span class="math inline">\(z=f(x,y)\)</span> define una superficie. Si se corta esta superficie con el plano de ecuación <span class="math inline">\(y=b\)</span> (es decir, si <span class="math inline">\(y\)</span> se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto <span class="math inline">\((a,b)\)</span> es la derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
+<!-- :::{.content-visible when-format="html"}
+![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.pdf)
+::: -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.geogebra.org/classic/ywur7vzr"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Ejemplo interactivo con Geogebra</figcaption>
+</figure>
+</div>
 <p>Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para <span class="math inline">\(n=1\)</span>.</p>
 <p>Al medir la variación de <span class="math inline">\(f\)</span> con respecto a la variación de una sola de sus variables <span class="math inline">\(x_i\)</span> en un punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span>, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a <span class="math inline">\(f\)</span> como una función parcial <span class="math inline">\(i\)</span>-ésima</p>
-<p><span class="math display">\[f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).\]</span></p>
+<p><span class="math display">\[
+f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
+\]</span></p>
 <p>La derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x_i\)</span> puede calcularse derivando esta función:</p>
-<p><span class="math display">\[\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).\]</span></p>
-<blockquote class="blockquote">
-<p><strong>Regla</strong>. Para derivar parcialmente <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> con respecto a una variable <span class="math inline">\(x_i\)</span>, se deriva <span class="math inline">\(f\)</span> como si la única variable fuese <span class="math inline">\(x_i\)</span>, tratando el resto de las variables como constantes.</p>
-</blockquote>
-<p><strong>Ejemplo</strong> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
-<p><span class="math display">\[v(t,p)=\frac{nRt}{p},\]</span></p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
+\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Regla
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para derivar parcialmente <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> con respecto a una variable <span class="math inline">\(x_i\)</span>, se deriva <span class="math inline">\(f\)</span> como si la única variable fuese <span class="math inline">\(x_i\)</span>, tratando el resto de las variables como constantes.</p>
+</div>
+</div>
+<div id="exm-calculo-derivada-parcial" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12.10 </strong></span>En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
+<p><span class="math display">\[
+v(t,p)=\frac{nRt}{p},
+\]</span></p>
 <p>donde <span class="math inline">\(t\)</span> mide la temperatura, <span class="math inline">\(p\)</span> la presión y <span class="math inline">\(n\)</span> y <span class="math inline">\(R\)</span> son constantes.</p>
 <p>La tasa de variación instantánea que experimenta el volumen con respecto a la presión viene dada por la derivada parcial de <span class="math inline">\(v\)</span> con respecto a <span class="math inline">\(p\)</span>.</p>
 <p>Para calcular esta derivada parcial se fija <span class="math inline">\(t\)</span> como constante y se deriva <span class="math inline">\(v\)</span> como si la única variable fuese <span class="math inline">\(p\)</span>:</p>
-<p><span class="math display">\[\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{$t=$cte}}=\frac{-nRt}{p^2}.\]</span></p>
+<p><span class="math display">\[
+\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{$t=$cte}}=\frac{-nRt}{p^2}.
+\]</span></p>
 <p>Del mismo modo, la tasa de variación instantánea del volumen con respecto a la temperatura es:</p>
-<p><span class="math display">\[\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{$p=$cte}}=\frac{nR}{p}.\]</span></p>
+<p><span class="math display">\[
+\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{$p=$cte}}=\frac{nR}{p}.
+\]</span></p>
+</div>
 </section>
 </section>
 <section id="vector-gradiente" class="level2" data-number="12.3">
@@ -618,7 +678,7 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <p>Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto.</p>
 <p>De este modo, , mientras que <span class="math inline">\(-\nabla f(a)\)</span> indica la dirección de máximo decrecimiento.</p>
 <div id="exm-vector-gradiente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.9 </strong></span>Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.11 </strong></span>Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]</span></p>
@@ -644,7 +704,7 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 </blockquote>
 <p><span class="math display">\[(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t).\]</span></p>
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.10 </strong></span>Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la trayectoria <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.12 </strong></span>Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la trayectoria <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[\nabla f(x,y) = (2xy, x^2) \quad  \mbox{y} \quad g'(t) = (-\operatorname{sen} t, \cos t),\]</span></p>
 <p>y</p>
 <p><span class="math display">\[(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (2\cos t\operatorname{sen} t,\cos^2 t)\cdot (-\operatorname{sen} t,\cos t) = -2\cos t\operatorname{sen}^2 t+\cos^3 t.\]</span></p>
@@ -692,7 +752,7 @@ g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
 \]</span></p>
 <p>Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.</p>
 <div id="exm-derivada-direccional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.11 </strong></span>Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.13 </strong></span>Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2x,2y),
 \]</span></p>
@@ -742,7 +802,7 @@ y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
 \]</span></p>
 <p>A este proceso que permite obtener <span class="math inline">\(y'\)</span> en un entorno de <span class="math inline">\(x_0\)</span> sin disponer de la fórmula explícita <span class="math inline">\(y=h(x)\)</span>, se le llama <em>derivación implícita</em>.</p>
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.12 </strong></span>La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.14 </strong></span>La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
 f(x,y) = x^2+y^2-1 = 0.
 \]</span></p>
@@ -785,7 +845,7 @@ y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}},
 <p>Según el resultado anterior, la recta normal a una línea <span class="math inline">\(f(x,y)=0\)</span> en un punto <span class="math inline">\(P=(x_0,y_0)\)</span>, tiene ecuación</p>
 <p><span class="math display">\[P+t\nabla f(P) = (x_0,y_0)+t\nabla f(x_0,y_0).\]</span></p>
 <div id="exm-tangente-normal-funcion-implicita-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.13 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span> <span class="math display">\[\nabla f(x,y) = (2x,2y),\]</span> que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.15 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span> <span class="math display">\[\nabla f(x,y) = (2x,2y),\]</span> que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[P+t\nabla f(P) = (0,1)+t(0,2) = (0,1+2t),\]</span></p>
 <p>que se trata de la recta vertical <span class="math inline">\(x=0\)</span>, que coincide con el eje <span class="math inline">\(Y\)</span>.</p>
 <p>y la recta tangente a la circunferencia en <span class="math inline">\(P\)</span> es</p>
@@ -830,7 +890,7 @@ La gráfica del paraboloide $f(x,y,z)=x^2+y^2-z=0$ y su plano tangente en el pun
 </div>
 <p>De forma análoga se definen las derivadas de orden superior.</p>
 <div id="exm-derivadas-segundo-orden" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.14 </strong></span>La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.16 </strong></span>La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial^2 f}{\partial x^2}(x,y) &amp;=
 \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
@@ -874,7 +934,7 @@ x^y(\log x)^2.\end{aligned}\]</span></p>
 <p>Al determinante de esta matriz se le llama <em>hessiano</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(Hf(a)=\lvert \nabla^2f(a)\rvert\)</span>.</p>
 </div>
 <div id="exm-matriz-hessiana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.15 </strong></span>Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
 <p><span class="math display">\[\nabla^2f(x,y)=\left(
 \begin{array}{cc}
 \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x \partial y}\\
@@ -983,7 +1043,7 @@ P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
 \end{gathered}
 \]</span></p>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.16 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.18 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),\]</span></p>
 <p>y su matriz hessiana es</p>
 <p><span class="math display">\[Hf(x,y) = \left(
@@ -1035,7 +1095,7 @@ y-1
 <p>y sólo se anula si <span class="math inline">\(\nabla f(P)=0\)</span>.</p>
 <p>Así pues, si <span class="math inline">\(\nabla f(P)\neq 0\)</span>, entonces <span class="math inline">\(P\)</span> no puede ser un máximo ya que siguiendo la trayectoria de <span class="math inline">\(g\)</span> desde <span class="math inline">\(P\)</span> se encontrarían puntos en los que la imagen de <span class="math inline">\(f\)</span> es mayor que en <span class="math inline">\(P\)</span>. Del mismo modo, siguiendo la trayectoria opuesta a <span class="math inline">\(g\)</span> se encontrarían puntos en los que la imagen de <span class="math inline">\(f\)</span> es menor que la imagen en <span class="math inline">\(P\)</span>, por lo que tampoco puede ser un mínimo.</p>
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.19 </strong></span>Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
 <p><span class="math display">\[f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.\]</span></p>
 <p>En este punto se cumple, <span class="math inline">\(\nabla f(0,0) = 0\)</span>.</p>
 <!-- :::{.content-visible when-format="html"}
@@ -1094,7 +1154,7 @@ y-1
 <li>Si <span class="math inline">\(Hf(P)&lt;0\)</span> entonces <span class="math inline">\(f\)</span> tiene un <em>punto de silla</em> en <span class="math inline">\(P\)</span>.</li>
 </ul>
 <div id="exm-extremos-relativos-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.18 </strong></span>Dada el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.20 </strong></span>Dada el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
 <p><span class="math display">\[\nabla f(x,y)= (x^2-1,-y^2+1),\]</span></p>
 <p>que se anula en los puntos <span class="math inline">\((1,1)\)</span>, <span class="math inline">\((1,-1)\)</span>, <span class="math inline">\((-1,1)\)</span> y <span class="math inline">\((-1,-1)\)</span>.</p>
 <p>La matriz hessiana vale</p>

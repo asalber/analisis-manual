@@ -135,7 +135,7 @@ myblue = RGBf(0.067,0.529,0.871)
 f(x,y) = y^2-x^2
 xs = ys = range(-2, 2; length=100)
 zs = f.(xs, ys')
-fig = Figure()
+fig = Figure(backgroundcolor=:transparent)
 ax1 = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, aspect = (1,1,1))
 surface!(ax1, xs, ys, zs)
 text!(ax1, -1.2, -2, 4, text = L"$f(x,y)=y^2-x^2$", color = myblue, fontsize = 20)
@@ -169,12 +169,12 @@ El concepto de límite de una función de una variable se puede extender fácilm
 
 :::{#def-entorno-punto-plano}
 ## Entorno de un punto en el plano real
-Dado un punto del plano $(x_0,y_0)\in \mathbb{R}^2$, se llama _entorno_ de $(x_0,y_0)$ a cualquier disco abierto $\{(x,y):\sqrt{(x-x_0)^2+(y-y_0)^2}<\varepsilon\}$ con $\varepsilon>0$. El número $\varepsilon$ se conoce como _radio del entorno_.
+Dado un punto del plano $(a_x,a_y)\in \mathbb{R}^2$, se llama _entorno_ de $(x_0,y_0)$ a cualquier disco abierto $\{(x,y):|(x,y)-(a_x,a_y)|<\varepsilon\}$ con $\varepsilon>0$. El número $\varepsilon$ se conoce como _radio del entorno_.
 
-Para cualquier $\varepsilon>0$ el conjunto $\{(x,y):\sqrt{(x-x_0)^2+(y-y_0)^2}<\varepsilon\}\setminus \{(x_0,y_0)\}$ se llama _entorno reducido_ de $(x_0,y_0)$.
+Para cualquier $\varepsilon>0$ el conjunto $\{(x,y):|(x,y)-(a_x,a_y)|<\varepsilon\}\setminus \{(a_x,a_y)\}$ se llama _entorno reducido_ de $(a_x,a_y)$.
 :::
 
-Geométricamente, un entorno de $(x_0,y_0)$ de radio $\varepsilon$ está formado por todos los puntos interiores del círculo de radio $\varepsilon$ centrado en $(x_0,y_0)$.
+Geométricamente, un entorno de $(a_x,a_y)$ de radio $\varepsilon$ está formado por todos los puntos interiores del círculo de radio $\varepsilon$ centrado en $(a_x,a_y)$.
 
 :::{.content-visible when-format="html"}
 ![Entorno de un punto en el plano.](img/derivadas-funciones-varias-variables/entorno-punto-plano.png)
@@ -189,12 +189,12 @@ De manera similar se define un entorno en el espacio real.
 
 :::{#def-entorno-punto-espacio}
 ## Entorno de un punto en el espacio real
-Dado un punto del espacio $(x_0,y_0,z_0)\in \mathbb{R}^3$, se llama _entorno_ de $(x_0,y_0z_0)$ a cualquier bola abierta $\{(x,y,z):\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}<\varepsilon\}$ con $\varepsilon>0$. El número $\varepsilon$ se conoce como _radio del entorno_.
+Dado un punto del espacio $(a_x,a_y,a_z)\in \mathbb{R}^3$, se llama _entorno_ de $(a_x,a_y,a_z)$ a cualquier bola abierta $\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|<\varepsilon\}$ con $\varepsilon>0$. El número $\varepsilon$ se conoce como _radio del entorno_.
 
-Para cualquier $\varepsilon>0$ el conjunto $\{(x,y,z):\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}<\varepsilon\}\setminus \{(x_0,y_0,z_0)\}$ se llama _entorno reducido_ de $(x_0,y_0,z_0)$.
+Para cualquier $\varepsilon>0$ el conjunto $\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|<\varepsilon\}\setminus \{(x_0,y_0,z_0)\}$ se llama _entorno reducido_ de $(a_x,a_y,a_z)$.
 :::
 
-Geométricamente, un entorno de $(x_0,y_0,z_0)$ de radio $\varepsilon$ está formado por todos los puntos interiores de la esfera de radio $\varepsilon$ centrado en $(x_0,y_0,z_0)$.
+Geométricamente, un entorno de $(a_x,a_y,a_z)$ de radio $\varepsilon$ está formado por todos los puntos interiores de la esfera de radio $\varepsilon$ centrado en $(a_x,a_y,a_z)$.
 
 :::{.content-visible when-format="html"}
 ![Entorno de un punto en el espacio.](img/derivadas-funciones-varias-variables/entorno-punto-espacio.png)
@@ -206,10 +206,32 @@ Geométricamente, un entorno de $(x_0,y_0,z_0)$ de radio $\varepsilon$ está for
 
 :::{#def-limite-funcion-varias-variables}
 ## Límite de una función de varias variables
-Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$ definida en un entorno reducido del punto $(a_1, \ldots, a_n)$, se dice que $l$ es el _límite_ de $f$ en el punto $(a_1, \ldots, a_n)$, si para cada $\varepsilon>0$ existe un $\delta>0$ tal que si $0<\sqrt{(x_1-a_1)^2+\cdots+(x_n-a_n)^2}<\delta$, entonces $|f(x_1,\ldots,x_n)-l|<\varepsilon$, y en tal caso, se denota
+Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$ definida en un entorno reducido del punto $(a_1, \ldots, a_n)$, se dice que $l$ es el _límite_ de $f$ en el punto $(a_1, \ldots, a_n)$, si para cada $\varepsilon>0$ existe un $\delta>0$ tal que si $0<|(x_1,\ldots,x_n)-(a_1,\ldots,a_n)|<\delta$, entonces $|f(x_1,\ldots,x_n)-l|<\varepsilon$, y en tal caso, se denota
 
 $$
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = l.
+$$
+:::
+
+:::{#exm-limite-funcion-dos-variables}
+Veamos que el límite de la función $f(x,y)=\frac{2xy^2}{x^2+y^2}$ en $(0,0)$ es $0$.
+
+Dado $\varepsilon>0$, como 
+
+$$
+|f(x,y)-0| 
+= \left|\frac{2xy^2}{x^2+y^2}\right| 
+= |2x|\left|\frac{y^2}{x^2+y^2}\right| 
+\leq 2|x| 
+= 2\sqrt{x^2}
+\leq 2\sqrt{x^2+y^2}
+= 2|(x,y)-(0,0)|
+$$
+
+Por tanto, si tomamos $\delta = \epsilon/2$, se tiene que si $|(x,y)-(0,0)|<\delta = \epsilon/2$, entonces 
+
+$$
+|f(x,y)-0| \leq 2|(x,y)-(0,0)| < 2\frac{\varepsilon}{2} = \varepsilon.
 $$
 :::
 
@@ -234,28 +256,37 @@ La estrategia de calcular el límite a lo largo de las trayectorias rectas $y=y_
 :::
 
 :::{#exm-no-existencia-limite-2}
-Para la función $f(x,y)=\frac{\operatorname{sen}(xy)}{x+y}$, si nos aproximamos a $(0,0)$ tomando los puntos de la recta $y=mx$, se tiene
+Para la función $f(x,y)=\frac{xy^2}{x^2+y^4}$, si nos aproximamos a $(0,0)$ tomando los puntos de la recta $y=mx$, se tiene
 
-\begin{align*}
+$$
 \lim_{(x,mx)\to(0,0)} f(x,mx) 
-&= \lim_{x\to 0} \frac{\operatorname{sen}(xmx)}{x+mx} \\
-&= \lim_{x\to 0} \frac{\operatorname{sen}(mx^2)}{(m+1)x} \\
-& \lim_{x\to 0} \frac{m2x\cos(mx^2)}{m+1} \tag{L'Hôpital} 
+= \lim_{x\to 0} \frac{x(mx)^2}{x^2+(mx)^4}
+= \lim_{x\to 0} \frac{m^2x}{1+m^4x^2}
 = 0.
-\end{align*}
+$$
 
-Por tanto, el límite existe y valeo $0$ cuando nos aproximamos a $(0,0)$ siguiendo trayectorias rectas. Sin embargo, existen otras trayectorias de aproximación donde el límite no existe, como por ejemplo, la trayectoria $y=-\operatorname{sen}(x)$.
+Por tanto, el límite existe y vale $0$ cuando nos aproximamos a $(0,0)$ siguiendo trayectorias rectas. Sin embargo, existen otras trayectorias de aproximación donde el límite no existe, como por ejemplo, la trayectoria $y = \sqrt{x}$.
 
-\begin{align*}
-\lim_{(x,-\operatorname{sen}(x))\to(0,0)} f(x,-\operatorname{sen}(x)) 
-&= \lim_{x\to 0} \frac{\operatorname{sen}(-x\operatorname{sen}(x))}{x-\operatorname{sen}(x)} \\
-&= \lim_{x\to 0} \frac{\cos(-x\operatorname{sen}(x))(-\operatorname{sen}(x)-x\cos(x))}{1-\cos(x)}  \tag{1} \\
-&= \lim_{x\to 0} \frac{-\operatorname{sen}(-x\operatorname{sen}(x))(-\operatorname{sen}(x)-x\cos(x))^2+\cos(-x\operatorname{sen}(x))(-2\cos(x)+x\operatorname{sen}(x))}{\operatorname{sen}(x)}  \tag{2} \\
-&= \infty.
-\end{align*}
-(1 y 2) Aplicando la regla de L'Hôpital.
+$$
+\lim_{(x,\sqrt{x})\to(0,0)} f(x,\sqrt{x}) 
+= \lim_{x\to 0} \frac{x(\sqrt{x})^2}{x^2+(\sqrt{x})^4}
+= \lim_{x\to 0} \frac{x^2}{2x^2}
+= \frac{1}{2}.
+$$
+
 
 Por consiguiente, no existe el límite de $f$ en $(0,0)$.
+
+```{julia}
+using CairoMakie
+f(x,y) = x^2*y/(x^4+y^2)
+xs = ys = range(-2, 2; length=100)
+zs = f.(xs, ys')
+fig = Figure()
+ax = Axis3(fig[1,1])
+surface!(ax, xs, ys, zs)
+fig
+```
 :::
 
 Afortunadamente, el álgebra de límites visto en la @prp-limite-suma-resta-producto-cociente-funciones también es válido para funciones de varias variables. 
@@ -283,6 +314,10 @@ Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se di
 $$
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = f(a_1,\ldots, a_n).
 $$
+:::
+
+:::{#exr-funcion-varias-variables-discontinua}
+Hemos visto en el @exm-exm-limite-funcion-dos-variables que el límite de la función $f(x,y)=\frac{2xy^2}{x^2+y^2}$ en $(0,0)$ es $0$. Sin embargo, esta función no está definida en $(0,0)$, por lo que es discontinua en este punto.
 :::
 
 ### Funciones parciales
@@ -314,37 +349,35 @@ con $c$ constante.
 
 Al igual que vimos cómo calcular la variación de una función de una variable, tiene sentido medir la variación de una función de varias variables con respecto a cada una de sus variables.
 
-Sea $f(x,y)$ una función de varias variables de $\mathbb{R}^2$. Si estamos en el punto $(x_0,y_0)$ y nos movemos una cantidad $\Delta x$ en la dirección del eje $X$, entonces, al mantenerse la coordenada $y$ constante, pasaremos desde el punto $(x_0,y_0)$ al punto $(x_0+\Delta x,y_0)$, y la variación que experimenta la función será
+Sea $f(x,y)$ una función de varias variables en $\mathbb{R}^2$. Si estamos en el punto $(a,b)$ y nos movemos una cantidad $\Delta x$ en la dirección del eje $X$, entonces, al mantenerse la coordenada $y$ constante, pasaremos desde el punto $(a,b)$ al punto $(a+\Delta x,b)$, y la variación que experimenta la función será
 
-$$\Delta z=f(x_0+\Delta x,y_0)-f (x_0,y_0).$$
+$$
+\Delta z=f(a+\Delta x,b)-f(a,b).
+$$
 
 La variación relativa que experimenta la función con respecto a la variable $x$ vendrá dada por el cociente
 
-$$\frac{\Delta z}{\Delta x}=\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.$$
+$$
+\frac{\Delta z}{\Delta x}=\frac{f(a+\Delta x,b)-f(a,b)}{\Delta x}.
+$$
 
 Si en lugar de medir la variación de una función con respecto a una variable en un intervalo, medimos la variación en un punto, es decir, cuando $\Delta x$ tiende a 0, entonces obtenemos una tasa de variación instantánea:
 
-$$\lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.$$
+$$
+\lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(a+\Delta x,b)-f(a,b)}{\Delta x}.
+$$
 
-Al valor del límite, cuando existe, también se le conoce como *derivada parcial* de $f$ con respecto a la variable $x$ en el punto $(x_0,y_0)$ y se nota
+Al valor del límite, cuando existe, también se le conoce como _derivada parcial_ de $f$ con respecto a la variable $x$ en el punto $(a,b)$, y mide la tasa de variación instantánea de $f$ en el punto $(a,b)$ cuando el punto se mueve en la dirección del eje $X$.
 
-$$\frac{\partial f}{\partial x}(x_0,y_0).$$
+Del mismo modo, si estamos en el punto $(a,b)$ y nos movemos una cantidad $\Delta y$ en la dirección del eje $Y$, manteniendo la coordenada $x$ constante, pasaremos desde el punto $(a,b)$ al punto $(a,b+\Delta y)$, y la tasa de variación instantánea de la función en ese punto viene dada por el límite
 
-Esta derivada parcial mide la tasa de variación instantánea de $f$ en el punto $P=(x_0,y_0)$ cuando $P$ se mueve en la dirección del eje $X$.
+$$
+\lim_{\Delta y\rightarrow 0}\frac{\Delta z}{\Delta y}=\lim_{\Delta y \rightarrow 0}\frac{f(a,b+\Delta y)-f(a,b)}{\Delta y},
+$$
 
-### Interpretación geométrica de la derivada parcial
+que cuando existe se conoce como _derivada parcial_ de $f$ con respecto a la variable $y$ en el punto $(a,b)$, y mide la tasa de variación instantánea de $f$ en el punto $(a,b)$ cuando el punto se mueve en la dirección del eje $Y$.
 
-Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=y_0$ (es decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto $(x_0,y_0)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(x_0,y_0)$.
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.pdf)
-::: -->
-
-El concepto de derivada parcial visto para funciones de dos variables puede extenderse fácilmente para funciones de $n$ variables.
+El concepto de derivada parcial puede extenderse fácilmente para funciones de $n$ variables.
 
 :::{#def-derivada-parcial}
 ## Derivada parcial
@@ -361,22 +394,45 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 $$
 :::
 
-Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para $n=1$.
+### Interpretación geométrica de la derivada parcial
 
+Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=b$ (es decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto $(a,b)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(a,b)$.
+
+<!-- :::{.content-visible when-format="html"}
+![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.pdf)
+::: -->
+
+[![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/classic/ywur7vzr)
+
+Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para $n=1$.
 
 Al medir la variación de $f$ con respecto a la variación de una sola de sus variables $x_i$ en un punto $a=(a_1,\ldots,a_n)$, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a $f$ como una función parcial $i$-ésima
 
-$$f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).$$
+$$
+f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
+$$
 
 La derivada parcial de $f$ con respecto a $x_i$ puede calcularse derivando esta función:
 
-$$\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).$$
+$$
+\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
+$$
 
->**Regla**. Para derivar parcialmente $f(x_1,\ldots,x_n)$ con respecto a una variable $x_i$, se deriva $f$ como si la única variable fuese $x_i$, tratando el resto de las variables como constantes.
+:::{.callout-important}
+## Regla
+Para derivar parcialmente $f(x_1,\ldots,x_n)$ con respecto a una variable $x_i$, se deriva $f$ como si la única variable fuese $x_i$, tratando el resto de las variables como constantes.
+:::
 
-**Ejemplo** En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables
+:::{#exm-calculo-derivada-parcial}
+En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables
 
-$$v(t,p)=\frac{nRt}{p},$$
+$$
+v(t,p)=\frac{nRt}{p},
+$$
 
 donde $t$ mide la temperatura, $p$ la presión y $n$ y $R$ son constantes.
 
@@ -384,11 +440,16 @@ La tasa de variación instantánea que experimenta el volumen con respecto a la 
 
 Para calcular esta derivada parcial se fija $t$ como constante y se deriva $v$ como si la única variable fuese $p$:
 
-$$\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{$t=$cte}}=\frac{-nRt}{p^2}.$$
+$$
+\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{$t=$cte}}=\frac{-nRt}{p^2}.
+$$
 
 Del mismo modo, la tasa de variación instantánea del volumen con respecto a la temperatura es:
 
-$$\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{$p=$cte}}=\frac{nR}{p}.$$
+$$
+\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{$p=$cte}}=\frac{nR}{p}.
+$$
+:::
 
 ## Vector gradiente
 
