@@ -785,7 +785,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\((a_n)_{n=1}^\infty\)</span> una sucesión de números reales acotada. Entonces, <span class="math inline">\(A=\{a_n:n\in\mathbb{N}\}\)</span> es un conjunto acotado.</p>
-<p>Si <span class="math inline">\(A\)</span> es finito, existe un <span class="math inline">\(c\in A\)</span> y un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(a_n=c\)</span> <span class="math inline">\(\forall n\geq k\)</span>, de manera que la subsucesión <span class="math inline">\(a_{n+k}=c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y al ser constante, converge a <span class="math inline">\(c\)</span>.</p>
+<p>Si <span class="math inline">\(A\)</span> es finito, existe un <span class="math inline">\(c\in A\)</span> y una subsucesión <span class="math inline">\((a_{r_n})_{n=1}^\infty\)</span> tal que <span class="math inline">\(a_{r_n}=c\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, que al ser una sucesión constante, converge a <span class="math inline">\(c\)</span>.</p>
 <p>Si <span class="math inline">\(A\)</span> es infinito, como está acotado, por el <a href="03-topologia-reales.html#thm-bolzano-weierstrass">Teorema&nbsp;<span>3.3</span></a>, existe un <span class="math inline">\(a\in\mathbb{R}\)</span> que es punto de acumulación de <span class="math inline">\(A\)</span>. Entonces, para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, el conjunto <span class="math inline">\(A_n=(a-\frac{1}{n},a+\frac{1}{n})\cap A\neq \emptyset\)</span>, y de hecho es infinito. Tomando como <span class="math inline">\(r_1\)</span> el primer número natural tal que <span class="math inline">\(a_{r_1}\in A_n\)</span>, <span class="math inline">\(r_2\)</span> el primer número natural tal que <span class="math inline">\(r_2&gt;r_1\)</span> y <span class="math inline">\(a_{r_2}\in A_2\)</span>, y así sucesivamente, se puede construir una sucesión de números naturales <span class="math inline">\((r_n)_{n=1}^\infty\)</span> estrictamente creciente, de manera que <span class="math inline">\((a_{r_n})_{n=1}^\infty\)</span> es una subsucesión de <span class="math inline">\((a_n)_{n=1}^\infty\)</span>. Además, como <span class="math inline">\(a_{r_n}\in A_n\)</span>, se tiene que <span class="math inline">\(|a_{r_n}-a|&lt;\frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\((a_{r_n})_{n=1}^\infty\)</span> converge a <span class="math inline">\(a\)</span>.</p>
 </div>
 </div>
@@ -896,7 +896,7 @@ Demostración
 <ol type="a">
 <li><span class="math inline">\(\lim_{n\to\infty}(a_n+b_n)=\infty\)</span>.</li>
 <li><span class="math inline">\(\lim_{n\to\infty}(a_nb_n)=\infty\)</span>.</li>
-<li><span class="math inline">\(\lim_{n\to\infty}(a_n+c_n)=-\infty\)</span>.</li>
+<li><span class="math inline">\(\lim_{n\to\infty}(a_nc_n)=-\infty\)</span>.</li>
 <li><span class="math inline">\(\lim_{n\to\infty}ka_n=\infty\)</span> <span class="math inline">\(\forall k&gt;0\)</span> y <span class="math inline">\(\lim_{n\to\infty}ka_n=-\infty\)</span> <span class="math inline">\(\forall k&lt;0\)</span>.</li>
 <li><span class="math inline">\(\lim_{n\to\infty}\frac{1}{a_n}=0\)</span>.</li>
 </ol>

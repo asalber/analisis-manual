@@ -504,8 +504,7 @@ Toda sucesión de números reales acotada tiene al menos una subsucesión conver
 Sea $(a_n)_{n=1}^\infty$ una sucesión de números reales acotada.
 Entonces, $A=\{a_n:n\in\mathbb{N}\}$ es un conjunto acotado.
 
-Si $A$ es finito, existe un $c\in A$ y un $k\in\mathbb{N}$ tal que $a_n=c$ $\forall n\geq k$, de manera que la subsucesión $a_{n+k}=c$ $\forall n\in\mathbb{N}$, y al ser constante, converge a $c$.
-
+Si $A$ es finito, existe un $c\in A$ y una subsucesión $(a_{r_n})_{n=1}^\infty$ tal que $a_{r_n}=c$ $\forall n\in\mathbb{N}$, que al ser una sucesión constante, converge a $c$.
 
 Si $A$ es infinito, como está acotado, por el @thm-bolzano-weierstrass, existe un $a\in\mathbb{R}$ que es punto de acumulación de $A$. Entonces, para cada $n\in\mathbb{N}$, el conjunto $A_n=(a-\frac{1}{n},a+\frac{1}{n})\cap A\neq \emptyset$, y de hecho es infinito. Tomando como $r_1$ el primer número natural tal que $a_{r_1}\in A_n$, $r_2$ el primer número natural tal que $r_2>r_1$ y $a_{r_2}\in A_2$, y así sucesivamente, se puede construir una sucesión de números naturales $(r_n)_{n=1}^\infty$ estrictamente creciente, de manera que $(a_{r_n})_{n=1}^\infty$ es una subsucesión de $(a_n)_{n=1}^\infty$. Además, como $a_{r_n}\in A_n$, se tiene que $|a_{r_n}-a|<\frac{1}{n}$ $\forall n\in\mathbb{N}$, de manera que $(a_{r_n})_{n=1}^\infty$ converge a $a$.
 :::
@@ -586,7 +585,7 @@ Sean $(a_n)_{n=1}^\infty$, $(b_n)_{n=1}^\infty$ y $(c_n)_{n=1}^\infty$ sucesione
 
 a. $\lim_{n\to\infty}(a_n+b_n)=\infty$.
 b. $\lim_{n\to\infty}(a_nb_n)=\infty$.
-c. $\lim_{n\to\infty}(a_n+c_n)=-\infty$.
+c. $\lim_{n\to\infty}(a_nc_n)=-\infty$.
 d. $\lim_{n\to\infty}ka_n=\infty$ $\forall k>0$ y $\lim_{n\to\infty}ka_n=-\infty$ $\forall k<0$.
 e. $\lim_{n\to\infty}\frac{1}{a_n}=0$.
 :::

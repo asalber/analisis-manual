@@ -10,9 +10,6 @@ execute:
 lang: es
 ---
 
-::: {.content-visible unless-format="pdf"}
-{{< include macros.qmd >}}
-:::
 
 Hasta ahora hemos estado estudiando funciones que dependían de una sola variable independiente, pero en muchos casos de la vida real aparecen funciones que dependen de más de una variable, como por ejemplo
 
@@ -57,14 +54,6 @@ $$f(x,y)=\frac{xy}{2}.$$
 
 La representación gráfica cartesiana de una función de dos variables $f(x,y)$ es una superficie del espacio real $\mathbb{R}^3$ donde cada punto de la superficie tiene coordenadas $(x,y,z)$, siendo $z=f(x,y)$.
 
-<!-- ```{julia}
-using WGLMakie
-xs = range(-2, 2, 200)
-ys = range(-2, 2, 200)
-zs = [x^2 + y^2 for x in xs, y in ys]
-surface(xs, ys, zs, axis=(type=Axis3,))
-``` -->
-
 :::{.content-visible when-format="html"}
 ![Representación gráfica de una función de dos variables.](img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png)
 :::
@@ -93,8 +82,9 @@ Y la función $\displaystyle f(x,y)=\frac{\operatorname{sen}(x^2+y^2)}{\sqrt{x^2
 :::{.content-visible unless-format="html"}
 ![Gráfica de la función que representa las ondas creadas por una gota de agua.](img/derivadas-funciones-varias-variables/superficie-ondas.pdf)
 :::
+:::
 
-### Conjunto de nivel de un campo escalar
+### Conjunto de nivel de una función de varias variables
 
 Visualizar la gráfica de una función de dos variables no es fácil, sobre todo si se representa en un papel que, a fin de cuentas, es un plano en dos dimensiones. Un recurso bastante habitual para entender el comportamiento de una función de dos variables son las curvas de nivel, que consisten en representar en el plano euclídeo los puntos $(x,y)$ que tienen la misma imagen.
 
@@ -163,7 +153,8 @@ Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los m
 :::
 :::
 
-## Límites y continuidad
+
+## Límites de funciones de varias variables
 
 El concepto de límite de una función de una variable se puede extender fácilmente a funciones de varias variables, pero antes necesitamos introducir, desde un punto de vista topológico, el concepto equivalente a un entorno de un punto en la recta real, en espacios de mayor dimensión.
 
@@ -182,7 +173,6 @@ Geométricamente, un entorno de $(a_x,a_y)$ de radio $\varepsilon$ está formado
 
 :::{.content-visible unless-format="html"}
 ![Entorno de un punto en el plano.](img/derivadas-funciones-varias-variables/entorno-punto-plano.pdf)
-:::
 :::
 
 De manera similar se define un entorno en el espacio real.
@@ -218,15 +208,15 @@ Veamos que el límite de la función $f(x,y)=\frac{2xy^2}{x^2+y^2}$ en $(0,0)$ e
 
 Dado $\varepsilon>0$, como 
 
-$$
+\begin{align*}
 |f(x,y)-0| 
-= \left|\frac{2xy^2}{x^2+y^2}\right| 
-= |2x|\left|\frac{y^2}{x^2+y^2}\right| 
-\leq 2|x| 
+&= \left|\frac{2xy^2}{x^2+y^2}\right| 
+= |2x|\left|\frac{y^2}{x^2+y^2}\right| \\
+& \leq 2|x| 
 = 2\sqrt{x^2}
-\leq 2\sqrt{x^2+y^2}
-= 2|(x,y)-(0,0)|
-$$
+\leq 2\sqrt{x^2+y^2} \\
+&= 2|(x,y)-(0,0)|
+\end{align*}
 
 Por tanto, si tomamos $\delta = \epsilon/2$, se tiene que si $|(x,y)-(0,0)|<\delta = \epsilon/2$, entonces 
 
@@ -274,15 +264,16 @@ $$
 = \frac{1}{2}.
 $$
 
-
 Por consiguiente, no existe el límite de $f$ en $(0,0)$.
 
 ```{julia}
+#| label: fig-no-existencia-limite-2
+#| fig-cap: "Función de dos variables sin límite en $(0,0)$."
 using CairoMakie
 f(x,y) = x^2*y/(x^4+y^2)
 xs = ys = range(-2, 2; length=100)
 zs = f.(xs, ys')
-fig = Figure()
+fig = Figure(backgroundcolor=:transparent)
 ax = Axis3(fig[1,1])
 surface!(ax, xs, ys, zs)
 fig
@@ -304,7 +295,7 @@ El límite de la función $f(x,y)=\frac{3xy^2}{x^2+y^3}$ en el punto $(2,1)$ es
 \end{align*}
 :::
 
-### Función continua
+## Continuidad de funciones de varias variables
 
 Una vez definido el límite de una función de varias variables, el concepto de continuidad se extiende de manera natural a funciones de varias variables.
 
@@ -317,7 +308,7 @@ $$
 :::
 
 :::{#exr-funcion-varias-variables-discontinua}
-Hemos visto en el @exm-exm-limite-funcion-dos-variables que el límite de la función $f(x,y)=\frac{2xy^2}{x^2+y^2}$ en $(0,0)$ es $0$. Sin embargo, esta función no está definida en $(0,0)$, por lo que es discontinua en este punto.
+Hemos visto en el @exm-limite-funcion-dos-variables que el límite de la función $f(x,y)=\frac{2xy^2}{x^2+y^2}$ en $(0,0)$ es $0$. Sin embargo, esta función no está definida en $(0,0)$, por lo que es discontinua en este punto.
 :::
 
 ### Funciones parciales
@@ -381,7 +372,7 @@ El concepto de derivada parcial puede extenderse fácilmente para funciones de $
 
 :::{#def-derivada-parcial}
 ## Derivada parcial
-Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, se dice que $f$ es *derivable parcialmente* con respecto a la variable $x_i$ en el punto $a=(a_1,\ldots,a_n)$ si existe el límite
+Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se dice que $f$ es *derivable parcialmente* con respecto a la variable $x_i$ en el punto $a=(a_1,\ldots,a_n)$ si existe el límite
 
 $$
 \lim_{h\rightarrow 0} \frac{f(a_1,\ldots,a_{i-1},a_i+h,a_{i+1},\ldots,a_n)-f(a_1,\ldots,a_{i-1},a_i,a_{i+1},\ldots,a_n)} {h}.
@@ -398,13 +389,55 @@ $$
 
 Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=b$ (es decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto $(a,b)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(a,b)$.
 
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.png)
-:::
+```{julia}
+#| fig-cap: "Derivada parcial con respecto a $x$."
+using GLMakie
+GLMakie.activate!()
+myblue = RGBf(0.067,0.529,0.871)
+xs = ys = range(-2, 2, 100)
+f(x, y) = 2 - x^2 - y^2
+fig = Figure(backgroundcolor=:transparent)
+ax = Axis3(fig[1,1], azimuth= pi/4, xticks = ([1], [L"$a$"]), yticks = ([1], [L"$b$"]), zticklabelsvisible = false)
+surface!(ax, xs, ys, f.(xs, ys'))
+p1(x, y) = 1
+idx(x, y) = x
+zs = range(-6, 2, 100)
+xss = idx.(xs, ys')
+yss = idx.(zs', xs)
+surface!(ax, xss, p1.(xs, ys'), yss; colormap = ["magenta"], alpha = 0.5, transparency = true)
+ts = range(-1, 1, 2)
+l(t) = [1+t, 1, -2t] 
+points = Point3.(l.(ts))
+lines!(ax, points, color = :red)
+scatter!(ax, Point3(1, 1, 0))
+text!(ax, 0, 0, 3, text = L"$\frac{\partial f}{\partial x}(a,b)", color = myblue, fontsize = 20)
+fig
+```
 
-:::{.content-visible unless-format="html"}
-![Gráfica de la tangente a la intersección de una superficie con un plano](img/derivadas-funciones-varias-variables/grafica_tangente_parcial.pdf)
-::: -->
+```{julia}
+#| fig-cap: "Derivada parcial con respecto a $u$."
+using GLMakie
+GLMakie.activate!()
+myblue = RGBf(0.067,0.529,0.871)
+xs = ys = range(-2, 2, 100)
+f(x, y) = 2 - x^2 - y^2
+fig = Figure(backgroundcolor=:transparent)
+ax = Axis3(fig[1,1], azimuth= pi/4, xticks = ([1], [L"$a$"]), yticks = ([1], [L"$b$"]), zticklabelsvisible = false)
+surface!(ax, xs, ys, f.(xs, ys'))
+p1(x, y) = 1
+idx(x, y) = x
+zs = range(-6, 2, 100)
+xss = idx.(xs, ys')
+yss = idx.(zs', xs)
+surface!(ax, p1.(xs, ys'), xss, yss; colormap = ["magenta"], alpha = 0.5, transparency = true)
+ts = range(-1, 1, 2)
+l(t) = [1, 1+t, -2t] 
+points = Point3.(l.(ts))
+lines!(ax, points, color = :red)
+scatter!(ax, Point3(1, 1, 0))
+text!(ax, 0, 0, 3, text = L"$\frac{\partial f}{\partial y}(a,b)", color = myblue, fontsize = 20)
+fig
+```
 
 [![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/classic/ywur7vzr)
 
@@ -455,14 +488,12 @@ $$
 
 :::{#def-vector-gradiente}
 ## Vector gradiente
-Dado un campo escalar $f(x_1,\ldots,x_n)$, se llama *gradiente* de $f$, y se escribe $\nabla f$, a la función que a cada punto $a=(a_1,\ldots,a_n)$ le asigna el vector cuyas coordenadas cartesianas son las derivadas parciales de $f$ en $a$,
+Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se llama _gradiente_ de $f$, y se escribe $\nabla f$, a la función que a cada punto $a=(a_1,\ldots,a_n)$ le asigna el vector cuyas componentes son las derivadas parciales de $f$ en $a$,
 
 $$\nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).$$
 :::
 
-Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto.
-
-De este modo, , mientras que $-\nabla f(a)$ indica la dirección de máximo decrecimiento.
+Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, $\nabla f(a)$ indica la dirección de máximo crecimiento de la función, mientras que $-\nabla f(a)$ indica la dirección de máximo decrecimiento.
 
 :::{#exm-vector-gradiente}
 Al calentar una superficie la temperatura $t$ (en ºC) en cada punto $(x,y,z)$ (en m) de dicha superficie viene dada por la función:
@@ -491,33 +522,305 @@ $$
 $$
 :::
 
-### Regla de la cadena
+## Recta normal y plano tangente a una superficie
 
-Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es un campo escalar y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una trayectoría, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una función real de variable real.
+Ya se ha visto que para una función de dos variables $f(x,y)$, $f'_{x}(a,b)$ es la pendiente de la recta tangente a la superficie de $f$ en $(a,b)$ en su intersección con el plano $y=b$, y que $f'_y(a,b)$ es la pendiente de la recta tangente a la superficie de $f$ en $(a,b)$ en su intersección con el plano $x=a$. Estas dos rectas tangentes definen, en realidad, un plano tangente a la superficie de $f$ en el punto $(a,b)$. 
 
->**Teorema - Regla de la cadena**. Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es un campo escalar y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una trayectoría, entonces
+Si tomamos los vectores $(1, 0, f'_x(a,b))$ y $(0, 1, f'_y(a,b))$ en las direcciones de estas dos rectas tangentes, su producto vectorial será normal a la superficie. 
 
-$$(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t).$$
+\begin{align*}
+(0, 1, f'_y(a,b)) \times (1, 0, f'_x(a,b))
+&= 
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+0 & 1 & f'_y(a,b) \\
+1 & 0 & f'_x(a,b) 
+\end{vmatrix} \\
+&= f'_x(a,b) \mathbf{i} + f'_y(a,b) \mathbf{j} - \mathbf{z} \\
+&= (f_x(a,b), f_y(a,b), -1)
+\end{align*}
+
+Usando este vector podemos construir la ecuación de la recta normal a la superficie de $f$.
+
+:::{#def-recta-normal-superficie}
+## Recta normal a la superficie de una función de dos variables
+Dada una función de dos variables $f(x,y)$ con derivadas parciales continuas en el punto $(a,b)$ se define la _recta normal a la superficie_ de $f$ en el punto $(a,b)$ como la recta de ecuación 
+
+$$
+\begin{gathered}
+(a, b, f(a,b)) + t \left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) \\
+= \left(a+t\frac{\partial f}{\partial x}(a,b), b+t\frac{\partial f}{\partial y}(a,b), f(a,b)-t\right).
+\end{gathered}
+$$
+:::
+
+Para obtener la ecuación del plano tangente a la superficie de $f$ también podemos usar este vector normal a la superficie, ya que cualquier punto del plano debe cumplir la ecuación
+
+$$
+\begin{gathered}
+((x,y,z)-(a,b,f(a,b)))\left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) = 0 \\
+\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(ab)) = 0.
+\end{gathered}
+$$
+
+:::{#def-plano-tangente-superficie}
+## Plano tangente a la superficie de una función de dos variables
+Dada una función de dos variables $f(x,y)$ con derivadas parciales continuas en el punto $(a,b)$ se define el _plano tangente a la superficie_ de $f$ en el punto $(a,b)$ como el plano de ecuación 
+
+$$
+z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b)+f(a,b)
+$$
+:::
+
+:::{#exm-recta-normal-plano-tangente}
+La recta normal a la superficie de la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$ tiene ecuación
+
+$$
+\begin{gathered}
+(1,1,2)+ t \left(\frac{\partial f}{\partial x}(1,1), \frac{\partial f}{\partial y}(1,1), -1\right) \\
+= (1,1,2)+ t (2,2,-1) = (1+2t,1+2t,2-t).
+\end{gathered}
+$$
+
+Y el plano tangente a la superficie de $f$ en $(1,1,2)$ tiene ecuación
+
+\begin{align*}
+z 
+&= \frac{\partial f}{\partial x}(1,1)(x-1) + \frac{\partial f}{\partial y}(1,1)(y-1)+f(1,1) \\
+&= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
+\end{align*}
+
+```{julia}
+#| fig-cap: "Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$."  
+using GLMakie
+myblue = RGBf(0.067,0.529,0.871)
+xs = ys = range(-2, 2, 100)
+f(x, y) = x^2 + y^2
+fig = Figure(backgroundcolor=:transparent)
+ax = Axis3(fig[1,1], azimuth= pi/12, aspect = (1, 1, 1))
+surface!(ax, xs, ys, f.(xs, ys'))
+xs = ys = range(0, 2, 2)
+pn(x, y) = 2x + 2y - 2
+surface!(ax, xs, ys, pn.(xs, ys'); colormap = ["magenta"], alpha = 0.5, transparency = true)
+ts = range(-1, 1, 2)
+tg(t) = [1+2t, 1+2t, 2-t]
+points = Point3.(tg.(ts))
+lines!(ax, points)
+scatter!(ax, Point3(1, 1, 2); color = :red)
+fig
+```
+:::
+
+:::{.callout-warning}
+La existencia de las derivadas parciales de una función de dos variables $f(x,y)$ en un punto $(a,b)$ no garantiza la existencia de la recta normal y el plano tangente en ese punto.
+:::
+
+:::{#exm-funcion-sin-plano-tangente}
+La función 
+
+$$
+f(x,y) = 
+\begin{cases}
+\frac{xy^2}{x^2+y^4} & \mbox{si $(x,y)\neq (0,0)$}\\
+0  & \mbox{si $(x,y) = (0,0)$}
+\end{cases}
+$$
+
+Cuando $y=0$ esta función es constante y vale $0$ por lo que su derivada parcial con respecto a $x$ es $\frac{\partial f}{\partial x} = 0$. Del mismo modo, cuando $x=0$ esta función es constante y vale $0$ por lo que su derivada parcial con respecto a $y$ también se anula $\frac{\partial f}{\partial x} = 0$. Sin embargo, esta función no tiene plano tangente en el punto $(0,0)$ como se puede apreciar en la @fig-no-existencia-limite-2.
+:::
+
+## Diferenciabilidad
+
+En el capítulo de derivadas de funciones de una variable se definió el diferencial de una función $y=f(x)$ como $dy = f'(x)dx$ y se vió cómo el diferencial puede utilizarse para aproximar la variación de $f$ en un entorno de $x$. La misma idea puede generalizarse a funciones de varias variables.
+
+:::{#def-diferencial-total}
+## Diferencial total
+Dada una función de $n$ variables $y=f(x_1,\ldots,x_n)$, se define el _diferencial total_ de la función $f$ como 
+
+$$
+dy = \nabla f(x_1, \ldots, x_n)(dx_1, \ldots, dx_n) = \frac{\partial f}{\partial x_1}dx_1 + \cdots + \frac{\partial f}{\partial x_n}dx_n
+$$
+:::
+
+:::{#exm-diferencial-total}
+Dada la función $u=f(x,y,z) = x^2+yz$, su gradiente es $\nabla f(x,y,z) = (2x, z, y)$, y en el punto $(1, 1, 1)$ vale $(2, 1, 1)$, por lo que el diferencial total de $f$ en $(1, 1, 1)$ es 
+
+$$
+du 
+= \nabla f(1, 1, 1)(dx, dy, dz) 
+= (2, 1, 1)(dx, dy, dz) 
+= 2dx + dy + dz.
+$$
+:::
+
+:::{#def-funcion-varias-variables-diferenciable}
+## Función diferenciable
+Dada una función de dos variables $z=f(x,y)$, se dice que $f$ es _diferenciable_ en el punto $(a,b)$ si 
+
+$$
+\Delta z = f(a+\Delta x, b+\Delta y) - f(a,b) = \nabla f(a, b) (\Delta x, \Delta y) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
+$$
+
+con $\varepsilon_1$ y $\varepsilon_2 \to 0$ cuanto $(x,y)\to (0,0)$.
+::: 
+
+Si en la ecuación anterior reescribimos $\Delta x = x-a$ y $\Delta y = y-b$, se tiene que 
+
+\begin{align*}
+f(a+\Delta x, b+\Delta y) - f(a,b) 
+&= \nabla f(a, b) (\Delta x, \Delta y) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \\
+&= \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b) + \varepsilon_1 (x-a) + \varepsilon_2 (y-b) \\
+\end{align*}
+
+de donde se deduce que
+
+$$
+f(x, y) = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b) + f(a,b) + \varepsilon_1 (x-a) + \varepsilon_2 (y-b).
+$$
+
+Si se observa bien, los tres primeros términos del lado derecho de esta igualdad dan la ecuación del plano tangente a $f$ en el punto $(a,b)$. De esta manera, si una $f$ es diferenciable en $(a,b)$ podemos expresar el valor de la función en cualquier punto $(x,y)$ de un entorno de $(a,b)$, como el valor del plano tangente en ese punto, más una pequeña cantidad $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y$ que tiende a $0$ cuando $(x,y)$ se aproxima a $(a,b)$. Además, dado que $\varepsilon_1$ y $\varepsilon_2 \to 0$ cuando $(x,y)\to (a,b)$, la cantidad $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y$ se aproxima a $0$ mucho más rápidamente que $\Delta x$ o $\Delta y$ se aproximan a $0$. Esto permite usar la ecuación del plano tangente para obtener buenas aproximaciones de la función en un entorno cercano de $(a,b)$, es decir, 
+
+$$
+f(x,y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b) + f(a,b)
+$$
+
+:::{#exm-aproximacion-funcion-dos-variables-plano-tangente}
+Veamos que la función $f(x,y)=x^2 + y^2$ es diferenciable en cualquier punto $(a,b)$
+
+\begin{align*}
+\Delta z 
+&= f(a+\Delta x, b+\Delta y) - f(a,b) 
+= (a+\Delta x)^2 + (b+\Delta y)^2 - (a^ + b^2) \\
+&= a^2 + 2a\Delta x + \Delta x^2 + b^2 + 2b\Delta y + \Delta y^2 - a^2 - b^2\\
+&= 2a\Delta x + 2b\Delta y + \Delta x^2 + \Delta y^2 \\
+&= \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \Delta x \Delta x + \Delta y \Delta y
+\end{align*}
+
+De modo que, tomando $\varepsilon_1 = \Delta x$ y $\varepsilon_2 = \Delta y$, se tiene que 
+
+$$
+\Delta Z = \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
+$$
+
+y, además $\varepsilon_1\to 0$ y $\varepsilon_2\to 0$ cuando $(x,y)\to (a,b)$, por lo que la función $f$ es diferenciable en $(a,b)$.
+
+Así pues, podemos utilizar el plano tangente $z = 2x+2y-2$  que calculamos en el @exm-recta-normal-plano-tangente para aproximar la función en un entorno del punto $(1, 1, 2)$. Por ejemplo, la aproximación de $f$ en $(0.9, 1.2)$ es 
+
+$$
+f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.1 -2 = 2.2.
+$$
+:::
+
+En general, demostrar que una función es diferenciable en un punto puede ser una tarea complicada, pero afortunadamente, el siguiente teorema proporciona una condición suficiente para que una función sea diferenciable.
+
+:::{#thm-diferenciabilidad-funciones-varias-variables}
+Si una función de $n$ variables $f(x_1,\ldots,x_n)$ tiene derivadas parciales continuas en un entorno de $(a_1,\ldots,a_n)$, entonces $f$ es diferenciable en $(a_1,\ldots,a_n)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Veremos la demostración en el caso de una función de dos variables $f(x,y)$. 
+
+\begin{align*}
+\Delta z 
+&= f(a+\Delta x, b+\Delta y) - f(a,b) \\
+&= f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) + f(a+\Delta x, b) - f(a,b) 
+\end{align*}
+
+Como en los dos primeros términos de esta expresión se mantiene constante $a+\Delta x$, podemos considerar la función parcial $f_2(y)$ que resulta de fijar el valor de $x$ a $a+\Delta x$, de manera que $f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = f_2(b+\Delta y)-f_2(b)$. Entonces, como $f'_2(y)=\frac{\partial f}{\partial y}(a+\Delta x, y)$ existe en el intervalo $[b, b+\Delta y]$, por el teorema del valor medio (@thm-valor-medio), existe un valor $b_0\in(b, b+\Delta y)$ tal que 
+
+$$
+f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
+$$
+
+Del mismo modo, como en $f(a+\Delta x, b) - f(a,b)$ se mantiene constante $b$, podemos considerar la función parcial $f_1(x)$ que resulta de fijar $y=b$, de manera que $f(a+\Delta x, b) - f(a,b)=f_1(a+\Delta x)-f_1(a)$. Al igual que antes, como $f'_1(y)=\frac{\partial f}{\partial x}(x, b)$ existe en el intervalo $[a, a+\Delta x]$, por el teorema del valor medio, existe otro valor $a_0\in(a, a+\Delta x)$ tal que 
+
+$$
+f(a+\Delta x, b) - f(a,b) = \frac{\partial f}{\partial x}(a_0, b) \Delta x.
+$$
+
+Por tanto, la expresión inicial se puede reescribir como 
+
+\begin{align*}
+\Delta z 
+&= f(a+\Delta x, b+\Delta y) - f(a,b) \\
+&= \frac{\partial f}{\partial x}(a_0, b) \Delta x + \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
+\end{align*}
+
+Si ahora definimos 
+
+\begin{align*}
+\varepsilon_1 &= \frac{\partial f}{\partial x}(a_0,b)-\frac{\partial f}{\partial x}(a,b),\\
+\varepsilon_2 &= \frac{\partial f}{\partial y}(a+\Delta x, b_0)-\frac{\partial f}{\partial y}(a,b),
+\end{align*}
+
+se tiene que 
+
+\begin{align*}
+\Delta z 
+&=
+\left(\varepsilon_1 + \frac{\partial f}{\partial x}(a, b)\right)\Delta x + \left(\varepsilon_2 + \frac{\partial f}{\partial y}(a, b)\right)\Delta y \\
+&= \frac{\partial f}{\partial x}(a, b)\Delta x + \frac{\partial f}{\partial y}(a, b)\Delta y + \varepsilon_1\Delta x + \varepsilon_2\Delta y.
+\end{align*}
+
+Finalmente, como las derivadas parciales de $f$ son continuas en un entorno de $(a,b)$, cuando $\Delta x\to 0$ y $\Delta y\to 0$, se tiene que $\frac{\partial f}{\partial x}(a_0,b)\to \frac{\partial f}{\partial x}(a,b)$, y $\frac{\partial f}{\partial y}(a+\Delta x, b_0)\to \frac{\partial f}{\partial y}(a,b)$, de manera que, $\varepsilon_1\to 0$ y $\varepsilon_2\to 0$, por lo que se concluye que $f$ es diferenciable en $(a,b)$.
+:::
+:::
+
+## Regla de la cadena
+
+En el @thm-regla-cadena vimos cómo calcular la derivada de una composición de dos funciones de una variable real. Una función de varias variables también puede componerse con otras funciones, y en particular, resulta interesante estudiar la derivada de la composición de una función vectorial con una función de varias variables.
+
+Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una función vectorial en $\mathbb{R}^n$, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una función real de variable real.
+
+:::{#thm-regla-cadena-funciones-varias-variables}
+## Regla de la cadena
+Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una función vectorial en $\mathbb{R}^n$, entonces
+
+$$
+(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t).
+$$
+:::
 
 :::{#exm-regla-cadena}
-Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la trayectoria $g(t)=(\cos t,\operatorname{sen} t)$ $t\in [0,2\pi]$ del mismo plano, entonces
+Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos t,\operatorname{sen} t)$ $t\in [0,2\pi]$ del mismo plano, entonces
 
-$$\nabla f(x,y) = (2xy, x^2) \quad  \mbox{y} \quad g'(t) = (-\operatorname{sen} t, \cos t),$$
+$$
+\nabla f(x,y) = (2xy, x^2),
+$$
 
 y
 
-$$(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (2\cos t\operatorname{sen} t,\cos^2 t)\cdot (-\operatorname{sen} t,\cos t) = -2\cos t\operatorname{sen}^2 t+\cos^3 t.$$
+$$
+g'(t) = (-\operatorname{sen}(t), \cos(t)),
+$$
+
+por lo que
+
+\begin{align*}
+(f\circ g)'(t) 
+&= \nabla f(g(t))\cdot g'(t) \\
+&= (2\cos(t)\operatorname{sen}(t),\cos(t)^2)\cdot (-\operatorname{sen}(t),\cos(t)) \\
+&= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
+\end{align*}
 
 Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la función compuesta
 
-$$(f\circ g)(t) = f(g(t)) = f(\cos t, \operatorname{sen} t) = \cos^2 t\operatorname{sen} t,$$
+$$
+(f\circ g)(t) = f(g(t)) = f(\cos(t), \operatorname{sen}(t)) = \cos(t)^2\operatorname{sen}(t),
+$$
 
 de manera que
 
-$$(f\circ g)'(t) = 2\cos t(-\operatorname{sen} t)\operatorname{sen} t+\cos^2 t \cos t = -2\cos t\operatorname{sen}^2 t+\cos^3 t.$$
+\begin{align*}
+(f\circ g)'(t) 
+&= 2\cos(t)(-\operatorname{sen}(t))\operatorname{sen}(t)+\cos(t)^2 \cos(t)\\
+&= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
+\end{align*}
 :::
 
-La regla de la cadena para la composición de un campo escalar con una trayectoria permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:
+La regla de la cadena para la composición de una función vectorial con una función de varias variables permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:
 
 $$
 \begin{aligned}
@@ -528,36 +831,57 @@ $$
 \end{aligned}
 $$
 
-Para deducir la derivada de la suma se toma el campo escalar $f(x,y)=x+y$ y la trayectoria $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
+Por ejemplo, para deducir la derivada de la suma se toma la función de dos variables $f(x,y)=x+y$ y la función vectorial $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
 
-$$(u+v)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (1,1)\cdot (u'(t),v'(t)) = u'(t)+v'(t).$$
+\begin{align*}
+(u+v)'(t) 
+&= (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) \\
+&= (1,1)\cdot (u'(t),v'(t)) = u'(t)+v'(t).
+\end{align*}
 
-y para deducir derivada del producto, tomando $f(x,y)=xy$, se tiene
+Y para deducir derivada del producto, tomando $f(x,y)=xy$, se tiene
 
-$$(uv)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).$$
+\begin{align*}
+(uv)'(t) 
+&= (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) \\
+&= (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).
+\end{align*}
 
 ## Derivada direccional
 
-Para un campo escalar $f(x,y)$ de $\mathbb{R}^2$ y un punto $P=(x_0,y_0)$, se vió que $\dfrac{\partial f}{\partial x}$ es la tasa de variación instantánea de $f$ con respecto a $x$ en el punto $P$, es decir, cuando nos desplazamos desde el punto $P$ en la dirección del eje $X$.
+Hemos visto que para una función de dos variables $f(x,y)$, $f'_x(a,b)$ es la tasa de variación instantánea de $f$ con respecto a $x$ en el punto $(a,b)$, es decir, cuando nos desplazamos desde el punto $(a,b)$ en la dirección del eje $X$, y que $f'_y(a,b)$ es la tasa de variación instantánea de $f$ con respecto a $y$ en el punto $(a,b)$, es decir, cuando nos desplazamos desde el punto $(a,b)$ en la dirección del eje $Y$.
 
-Del mismo modo, $\dfrac{\partial f}{\partial y}$ es la tasa de variación instantánea de $f$ con respecto a $y$ en el punto $P$, es decir, cuando nos desplazamos desde el punto $P$ en la dirección del eje $Y$.
+Pero, _¿qué pasa si nos movemos en cualquier otra dirección?_
 
-Pero, *¿qué pasa si nos movemos en cualquier otra dirección?*
-
-La tasa de variación instantánea de $f$ en un punto $P$ en la dirección de un vector unitario cualquiera $u$ se conoce como *derivada direccional*.
+La tasa de variación instantánea de $f$ en un punto $(a,b)$ en la dirección de un vector unitario cualquiera $u$ se conoce como _derivada direccional_.
 
 :::{#def-derivada-direccional}
 ## Derivada direccional
-Dado un campo escalar $f$ de $\mathbb{R}^n$, un punto $P$ y un vector unitario $\mathbf{u}$ en ese espacio, el límite
+Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, un punto $P$ y un vector unitario $\mathbf{u}$ en $\mathbb{R}^n$, el límite
 
 $$
 f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
 $$
 
-cuando existe, se llama *derivada direccional* de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
+cuando existe, se llama _derivada direccional_ de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
 :::
 
-Si se considera un vector unitario $\mathbf{u}$, la trayectoria que pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
+Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.
+
+El siguiente teorema nos permitirá calcular derivadas direccionales de manera más sencilla, sin necesidad de calcular el límite anterior.
+
+:::{#thm-derivada-direccional}
+Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables cuyas derivadas parciales existen en un punto $P$ y $\mathbf{u}$ es un vector unitario en $\mathbb{R}^n$, entonces 
+
+$$
+f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Si se considera un vector unitario $\mathbf{u}$, la función vectorial cuya trayectoria pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
 
 $$
 g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
@@ -565,13 +889,17 @@ $$
 
 que para $t=0$, pasa por $P=g(0)$ con velocidad $\mathbf{u}=g'(0)$.
 
-Así, la tasa de variación de $f$ a partir del punto $P$ en la dirección de $\mathbf{u}$ es
+Así, la tasa de variación de $f$ en el punto $P$ en la dirección de $\mathbf{u}$ es
 
 $$
 (f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
 $$
+:::
+:::
 
-Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.
+En el caso de una función de dos variables $f(x,y)$, la derivada direccional $f_{\mathbf{u}}(a,b)$ da la tasa de variación de $f$ en el punto $(a,b)$ cuando empezamos a cambiar $x$ e $y$ en la dirección del vector $\mathbf{u}$.
+
+[![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/m/xyu2226b)
 
 :::{#exm-derivada-direccional}
 Dada la función $f(x,y) = x^2+y^2$, su vector gradiente es
@@ -580,28 +908,35 @@ $$
 \nabla f(x,y) = (2x,2y),
 $$
 
-de manera que la derivada direccional en el punto $P=(1,1)$, en la dirección del vector unitario $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ es
+de manera que la derivada direccional en el punto $(1,1)$, en la dirección del vector unitario $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ es
 
 $$
-f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
+f'_{\mathbf{u}}(1,1) = \nabla f(1,1)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
 $$
+:::
 
 Para calcular la derivada direccional en la dirección de un vector no unitario $\mathbf{v}$, basta con convertirlo en unitario mediante la transformación
 
 $$
 \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
 $$
+
+:::{#thm-gradiente-direccion-maximo-crecimiento}
+Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables cuyas derivadas parciales existen en un punto $P$ entonces la dirección de máximo crecimiento de $f$ es la del vector gradiente $\nabla f(P)$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
 Como se ha visto, para un vector unitario $\mathbf{u}$
 
 $$
-f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos \theta,
+f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos(\theta),
 $$
 
 donde $\theta$ es el ángulo que forma $\mathbf{u}$ con el vector gradiente $\nabla f(P)$.
 
-Teniendo en cuenta que $-1\leq \cos\theta\leq 1$, para cualquier vector $\mathbf{u}$ se cumple
+Teniendo en cuenta que $-1\leq \cos(\theta)\leq 1$, para cualquier vector $\mathbf{u}$ se cumple
 
 $$
 -|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
@@ -610,7 +945,7 @@ $$
 Además, si $\mathbf{u}$ tiene la misma dirección y sentido que el gradiente, se tiene
 
 $$
-f'_{\mathbf{u}}(P)=\lvert \nabla f(P)\rvert \cos 0=\lvert \nabla f(P)\rvert.
+f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(0)= |\nabla f(P)|.
 $$
 
 Por tanto, el crecimiento máximo de un campo escalar se produce en la dirección y sentido del gradiente.
@@ -618,10 +953,12 @@ Por tanto, el crecimiento máximo de un campo escalar se produce en la direcció
 Del mismo modo, si $\mathbf{u}$ tiene la misma dirección y sentido opuesto al gradiente, se tiene
 
 $$
-f'_{\mathbf{u}}(P)=\lvert \nabla f(P)\rvert \cos \pi=-\lvert \nabla f(P)\rvert.
+f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(\pi)=-|\nabla f(P)|.
 $$
 
 Por tanto, el decrecimiento máximo de un campo escalar se produce en la dirección y sentido opuesto al gradiente.
+:::
+:::
 
 ## Derivación implícita
 
@@ -718,30 +1055,7 @@ y la recta tangente a la circunferencia en $P$ es
 $$((x,y)-P)\cdot \nabla f(P) = ((x,y)-(0,1))\cdot (0,2) = (x,y-1)\cdot(0,2) = 2(y-1) = 0 \Rightarrow y=1.$$
 :::
 
-### Recta normal y plano tangente a una superficie
 
-De mismo modo, si en lugar de una línea en el plano se tiene una superficie $f(x,y,z)=0$, en el punto $P=(x_0,y_0,z_0)$ la recta normal tiene ecuación
-
-$$P+t\nabla f(P) = (x_0,y_0,z_0)+t\nabla f(x_0,y_0,z_0).$$
-
-Dada el campo escalar $f(x,y,z)=x^2+y^2-z$, y el punto $P=(1,1,2)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$, es el paraboloide $z=x^2+y^2$. Así pues, tomando como vector normal el gradiente de $f$, que vale
-
-$$\nabla f(x,y,z) = (2x,2y,-1),$$
-
-que en el punto $P=(1,1,2)$ vale $\nabla f(1,1,2) = (2,2,-1)$, la recta normal al paraboloide en $P$ es
-
-$$P+t\nabla f(P) = (1,1,2)+t\nabla f(1,1,2) = (1,1,2)+t(2,2,-1) = (1+2t,1+2t,2-t),$$
-
-que se trata de la recta de ecuaciones $x=y$ y $x=5-2z$.
-
-Y el plano tangente al paraboloide en $P$ es
-
-$$
-\begin{aligned}
-((x,y,z)-P)\cdot \nabla f(P) &= ((x,y,z)-(1,1,2))(2,2,-1) = (x-1,y-1,z-2)(2,2,-1)=\\
- &= 2(x-1)+2(y-1)-(z-2) = 2x+2y-z-2= 0.
-\end{aligned}
-$$
 
 <!-- :::{#exm-recta-tangente-plano-normal-superficie}
 La gráfica del paraboloide $f(x,y,z)=x^2+y^2-z=0$ y su plano tangente en el punto $P=(1,1,2)$ es
@@ -794,7 +1108,7 @@ x^y(\log x)^2.\end{aligned}$$
 
 :::{#def-matriz-hessiana}
 ## Matriz hessiana
-Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, para la que existen todas sus derivadas parciales de segundo orden en un punto $a=(a_1,\ldots,a_n)$, se define la *matriz hessiana* de $f$ en $a$, y se nota $\nabla^2f(a)$, como la matriz cuadrada cuyos elementos son
+Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, para la que existen todas sus derivadas parciales de segundo orden en un punto $a=(a_1,\ldots,a_n)$, se define la *matriz hessiana* de $f$ en $a$, y se nota $\nabla^2f(a)$, como la matriz cuadrada cuyos elementos son
 
 $$\nabla^2f(a)=\left(
 \begin{array}{cccc}
