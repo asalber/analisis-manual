@@ -382,8 +382,8 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <div id="exm-curvas-nivel" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12.4 </strong></span>La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
@@ -506,8 +506,8 @@ Precaución
 = \frac{1}{2}.
 \]</span></p>
 <p>Por consiguiente, no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\((0,0)\)</span>.</p>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div id="fig-no-existencia-limite-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/fig-no-existencia-limite-2-output-1.svg" class="img-fluid figure-img"></p>
@@ -595,8 +595,8 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <section id="interpretación-geométrica-de-la-derivada-parcial" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="interpretación-geométrica-de-la-derivada-parcial"><span class="header-section-number">12.4.1</span> Interpretación geométrica de la derivada parcial</h3>
 <p>Geométricamente, <span class="math inline">\(z=f(x,y)\)</span> define una superficie. Si se corta esta superficie con el plano de ecuación <span class="math inline">\(y=b\)</span> (es decir, si <span class="math inline">\(y\)</span> se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto <span class="math inline">\((a,b)\)</span> es la derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
@@ -605,8 +605,8 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
@@ -740,8 +740,8 @@ z
 &amp;= \frac{\partial f}{\partial x}(1,1)(x-1) + \frac{\partial f}{\partial y}(1,1)(y-1)+f(1,1) \\
 &amp;= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
 \end{align*}\]</span></p>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
@@ -1010,9 +1010,19 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
-<p>No siempre es posible a partir de una ecuación que define una función de manera implícita obtener su forma explícita, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.</p>
+<p>El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.</p>
+<div id="thm-funcion-implicita" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 12.3 (Teorema de la función implícita) </strong></span>Si <span class="math inline">\(F(x_1,\ldots,x_n,y)\)</span> es una función de <span class="math inline">\(n+1\)</span> variables definida sobre un entorno abierto del punto <span class="math inline">\((a_1,\ldots,a_n,b)\)</span> y tal que</p>
+<ol type="a">
+<li><span class="math inline">\(F(a_1,\ldots,a_n,b)=0\)</span></li>
+<li>Todas las derivadas parciales de <span class="math inline">\(F\)</span> son continuas en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</li>
+<li><span class="math inline">\(\frac{\partial F}{\partial y}\neq 0\)</span>.</li>
+</ol>
+<p>Entonces la ecuación <span class="math inline">\(F(a_1,\ldots,a_n,b)=0\)</span> define a <span class="math inline">\(y\)</span> como una función de <span class="math inline">\(x\)</span> en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</p>
+</div>
+<p>Cuando una ecuación define de manera implícita una de sus variables como función de las otras, no siempre es posible obtener la forma explícita de esa función, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.</p>
 <div id="thm-derivada-implicita-funcion-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.3 </strong></span>Si <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> implícitamente como función derivable de <span class="math inline">\(x_1,\ldots,x_n\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.4 </strong></span>Si <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> implícitamente como función derivable de <span class="math inline">\(x_1,\ldots,x_n\)</span>, entonces</p>
 <p><span class="math display">\[
 \frac{\partial y}{\partial x_i} = -\frac{F'_{x_i}(x_1,\ldots,x_n,y)}{F'_{y}(x_1,\ldots,x_n,y)}.
 \]</span></p>
@@ -1078,7 +1088,7 @@ f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
 <p>Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.</p>
 <p>El siguiente teorema nos permitirá calcular derivadas direccionales de manera más sencilla, sin necesidad de calcular el límite anterior.</p>
 <div id="thm-derivada-direccional" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.4 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\mathbf{u}\)</span> es un vector unitario en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.5 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\mathbf{u}\)</span> es un vector unitario en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
 <p><span class="math display">\[
 f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u}.
 \]</span></p>
@@ -1131,7 +1141,7 @@ f'_{\mathbf{u}}(1,1) = \nabla f(1,1)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\
 \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
 \]</span></p>
 <div id="thm-gradiente-direccion-maximo-crecimiento" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.5 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> entonces la dirección de máximo crecimiento de <span class="math inline">\(f\)</span> es la del vector gradiente <span class="math inline">\(\nabla f(P)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 12.6 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> entonces la dirección de máximo crecimiento de <span class="math inline">\(f\)</span> es la del vector gradiente <span class="math inline">\(\nabla f(P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -1170,7 +1180,7 @@ f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(\pi)=-|\nabla f(P)|.
 </div>
 </div>
 <div id="thm-gradiente-normal-curvas-nivel" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.6 </strong></span>Sea <span class="math inline">\(C\)</span> el conjunto de nivel de una función de varias variables <span class="math inline">\(f\)</span> que incluye a un punto <span class="math inline">\(P\)</span>. Si <span class="math inline">\(\mathbf{v}\)</span> es un vector tangente a una trayectoria que circule por <span class="math inline">\(C\)</span> en <span class="math inline">\(P\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.7 </strong></span>Sea <span class="math inline">\(C\)</span> el conjunto de nivel de una función de varias variables <span class="math inline">\(f\)</span> que incluye a un punto <span class="math inline">\(P\)</span>. Si <span class="math inline">\(\mathbf{v}\)</span> es un vector tangente a una trayectoria que circule por <span class="math inline">\(C\)</span> en <span class="math inline">\(P\)</span>, entonces</p>
 <p><span class="math display">\[
 \nabla f(P) \cdot \mathbf{v} = 0.
 \]</span></p>
@@ -1256,7 +1266,7 @@ x^y(\log x)^2.\end{aligned}\]</span></p>
 </div>
 <p>En el ejemplo anterior se aprecia que las <em>derivadas cruzadas</em> de segundo orden <span class="math inline">\(\frac{\partial^2 f}{\partial y\partial x}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x\partial y}\)</span> coinciden. El siguiente teorema establece bajo qué condiciones el orden de derivación no importa.</p>
 <div id="thm-igualdad-derivadas-cruzadas" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.7 (Igualdad de las derivadas cruzadas) </strong></span>Si <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables tal que sus derivadas parciales <span class="math inline">\(\frac{\partial^2 f}{\partial x_i\partial x_j}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x_j\partial x_i}\)</span> existen y son continuas en un conjunto abierto <span class="math inline">\(A\)</span>, entonces para cualquier <span class="math inline">\((x,y)\in A\)</span></p>
+<p><span class="theorem-title"><strong>Teorema 12.8 (Igualdad de las derivadas cruzadas) </strong></span>Si <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables tal que sus derivadas parciales <span class="math inline">\(\frac{\partial^2 f}{\partial x_i\partial x_j}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x_j\partial x_i}\)</span> existen y son continuas en un conjunto abierto <span class="math inline">\(A\)</span>, entonces para cualquier <span class="math inline">\((x,y)\in A\)</span></p>
 <p><span class="math display">\[
 \frac{\partial^2 f}{\partial x_i\partial x_j}(x,y)
 = \frac{\partial^2 f}{\partial x_j\partial x_i}(x,y).
