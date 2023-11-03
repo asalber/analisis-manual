@@ -1205,6 +1205,46 @@ $$
 $$
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Por la definición de derivada parcial se tiene
+
+\begin{align*}
+\frac{\partial^2 f}{\partial x \partial y} (a,b)
+&= \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)(a,b) 
+= \lim_{\Delta x\to 0} \frac{f'_y(a+\Delta x,b)-f'_y(a,b)}{\Delta x} \\
+&= \lim_{\Delta x\to 0} \frac{\lim_{\Delta y\to 0}\frac{f(a+\Delta x,b+\Delta y)-f(a+\Delta x,b)}{\Delta y} - \lim_{\Delta y\to 0}\frac{f(a,b+\Delta y)-f(a,b)}{\Delta y}}{\Delta x} \\
+&= \lim_{\Delta x\to 0}\lim_{\Delta y\to 0} \frac{f(a+\Delta x, b+\Delta y)- f(a,b+\Delta y) -f(a+\Delta x, b) + f(a,b)}{\Delta x \Delta y}
+\end{align*}
+
+Si se considera la función $g(t) = f(a+t, b+\Delta y)-f(a+t,b)$ en el intervalo $[0,\Delta x]$, como $f$ es derivable, $g$ es derivable, y por el teorema del valor medio, existe un valor $c\in (0,\Delta x)$ tal que
+
+$$
+\begin{gathered}
+\frac{f(a+\Delta x, b+\Delta y)- f(a,b+\Delta y) -f(a+\Delta x, b) + f(a,b)}{\Delta x} \\
+= g'(c)
+= (f'_x(a+c, b+\Delta y) - f'_x(a+c,b)),
+\end{gathered}
+$$
+
+de manera que, sustituyendo en la expresión anterior, se tiene
+
+\begin{align*}
+\frac{\partial^2 f}{\partial x \partial y} (a,b)
+&= \lim_{\Delta x\to 0}\lim_{\Delta y\to 0} \frac{f'_x(a+c, b+\Delta y) - f'_x(a+c,b)}{\Delta y} \\
+&= \lim_{\Delta x\to 0}\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)(a+c, b) \\
+&= \lim_{\Delta x\to 0}\frac{\partial^2 f}{\partial y\partial x}(a+c, b).
+\end{align*}
+
+Finalmente, como $\Delta x \to 0$, $c\to 0$, y como $\frac{\partial^2 f}{\partial y\partial x}$ es continua, se concluye que 
+
+$$
+\frac{\partial^2 f}{\partial x \partial y} (a,b) = \frac{\partial^2 f}{\partial y \partial x} (a,b).
+$$
+:::
+:::
+
 ## Matriz hessiana
 
 :::{#def-matriz-hessiana}
@@ -1280,6 +1320,172 @@ $$
 Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, *¡el orden en que se realicen las derivadas parciales no importa!*
 
 Si el teorema se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica.
+
+## Extremos
+
+:::{#def-extremos-relativos}
+## Máximo y mínimo relativos
+Dada una función de $n$ variables $f:\mathbb{R}^n\to \mathbb{R}$, se dice que un punto $P$ es un _máximo relativo_ de $f$ si existe un valor $\epsilon>0$ tal que
+
+$$
+f(P)\geq f(Q)\ \forall Q, |\vec{PQ}|<\epsilon.
+$$
+
+Del mismo modo se dice que un punto $P$ es un _mínimo relativo_ de $f$ si existe un valor $\epsilon>0$ tal que
+
+$$
+f(P)\leq f(Q)\ \forall Q, |\vec{PQ}|<\epsilon.
+$$
+
+A los máximos y mínimos de $f$ se les conoce como _extremos relativos_ de $f$.
+:::
+
+Para determinar los extremos de una función de varias variables utilizaremos sus derivadas, de forma parecida a como lo hicimos para funciones de una variable.
+
+:::{#prp-anulacion-gradiente-extremo}
+Si $f:\mathbb{R}^n\to \mathbb{R}$ es una función de $n$ variables, con derivadas parciales, que tiene un extremo relativo en el punto $P$, entonces 
+
+$$
+\nabla f(P) = \mathbf{0}.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Tomando la trayectoria que pasa por $P$ con la dirección y sentido del gradiente, 
+
+$$
+g(t)=P+t\nabla f(P),
+$$ 
+
+la función $h=(f\circ g)(t)$ nunca decrece ya que
+
+$$
+h'(t)
+= (f\circ g)'(t) 
+= \nabla f(g(t))\cdot g'(t) 
+= \nabla f(P)\cdot \nabla f(P) = 
+|\nabla f(P)|^2\geq 0.
+$$
+
+y sólo se anula si $\nabla f(P)= \mathbf{0}$.
+
+Así pues, si $\nabla f(P)\neq \mathbf{0}$, entonces $P$ no puede ser un máximo ya que siguiendo la trayectoria de $g$ desde $P$ se encontrarían puntos en los que la imagen de $f$ es mayor que en $P$. Del mismo modo, siguiendo la trayectoria opuesta a $g$ se encontrarían puntos en los que la imagen de $f$ es menor que la imagen en $P$, por lo que tampoco puede ser un mínimo.
+:::
+:::
+
+A los puntos donde se anula el vector gradiente, se les denomina _puntos críticos_.
+
+:::{#exm-extremos-relativos}
+Para el campo escalar $f(x,y)=x^2+y^2$, resulta evidente que sólo tiene un mínimo en el origen $(0,0)$ ya que
+
+$$
+f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
+$$
+
+En este punto se cumple, $\nabla f(0,0) = (0,0)$.
+:::
+
+### Puntos de silla
+
+No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar $f(x,y)=x^2-y^2$, su gradiente es
+
+$$\nabla f(x,y) = (2x,-2y),$$
+
+que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un máximo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0)=x^2\geq 0=f(0,0)$, y tampoco es un mínimo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)=-y^2\leq 0=f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como _puntos de silla_.
+
+<!-- :::{.content-visible when-format="html"}
+![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.pdf)
+::: -->
+
+### Determinación de los extremos de un campo escalar
+
+De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
+
+$$f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
+
+De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=0$, se tiene que
+
+$$f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
+
+Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $Hf(P)\mathbf{v}\cdot\mathbf{v}$.
+
+Se pueden dar cuatro posibilidades:
+
+- Definido positivo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ $\forall \mathbf{v}\neq 0$.
+- Definido negativo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}<0$ $\forall \mathbf{v}\neq 0$.
+- Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
+- Semidefinido: Cualquier otro caso distinto de los anteriores.
+
+Así pues, dependiendo el signo de $Hf(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
+
+:::{#thm-extremos-funcion-varias-variables} 
+Dado un punto crítico $P$ de una función de $n$ variables $f$ que tiene matriz hessiana $\nabla f(P)$, se cumple
+
+- Si $\nabla^2f(P)$ es definido positivo entonces $f$ tiene un _mínimo relativo_ en $P$.
+- Si $\nabla^2f(P)$ es definido negativo entonces $f$ tiene un _máximo relativo_ en $P$.
+- Si $\nabla^2f(P)$ es indefinido entonces $f$ tiene un _punto de silla_ en $P$.
+
+En el caso de que $\nabla^2f(P)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivadas parciales de orden superior.
+:::
+
+En el caso particular de una función de dos variables se tiene
+
+:::{#thm-extremos-funcion-dos-variables}
+Dado un punto crítico $(a, b)$ de una función de dos variables $f(x,y)$ que tiene matriz hessiana $\nabla^2f(a,b)$, se cumple
+
+- Si $|\nabla^2 f(a,b)|>0$ y $\frac{\partial^2 f}{\partial x^2}(a,b)>0$ entonces $f$ tiene un _mínimo relativo_ en $(a,b)$.
+- Si $|\nabla^2 f(a,b)|>0$ y $\frac{\partial^2 f}{\partial x^2}(a,b)<0$ entonces $f$ tiene un _máximo relativo_ en $(a,b)$.
+- Si $|\nabla^2 f(P)|<0$ entonces $f$ tiene un _punto de silla_ en $(a,b)$.
+:::
+
+:::{#exm-extremos-relativos-2}
+Dada el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
+
+$$
+\nabla f(x,y)= (x^2-1,-y^2+1),
+$$
+
+que se anula en los puntos $(1,1)$, $(1,-1)$, $(-1,1)$ y $(-1,-1)$.
+
+La matriz hessiana vale
+
+$$
+\nabla^2f(x,y) = \left(
+\begin{array}{cc}
+2x & 0\\
+0 & -2y
+\end{array}
+\right)
+$$
+
+y el hessiano vale
+
+$$
+|\nabla^2 f(x,y)| = -4xy.
+$$
+
+Así pues, se tiene
+
+- Punto $(1,1)$: $|\nabla^2 f(1,1)| = -4 < 0 \Rightarrow$ Punto de silla.
+- Punto $(1,-1)$: $|\nabla^2 f(1,-1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(1,-1)=2>0 \Rightarrow$ Mínimo relativo.
+- Punto $(-1,1)$: $|\nabla^2 f(-1,1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
+- Punto $(-1,-1)$: $|\nabla^2 f(-1,-1)|=-4<0 \Rightarrow$ Punto de silla.
+
+<!-- :::{.content-visible when-format="html"}
+![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.pdf)
+::: -->
+:::
+
 
 ## Polinomios de Taylor de funciones de varias variables
 
@@ -1409,138 +1615,3 @@ $$
 
 Así, $$f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$$.
 :::
-
-## Extremos
-
-:::{#def-extremos-relativos}
-## Máximo y mínimo relativos
-Dado un campo escalar $f$ de $\mathbb{R}^n$, se dice que un punto $P$ es un *máximo relativo* de $f$ si existe un valor $\epsilon>0$ tal que
-
-$$f(P)\geq f(X)\ \forall X, |\vec{PX}|<\epsilon.$$
-
-Del mismo modo se dice que un punto $P$ es un *mínimo relativo* de $f$ si existe un valor $\epsilon>0$ tal que
-
-$$f(P)\leq f(X)\ \forall X, |\vec{PX}|<\epsilon.$$
-
-A los máximos y mínimos de $f$ se les conoce como *extremos relativos* de $f$.
-:::
-
-### Anulación del gradiente en los extremos
-
-Si $P$ es un extremo de un campo escalar $f$ de $\mathbb{R}^n$, entonces $P$ es un punto crítico de $f$, es decir,
-
-$$\nabla f(P) = 0.$$
-
-Tomando la trayectoria que pasa por $P$ con la dirección y sentido del gradiente, $$g(t)=P+t\nabla f(P),$$ la función $h=(f\circ g)(t)$ nunca decrece ya que
-
-$$h'(t)= (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = \nabla f(P)\cdot \nabla f(P) = |\nabla f(P)|^2\geq 0.$$
-
-y sólo se anula si $\nabla f(P)=0$.
-
-Así pues, si $\nabla f(P)\neq 0$, entonces $P$ no puede ser un máximo ya que siguiendo la trayectoria de $g$ desde $P$ se encontrarían puntos en los que la imagen de $f$ es mayor que en $P$. Del mismo modo, siguiendo la trayectoria opuesta a $g$ se encontrarían puntos en los que la imagen de $f$ es menor que la imagen en $P$, por lo que tampoco puede ser un mínimo.
-
-:::{#exm-extremos-relativos}
-Para el campo escalar $f(x,y)=x^2+y^2$, resulta evidente que sólo tiene un mínimo en el origen $(0,0)$ ya que
-
-$$f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.$$
-
-En este punto se cumple, $\nabla f(0,0) = 0$.
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica del mínimo relativo de un paraboloide](img/derivadas-funciones-varias-variables/minimo_paraboloide.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica del mínimo relativo de un paraboloide](img/derivadas-funciones-varias-variables/minimo_paraboloide.pdf)
-::: -->
-:::
-
-### Puntos de silla
-
-No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar $f(x,y)=x^2-y^2$, su gradiente es
-
-$$\nabla f(x,y) = (2x,-2y),$$
-
-que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un máximo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0)=x^2\geq 0=f(0,0)$, y tampoco es un mínimo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)=-y^2\leq 0=f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como *puntos de silla*.
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.pdf)
-::: -->
-
-### Determinación de los extremos de un campo escalar
-
-De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
-
-$$f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
-
-De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=0$, se tiene que
-
-$$f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
-
-Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $Hf(P)\mathbf{v}\cdot\mathbf{v}$.
-
-Se pueden dar cuatro posibilidades:
-
-- Definido positivo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ $\forall \mathbf{v}\neq 0$.
-- Definido negativo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}<0$ $\forall \mathbf{v}\neq 0$.
-- Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
-- Semidefinido: Cualquier otro caso distinto de los anteriores.
-
-Así pues, dependiendo el signo de $Hf(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
-
->**Teorema**. Dado un punto crítico $P$ de un campo escalar $f$ que tiene matríz hessiana $Hf(P)$, se cumple
-
-- Si $\nabla^2f(P)$ es definido positivo entonces $f$ tiene un *mínimo relativo* en $P$.
-- Si $\nabla^2f(P)$ es definido negativo entonces $f$ tiene un *máximo relativo* en $P$.
-- Si $\nabla^2f(P)$ es indefinido entonces $f$ tiene un *punto de silla* en $P$.
-
-En el caso de que $\nabla^2f(P)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivadas parciales de orden superior.
-
-En el caso particular de un campo escalar de dos variables se tiene
-
->**Teorema**. Dado un punto crítico $P=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matríz hessiana $\nabla^2f(P)$, se cumple
-
-- Si $Hf(P)>0$ y $\frac{\partial^2 f}{\partial x^2}(x_0,y_0)>0$ entonces $f$ tiene un *mínimo relativo* en $P$.
-- Si $Hf(P)>0$ y $\frac{\partial^2 f}{\partial x^2}(x_0,y_0)<0$ entonces $f$ tiene un *máximo relativo* en $P$.
-- Si $Hf(P)<0$ entonces $f$ tiene un *punto de silla* en $P$.
-
-:::{#exm-extremos-relativos-2}
-Dada el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
-
-$$\nabla f(x,y)= (x^2-1,-y^2+1),$$
-
-que se anula en los puntos $(1,1)$, $(1,-1)$, $(-1,1)$ y $(-1,-1)$.
-
-La matriz hessiana vale
-
-$$\nabla^2f(x,y) = \left(
-\begin{array}{cc}
-2x & 0\\
-0 & -2y
-\end{array}
-\right)$$
-
-y el hessiano vale
-
-$$Hf(x,y) = -4xy.$$
-
-Así pues, se tiene
-
-- Punto $(1,1)$: $Hf(1,1)=-4<0 \Rightarrow$ Punto de silla.
-- Punto $(1,-1)$: $Hf(1,-1)=4>0$ y $\frac{\partial^2}{\partial x^2}(1,-1)=2>0 \Rightarrow$ Mínimo relativo.
-- Punto $(-1,1)$: $Hf(-1,1)=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
-- Punto $(-1,-1)$: $Hf(-1,-1)=-4<0 \Rightarrow$ Punto de silla.
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.pdf)
-::: -->
-:::
-
