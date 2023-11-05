@@ -1389,11 +1389,27 @@ En este punto se cumple, $\nabla f(0,0) = (0,0)$.
 
 ### Puntos de silla
 
-No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar $f(x,y)=x^2-y^2$, su gradiente es
+No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar $f(x,y)=y^2-x^2$, su gradiente es
 
-$$\nabla f(x,y) = (2x,-2y),$$
+$$\nabla f(x,y) = (2y,-2x),$$
 
-que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un máximo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0)=x^2\geq 0=f(0,0)$, y tampoco es un mínimo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)=-y^2\leq 0=f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como _puntos de silla_.
+que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un mínimo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0) = -x^2 \leq 0 = f(0,0)$, y tampoco es un máximo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)= y^2 \geq 0 = f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como _puntos de silla_.
+
+```{julia}
+#| fig-cap: "Punto de silla de la función $f(x,y)=y^2-x^2$."
+using GLMakie
+myblue = RGBf(0.067,0.529,0.871)
+myred = RGBf(1.0, 0.13, 0.32)
+fig = Figure(backgroudcolor = :transparent)
+ax = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, elevation = pi/12, aspect = (1,1,1))
+xs = ys = range(-2, 2, 100)
+f(x, y) = y^2 - x^2
+surface!(ax, xs, ys, f.(xs, ys'))
+scatter!(ax, Point3(0,0,0), color = myred, markersize = 16)
+text!(ax, -1.2, -2, 4, text = L"$f(x,y)=y^2-x^2$", color = myblue, fontsize = 20)
+text!(ax, 0, 0, 0.5, text = "Punto de silla", color = myred, fontsize = 20)
+fig
+```
 
 <!-- :::{.content-visible when-format="html"}
 ![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.png)
@@ -1402,8 +1418,6 @@ que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un máximo
 :::{.content-visible unless-format="html"}
 ![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.pdf)
 ::: -->
-
-### Determinación de los extremos de un campo escalar
 
 De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
 
@@ -1445,7 +1459,7 @@ Dado un punto crítico $(a, b)$ de una función de dos variables $f(x,y)$ que ti
 :::
 
 :::{#exm-extremos-relativos-2}
-Dada el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
+Dado el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
 
 $$
 \nabla f(x,y)= (x^2-1,-y^2+1),
@@ -1476,6 +1490,23 @@ Así pues, se tiene
 - Punto $(1,-1)$: $|\nabla^2 f(1,-1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(1,-1)=2>0 \Rightarrow$ Mínimo relativo.
 - Punto $(-1,1)$: $|\nabla^2 f(-1,1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
 - Punto $(-1,-1)$: $|\nabla^2 f(-1,-1)|=-4<0 \Rightarrow$ Punto de silla.
+
+```{julia}
+#| fig-cap: "Extremos de la función $f(x,y)=\\frac{x^3}{3}-\\frac{y^3}{3}-x+y$."
+using GLMakie
+myblue = RGBf(0.067,0.529,0.871)
+myred = RGBf(1.0, 0.13, 0.32)
+fig = Figure(backgroudcolor = :transparent)
+ax = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, elevation = pi/12, aspect = (1,1,1))
+xs = ys = range(-2, 2, 100)
+f(x, y) = x^3/3 - y^3/3 - x + y 
+surface!(ax, xs, ys, f.(xs, ys'))
+points = Point3.([-1,-1,1,1], [-1, 1, -1, 1], [0, 4/3, -4/3, 0])
+scatter!(ax, points, color = myred, markersize = 16)
+text!(ax, -1.2, -2, 2, text = L"$f(x,y)=\frac{x^3}{3}-\frac{y^3}{3}-x+y$", color = myblue, fontsize = 20)
+text!(ax, [-1,-1,1,1], [-1, 1, -1, 1], [0, 4/3, -4/3, 0] .+ 0.1, text = ["Punto de silla", "Máximo", "Mínimo", "Punto de silla"], color = myred, fontsize = 20)
+fig
+```
 
 <!-- :::{.content-visible when-format="html"}
 ![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.png)
