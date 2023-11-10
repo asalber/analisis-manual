@@ -118,22 +118,14 @@ que es la circunferencia del plano real centrada en el origen y de radio $\sqrt{
 :::{#exm-curvas-nivel}
 La siguiente gráfica representa algunas de las curvas de nivel de la función $f(x,y) = y^2-x^2$. 
 
-```{julia}
-#| fig-cap: "Gráfica y curvas de nivel de la función $f(x,y)=y^2-x^2$."
-using CairoMakie
-myblue = RGBf(0.067,0.529,0.871)
-f(x,y) = y^2-x^2
-xs = ys = range(-2, 2; length=100)
-zs = f.(xs, ys')
-fig = Figure(backgroundcolor=:transparent)
-ax1 = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, aspect = (1,1,1))
-surface!(ax1, xs, ys, zs)
-text!(ax1, -1.2, -2, 4, text = L"$f(x,y)=y^2-x^2$", color = myblue, fontsize = 20)
-ax2 = Axis(fig[1,2], xlabel = L"$x$", ylabel = L"$y$", aspect = 1)
-contour!(ax2, xs, ys, zs; labels = true, levels = -4:0.5:4, colormap=:hsv)
-fig
-```
+::: {.content-visible when-format="html"}
+![Gráfica y curvas de nivel de la función $f(x,y) = y^2-x^2$.](./img/derivadas-funciones-varias-variables/curvas-nivel.svg)
 :::
+
+:::{.content-visible unless-format="html"}
+![Gráfica y curvas de nivel de la función $f(x,y) = y^2-x^2$.](./img/derivadas-funciones-varias-variables/curvas-nivel.pdf)
+:::
+
 
 Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los mapas topográficos, donde cada curva representa los puntos que están a la misma altura sobre el nivel del mar, o en los mapas meteorológicos, donde cada curva representa los puntos con la misma presión atmosférica.
 
@@ -266,18 +258,13 @@ $$
 
 Por consiguiente, no existe el límite de $f$ en $(0,0)$.
 
-```{julia}
-#| label: fig-no-existencia-limite-2
-#| fig-cap: "Función de dos variables sin límite en $(0,0)$."
-using CairoMakie
-f(x,y) = x^2*y/(x^4+y^2)
-xs = ys = range(-2, 2; length=100)
-zs = f.(xs, ys')
-fig = Figure(backgroundcolor=:transparent)
-ax = Axis3(fig[1,1])
-surface!(ax, xs, ys, zs)
-fig
-```
+::: {.content-visible when-format="html"}
+![Función de dos variables sin límite en $(0,0)$.](./img/derivadas-funciones-varias-variables/no-existencia-limite.svg){#fig-no-existencia-limite-2}
+:::
+
+:::{.content-visible unless-format="html"}
+![Función de dos variables sin límite en $(0,0)$.](./img/derivadas-funciones-varias-variables/no-existencia-limite.pdf){#fig-no-existencia-limite-2}
+:::
 :::
 
 Afortunadamente, el álgebra de límites visto en la @prp-limite-suma-resta-producto-cociente-funciones también es válido para funciones de varias variables. 
@@ -389,55 +376,21 @@ $$
 
 Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=b$ (es decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto $(a,b)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(a,b)$.
 
-```{julia}
-#| fig-cap: "Derivada parcial con respecto a $x$."
-using GLMakie
-GLMakie.activate!()
-myblue = RGBf(0.067,0.529,0.871)
-xs = ys = range(-2, 2, 100)
-f(x, y) = 2 - x^2 - y^2
-fig = Figure(backgroundcolor=:transparent)
-ax = Axis3(fig[1,1], azimuth= pi/4, xticks = ([1], [L"$a$"]), yticks = ([1], [L"$b$"]), zticklabelsvisible = false)
-surface!(ax, xs, ys, f.(xs, ys'))
-p1(x, y) = 1
-idx(x, y) = x
-zs = range(-6, 2, 100)
-xss = idx.(xs, ys')
-yss = idx.(zs', xs)
-surface!(ax, xss, p1.(xs, ys'), yss; colormap = ["magenta"], alpha = 0.5, transparency = true)
-ts = range(-1, 1, 2)
-l(t) = [1+t, 1, -2t] 
-points = Point3.(l.(ts))
-lines!(ax, points, color = :red)
-scatter!(ax, Point3(1, 1, 0))
-text!(ax, 0, 0, 3, text = L"$\frac{\partial f}{\partial x}(a,b)", color = myblue, fontsize = 20)
-fig
-```
+::: {.content-visible when-format="html"}
+![Derivada parcial con respecto a $x$.](./img/derivadas-funciones-varias-variables/derivada-parcial-x.png)
+:::
 
-```{julia}
-#| fig-cap: "Derivada parcial con respecto a $u$."
-using GLMakie
-GLMakie.activate!()
-myblue = RGBf(0.067,0.529,0.871)
-xs = ys = range(-2, 2, 100)
-f(x, y) = 2 - x^2 - y^2
-fig = Figure(backgroundcolor=:transparent)
-ax = Axis3(fig[1,1], azimuth= pi/4, xticks = ([1], [L"$a$"]), yticks = ([1], [L"$b$"]), zticklabelsvisible = false)
-surface!(ax, xs, ys, f.(xs, ys'))
-p1(x, y) = 1
-idx(x, y) = x
-zs = range(-6, 2, 100)
-xss = idx.(xs, ys')
-yss = idx.(zs', xs)
-surface!(ax, p1.(xs, ys'), xss, yss; colormap = ["magenta"], alpha = 0.5, transparency = true)
-ts = range(-1, 1, 2)
-l(t) = [1, 1+t, -2t] 
-points = Point3.(l.(ts))
-lines!(ax, points, color = :red)
-scatter!(ax, Point3(1, 1, 0))
-text!(ax, 0, 0, 3, text = L"$\frac{\partial f}{\partial y}(a,b)", color = myblue, fontsize = 20)
-fig
-```
+:::{.content-visible unless-format="html"}
+![Derivada parcial con respecto a $x$.](./img/derivadas-funciones-varias-variables/derivada-parcial-x.png)
+:::
+
+::: {.content-visible when-format="html"}
+![Derivada parcial con respecto a $y$.](./img/derivadas-funciones-varias-variables/derivada-parcial-y.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Derivada parcial con respecto a $y$.](./img/derivadas-funciones-varias-variables/derivada-parcial-y.png)
+:::
 
 [![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/classic/ywur7vzr)
 
@@ -590,25 +543,13 @@ z
 &= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
 \end{align*}
 
-```{julia}
-#| fig-cap: "Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$."  
-using GLMakie
-myblue = RGBf(0.067,0.529,0.871)
-xs = ys = range(-2, 2, 100)
-f(x, y) = x^2 + y^2
-fig = Figure(backgroundcolor=:transparent)
-ax = Axis3(fig[1,1], azimuth= pi/12, aspect = (1, 1, 1))
-surface!(ax, xs, ys, f.(xs, ys'))
-xs = ys = range(0, 2, 2)
-pn(x, y) = 2x + 2y - 2
-surface!(ax, xs, ys, pn.(xs, ys'); colormap = ["magenta"], alpha = 0.5, transparency = true)
-ts = range(-1, 1, 2)
-tg(t) = [1+2t, 1+2t, 2-t]
-points = Point3.(tg.(ts))
-lines!(ax, points)
-scatter!(ax, Point3(1, 1, 2); color = :red)
-fig
-```
+::: {.content-visible when-format="html"}
+![Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$.](./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$.](./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png)
+:::
 :::
 
 :::{.callout-warning}
@@ -1395,39 +1336,27 @@ $$\nabla f(x,y) = (2y,-2x),$$
 
 que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un mínimo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0) = -x^2 \leq 0 = f(0,0)$, y tampoco es un máximo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)= y^2 \geq 0 = f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como _puntos de silla_.
 
-```{julia}
-#| fig-cap: "Punto de silla de la función $f(x,y)=y^2-x^2$."
-using GLMakie
-myblue = RGBf(0.067,0.529,0.871)
-myred = RGBf(1.0, 0.13, 0.32)
-fig = Figure(backgroudcolor = :transparent)
-ax = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, elevation = pi/12, aspect = (1,1,1))
-xs = ys = range(-2, 2, 100)
-f(x, y) = y^2 - x^2
-surface!(ax, xs, ys, f.(xs, ys'))
-scatter!(ax, Point3(0,0,0), color = myred, markersize = 16)
-text!(ax, -1.2, -2, 4, text = L"$f(x,y)=y^2-x^2$", color = myblue, fontsize = 20)
-text!(ax, 0, 0, 0.5, text = "Punto de silla", color = myred, fontsize = 20)
-fig
-```
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.png)
+:::{.content-visible when-format="html"}
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/punto-silla.svg)
 :::
 
 :::{.content-visible unless-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.pdf)
-::: -->
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/punto-silla.pdf)
+:::
 
 De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
 
-$$f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
+$$
+f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+$$
 
-De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=0$, se tiene que
+De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=\mathbf{0}$, se tiene que
 
-$$f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.$$
+$$
+f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+$$
 
-Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $Hf(P)\mathbf{v}\cdot\mathbf{v}$.
+Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}$.
 
 Se pueden dar cuatro posibilidades:
 
@@ -1436,10 +1365,10 @@ Se pueden dar cuatro posibilidades:
 - Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
 - Semidefinido: Cualquier otro caso distinto de los anteriores.
 
-Así pues, dependiendo el signo de $Hf(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
+Así pues, dependiendo el signo de $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
 
 :::{#thm-extremos-funcion-varias-variables} 
-Dado un punto crítico $P$ de una función de $n$ variables $f$ que tiene matriz hessiana $\nabla f(P)$, se cumple
+Dado un punto crítico $P$ de una función de $n$ variables $f$ que tiene matriz hessiana $\nabla^2 f(P)$, se cumple
 
 - Si $\nabla^2f(P)$ es definido positivo entonces $f$ tiene un _mínimo relativo_ en $P$.
 - Si $\nabla^2f(P)$ es definido negativo entonces $f$ tiene un _máximo relativo_ en $P$.
@@ -1456,6 +1385,46 @@ Dado un punto crítico $(a, b)$ de una función de dos variables $f(x,y)$ que ti
 - Si $|\nabla^2 f(a,b)|>0$ y $\frac{\partial^2 f}{\partial x^2}(a,b)>0$ entonces $f$ tiene un _mínimo relativo_ en $(a,b)$.
 - Si $|\nabla^2 f(a,b)|>0$ y $\frac{\partial^2 f}{\partial x^2}(a,b)<0$ entonces $f$ tiene un _máximo relativo_ en $(a,b)$.
 - Si $|\nabla^2 f(P)|<0$ entonces $f$ tiene un _punto de silla_ en $(a,b)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Tomando un vector unitario cualquiera $\mathbf{u}=(u_x,u_y)$, la derivada direccional de $f$ en $(a,b)$ es 
+
+$$
+f'_u(a,b) 
+= \nabla f(a,b)\mathbf{u}
+= f'_x(a,b)u_x + f'_y(a,b) u_y.
+$$
+
+Y la derivada direccional de segundo orden es
+
+\begin{align*}
+f''_{uu}(a,b) 
+&= f'_u(f'_u)(a,b)
+= \nabla (f'_u)(a,b)\mathbf{u} 
+= (f'_u)'_x(a,b)u_x + (f'_u)'_y(a,b) u_y \\
+&= (f'_x u_x + f'_y u_y)'_x(a,b)u_x + (f'_x u_x + f'_y u_y.)'_y(a,b) u_y \\
+&= f''_{xx}(a,b)u_x^2 + f''_{yx}(a,b)u_yu_x + f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \\
+&= f''_{xx}(a,b)u_x^2 + 2f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \tag{1}
+\end{align*}
+(1) Aplicando el teorema de la igualdad de las derivadas cruzadas.
+
+Completando el cuadrado de esta última expresión se tiene que 
+
+\begin{align*}
+f''_{uu}(a,b) 
+&= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}(f''_{xx}(a,b)f''_{yy}(a,b)-f''_{xy}(a,b)^2) \\
+&= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}|\nabla^2 f(a,b)|
+\end{align*}
+
+Si $|\nabla ^2f(a,b)|>0$ y $f''_{xx}(a,b)>0$, como $\nabla ^2f(x,y)$ y $f''_{xx}(x,y)$ son continuas en un entorno de $(a,b)$, se tiene que $|\nabla ^2f(x,y)>0$ y $f''_{xx}(x,y)>0$ para $(x,y)$ en un entorno de $(a,b)$. Por tanto, observando la expresión anterior, podemos concluir que $f''_{uu}(x,y)>0$ en un entorno de $(a,b)$, es decir, la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ es cóncava hacia arriba. Como esto esto es cierto para cualquier dirección $\mathbf{u}$, la gráfica de $f$ queda por encima del plano tangente en $(a,b,f(a,b))$ en un entorno de $(a,b)$, y por tanto, $f$ tienen un mínimo local en $(a,b)$.
+
+Del mismo modo, $|\nabla ^2f(a,b)|>0$ y $f''_{xx}(a,b)<0$, podemos concluir que $f''_{uu}(x,y)<0$ en un entorno de $(a,b)$, es decir, la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ es cóncava hacia abajo. Como esto esto es cierto para cualquier dirección $\mathbf{u}$, la gráfica de $f$ queda por debajo del plano tangente en $(a,b,f(a,b))$ en un entorno de $(a,b)$, y por tanto, $f$ tienen un máximo local en $(a,b)$.
+
+Finalmente, si $|\nabla ^2f(a,b)<0$ los dos sumandos de la expresión de la derivada direccional de segundo orden anterior tienen signo distinto, y el signo de la derivada direccional dependerá de la dirección del vector $\mathbf{u}$, por lo que puede haber direcciones donde $f''_{uu}(x,y)>0$ y la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ sea cóncava hacia arriba, y direcciones donde $f''_{uu}(x,y)<0$ y la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ sea cóncava hacia abajo, de manera que $f$ tiene un punto de silla en $(a,b)$.
+:::
 :::
 
 :::{#exm-extremos-relativos-2}
@@ -1491,140 +1460,186 @@ Así pues, se tiene
 - Punto $(-1,1)$: $|\nabla^2 f(-1,1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
 - Punto $(-1,-1)$: $|\nabla^2 f(-1,-1)|=-4<0 \Rightarrow$ Punto de silla.
 
-```{julia}
-#| fig-cap: "Extremos de la función $f(x,y)=\\frac{x^3}{3}-\\frac{y^3}{3}-x+y$."
-using GLMakie
-myblue = RGBf(0.067,0.529,0.871)
-myred = RGBf(1.0, 0.13, 0.32)
-fig = Figure(backgroudcolor = :transparent)
-ax = Axis3(fig[1,1], xlabel = L"$x$", ylabel = L"$y$", zlabel = L"$z$", azimuth = -pi/6, elevation = pi/12, aspect = (1,1,1))
-xs = ys = range(-2, 2, 100)
-f(x, y) = x^3/3 - y^3/3 - x + y 
-surface!(ax, xs, ys, f.(xs, ys'))
-points = Point3.([-1,-1,1,1], [-1, 1, -1, 1], [0, 4/3, -4/3, 0])
-scatter!(ax, points, color = myred, markersize = 16)
-text!(ax, -1.2, -2, 2, text = L"$f(x,y)=\frac{x^3}{3}-\frac{y^3}{3}-x+y$", color = myblue, fontsize = 20)
-text!(ax, [-1,-1,1,1], [-1, 1, -1, 1], [0, 4/3, -4/3, 0] .+ 0.1, text = ["Punto de silla", "Máximo", "Mínimo", "Punto de silla"], color = myred, fontsize = 20)
-fig
-```
-
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.png)
+:::{.content-visible when-format="html"}
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/extremos.svg)
 :::
 
 :::{.content-visible unless-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.pdf)
-::: -->
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/extremos.pdf)
+:::
 :::
 
+## Extremos condicionados
+
+En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función $f(x,y)$ para los puntos que cumplen la ecuación $g(x,y)=0$. Cuando es posible despejar una de las variables de la ecuación y expresarla como una función explícita de la otra, se puede sustituir esa variable en $f$ y obtener una función de una variable, de manera que se pueden obtener sus extremos como se vio en el capítulo de derivadas de funciones de una variable.
+
+:::{#exm-extremos-condicionados}
+Si consideramos la misma función del ejemplo anterior $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, para calcular sus extremos relativos sujetos a la restricción $y+2x=0$, podemos sustituir $y=-2x$ en la fórmula de la función y se obtiene 
+
+$$
+f(x,y) 
+= f(x,-2x) 
+= \frac{x^3}{3}-\frac{(-2x)^3}{3}-x-2x 
+= 3x^3-3x 
+$$ 
+
+que es, en realidad, una función de una variable $f(x)=3x^3-3x$. Si calculamos su derivada y la igualamos a 0, se obtienen los puntos críticos $f'(x) = 9x^2-3 = 0 \Leftrightarrow x=\pm\sqrt{1/3}$. Como la segunda derivada es $f''(x) = 18x$, se tiene que $f''(-\sqrt{1/3})<0$ por lo que la función tiene un máximo local en $-\sqrt{1/3}$, y $f''(\sqrt{1/3})>0$ por lo que la función tiene un mínimo local en $\sqrt{1/3}$.
+:::
+
+Ahora bien, cuando no es posible despejar una de las variables de la restricción $g(x,y)=0$, la cosa se complica. Afortunadamente, existe otro procedimiento para calcular los extremos de una función de varias variables sujeto a una o varias restricciones. A continuación explicamos el fundamento de este método para funciones de dos variables, aunque puede generalizarse para funciones de más de dos variables.
+
+## Multiplicadores de Lagrange
+
+Dada una función de dos variables $f(x,y)$, si se quieren obtener los extremos de esta función sujetos a la restricción $g(x,y)=0$, en realidad, se trata de encontrar los extremos relativos de $f$ entre los puntos $(x,y)$ que están en la curva de nivel $g(x,y)=0$. Si dibujamos en el plano la curva de nivel de la ecuación junto a las curvas de nivel de $f$, el problema se reduce a encontrar el menor y el mayor valor de $k$ para el que la curva de nivel $f(x,y)=k$ se corta con la curva de nivel $g(x,y)=0$. 
+
+:::{exm-curvas-nivel-restricciones}
+La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$ junto a la curva de nivel de la restricción $g(x,y)=y+2x=0$.
+
+:::{.content-visible when-format="html"}
+![Curvas de nivel con restricción.](img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png)
+:::
+
+:::{.content-visible unless-format="html"}
+![Curvas de nivel con restricción.](img/derivadas-funciones-varias-variables/multiplicadores-lagrange.pdf)
+:::
+
+Como se aprecia en la gráfica el mayor de la curva de nivel de $f$ que se corta con la recta $y+2x=0$ es aproximadamente $1.15$ y ocurre en el punto $(-\sqrt{1/3}, 2\sqrt{1/3})$, y el menor valor de la curva de nivel de $f$ que se corta con la recta es aproximadamente $-1.5$ y ocurre en el punto $(\sqrt{1/3}, -2\sqrt{1/3})$.
+:::
+
+En el ejemplo anterior se observa que los valores extremos se obtienen donde las curvas de nivel de la función y de la restricción son tangentes, y por tanto, sus vectores gradientes en los puntos de tangencia tendrán la misma dirección, es decir, si $(a,b)$ es un punto donde las curvas de nivel son tangentes, se tiene que
+
+$$
+\nabla f(a,b) = k \nabla g(a,b).
+$$
+
+Al número $k$ de esta ecuación se le llama _multiplicador de Lagrange_, y este resultado da lugar al siguiente procedimiento para obtener los extremos de una función de varias variables con restricciones.
+
+:::{#thm-multiplicadores-lagrange}
+## Multiplicadores de Lagrange
+Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, los extremos relativos de $f$ sujetos a la restricción $g(x_1,\ldots,x_n)=0$, son los puntos que cumplen las ecuaciones
+
+\begin{align*}
+\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n)\\
+g(x_1,\ldots, x_n) = 0
+\end{align*}
+:::
 
 ## Polinomios de Taylor de funciones de varias variables
 
+Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. Esto también se puede generalizar a la aproximación de funciones de varias variables mediante polinomios de varias variables.
+
 ### Aproximación lineal de una función de varias variables
 
-Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. Esto también se puede generalizar a la aproximación de campos escalares mediante polinomios de varias variables.
-
-Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la *fórmula de Taylor* de primer grado de $f$ alrededor del
+Si $P$ es un punto del dominio de una función de $n$ variables $f$ y $\mathbf{v}$ un vector en $\mathbb{R}^n$, la _fórmula de Taylor_ de primer grado de $f$ alrededor del
 punto $P$ es
 
-$$f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),$$
+$$
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
+$$
 
 donde
 
 $$
-\begin{aligned}
 P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
-\end{aligned}
 $$
 
-es el *polinomio de Taylor* de primer grado de $f$ en el punto $P$, y $R^1_{f,P}(\mathbf{v})$ es el *resto de taylor* para el vector $\mathbf{v}$, y mide el error cometido en la aproximación.
+es el _polinomio de Taylor_ de primer grado de $f$ en el punto $P$, y $R^1_{f,P}(\mathbf{v})$ es el _resto de taylor_ para el vector $\mathbf{v}$, y mide el error cometido en la aproximación.
 
 Se cumple que
 
-$$\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0$$
-
-Obsérvese que el polinomio de Taylor de primer grado coincide con el plano tangente a $f$ en $P$.
-
-Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
-
-$$\begin{aligned}
-P^1_{f,P}(x,y) &= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
-&= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
-\end{aligned}
 $$
+\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
+$$
+
+Para una función de dos variables $f(x,y)$ y $P=(a, b)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-a, y-b)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
+
+\begin{align*}
+P^1_{f,P}(x,y) &= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
+&= f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b),
+\end{align*}
+
+que coincide con el plano tangente a $f$ en $(a,b)$.
 
 :::{#exm-aproximacion-lineal-funcion-varias-variables}
 Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
 
-$$\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),$$
+$$
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+$$
 
 y el polinomio de Taylor de primer grado en el punto $P=(1,1)$ es
 
-$$
-\begin{aligned}
+\begin{align*}
 P^1_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
 &= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
-\end{aligned}
-$$
+\end{align*}
 
 Este polinomio, permite aproximar el valor de $f$ cerca del punto $P$.
 
 Por ejemplo
 
-$$f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.$$
+$$
+f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
+$$
 :::
 
 ### Aproximación cuadrática de una función de varias variables
 
-Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la *fórmula de Taylor* de segundo grado de $f$ alrededor del punto $P$ es
+Si $P$ es un punto del dominio de una función de $n$ variables $f$ y $\mathbf{v}$ un vector, la _fórmula de Taylor_ de segundo grado de $f$ alrededor del punto $P$ es
 
-$$f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),$$
+$$
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),
+$$
 
 donde
 
 $$
-\begin{aligned}
-P^2_{f,P}(\mathbf{v})&=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
-\end{aligned}
+P^2_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
 $$
 
-es el *polinomio de Taylor* de segundo grado de $f$ en el punto $P$, y $R^2_{f,P}(\mathbf{v})$ es el *resto de taylor* para el vector $\mathbf{v}$.
+es el _polinomio de Taylor_ de segundo grado de $f$ en el punto $P$, y $R^2_{f,P}(\mathbf{v})$ es el _resto de taylor_ para el vector $\mathbf{v}$.
 
 Se cumple que
 
-$$\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0$$
+$$
+\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0
+$$
 
-lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$.
+lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$, y por tanto, la aproximación cuadrática es mejor que la lineal.
 
-Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
+Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(a, b)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
 
 $$
 \begin{gathered}
-P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
-+\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
-= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
-+\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
+P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
++\frac{1}{2}(x-a,y-b)\nabla^2f(a,b)(x-a,y-b)= \\
+= f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b)+\\
++\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(a,b) (x-a)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(a,b) (x-a)(y-b) + \frac{\partial^2 f}{\partial y^2}(a,b) (y-b)^2\right)
 \end{gathered}
 $$
 
 :::{#exm-polinomio-taylor-funcion-varias-variables}
 Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
 
-$$\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),$$
+$$
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+$$
 
 y su matriz hessiana es
 
-$$Hf(x,y) = \left(
+$$
+\nabla ^2 f(x,y) 
+= \left(
 \begin{array}{cc}
 \frac{-1}{x^2} & 0\\
 0 & \frac{-1}{y^2}
 \end{array}
-\right)$$
-
-y el polinomio de Taylor de segundo grado en el punto $P=(1,1)$ es
-
+\right)
 $$
-\begin{aligned}
+
+Por tanto, el polinomio de Taylor de segundo grado en el punto $P=(1,1)$ es
+
+\begin{align*}
 P^2_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
 &= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
 \left(
@@ -1641,8 +1656,13 @@ y-1
 \right)
 = \\
 &= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
-\end{aligned}
+\end{align*}
+
+Y la aproximación cuadrática en el mismo punto de antes es
+
+$$
+f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199,
 $$
 
-Así, $$f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$$.
+que es mejor que la aproximación lineal.
 :::

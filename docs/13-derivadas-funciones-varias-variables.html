@@ -270,10 +270,12 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#puntos-de-silla" id="toc-puntos-de-silla" class="nav-link" data-scroll-target="#puntos-de-silla"><span class="header-section-number">12.13.1</span> Puntos de silla</a></li>
   </ul></li>
-  <li><a href="#polinomios-de-taylor-de-funciones-de-varias-variables" id="toc-polinomios-de-taylor-de-funciones-de-varias-variables" class="nav-link" data-scroll-target="#polinomios-de-taylor-de-funciones-de-varias-variables"><span class="header-section-number">12.14</span> Polinomios de Taylor de funciones de varias variables</a>
+  <li><a href="#extremos-condicionados" id="toc-extremos-condicionados" class="nav-link" data-scroll-target="#extremos-condicionados"><span class="header-section-number">12.14</span> Extremos condicionados</a></li>
+  <li><a href="#multiplicadores-de-lagrange" id="toc-multiplicadores-de-lagrange" class="nav-link" data-scroll-target="#multiplicadores-de-lagrange"><span class="header-section-number">12.15</span> Multiplicadores de Lagrange</a></li>
+  <li><a href="#polinomios-de-taylor-de-funciones-de-varias-variables" id="toc-polinomios-de-taylor-de-funciones-de-varias-variables" class="nav-link" data-scroll-target="#polinomios-de-taylor-de-funciones-de-varias-variables"><span class="header-section-number">12.16</span> Polinomios de Taylor de funciones de varias variables</a>
   <ul class="collapse">
-  <li><a href="#aproximación-lineal-de-una-función-de-varias-variables" id="toc-aproximación-lineal-de-una-función-de-varias-variables" class="nav-link" data-scroll-target="#aproximación-lineal-de-una-función-de-varias-variables"><span class="header-section-number">12.14.1</span> Aproximación lineal de una función de varias variables</a></li>
-  <li><a href="#aproximación-cuadrática-de-una-función-de-varias-variables" id="toc-aproximación-cuadrática-de-una-función-de-varias-variables" class="nav-link" data-scroll-target="#aproximación-cuadrática-de-una-función-de-varias-variables"><span class="header-section-number">12.14.2</span> Aproximación cuadrática de una función de varias variables</a></li>
+  <li><a href="#aproximación-lineal-de-una-función-de-varias-variables" id="toc-aproximación-lineal-de-una-función-de-varias-variables" class="nav-link" data-scroll-target="#aproximación-lineal-de-una-función-de-varias-variables"><span class="header-section-number">12.16.1</span> Aproximación lineal de una función de varias variables</a></li>
+  <li><a href="#aproximación-cuadrática-de-una-función-de-varias-variables" id="toc-aproximación-cuadrática-de-una-función-de-varias-variables" class="nav-link" data-scroll-target="#aproximación-cuadrática-de-una-función-de-varias-variables"><span class="header-section-number">12.16.2</span> Aproximación cuadrática de una función de varias variables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -378,18 +380,12 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </figure>
 </div>
 </div>
-<div id="exm-curvas-nivel" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.4 </strong></span>La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
-<div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<p>:::{#exm-curvas-nivel} La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica y curvas de nivel de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
+<p><img src="./img/derivadas-funciones-varias-variables/curvas-nivel.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Gráfica y curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 <p>Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los mapas topográficos, donde cada curva representa los puntos que están a la misma altura sobre el nivel del mar, o en los mapas meteorológicos, donde cada curva representa los puntos con la misma presión atmosférica.</p>
 <div class="quarto-layout-panel">
@@ -447,7 +443,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 \]</span></p>
 </div>
 <div id="exm-limite-funcion-dos-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.5 </strong></span>Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.4 </strong></span>Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
 <p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como</p>
 <p><span class="math display">\[\begin{align*}
 |f(x,y)-0|
@@ -465,7 +461,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <p>En el caso de una función de una variable <span class="math inline">\(f(x)\)</span>, vimos que para que existiese el límite de la función en el punto <span class="math inline">\(a\)</span>, bastaba con ver que existía el límite por la izquierda (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores menores que <span class="math inline">\(a\)</span>) y el límite por la derecha (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores mayores que <span class="math inline">\(a\)</span>) y que eran iguales. Sin embargo, para funciones de varias variables esto no es así, ya que para demostrar la existencia del límite es necesario probar que el límite existe cuando nos acercamos a <span class="math inline">\((x_0,\ldots,y_0)\)</span> por cualquier posible trayectoria en <span class="math inline">\(\mathbb{R}^n\)</span>, y todos los límites coinciden.</p>
 <div id="exm-no-existencia-limite" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.6 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.5 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 &amp;= \lim_{x\to 0} \frac{xmx}{x^2+(mx)^2}
@@ -489,7 +485,7 @@ Precaución
 </div>
 </div>
 <div id="exm-no-existencia-limite-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.7 </strong></span>Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.6 </strong></span>Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
 <p><span class="math display">\[
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 = \lim_{x\to 0} \frac{x(mx)^2}{x^2+(mx)^4}
@@ -504,20 +500,16 @@ Precaución
 = \frac{1}{2}.
 \]</span></p>
 <p>Por consiguiente, no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\((0,0)\)</span>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="3">
 <div id="fig-no-existencia-limite-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/fig-no-existencia-limite-2-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="./img/derivadas-funciones-varias-variables/no-existencia-limite.svg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inline">\((0,0)\)</span>.</figcaption>
 </figure>
 </div>
 </div>
-</div>
-</div>
 <p>Afortunadamente, el álgebra de límites visto en la <a href="06-limites.html#prp-limite-suma-resta-producto-cociente-funciones">Proposición&nbsp;<span>6.2</span></a> también es válido para funciones de varias variables.</p>
 <div id="exm-algebra-limites-funciones-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.8 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.7 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,y)\to(2,1)} f(x,y)
 &amp;= \lim_{(x,y)\to(2,1)} \frac{3xy^2}{x^2+y^3} \\
@@ -538,7 +530,7 @@ Precaución
 \]</span></p>
 </div>
 <div id="exr-funcion-varias-variables-discontinua" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 12.1 </strong></span>Hemos visto en el <a href="#exm-limite-funcion-dos-variables">Ejemplo&nbsp;<span>12.5</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
+<p><span class="theorem-title"><strong>Ejercicio 12.1 </strong></span>Hemos visto en el <a href="#exm-limite-funcion-dos-variables">Ejemplo&nbsp;<span>12.4</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
 </div>
 <section id="funciones-parciales" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="funciones-parciales"><span class="header-section-number">12.3.1</span> Funciones parciales</h3>
@@ -548,7 +540,7 @@ Precaución
 <p>con <span class="math inline">\(c_j\)</span> <span class="math inline">\((j=1,\ldots, n,\ j\neq i)\)</span> constantes.</p>
 </div>
 <div id="exm-funcion-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.9 </strong></span>Si consideramos la función del área de un triángulo</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.8 </strong></span>Si consideramos la función del área de un triángulo</p>
 <p><span class="math display">\[f(x,y)=\frac{xy}{2},\]</span></p>
 <p>y fijamos el valor de la base <span class="math inline">\(x=c\)</span>, entonces el área del triángulo ya sólo depende de la altura y <span class="math inline">\(f\)</span> se convierte en una función de una sola variable, que es la función parcial:</p>
 <p><span class="math display">\[
@@ -593,25 +585,17 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <section id="interpretación-geométrica-de-la-derivada-parcial" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="interpretación-geométrica-de-la-derivada-parcial"><span class="header-section-number">12.4.1</span> Interpretación geométrica de la derivada parcial</h3>
 <p>Geométricamente, <span class="math inline">\(z=f(x,y)\)</span> define una superficie. Si se corta esta superficie con el plano de ecuación <span class="math inline">\(y=b\)</span> (es decir, si <span class="math inline">\(y\)</span> se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto <span class="math inline">\((a,b)\)</span> es la derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="4">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="./img/derivadas-funciones-varias-variables/derivada-parcial-x.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Derivada parcial con respecto a <span class="math inline">\(x\)</span>.</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="5">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Derivada parcial con respecto a <span class="math inline">\(u\)</span>.</figcaption>
+<p><img src="./img/derivadas-funciones-varias-variables/derivada-parcial-y.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Derivada parcial con respecto a <span class="math inline">\(y\)</span>.</figcaption>
 </figure>
-</div>
-</div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -642,7 +626,7 @@ Regla
 </div>
 </div>
 <div id="exm-calculo-derivada-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.10 </strong></span>En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.9 </strong></span>En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
 <p><span class="math display">\[
 v(t,p)=\frac{nRt}{p},
 \]</span></p>
@@ -667,7 +651,7 @@ v(t,p)=\frac{nRt}{p},
 </div>
 <p>Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, <span class="math inline">\(\nabla f(a)\)</span> indica la dirección de máximo crecimiento de la función, mientras que <span class="math inline">\(-\nabla f(a)\)</span> indica la dirección de máximo decrecimiento.</p>
 <div id="exm-vector-gradiente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.11 </strong></span>Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.10 </strong></span>Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]</span></p>
@@ -725,7 +709,7 @@ z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)
 \]</span></p>
 </div>
 <div id="exm-recta-normal-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.12 </strong></span>La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.11 </strong></span>La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
 <p><span class="math display">\[
 \begin{gathered}
 (1,1,2)+ t \left(\frac{\partial f}{\partial x}(1,1), \frac{\partial f}{\partial y}(1,1), -1\right) \\
@@ -738,15 +722,11 @@ z
 &amp;= \frac{\partial f}{\partial x}(1,1)(x-1) + \frac{\partial f}{\partial y}(1,1)(y-1)+f(1,1) \\
 &amp;= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
 \end{align*}\]</span></p>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="6">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Recta normal y plano tangente a la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span>.</figcaption>
 </figure>
-</div>
-</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -763,7 +743,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-funcion-sin-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.13 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.12 </strong></span>La función</p>
 <p><span class="math display">\[
 f(x,y) =
 \begin{cases}
@@ -786,7 +766,7 @@ dy
 \]</span></p>
 </div>
 <div id="exm-diferencial-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.14 </strong></span>Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.13 </strong></span>Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
 <p><span class="math display">\[
 du
 = \nabla f(1, 1, 1)(dx, dy, dz)
@@ -818,7 +798,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \]</span></p>
 <p>Si se observa bien, el lado derecho de esta igualdad es la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>. De esta manera, si una <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span> podemos aproximar el valor de la función en cualquier punto <span class="math inline">\((x,y)\)</span> de un entorno de <span class="math inline">\((a,b)\)</span>, como el valor del plano tangente en ese punto. El error en la aproximación es <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> que tiende a <span class="math inline">\(0\)</span> cuando <span class="math inline">\((x,y)\)</span> se aproxima a <span class="math inline">\((a,b)\)</span>. Además, dado que <span class="math inline">\(\varepsilon_1\)</span> y <span class="math inline">\(\varepsilon_2 \to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, la cantidad <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> se aproxima a <span class="math inline">\(0\)</span> mucho más rápidamente que <span class="math inline">\(\Delta x\)</span> o <span class="math inline">\(\Delta y\)</span> se aproximan a <span class="math inline">\(0\)</span>, por lo que el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> dará muy buenas aproximaciones de <span class="math inline">\(f\)</span> en un entorno cercano de <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-funcion-dos-variables-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.15 </strong></span>Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 12.14 </strong></span>Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a+\Delta x, b+\Delta y) - f(a,b)
@@ -832,7 +812,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \Delta z = \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
 \]</span></p>
 <p>y, además <span class="math inline">\(\varepsilon_1\to 0\)</span> y <span class="math inline">\(\varepsilon_2\to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, por lo que la función <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span>.</p>
-<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente">Ejemplo&nbsp;<span>12.12</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
+<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente">Ejemplo&nbsp;<span>12.11</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
 <p><span class="math display">\[
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \]</span></p>
@@ -954,7 +934,7 @@ Demostración
 </div>
 </div>
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.16 </strong></span>Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.15 </strong></span>Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2xy, x^2),
 \]</span></p>
@@ -1006,7 +986,7 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 <h2 data-number="12.9" class="anchored" data-anchor-id="derivación-implícita"><span class="header-section-number">12.9</span> Derivación implícita</h2>
 <p>Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma <span class="math inline">\(F(x_1,\ldots,x_n, y)=0\)</span>, donde <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>.</p>
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.16 </strong></span>La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
 <p>El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.</p>
 <div id="thm-funcion-implicita" class="theorem">
@@ -1052,7 +1032,7 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.18 </strong></span>La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
 F(x,y) = x^2+y^2-1 = 0.
 \]</span></p>
@@ -1125,7 +1105,7 @@ g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
 </figure>
 </div>
 <div id="exm-derivada-direccional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.19 </strong></span>Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.18 </strong></span>Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2x,2y),
 \]</span></p>
@@ -1218,7 +1198,7 @@ Demostración
 P+t\nabla f(P) = (a, b) + t \nabla f(a,b).
 \]</span></p>
 <div id="exm-tangente-normal-funcion-implicita-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.20 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.19 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[
 P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 \]</span></p>
@@ -1243,7 +1223,7 @@ P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 </div>
 <p>De forma análoga se definen las derivadas de orden superior.</p>
 <div id="exm-derivadas-segundo-orden" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.21 </strong></span>La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.20 </strong></span>La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial^2 f}{\partial x^2}(x,y) &amp;=
 \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
@@ -1339,7 +1319,7 @@ Demostración
 <p>Al determinante de esta matriz se le llama <em>hessiano</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(Hf(a)=\lvert \nabla^2f(a)\rvert\)</span>.</p>
 </div>
 <div id="exm-matriz-hessiana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.22 </strong></span>Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.21 </strong></span>Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
 <p><span class="math display">\[\nabla^2f(x,y)=\left(
 \begin{array}{cc}
 \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x \partial y}\\
@@ -1433,7 +1413,7 @@ h'(t)
 </div>
 <p>A los puntos donde se anula el vector gradiente, se les denomina <em>puntos críticos</em>.</p>
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.23 </strong></span>Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.22 </strong></span>Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
 <p><span class="math display">\[
 f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 \]</span></p>
@@ -1444,28 +1424,21 @@ f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 <p>No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar <span class="math inline">\(f(x,y)=y^2-x^2\)</span>, su gradiente es</p>
 <p><span class="math display">\[\nabla f(x,y) = (2y,-2x),\]</span></p>
 <p>que sólo se anula en el punto <span class="math inline">\((0,0)\)</span>. Sin embargo, este punto no es un mínimo relativo ya que los puntos <span class="math inline">\((x,0)\)</span> del eje <span class="math inline">\(X\)</span> tienen imágenes <span class="math inline">\(f(x,0) = -x^2 \leq 0 = f(0,0)\)</span>, y tampoco es un máximo relativo ya que los puntos <span class="math inline">\((0,y)\)</span> del eje <span class="math inline">\(Y\)</span> tienen imágenes <span class="math inline">\(f(0,y)= y^2 \geq 0 = f(0,0)\)</span>. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como <em>puntos de silla</em>.</p>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="7">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="img/derivadas-funciones-varias-variables/punto-silla.svg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de un punto de silla](img/derivadas-funciones-varias-variables/punto_silla.pdf)
-::: -->
 <p>De la fórmula de Taylor de segundo grado para un campo escalar <span class="math inline">\(f\)</span> en un punto <span class="math inline">\(P\)</span> se deduce que</p>
-<p><span class="math display">\[f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.\]</span></p>
-<p>De manera que si <span class="math inline">\(P\)</span> es un punto crítico de <span class="math inline">\(f\)</span>, como <span class="math inline">\(\nabla f(P)=0\)</span>, se tiene que</p>
-<p><span class="math display">\[f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.\]</span></p>
-<p>Por tanto, el signo de <span class="math inline">\(f(P+\mathbf{v})-f(P)\)</span> coincide con el signo del término cuadrático <span class="math inline">\(Hf(P)\mathbf{v}\cdot\mathbf{v}\)</span>.</p>
+<p><span class="math display">\[
+f(P+\mathbf{v})-f(P)\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+\]</span></p>
+<p>De manera que si <span class="math inline">\(P\)</span> es un punto crítico de <span class="math inline">\(f\)</span>, como <span class="math inline">\(\nabla f(P)=\mathbf{0}\)</span>, se tiene que</p>
+<p><span class="math display">\[
+f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+\]</span></p>
+<p>Por tanto, el signo de <span class="math inline">\(f(P+\mathbf{v})-f(P)\)</span> coincide con el signo del término cuadrático <span class="math inline">\(\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}\)</span>.</p>
 <p>Se pueden dar cuatro posibilidades:</p>
 <ul>
 <li>Definido positivo: <span class="math inline">\(\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}&gt;0\)</span> <span class="math inline">\(\forall \mathbf{v}\neq 0\)</span>.</li>
@@ -1473,9 +1446,9 @@ f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 <li>Indefinido: <span class="math inline">\(\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}&gt;0\)</span> para algún <span class="math inline">\(\mathbf{v}\neq 0\)</span> y <span class="math inline">\(\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}&lt;0\)</span> para algún <span class="math inline">\(\mathbf{u}\neq 0\)</span>.</li>
 <li>Semidefinido: Cualquier otro caso distinto de los anteriores.</li>
 </ul>
-<p>Así pues, dependiendo el signo de <span class="math inline">\(Hf(P)\mathbf{v}\cdot\mathbf{v}\)</span>, se tiene</p>
+<p>Así pues, dependiendo el signo de <span class="math inline">\(\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}\)</span>, se tiene</p>
 <div id="thm-extremos-funcion-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.9 </strong></span>Dado un punto crítico <span class="math inline">\(P\)</span> de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla f(P)\)</span>, se cumple</p>
+<p><span class="theorem-title"><strong>Teorema 12.9 </strong></span>Dado un punto crítico <span class="math inline">\(P\)</span> de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla^2 f(P)\)</span>, se cumple</p>
 <ul>
 <li>Si <span class="math inline">\(\nabla^2f(P)\)</span> es definido positivo entonces <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(P\)</span>.</li>
 <li>Si <span class="math inline">\(\nabla^2f(P)\)</span> es definido negativo entonces <span class="math inline">\(f\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(P\)</span>.</li>
@@ -1492,8 +1465,50 @@ f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 <li>Si <span class="math inline">\(|\nabla^2 f(P)|&lt;0\)</span> entonces <span class="math inline">\(f\)</span> tiene un <em>punto de silla</em> en <span class="math inline">\((a,b)\)</span>.</li>
 </ul>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Tomando un vector unitario cualquiera <span class="math inline">\(\mathbf{u}=(u_x,u_y)\)</span>, la derivada direccional de <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span> es</p>
+<p><span class="math display">\[
+f'_u(a,b)
+= \nabla f(a,b)\mathbf{u}
+= f'_x(a,b)u_x + f'_y(a,b) u_y.
+\]</span></p>
+<p>Y la derivada direccional de segundo orden es</p>
+<p><span class="math display">\[\begin{align*}
+f''_{uu}(a,b)
+&amp;= f'_u(f'_u)(a,b)
+= \nabla (f'_u)(a,b)\mathbf{u}
+= (f'_u)'_x(a,b)u_x + (f'_u)'_y(a,b) u_y \\
+&amp;= (f'_x u_x + f'_y u_y)'_x(a,b)u_x + (f'_x u_x + f'_y u_y.)'_y(a,b) u_y \\
+&amp;= f''_{xx}(a,b)u_x^2 + f''_{yx}(a,b)u_yu_x + f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \\
+&amp;= f''_{xx}(a,b)u_x^2 + 2f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \tag{1}
+\end{align*}\]</span> (1) Aplicando el teorema de la igualdad de las derivadas cruzadas.</p>
+<p>Completando el cuadrado de esta última expresión se tiene que</p>
+<p><span class="math display">\[\begin{align*}
+f''_{uu}(a,b)
+&amp;= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}(f''_{xx}(a,b)f''_{yy}(a,b)-f''_{xy}(a,b)^2) \\
+&amp;= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}|\nabla^2 f(a,b)|
+\end{align*}\]</span></p>
+<p>Si <span class="math inline">\(|\nabla ^2f(a,b)|&gt;0\)</span> y <span class="math inline">\(f''_{xx}(a,b)&gt;0\)</span>, como <span class="math inline">\(\nabla ^2f(x,y)\)</span> y <span class="math inline">\(f''_{xx}(x,y)\)</span> son continuas en un entorno de <span class="math inline">\((a,b)\)</span>, se tiene que <span class="math inline">\(|\nabla ^2f(x,y)&gt;0\)</span> y <span class="math inline">\(f''_{xx}(x,y)&gt;0\)</span> para <span class="math inline">\((x,y)\)</span> en un entorno de <span class="math inline">\((a,b)\)</span>. Por tanto, observando la expresión anterior, podemos concluir que <span class="math inline">\(f''_{uu}(x,y)&gt;0\)</span> en un entorno de <span class="math inline">\((a,b)\)</span>, es decir, la curva que interseca la superficie de <span class="math inline">\(f\)</span> con el plano que pasa por <span class="math inline">\((a,b,f(a,b))\)</span> en la dirección de <span class="math inline">\(\mathbf{u}\)</span> es cóncava hacia arriba. Como esto esto es cierto para cualquier dirección <span class="math inline">\(\mathbf{u}\)</span>, la gráfica de <span class="math inline">\(f\)</span> queda por encima del plano tangente en <span class="math inline">\((a,b,f(a,b))\)</span> en un entorno de <span class="math inline">\((a,b)\)</span>, y por tanto, <span class="math inline">\(f\)</span> tienen un mínimo local en <span class="math inline">\((a,b)\)</span>.</p>
+<p>Del mismo modo, <span class="math inline">\(|\nabla ^2f(a,b)|&gt;0\)</span> y <span class="math inline">\(f''_{xx}(a,b)&lt;0\)</span>, podemos concluir que <span class="math inline">\(f''_{uu}(x,y)&lt;0\)</span> en un entorno de <span class="math inline">\((a,b)\)</span>, es decir, la curva que interseca la superficie de <span class="math inline">\(f\)</span> con el plano que pasa por <span class="math inline">\((a,b,f(a,b))\)</span> en la dirección de <span class="math inline">\(\mathbf{u}\)</span> es cóncava hacia abajo. Como esto esto es cierto para cualquier dirección <span class="math inline">\(\mathbf{u}\)</span>, la gráfica de <span class="math inline">\(f\)</span> queda por debajo del plano tangente en <span class="math inline">\((a,b,f(a,b))\)</span> en un entorno de <span class="math inline">\((a,b)\)</span>, y por tanto, <span class="math inline">\(f\)</span> tienen un máximo local en <span class="math inline">\((a,b)\)</span>.</p>
+<p>Finalmente, si <span class="math inline">\(|\nabla ^2f(a,b)&lt;0\)</span> los dos sumandos de la expresión de la derivada direccional de segundo orden anterior tienen signo distinto, y el signo de la derivada direccional dependerá de la dirección del vector <span class="math inline">\(\mathbf{u}\)</span>, por lo que puede haber direcciones donde <span class="math inline">\(f''_{uu}(x,y)&gt;0\)</span> y la curva que interseca la superficie de <span class="math inline">\(f\)</span> con el plano que pasa por <span class="math inline">\((a,b,f(a,b))\)</span> en la dirección de <span class="math inline">\(\mathbf{u}\)</span> sea cóncava hacia arriba, y direcciones donde <span class="math inline">\(f''_{uu}(x,y)&lt;0\)</span> y la curva que interseca la superficie de <span class="math inline">\(f\)</span> con el plano que pasa por <span class="math inline">\((a,b,f(a,b))\)</span> en la dirección de <span class="math inline">\(\mathbf{u}\)</span> sea cóncava hacia abajo, de manera que <span class="math inline">\(f\)</span> tiene un punto de silla en <span class="math inline">\((a,b)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="exm-extremos-relativos-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.24 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.23 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
 <p><span class="math display">\[
 \nabla f(x,y)= (x^2-1,-y^2+1),
 \]</span></p>
@@ -1518,100 +1533,139 @@ f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 <li>Punto <span class="math inline">\((-1,1)\)</span>: <span class="math inline">\(|\nabla^2 f(-1,1)|=4&gt;0\)</span> y <span class="math inline">\(\frac{\partial^2}{\partial x^2}(-1,1)=-2&lt;0 \Rightarrow\)</span> Máximo relativo.</li>
 <li>Punto <span class="math inline">\((-1,-1)\)</span>: <span class="math inline">\(|\nabla^2 f(-1,-1)|=-4&lt;0 \Rightarrow\)</span> Punto de silla.</li>
 </ul>
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="8">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="13-derivadas-funciones-varias-variables_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Extremos de la función <span class="math inline">\(f(x,y)=\frac{x^3}{3}-\frac{y^3}{3}-x+y\)</span>.</figcaption>
+<p><img src="img/derivadas-funciones-varias-variables/extremos.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
 </figure>
 </div>
 </div>
-</div>
-<!-- :::{.content-visible when-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Gráfica de los extremos relativos y los puntos de silla de una función](img/derivadas-funciones-varias-variables/determinacion_extremos.pdf)
-::: -->
-</div>
 </section>
 </section>
-<section id="polinomios-de-taylor-de-funciones-de-varias-variables" class="level2" data-number="12.14">
-<h2 data-number="12.14" class="anchored" data-anchor-id="polinomios-de-taylor-de-funciones-de-varias-variables"><span class="header-section-number">12.14</span> Polinomios de Taylor de funciones de varias variables</h2>
-<section id="aproximación-lineal-de-una-función-de-varias-variables" class="level3" data-number="12.14.1">
-<h3 data-number="12.14.1" class="anchored" data-anchor-id="aproximación-lineal-de-una-función-de-varias-variables"><span class="header-section-number">12.14.1</span> Aproximación lineal de una función de varias variables</h3>
-<p>Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. Esto también se puede generalizar a la aproximación de campos escalares mediante polinomios de varias variables.</p>
-<p>Si <span class="math inline">\(P\)</span> es un punto del dominio de un campo escalar <span class="math inline">\(f\)</span> y <span class="math inline">\(\mathbf{v}\)</span> un vector, la <em>fórmula de Taylor</em> de primer grado de <span class="math inline">\(f\)</span> alrededor del punto <span class="math inline">\(P\)</span> es</p>
-<p><span class="math display">\[f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),\]</span></p>
+<section id="extremos-condicionados" class="level2" data-number="12.14">
+<h2 data-number="12.14" class="anchored" data-anchor-id="extremos-condicionados"><span class="header-section-number">12.14</span> Extremos condicionados</h2>
+<p>En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función <span class="math inline">\(f(x,y)\)</span> para los puntos que cumplen la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Cuando es posible despejar una de las variables de la ecuación y expresarla como una función explícita de la otra, se puede sustituir esa variable en <span class="math inline">\(f\)</span> y obtener una función de una variable, de manera que se pueden obtener sus extremos como se vio en el capítulo de derivadas de funciones de una variable.</p>
+<div id="exm-extremos-condicionados" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12.24 </strong></span>Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
+<p><span class="math display">\[
+f(x,y)
+= f(x,-2x)
+= \frac{x^3}{3}-\frac{(-2x)^3}{3}-x-2x
+= 3x^3-3x
+\]</span></p>
+<p>que es, en realidad, una función de una variable <span class="math inline">\(f(x)=3x^3-3x\)</span>. Si calculamos su derivada y la igualamos a 0, se obtienen los puntos críticos <span class="math inline">\(f'(x) = 9x^2-3 = 0 \Leftrightarrow x=\pm\sqrt{1/3}\)</span>. Como la segunda derivada es <span class="math inline">\(f''(x) = 18x\)</span>, se tiene que <span class="math inline">\(f''(-\sqrt{1/3})&lt;0\)</span> por lo que la función tiene un máximo local en <span class="math inline">\(-\sqrt{1/3}\)</span>, y <span class="math inline">\(f''(\sqrt{1/3})&gt;0\)</span> por lo que la función tiene un mínimo local en <span class="math inline">\(\sqrt{1/3}\)</span>.</p>
+</div>
+<p>Ahora bien, cuando no es posible despejar una de las variables de la restricción <span class="math inline">\(g(x,y)=0\)</span>, la cosa se complica. Afortunadamente, existe otro procedimiento para calcular los extremos de una función de varias variables sujeto a una o varias restricciones. A continuación explicamos el fundamento de este método para funciones de dos variables, aunque puede generalizarse para funciones de más de dos variables.</p>
+</section>
+<section id="multiplicadores-de-lagrange" class="level2" data-number="12.15">
+<h2 data-number="12.15" class="anchored" data-anchor-id="multiplicadores-de-lagrange"><span class="header-section-number">12.15</span> Multiplicadores de Lagrange</h2>
+<p>Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span>, si se quieren obtener los extremos de esta función sujetos a la restricción <span class="math inline">\(g(x,y)=0\)</span>, en realidad, se trata de encontrar los extremos relativos de <span class="math inline">\(f\)</span> entre los puntos <span class="math inline">\((x,y)\)</span> que están en la curva de nivel <span class="math inline">\(g(x,y)=0\)</span>. Si dibujamos en el plano la curva de nivel de la ecuación junto a las curvas de nivel de <span class="math inline">\(f\)</span>, el problema se reduce a encontrar el menor y el mayor valor de <span class="math inline">\(k\)</span> para el que la curva de nivel <span class="math inline">\(f(x,y)=k\)</span> se corta con la curva de nivel <span class="math inline">\(g(x,y)=0\)</span>.</p>
+<div class="{exm-curvas-nivel-restricciones}">
+<p>La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span> junto a la curva de nivel de la restricción <span class="math inline">\(g(x,y)=y+2x=0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Curvas de nivel con restricción.</figcaption>
+</figure>
+</div>
+<p>Como se aprecia en la gráfica el mayor de la curva de nivel de <span class="math inline">\(f\)</span> que se corta con la recta <span class="math inline">\(y+2x=0\)</span> es aproximadamente <span class="math inline">\(1.15\)</span> y ocurre en el punto <span class="math inline">\((-\sqrt{1/3}, 2\sqrt{1/3})\)</span>, y el menor valor de la curva de nivel de <span class="math inline">\(f\)</span> que se corta con la recta es aproximadamente <span class="math inline">\(-1.5\)</span> y ocurre en el punto <span class="math inline">\((\sqrt{1/3}, -2\sqrt{1/3})\)</span>.</p>
+</div>
+<p>En el ejemplo anterior se observa que los valores extremos se obtienen donde las curvas de nivel de la función y de la restricción son tangentes, y por tanto, sus vectores gradientes en los puntos de tangencia tendrán la misma dirección, es decir, si <span class="math inline">\((a,b)\)</span> es un punto donde las curvas de nivel son tangentes, se tiene que</p>
+<p><span class="math display">\[
+\nabla f(a,b) = k \nabla g(a,b).
+\]</span></p>
+<p>Al número <span class="math inline">\(k\)</span> de esta ecuación se le llama <em>multiplicador de Lagrange</em>, y este resultado da lugar al siguiente procedimiento para obtener los extremos de una función de varias variables con restricciones.</p>
+<div id="thm-multiplicadores-lagrange" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 12.11 (Multiplicadores de Lagrange) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, los extremos relativos de <span class="math inline">\(f\)</span> sujetos a la restricción <span class="math inline">\(g(x_1,\ldots,x_n)=0\)</span>, son los puntos que cumplen las ecuaciones</p>
+<p><span class="math display">\[\begin{align*}
+\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n)\\
+g(x_1,\ldots, x_n) = 0
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="polinomios-de-taylor-de-funciones-de-varias-variables" class="level2" data-number="12.16">
+<h2 data-number="12.16" class="anchored" data-anchor-id="polinomios-de-taylor-de-funciones-de-varias-variables"><span class="header-section-number">12.16</span> Polinomios de Taylor de funciones de varias variables</h2>
+<p>Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. Esto también se puede generalizar a la aproximación de funciones de varias variables mediante polinomios de varias variables.</p>
+<section id="aproximación-lineal-de-una-función-de-varias-variables" class="level3" data-number="12.16.1">
+<h3 data-number="12.16.1" class="anchored" data-anchor-id="aproximación-lineal-de-una-función-de-varias-variables"><span class="header-section-number">12.16.1</span> Aproximación lineal de una función de varias variables</h3>
+<p>Si <span class="math inline">\(P\)</span> es un punto del dominio de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> y <span class="math inline">\(\mathbf{v}\)</span> un vector en <span class="math inline">\(\mathbb{R}^n\)</span>, la <em>fórmula de Taylor</em> de primer grado de <span class="math inline">\(f\)</span> alrededor del punto <span class="math inline">\(P\)</span> es</p>
+<p><span class="math display">\[
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
+\]</span></p>
 <p>donde</p>
 <p><span class="math display">\[
-\begin{aligned}
 P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
-\end{aligned}
 \]</span></p>
 <p>es el <em>polinomio de Taylor</em> de primer grado de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, y <span class="math inline">\(R^1_{f,P}(\mathbf{v})\)</span> es el <em>resto de taylor</em> para el vector <span class="math inline">\(\mathbf{v}\)</span>, y mide el error cometido en la aproximación.</p>
 <p>Se cumple que</p>
-<p><span class="math display">\[\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0\]</span></p>
-<p>Obsérvese que el polinomio de Taylor de primer grado coincide con el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\(P\)</span>.</p>
-<p>Si <span class="math inline">\(f\)</span> es un campo escalar de dos variables <span class="math inline">\(f(x,y)\)</span> y <span class="math inline">\(P=(x_0,y_0)\)</span>, teniendo en cuenta que para un punto cualquiera <span class="math inline">\(Q=(x,y)\)</span>, el vector <span class="math inline">\(\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)\)</span>, el polinomio de Taylor de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, puede expresarse</p>
-<p><span class="math display">\[\begin{aligned}
-P^1_{f,P}(x,y) &amp;= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
-&amp;= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
-\end{aligned}
+<p><span class="math display">\[
+\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
 \]</span></p>
+<p>Para una función de dos variables <span class="math inline">\(f(x,y)\)</span> y <span class="math inline">\(P=(a, b)\)</span>, teniendo en cuenta que para un punto cualquiera <span class="math inline">\(Q=(x,y)\)</span>, el vector <span class="math inline">\(\mathbf{v}=\vec{PQ}=(x-a, y-b)\)</span>, el polinomio de Taylor de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, puede expresarse</p>
+<p><span class="math display">\[\begin{align*}
+P^1_{f,P}(x,y) &amp;= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
+&amp;= f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b),
+\end{align*}\]</span></p>
+<p>que coincide con el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-lineal-funcion-varias-variables" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12.25 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
-<p><span class="math display">\[\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),\]</span></p>
-<p>y el polinomio de Taylor de primer grado en el punto <span class="math inline">\(P=(1,1)\)</span> es</p>
 <p><span class="math display">\[
-\begin{aligned}
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+\]</span></p>
+<p>y el polinomio de Taylor de primer grado en el punto <span class="math inline">\(P=(1,1)\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
 P^1_{f,P}(x,y) &amp;= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
 &amp;= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
-\end{aligned}
-\]</span></p>
+\end{align*}\]</span></p>
 <p>Este polinomio, permite aproximar el valor de <span class="math inline">\(f\)</span> cerca del punto <span class="math inline">\(P\)</span>.</p>
 <p>Por ejemplo</p>
-<p><span class="math display">\[f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.\]</span></p>
+<p><span class="math display">\[
+f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
+\]</span></p>
 </div>
 </section>
-<section id="aproximación-cuadrática-de-una-función-de-varias-variables" class="level3" data-number="12.14.2">
-<h3 data-number="12.14.2" class="anchored" data-anchor-id="aproximación-cuadrática-de-una-función-de-varias-variables"><span class="header-section-number">12.14.2</span> Aproximación cuadrática de una función de varias variables</h3>
-<p>Si <span class="math inline">\(P\)</span> es un punto del dominio de un campo escalar <span class="math inline">\(f\)</span> y <span class="math inline">\(\mathbf{v}\)</span> un vector, la <em>fórmula de Taylor</em> de segundo grado de <span class="math inline">\(f\)</span> alrededor del punto <span class="math inline">\(P\)</span> es</p>
-<p><span class="math display">\[f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),\]</span></p>
+<section id="aproximación-cuadrática-de-una-función-de-varias-variables" class="level3" data-number="12.16.2">
+<h3 data-number="12.16.2" class="anchored" data-anchor-id="aproximación-cuadrática-de-una-función-de-varias-variables"><span class="header-section-number">12.16.2</span> Aproximación cuadrática de una función de varias variables</h3>
+<p>Si <span class="math inline">\(P\)</span> es un punto del dominio de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> y <span class="math inline">\(\mathbf{v}\)</span> un vector, la <em>fórmula de Taylor</em> de segundo grado de <span class="math inline">\(f\)</span> alrededor del punto <span class="math inline">\(P\)</span> es</p>
+<p><span class="math display">\[
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),
+\]</span></p>
 <p>donde</p>
 <p><span class="math display">\[
-\begin{aligned}
-P^2_{f,P}(\mathbf{v})&amp;=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
-\end{aligned}
+P^2_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
 \]</span></p>
 <p>es el <em>polinomio de Taylor</em> de segundo grado de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, y <span class="math inline">\(R^2_{f,P}(\mathbf{v})\)</span> es el <em>resto de taylor</em> para el vector <span class="math inline">\(\mathbf{v}\)</span>.</p>
 <p>Se cumple que</p>
-<p><span class="math display">\[\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0\]</span></p>
-<p>lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de <span class="math inline">\(\mathbf{v}\)</span>.</p>
-<p>Si <span class="math inline">\(f\)</span> es un campo escalar de dos variables <span class="math inline">\(f(x,y)\)</span> y <span class="math inline">\(P=(x_0,y_0)\)</span>, el polinomio de Taylor de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, puede expresarse</p>
+<p><span class="math display">\[
+\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0
+\]</span></p>
+<p>lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de <span class="math inline">\(\mathbf{v}\)</span>, y por tanto, la aproximación cuadrática es mejor que la lineal.</p>
+<p>Si <span class="math inline">\(f\)</span> es un campo escalar de dos variables <span class="math inline">\(f(x,y)\)</span> y <span class="math inline">\(P=(a, b)\)</span>, el polinomio de Taylor de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span>, puede expresarse</p>
 <p><span class="math display">\[
 \begin{gathered}
-P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
-+\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
-= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
-+\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
+P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
++\frac{1}{2}(x-a,y-b)\nabla^2f(a,b)(x-a,y-b)= \\
+= f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b)+\\
++\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(a,b) (x-a)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(a,b) (x-a)(y-b) + \frac{\partial^2 f}{\partial y^2}(a,b) (y-b)^2\right)
 \end{gathered}
 \]</span></p>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12.26 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
-<p><span class="math display">\[\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),\]</span></p>
+<p><span class="math display">\[
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+\]</span></p>
 <p>y su matriz hessiana es</p>
-<p><span class="math display">\[Hf(x,y) = \left(
+<p><span class="math display">\[
+\nabla ^2 f(x,y)
+= \left(
 \begin{array}{cc}
 \frac{-1}{x^2} &amp; 0\\
 0 &amp; \frac{-1}{y^2}
 \end{array}
-\right)\]</span></p>
-<p>y el polinomio de Taylor de segundo grado en el punto <span class="math inline">\(P=(1,1)\)</span> es</p>
-<p><span class="math display">\[
-\begin{aligned}
+\right)
+\]</span></p>
+<p>Por tanto, el polinomio de Taylor de segundo grado en el punto <span class="math inline">\(P=(1,1)\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
 P^2_{f,P}(x,y) &amp;= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
 &amp;= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
 \left(
@@ -1628,9 +1682,12 @@ y-1
 \right)
 = \\
 &amp;= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
-\end{aligned}
+\end{align*}\]</span></p>
+<p>Y la aproximación cuadrática en el mismo punto de antes es</p>
+<p><span class="math display">\[
+f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199,
 \]</span></p>
-<p>Así, <span class="math display">\[f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199\]</span>.</p>
+<p>que es mejor que la aproximación lineal.</p>
 </div>
 
 
