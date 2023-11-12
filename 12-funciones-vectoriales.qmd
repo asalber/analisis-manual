@@ -65,7 +65,7 @@ Y la gráfica de una función vectorial en $\mathbb{R}^3$ es una trayectoria en 
 Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.
 
 :::{#exm-parametrizacion-trayectorias}
-Las función vectorial $\mathbf{f}(\operatorname{sen}(t),\cos(t)$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
+Las función vectorial $\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
 
 :::{.content-visible when-format="html"}
 ![Parametrización de una trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular.png)
@@ -425,7 +425,7 @@ $$
 que como se puede comprobar, coinciden con las ecuaciones vistas en @def-tangente-funcion y @def-normal-funcion. 
 
 :::{#exm-tangente-normal-funcion}
-Dada la función $y=f(x)=x^2$, la función vectorial cuya trayectoria traza la gráfica de esta función es $\mathbf{f}(t)=(t,t^2)$ y su velocidad es $\mathbf{f}'(t)=(1,2t)$, de modo que en el punto $(1,1)$, que se alcanza en el instante $t=1$, la recta tangente es
+Dada la función $y=f(x)=x^2$, la función vectorial cuya trayectoria traza la gráfica de esta función es $\mathbf{f}(t)=(t,t^2)$ y su vector tangente es $\mathbf{f}'(t)=(1,2t)$, de modo que en el punto $(1,1)$, que se alcanza en el instante $t=1$, la recta tangente es
 
 $$
 \frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
@@ -462,7 +462,7 @@ $$
 siempre que $x'(a)\neq 0$, $y'(a)\neq 0$ y $z'(a)\neq 0$.
 
 :::{#exm-tangente-trayectoria-espacio}
-Dada la función vectorial $\mathbf{f}(t)=(\cos t, \operatorname{sen}(t), t)$, $t\in \mathbb{R}$ en el espacio real, en el instante $t=\pi/2$, la trayectoria pasará por el punto
+Dada la función vectorial $\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)$, $t\in \mathbb{R}$ en el espacio real, en el instante $t=\pi/2$, la trayectoria pasará por el punto
 
 $$
 \mathbf{f}(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
@@ -493,7 +493,7 @@ $$
 
 En el espacio tridimensional $\mathbb{R}^3$, la recta normal a una trayectoria no es única, sino que hay infinitas, todas ellas en el mismo plano, por lo que en vez de hablar de recta normal a la trayectoria, se habla de _plano normal a la trayectoria_.
 
-Si $\mathbf{f}(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is una función vectorial en el espacio real $\mathbb{R}^3$, ya hemos visto que en el instante $t=a$ el vector de su derivada $\mathbf{f}'(a)$ es tangente a la trayectoria de $\mathbf{f}$ en el punto $\mathbf{f}(a)=(x(a),y(a),z(a))$. Así, tomando el vector de la derivada como ortogonal al plano, cualquier vector del plano normal será ortogonal al vector de la derivada, por lo que su producto escalar será nulo, de lo que se deduce la siguiente ecuación
+Si $\mathbf{f}(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, es una función vectorial en el espacio real $\mathbb{R}^3$, ya hemos visto que en el instante $t=a$ el vector de su derivada $\mathbf{f}'(a)$ es tangente a la trayectoria de $\mathbf{f}$ en el punto $\mathbf{f}(a)=(x(a),y(a),z(a))$. Así, tomando el vector de la derivada como ortogonal al plano, cualquier vector del plano normal será ortogonal al vector de la derivada, por lo que su producto escalar será nulo, de lo que se deduce la siguiente ecuación
 
 $$
 \begin{gathered}
@@ -512,16 +512,16 @@ $$
 :::
 
 :::{#exm-plano-normal-trayectoria-espacio}
-Para la trayectoria de la función vectorial del ejemplo anterior $\mathbf{f}(t)=(\cos t, \sin t, t)$, $t\in \mathbb{R}$, en el instante $t=\pi/2$ la trayectoria pasa por el punto 
+Para la trayectoria de la función vectorial del ejemplo anterior $\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)$, $t\in \mathbb{R}$, en el instante $t=\pi/2$ la trayectoria pasa por el punto 
 
 $$
-\mathbf{f}(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
+\mathbf{f}(\pi/2)=(\cos(\pi/2),\operatorname{sen}(\pi/2),\pi/2)=(0,1,\pi/2),
 $$
 
 con derivada
 
 $$
-\mathbf{f}'(\pi/2)=(-\sin(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
+\mathbf{f}'(\pi/2)=(-\operatorname{sen}(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
 $$
 
 y el plano normal a la trayectoria de $\mathbf{f}$ en ese instante tiene ecuación
@@ -591,7 +591,7 @@ donde $C_1,\ldots,C_n$ son escalares constantes y $\mathbf{C}=(C_1,\ldots, C_n)$
 La integral indefinida de la función $\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}$ es
 
 \begin{align*}
-\int \mathbf{f}(t) 
+\int \mathbf{f}(t)\, dt
 &= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
 &= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2x}}{2} \mathbf{k}.
 \end{align*}
@@ -662,7 +662,7 @@ Esta última suma se parece a una suma de Riemann, aunque los $t_{ij}$, en gener
 
 \begin{align*}
 \lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| 
-&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\Delta t. \\
+&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t))^2}\Delta t. \\
 &= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\, dt \\
 &= \int_a^b |\mathbf{f}'(t)|\, dt
 \end{align*}
@@ -799,7 +799,7 @@ $$
 
 ## Curvatura
 
-Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva, que si habrá que girar el volante para trazar la curva. Cuanto mayor se la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.
+Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva si que habrá que girar el volante para trazar la curva. Cuanto mayor sea la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.
 
 Para estudiar la curvatura de la trayectoria de una función vectorial $\mathbf{f}(t)$, analizaremos la variación que experimenta la dirección del vector tangente a la trayectoria, que recordemos es $\mathbf{f}'(t)$, y por tanto, vendrá dada por la segunda derivada $\mathbf{f}''(t)$. Sin embargo, este valor depende de la parametrización de la trayectoria. 
 
@@ -1245,7 +1245,7 @@ $$
 a_N 
 = \kappa(t)|\mathbf{v}(t)|^2 
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
-= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}|.
+= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}.
 $$
 
 :::{#exm-componente-tangencial-normal-trayectoria}
