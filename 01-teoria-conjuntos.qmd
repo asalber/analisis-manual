@@ -386,6 +386,14 @@ El mínimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$.
 Dado un conjunto con una relación de orden parcial $(A,\preceq)$, si existe el máximo de $A$ entonces es único. Lo mismo es cierto para el mínimo.
 :::
 
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $A$ tiene dos máximos $m$ y $n$. Entonces, por la definición de máximo, $x\preceq m$ $\forall x\in A$, y en particular $n\preceq m$. Del mismo modo, $x\preceq n$ $\forall x\in A$, y en particular $m\preceq n$, pero como $\preceq$ es una relación de orden, se deduce que $m=n$.
+:::
+:::
+
 :::{#def-supremo-conjunto}
 ## Supremo
 Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _supremo_ de $B$, y se denota $\sup(B)$, a la menor de las cotas superiores de $B$.
@@ -394,8 +402,8 @@ Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subcon
 :::{#exm-supremo}
 El supremo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}$.
 
-El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1) = \{x\in \mathbb{R}:x\geq 1\}$.
-::
+El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1)) = \{x\in \mathbb{R}:x\geq 1\}$.
+:::
 
 :::{#def-infimo-conjunto}
 ## Ínfimo
@@ -543,6 +551,20 @@ $$g\circ f(a) = g(f(a)), \forall a\in A.$$
 Dada una función $f:A\rightarrow B$, si existe $f^{-1}$, entonces $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
 :::
 
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $a\in\operatorname{Dom}(A)$, y supongamos que $f(a)=b$. Entonces $f^{-1}(b)=a$, de manera que 
+
+$$
+f\circ f^{-1}(a) 
+= f(f^{-1}(a)) 
+= f(b)
+= a.
+$$
+:::
+:::
+
 ## Cardinalidad de un conjunto 
 
 :::{#def-cardinal-conjunto}
@@ -666,7 +688,9 @@ Se dice que un conjunto $A$ es _finito_ si es que existe un $n\in\mathbb{N}$ tal
 Se dice que un conjunto $A$ es _infinito_ si no es finito. En tal caso su cardinal se denota $|A|=\infty$.
 :::
 
+:::{.callout-warning}
 Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia y no representa a ningún número.
+:::
 
 :::{#exm-conjunto-finito-infinito}
 El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 
@@ -691,9 +715,14 @@ Se dice que un conjunto $A$ es _numerable_ si tiene el mismo cardinal que el con
 Un conjunto $A$ es numerable si existe una aplicación biyectiva $f:\mathbb{N}\rightarrow A$. 
 :::
 
-En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales $\mathbb{N}$, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.
-
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
 La prueba de este resultado es inmediata aplicando la @prp-biyeccion-conjuntos-equipotentes.
+:::
+:::
+
+En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales $\mathbb{N}$, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.
 
 :::{#exm-enteros-equipotentes-naturales} 
 En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y  por consiguiente, es numerable.

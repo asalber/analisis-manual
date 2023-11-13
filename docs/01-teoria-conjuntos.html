@@ -571,16 +571,36 @@ R \subseteq A \times B.
 <div id="thm-unicidad-extremos" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 1.1 (Unicidad de los extremos) </strong></span>Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, si existe el máximo de <span class="math inline">\(A\)</span> entonces es único. Lo mismo es cierto para el mínimo.</p>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(A\)</span> tiene dos máximos <span class="math inline">\(m\)</span> y <span class="math inline">\(n\)</span>. Entonces, por la definición de máximo, <span class="math inline">\(x\preceq m\)</span> <span class="math inline">\(\forall x\in A\)</span>, y en particular <span class="math inline">\(n\preceq m\)</span>. Del mismo modo, <span class="math inline">\(x\preceq n\)</span> <span class="math inline">\(\forall x\in A\)</span>, y en particular <span class="math inline">\(m\preceq n\)</span>, pero como <span class="math inline">\(\preceq\)</span> es una relación de orden, se deduce que <span class="math inline">\(m=n\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="def-supremo-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.25 (Supremo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>supremo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\sup(B)\)</span>, a la menor de las cotas superiores de <span class="math inline">\(B\)</span>.</p>
 </div>
-<p>:::{#exm-supremo} El supremo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
-<p>El supremo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(1\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}([0,1) = \{x\in \mathbb{R}:x\geq 1\}\)</span>. ::</p>
+<div id="exm-supremo" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.20 </strong></span>El supremo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
+<p>El supremo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(1\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}([0,1)) = \{x\in \mathbb{R}:x\geq 1\}\)</span>.</p>
+</div>
 <div id="def-infimo-conjunto" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.26 (Ínfimo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>ínfimo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\inf(B)\)</span>, a la mayor de las cotas inferiores de <span class="math inline">\(B\)</span>.</p>
 </div>
 <div id="exm-infimo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.20 </strong></span>El ínfimo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.21 </strong></span>El ínfimo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
 <p>El ínfimo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(0\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}([0,1)) = \{x\in \mathbb{R}:x\leq 0\}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -597,7 +617,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-no-supremo-infimio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.21 </strong></span>El conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.22 </strong></span>El conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.</p>
 </div>
 </section>
 <section id="funciones" class="level2" data-number="1.5">
@@ -613,7 +633,7 @@ Advertencia
 <p>De manera más informal podemos decir que una función es una correspondencia entre los elementos de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> que asocia a cada elemento de <span class="math inline">\(A\)</span> un elemento, y solo uno, de <span class="math inline">\(B\)</span>.</p>
 <p>Es habitual representar los pares de una función con la notación <span class="math inline">\(y=f(x)\)</span> donde <span class="math inline">\(x\)</span> es la primera componente del par e <span class="math inline">\(y\)</span> la segunda.</p>
 <div id="exm-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.22 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,d), (2,c), (3,a), (4,c)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,d), (2,b), (3,a), (3,c)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.23 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,d), (2,c), (3,a), (4,c)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,d), (2,b), (3,a), (3,c)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(3\)</span>.</p>
 <p>Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
 </div>
 <div class="quarto-layout-panel">
@@ -710,21 +730,8 @@ Advertencia
 <div id="prp-composicion-inversa" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1.4 </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, si existe <span class="math inline">\(f^{-1}\)</span>, entonces <span class="math inline">\(f\circ f^{-1} = \operatorname{id}_A\)</span> y <span class="math inline">\(f^{-1}\circ f = \operatorname{id}_B\)</span>.</p>
 </div>
-</section>
-<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.6</span> Cardinalidad de un conjunto</h2>
-<div id="def-cardinal-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.36 (Cardinal) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
-</div>
-<p>De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.</p>
-<div id="exm-cardinal" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.23 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
-</div>
-<div id="prp-cardinal-conjunto-potencia" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.5 </strong></span>El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -733,7 +740,44 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(a\in\operatorname{Dom}(A)\)</span>, y supongamos que <span class="math inline">\(f(a)=b\)</span>. Entonces <span class="math inline">\(f^{-1}(b)=a\)</span>, de manera que</p>
+<p><span class="math display">\[
+f\circ f^{-1}(a)
+= f(f^{-1}(a))
+= f(b)
+= a.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.6</span> Cardinalidad de un conjunto</h2>
+<div id="def-cardinal-conjunto" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 1.36 (Cardinal) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
+</div>
+<p>De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.</p>
+<div id="exm-cardinal" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.24 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
+</div>
+<div id="prp-cardinal-conjunto-potencia" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 1.5 </strong></span>El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se puede dar una prueba mediante coeficientes binomiales. Si <span class="math inline">\(A\)</span> tiene <span class="math inline">\(n\)</span> elementos, es decir, <span class="math inline">\(|\)</span>A<span class="math inline">\(|=n\)</span>, el número de subconjuntos distintos con <span class="math inline">\(k\)</span> elementos es igual al número combinatorio <span class="math display">\[\binom{n}{k}=\frac{n!}{k!(n-k)!}.\]</span></p>
@@ -752,7 +796,7 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 1.6 </strong></span>Dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes si y solo si cada elemento de <span class="math inline">\(A\)</span> puede emparejarse con uno de <span class="math inline">\(B\)</span>, de manera que todos los elementos de <span class="math inline">\(B\)</span> sean pareja de uno de <span class="math inline">\(A\)</span> y solo de uno, es decir, existe una aplicación biyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -761,7 +805,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes, es trivial construir una biyección entre ellos, ya que podemos construir una función que empareje cada elemento de <span class="math inline">\(A\)</span> con un único elemento de <span class="math inline">\(B\)</span> y cada elemento de <span class="math inline">\(B\)</span> con un único elemento de <span class="math inline">\(A\)</span>.</p>
@@ -779,7 +823,7 @@ Demostración
 </ul>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -788,7 +832,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos que la relación de equipotencia cumple las propiedades reflexiva, simétrica y transitiva.</p>
@@ -807,7 +851,7 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 1.8 </strong></span>El conjunto <span class="math inline">\(A\)</span> es minuspotente al conjunto <span class="math inline">\(B\)</span> si y solo si existe una aplicación inyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -816,7 +860,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(A\preceq B\)</span>, entonces podemos tomar un subconjunto <span class="math inline">\(C\subseteq B\)</span> con el mismo cardinal que <span class="math inline">\(A\)</span> y crear una biyección entre <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span>. Tomando esta misma aplicación entre <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, la aplicación será inyectiva.</p>
@@ -834,7 +878,7 @@ Demostración
 </ul>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -843,7 +887,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos que la relación de minuspotencia satisface las propiedades reflexiva, antisimétrica y transitiva.</p>
@@ -860,14 +904,26 @@ Demostración
 <div id="def-conjunto-infinito" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1.40 (Conjunto infinito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>infinito</em> si no es finito. En tal caso su cardinal se denota <span class="math inline">\(|A|=\infty\)</span>.</p>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Hay que dejar claro que el símbolo <span class="math inline">\(\infty\)</span> es una notación de conveniencia y no representa a ningún número.</p>
+</div>
+</div>
 <div id="exm-conjunto-finito-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.24 </strong></span>El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.25 </strong></span>El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
 <p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>.</p>
 </div>
 <p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-conjunto-pares-equipotente-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.25 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.26 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
 </div>
 <p>Sin embargo, como se verá más adelante, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> no es equipotente al conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>, sino minuspotente. Por tanto, existen conjuntos infinitos de distintos tamaños. Para demostrarlo se necesita introducir un nuevo concepto.</p>
 <div id="def-conjuntos-numerables" class="theorem definition">
@@ -876,10 +932,27 @@ Demostración
 <div id="cor-biyeccion-conjunto-numerable" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 1.1 </strong></span>Un conjunto <span class="math inline">\(A\)</span> es numerable si existe una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow A\)</span>.</p>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
 <p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.</p>
-<p>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-enteros-equipotentes-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.26 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.27 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
 <p>Del mismo modo se puede probar que el conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span> también es numerable, pues se puede definir una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow \mathbb{Z}\)</span> de la siguiente manera</p>
 <p><span class="math inline">\(f(n)= \begin{cases} (n-1)/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\ -n/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es par}. \end{cases}\)</span></p>
 </div>
@@ -890,7 +963,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 1.2 (Cantor) </strong></span>El conjunto potencia de cualquier conjunto <span class="math inline">\(A\)</span> tiene un cardinal estrictamente mayor que el cardinal de <span class="math inline">\(A\)</span>, es decir, <span class="math inline">\(|A| &lt; |\mathcal{P}(A)|\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -899,7 +972,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Basta con demostrar que no existe una aplicación <span class="math inline">\(f:A\rightarrow \mathcal{P}(A)\)</span> sobreyectiva, y para ello basta con encontrar un subconjunto <span class="math inline">\(B\)</span> de <span class="math inline">\(A\)</span> que no sea la imagen mediante <span class="math inline">\(f\)</span> de ningún elemento de <span class="math inline">\(A\)</span>.</p>
@@ -920,7 +993,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 1.3 (Cardinalidad del continuo) </strong></span>El conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span> tiene un cardinal igual al del conjunto potencia del conjunto de los números naturales <span class="math inline">\(\mathcal{P}(\mathbb{N})\)</span>, es decir, <span class="math inline">\(|\mathbb{R}|=2^{|\mathbb{N}|}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -929,7 +1002,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Daremos una demostración partiendo del hecho de que cada número real tiene una expansión decimal infinita de la forma <span class="math inline">\(e.d\)</span> donde <span class="math inline">\(e\)</span> es la parte entera y <span class="math inline">\(d\)</span> la decimal infinita (por ejemplo, <span class="math inline">\(3/2\)</span> se puede representar por la expansión decimal infinita <span class="math inline">\(1.5000\ldots\)</span>).</p>
