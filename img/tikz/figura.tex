@@ -10,6 +10,7 @@
 \usepackage{tkz-fct}
 \usetikzlibrary{angles, quotes}
 \usetikzlibrary{arrows.meta, arrows}
+\usetikzlibrary{shapes.geometric}
 \usetikzlibrary{external}
 \tikzexternalize[prefix={external/}]
 
@@ -34,30 +35,59 @@
 
 \def\req{\protect\rotatebox{90}{$\scriptstyle=$}}
 
+\newcommand{\addaxes}{\draw (0em,1em) -- (0em,-1em)
+                            (-1em,0em) -- (1em,0em);}
+\newcommand{\stepfunc}{\draw[line width=1.5pt] (0.65em,0.65em) -- (0,0.65em) 
+                                    -- (0,-0.65em) -- (-0.65em,-0.65em);}
+
 \begin{document}
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{entorno-punto-plano}
+\tikzsetnextfilename{perceptron}
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
-\begin{tikzpicture}
-    \begin{axis}[
-        height=4cm,
-        gen2dfun, 
-        xmin=-0.1, xmax=2,
-        ymin=-0.1, ymax=2,
-        axis equal=true,
-        ticks=none,
-        clip=false,
-        color = myblack,
-        ]
-        \addplot+[domain=0:2*pi, samples=100, smooth, myblue] ({1+0.5*cos(deg(x))},{1+0.5*sin(deg(x))});
-        \fill[myblue!50] (1,1) circle (0.935cm);
-        \fill[myred] (1,1) circle (1.2pt) node[anchor=north, myred] {$(a_x,a_y)$};
-        \draw[<->, myblue] (1,1) -- (1.35,1.35) node[anchor=south east, midway, myblue] {$\varepsilon$};
-        \node at (2,2) {$\mathbb{R}^2$};
-    \end{axis};
-    \end{tikzpicture}
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    neuron/.style={circle, draw, minimum size=1cm},
+    input/.style={rectangle, draw, minimum size=0.5cm, fill=green!20},
+    output/.style={rectangle, draw, minimum size=0.5cm, fill=red!20},
+    weight/.style={font=\small, midway, above, sloped}
+]
+
+% Input neurons
+\node[input] (in1) {1};
+\node[input, below of=in1] (in2) {$x$};
+\node[input, below of=in2] (in3) {$y$};
+
+% Output neuron
+\node[neuron, right=2cm of in2] (out) {\Large $\sum$};
+
+% Connect inputs to output
+\draw[-{Latex[length=2mm]}] (in1) -- (out) node[weight] {$w_0$};
+\draw[-{Latex[length=2mm]}] (in2) -- (out) node[weight] {$w_1$};
+\draw[-{Latex[length=2mm]}] (in3) -- (out) node[weight] (w2) {$w_2$};
+
+% Activation function
+\node[neuron, right=1cm of out] (activation) {};
+\draw[-{Latex[length=2mm]}] (out) -- (activation);
+\begin{scope}[xshift=4.8cm, yshift=-1.5cm, scale=1]
+    \addaxes;
+    % flexible selection of activation function
+    % \relu
+    \stepfunc;
+\end{scope};
+
+% Output function 
+\node[output, right=1cm of activation] (output) {$z$};
+\draw[-{Latex[length=2mm]}] (activation) -- (output);
+
+% Etiquetas
+\node[left=5mm of in2, rotate=90, anchor=north] {Entradas};
+\node[below=2mm of output] {Salida};
+\node[below=2mm of w2] {Pesos};
+\node[below=2mm of out, align=center] {Suma\\ponderada};
+\node[below=2mm of activation, align=center] {Función de\\activación};
+\end{tikzpicture}
    
 
 \end{document}

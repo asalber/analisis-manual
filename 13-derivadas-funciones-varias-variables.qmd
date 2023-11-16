@@ -1516,12 +1516,74 @@ Al número $k$ de esta ecuación se le llama _multiplicador de Lagrange_, y este
 
 :::{#thm-multiplicadores-lagrange}
 ## Multiplicadores de Lagrange
-Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, los extremos relativos de $f$ sujetos a la restricción $g(x_1,\ldots,x_n)=0$, son los puntos que cumplen las ecuaciones
+Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, los extremos relativos de $f$ sujetos a la restricción $g(x_1,\ldots,x_n)=0$, si $\nabla g(x_1\ldots,x_n)\neq 0$, son los puntos que cumplen las ecuaciones
 
 \begin{align*}
-\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n)\\
-g(x_1,\ldots, x_n) = 0
+\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n) \\
+g(x_1,\ldots, x_n) = 0 
 \end{align*}
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Daremos la prueba para 3 variables. Supongamos que $f(x,y,z)$ tiene un máximo relativo en el punto $(a,b,c)$ de la superficie definida por $g(x,y,z)=0$. Si consideramos una trayectoria con ecuación $\mathbf{f}(t)=(x(t),y(t),z(t))$ que esté sobre la superficie que define $g$ y tal que $\mathbf(f)(0)=(a,b,c)$, la función $h(t)=f(\mathbf{f}(t))$ tendrá un extremo relativo en $h(0)=f(\mathbf{f}(0))=f(a,b,c)$, y por tanto $h'(0)=0$. Pero, por otro lado, aplicando la regla de la cadena a la composición de $f$ y $\mathbf{f}$ se tiene
+
+$$
+h'(t) 
+= f(\mathbf{f}(t))' 
+= \nabla f(\mathbf{f}(t))\mathbf{f}'(t),
+$$
+
+y en $t=0$ se cumple que 
+
+$$
+h'(0) 
+= f(\mathbf{f}(0))' 
+= \nabla f(a,b,c)\mathbf{f}'(0) 
+=0,
+$$
+
+de donde se deduce que $\nabla f(a,b,c)$ es ortogonal a vector tangente a la trayectoria de $\mathbf{f}$ en $t=0$. Pero como la trayectoria de $\mathbf{f}$ está inscrita en la superficie de nivel de nivel $g(x,y,z)=0$, por el @thm-gradiente-normal-curvas-nivel, si $\nabla g(a,b,c)\neq 0$ entonces también es ortogonal a $\mathbf{f}'(0)$, por lo que $\nabla f(a,b,c)$ y $\nabla g(a,b,c)$ deben ser paralelos, es decir, 
+
+$$
+\nabla f(a,b,c)
+= k\nabla g(a,b,c)
+$$
+
+Para dimensiones mayores la demostración es similar.
+:::
+:::
+
+:::{#exm-multiplicadores-lagrange}
+Veamos cuáles son los extremos relativos de la función $f(x,y)=2x^2+y^2$ sobre los puntos de la circunferencia $x^2+y^2=1$.
+
+Tomando $g(x,y)=x^2+y^2-1$, podemos expresar la circunferencia mediante la ecuación $g(x,y)=0$. Los extremos relativos de $f$ condicionados por $g(x,y)=0$, deben cumplir la ecuación de los multiplicadores de Lagrange
+
+$$
+\nabla f(x,y) = k \nabla g(x,y) 
+\Leftrightarrow (4x, 2y) = k (2x, 2y),
+$$
+
+de donde se deduce que deben cumplir las ecuaciones
+
+$$
+\begin{cases}
+4x = 2kx\\
+2y = 2ky\\
+x^2+y^2-1=0
+\end{cases}
+$$
+
+Resolviendo el sistema se obtienen cuatro soluciones en lso puntos $(0,1)$, $(0,-1)$, $(1,0)$ y $(-1,0)$, y si evaluamos $f$ en cada uno de estos puntos se tiene
+
+$$
+f(0,1) = 1 \quad f(0,-1) = 1 \quad f(1,0)=2 \quad f(-1,0)=2,
+$$
+
+por lo que se concluye que $f$ tiene máximos relativos en $(1,0)$ y $(-1,0)$, donde la función vale $2$, y mínimos relativos en $(0,1)$ y $(0,-1)$, donde la función vale $1$.
+
+<!-- TODO: Meter gráfica de la función y los extremos condicionados -->
 :::
 
 ## Polinomios de Taylor de funciones de varias variables

@@ -1576,11 +1576,69 @@ f(x,y)
 \]</span></p>
 <p>Al número <span class="math inline">\(k\)</span> de esta ecuación se le llama <em>multiplicador de Lagrange</em>, y este resultado da lugar al siguiente procedimiento para obtener los extremos de una función de varias variables con restricciones.</p>
 <div id="thm-multiplicadores-lagrange" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.11 (Multiplicadores de Lagrange) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, los extremos relativos de <span class="math inline">\(f\)</span> sujetos a la restricción <span class="math inline">\(g(x_1,\ldots,x_n)=0\)</span>, son los puntos que cumplen las ecuaciones</p>
+<p><span class="theorem-title"><strong>Teorema 12.11 (Multiplicadores de Lagrange) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, los extremos relativos de <span class="math inline">\(f\)</span> sujetos a la restricción <span class="math inline">\(g(x_1,\ldots,x_n)=0\)</span>, si <span class="math inline">\(\nabla g(x_1\ldots,x_n)\neq 0\)</span>, son los puntos que cumplen las ecuaciones</p>
 <p><span class="math display">\[\begin{align*}
-\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n)\\
+\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n) \\
 g(x_1,\ldots, x_n) = 0
 \end{align*}\]</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Daremos la prueba para 3 variables. Supongamos que <span class="math inline">\(f(x,y,z)\)</span> tiene un máximo relativo en el punto <span class="math inline">\((a,b,c)\)</span> de la superficie definida por <span class="math inline">\(g(x,y,z)=0\)</span>. Si consideramos una trayectoria con ecuación <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t),z(t))\)</span> que esté sobre la superficie que define <span class="math inline">\(g\)</span> y tal que <span class="math inline">\(\mathbf(f)(0)=(a,b,c)\)</span>, la función <span class="math inline">\(h(t)=f(\mathbf{f}(t))\)</span> tendrá un extremo relativo en <span class="math inline">\(h(0)=f(\mathbf{f}(0))=f(a,b,c)\)</span>, y por tanto <span class="math inline">\(h'(0)=0\)</span>. Pero, por otro lado, aplicando la regla de la cadena a la composición de <span class="math inline">\(f\)</span> y <span class="math inline">\(\mathbf{f}\)</span> se tiene</p>
+<p><span class="math display">\[
+h'(t)
+= f(\mathbf{f}(t))'
+= \nabla f(\mathbf{f}(t))\mathbf{f}'(t),
+\]</span></p>
+<p>y en <span class="math inline">\(t=0\)</span> se cumple que</p>
+<p><span class="math display">\[
+h'(0)
+= f(\mathbf{f}(0))'
+= \nabla f(a,b,c)\mathbf{f}'(0)
+=0,
+\]</span></p>
+<p>de donde se deduce que <span class="math inline">\(\nabla f(a,b,c)\)</span> es ortogonal a vector tangente a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=0\)</span>. Pero como la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> está inscrita en la superficie de nivel de nivel <span class="math inline">\(g(x,y,z)=0\)</span>, por el <a href="#thm-gradiente-normal-curvas-nivel">Teorema&nbsp;<span>12.7</span></a>, si <span class="math inline">\(\nabla g(a,b,c)\neq 0\)</span> entonces también es ortogonal a <span class="math inline">\(\mathbf{f}'(0)\)</span>, por lo que <span class="math inline">\(\nabla f(a,b,c)\)</span> y <span class="math inline">\(\nabla g(a,b,c)\)</span> deben ser paralelos, es decir,</p>
+<p><span class="math display">\[
+\nabla f(a,b,c)
+= k\nabla g(a,b,c)
+\]</span></p>
+<p>Para dimensiones mayores la demostración es similar.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-multiplicadores-lagrange" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12.25 </strong></span>Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
+<p>Tomando <span class="math inline">\(g(x,y)=x^2+y^2-1\)</span>, podemos expresar la circunferencia mediante la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Los extremos relativos de <span class="math inline">\(f\)</span> condicionados por <span class="math inline">\(g(x,y)=0\)</span>, deben cumplir la ecuación de los multiplicadores de Lagrange</p>
+<p><span class="math display">\[
+\nabla f(x,y) = k \nabla g(x,y)
+\Leftrightarrow (4x, 2y) = k (2x, 2y),
+\]</span></p>
+<p>de donde se deduce que deben cumplir las ecuaciones</p>
+<p><span class="math display">\[
+\begin{cases}
+4x = 2kx\\
+2y = 2ky\\
+x^2+y^2-1=0
+\end{cases}
+\]</span></p>
+<p>Resolviendo el sistema se obtienen cuatro soluciones en lso puntos <span class="math inline">\((0,1)\)</span>, <span class="math inline">\((0,-1)\)</span>, <span class="math inline">\((1,0)\)</span> y <span class="math inline">\((-1,0)\)</span>, y si evaluamos <span class="math inline">\(f\)</span> en cada uno de estos puntos se tiene</p>
+<p><span class="math display">\[
+f(0,1) = 1 \quad f(0,-1) = 1 \quad f(1,0)=2 \quad f(-1,0)=2,
+\]</span></p>
+<p>por lo que se concluye que <span class="math inline">\(f\)</span> tiene máximos relativos en <span class="math inline">\((1,0)\)</span> y <span class="math inline">\((-1,0)\)</span>, donde la función vale <span class="math inline">\(2\)</span>, y mínimos relativos en <span class="math inline">\((0,1)\)</span> y <span class="math inline">\((0,-1)\)</span>, donde la función vale <span class="math inline">\(1\)</span>.</p>
+<!-- TODO: Meter gráfica de la función y los extremos condicionados -->
 </div>
 </section>
 <section id="polinomios-de-taylor-de-funciones-de-varias-variables" class="level2" data-number="12.16">
@@ -1608,7 +1666,7 @@ P^1_{f,P}(x,y) &amp;= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
 \end{align*}\]</span></p>
 <p>que coincide con el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-lineal-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.25 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.26 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1650,7 +1708,7 @@ P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
 \end{gathered}
 \]</span></p>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.26 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.27 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
