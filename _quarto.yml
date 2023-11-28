@@ -50,6 +50,7 @@ book:
     - 11-geometria-plano-espacio.qmd
     - 12-funciones-vectoriales.qmd
     - 13-derivadas-funciones-varias-variables.qmd
+    - 14-integrales-funciones-varias-variables.qmd
     
 #bibliography: references.bib
 

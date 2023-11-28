@@ -1,0 +1,357 @@
+---
+title: Integrales de funciones de varias variables
+crossref:
+    chapters: true
+execute: 
+  echo: false
+  cache: true
+  freeze: auto
+  daemon: 3600
+lang: es
+---
+
+En este capítulo extendemos el concepto de integral de Riemann visto en el [capítulo de integrales](09-integrales.qmd) a funciones de varias variables, en particular en $\mathbb{R}^2$ y $\mathbb{R}^3$ donde las integrales múltiples tienen multitud de aplicaciones en Ciencias e Ingenierías.
+
+También veremos que el Teorema Fundamental del Cálculo sigue siendo válido y que el cálculo de integrales con respecto a una variable es el proceso inverso del cálculo de la derivada parcial con respecto a esa misma variable.
+
+## Sumas de Riemann
+
+Las sumas de Riemann que se introdujeron en la @sec-sumas-riemann pueden generalizarse fácilmente a funciones de varias variables, pero primero debemos generalizar el concepto de intervalo cerrado en $\mathbb{R}^n$.
+
+:::{#def-intervalo-n-dimensional-cerrado}
+## Intervalo $n$ dimensional
+Dados $n$ intervalos cerrados de $\mathbb{R}$ $I_i=[a_i,b_i]$ $i=1\ldots n$, su producto cartesiano $I = I_1\times \cdots \times I_n$ se conoce como _intervalo $n$ dimensional cerrado_ o _hiperrectángulo_.
+:::
+
+:::{.callout-note}
+En $\mathbb{R}^2$, el intervalo $[a_x,b_x]\times [a_y,b_y]$ define un _rectángulo_, mientras que en $\mathbb{R}^3$ el intervalo $[a_x,b_x]\times [a_y,b_y]\times [a_z,b_z]$ define una _caja_.
+:::
+
+:::{#def-particion-n-dimensional}
+## Partición de un intervalo $n$ dimensional
+Dado un intervalo $n$ dimensional cerrado $I=I_1\times\cdots\times I_n$, con $I_i=[a_i,b_i]$ $i=1,\ldots,n$, y una partición $P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}\}$ de cada intervalo $I_i$, el producto cartesiano $P=P_1\times\cdots\times P_n$ se conoce como _partición $n$ dimensional_ de $I$.
+
+El conjunto de todas las particiones $n$ dimensionales de $I$ se denota $\mathcal{P}(I)$.
+:::
+
+:::{#def-suma-inferior-superior-riemann-n-dimensional}
+## Sumas de Riemann
+Dada una función $f:I\to \mathbb{R}$ acotada en el intervalo $n$ dimensional $I\subset \mathbb{R}^n$ y una partición $n$ dimensional $P$ de $I$, se define la _suma inferior de Riemann_ de $f$ respecto de $P$, y se denota $s(f,P)$, como 
+
+$$
+s(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} m_{i_1,\ldots,i_n} (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1}),
+$$
+
+donde $m_{i_1,\ldots,i_n} = \inf\{f(x_1,\ldots,x_n): x_j\in[x_{j,i_j-1}, x_{j,i_j}]\ \forall j=1,\ldots, n\}$.
+
+Del mismo modo, se define la _suma superior de Riemann_ de $f$ respecto de $P$, y se denota $S(f,P)$, como 
+
+$$
+S(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} M_{i_1,\ldots,i_n} (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1}),
+$$
+
+donde $M_{i_1,\ldots,i_n} = \sup\{f(x_1,\ldots,x_n): x_j\in[x_{j,i_j-1}, x_{j,i_j}]\ \forall j=1,\ldots, n\}$.
+:::
+
+Aunque la definición es un poco enrevesada para $\mathbb{R}^n$, si $f(x,y)$ es una función de dos variables acotada en el intervalo $I=[a,b]\times [c,d]\subset \mathbb{R}^2$, y $P=P_x\times P_y$ es una partición de $I$ con $P_x=\{x_0=a,x_1,\ldots, x_n=b\}$ y $P_x=\{y_0=c,y_1,\ldots, y_m=d\}$, las sumas de Riemann inferior y superior de $f$ respecto de $P$ son
+
+\begin{align*}
+s(f,P) &= \sum_{i=1}^n \sum_{j=1}^m m_{i,j}(x_i-x_{i-1})(y_j-y_{j-1}), \\
+S(f,P) &= \sum_{i=1}^n \sum_{j=1}^m M_{i,j}(x_i-x_{i-1})(y_j-y_{j-1}),
+\end{align*}
+
+donde $m_{i,j}$ y $M_{i,j}$ son el ínfimo y el supremo de $\{f(x,y): (x,y)\in [x_{i-1},x_i]\times [y_{j-1},y_j]\}$.
+
+Gráficamente, si $f(x,y)$ es una función positiva en $I$, la suma inferior se puede interpretar como la suma de los volúmenes de los prismas de base rectangular con lados $[x_{i-1},x_i]$ y $[y_{j-1},y_j]$ y altura $m_{i,j}$.
+
+:::{.content-visible when-format="html"}
+![Suma inferior de Riemann en $\mathbb{R}^2$](img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg)
+:::
+
+:::{.content-visible unless-format="html"}
+![Suma inferior de Riemann en $\mathbb{R}^2$](img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.pdf)
+:::
+
+:::{#exm-sumas-riemann}
+Veamos cómo calcular las sumas de Riemann de la función $f(x^2y)$ en el rectángulo $[0,1]\times [0,1]$ para la partición $P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}$
+
+Esta partición descompone el intervalo bidimensional $[0,1]\times [0,1]$$ en $4$ rectángulos (en realidad cuadrados) como los que se ven la siguiente figura. 
+
+ 
+:::{.content-visible when-format="html"}
+![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/partici%C3%B3n-intervalo-bidimensional.svg){width=200}
+:::
+
+:::{.content-visible unless-format="html"}
+![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/partici%C3%B3n-intervalo-bidimensional.pdf)
+:::
+
+Como $f$ es creciente tanto en $x$ como en $y$ en el intervalo $I$, alcanzará el mínimo en el extremo inferior izquierdo de cada subintervalo  y el máximo en el extremo superior derecho. Por tanto, la suma inferior de Riemann es
+
+\begin{align*}
+s(f,P) &= f(0,0)(0.5-0)(0.5-0) + f(0,0.5)(0.5-0)(1-0.5) \\
+&+ f(0.5,0)(1-0.5)(0.5-0) + f(0.5, 0.5)(1-0.5)(1-0.5) \\
+&= 0\cdot 0.25 + 0 \cdot 0.25 + 0 \cdot 0.25 + 0.125 \cdot 0.25 
+= 0.03125.
+\end{align*}
+
+Y la suma superior de Riemann es
+
+\begin{align*}
+S(f,P) &= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
+&+ f(1,0.5)(1-0.5)(0.5-0) + f(1, 1)(1-0.5)(1-0.5) \\
+&= 0.125\cdot 0.25 + 0.25 \cdot 0.25 + 0.5 \cdot 0.25 + 1 \cdot 0.25 
+= 0.46875.
+\end{align*}
+:::
+
+## Integral de Riemann múltiple
+
+Cuando la función $f(x,y)$ es positiva en el intervalo $I$, la suma inferior de Riemann nos da una aproximación por defecto del volumen encerrado entre la superficie de la función y el plano $xy$ en la región definida por $I$, mientras que la suma superior de Riemann nos da una aproximación por exceso. Al hacer refinamientos de la partición $P$, cada vez con mayor número de subintervalos, las sumas inferiores crecen y las superiores decrecen, dando aproximaciones cada vez mejores, de manera que en el límite, cuando el número de subintervalos tiende a $\infty$, obtendremos el volumen real.
+
+:::{#def-integral-inferior-superior-riemann-multiple}
+## Integral inferior y superior de Riemann
+Dada una función $f:I\to \mathbb{R}$ acotada en el intervalo $n$ dimensional $I\subset \mathbb{R}^n$ y una partición $n$ dimensional $P$ de $I$, se define la _integral inferior de Riemann_ de $f$ en $I$, como 
+
+$$
+\underline{\int_I} f = \sup\{s(f,P): P\in\mathcal{P}(I)\}.
+$$
+
+Y se define la _integral superior de Riemann_ de $f$ en $I$, como 
+
+$$
+\overline{\int_I} f = \inf\{S(f,P): P\in\mathcal{P}(I)\}.
+$$
+:::
+
+
+:::{#def-integral-riemann-n-dimensional}
+Dada una función $f:I\to \mathbb{R}$ acotada en el intervalo $n$ dimensional $I\subset \mathbb{R}^n$, se dice que $f$ es integrable Riemann en $I$ si 
+
+$$
+\underline{\int_I} f = \overline{\int_I}f,
+$$ 
+
+y a este valor se le llama _integral de Riemann_ o _integral definida_ de $f$ en $I$ y se denota por 
+
+$$
+\int_I f \quad \mbox{o bien} \quad \int_I f(x_1,\ldots,x_n)\,dA,
+$$
+donde $dA = dx_1\cdots dx_n$.
+:::
+
+:::{#prp-integral-riemann-n-dimensional}
+Si $f:I\to \mathbb{R}$ es integrable Riemann en el intervalo $n$ dimensional 
+$I\subset \mathbb{R}^n$, entonces
+
+$$
+\int_I f = \lim_{m\to \infty} \sum_{i_1=1}^m\cdots \sum_{i_n=1}^m f(x_{1,i_1},\ldots, x_{n,i_n})\Delta A,
+$$
+
+donde $P$ es una partición de $I$ en $m^n$ subintervalos de igual tamaño y $\Delta A = (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1})$ es el hipervolumen de los subintervalos de la partición.
+:::
+
+En el caso de una función de dos variables $f(x,y)$ la proposición anterior establece que si $f$ es integrable Riemann en un intervalo $[a,b]\times [c,d]$, entonces 
+
+$$
+\int_I f = \lim_{n\to \infty}\sum_{i=1}^n\sum_{j=1}^n f(x_i, yj)\Delta A,
+$$
+
+donde $P_n = \{x_0=a,x_1,\ldots,x_n=b\}\times \{y_0=c,y_1,\ldots,y_n=d\}$ y $\Delta A = (x_i-x_{i-1})(y_j-y_{j-1})$, es el área de los rectángulos definidos por cada subintervalo de la partición. Es decir, la integral de Riemann aparece al tomar particiones cada vez más refinadas con subintervalos de igual tamaño y hacer la suma de las áreas de los subintervalos multiplicadas por el valor de la función en el extremo superior derecho del subintervalo. 
+
+:::{.callout-note}
+Cuando se quieren hacer explícitas las variables de las que depende la función $f$, la integral de Riemann se suele escribir
+
+$$
+\int_{I} f(x,y) \,dx\,dy
+$$ 
+
+para funciones de dos variables y 
+
+$$
+\int_{I} f(x,y,z) \,dx\,dy\,dz 
+$$ 
+
+para funciones de tres variables.
+:::
+
+## Propiedades de las Integrales de Riemann múltiples
+
+Las [propiedades de la integral de Riemann](http://localhost:1313/09-integrales.html#propiedades-de-la-integral-de-riemann) para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.
+
+:::{#thm-propiedades-integrales-Riemann-multiples}
+Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en un intervalo $n$ dimensional $I$, entonces
+
+a. $f+g$ es integrable Riemann en $I$ y $\int_I (f+g) = \int_I f + \int_I g.$
+
+a. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_I cf = c\int_I f$.
+
+a. Si $f(x_1,\ldots,x_n) \leq g(x_1,\ldots,x_n)$ $\forall (x_1,\ldots,x_n)\in I$, entonces $\int_I f \leq \int_I g$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+La demostración es similar a la vista para funciones de una variable y se deja como ejercicio.
+:::
+:::
+
+## Integrales múltiples iteradas
+
+El cálculo de integrales de Riemann tomando límites de sumas de Riemann resulta poco operativo en la práctica, pero afortunadamente, podemos utilizar el [teorema fundamental del cálculo](http://localhost:1313/09-integrales.html#teorema-fundamental-del-c%C3%A1lculo) para calcular integrales de manera mucho más rápida y sencilla. En esta sección veremos como calcular integrales dobles y triples como integrales iteradas, que se pueden calcular realizando varias integrales simples.
+
+El procedimiento para reducir el cálculo de una integral múltiple al cálculo de varias integrales simples es, en el fondo, el mismo que se utilizó para calcular derivadas parciales, es decir, realizar integrales simples de las funciones parciales que se obtienen al fijar como constantes todas las variables excepto aquella con respecto a la que se integra. 
+
+Veamos el procedimiento para una función de dos variables. Supongamos que $f(x,y)$ es integrable Riemann en el intervalo $I=[a,b]\times [c,d]$. Si mantenemos $x$ constante, podemos calcular la integral definida simple con respecto a $y$ en el intervalo $[c,d]$, es decir, $\int_c^d f(x,y)\, dy$. Para cada valor de $x$, esta integral tomará un valor distinto, por lo que podemos definir la función
+
+$$
+A(x) = \int_c^d f(x,y)\,dy,
+$$
+
+que solo depende de $x$. Si ahora se integra esta función con respecto a $x$ en el intervalo $[a,b]$, se tiene
+
+$$
+\int_a^b A(x)\,dx = \int_a^b\int_c^d f(x,y)\,dy\,dx.
+$$
+
+Esta integral se conoce como _integral doble iterada_, primero con respecto a $y$ y después con respecto a $x$.
+
+De manera similar, podríamos haber integrado primero con respecto a $x$ y luego con respecto a $y$, y tendríamos esta otra integral doble iterada
+
+$$
+\int_c^d\int_a^b f(x,y)\,dx\,dy.
+$$
+
+El siguiente teorema establece que una integral múltiple se puede calcular mediante integrales iteradas.
+
+:::{#thm-teorema-fubini}
+## Fubini
+Si $f(x,y)$ es una función continua en un intervalo $I=[a,b]\times [c,d]$, entonces
+
+$$
+\int_I f(x,y)\, dA 
+= \int_a^b\int_c^d f(x,y)\,dy\,dx 
+= \int_c^d\int_a^b f(x,y)\,dx\,dy.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Daremos una demostración intuitiva. Si $f$ es positiva, la integral doble es el volumen del sólido encerrado entre la superficie de $f$ y en plano $xy$ en el intervalo $I=[a,b]\times [c,c]$. Si fijamos el valor de $x$ a un valor constante $x_0\in[a,b]$ e intersecamos este sólido con el plano $x=x_0$, se obtiene una región plana cuya área se puede calcular mediante la integral
+
+$$
+\int_c^d f(x_0,y)\,dy
+$$
+
+De esta manera, para cada $x\in[a,b]$ la función 
+
+$$
+A(x) = \int_c^d f(x,y)\,dy
+$$
+
+nos dará el área de la región plana que se obtiene de la intersección del sólido con el plano que pasa por $x$ y es perpendicular al eje $x$. Por tanto, si integramos estas áreas con respecto a $y$ en el intervalo $[c,b]$, 
+
+$$
+\int_a^b A(x)\,dx = \int_a^b\int_c^d f(x,y)\,dy\,dx
+$$
+
+obtendremos el volumen del sólido, tal y como se vió en la @sec-calculo-volumenes-integral.
+
+El mismo razonamiento se puede usar cambiando el orden de integración.
+:::
+:::
+
+:::{#exm-integrales-iteradas}
+El volumen del sólido definido entre la superficie de la función $12-2x-y^2$ y el plano $xy$ en el intervalo $I=[0,1]\times[0,3]$ es
+
+\begin{align*}
+\int_I f(x,y)\, dA 
+&= \int_0^1 \int_0^3 8-2x-y^2 \,dy\,dx
+= \int_0^1 \left[8y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
+&= \int_0^1 24-6x-\frac{3^3}{3}\, dx
+= \int_0^1 15-6x\,dx \\
+&= [15x-3x^2]_0^1 
+= 15-3
+= 12. 
+\end{align*}
+
+Podríamos haber llegado a este mismo resultado haciendo la otra integral iterada
+
+\begin{align*}
+\int_I f(x,y)\, dA 
+&= \int_0^3 \int_0^1 8-2x-y^2 \,dx\,dy
+= \int_0^3 \left[8x-x^2-xy^2\right]_0^1\,dy \\
+&= \int_0^3 8-1-y^2\, dy
+= \int_0^3 7-y^2\,dy \\
+&= \left[7y-\frac{y^3}{3}\right]_0^3 
+= 21 - \frac{3^3}{3}
+= 12.
+\end{align*}
+:::
+
+:::{.callout-important}
+Aunque cuando la función es integrable Riemann el orden de integración de las integrales iteradas no importa, a menudo, una integral iterada suele ser más fácil de calcular que la otra.
+:::
+
+:::{#exm-integrales-iteradas-2}
+Para calcular la integral de la función $f(x,y) = xe^{xy}$ en el intervalo $I=[0,1]\times [0,1]$, si primero integramos con respecto a $y$ y después con respecto a $x$ se tiene
+
+\begin{align*}
+\int_I f(x,y)\, dA 
+&= \int_0^1 \int_0^1 xe^{xy}\,dy\,dx 
+= \int_0^1 \left[e^{xy}\right]_0^1 \\
+&= \int_0^1 e^x-1\,dx
+= [e^x-x]_0^1
+= e - 2.
+\end{align*}
+
+Sin embargo, si primero integramos con respecto a $y$ y luego con respecto a $x$ se tiene una integral mucho más difícil de calcular.
+:::
+
+[![Calculadora de integrales dobles iteradas.](/img/logos/logo-geogebra.png) Calculadora de sumas de Riemann](https://www.geogebra.org/classic/s5ve2dxb)
+
+En el caso de que $f(x,y)$ pueda factorizarse como producto de funciones que sólo dependen de $x$ o de $y$, entonces el cálculo de la integral doble se simplifica.
+
+:::{#prp-integral-doble-producto-funciones}
+Si $f(x,y)=g(x)h(y)$ es integrable Riemann en el intervalo $I=[a,b]\times [c,d]$, entonces 
+
+$$
+\int_I f(x,y)\, dA 
+= \int_a^b g(x)\,dx \int_c^d h(y)\,dy.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+\begin{align*}
+\int_I f(x,y)\, dA 
+&= \int_a^b\int_c^d f(x,y)\,dy\,dx
+= \int_a^b\int_c^d g(x)h(y)\,dy\,dx \\
+&= \int_a^b g(x)\int_c^d h(y)\,dy\,dx \tag{1} \\
+&= \int_c^d h(y)\,dy \int_a^b g(x)\,dx \tag{2}.
+\end{align*}
+(1) $g(x)$ no depende de $y$.  
+(2) $\int_c^d h(y)\,dy$ no depende de $x$.
+:::
+:::
+
+:::{#exm-integral-doble-producto-funciones}
+La integral doble de la función $f(x,y) = e^{2x-3y}$ en el intervalo $I=[0,1]\times [0,2]$ es
+
+\begin{align*}
+\int_I e^{2x-3y} \,dx\,dy 
+&= \int_I e^{2x}e^{-3y} \,dx\,dy
+= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3x}\,dy \\
+&= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3x}}{3}\right]_0^2 
+= \left(\frac{e^2}{2}-\frac{1}{2}\right)\left(\frac{-e^6}{3}+\frac{1}{3}\right) 
+\end{align*}
+:::
+
+## Cálculo de volúmenes mediante integrales dobles
+
+Ya hemos visto que cuando $f(x,y)$ es positiva en el intervalo de integración $I=[a,b]\times[c,b]$, la integral doble $\int_I f(x,y)\,dx\,dy$ da el volumen del sólido encerrado entre la superficie de $f$ y el plano $xy$ en la región delimitada por $I$. Ahora bien, si $f$ es negativa en $I$, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen. 
+
+La cosa se complica cuando $f$ puede tomar valores positivos y negativos en el intervalo $I$. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración $I$ en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.
+

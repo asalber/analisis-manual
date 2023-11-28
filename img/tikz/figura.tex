@@ -44,50 +44,36 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{perceptron}
+\tikzsetnextfilename{partición-intervalo-bidimensional}
+
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
-\begin{tikzpicture}[
-    node distance=1.5cm,
-    neuron/.style={circle, draw, minimum size=1cm},
-    input/.style={rectangle, draw, minimum size=0.5cm, fill=green!20},
-    output/.style={rectangle, draw, minimum size=0.5cm, fill=red!20},
-    weight/.style={font=\small, midway, above, sloped}
-]
+\begin{tikzpicture}[]
+  \pgfplotsset{grid style={dashed, mygray, line width=0.1pt}}
+  \begin{axis}[
+  grid=major,
+  xmin=-0.2, xmax=1.2,
+  ymin=-0.2, ymax=1.2,
+  x=2cm, y=2cm,
+  axis lines=middle,
+  color=myblack]
+  \coordinate (A00) at (axis cs: {0}, {0});
+  \coordinate (A01) at (axis cs: {0}, {1});
+  \coordinate (A10) at (axis cs: {1}, {0});
+  \coordinate (A11) at (axis cs: {1}, {1});
+  \coordinate (B051) at (axis cs: {0}, {0.5});
+  \coordinate (B105) at (axis cs: {1}, {0.5});
+  \coordinate (C050) at (axis cs: {0.5}, {0});
+  \coordinate (C051) at (axis cs: {0.5}, {1});
 
-% Input neurons
-\node[input] (in1) {1};
-\node[input, below of=in1] (in2) {$x$};
-\node[input, below of=in2] (in3) {$y$};
-
-% Output neuron
-\node[neuron, right=2cm of in2] (out) {\Large $\sum$};
-
-% Connect inputs to output
-\draw[-{Latex[length=2mm]}] (in1) -- (out) node[weight] {$w_0$};
-\draw[-{Latex[length=2mm]}] (in2) -- (out) node[weight] {$w_1$};
-\draw[-{Latex[length=2mm]}] (in3) -- (out) node[weight] (w2) {$w_2$};
-
-% Activation function
-\node[neuron, right=1cm of out] (activation) {};
-\draw[-{Latex[length=2mm]}] (out) -- (activation);
-\begin{scope}[xshift=4.8cm, yshift=-1.5cm, scale=1]
-    \addaxes;
-    % flexible selection of activation function
-    % \relu
-    \stepfunc;
-\end{scope};
-
-% Output function 
-\node[output, right=1cm of activation] (output) {$z$};
-\draw[-{Latex[length=2mm]}] (activation) -- (output);
-
-% Etiquetas
-\node[left=5mm of in2, rotate=90, anchor=north] {Entradas};
-\node[below=2mm of output] {Salida};
-\node[below=2mm of w2] {Pesos};
-\node[below=2mm of out, align=center] {Suma\\ponderada};
-\node[below=2mm of activation, align=center] {Función de\\activación};
-\end{tikzpicture}
+  \draw[myblue] (A00) -- (A01) -- (A11) -- (A10);
+  \draw[myblue] (B051) -- (B105);
+  \draw[myblue] (C050) -- (C051);
+  \node at (axis cs: {0.25}, {0.25}) {$I_{1,1}$};
+  \node at (axis cs: {0.25}, {0.75}) {$I_{1,2}$};
+  \node at (axis cs: {0.75}, {0.25}) {$I_{2,1}$};
+  \node at (axis cs: {0.75}, {0.75}) {$I_{2,2}$};
+  \end{axis}
+  \end{tikzpicture}
    
 
 \end{document}

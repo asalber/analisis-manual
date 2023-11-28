@@ -235,6 +235,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-integrales-funciones-varias-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Integrales de funciones de varias variables</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -424,7 +430,7 @@ f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 <section id="diferenciabilidad" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="diferenciabilidad"><span class="header-section-number">7.2</span> Diferenciabilidad</h2>
 <div id="def-funcion-diferenciable-derivada" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.4 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> o <em>derivable</em> en <span class="math inline">\(a\)</span>, si existe el límite</p>
+<p><span class="theorem-title"><strong>Definición 7.4 (Función derivable) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> o <em>derivable</em> en <span class="math inline">\(a\)</span>, si existe el límite</p>
 <p><span class="math display">\[
 \lim_{x\to a}\frac{f(x)-f(a)}{x-a}
 \]</span></p>
@@ -448,7 +454,7 @@ f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
 </div>
 </div>
 <div id="def-funcion-derivada" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.5 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se define la <em>función derivada</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f'\)</span>, a la función cuyo dominio es el conjunto de los puntos de <span class="math inline">\(I\)</span> donde <span class="math inline">\(f\)</span> es diferenciable y el valor de <span class="math inline">\(f'\)</span> es el valor de la derivada en cada uno de esos puntos.</p>
+<p><span class="theorem-title"><strong>Definición 7.5 (Función derivada) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se define la <em>función derivada</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f'\)</span>, a la función cuyo dominio es el conjunto de los puntos de <span class="math inline">\(I\)</span> donde <span class="math inline">\(f\)</span> es diferenciable y el valor de <span class="math inline">\(f'\)</span> es el valor de la derivada en cada uno de esos puntos.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -488,13 +494,13 @@ Nota
 <p>Por tanto, como los límites laterales no coinciden, <span class="math inline">\(f\)</span> no es diferenciable en <span class="math inline">\(0\)</span>.</p>
 </div>
 <div id="def-tangente-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.6 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta tangente</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> con pendiente <span class="math inline">\(f'(a)\)</span>, es decir, la recta con ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.6 (Recta tangente a la gráfica de una función) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta tangente</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> con pendiente <span class="math inline">\(f'(a)\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
 y=f(a)+f'(a)(x-a)
 \]</span></p>
 </div>
 <div id="def-normal-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.7 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta normal</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> y es perpendicular a la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, es decir, la recta con ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.7 (Recta normal a la gráfica de una función) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta normal</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> y es perpendicular a la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
 y=f(a)-\frac{1}{f'(a)}(x-a)
 \]</span></p>
@@ -835,7 +841,7 @@ Precaución
 <p><span class="math display">\[\begin{align*}
 (e^y-x^2)' = 0' &amp;\Rightarrow e^yy'-2x = 0 \Rightarrow e^yy' = 2x \Rightarrow y' = \frac{2x}{e^y}.
 \end{align*}\]</span></p>
-<p>Sustituyendo <span class="math inline">\(x=1\)</span> e <span class="math inline">\(y=0\)</span>, se tiene <span class="math inline">\(y'(1) = \frac{2\dot 1}{e^0} = 2\)</span>.</p>
+<p>Sustituyendo <span class="math inline">\(x=1\)</span> e <span class="math inline">\(y=0\)</span>, se tiene <span class="math inline">\(y'(1) = \frac{2\cdot 1}{e^0} = 2\)</span>.</p>
 <p>En este caso, es posible obtener la representación explícita de la función, ya que <span class="math inline">\(e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)\)</span>. Si calculamos su derivada explícitamente, se tiene <span class="math inline">\(y'=\frac{2}{x}\)</span>, y para <span class="math inline">\(x=1\)</span> se tiene <span class="math inline">\(y'(1) = \frac{2}{1}=2\)</span>, que coincide con el resultado anterior.</p>
 </div>
 <p>Aún cuando la ecuación <span class="math inline">\(F(x,y)=0\)</span> no defina implícitamente a <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span> en un punto <span class="math inline">\((x_0, y_0)\)</span> que cumpla la ecuación.</p>

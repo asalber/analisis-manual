@@ -235,6 +235,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-integrales-funciones-varias-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Integrales de funciones de varias variables</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -245,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#sumas-de-riemann" id="toc-sumas-de-riemann" class="nav-link active" data-scroll-target="#sumas-de-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</a></li>
+  <li><a href="#sec-sumas-riemann" id="toc-sec-sumas-riemann" class="nav-link active" data-scroll-target="#sec-sumas-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</a></li>
   <li><a href="#integrales-de-riemann" id="toc-integrales-de-riemann" class="nav-link" data-scroll-target="#integrales-de-riemann"><span class="header-section-number">9.2</span> Integrales de Riemann</a></li>
   <li><a href="#propiedades-de-la-integral-de-riemann" id="toc-propiedades-de-la-integral-de-riemann" class="nav-link" data-scroll-target="#propiedades-de-la-integral-de-riemann"><span class="header-section-number">9.3</span> Propiedades de la integral de Riemann</a></li>
   <li><a href="#clase-de-las-funciones-integrables" id="toc-clase-de-las-funciones-integrables" class="nav-link" data-scroll-target="#clase-de-las-funciones-integrables"><span class="header-section-number">9.4</span> Clase de las funciones integrables</a></li>
@@ -258,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" id="toc-cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares" class="nav-link" data-scroll-target="#cálculo-del-area-encerrada-por-dos-curvas-en-coordenadas-polares"><span class="header-section-number">9.6.4</span> Cálculo del area encerrada por dos curvas en coordenadas polares</a></li>
   </ul></li>
   <li><a href="#integrales-impropias" id="toc-integrales-impropias" class="nav-link" data-scroll-target="#integrales-impropias"><span class="header-section-number">9.7</span> Integrales impropias</a></li>
-  <li><a href="#cálculo-de-volúmenes" id="toc-cálculo-de-volúmenes" class="nav-link" data-scroll-target="#cálculo-de-volúmenes"><span class="header-section-number">9.8</span> Cálculo de volúmenes</a>
+  <li><a href="#sec-calculo-volumenes-integral" id="toc-sec-calculo-volumenes-integral" class="nav-link" data-scroll-target="#sec-calculo-volumenes-integral"><span class="header-section-number">9.8</span> Cálculo de volúmenes</a>
   <ul class="collapse">
   <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución-con-discos-cilíndricos" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución-con-discos-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución-con-discos-cilíndricos"><span class="header-section-number">9.8.1</span> Cálculo de volúmenes de sólidos de revolución con discos cilíndricos</a></li>
   <li><a href="#cálculo-de-volúmenes-de-sólidos-de-revolución-con-envoltorios-cilíndricos" id="toc-cálculo-de-volúmenes-de-sólidos-de-revolución-con-envoltorios-cilíndricos" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-de-sólidos-de-revolución-con-envoltorios-cilíndricos"><span class="header-section-number">9.8.2</span> Cálculo de volúmenes de sólidos de revolución con envoltorios cilíndricos</a></li>
@@ -316,8 +322,8 @@ ul.task-list li input[type="checkbox"] {
 <p>En este capítulo se estudian las <em>integrales</em> de funciones de números reales, que junto a las derivadas son las dos ramas del Análisis más importantes. Veremos también el <em>teorema fundamental del cálculo</em>, uno de los resultados más importantes del Análisis que relaciona el cálculo diferencial con el integral, al cuál llegaron de manera simultanea Newton y Leibniz.</p>
 <p>Históricamente el concepto de integral surge a partir del estudio de áreas, inicialmente de figuras geométricas, y después, de figuras curvas. En la antigua Grecia ya se utilizaba el <em><a href="https://es.wikipedia.org/wiki/M%C3%A9todo_por_agotamiento">método por agotamiento</a></em> para calcular áreas de figuras no geométricas, y Arquímedes fue capaz de aproximar el área encerrada por una circunferencia usando este método.</p>
 <p>Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue <a href="https://es.wikipedia.org/wiki/Bernhard_Riemann">Bernhard Riemann</a>.</p>
-<section id="sumas-de-riemann" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sumas-de-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</h2>
+<section id="sec-sumas-riemann" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-sumas-riemann"><span class="header-section-number">9.1</span> Sumas de Riemann</h2>
 <div id="def-particion-intervalo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.1 (Partición de un intervalo) </strong></span>Dado un intervalo <span class="math inline">\(I=[a,b]\)</span> cerrado y acotado en <span class="math inline">\(\mathbb{R}\)</span>, una <em>partición</em> de <span class="math inline">\(I\)</span> es un conjunto ordenado y finito <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de puntos de <span class="math inline">\(I\)</span> tales que <span class="math inline">\(a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b\)</span>.</p>
 <p>El conjunto de todas las particiones de un intervalo <span class="math inline">\(I\)</span> se denota <span class="math inline">\(\mathcal{P}(I)\)</span>.</p>
@@ -541,7 +547,7 @@ Demostración
 </div>
 </div>
 <div id="def-integral-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 9.7 </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>integrable Riemann</em> en <span class="math inline">\(I\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 9.7 (Integral de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>integrable Riemann</em> en <span class="math inline">\(I\)</span> si</p>
 <p><span class="math display">\[
 \underline{\int_a^b} f = \overline{\int_a^b}f,
 \]</span></p>
@@ -711,7 +717,7 @@ Importante
 <div id="thm-linealidad-integral-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
 <ol type="a">
-<li><p><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.\)</span></p></li>
+<li><p><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx.\)</span></p></li>
 <li><p>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></p></li>
 </ol>
 </div>
@@ -1422,7 +1428,7 @@ Advertencia
 </div>
 <div id="exm-teorema-fundamental-calculo-alternativo" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9.4 </strong></span>Dada la función <span class="math inline">\(f(x)=2x\)</span>, es fácil ver que <span class="math inline">\(F(x)=x^2+C\)</span> es una primitiva de <span class="math inline">\(f\)</span> para cualquier <span class="math inline">\(C\in\mathbb{R}\)</span>.</p>
-<p>En el <a href="#exm-sumas-riemann">Ejemplo&nbsp;<span>9.1</span></a> vimos que <span class="math inline">\(\int_0^1 x\,dx = \frac{1}{2}\)</span>, de modo que <span class="math display">\[
+<p>En el <a href="14-integrales-funciones-varias-variables.html#exm-sumas-riemann">Ejemplo&nbsp;<span>13.1</span></a> vimos que <span class="math inline">\(\int_0^1 x\,dx = \frac{1}{2}\)</span>, de modo que <span class="math display">\[
 \int_0^1 2x\,dx = 2 \int_0^1 x\,dx = 2\frac{1}{2} = 1.
 \]</span></p>
 <p>Si queremos llegar a este resultado usando primitivas, es necesario tomar la primitiva adecuada, es decir, necesitamos saber el valor concreto de la constante <span class="math inline">\(C\)</span> que permite calcular la integral definida. En este caso particular, como <span class="math inline">\(F\)</span> tiene que cumplir que <span class="math inline">\(F(1)=1+C = 1=\int_0^1 2x\,dx\)</span>, resulta evidente que debe ser <span class="math inline">\(C=0\)</span>, pero si tomamos cualquier otra constante, como por ejemplo <span class="math inline">\(C=1\)</span>, entonces <span class="math inline">\(F(1) = 1+1 = 2\neq 1 = \int_0^1 2x\,dx\)</span>.</p>
@@ -1735,8 +1741,8 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
 </div>
 </section>
-<section id="cálculo-de-volúmenes" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="cálculo-de-volúmenes"><span class="header-section-number">9.8</span> Cálculo de volúmenes</h2>
+<section id="sec-calculo-volumenes-integral" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="sec-calculo-volumenes-integral"><span class="header-section-number">9.8</span> Cálculo de volúmenes</h2>
 <p>Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos. Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

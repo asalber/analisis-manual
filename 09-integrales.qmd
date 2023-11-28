@@ -15,7 +15,7 @@ Históricamente el concepto de integral surge a partir del estudio de áreas, in
 
 Para llegar a la definición de integral explotaremos este método aproximando el area bajo una función usando rectángulos. El precursor de esta idea fue [Bernhard Riemann](https://es.wikipedia.org/wiki/Bernhard_Riemann).
 
-## Sumas de Riemann
+## Sumas de Riemann {#sec-sumas-riemann}
 
 :::{#def-particion-intervalo}
 ## Partición de un intervalo
@@ -231,6 +231,7 @@ $$
 ::: 
 
 :::{#def-integral-riemann}
+## Integral de Riemann
 Dada una función $f:I\to\mathbb{R}$ acotada en el intervalo $I=[a,b]$, se dice que $f$ es _integrable Riemann_ en $I$ si 
 
 $$
@@ -398,7 +399,7 @@ Este último resultado nos permite calcular una integral como el límite de las 
 :::{#thm-linealidad-integral-riemann}
 Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$, entonces
 
-a. $f+g$ es integrable Riemann en $I$ y $\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b f(x)\,dx.$
+a. $f+g$ es integrable Riemann en $I$ y $\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx.$
 
 a. Para cualquier $c\in\mathbb{R}$, $cf$ es integrable Riemann en $I$ y  $\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.$
 :::
@@ -1423,7 +1424,7 @@ $$
 siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.
 :::
 
-## Cálculo de volúmenes
+## Cálculo de volúmenes {#sec-calculo-volumenes-integral}
 
 Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos.
 Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.
