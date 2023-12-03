@@ -1208,7 +1208,7 @@ Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el 
 :::
 :::
 
-### Cálculo del area encerrada por una curva en coordenadas polares
+### Cálculo del area encerrada por una curva en coordenadas polares {#sec-integrales-coordenadas-polares}
 
 En ocasiones, para calcular el area encerrada por una curva, especialmente para curvas dadas mediante una ecuación implícita, resulta más sencillo trabajar en coordenadas polares. 
 
@@ -2070,7 +2070,7 @@ Luego el centroide es $(0, \frac{4}{3\pi})$.
 
 Veremos a continuación otras aplicaciones de la integral más relacionadas con la Estadística.
 
-### Cálculo de la media de una función
+### Cálculo de la media de una función {#sec-valor-medio-integral}
 
 Resulta sencillo calcular la media de un conjunto finito de números, pero la cosa se complica cuando el conjunto de números es infinito, como por ejemplo, cuando queremos calcular la temperatura media de un día.
 

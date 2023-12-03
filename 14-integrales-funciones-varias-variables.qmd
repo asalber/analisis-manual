@@ -77,13 +77,12 @@ Veamos cómo calcular las sumas de Riemann de la función $f(x^2y)$ en el rectá
 
 Esta partición descompone el intervalo bidimensional $[0,1]\times [0,1]$$ en $4$ rectángulos (en realidad cuadrados) como los que se ven la siguiente figura. 
 
- 
 :::{.content-visible when-format="html"}
-![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/partici%C3%B3n-intervalo-bidimensional.svg){width=200}
+![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.svg){width=200}
 :::
 
 :::{.content-visible unless-format="html"}
-![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/partici%C3%B3n-intervalo-bidimensional.pdf)
+![Partición del intervalo $[0,1]\times [0,1]$ en 4 subintervalos.](img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.pdf)
 :::
 
 Como $f$ es creciente tanto en $x$ como en $y$ en el intervalo $I$, alcanzará el mínimo en el extremo inferior izquierdo de cada subintervalo  y el máximo en el extremo superior derecho. Por tanto, la suma inferior de Riemann es
@@ -263,30 +262,30 @@ El mismo razonamiento se puede usar cambiando el orden de integración.
 :::
 
 :::{#exm-integrales-iteradas}
-El volumen del sólido definido entre la superficie de la función $12-2x-y^2$ y el plano $xy$ en el intervalo $I=[0,1]\times[0,3]$ es
+La integral doble de la función $f(x,y)=12-2x-y^2$ en el intervalo $I=[0,1]\times[0,3]$ es
 
 \begin{align*}
 \int_I f(x,y)\, dA 
-&= \int_0^1 \int_0^3 8-2x-y^2 \,dy\,dx
-= \int_0^1 \left[8y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
-&= \int_0^1 24-6x-\frac{3^3}{3}\, dx
-= \int_0^1 15-6x\,dx \\
-&= [15x-3x^2]_0^1 
-= 15-3
-= 12. 
+&= \int_0^1 \int_0^3 12-2x-y^2 \,dy\,dx
+= \int_0^1 \left[12y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
+&= \int_0^1 36-6x-\frac{3^3}{3}\, dx
+= \int_0^1 27-6x\,dx \\
+&= [27x-3x^2]_0^1 
+= 27-3
+= 24. 
 \end{align*}
 
 Podríamos haber llegado a este mismo resultado haciendo la otra integral iterada
 
 \begin{align*}
 \int_I f(x,y)\, dA 
-&= \int_0^3 \int_0^1 8-2x-y^2 \,dx\,dy
-= \int_0^3 \left[8x-x^2-xy^2\right]_0^1\,dy \\
-&= \int_0^3 8-1-y^2\, dy
-= \int_0^3 7-y^2\,dy \\
-&= \left[7y-\frac{y^3}{3}\right]_0^3 
-= 21 - \frac{3^3}{3}
-= 12.
+&= \int_0^3 \int_0^1 12-2x-y^2 \,dx\,dy
+= \int_0^3 \left[12x-x^2-xy^2\right]_0^1\,dy \\
+&= \int_0^3 12-1-y^2\, dy
+= \int_0^3 11-y^2\,dy \\
+&= \left[11y-\frac{y^3}{3}\right]_0^3 
+= 33 - \frac{3^3}{3}
+= 24.
 \end{align*}
 :::
 
@@ -343,15 +342,277 @@ La integral doble de la función $f(x,y) = e^{2x-3y}$ en el intervalo $I=[0,1]\t
 \begin{align*}
 \int_I e^{2x-3y} \,dx\,dy 
 &= \int_I e^{2x}e^{-3y} \,dx\,dy
-= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3x}\,dy \\
-&= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3x}}{3}\right]_0^2 
+= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3y}\,dy \\
+&= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3y}}{3}\right]_0^2 
 = \left(\frac{e^2}{2}-\frac{1}{2}\right)\left(\frac{-e^6}{3}+\frac{1}{3}\right) 
+\end{align*}
+:::
+
+## Integrales sobre regiones no regulares
+
+En muchos problemas reales, como por ejemplo en el cálculo de volúmenes, la región de integración no es un integración no es un intervalo $n$ dimensional o hiperrectángulo, sino una región no regular, es decir, con fronteras curvas. En esta sección veremos cómo calcular integrales dobles de funciones de dos variables para algunos tipos de regiones irregulares acotadas del plano $xy$.
+
+En general, la integral de Riemann de una función $f$ sobre un intervalo $n$ dimensional puede extenderse a una región irregular acotada $R$ simplemente tomando un intervalo $n$ dimensional $I$ que incluya la región, es decir $R\subseteq I$ y redefiniendo $f$ como
+
+$$
+F(x_1,\ldots,x_n) =
+\begin{cases}
+f(x_1,\ldots,x_n) & \mbox{si $(x,1,\ldots,x_n)\in R$}\\
+0 & \mbox{si $(x,1,\ldots,x_n)\in I\setminus R$}
+\end{cases}
+$$.
+
+y calculando la integral de Riemann de $F$ sobre $I$ como se ha visto en la sección anterior, es decir,
+
+$$
+\int_{R} f(x_1,\ldots,x_n)\,dA 
+= \int_{I} F(x_1,\ldots,x_n)\,dA. 
+$$
+
+Este procedimiento tiene sentido siempre que $f$ sea continua sobre la frontera de la región $R$, ya que el valor de $F$ en los puntos que están fuera de la región $R$ es $0$, y por tanto, no contribuyen la suma de la integral.
+
+En el caso de funciones de dos variables, existen varios tipos de regiones en el plano $xy$ donde la integral de Riemann se puede calcular mediante integrales iteradas donde los límites de integración dependen de funciones que delimitan la región de integración. 
+
+Si $R$ es una región del plano $xy$ delimitada por las gráficas de dos funciones $g_1(x)$ y $g_2(x)$, es decir, 
+
+$$
+R = \{(x,y): a\leq x \leq b, g_1(x)\leq y \leq g_2(x)\},
+$$
+
+la integral de Riemann $f$ sobre esta región se puede calcular mediante la integral iterada
+
+$$
+\int_{R} f(x,y)\,dA
+= \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+$$
+
+Del mismo modo, si $R$ es una región del plano $xy$ delimitada por las gráficas de dos funciones $g_1(y)$ y $g_2(y)$, es decir, 
+
+$$
+R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
+$$
+
+la integral de Riemann $f$ sobre esta región se puede calcular mediante la integral iterada
+
+$$
+\int_{R} f(x,y)\,dA 
+= \int_a^b \int_{g_1(y)}^{g_2(y)} f(x,y)\,dx\,dy.
+$$
+
+:::{#exm-integral-region-irregular}
+Veamos cómo calcular la integral doble de la función $f(x,y)=xy$ sobre la región encerrada entre las curvas $y=x$ e $y=x^2$. La región encerrada entre las curvas se muestra en el siguiente gráfico. 
+
+:::{.content-visible when-format="html"}
+![Región comprendida entre las curvas $y=x$ e $y=x^2$.](img/integrales-funciones-varias-variables/region-irregular.svg){width=200}
+:::
+
+:::{.content-visible unless-format="html"}
+![Región comprendida entre las curvas $y=x$ e $y=x^2$.](img/integrales-funciones-varias-variables/region-irregular.pdf)
+:::
+
+Esta región puede expresarse como $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}$, por lo que la integral doble de $f$ sobre esta región puede calcularse mediante la integral iterada
+
+\begin{align*}
+\int_0^1\int_{x^2}^x xy\,dy\,dx
+&= \int_0^1 \left[x\frac{y^2}{2}\right]_{x^2}^x\,dx
+= \int_0^1 x\frac{x^2-x^4}{2}\,dx
+= \int_0^1 \frac{x^3-x^5}{2}\,dx\\
+&= \left[\frac{x^4}{8}-\frac{x^6}{12}\right]_0^1
+= \frac{1}{8}-\frac{1}{12}
+= \frac{1}{24}.
+\end{align*}
+
+En este caso, la región también puede expresarse como $R=\{(x,y)\in \mathbb{R}^2: y\leq x\leq \sqrt{y}, 0\leq y\leq 1\}$, por lo que la integral doble de $f$ sobre esta región también puede calcularse mediante la integral iterada
+
+\begin{align*}
+\int_0^1\int_y^{\sqrt{y}} xy\,dx\,dy
+&= \int_0^1 \left[\frac{x^2}{2}y\right]_y^{\sqrt{y}}\,dy
+= \int_0^1 \frac{y-y^2}{2}y\,dy
+= \int_0^1 \frac{y^2-y^3}{2}\,dx\\
+&= \left[\frac{y^3}{6}-\frac{y^4}{8}\right]_0^1
+= \frac{1}{6}-\frac{1}{8}
+= \frac{1}{24}.
+\end{align*}
+:::
+
+En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.
+
+:::{#exm-integral-region-irregular-2}
+Para calcular la integral de la función $f(x,y)=e^{-y^2}$ en la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}$, como $y$ está acotada por una función de $x$, habría que hacer la integral iterada
+
+$$
+\int_0^1\int_0^{2x} e^{-y^2}\,dy\,dx.
+$$
+
+Sin embargo, la función $e^{-y^2}$ no tiene primitiva elemental, por lo que necesariamente hay que realizar la integral iterada en el otro orden, pero para ello previamente hay que expresar la región como $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq \frac{y}{2}, 0\leq y\leq 2\}$, con lo que la integral doble sobre esta región es
+
+\begin{align*}
+\int_0^2\int_0^{y/2} e^{-y^2}\,dx\,dy 
+&= \int_0^2 e^{-y^2}[x]_0^{y/2}\,dy 
+= \int_0^2 e^{-y^2}\frac{y}{2}\,dy \\
+&= \left[\frac{-e^{-y^2}}{4}\right]_0^2
+= \frac{-e^{-4}+1}{4}.
+\end{align*}  
+:::
+
+## Integrales dobles en coordenadas polares
+
+Al que igual que se vio en la @sec-sec-integrales-coordenadas-polares, para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas $(x,y)$ a coordenadas polares $(r,\theta)$ se utilizan las fórmulas
+
+$$
+r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x^2+y^2}}\right) = \operatorname{arccos}\left(\frac{x}{\sqrt{x^2+y^2}}\right),
+$$
+
+y para pasar de coordenadas polares a cartesianas se utiliza la fórmula
+
+$$
+x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
+$$
+
+En coordenadas polares un intervalo bidimensional $I=[a,b]\times[\alpha,\beta]$ define un sector de disco como el que se muestra a continuación.
+
+:::{.content-visible when-format="html"}
+![Intervalo bidimensional en coordenadas polares.](img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg){width=300}
+:::
+
+:::{.content-visible unless-format="html"}
+![Intervalo bidimensional en coordenadas polares.](img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.pdf)
+:::
+
+Si la función $f(x,y)$ es continua sobre un intervalo polar $I=[a,b]\times[\alpha,\beta]$ con $\beta-\alpha\leq 2\pi$, la integral doble de $f$ sobre esta región se puede calcular mediante la integral iterada
+
+$$
+\int_I f(x,y)\,dA 
+= \int_{\alpha}^{\beta}\int_a^b f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta.
+$$
+
+:::{#exm-volumen-esfera}
+La gráfica de la función $f(x,y)=\sqrt{a^2-x^2-y^2}$ es una semiesfera de radio uno centrada en el origen de coordenadas. Para calcular su volumen, la región de integración es el círculo de radio uno centrado en el origen de coordenadas, que puede expresarse como $R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}$. En este caso la integral en coordenadas rectangulares es complicada y merece la pena hacer la integral en coordenadas polares.
+
+\begin{align*}
+\int_I f(x,y)\,dA 
+&= \int_0^{2\pi}\int_0^a f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&= \int_0^{2\pi}\int_0^a \sqrt{a^2-(r\cos(\theta))^2-(r\operatorname{sen}(\theta))^2}r\,dr\,d\theta \\
+&= \int_0^{2\pi}\int_0^a \sqrt{a^2-r^2(\cos(\theta)^2+\operatorname{sen}(\theta)^2)}r\,dr\,d\theta \\
+&= \int_0^{2\pi}\int_0^a  \sqrt{a^2-r^2}r\,dr\,d\theta 
+= \int_0^{2\pi} -\left[\frac{(a^2-r^2)^{3/2}}{3}\right]_0^a\,d\theta \\
+&= \int_0^{2\pi} \frac{a^2}{3}\,d\theta 
+= \left[\frac{a^2\theta}{3}\right]_0^{2\pi}
+= \frac{2\pi a^2}{3}.
+\end{align*}
+
+Y por tanto, el volumen de la esfera de radio uno centrada es $\frac{4}{3}\pi a^2$, que coincide con la fórmula habitual.
+:::
+
+Cuando la región de integración es irregular pero puede expresarse de la forma $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}$, la integral doble en coordenadas polares puede calcularse mediante la integral iterada 
+
+$$
+\int_R f(x.y)\,dA 
+= \int_{\alpha}^{\beta} \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta),r\operatorname{sen}(\theta))r\,dr\,d\theta.
+$$
+
+:::{#exm-integral-region-irregular-polar}
+Veamos cómo calcular el volumen encerrado entre la gráfica integral del paraboloide $f(x,y)=x^2+y^2$ y el plano $xy$ sobre la circunferencia de ecuación $x^2+(y^2-1)=1$. En coordenadas polares, la circunferencia que delimita la región de integración puede escribirse como $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq \pi, 0\leq r\leq 2\operatorname{sen}(\theta)\}$. Por tanto, podemos calcular la integral de $f$ sobre la región $R$ mediante la integral iterada
+
+\begin{align*}
+\int_R f(x,y)\,dA
+&= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} ((r\cos(\theta))^2 + (r\operatorname{sen}{\theta})^2)r\,dr\,d\theta \\
+&= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} r^3\,dr\,d\theta 
+= \int_0^\pi \left[\frac{x^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
+&= \int_0^\pi 4\operatorname{sen}(\theta)^4 \,d\theta 
+= \int_0^\pi (1-\cos(2\theta))^2\,d\theta \\ 
+&= \int_0^\pi 1 - 2\cos(2\theta) + \cos(2\theta)^2 \,d\theta \\
+&= \int_0^\pi 1 - 2\cos(2\theta) + \frac{1+\cos(4\theta)}{2}\,d\theta \\
+&= \left[\theta - \operatorname{sen}(2\theta) + \frac{\theta}{2} + \frac{\operatorname{sen}(4\theta)}{8}\right]_0^\pi
+= \frac{3}{2}\pi.
 \end{align*}
 :::
 
 ## Cálculo de volúmenes mediante integrales dobles
 
-Ya hemos visto que cuando $f(x,y)$ es positiva en el intervalo de integración $I=[a,b]\times[c,b]$, la integral doble $\int_I f(x,y)\,dx\,dy$ da el volumen del sólido encerrado entre la superficie de $f$ y el plano $xy$ en la región delimitada por $I$. Ahora bien, si $f$ es negativa en $I$, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen. 
+Cuando $f(x,y)$ es positiva en el intervalo de integración $I=[a,b]\times[c,b]$, la integral doble $\int_I f(x,y)\,dx\,dy$ da el volumen del sólido encerrado entre la superficie de $f$ y el plano $xy$ en la región delimitada por $I$. Ahora bien, si $f$ es negativa en $I$, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen. 
 
 La cosa se complica cuando $f$ puede tomar valores positivos y negativos en el intervalo $I$. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración $I$ en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.
+
+:::{#exm-volumen-integral-doble}
+Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I=[-1,1]\times[-1,1]$. En el intervalo de integración, la función toma valores negativos en el subintervalo $I_1=[-1,1]\times[-1,0]$ y valores positivos en el intervalo $[-1,1]\times[0,1]$, por lo que el volumen encerrado entre la gráfica de la función y el plano $xy$ viene dado por la suma de las integrales
+
+\begin{align*}
+\int_{I_1} -f(x,y)\,dA 
+&= \int_{-1}^1\int_{-1}^0 -x^2y\,dy\,x
+= \int_{-1}^1 \left[-x^2\frac{y^2}{2}\right]_{-1}^0\,dx \\
+&= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&= \frac{1}{6}+\frac{1}{6} 
+= \frac{1}{3}.
+\end{align*}
+
+y
+
+\begin{align*}
+\int_{I_1} f(x,y)\,dA 
+&= \int_{-1}^1\int_0^1 x^2y\,dy\,x
+= \int_{-1}^1 \left[x^2\frac{y^2}{2}\right]_0^1\,dx \\
+&= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&= \frac{1}{6}+\frac{1}{6} 
+= \frac{1}{3},
+\end{align*}
+
+es decir,
+
+$$
+\int_I x^2y\,dA 
+= \int_{I_1} x^2y\,dA + \int_{I_2} x^2y\,dA
+= \frac{1}{3} + \frac{1}{3}
+= \frac{2}{3}.
+$$
+:::
+
+## Aplicaciones físicas
+
+### Centro de masas
+
+
+
+## Aplicaciones estadísticas
+## Valor medio de una función
+En la @sec-sec-valor-medio-integral vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región $R$ dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de $\mathbb{R}^n$ utilizaremos la integral de la siguiente definición.
+
+:::{#def-valor-medio-funcion-varias-variables}
+## Valor medio de una función de varias variables
+Dada una función $f:\mathbb{R}^n\to \mathbb{R}$ integrable sobre una región $R\subset \mathbb{R}^n$, el _valor medio_ de $f$ sobre $R$ es
+
+$$
+\bar{f}_R = \frac{\int_R f(x_1,\ldots,x_n)\,dA}{\int_R\,dA}
+$$
+:::
+
+:::{.callout-note}
+Obsérvese que la integral del denominador $\int_R\,dA$, para una función de dos variables da el área de la región $R$, mientras que para una función de tres variables da el volumen de la región $R$.
+:::
+
+:::{#exm-valor-medio-funcion-varias-variables}
+En el @exm-integral-region-irregular vimos que la integral doble de la función $f(x,y)=xy$ sobre la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}$ era $\int_R xy\,dA = \frac{1}{24}$. Como el área de la región $R$ es 
+
+\begin{align*}
+\int_R \,dA
+&= \int_0^1 \int_{x^2}^x  \,dy\,dx
+= \int_0^1 [y]_{x^2}^x\,dx
+= \int_0^1 x-x^2\,dx \\
+&= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+= \frac{1}{2}-\frac{1}{3}
+= \frac{1}{6}.
+\end{align*}
+
+ el valor medio de $f$ en $R$ es
+
+ $$
+ \bar f_R 
+ = \frac{\int_R xy\,dA}{\int_R\,dA}
+ = \frac{1/24}{1/6} 
+ = \frac{1}{4}.
+ $$ 
+:::
 

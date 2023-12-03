@@ -254,7 +254,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#integral-de-riemann-múltiple" id="toc-integral-de-riemann-múltiple" class="nav-link" data-scroll-target="#integral-de-riemann-múltiple"><span class="header-section-number">13.2</span> Integral de Riemann múltiple</a></li>
   <li><a href="#propiedades-de-las-integrales-de-riemann-múltiples" id="toc-propiedades-de-las-integrales-de-riemann-múltiples" class="nav-link" data-scroll-target="#propiedades-de-las-integrales-de-riemann-múltiples"><span class="header-section-number">13.3</span> Propiedades de las Integrales de Riemann múltiples</a></li>
   <li><a href="#integrales-múltiples-iteradas" id="toc-integrales-múltiples-iteradas" class="nav-link" data-scroll-target="#integrales-múltiples-iteradas"><span class="header-section-number">13.4</span> Integrales múltiples iteradas</a></li>
-  <li><a href="#cálculo-de-volúmenes-mediante-integrales-dobles" id="toc-cálculo-de-volúmenes-mediante-integrales-dobles" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.5</span> Cálculo de volúmenes mediante integrales dobles</a></li>
+  <li><a href="#integrales-sobre-regiones-no-regulares" id="toc-integrales-sobre-regiones-no-regulares" class="nav-link" data-scroll-target="#integrales-sobre-regiones-no-regulares"><span class="header-section-number">13.5</span> Integrales sobre regiones no regulares</a></li>
+  <li><a href="#integrales-dobles-en-coordenadas-polares" id="toc-integrales-dobles-en-coordenadas-polares" class="nav-link" data-scroll-target="#integrales-dobles-en-coordenadas-polares"><span class="header-section-number">13.6</span> Integrales dobles en coordenadas polares</a></li>
+  <li><a href="#cálculo-de-volúmenes-mediante-integrales-dobles" id="toc-cálculo-de-volúmenes-mediante-integrales-dobles" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.7</span> Cálculo de volúmenes mediante integrales dobles</a></li>
+  <li><a href="#aplicaciones-físicas" id="toc-aplicaciones-físicas" class="nav-link" data-scroll-target="#aplicaciones-físicas"><span class="header-section-number">13.8</span> Aplicaciones físicas</a>
+  <ul class="collapse">
+  <li><a href="#centro-de-masas" id="toc-centro-de-masas" class="nav-link" data-scroll-target="#centro-de-masas"><span class="header-section-number">13.8.1</span> Centro de masas</a></li>
+  </ul></li>
+  <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">13.9</span> Aplicaciones estadísticas</a></li>
+  <li><a href="#valor-medio-de-una-función" id="toc-valor-medio-de-una-función" class="nav-link" data-scroll-target="#valor-medio-de-una-función"><span class="header-section-number">13.10</span> Valor medio de una función</a></li>
   </ul>
 </nav>
     </div>
@@ -333,7 +341,7 @@ S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{i,j}(x_i-x_{i-1})(y_j-y_{j-1}),
 <p>Esta partición descompone el intervalo bidimensional <span class="math inline">\([0,1]\times [0,1]\)</span>$ en <span class="math inline">\(4\)</span> rectángulos (en realidad cuadrados) como los que se ven la siguiente figura.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/integrales-funciones-varias-variables/partición-intervalo-bidimensional.svg" class="img-fluid figure-img" width="200"></p>
+<p><img src="img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.svg" class="img-fluid figure-img" width="200"></p>
 <figcaption class="figure-caption">Partición del intervalo <span class="math inline">\([0,1]\times [0,1]\)</span> en 4 subintervalos.</figcaption>
 </figure>
 </div>
@@ -498,27 +506,27 @@ A(x) = \int_c^d f(x,y)\,dy
 </div>
 </div>
 <div id="exm-integrales-iteradas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.2 </strong></span>El volumen del sólido definido entre la superficie de la función <span class="math inline">\(12-2x-y^2\)</span> y el plano <span class="math inline">\(xy\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times[0,3]\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.2 </strong></span>La integral doble de la función <span class="math inline">\(f(x,y)=12-2x-y^2\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times[0,3]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_I f(x,y)\, dA
-&amp;= \int_0^1 \int_0^3 8-2x-y^2 \,dy\,dx
-= \int_0^1 \left[8y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
-&amp;= \int_0^1 24-6x-\frac{3^3}{3}\, dx
-= \int_0^1 15-6x\,dx \\
-&amp;= [15x-3x^2]_0^1
-= 15-3
-= 12.
+&amp;= \int_0^1 \int_0^3 12-2x-y^2 \,dy\,dx
+= \int_0^1 \left[12y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
+&amp;= \int_0^1 36-6x-\frac{3^3}{3}\, dx
+= \int_0^1 27-6x\,dx \\
+&amp;= [27x-3x^2]_0^1
+= 27-3
+= 24.
 \end{align*}\]</span></p>
 <p>Podríamos haber llegado a este mismo resultado haciendo la otra integral iterada</p>
 <p><span class="math display">\[\begin{align*}
 \int_I f(x,y)\, dA
-&amp;= \int_0^3 \int_0^1 8-2x-y^2 \,dx\,dy
-= \int_0^3 \left[8x-x^2-xy^2\right]_0^1\,dy \\
-&amp;= \int_0^3 8-1-y^2\, dy
-= \int_0^3 7-y^2\,dy \\
-&amp;= \left[7y-\frac{y^3}{3}\right]_0^3
-= 21 - \frac{3^3}{3}
-= 12.
+&amp;= \int_0^3 \int_0^1 12-2x-y^2 \,dx\,dy
+= \int_0^3 \left[12x-x^2-xy^2\right]_0^1\,dy \\
+&amp;= \int_0^3 12-1-y^2\, dy
+= \int_0^3 11-y^2\,dy \\
+&amp;= \left[11y-\frac{y^3}{3}\right]_0^3
+= 33 - \frac{3^3}{3}
+= 24.
 \end{align*}\]</span></p>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -585,16 +593,236 @@ Demostración
 <p><span class="math display">\[\begin{align*}
 \int_I e^{2x-3y} \,dx\,dy
 &amp;= \int_I e^{2x}e^{-3y} \,dx\,dy
-= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3x}\,dy \\
-&amp;= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3x}}{3}\right]_0^2
+= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3y}\,dy \\
+&amp;= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3y}}{3}\right]_0^2
 = \left(\frac{e^2}{2}-\frac{1}{2}\right)\left(\frac{-e^6}{3}+\frac{1}{3}\right)
 \end{align*}\]</span></p>
 </div>
 </section>
-<section id="cálculo-de-volúmenes-mediante-integrales-dobles" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.5</span> Cálculo de volúmenes mediante integrales dobles</h2>
-<p>Ya hemos visto que cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
+<section id="integrales-sobre-regiones-no-regulares" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="integrales-sobre-regiones-no-regulares"><span class="header-section-number">13.5</span> Integrales sobre regiones no regulares</h2>
+<p>En muchos problemas reales, como por ejemplo en el cálculo de volúmenes, la región de integración no es un integración no es un intervalo <span class="math inline">\(n\)</span> dimensional o hiperrectángulo, sino una región no regular, es decir, con fronteras curvas. En esta sección veremos cómo calcular integrales dobles de funciones de dos variables para algunos tipos de regiones irregulares acotadas del plano <span class="math inline">\(xy\)</span>.</p>
+<p>En general, la integral de Riemann de una función <span class="math inline">\(f\)</span> sobre un intervalo <span class="math inline">\(n\)</span> dimensional puede extenderse a una región irregular acotada <span class="math inline">\(R\)</span> simplemente tomando un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span> que incluya la región, es decir <span class="math inline">\(R\subseteq I\)</span> y redefiniendo <span class="math inline">\(f\)</span> como</p>
+<p><span class="math display">\[
+F(x_1,\ldots,x_n) =
+\begin{cases}
+f(x_1,\ldots,x_n) &amp; \mbox{si $(x,1,\ldots,x_n)\in R$}\\
+0 &amp; \mbox{si $(x,1,\ldots,x_n)\in I\setminus R$}
+\end{cases}
+\]</span>.</p>
+<p>y calculando la integral de Riemann de <span class="math inline">\(F\)</span> sobre <span class="math inline">\(I\)</span> como se ha visto en la sección anterior, es decir,</p>
+<p><span class="math display">\[
+\int_{R} f(x_1,\ldots,x_n)\,dA
+= \int_{I} F(x_1,\ldots,x_n)\,dA.
+\]</span></p>
+<p>Este procedimiento tiene sentido siempre que <span class="math inline">\(f\)</span> sea continua sobre la frontera de la región <span class="math inline">\(R\)</span>, ya que el valor de <span class="math inline">\(F\)</span> en los puntos que están fuera de la región <span class="math inline">\(R\)</span> es <span class="math inline">\(0\)</span>, y por tanto, no contribuyen la suma de la integral.</p>
+<p>En el caso de funciones de dos variables, existen varios tipos de regiones en el plano <span class="math inline">\(xy\)</span> donde la integral de Riemann se puede calcular mediante integrales iteradas donde los límites de integración dependen de funciones que delimitan la región de integración.</p>
+<p>Si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(x)\)</span> y <span class="math inline">\(g_2(x)\)</span>, es decir,</p>
+<p><span class="math display">\[
+R = \{(x,y): a\leq x \leq b, g_1(x)\leq y \leq g_2(x)\},
+\]</span></p>
+<p>la integral de Riemann <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_{R} f(x,y)\,dA
+= \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+\]</span></p>
+<p>Del mismo modo, si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(y)\)</span> y <span class="math inline">\(g_2(y)\)</span>, es decir,</p>
+<p><span class="math display">\[
+R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
+\]</span></p>
+<p>la integral de Riemann <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_{R} f(x,y)\,dA
+= \int_a^b \int_{g_1(y)}^{g_2(y)} f(x,y)\,dx\,dy.
+\]</span></p>
+<div id="exm-integral-region-irregular" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.5 </strong></span>Veamos cómo calcular la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región encerrada entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>. La región encerrada entre las curvas se muestra en el siguiente gráfico.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/region-irregular.svg" class="img-fluid figure-img" width="200"></p>
+<figcaption class="figure-caption">Región comprendida entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>.</figcaption>
+</figure>
+</div>
+<p>Esta región puede expresarse como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span>, por lo que la integral doble de <span class="math inline">\(f\)</span> sobre esta región puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^1\int_{x^2}^x xy\,dy\,dx
+&amp;= \int_0^1 \left[x\frac{y^2}{2}\right]_{x^2}^x\,dx
+= \int_0^1 x\frac{x^2-x^4}{2}\,dx
+= \int_0^1 \frac{x^3-x^5}{2}\,dx\\
+&amp;= \left[\frac{x^4}{8}-\frac{x^6}{12}\right]_0^1
+= \frac{1}{8}-\frac{1}{12}
+= \frac{1}{24}.
+\end{align*}\]</span></p>
+<p>En este caso, la región también puede expresarse como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: y\leq x\leq \sqrt{y}, 0\leq y\leq 1\}\)</span>, por lo que la integral doble de <span class="math inline">\(f\)</span> sobre esta región también puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^1\int_y^{\sqrt{y}} xy\,dx\,dy
+&amp;= \int_0^1 \left[\frac{x^2}{2}y\right]_y^{\sqrt{y}}\,dy
+= \int_0^1 \frac{y-y^2}{2}y\,dy
+= \int_0^1 \frac{y^2-y^3}{2}\,dx\\
+&amp;= \left[\frac{y^3}{6}-\frac{y^4}{8}\right]_0^1
+= \frac{1}{6}-\frac{1}{8}
+= \frac{1}{24}.
+\end{align*}\]</span></p>
+</div>
+<p>En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.</p>
+<div id="exm-integral-region-irregular-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.6 </strong></span>Para calcular la integral de la función <span class="math inline">\(f(x,y)=e^{-y^2}\)</span> en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}\)</span>, como <span class="math inline">\(y\)</span> está acotada por una función de <span class="math inline">\(x\)</span>, habría que hacer la integral iterada</p>
+<p><span class="math display">\[
+\int_0^1\int_0^{2x} e^{-y^2}\,dy\,dx.
+\]</span></p>
+<p>Sin embargo, la función <span class="math inline">\(e^{-y^2}\)</span> no tiene primitiva elemental, por lo que necesariamente hay que realizar la integral iterada en el otro orden, pero para ello previamente hay que expresar la región como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq \frac{y}{2}, 0\leq y\leq 2\}\)</span>, con lo que la integral doble sobre esta región es</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^2\int_0^{y/2} e^{-y^2}\,dx\,dy
+&amp;= \int_0^2 e^{-y^2}[x]_0^{y/2}\,dy
+= \int_0^2 e^{-y^2}\frac{y}{2}\,dy \\
+&amp;= \left[\frac{-e^{-y^2}}{4}\right]_0^2
+= \frac{-e^{-4}+1}{4}.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="integrales-dobles-en-coordenadas-polares" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="integrales-dobles-en-coordenadas-polares"><span class="header-section-number">13.6</span> Integrales dobles en coordenadas polares</h2>
+<p>Al que igual que se vio en la <span class="quarto-unresolved-ref">?sec-sec-integrales-coordenadas-polares</span>, para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas <span class="math inline">\((x,y)\)</span> a coordenadas polares <span class="math inline">\((r,\theta)\)</span> se utilizan las fórmulas</p>
+<p><span class="math display">\[
+r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x^2+y^2}}\right) = \operatorname{arccos}\left(\frac{x}{\sqrt{x^2+y^2}}\right),
+\]</span></p>
+<p>y para pasar de coordenadas polares a cartesianas se utiliza la fórmula</p>
+<p><span class="math display">\[
+x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
+\]</span></p>
+<p>En coordenadas polares un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> define un sector de disco como el que se muestra a continuación.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg" class="img-fluid figure-img" width="300"></p>
+<figcaption class="figure-caption">Intervalo bidimensional en coordenadas polares.</figcaption>
+</figure>
+</div>
+<p>Si la función <span class="math inline">\(f(x,y)\)</span> es continua sobre un intervalo polar <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> con <span class="math inline">\(\beta-\alpha\leq 2\pi\)</span>, la integral doble de <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_I f(x,y)\,dA
+= \int_{\alpha}^{\beta}\int_a^b f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta.
+\]</span></p>
+<div id="exm-volumen-esfera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.7 </strong></span>La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es una semiesfera de radio uno centrada en el origen de coordenadas. Para calcular su volumen, la región de integración es el círculo de radio uno centrado en el origen de coordenadas, que puede expresarse como <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}\)</span>. En este caso la integral en coordenadas rectangulares es complicada y merece la pena hacer la integral en coordenadas polares.</p>
+<p><span class="math display">\[\begin{align*}
+\int_I f(x,y)\,dA
+&amp;= \int_0^{2\pi}\int_0^a f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a \sqrt{a^2-(r\cos(\theta))^2-(r\operatorname{sen}(\theta))^2}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a \sqrt{a^2-r^2(\cos(\theta)^2+\operatorname{sen}(\theta)^2)}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a  \sqrt{a^2-r^2}r\,dr\,d\theta
+= \int_0^{2\pi} -\left[\frac{(a^2-r^2)^{3/2}}{3}\right]_0^a\,d\theta \\
+&amp;= \int_0^{2\pi} \frac{a^2}{3}\,d\theta
+= \left[\frac{a^2\theta}{3}\right]_0^{2\pi}
+= \frac{2\pi a^2}{3}.
+\end{align*}\]</span></p>
+<p>Y por tanto, el volumen de la esfera de radio uno centrada es <span class="math inline">\(\frac{4}{3}\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
+</div>
+<p>Cuando la región de integración es irregular pero puede expresarse de la forma <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}\)</span>, la integral doble en coordenadas polares puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_R f(x.y)\,dA
+= \int_{\alpha}^{\beta} \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta),r\operatorname{sen}(\theta))r\,dr\,d\theta.
+\]</span></p>
+<div id="exm-integral-region-irregular-polar" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.8 </strong></span>Veamos cómo calcular el volumen encerrado entre la gráfica integral del paraboloide <span class="math inline">\(f(x,y)=x^2+y^2\)</span> y el plano <span class="math inline">\(xy\)</span> sobre la circunferencia de ecuación <span class="math inline">\(x^2+(y^2-1)=1\)</span>. En coordenadas polares, la circunferencia que delimita la región de integración puede escribirse como <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq \pi, 0\leq r\leq 2\operatorname{sen}(\theta)\}\)</span>. Por tanto, podemos calcular la integral de <span class="math inline">\(f\)</span> sobre la región <span class="math inline">\(R\)</span> mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_R f(x,y)\,dA
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} ((r\cos(\theta))^2 + (r\operatorname{sen}{\theta})^2)r\,dr\,d\theta \\
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} r^3\,dr\,d\theta
+= \int_0^\pi \left[\frac{x^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
+&amp;= \int_0^\pi 4\operatorname{sen}(\theta)^4 \,d\theta
+= \int_0^\pi (1-\cos(2\theta))^2\,d\theta \\
+&amp;= \int_0^\pi 1 - 2\cos(2\theta) + \cos(2\theta)^2 \,d\theta \\
+&amp;= \int_0^\pi 1 - 2\cos(2\theta) + \frac{1+\cos(4\theta)}{2}\,d\theta \\
+&amp;= \left[\theta - \operatorname{sen}(2\theta) + \frac{\theta}{2} + \frac{\operatorname{sen}(4\theta)}{8}\right]_0^\pi
+= \frac{3}{2}\pi.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="cálculo-de-volúmenes-mediante-integrales-dobles" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.7</span> Cálculo de volúmenes mediante integrales dobles</h2>
+<p>Cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
 <p>La cosa se complica cuando <span class="math inline">\(f\)</span> puede tomar valores positivos y negativos en el intervalo <span class="math inline">\(I\)</span>. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración <span class="math inline">\(I\)</span> en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.</p>
+<div id="exm-volumen-integral-doble" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.9 </strong></span>Veamos cómo calcular el volumen de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el intervalo <span class="math inline">\(I=[-1,1]\times[-1,1]\)</span>. En el intervalo de integración, la función toma valores negativos en el subintervalo <span class="math inline">\(I_1=[-1,1]\times[-1,0]\)</span> y valores positivos en el intervalo <span class="math inline">\([-1,1]\times[0,1]\)</span>, por lo que el volumen encerrado entre la gráfica de la función y el plano <span class="math inline">\(xy\)</span> viene dado por la suma de las integrales</p>
+<p><span class="math display">\[\begin{align*}
+\int_{I_1} -f(x,y)\,dA
+&amp;= \int_{-1}^1\int_{-1}^0 -x^2y\,dy\,x
+= \int_{-1}^1 \left[-x^2\frac{y^2}{2}\right]_{-1}^0\,dx \\
+&amp;= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&amp;= \frac{1}{6}+\frac{1}{6}
+= \frac{1}{3}.
+\end{align*}\]</span></p>
+<p>y</p>
+<p><span class="math display">\[\begin{align*}
+\int_{I_1} f(x,y)\,dA
+&amp;= \int_{-1}^1\int_0^1 x^2y\,dy\,x
+= \int_{-1}^1 \left[x^2\frac{y^2}{2}\right]_0^1\,dx \\
+&amp;= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&amp;= \frac{1}{6}+\frac{1}{6}
+= \frac{1}{3},
+\end{align*}\]</span></p>
+<p>es decir,</p>
+<p><span class="math display">\[
+\int_I x^2y\,dA
+= \int_{I_1} x^2y\,dA + \int_{I_2} x^2y\,dA
+= \frac{1}{3} + \frac{1}{3}
+= \frac{2}{3}.
+\]</span></p>
+</div>
+</section>
+<section id="aplicaciones-físicas" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="aplicaciones-físicas"><span class="header-section-number">13.8</span> Aplicaciones físicas</h2>
+<section id="centro-de-masas" class="level3" data-number="13.8.1">
+<h3 data-number="13.8.1" class="anchored" data-anchor-id="centro-de-masas"><span class="header-section-number">13.8.1</span> Centro de masas</h3>
+</section>
+</section>
+<section id="aplicaciones-estadísticas" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="aplicaciones-estadísticas"><span class="header-section-number">13.9</span> Aplicaciones estadísticas</h2>
+</section>
+<section id="valor-medio-de-una-función" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="valor-medio-de-una-función"><span class="header-section-number">13.10</span> Valor medio de una función</h2>
+<p>En la <span class="quarto-unresolved-ref">?sec-sec-valor-medio-integral</span> vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región <span class="math inline">\(R\)</span> dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de <span class="math inline">\(\mathbb{R}^n\)</span> utilizaremos la integral de la siguiente definición.</p>
+<div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 13.6 (Valor medio de una función de varias variables) </strong></span>Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[
+\bar{f}_R = \frac{\int_R f(x_1,\ldots,x_n)\,dA}{\int_R\,dA}
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obsérvese que la integral del denominador <span class="math inline">\(\int_R\,dA\)</span>, para una función de dos variables da el área de la región <span class="math inline">\(R\)</span>, mientras que para una función de tres variables da el volumen de la región <span class="math inline">\(R\)</span>.</p>
+</div>
+</div>
+<div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.10 </strong></span>En el <a href="#exm-integral-region-irregular">Ejemplo&nbsp;<span>13.5</span></a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_R \,dA
+&amp;= \int_0^1 \int_{x^2}^x  \,dy\,dx
+= \int_0^1 [y]_{x^2}^x\,dx
+= \int_0^1 x-x^2\,dx \\
+&amp;= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+= \frac{1}{2}-\frac{1}{3}
+= \frac{1}{6}.
+\end{align*}\]</span></p>
+<p>el valor medio de <span class="math inline">\(f\)</span> en <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[
+\bar f_R
+= \frac{\int_R xy\,dA}{\int_R\,dA}
+= \frac{1/24}{1/6}
+= \frac{1}{4}.
+\]</span></p>
+</div>
 
 
 </section>
