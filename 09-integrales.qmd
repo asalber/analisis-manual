@@ -1948,7 +1948,7 @@ El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una d
 \end{align*}
 :::
 
-#### Centro de masas de una región plana con densidad fija
+#### Centro de masas de una región plana con densidad fija {#sec-centro-masas-region-plana-densidad-constante}
 
 Cuando se tiene una región plana en $\mathbb{R}^2$, su centro de masas se conoce como _centroide_ y sus coordenadas se representan como $(\bar x, \bar y)$. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad $\delta$, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.
 
