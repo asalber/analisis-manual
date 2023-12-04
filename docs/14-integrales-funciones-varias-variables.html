@@ -257,13 +257,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#integrales-sobre-regiones-no-regulares" id="toc-integrales-sobre-regiones-no-regulares" class="nav-link" data-scroll-target="#integrales-sobre-regiones-no-regulares"><span class="header-section-number">13.5</span> Integrales sobre regiones no regulares</a></li>
   <li><a href="#integrales-dobles-en-coordenadas-polares" id="toc-integrales-dobles-en-coordenadas-polares" class="nav-link" data-scroll-target="#integrales-dobles-en-coordenadas-polares"><span class="header-section-number">13.6</span> Integrales dobles en coordenadas polares</a></li>
   <li><a href="#cálculo-de-volúmenes-mediante-integrales-dobles" id="toc-cálculo-de-volúmenes-mediante-integrales-dobles" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.7</span> Cálculo de volúmenes mediante integrales dobles</a></li>
-  <li><a href="#aplicaciones-físicas" id="toc-aplicaciones-físicas" class="nav-link" data-scroll-target="#aplicaciones-físicas"><span class="header-section-number">13.8</span> Aplicaciones físicas</a>
+  <li><a href="#área-de-una-superficie" id="toc-área-de-una-superficie" class="nav-link" data-scroll-target="#área-de-una-superficie"><span class="header-section-number">13.8</span> Área de una superficie</a></li>
+  <li><a href="#aplicaciones-físicas" id="toc-aplicaciones-físicas" class="nav-link" data-scroll-target="#aplicaciones-físicas"><span class="header-section-number">13.9</span> Aplicaciones físicas</a>
   <ul class="collapse">
-  <li><a href="#centro-de-masas" id="toc-centro-de-masas" class="nav-link" data-scroll-target="#centro-de-masas"><span class="header-section-number">13.8.1</span> Centro de masas</a></li>
+  <li><a href="#centro-de-masas" id="toc-centro-de-masas" class="nav-link" data-scroll-target="#centro-de-masas"><span class="header-section-number">13.9.1</span> Centro de masas</a></li>
   </ul></li>
-  <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">13.9</span> Aplicaciones estadísticas</a>
+  <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">13.10</span> Aplicaciones estadísticas</a>
   <ul class="collapse">
-  <li><a href="#valor-medio-de-una-función" id="toc-valor-medio-de-una-función" class="nav-link" data-scroll-target="#valor-medio-de-una-función"><span class="header-section-number">13.9.1</span> Valor medio de una función</a></li>
+  <li><a href="#valor-medio-de-una-función" id="toc-valor-medio-de-una-función" class="nav-link" data-scroll-target="#valor-medio-de-una-función"><span class="header-section-number">13.10.1</span> Valor medio de una función</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -327,11 +328,11 @@ S(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} M_{i_1,\ldots,i_n} (x_{1,i_
 </div>
 <p>Aunque la definición es un poco enrevesada para <span class="math inline">\(\mathbb{R}^n\)</span>, si <span class="math inline">\(f(x,y)\)</span> es una función de dos variables acotada en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\subset \mathbb{R}^2\)</span>, y <span class="math inline">\(P=P_x\times P_y\)</span> es una partición de <span class="math inline">\(I\)</span> con <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> y <span class="math inline">\(P_x=\{y_0=c,y_1,\ldots, y_m=d\}\)</span>, las sumas de Riemann inferior y superior de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span> son</p>
 <p><span class="math display">\[\begin{align*}
-s(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m m_{i,j}(x_i-x_{i-1})(y_j-y_{j-1}), \\
-S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{i,j}(x_i-x_{i-1})(y_j-y_{j-1}),
+s(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m m_{ij}(x_i-x_{i-1})(y_j-y_{j-1}), \\
+S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{ij}(x_i-x_{i-1})(y_j-y_{j-1}),
 \end{align*}\]</span></p>
-<p>donde <span class="math inline">\(m_{i,j}\)</span> y <span class="math inline">\(M_{i,j}\)</span> son el ínfimo y el supremo de <span class="math inline">\(\{f(x,y): (x,y)\in [x_{i-1},x_i]\times [y_{j-1},y_j]\}\)</span>.</p>
-<p>Gráficamente, si <span class="math inline">\(f(x,y)\)</span> es una función positiva en <span class="math inline">\(I\)</span>, la suma inferior se puede interpretar como la suma de los volúmenes de los prismas de base rectangular con lados <span class="math inline">\([x_{i-1},x_i]\)</span> y <span class="math inline">\([y_{j-1},y_j]\)</span> y altura <span class="math inline">\(m_{i,j}\)</span>.</p>
+<p>donde <span class="math inline">\(m_{ij}\)</span> y <span class="math inline">\(M_{ij}\)</span> son el ínfimo y el supremo de <span class="math inline">\(\{f(x,y): (x,y)\in [x_{i-1},x_i]\times [y_{j-1},y_j]\}\)</span>.</p>
+<p>Gráficamente, si <span class="math inline">\(f(x,y)\)</span> es una función positiva en <span class="math inline">\(I\)</span>, la suma inferior se puede interpretar como la suma de los volúmenes de los prismas de base rectangular con lados <span class="math inline">\([x_{i-1},x_i]\)</span> y <span class="math inline">\([y_{j-1},y_j]\)</span> y altura <span class="math inline">\(m_{ij}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg" class="img-fluid figure-img"></p>
@@ -774,18 +775,100 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 = \frac{2}{3}.
 \]</span></p>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obsérvese que también se puede usar la integral doble para calcular el área de una región plana integrando sobre esta región la función <span class="math inline">\(f(x,y)=1\)</span>, ya que cuanto la altura <span class="math inline">\(1\)</span>, el volumen coincide con el área de la base.</p>
+<p>Del mismo modo se puede usar una integral tripe para calcular el volumen de una región tridimensional.</p>
+</div>
+</div>
 </section>
-<section id="aplicaciones-físicas" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="aplicaciones-físicas"><span class="header-section-number">13.8</span> Aplicaciones físicas</h2>
-<section id="centro-de-masas" class="level3" data-number="13.8.1">
-<h3 data-number="13.8.1" class="anchored" data-anchor-id="centro-de-masas"><span class="header-section-number">13.8.1</span> Centro de masas</h3>
+<section id="área-de-una-superficie" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="área-de-una-superficie"><span class="header-section-number">13.8</span> Área de una superficie</h2>
+<p>Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región <span class="math inline">\(R\)</span>. Si <span class="math inline">\(f\)</span> es una función de dos variables <span class="math inline">\(f(x,y)\)</span>, con derivadas parciales continuas sobre un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[c,d]\)</span>, para aproximar el área de la superficie de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(I\)</span> podemos tomar una partición $P_x={x_0=a,x_1,, x_n=b} del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual tamaño, y otra $P_y={y_0=a,y_1,, y_n=b} del intervalo <span class="math inline">\([c,d]\)</span>, y descomponer el intervalo <span class="math inline">\(I\)</span> en subintervalos rectangulares <span class="math inline">\(I_{ij}\)</span> mediante la partición <span class="math inline">\(P_n=P_x\times P_y\)</span>. De esta manera, todos los subintervalos <span class="math inline">\(I_{ij}\)</span> tendrán el mismo área <span class="math inline">\(\Delta A = \Delta x\Delta y\)</span>.</p>
+<p>Si para cada subintervalo <span class="math inline">\(I_{ij}\)</span>, podemos calcular el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((x_i, y_j, f(x_i,y_j))\)</span>, el paralelogramo <span class="math inline">\(T_{ij}\)</span> que define el plano tangente sobre el intervalo <span class="math inline">\(I_{ij}\)</span> nos dará una aproximación del área de la superficie de <span class="math inline">\(f\)</span> sobre el subintervalo <span class="math inline">\(I_{ij}\)</span>, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span>.</p>
+<p>Si para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u_{ij}}\)</span> y <span class="math inline">\(\mathbf{v_{ij}}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es <span class="math inline">\(\Delta T_{ij} = |\mathbf{u_{ij}}\times\mathbf{v_{ij}}|\)</span>, tal y como se vió en la <a href="11-geometria-plano-espacio.html#prp-paralelogramo-producto-vectorial">Proposición&nbsp;<span>10.5</span></a>.</p>
+<p>Por otro lado, como <span class="math inline">\(u_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>. Del mismo modo, como <span class="math inline">\(v_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
+<p>Así pues, el producto vectorial de <span class="math inline">\(\mathbf{u_{ij}}\)</span> y <span class="math inline">\(\mathbf{v_{ij}}\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{u_{ij}}\times\mathbf{v_{ij}}
+&amp;=
+\begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+\Delta x &amp; 0 &amp; f'_x(x_i,y_j)\Delta x \\
+0 &amp; \Delta y &amp; f'_y(x_i,y_j)\Delta y
+\end{vmatrix} \\
+&amp;= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
+&amp;= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
+\end{align*}\]</span></p>
+<p>y el área del paralelogramo $T_{ij} es</p>
+<p><span class="math display">\[
+\Delta T_{ij}
+= |\mathbf{u_{ij}}\times\mathbf{v_{ij}}|
+= \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
+\]</span></p>
+<p>De este modo, el área de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span> se puede aproximar mediante la suma</p>
+<p><span class="math display">\[
+\sum_{i=1}^n\sum_{j=1}^n \Delta T_{ij}
+= \sum_{i=1}^n\sum_{j=1}^n \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
+\]</span></p>
+<p>Tomando particiones cada vez más refinadas, en el límite cuando <span class="math inline">\(n\to \infty\)</span> se tiene que el área de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span> viene dado por la integral</p>
+<p><span class="math display">\[
+A_I(f) = \int_I \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA.
+\]</span></p>
+<div id="exm-área-superficie-semi-esfera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13.10 </strong></span>La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es la semiesfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas. El área de la superficie de esta semiesfera puede calcularse mediante la integral</p>
+<p><span class="math display">\[
+A_R(f) = \int_R \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA
+\]</span></p>
+<p>donde <span class="math inline">\(R=\{(x,y)\in \mathbb{R}: -a\leq x\leq a, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}\)</span>.</p>
+<p>Como las derivadas parciales de <span class="math inline">\(f\)</span> valen</p>
+<p><span class="math display">\[\begin{align*}
+f'_x(x,y) &amp;= \frac{-x}{\sqrt{a^2-x^2-y^2}}, \\
+f'_y(x,y) &amp;= \frac{-y}{\sqrt{a^2-x^2-y^2}},
+\end{align*}\]</span></p>
+<p>la integral anterior se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+A_R(f) = \int_{-a}^a \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}} \sqrt{\frac{x^2}{a^2-x^2-y^2} + \frac{y^2}{a^2-x^2-y^2} + 1}\,dy\,dx.
+\]</span></p>
+<p>Esta integral, no obstante, es difícil de calcular, por lo que merece la pena hacer el cambio a coordenadas polares, de manera que la región de integración polar es <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq 2\pi, 0\leq r\leq a\}\)</span> y la integral se convierte en</p>
+<p><span class="math display">\[\begin{align*}
+A_R(f)
+&amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
+\end{align*}\]</span></p>
+<p>Esta última integral es impropia ya que <span class="math inline">\(\frac{a^2}{a^2-r^2}\to \infty\)</span> cuando <span class="math inline">\(r\to a\)</span>, pero la integral es finita, ya que</p>
+<p><span class="math display">\[
+\lim_{s\to a^-}\int_0^s \frac{a^2}{a^2-r^2} r\,dr
+= \lim_{s\to a^-} a(-\sqrt{a^2-s^2}+a) = a^2,
+\]</span></p>
+<p>y siguiendo con el cálculo de la integral anterior se tiene</p>
+<p><span class="math display">\[
+A_R(f)
+= \int_0^{2\pi} a^2\,d\theta
+= 2\pi a^2,
+\]</span></p>
+<p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
+</div>
+</section>
+<section id="aplicaciones-físicas" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="aplicaciones-físicas"><span class="header-section-number">13.9</span> Aplicaciones físicas</h2>
+<section id="centro-de-masas" class="level3" data-number="13.9.1">
+<h3 data-number="13.9.1" class="anchored" data-anchor-id="centro-de-masas"><span class="header-section-number">13.9.1</span> Centro de masas</h3>
 <p>Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido que ocupa una región <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span>, la masa total del sólido puede calcularse mediante la integral</p>
 <p><span class="math display">\[
 m = \int_R \delta(x,y)\,dA,
 \]</span></p>
 <p>siempre y cuando la función <span class="math inline">\(\delta\)</span> sea integrable en la región <span class="math inline">\(R\)</span>.</p>
 <div id="exm-masa-region-plana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.10 </strong></span>Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.11 </strong></span>Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
 <p><span class="math display">\[\begin{align*}
 m
 &amp;= \int_R \delta(x,y)\,dA
@@ -828,7 +911,7 @@ Nota
 </div>
 </div>
 <div id="exm-centro-masas-solido-plano-densidad-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.11 </strong></span>El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.12 </strong></span>El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
 <p><span class="math display">\[\begin{align*}
 M_x
 &amp;= \int_R y\delta(x,y)\,dA
@@ -866,10 +949,10 @@ M_y
 </div>
 </section>
 </section>
-<section id="aplicaciones-estadísticas" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="aplicaciones-estadísticas"><span class="header-section-number">13.9</span> Aplicaciones estadísticas</h2>
-<section id="valor-medio-de-una-función" class="level3" data-number="13.9.1">
-<h3 data-number="13.9.1" class="anchored" data-anchor-id="valor-medio-de-una-función"><span class="header-section-number">13.9.1</span> Valor medio de una función</h3>
+<section id="aplicaciones-estadísticas" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="aplicaciones-estadísticas"><span class="header-section-number">13.10</span> Aplicaciones estadísticas</h2>
+<section id="valor-medio-de-una-función" class="level3" data-number="13.10.1">
+<h3 data-number="13.10.1" class="anchored" data-anchor-id="valor-medio-de-una-función"><span class="header-section-number">13.10.1</span> Valor medio de una función</h3>
 <p>En la <a href="09-integrales.html#sec-valor-medio-integral"><span>Sección&nbsp;9.12.1</span></a> vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región <span class="math inline">\(R\)</span> dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de <span class="math inline">\(\mathbb{R}^n\)</span> utilizaremos la integral de la siguiente definición.</p>
 <div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 13.6 (Valor medio de una función de varias variables) </strong></span>Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
@@ -891,7 +974,7 @@ Nota
 </div>
 </div>
 <div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.12 </strong></span>En el <a href="#exm-integral-region-irregular">Ejemplo&nbsp;<span>13.5</span></a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.13 </strong></span>En el <a href="#exm-integral-region-irregular">Ejemplo&nbsp;<span>13.5</span></a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_R \,dA
 &amp;= \int_0^1 \int_{x^2}^x  \,dy\,dx
