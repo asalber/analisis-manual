@@ -73,7 +73,7 @@ Gráficamente, si $f(x,y)$ es una función positiva en $I$, la suma inferior se 
 :::
 
 :::{#exm-sumas-riemann}
-Veamos cómo calcular las sumas de Riemann de la función $f(x^2y)$ en el rectángulo $[0,1]\times [0,1]$ para la partición $P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}$
+Veamos cómo calcular las sumas de Riemann de la función $f(x,y)=x^2y$ en el rectángulo $[0,1]\times [0,1]$ para la partición $P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}$
 
 Esta partición descompone el intervalo bidimensional $[0,1]\times [0,1]$$ en $4$ rectángulos (en realidad cuadrados) como los que se ven la siguiente figura. 
 
@@ -501,7 +501,7 @@ La gráfica de la función $f(x,y)=\sqrt{a^2-x^2-y^2}$ es una semiesfera de radi
 = \frac{2\pi a^2}{3}.
 \end{align*}
 
-Y por tanto, el volumen de la esfera de radio uno centrada es $\frac{4}{3}\pi a^2$, que coincide con la fórmula habitual.
+Y por tanto, el volumen de la esfera de radio uno centrada en el origen es $\frac{4}{3}\pi a^2$, que coincide con la fórmula habitual.
 :::
 
 Cuando la región de integración es irregular pero puede expresarse de la forma $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}$, la integral doble en coordenadas polares puede calcularse mediante la integral iterada 
@@ -519,7 +519,7 @@ Veamos cómo calcular el volumen encerrado entre la gráfica integral del parabo
 &= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
 &= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} ((r\cos(\theta))^2 + (r\operatorname{sen}{\theta})^2)r\,dr\,d\theta \\
 &= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} r^3\,dr\,d\theta 
-= \int_0^\pi \left[\frac{x^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
+= \int_0^\pi \left[\frac{r^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
 &= \int_0^\pi 4\operatorname{sen}(\theta)^4 \,d\theta 
 = \int_0^\pi (1-\cos(2\theta))^2\,d\theta \\ 
 &= \int_0^\pi 1 - 2\cos(2\theta) + \cos(2\theta)^2 \,d\theta \\
@@ -529,7 +529,7 @@ Veamos cómo calcular el volumen encerrado entre la gráfica integral del parabo
 \end{align*}
 :::
 
-## Cálculo de volúmenes mediante integrales dobles
+## Cálculo de volúmenes
 
 Cuando $f(x,y)$ es positiva en el intervalo de integración $I=[a,b]\times[c,b]$, la integral doble $\int_I f(x,y)\,dx\,dy$ da el volumen del sólido encerrado entre la superficie de $f$ y el plano $xy$ en la región delimitada por $I$. Ahora bien, si $f$ es negativa en $I$, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen. 
 
@@ -576,21 +576,21 @@ Obsérvese que también se puede usar la integral doble para calcular el área d
 Del mismo modo se puede usar una integral tripe para calcular el volumen de una región tridimensional.
 :::
 
-## Área de una superficie 
+## Cálculo del area de una superficie 
 
-Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región $R$. Si $f$ es una función de dos variables $f(x,y)$, con derivadas parciales continuas sobre un intervalo bidimensional $I=[a,b]\times[c,d]$, para aproximar el área de la superficie de $f$ sobre $I$ podemos tomar una partición $P_x=\{x_0=a,x_1,\ldots, x_n=b\} del intervalo $[a,b]$ en $n$ subintervalos de igual tamaño, y otra $P_y=\{y_0=a,y_1,\ldots, y_n=b\} del intervalo $[c,d]$, y descomponer el intervalo $I$ en subintervalos rectangulares $I_{ij}$ mediante la partición $P_n=P_x\times P_y$. De esta manera, todos los subintervalos $I_{ij}$ tendrán el mismo área $\Delta A = \Delta x\Delta y$.
+Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región $R$. Si $f$ es una función de dos variables $f(x,y)$, con derivadas parciales continuas sobre un intervalo bidimensional $I=[a,b]\times[c,d]$, para aproximar el área de la superficie de $f$ sobre $I$ podemos tomar una partición $P_x=\{x_0=a,x_1,\ldots, x_n=b\}$ del intervalo $[a,b]$ en $n$ subintervalos de igual tamaño, y otra $P_y=\{y_0=a,y_1,\ldots, y_n=b\}$ del intervalo $[c,d]$, y descomponer el intervalo $I$ en subintervalos rectangulares $I_{ij}$ mediante la partición $P_n=P_x\times P_y$. De esta manera, todos los subintervalos $I_{ij}$ tendrán el mismo área $\Delta A = \Delta x\Delta y$.
 
 Si para cada subintervalo $I_{ij}$, podemos calcular el plano tangente a la superficie de $f$ en el punto $(x_i, y_j, f(x_i,y_j))$, el paralelogramo $T_{ij}$ que define el plano tangente sobre el intervalo $I_{ij}$ nos dará una aproximación del área de la superficie de $f$ sobre el subintervalo $I_{ij}$, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de $f$ sobre el intervalo $I$.
 
-Si para cada paralelogramo $T_{ij}$ consideramos los vectores $\mathbf{u_{ij}}$ y $\mathbf{v_{ij}}$ con origen en $(x_i, y_j)$ y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es $\Delta T_{ij} = |\mathbf{u_{ij}}\times\mathbf{v_{ij}}|$, tal y como se vió en la @prp-paralelogramo-producto-vectorial. 
+Si para cada paralelogramo $T_{ij}$ consideramos los vectores $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ con origen en $(x_i, y_j)$ y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es $\Delta T_{ij} = |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|$, tal y como se vió en la @prp-paralelogramo-producto-vectorial. 
 
-Por otro lado, como $u_{ij}$ está contenido en la intersección plano tangente a $f$ en $(x_i,y_j,f(x_i,y_j))$, con el plano $y=y_j$, se tiene que su pendiente es $f'_x(x_i,y_j)$, por lo que sus coordenadas son $(\Delta x, 0, f'_x(x_i,y_j)\Delta x)$. 
-Del mismo modo, como $v_{ij}$ está contenido en la intersección plano tangente, con el plano $x=x_i$, se tiene que su pendiente es $f'_y(x_i,y_j)$, por lo que sus coordenadas son $(0, \Delta y, f'_y(x_i,y_j)\Delta y)$. 
+Por otro lado, como $\mathbf{u}_{ij}$ está contenido en la intersección plano tangente a $f$ en $(x_i,y_j,f(x_i,y_j))$, con el plano $y=y_j$, se tiene que su pendiente es $f'_x(x_i,y_j)$, por lo que sus coordenadas son $(\Delta x, 0, f'_x(x_i,y_j)\Delta x)$. 
+Del mismo modo, como $\mathbf{v}_{ij}$ está contenido en la intersección plano tangente, con el plano $x=x_i$, se tiene que su pendiente es $f'_y(x_i,y_j)$, por lo que sus coordenadas son $(0, \Delta y, f'_y(x_i,y_j)\Delta y)$. 
 
-Así pues, el producto vectorial de $\mathbf{u_{ij}}$ y $\mathbf{v_{ij}}$ es
+Así pues, el producto vectorial de $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ es
 
 \begin{align*}
-\mathbf{u_{ij}}\times\mathbf{v_{ij}} 
+\mathbf{u}_{ij}\times\mathbf{v}_{ij} 
 &= 
 \begin{vmatrix}
 \mathbf{i} & \mathbf{j} & \mathbf{k} \\
@@ -601,11 +601,11 @@ Así pues, el producto vectorial de $\mathbf{u_{ij}}$ y $\mathbf{v_{ij}}$ es
 &= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
 \end{align*}
 
-y el área del paralelogramo $T_{ij} es
+y el área del paralelogramo $T_{ij}$ es
 
 $$
 \Delta T_{ij} 
-= |\mathbf{u_{ij}}\times\mathbf{v_{ij}}| 
+= |\mathbf{u}_{ij}\times\mathbf{v}_{ij}| 
 = \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
 $$
 
@@ -656,7 +656,7 @@ A_R(f)
 Esta última integral es impropia ya que $\frac{a^2}{a^2-r^2}\to \infty$ cuando $r\to a$, pero la integral es finita, ya que 
 
 $$
-\lim_{s\to a^-}\int_0^s \frac{a^2}{a^2-r^2} r\,dr
+\lim_{s\to a^-}\int_0^s \sqrt{\frac{a^2}{a^2-r^2}} r\,dr
 = \lim_{s\to a^-} a(-\sqrt{a^2-s^2}+a) = a^2,
 $$
 

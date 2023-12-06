@@ -256,8 +256,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#integrales-múltiples-iteradas" id="toc-integrales-múltiples-iteradas" class="nav-link" data-scroll-target="#integrales-múltiples-iteradas"><span class="header-section-number">13.4</span> Integrales múltiples iteradas</a></li>
   <li><a href="#integrales-sobre-regiones-no-regulares" id="toc-integrales-sobre-regiones-no-regulares" class="nav-link" data-scroll-target="#integrales-sobre-regiones-no-regulares"><span class="header-section-number">13.5</span> Integrales sobre regiones no regulares</a></li>
   <li><a href="#integrales-dobles-en-coordenadas-polares" id="toc-integrales-dobles-en-coordenadas-polares" class="nav-link" data-scroll-target="#integrales-dobles-en-coordenadas-polares"><span class="header-section-number">13.6</span> Integrales dobles en coordenadas polares</a></li>
-  <li><a href="#cálculo-de-volúmenes-mediante-integrales-dobles" id="toc-cálculo-de-volúmenes-mediante-integrales-dobles" class="nav-link" data-scroll-target="#cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.7</span> Cálculo de volúmenes mediante integrales dobles</a></li>
-  <li><a href="#área-de-una-superficie" id="toc-área-de-una-superficie" class="nav-link" data-scroll-target="#área-de-una-superficie"><span class="header-section-number">13.8</span> Área de una superficie</a></li>
+  <li><a href="#cálculo-de-volúmenes" id="toc-cálculo-de-volúmenes" class="nav-link" data-scroll-target="#cálculo-de-volúmenes"><span class="header-section-number">13.7</span> Cálculo de volúmenes</a></li>
+  <li><a href="#cálculo-del-area-de-una-superficie" id="toc-cálculo-del-area-de-una-superficie" class="nav-link" data-scroll-target="#cálculo-del-area-de-una-superficie"><span class="header-section-number">13.8</span> Cálculo del area de una superficie</a></li>
   <li><a href="#aplicaciones-físicas" id="toc-aplicaciones-físicas" class="nav-link" data-scroll-target="#aplicaciones-físicas"><span class="header-section-number">13.9</span> Aplicaciones físicas</a>
   <ul class="collapse">
   <li><a href="#centro-de-masas" id="toc-centro-de-masas" class="nav-link" data-scroll-target="#centro-de-masas"><span class="header-section-number">13.9.1</span> Centro de masas</a></li>
@@ -340,7 +340,7 @@ S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{ij}(x_i-x_{i-1})(y_j-y_{j-1}),
 </figure>
 </div>
 <div id="exm-sumas-riemann" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.1 </strong></span>Veamos cómo calcular las sumas de Riemann de la función <span class="math inline">\(f(x^2y)\)</span> en el rectángulo <span class="math inline">\([0,1]\times [0,1]\)</span> para la partición <span class="math inline">\(P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 13.1 </strong></span>Veamos cómo calcular las sumas de Riemann de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el rectángulo <span class="math inline">\([0,1]\times [0,1]\)</span> para la partición <span class="math inline">\(P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}\)</span></p>
 <p>Esta partición descompone el intervalo bidimensional <span class="math inline">\([0,1]\times [0,1]\)</span>$ en <span class="math inline">\(4\)</span> rectángulos (en realidad cuadrados) como los que se ven la siguiente figura.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -718,7 +718,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 = \left[\frac{a^2\theta}{3}\right]_0^{2\pi}
 = \frac{2\pi a^2}{3}.
 \end{align*}\]</span></p>
-<p>Y por tanto, el volumen de la esfera de radio uno centrada es <span class="math inline">\(\frac{4}{3}\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
+<p>Y por tanto, el volumen de la esfera de radio uno centrada en el origen es <span class="math inline">\(\frac{4}{3}\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
 </div>
 <p>Cuando la región de integración es irregular pero puede expresarse de la forma <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}\)</span>, la integral doble en coordenadas polares puede calcularse mediante la integral iterada</p>
 <p><span class="math display">\[
@@ -732,7 +732,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 &amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
 &amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} ((r\cos(\theta))^2 + (r\operatorname{sen}{\theta})^2)r\,dr\,d\theta \\
 &amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} r^3\,dr\,d\theta
-= \int_0^\pi \left[\frac{x^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
+= \int_0^\pi \left[\frac{r^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
 &amp;= \int_0^\pi 4\operatorname{sen}(\theta)^4 \,d\theta
 = \int_0^\pi (1-\cos(2\theta))^2\,d\theta \\
 &amp;= \int_0^\pi 1 - 2\cos(2\theta) + \cos(2\theta)^2 \,d\theta \\
@@ -742,8 +742,8 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 \end{align*}\]</span></p>
 </div>
 </section>
-<section id="cálculo-de-volúmenes-mediante-integrales-dobles" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="cálculo-de-volúmenes-mediante-integrales-dobles"><span class="header-section-number">13.7</span> Cálculo de volúmenes mediante integrales dobles</h2>
+<section id="cálculo-de-volúmenes" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="cálculo-de-volúmenes"><span class="header-section-number">13.7</span> Cálculo de volúmenes</h2>
 <p>Cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
 <p>La cosa se complica cuando <span class="math inline">\(f\)</span> puede tomar valores positivos y negativos en el intervalo <span class="math inline">\(I\)</span>. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración <span class="math inline">\(I\)</span> en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.</p>
 <div id="exm-volumen-integral-doble" class="theorem example">
@@ -790,15 +790,15 @@ Tip
 </div>
 </div>
 </section>
-<section id="área-de-una-superficie" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="área-de-una-superficie"><span class="header-section-number">13.8</span> Área de una superficie</h2>
-<p>Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región <span class="math inline">\(R\)</span>. Si <span class="math inline">\(f\)</span> es una función de dos variables <span class="math inline">\(f(x,y)\)</span>, con derivadas parciales continuas sobre un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[c,d]\)</span>, para aproximar el área de la superficie de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(I\)</span> podemos tomar una partición $P_x={x_0=a,x_1,, x_n=b} del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual tamaño, y otra $P_y={y_0=a,y_1,, y_n=b} del intervalo <span class="math inline">\([c,d]\)</span>, y descomponer el intervalo <span class="math inline">\(I\)</span> en subintervalos rectangulares <span class="math inline">\(I_{ij}\)</span> mediante la partición <span class="math inline">\(P_n=P_x\times P_y\)</span>. De esta manera, todos los subintervalos <span class="math inline">\(I_{ij}\)</span> tendrán el mismo área <span class="math inline">\(\Delta A = \Delta x\Delta y\)</span>.</p>
+<section id="cálculo-del-area-de-una-superficie" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="cálculo-del-area-de-una-superficie"><span class="header-section-number">13.8</span> Cálculo del area de una superficie</h2>
+<p>Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región <span class="math inline">\(R\)</span>. Si <span class="math inline">\(f\)</span> es una función de dos variables <span class="math inline">\(f(x,y)\)</span>, con derivadas parciales continuas sobre un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[c,d]\)</span>, para aproximar el área de la superficie de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(I\)</span> podemos tomar una partición <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual tamaño, y otra <span class="math inline">\(P_y=\{y_0=a,y_1,\ldots, y_n=b\}\)</span> del intervalo <span class="math inline">\([c,d]\)</span>, y descomponer el intervalo <span class="math inline">\(I\)</span> en subintervalos rectangulares <span class="math inline">\(I_{ij}\)</span> mediante la partición <span class="math inline">\(P_n=P_x\times P_y\)</span>. De esta manera, todos los subintervalos <span class="math inline">\(I_{ij}\)</span> tendrán el mismo área <span class="math inline">\(\Delta A = \Delta x\Delta y\)</span>.</p>
 <p>Si para cada subintervalo <span class="math inline">\(I_{ij}\)</span>, podemos calcular el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((x_i, y_j, f(x_i,y_j))\)</span>, el paralelogramo <span class="math inline">\(T_{ij}\)</span> que define el plano tangente sobre el intervalo <span class="math inline">\(I_{ij}\)</span> nos dará una aproximación del área de la superficie de <span class="math inline">\(f\)</span> sobre el subintervalo <span class="math inline">\(I_{ij}\)</span>, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span>.</p>
-<p>Si para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u_{ij}}\)</span> y <span class="math inline">\(\mathbf{v_{ij}}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es <span class="math inline">\(\Delta T_{ij} = |\mathbf{u_{ij}}\times\mathbf{v_{ij}}|\)</span>, tal y como se vió en la <a href="11-geometria-plano-espacio.html#prp-paralelogramo-producto-vectorial">Proposición&nbsp;<span>10.5</span></a>.</p>
-<p>Por otro lado, como <span class="math inline">\(u_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>. Del mismo modo, como <span class="math inline">\(v_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
-<p>Así pues, el producto vectorial de <span class="math inline">\(\mathbf{u_{ij}}\)</span> y <span class="math inline">\(\mathbf{v_{ij}}\)</span> es</p>
+<p>Si para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es <span class="math inline">\(\Delta T_{ij} = |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|\)</span>, tal y como se vió en la <a href="11-geometria-plano-espacio.html#prp-paralelogramo-producto-vectorial">Proposición&nbsp;<span>10.5</span></a>.</p>
+<p>Por otro lado, como <span class="math inline">\(\mathbf{u}_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>. Del mismo modo, como <span class="math inline">\(\mathbf{v}_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
+<p>Así pues, el producto vectorial de <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
-\mathbf{u_{ij}}\times\mathbf{v_{ij}}
+\mathbf{u}_{ij}\times\mathbf{v}_{ij}
 &amp;=
 \begin{vmatrix}
 \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
@@ -808,10 +808,10 @@ Tip
 &amp;= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
 &amp;= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
 \end{align*}\]</span></p>
-<p>y el área del paralelogramo $T_{ij} es</p>
+<p>y el área del paralelogramo <span class="math inline">\(T_{ij}\)</span> es</p>
 <p><span class="math display">\[
 \Delta T_{ij}
-= |\mathbf{u_{ij}}\times\mathbf{v_{ij}}|
+= |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|
 = \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
 \]</span></p>
 <p>De este modo, el área de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span> se puede aproximar mediante la suma</p>
@@ -846,7 +846,7 @@ A_R(f)
 \end{align*}\]</span></p>
 <p>Esta última integral es impropia ya que <span class="math inline">\(\frac{a^2}{a^2-r^2}\to \infty\)</span> cuando <span class="math inline">\(r\to a\)</span>, pero la integral es finita, ya que</p>
 <p><span class="math display">\[
-\lim_{s\to a^-}\int_0^s \frac{a^2}{a^2-r^2} r\,dr
+\lim_{s\to a^-}\int_0^s \sqrt{\frac{a^2}{a^2-r^2}} r\,dr
 = \lim_{s\to a^-} a(-\sqrt{a^2-s^2}+a) = a^2,
 \]</span></p>
 <p>y siguiendo con el cálculo de la integral anterior se tiene</p>
