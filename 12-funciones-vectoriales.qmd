@@ -981,7 +981,7 @@ Para el caso del plano real $\mathbb{R}^2$, si la función vectorial $\mathbf{f}
 
 $$
 \begin{cases}
-x=x(t)\newline
+x=x(t) \\
 y=y(t)
 \end{cases}
 \quad

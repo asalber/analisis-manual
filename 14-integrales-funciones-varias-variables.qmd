@@ -305,7 +305,7 @@ Para calcular la integral de la función $f(x,y) = xe^{xy}$ en el intervalo $I=[
 = e - 2.
 \end{align*}
 
-Sin embargo, si primero integramos con respecto a $y$ y luego con respecto a $x$ se tiene una integral mucho más difícil de calcular.
+Sin embargo, si primero integramos con respecto a $x$ y luego con respecto a $y$ se tiene una integral mucho más difícil de calcular.
 :::
 
 [![Calculadora de integrales dobles iteradas.](/img/logos/logo-geogebra.png) Calculadora de sumas de Riemann](https://www.geogebra.org/classic/s5ve2dxb)
@@ -711,11 +711,11 @@ A partir de los momentos resulta sencillo calcular el _centro de masas_ o _centr
 
 \begin{align*}
 \bar x 
-&= \frac{M_x}{m}
-= \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA} \\
-\bar y
 &= \frac{M_y}{m}
-= \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
+= \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA} \\
+\bar y
+&= \frac{M_x}{m}
+= \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 \end{align*}
 
 :::{.callout-note}

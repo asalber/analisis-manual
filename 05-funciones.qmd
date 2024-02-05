@@ -9,8 +9,6 @@ lang: es
 {{< include macros.qmd >}}
 :::
 
-# Funciones reales de variable real
-
 El concepto de función es fundamental para poder modelizar las relaciones que se dan en muchos fenómenos del mundo real, donde una magnitud depende de otras de acuerdo a un determinado patrón, y por ello, gran parte del Análisis Matemático se centra en estudiar las características de las funciones.
 
 En el capítulo sobre teoría de conjuntos se introdujo ya el [concepto de función](https://aprendeconalf.es/analisis-manual/teoria-conjuntos.html#funciones) y se estudiaron algunas de sus propiedades desde el enfoque de una relación entre conjuntos. En este capítulo se estudian las principales propiedades de una función y se introducen varias funciones básicas que se conocen como _funciones elementales_.

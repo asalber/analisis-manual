@@ -207,14 +207,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
+  <a href="./08-integrales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-integrales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span></a>
+  <a href="./09-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Series de números reales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1336,7 +1336,7 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <div id="exm-limite-cambio-variable" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.20 </strong></span>Sea <span class="math inline">\(f(x)=\frac{(x+8)^{1/3}-2}{x}\)</span>. Cuando <span class="math inline">\(x\to 0\)</span>, <span class="math inline">\(f(x)\to \frac{0}{0}\)</span>. Aplicando el cambio de variable <span class="math inline">\(y=(x+8)^{1/3}\)</span>, se tiene que <span class="math inline">\(y^3=x+8\)</span> y <span class="math inline">\(x=y^3-8\)</span>. Como <span class="math inline">\(\lim_{x\to 0}(x+8)^{1/3}=2\)</span>, aplicando el teorema del límite de la composición de funciones, se tiene que</p>
 <p><span class="math display">\[
-\lim_{x\to 0} \frac{(x+8)^{1/3}-2}{x} = \lim_{y\to 2}\frac{y-2}{y^3-8} = \lim_{y\to 2}\frac{y-2}{(y-2)(y^2+2y+4)} = \lim_{y\to 2} \frac{1}{y^2+2y+4} = \frac{2}{12}.
+\lim_{x\to 0} \frac{(x+8)^{1/3}-2}{x} = \lim_{y\to 2}\frac{y-2}{y^3-8} = \lim_{y\to 2}\frac{y-2}{(y-2)(y^2+2y+4)} = \lim_{y\to 2} \frac{1}{y^2+2y+4} = \frac{1}{12}.
 \]</span></p>
 </div>
 </section>
@@ -1608,9 +1608,12 @@ Advertencia
 </div>
 <div id="exm-continuidad-seno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.33 </strong></span>Veamos que la <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Sea <span class="math inline">\(a\in\mathbb{R}\)</span>. Usando propiedades trigonométricas se tiene</p>
-<p><span class="math display">\[
-|\operatorname{sen}(x)-\operatorname{sen}(a)|=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| = 2|\operatorname{sen}\left(\frac{x-a}{2}\right)||\cos\left(\frac{x-a}{2}\right)| \leq 2\frac{|x-a|}{2}=|x-a|,
-\]</span></p>
+<p><span class="math display">\[\begin{align*}
+|\operatorname{sen}(x)-\operatorname{sen}(a)|
+&amp;=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| \\
+&amp;= 2|\operatorname{sen}\left(\frac{x-a}{2}\right)||\cos\left(\frac{x-a}{2}\right)| \\
+&amp;\leq 2\frac{|x-a|}{2}=|x-a|,
+\end{align*}\]</span></p>
 <p>ya que <span class="math inline">\(\operatorname{sen}(x)\leq x\)</span> <span class="math inline">\(\forall x\in\mathbb{R}^+\)</span> y <span class="math inline">\(\cos(x)\leq 1\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
 <p>Así pues, para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\varepsilon&gt;0\)</span> tal que si <span class="math inline">\(|x-a|&lt;\delta=\varepsilon\)</span>, entonces <span class="math inline">\(|\operatorname{sen}(x)-\operatorname{sen}(a)|&lt;|x-a|=\varepsilon\)</span>.</p>
 <p>De aquí se puede deducir que todas las funciones trigonométricas son continuas en su dominio.</p>
