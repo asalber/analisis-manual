@@ -78,6 +78,29 @@ Obsérvese que si una función es negativa en un intervalo $I$, sus sumas de Rie
 :::
 :::
 
+:::{#exm-suma-inferior-superior-riemann}
+Dada la función $f(x)=x^2$, si consideramos el intervalo $[0,2]$ y la partición $P=\{0, 0.5, 1, 1.5, 2\}$, la suma inferior de Riemann de $f$ correspondiente a esta partición es 
+
+\begin{align*}
+s(f,P) 
+&= f(0)(0.5-0) + f(0.5) (1-0.5) + f(1) (1.5-1) + f(1.5) (2-1.5) \tag{1}\\
+&= 0\cdot 0.5 + 0.5^2\cdot 0.5 + 1^2 \cdot 0.5 + 1.5^2 \cdot 0.5 
+= 1.75
+\end{align*}
+(1) Como $f$ es creciente, el ínfimo en cada intervalo se alcanza en el extremo inferior.
+
+Y la suma superior es 
+
+\begin{align*}
+s(f,P) 
+&= f(0.5)(0.5-0) + f(1) (1-0.5) + f(1.5) (1.5-1) + f(2) (2-1.5) \tag{2}\\
+&= 0.5\cdot 0.5 + 1^2\cdot 0.5 + 1.5^2 \cdot 0.5 + 2^2 \cdot 0.5 
+= 3.75
+\end{align*}
+(2) Como $f$ es creciente, el supremo en cada intervalo se alcanza en el extremo superior.
+:::
+
+
 ::: {.content-visible when-format="html"}
 <div id="ggb-suma-riemann-1"></div>
 
