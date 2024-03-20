@@ -163,7 +163,7 @@ Dadas dos particiones $P=\{x_0, x_1, \ldots, x_n\}$ y $Q=\{y_0, y_1, \ldots, y_m
 Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$, $P$ es una partición de $I$ y $Q$ es un refinamiento de $P$, entonces
 
 a. $s(f,P)\leq s(f,Q)$
-b. $S(f,Q)\leq S(f,P)$
+a. $S(f,Q)\leq S(f,P)$
 :::
 
 :::{.callout-note collapse="true"}
@@ -171,7 +171,7 @@ b. $S(f,Q)\leq S(f,P)$
 :::{.proof}
 Veremos solo la prueba para las sumas inferiores.
 
-a. Probaremos primero el resultado para un refinamiento con un punto más. Sea $P=\{x_0, x_1, \cdots, x_n\}$ y supongamos que $Q$ solo tiene un punto $c$ más que $P$. Sea $k\in\{1,\ldots,n\}$ tal que $c\in[x_{k-1},x_k]$ y tomemos $m_k'=\inf\{f(x): x\in[x_{k-1},c]\}$ y $m_k''=\inf\{f(x): x\in[c,x_k]\}$. Como $m_k=\inf\{f(x): x\in[x_{k-1},x_k]\}$ resulta evidente que $m_k\leq m_k'$ y $m_k\leq m_k''$, por lo que 
+a.  Probaremos primero el resultado para un refinamiento con un punto más. Sea $P=\{x_0, x_1, \cdots, x_n\}$ y supongamos que $Q$ solo tiene un punto $c$ más que $P$. Sea $k\in\{1,\ldots,n\}$ tal que $c\in[x_{k-1},x_k]$ y tomemos $m_k'=\inf\{f(x): x\in[x_{k-1},c]\}$ y $m_k''=\inf\{f(x): x\in[c,x_k]\}$. Como $m_k=\inf\{f(x): x\in[x_{k-1},x_k]\}$ resulta evidente que $m_k\leq m_k'$ y $m_k\leq m_k''$, por lo que 
 
     $$
     m_k(x_k-x_{k-1}) = m_k(x_k-c)+m_k(c-x_{k-1})\leq m_k''(x_k-c)+m_k'(c-x_{k-1})
@@ -182,14 +182,14 @@ a. Probaremos primero el resultado para un refinamiento con un punto más. Sea $
     \begin{align*}
     s(f,P) &= \sum_{i=1}^n m_i(x_i-x_{i-1}) = \sum_{i=1,i\neq k}^n m_i(x_i-x_{i-1}) + m_k(x_k-x_{k-1}) \\ &\leq \sum_{i=1,i\neq k}^n m_i(x_i-x_{i-1}) + m_k''(x_k-c) + m_k'(c-x_{k-1}) = s(f,Q).
     \end{align*}
-    
+
     Para probar el caso general, si $Q$ es un refinamiento cualquiera de $P$, entonces existe una sucesión finita de particiones de $I$, $P_1,P_2,\ldots,P_r$ tales que  $P=P_1\subset P_2\subset\cdots \subset P_r=Q$ y cada $P_i$ tiene solo un punto más que $P_{i-1}$. Así pues, por el resultado anterior, 
 
     $$
     s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
     $$
 
-b. La prueba para las sumas superiores es análoga y se deja como ejercicio.
+a.  La prueba para las sumas superiores es análoga y se deja como ejercicio.
 :::
 :::
 
@@ -723,7 +723,7 @@ para $i=1,\ldots,n$, de manera que
 \begin{align*}
 S(f,P_n)-s(f,P_n) &= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
 &= \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n} \\
-&= \frac{b-1}{n}(f(x_1)-f(x_0))+(f(x_2)-f(x_1))+ \cdots \\ 
+&= \frac{b-a}{n}(f(x_1)-f(x_0))+(f(x_2)-f(x_1))+ \cdots \\ 
 & \cdots + (f(x_{n-1})-f(x_{n-2})+ (f(x_n)-f(x_{n-1}))) \\
 &= \frac{b-a}{n}(f(b)-f(a)) < \varepsilon.
 \end{align*}
@@ -986,7 +986,7 @@ $$
 ya que para $0<x<1$ se tiene 
 
 $$
-F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
+F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^x 1 = x.
 $$
 :::
 
@@ -1469,7 +1469,7 @@ S(A,P_n) &= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i
 
 donde $m_i (x_i-x_{i-1})$ es el volumen de un disco cilíndrico de base $m_i$ y altura $x_i-x_{i-1}$, y $M_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $M_i$ y altura $x_i-x_{i-1}$.
 
-::: {.content-visible when-format="html"}
+<!-- ::: {.content-visible when-format="html"}
 <div id="ggb-volumen-revolucion"></div>
 
 <script>
@@ -1495,7 +1495,9 @@ var params = {
         ggbApplet2.inject('ggb-volumen-revolucion');
     });
 </script>
-:::
+::: -->
+
+[![Calculadora de volúmenes de sólidos de revolución mediante discos cilíndricos.](/img/logos/logo-geogebra.png) Calculadora de volúmenes de sólidos de revolución mediante discos cilíndricos.](https://www.geogebra.org/classic/drndnm2u)
 
 Como ya hemos visto, si $\lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n)$, la función $A(x)$ es integrable Riemann en el intervalo $[a,b]$ y 
 
@@ -1565,7 +1567,7 @@ Los envoltorios se construyen de forma que su base es un círculo de radio $x\in
 $$
 \int_a^b 2\pi x f(x)\,dx
 $$
-
+<!-- 
 ::: {.content-visible when-format="html"}
 <div id="ggb-volumen-revolucion-envoltorios"></div>
 
@@ -1592,27 +1594,29 @@ var params = {
         ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
     });
 </script>
-:::
+::: -->
+
+[![Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos.](/img/logos/logo-geogebra.png) Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos.](https://www.geogebra.org/classic/bcpdxmpf)
 
 :::{#exm-volumen-revolucion-envoltorios}
-El volumen del sólido de revolución que se obtiene al rotar alrededor del eje $y$ la función $f(x)=x^2$ en el intervalo $[0,2]$ puede calcularse usando tanto discos como envoltorios cilíndricos.
+El volumen del sólido de revolución que se obtiene al rotar alrededor del eje $y$ la función $f(x)=4-x^2$ en el intervalo $[0,2]$ puede calcularse usando tanto discos como envoltorios cilíndricos.
 
-Si usamos discos discos cilíndricos debemos expresar $x$ en función de $y$, es decir $x=\sqrt{y}$ y calcular la siguiente integral definida en el intervalo $[f(0),f(2)]$
+Si usamos discos discos cilíndricos debemos expresar $x$ en función de $y$, es decir $x=\sqrt{4-y}$ y calcular la siguiente integral definida en el intervalo $[0,4]$
 
 $$
 \int_0^4 \pi g(y)^2\,dy 
-= \int_0^4 \pi \left(\sqrt{y}\right)^2\,dy 
-= \left[\pi\frac{y^2}{2}\right]_0^4 
-= \pi\frac{4^2}{2} = 8\pi.
+= \int_0^4 \pi \left(\sqrt{4-y}\right)^2\,dy 
+= \pi\left[4y-\frac{y^2}{2}\right]_0^4 
+= \pi\left(16-\frac{4^2}{2}\right) = 8\pi.
 $$
 
 Mientras que si usamos envoltorios cilíndricos hay que calcular la integral 
 
 $$
 \int_0^2 2\pi x f(x)\,dx
-= \int_0^2 2\pi x\cdot  x^2\,dx 
-= 2\pi\left[\frac{x^4}{4}\right]_0^2
-= 2\pi \frac{2^4}{4} 
+= \int_0^2 2\pi x\cdot  (4-x^2)\,dx 
+= 2\pi\left[2x^2-\frac{x^4}{4}\right]_0^2
+= 2\pi \left(8-\frac{2^4}{4}\right) 
 = 8\pi.
 $$
 :::

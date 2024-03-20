@@ -61,11 +61,13 @@ format:
       dark: [darkly, custom-dark.scss]
       light: [flatly, custom.scss]
     html-math-method: mathjax
+    default-image-extension: svg
     include-in-header:
       - geogebra.html
   pdf:
     documentclass: scrreport
     papersize: a4
+    default-image-extension: pdf
     template-partials:
       - before-body.tex
     titlegraphic: img/logos/sticker.png
