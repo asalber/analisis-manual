@@ -1752,26 +1752,26 @@ $$
 Así pues, si tomamos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ del intervalo $[a,b]$, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ es 
 
 $$ 
-S_i = \pi (f(x_{i-1}+f(x_i))l_i,
+S_i = \pi (f(x_{i-1})+f(x_i))l_i,
 $$
 
 donde $l_i$ es la longitud del segmento que une los puntos $(x_{i-1},f(x_{i-1}))$ y $(x_i,f(x_i))$, que como vimos en la sección anterior, puede expresarse, gracias al teorema del valor medio, como $\sqrt{1+f'(x'_i)^2}$ para algún $x'_i \in [x_{i-1},x_i]$. Por tanto, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ puede expresarse finalmente como
 
 $$
-S_i = \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2}
+S_i = \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2}
 $$
 para algún $x'_i\in [x_{i-1},x_i]$.
 
 Si sumamos las superficies de todos los troncos de cono que se obtienen para la partición $P_n$, 
 
 $$
-\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2},
+\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2},
 $$
 
-se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de rieman de las superficie del tronco de cono, es decir, 
+se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de Riemann de las superficie del tronco de cono, es decir, 
 
 $$
-S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
+S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
 $$
 
 ya que, cuando los intervalos se hacen infinitamente pequeños, $f(x_{i_1})$ y $f(x_i)$ se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor $f(x)$, por lo que en la integral se pone $2 f(x)$.
@@ -1949,7 +1949,7 @@ $$
 
 #### Centro de masas de una varilla con densidad variable
 
-Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
+Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
 
 $$
 \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i} = \frac{\sum_{i=1}^n x_if(x_i)\Delta x}{\sum_{i=1}^n f(x_i)\Delta x},
@@ -1961,7 +1961,7 @@ $$
 \bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
 $$
 
-:::{exm-centro-masas}$
+:::{#exm-centro-masas}
 El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una densidad en cada punto $x$ dada por la función $f(x)=2x-1$ es
 
 \begin{align*}
@@ -1979,7 +1979,7 @@ El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una d
 
 Cuando se tiene una región plana en $\mathbb{R}^2$, su centro de masas se conoce como _centroide_ y sus coordenadas se representan como $(\bar x, \bar y)$. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad $\delta$, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.
 
-Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
+Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
 
 :::{.content-visible when-format="html"}
 ![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.png)
@@ -2025,7 +2025,7 @@ $$
 \sum_{i=1}^n \frac{1}{2}\delta f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \sum_{i=1}^n f(\bar x_i)^2\Delta x,
 $$
 
-y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $y$ mediante la integral definida
+y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $x$ mediante la integral definida
 
 $$
 \frac{1}{2}\delta \lim_{n\to \infty}\sum_{i=1}^n f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \int_a^b f(x)^2\, dx,
@@ -2053,7 +2053,7 @@ Veamos cómo calcular el centroide del semicírculo de ecuación $f(x)=\sqrt{1-x
 = \frac{\pi}{2}.
 \end{align*}
 
-Y ahora calculamos el momento con respecto al eje $x$.
+Y ahora calculamos el momento con respecto al eje $y$.
 
 \begin{align*}
 \int_{-1}^1 xf(x)\,dx 
@@ -2072,7 +2072,7 @@ $$
 \bar x = \frac{\int_{-1}^1 x f(x)\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{0}{\pi/2} = 0
 $$
 
-Finalmente calculamos el momento con respecto al eje $y$.
+Finalmente calculamos el momento con respecto al eje $x$.
 
 \begin{align*}
 \frac{1}{2}\int_{-1}^1 f(x)^2\,dx 
@@ -2090,7 +2090,7 @@ $$
 \bar y = \frac{1}{2}\frac{\int_{-1}^1 f(x)^2\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{4/6}{\pi/2} = \frac{4}{3\pi}.
 $$
 
-Luego el centroide es $(0, \frac{4}{3\pi})$.
+Luego el centroide es $\left(0, \frac{4}{3\pi}\right)$.
 :::
 
 ## Aplicaciones estadísticas
@@ -2138,7 +2138,5 @@ Y el valor medio de esta misma función en el intervalo $[0,\pi]$ es
 = 0,
 \end{align*}
 
-por que la función seno es positiva en $[0,\pi/2]$ y negativa en $[\pi/2, \pi]$, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.
+porque la función seno es positiva en $[0,\pi/2]$ y negativa en $[\pi/2, \pi]$, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.
 :::
-
-
