@@ -280,6 +280,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#aplicaciones-estadísticas" id="toc-aplicaciones-estadísticas" class="nav-link" data-scroll-target="#aplicaciones-estadísticas"><span class="header-section-number">8.12</span> Aplicaciones estadísticas</a>
   <ul class="collapse">
   <li><a href="#sec-valor-medio-integral" id="toc-sec-valor-medio-integral" class="nav-link" data-scroll-target="#sec-valor-medio-integral"><span class="header-section-number">8.12.1</span> Cálculo de la media de una función</a></li>
+  <li><a href="#cálculo-de-probabilidades" id="toc-cálculo-de-probabilidades" class="nav-link" data-scroll-target="#cálculo-de-probabilidades"><span class="header-section-number">8.12.2</span> Cálculo de probabilidades</a></li>
+  <li><a href="#cálculo-de-estadísticos" id="toc-cálculo-de-estadísticos" class="nav-link" data-scroll-target="#cálculo-de-estadísticos"><span class="header-section-number">8.12.3</span> Cálculo de estadísticos</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2306,6 +2308,82 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 = 0,
 \end{align*}\]</span></p>
 <p>porque la función seno es positiva en <span class="math inline">\([0,\pi/2]\)</span> y negativa en <span class="math inline">\([\pi/2, \pi]\)</span>, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.</p>
+</div>
+</section>
+<section id="cálculo-de-probabilidades" class="level3" data-number="8.12.2">
+<h3 data-number="8.12.2" class="anchored" data-anchor-id="cálculo-de-probabilidades"><span class="header-section-number">8.12.2</span> Cálculo de probabilidades</h3>
+<p>En Estadística, para modelar la distribución de valores de una variable aleatoria continua se utiliza la <em>función de densidad de probabilidad</em>, que es una función <span class="math inline">\(f(x)\)</span> que cumple las siguientes propiedades</p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> es no negativa, es decir, <span class="math inline">\(f(x)\geq 0\)</span> para todo <span class="math inline">\(x\)</span> en el dominio de la variable aleatoria.</p></li>
+<li><p>El área total comprendida entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> es 1, es decir,</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty} f(x)\,dx = 1.
+\]</span></p></li>
+<li><p>La probabilidad de que la variable aleatoria tome un valor en un intervalo <span class="math inline">\([a,b]\)</span> es es el área comprendida entre la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en ese intervalo, es decir,</p>
+<p><span class="math display">\[
+P(a\leq X\leq b) = \int_a^b f(x)\,dx
+\]</span></p></li>
+</ol>
+<div id="exm-funcion-densidad" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.27 </strong></span>La función <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es una función de densidad de probabilidad para <span class="math inline">\(x\in[-3,3]\)</span>, ya que es no negativa en ese intervalo y se cumple &gt;</p>
+<p><span class="math display">\[
+\int_{-3}^{3} \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{3} = \frac{1}{36}(27 - 9 + 27 - 9) = 1.
+\]</span></p>
+<p>Por tanto, la probabilidad de que la variable aleatoria correspondiente tome un valor en el intervalo <span class="math inline">\([0,2]\)</span> es</p>
+<p><span class="math display">\[
+P(0\leq X\leq 2) = \int_0^2 \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_0^2 = \frac{1}{36}(18 - \frac{8}{3}) = \frac{23}{54}\approx 0.4259.
+\]</span></p>
+</div>
+</section>
+<section id="cálculo-de-estadísticos" class="level3" data-number="8.12.3">
+<h3 data-number="8.12.3" class="anchored" data-anchor-id="cálculo-de-estadísticos"><span class="header-section-number">8.12.3</span> Cálculo de estadísticos</h3>
+<p>El cálculo de estadísticos de una variable aleatoria continua, como la media, la varianza, la mediana, etc., también se realiza mediante integrales. Por ejemplo, la media de una variable aleatoria <span class="math inline">\(X\)</span> con función de densidad de probabilidad <span class="math inline">\(f(x)\)</span> se calcula mediante la integral</p>
+<p><span class="math display">\[
+E(X) = \int_{-\infty}^{\infty} x f(x)\,dx,
+\]</span></p>
+<p>y la varianza mediante la integral</p>
+<p><span class="math display">\[
+\operatorname{Var}(X) = E(X^2) - E(X)^2 = \int_{-\infty}^{\infty} x^2 f(x)\,dx - \left(\int_{-\infty}^{\infty} x f(x)\,dx\right)^2,
+\]</span></p>
+<p>mientras que la mediana es el valor <span class="math inline">\(Me\)</span> que deja acumulada la mitad de la probabilidad total, y por tanto cumple</p>
+<p><span class="math display">\[
+P(X\leq Me) = \int_{-\infty}^{Me} f(x)\,dx = \frac{1}{2}.
+\]</span></p>
+<div id="exm-media-varianza-mediana-variable-aleatoria" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.28 </strong></span>La media de la variable aleatoria con función de densidad de probabilidad <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+E(X)
+&amp;= \int_{-3}^{3} x \frac{9-x^2}{36}\,dx
+= \frac{1}{36}\int_{-3}^{3} 9x-x^3\,dx \\
+&amp;= \frac{1}{36}\left[\frac{9x^2}{2}-\frac{x^4}{4}\right]_{-3}^{3}
+= \frac{1}{36}\left(\frac{81}{2}-\frac{81}{4}-\frac{81}{2}+\frac{81}{4}\right)
+= 0.
+\end{align*}\]</span></p>
+<p>La varianza es</p>
+<p><span class="math display">\[\begin{align*}
+\operatorname{Var}(X)
+&amp;= E(X^2) - E(X)^2
+= \int_{-3}^{3} x^2 \frac{9-x^2}{36}\,dx - 0^2 \\
+&amp;= \frac{1}{36}\int_{-3}^{3} 9x^2-x^4\,dx
+= \frac{1}{36}\left[\frac{9x^3}{3}-\frac{x^5}{5}\right]_{-3}^{3} \\
+&amp;= \frac{1}{36}\left(\frac{243}{3}-\frac{243}{5}+\frac{243}{3}-\frac{243}{5}\right)
+= \frac{9}{5}
+\approx 1.8.
+\end{align*}\]</span></p>
+<p>Finalmente, la mediana es</p>
+<p><span class="math display">\[\begin{align*}
+P(X\leq Me)
+&amp;= \int_{-3}^{Me} \frac{9-x^2}{36}\,dx  
+= \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{Me} \\
+&amp;= \frac{1}{36}\left(9Me-\frac{Me^3}{3}+27-\frac{27}{3}\right) \\
+&amp;= \frac{1}{36}\left(9Me-\frac{Me^3}{3}+18\right)
+= \frac{1}{2},\\
+&amp; \Rightarrow 9Me-\frac{Me^3}{3}+18 = 18,\\
+&amp; \Rightarrow 9Me-\frac{Me^3}{3} = 0,\\
+&amp; \Rightarrow Me\left(9-\frac{Me^2}{3}\right) = 0,\\
+&amp; \Rightarrow Me = 0 \mbox{ o } Me = \sqrt{27},\\
+\end{align*}\]</span></p>
+<p>pero <span class="math inline">\(\sqrt{27}\)</span> no está en el intervalo <span class="math inline">\([-3,3]\)</span>, por lo que la mediana es 0.</p>
 </div>
 
 

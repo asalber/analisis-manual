@@ -2140,3 +2140,97 @@ Y el valor medio de esta misma función en el intervalo $[0,\pi]$ es
 
 porque la función seno es positiva en $[0,\pi/2]$ y negativa en $[\pi/2, \pi]$, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.
 :::
+
+### Cálculo de probabilidades
+
+En Estadística, para modelar la distribución de valores de una variable aleatoria continua se utiliza la _función de densidad de probabilidad_, que es una función $f(x)$ que cumple las siguientes propiedades 
+
+1.  $f$ es no negativa, es decir, $f(x)\geq 0$ para todo $x$ en el dominio de la variable aleatoria.
+1.  El área total comprendida entre la gráfica de $f$ y el eje $x$ es 1, es decir, 
+
+    $$
+    \int_{-\infty}^{\infty} f(x)\,dx = 1.
+    $$
+
+1.  La probabilidad de que la variable aleatoria tome un valor en un intervalo $[a,b]$ es es el área comprendida entre la gráfica de $f$ y el eje $x$ en ese intervalo, es decir,
+
+    $$
+    P(a\leq X\leq b) = \int_a^b f(x)\,dx
+    $$
+
+:::{#exm-funcion-densidad}
+La función $f(x)=\frac{9-x^2}{36}$ es una función de densidad de probabilidad para $x\in[-3,3]$, ya que es no negativa en ese intervalo y se cumple > 
+
+$$
+\int_{-3}^{3} \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{3} = \frac{1}{36}(27 - 9 + 27 - 9) = 1.
+$$
+
+Por tanto, la probabilidad de que la variable aleatoria correspondiente tome un valor en el intervalo $[0,2]$ es
+
+$$
+P(0\leq X\leq 2) = \int_0^2 \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_0^2 = \frac{1}{36}(18 - \frac{8}{3}) = \frac{23}{54}\approx 0.4259.
+$$
+:::
+
+### Cálculo de estadísticos
+
+El cálculo de estadísticos de una variable aleatoria continua, como la media, la varianza, la mediana, etc., también se realiza mediante integrales. Por ejemplo, la media de una variable aleatoria $X$ con función de densidad de probabilidad $f(x)$ se calcula mediante la integral
+
+$$
+E(X) = \int_{-\infty}^{\infty} x f(x)\,dx,
+$$
+
+y la varianza mediante la integral
+
+$$
+\operatorname{Var}(X) = E(X^2) - E(X)^2 = \int_{-\infty}^{\infty} x^2 f(x)\,dx - \left(\int_{-\infty}^{\infty} x f(x)\,dx\right)^2,
+$$
+
+mientras que la mediana es el valor $Me$ que deja acumulada la mitad de la probabilidad total, y por tanto cumple  
+
+$$
+P(X\leq Me) = \int_{-\infty}^{Me} f(x)\,dx = \frac{1}{2}.
+$$
+
+:::{#exm-media-varianza-mediana-variable-aleatoria}
+La media de la variable aleatoria con función de densidad de probabilidad $f(x)=\frac{9-x^2}{36}$ es
+
+\begin{align*}
+E(X)
+&= \int_{-3}^{3} x \frac{9-x^2}{36}\,dx
+= \frac{1}{36}\int_{-3}^{3} 9x-x^3\,dx \\
+&= \frac{1}{36}\left[\frac{9x^2}{2}-\frac{x^4}{4}\right]_{-3}^{3}
+= \frac{1}{36}\left(\frac{81}{2}-\frac{81}{4}-\frac{81}{2}+\frac{81}{4}\right) 
+= 0.
+\end{align*}
+
+La varianza es
+
+\begin{align*}
+\operatorname{Var}(X)
+&= E(X^2) - E(X)^2
+= \int_{-3}^{3} x^2 \frac{9-x^2}{36}\,dx - 0^2 \\
+&= \frac{1}{36}\int_{-3}^{3} 9x^2-x^4\,dx
+= \frac{1}{36}\left[\frac{9x^3}{3}-\frac{x^5}{5}\right]_{-3}^{3} \\
+&= \frac{1}{36}\left(\frac{243}{3}-\frac{243}{5}+\frac{243}{3}-\frac{243}{5}\right)
+= \frac{9}{5} 
+\approx 1.8.
+\end{align*}
+
+Finalmente, la mediana es 
+
+\begin{align*}
+P(X\leq Me)
+&= \int_{-3}^{Me} \frac{9-x^2}{36}\,dx  
+= \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{Me} \\
+&= \frac{1}{36}\left(9Me-\frac{Me^3}{3}+27-\frac{27}{3}\right) \\
+&= \frac{1}{36}\left(9Me-\frac{Me^3}{3}+18\right)
+= \frac{1}{2},\\
+& \Rightarrow 9Me-\frac{Me^3}{3}+18 = 18,\\
+& \Rightarrow 9Me-\frac{Me^3}{3} = 0,\\
+& \Rightarrow Me\left(9-\frac{Me^2}{3}\right) = 0,\\
+& \Rightarrow Me = 0 \mbox{ o } Me = \sqrt{27},\\
+\end{align*}
+
+pero $\sqrt{27}$ no está en el intervalo $[-3,3]$, por lo que la mediana es 0.
+:::
