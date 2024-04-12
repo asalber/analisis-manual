@@ -1360,26 +1360,26 @@ $$
 En general, cuando $f$ es mayor que $g$ en algunos subintervalos de $I$ y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
 
 :::{#exm-area-entre-curvas-polares}
-Vamos a calcular el area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas. 
+Vamos a calcular el area encerrada entre las curvas polares $f(\theta)=3\cos(\theta)$ y $g(\theta)=1+\cos(\theta)$. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas. 
 
 $$
-3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{6}
+3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{3}
 $$
 
-Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Como en este intervalo $1+\cos(\theta) \leq 3\cos(\theta)$, el area encerrada entre estas dos curvas es
+Así pues, el intervalo de integración es $[-\frac{\pi}{3},\frac{\pi}{3}]$. Como en este intervalo $1+\cos(\theta) \leq 3\cos(\theta)$, el area encerrada entre estas dos curvas es
 
 \begin{align*}
-\frac{1}{2}\int_{-\pi/6}^{\pi/6}f(\theta)^2-g(\theta)^2\,d\theta 
-&= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
-&= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(8\cos(\theta))^2 - 2\cos(\theta) - 1 \,d\theta \\
-&= \frac{1}{2}\left(8\int_{-\pi/6}^{\pi/6}\cos(\theta)^2\,d\theta - 2\int_{-\pi/6}^{\pi/6}\cos(\theta)\,d\theta - \int_{-\pi/6}^{\pi/6}\,d\theta \right) \\
-&= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/6}^{\pi/6} - 2[\operatorname{sen}(\theta)]_{-\pi/6}^{\pi/6} - [\theta]_{-\pi/6}^{\pi/6} \right) \\
-&= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{6} +\sqrt{3} +\frac{4\pi}{6}\right)\\
-&= \frac{\pi}{2}+\sqrt{3}-1 \approx 2.3028
+\frac{1}{2}\int_{-\pi/3}^{\pi/3}f(\theta)^2-g(\theta)^2\,d\theta 
+&= \frac{1}{2} \int_{-\pi/3}^{\pi/3}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
+&= \frac{1}{2} \int_{-\pi/3}^{\pi/3}8\cos(\theta)^2 - 2\cos(\theta) - 1 \,d\theta \\
+&= \frac{1}{2}8\left(\int_{-\pi/3}^{\pi/3}\cos(\theta)^2\,d\theta - 2\int_{-\pi/3}^{\pi/3}\cos(\theta)\,d\theta - \int_{-\pi/3}^{\pi/3}\,d\theta \right) \\
+&= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/3}^{\pi/3} - 2[\operatorname{sen}(\theta)]_{-\pi/3}^{\pi/3} - [\theta]_{-\pi/3}^{\pi/3} \right) \\
+&= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{3} +\sqrt{3} -\frac{4\pi}{3}- \sqrt{3} - \sqrt{3} - \frac{\pi}{3} -\frac{\pi}{3}\right)\\
+&= \pi.
 \end{align*}
 
 :::{.content-visible when-format="html"}
-![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.png)
+![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.svg){width=600}
 :::
 
 :::{.content-visible unless-format="html"}
