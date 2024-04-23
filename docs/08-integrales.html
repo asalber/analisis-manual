@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 8&nbsp; Integrales de funciones">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/integrales/suma-inferior-riemann.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 8&nbsp; Integrales de funciones">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/integrales/suma-inferior-riemann.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-integrales.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-integrales.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -304,7 +338,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -327,11 +363,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-sumas-riemann" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-sumas-riemann"><span class="header-section-number">8.1</span> Sumas de Riemann</h2>
 <div id="def-particion-intervalo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.1 (Partición de un intervalo) </strong></span>Dado un intervalo <span class="math inline">\(I=[a,b]\)</span> cerrado y acotado en <span class="math inline">\(\mathbb{R}\)</span>, una <em>partición</em> de <span class="math inline">\(I\)</span> es un conjunto ordenado y finito <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de puntos de <span class="math inline">\(I\)</span> tales que <span class="math inline">\(a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8.1 (Partición de un intervalo)</strong></span> Dado un intervalo <span class="math inline">\(I=[a,b]\)</span> cerrado y acotado en <span class="math inline">\(\mathbb{R}\)</span>, una <em>partición</em> de <span class="math inline">\(I\)</span> es un conjunto ordenado y finito <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de puntos de <span class="math inline">\(I\)</span> tales que <span class="math inline">\(a=x_0&lt;x_1&lt;x_2&lt;\cdots&lt;x_n=b\)</span>.</p>
 <p>El conjunto de todas las particiones de un intervalo <span class="math inline">\(I\)</span> se denota <span class="math inline">\(\mathcal{P}(I)\)</span>.</p>
 </div>
 <div id="def-suma-inferior-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.2 (Suma inferior de Riemann) </strong></span>Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma inferior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(s(f,P)\)</span>, como</p>
+<p><span class="theorem-title"><strong>Definición 8.2 (Suma inferior de Riemann)</strong></span> Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma inferior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(s(f,P)\)</span>, como</p>
 <p><span class="math display">\[
 s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
 \]</span></p>
@@ -341,11 +377,11 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1})
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/suma-inferior-riemann.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Suma inferior de Riemann</figcaption>
+<figcaption>Suma inferior de Riemann</figcaption>
 </figure>
 </div>
 <div id="def-suma-superior-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.3 (Suma superior de Riemann) </strong></span>Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma superior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(S(f,P)\)</span>, como</p>
+<p><span class="theorem-title"><strong>Definición 8.3 (Suma superior de Riemann)</strong></span> Dada una función <span class="math inline">\(f: I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y una partición <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma superior</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(S(f,P)\)</span>, como</p>
 <p><span class="math display">\[
 S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
 \]</span></p>
@@ -355,7 +391,7 @@ S(f,P) = \sum_{i=1}^n M_i(x_i-x_{i-1})
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/suma-superior-riemann.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Suma superior de Riemann</figcaption>
+<figcaption>Suma superior de Riemann</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -372,13 +408,13 @@ Advertencia
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas-riemann-positivas-negativas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Sumas de Riemann de una función con valores positivos y negativos en un intervalo.</figcaption>
+<figcaption>Sumas de Riemann de una función con valores positivos y negativos en un intervalo.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="exm-suma-inferior-superior-riemann" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.1 </strong></span>Dada la función <span class="math inline">\(f(x)=x^2\)</span>, si consideramos el intervalo <span class="math inline">\([0,2]\)</span> y la partición <span class="math inline">\(P=\{0, 0.5, 1, 1.5, 2\}\)</span>, la suma inferior de Riemann de <span class="math inline">\(f\)</span> correspondiente a esta partición es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.1</strong></span> Dada la función <span class="math inline">\(f(x)=x^2\)</span>, si consideramos el intervalo <span class="math inline">\([0,2]\)</span> y la partición <span class="math inline">\(P=\{0, 0.5, 1, 1.5, 2\}\)</span>, la suma inferior de Riemann de <span class="math inline">\(f\)</span> correspondiente a esta partición es</p>
 <p><span class="math display">\[\begin{align*}
 s(f,P)
 &amp;= f(0)(0.5-0) + f(0.5) (1-0.5) + f(1) (1.5-1) + f(1.5) (2-1.5) \tag{1}\\
@@ -421,7 +457,7 @@ var params = {
 </script>
 <p><a href="https://www.geogebra.org/classic/nr6x8pjq"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de sumas de Riemann"> Calculadora de sumas de Riemann</a></p>
 <div id="prp-sumas-riemann-inferior-superior" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.1 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 8.1</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -450,10 +486,10 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1}) \leq \sum_{i=1}^n M_i(x_i-x_{i-1}) = S(f,
 </div>
 </div>
 <div id="def-refinamiento-particion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.4 (Refinamiento de una partición) </strong></span>Dadas dos particiones <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> y <span class="math inline">\(Q=\{y_0, y_1, \ldots, y_m\}\)</span> de un intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span> si todos los puntos de <span class="math inline">\(P\)</span> están en <span class="math inline">\(Q\)</span>, es decir, <span class="math inline">\(P\subseteq Q\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8.4 (Refinamiento de una partición)</strong></span> Dadas dos particiones <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> y <span class="math inline">\(Q=\{y_0, y_1, \ldots, y_m\}\)</span> de un intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span> si todos los puntos de <span class="math inline">\(P\)</span> están en <span class="math inline">\(Q\)</span>, es decir, <span class="math inline">\(P\subseteq Q\)</span>.</p>
 </div>
 <div id="prp-sumas-riemann-refinamiento" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.2 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span> y <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 8.2</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span> y <span class="math inline">\(Q\)</span> es un refinamiento de <span class="math inline">\(P\)</span>, entonces</p>
 <ol type="a">
 <li><span class="math inline">\(s(f,P)\leq s(f,Q)\)</span></li>
 <li><span class="math inline">\(S(f,Q)\leq S(f,P)\)</span></li>
@@ -493,7 +529,7 @@ s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
 </div>
 </div>
 <div id="prp-sumas-riemann-particiones" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.3 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son dos particiones de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> y <span class="math inline">\(s(f,Q)\leq S(f,P)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 8.3</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son dos particiones de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> y <span class="math inline">\(s(f,Q)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -527,17 +563,17 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas_riemann.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aproximación del area encerrada entre la gráfica de una función y el eje <span class="math inline">\(x\)</span> mediante sumas de Riemann.</figcaption>
+<figcaption>Aproximación del area encerrada entre la gráfica de una función y el eje <span class="math inline">\(x\)</span> mediante sumas de Riemann.</figcaption>
 </figure>
 </div>
 <div id="def-integral-inferior-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.5 (Integral inferior de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8.5 (Integral inferior de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
 </div>
 <div id="def-integral-superior-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.6 (Integral superior de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral superior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8.6 (Integral superior de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral superior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}\)</span>.</p>
 </div>
 <div id="prp-integral-riemann-inferior-superior" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\underline{\int_a^b} f\leq \overline{\int_a^b}f\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 8.4</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\underline{\int_a^b} f\leq \overline{\int_a^b}f\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -565,7 +601,7 @@ Demostración
 </div>
 </div>
 <div id="def-integral-riemann" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.7 (Integral de Riemann) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>integrable Riemann</em> en <span class="math inline">\(I\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 8.7 (Integral de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>integrable Riemann</em> en <span class="math inline">\(I\)</span> si</p>
 <p><span class="math display">\[
 \underline{\int_a^b} f = \overline{\int_a^b}f,
 \]</span></p>
@@ -589,7 +625,7 @@ Nota
 </div>
 <p>En ocasiones, omitiremos el “de Riemann” para referirnos a una integral de Riemann y simplemente se escribirá integral, cuando en el contexto esté claro que se trata de la integral de Riemann.</p>
 <div id="exm-sumas-riemann" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.2 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.2</strong></span> &nbsp;</p>
 <ol type="a">
 <li><p>Veamos que si <span class="math inline">\(f(x)=c\)</span>, es una función constante en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 <p>Sea <span class="math inline">\(P=\{x_0, x_1, \ldots, x_n\}\)</span> una partición de <span class="math inline">\([a,b]\)</span>, entonces</p>
@@ -634,7 +670,7 @@ S(f,P_n) &amp;= \sum_{i=1}^n M_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i
 </ol>
 </div>
 <div id="exm-funcion-no-integrable-riemann" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.3 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.3</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -651,7 +687,7 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 <p>Así pues, <span class="math inline">\(\underline{\int_a^b}f = 0 \neq \overline{\int_a^b}f=1\)</span>.</p>
 </div>
 <div id="thm-criterio-integrabilidad-riemann" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.1 (Criterio de integrabilidad de Riemann) </strong></span>Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.1 (Criterio de integrabilidad de Riemann)</strong></span> Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -682,7 +718,7 @@ S(f,P)-s(f,P) \leq S(f,P_2)-s(f,P_1) \leq \left(\overline{\int_a^b} f+\frac{\var
 </div>
 </div>
 <div id="cor-criterio-integrabilidad-riemann" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.1 </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, si existe una sucesión de particiones <span class="math inline">\((P_n)_{n=1}^\infty\)</span> de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y</p>
+<p><span class="theorem-title"><strong>Corolario 8.1</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, si existe una sucesión de particiones <span class="math inline">\((P_n)_{n=1}^\infty\)</span> de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx = \lim_{n\to\infty} s(f,P_n) = \lim_{n\to\infty} S(f,P_n).
 \]</span></p>
@@ -733,7 +769,7 @@ Importante
 <section id="propiedades-de-la-integral-de-riemann" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="propiedades-de-la-integral-de-riemann"><span class="header-section-number">8.3</span> Propiedades de la integral de Riemann</h2>
 <div id="thm-linealidad-integral-riemann" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.2 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 8.2</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
 <ol type="a">
 <li><p><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b (f+g)(x)\, dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx.\)</span></p></li>
 <li><p>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_a^b cf(x)\, dx = c\int_a^b f(x)\,dx.\)</span></p></li>
@@ -768,7 +804,7 @@ S(f,P_1)-s(f,P_1)\leq \frac{\varepsilon}{2}\\
 S(g,P_2)-s(g,P_2)\leq \frac{\varepsilon}{2}
 \end{gathered}
 \]</span></p>
-<p>Tomando ahora el refinamiento <span class="math inline">\(P=P_1\cup P_2\)</span> de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span> y la <a href="#eq-1">Ecuación&nbsp;<span>8.1</span></a> se tiene</p>
+<p>Tomando ahora el refinamiento <span class="math inline">\(P=P_1\cup P_2\)</span> de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span> y la <a href="#eq-1" class="quarto-xref">Ecuación&nbsp;<span>8.1</span></a> se tiene</p>
 <p><span class="math display">\[\begin{align*}
 s(f+g,P) &amp;\geq s(f,P) + s(g,P) \geq s(f,P_1) + s(g,P_2)\\
 S(f+g,P) &amp;\leq S(f,P) + S(g,P) \leq S(f,P_1) + S(g,P_2)
@@ -801,7 +837,7 @@ s(f,P) + s(g,P) \leq  \int_a^b f + \int_a^b g \leq S(f,P) + S(g,P),
 \end{gathered}
 \tag{8.2}\]</span></span></p>
 <p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cs(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cS(f,P)\)</span>.</p>
-<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-2">Ecuación&nbsp;<span>8.2</span></a>,</p>
+<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-2" class="quarto-xref">Ecuación&nbsp;<span>8.2</span></a>,</p>
 <p><span class="math display">\[
 S(cf,P) - s(cf,P) = c S(f,P) - cs(f,P) = c(S(f,P)-s(f,P)) &lt; c\frac{\varepsilon}{c} = \varepsilon,
 \]</span></p>
@@ -818,7 +854,7 @@ S(cf,P) - s(cf,P) = c S(f,P) - cs(f,P) = c(S(f,P)-s(f,P)) &lt; c\frac{\varepsilo
 \end{gathered}
 \tag{8.3}\]</span></span></p>
 <p>de manera que si <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(cf,P)= cS(f,P)\)</span> y <span class="math inline">\(S(cf,P) = cs(f,P)\)</span>.</p>
-<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{-c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-3">Ecuación&nbsp;<span>8.3</span></a>,</p>
+<p>Como <span class="math inline">\(f\)</span> es integrable Riemann, dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)\leq \frac{\varepsilon}{-c} &gt;0\)</span>. Por otro lado, según la <a href="#eq-3" class="quarto-xref">Ecuación&nbsp;<span>8.3</span></a>,</p>
 <p><span class="math display">\[\begin{align*}
 S(cf,P) - s(cf,P) &amp;= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
 &amp;= c(S(f,P)-s(f,P)) &lt; -c\frac{\varepsilon}{-c} = \varepsilon,
@@ -834,7 +870,7 @@ S(cf,P) - s(cf,P) &amp;= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
 </div>
 </div>
 <div id="prp-integral-funcion-positiva" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
@@ -855,7 +891,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integral-funcion-negativa" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.2 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.2</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq 0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -893,28 +929,31 @@ Precaución
 <p>En estos casos, el recurso habitual para calcular el área es calcular la integral del valor absoluto de la función.</p>
 </div>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-funcion-positiva-negativa.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Integral de una función con valores positivos y negativos en un intervalo <span class="math inline">\(I\)</span></figcaption>
+<figcaption>Integral de una función con valores positivos y negativos en un intervalo <span class="math inline">\(I\)</span></figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/integral-valor-absoluto.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Cálculo del area encerrada entre una función de una función y el eje <span class="math inline">\(x\)</span> mediante la integral del valor absoluto de la función.</figcaption>
+<figcaption>Cálculo del area encerrada entre una función de una función y el eje <span class="math inline">\(x\)</span> mediante la integral del valor absoluto de la función.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.3 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.3</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
@@ -938,7 +977,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integral-funcion-acotada" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.4</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
@@ -963,7 +1002,7 @@ m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
 </div>
 </div>
 <div id="thm-aditividad-integral-intervalo" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.3 (Aditividad de la integral respecto del intervalo de integración) </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(c\in(a,b)\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span>. Además, en este caso,</p>
+<p><span class="theorem-title"><strong>Teorema 8.3 (Aditividad de la integral respecto del intervalo de integración)</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(c\in(a,b)\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span>. Además, en este caso,</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
 \]</span></p>
@@ -1020,7 +1059,7 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/aditividad-integral.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aditividad de la integral respecto del intervalo de integración</figcaption>
+<figcaption>Aditividad de la integral respecto del intervalo de integración</figcaption>
 </figure>
 </div>
 </section>
@@ -1028,7 +1067,7 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 <h2 data-number="8.4" class="anchored" data-anchor-id="clase-de-las-funciones-integrables"><span class="header-section-number">8.4</span> Clase de las funciones integrables</h2>
 <p>A continuación trataremos de estudiar qué tipo de funciones son integrables.</p>
 <div id="thm-integrabilidad-funciones-monótonas" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.4 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.4</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
@@ -1066,7 +1105,7 @@ S(f,P_n)-s(f,P_n) &amp;= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-
 </div>
 </div>
 <div id="thm-integrabilidad-funciones-continuas" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
@@ -1098,7 +1137,7 @@ S(f,P)-s(f,P) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1
 </div>
 </div>
 <div id="thm-integrabilidad-funciones-discontinuas" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -1119,7 +1158,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integrabilidad-funciones-discontinuas" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.5 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un conjunto finito de puntos de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un conjunto finito de puntos de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
@@ -1147,7 +1186,7 @@ S(f,P)-s(f,P)\leq S(f,P_1)+S(f,P_2)-s(f,P_1)-s(f,P_2) &lt; \frac{\varepsilon}{2}
 </div>
 </div>
 <div id="thm-integrabilidad-composicion-funciones" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
@@ -1200,7 +1239,7 @@ S(g\circ f,P)-s(g\circ f,P) &amp;= \sum_{i\in A}(M_i'-m_i')(x_i-x_{i-1}) + \sum_
 </div>
 </div>
 <div id="cor-integrabilidad-valor-absoluto" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
@@ -1221,7 +1260,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integrabilidad-potencias" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.7 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
@@ -1242,7 +1281,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
@@ -1263,7 +1302,7 @@ Demostración
 </div>
 </div>
 <div id="cor-integrabilidad-funcion-producto" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 8.9 </strong></span>Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 8.9</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
@@ -1291,7 +1330,7 @@ fg = \frac{1}{2}((f+g)^2-f^2-g^2)
 <h2 data-number="8.5" class="anchored" data-anchor-id="teorema-fundamental-del-cálculo"><span class="header-section-number">8.5</span> Teorema fundamental del cálculo</h2>
 <p>En las secciones anteriores se ha definido la integral de Riemann y hemos estudiado los tipos de funciones integrables, pero, en general, el cálculo de integrales mediante sumas de Riemann suele ser complicado. En esta sección se presenta un importante teorema, al que llegaron Newton y Leibniz de manera simultánea, que relaciona el cálculo integral con el cálculo diferencial y que nos facilitará enormemente el cálculo de integrales sin tener que recurrir a la aproximación mediante sumas de Riemann. Este teorema es tan importante para el Análisis que se ha denominado <em>teorema fundamental del Cálculo</em>.</p>
 <div id="def-integral-indefinida" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.8 </strong></span>Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como la función</p>
+<p><span class="theorem-title"><strong>Definición 8.8</strong></span> Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como la función</p>
 <p><span class="math display">\[
 F(x) = \int_a^x f(t)\, dt
 \]</span></p>
@@ -1299,7 +1338,7 @@ F(x) = \int_a^x f(t)\, dt
 </div>
 <p>Antes de enunciar el teorema, presentamos un resultado necesario para su demostración.</p>
 <div id="prp-integral-valor-absoluto" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8.6 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 8.6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
 <p><span class="math display">\[
 \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
 \]</span></p>
@@ -1317,7 +1356,7 @@ Demostración
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, por el <a href="#cor-integrabilidad-valor-absoluto">Corolario&nbsp;<span>8.6</span></a> <span class="math inline">\(|f|\)</span> también es integrable en <span class="math inline">\(I\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>, por el <a href="#cor-integrabilidad-valor-absoluto" class="quarto-xref">Corolario&nbsp;<span>8.6</span></a> <span class="math inline">\(|f|\)</span> también es integrable en <span class="math inline">\(I\)</span>.</p>
 <p>Por otro lado, <span class="math inline">\(-|f|\leq f \leq |f|\)</span>, y por las propiedades de la integral se tiene</p>
 <p><span class="math display">\[
 (-1)\int_a^b |f(x)|\,dx = \int_a^b -|f(x)|\,dx \leq \int_a^b f(x)\,dx \leq \int_a^b |f(x)|\,dx,
@@ -1331,7 +1370,7 @@ Demostración
 </div>
 </div>
 <div id="thm-integral-indefinida-continua" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.8 </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
@@ -1359,7 +1398,7 @@ Demostración
 </div>
 </div>
 <div id="exm-integral-indefinida-continua" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.4 </strong></span>Sea</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.4</strong></span> Sea</p>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -1382,7 +1421,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^x 1 = x.
 </div>
 <p>Presentamos primero una primera versión del teorema fundamental del cálculo.</p>
 <div id="thm-teorema-fundamental-calculo-1" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.9 (Teorema fundamental del Cálculo I) </strong></span>Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 8.9 (Teorema fundamental del Cálculo I)</strong></span> Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
@@ -1429,7 +1468,7 @@ Advertencia
 </div>
 </div>
 <div id="def-primitiva" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.9 (Primitiva de una función) </strong></span>Dada una función <span class="math inline">\(f:I\to\ \mathbb{R}\)</span> integrable en <span class="math inline">\(I\)</span>, a cualquier función <span class="math inline">\(F\)</span> que cumple <span class="math inline">\(F'=f\)</span> se le llama <em>primitiva</em> de <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8.9 (Primitiva de una función)</strong></span> Dada una función <span class="math inline">\(f:I\to\ \mathbb{R}\)</span> integrable en <span class="math inline">\(I\)</span>, a cualquier función <span class="math inline">\(F\)</span> que cumple <span class="math inline">\(F'=f\)</span> se le llama <em>primitiva</em> de <span class="math inline">\(f\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1445,15 +1484,15 @@ Advertencia
 </div>
 </div>
 <div id="exm-teorema-fundamental-calculo-alternativo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.5 </strong></span>Dada la función <span class="math inline">\(f(x)=2x\)</span>, es fácil ver que <span class="math inline">\(F(x)=x^2+C\)</span> es una primitiva de <span class="math inline">\(f\)</span> para cualquier <span class="math inline">\(C\in\mathbb{R}\)</span>.</p>
-<p>En el <a href="14-integrales-funciones-varias-variables.html#exm-sumas-riemann">Ejemplo&nbsp;<span>13.1</span></a> vimos que <span class="math inline">\(\int_0^1 x\,dx = \frac{1}{2}\)</span>, de modo que <span class="math display">\[
+<p><span class="theorem-title"><strong>Ejemplo 8.5</strong></span> Dada la función <span class="math inline">\(f(x)=2x\)</span>, es fácil ver que <span class="math inline">\(F(x)=x^2+C\)</span> es una primitiva de <span class="math inline">\(f\)</span> para cualquier <span class="math inline">\(C\in\mathbb{R}\)</span>.</p>
+<p>En el <a href="14-integrales-funciones-varias-variables.html#exm-sumas-riemann" class="quarto-xref">Ejemplo&nbsp;<span>13.1</span></a> vimos que <span class="math inline">\(\int_0^1 x\,dx = \frac{1}{2}\)</span>, de modo que <span class="math display">\[
 \int_0^1 2x\,dx = 2 \int_0^1 x\,dx = 2\frac{1}{2} = 1.
 \]</span></p>
 <p>Si queremos llegar a este resultado usando primitivas, es necesario tomar la primitiva adecuada, es decir, necesitamos saber el valor concreto de la constante <span class="math inline">\(C\)</span> que permite calcular la integral definida. En este caso particular, como <span class="math inline">\(F\)</span> tiene que cumplir que <span class="math inline">\(F(1)=1+C = 1=\int_0^1 2x\,dx\)</span>, resulta evidente que debe ser <span class="math inline">\(C=0\)</span>, pero si tomamos cualquier otra constante, como por ejemplo <span class="math inline">\(C=1\)</span>, entonces <span class="math inline">\(F(1) = 1+1 = 2\neq 1 = \int_0^1 2x\,dx\)</span>.</p>
 </div>
 <p>Afortunadamente, la segunda parte del teorema fundamental del cálculo resuelve este inconveniente.</p>
 <div id="thm-teorema-fundamental-calculo-2" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8.10 (Teorema fundamental del cálculo II) </strong></span>Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F\)</span> es una primitiva de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 8.10 (Teorema fundamental del cálculo II)</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F\)</span> es una primitiva de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx = F(b)-F(a).
 \]</span></p>
@@ -1472,7 +1511,7 @@ Demostración
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, sea <span class="math inline">\(P=\{x_0,x_1,\ldots,x_n\}\)</span> una partición de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
-<p>Como <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>, por el <a href="07-derivadas.html#thm-valor-medio">Teorema&nbsp;<span>7.6</span></a>, para <span class="math inline">\(i=1,\ldots,n\)</span>, existe <span class="math inline">\(t_i \in (x_i,x_{i+1})\)</span> tal que</p>
+<p>Como <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>, por el <a href="07-derivadas.html#thm-valor-medio" class="quarto-xref">Teorema&nbsp;<span>7.6</span></a>, para <span class="math inline">\(i=1,\ldots,n\)</span>, existe <span class="math inline">\(t_i \in (x_i,x_{i+1})\)</span> tal que</p>
 <p><span class="math display">\[
 F(x_i)-F(x_{i-1}) = F'(t_i)(x_i-x_{i-1}) = f(t_i)(x_i-x_{i-1}).
 \]</span></p>
@@ -1498,7 +1537,7 @@ s(f,P)\leq \sum_{i=1}^n f(t_i)(x_i-x_{i-1}) \leq S(f,P),
 </div>
 <p>Este teorema, que también se conoce como al <em>regla de Barrow</em>, nos permitirá calcular la integral definida de una función a partir de cualquier primitiva suya, sin necesidad de usar las sumas de Riemann.</p>
 <div id="exm-regla-barrow" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.6 </strong></span>Dada la función <span class="math inline">\(f(x)=x^2\)</span>, la función <span class="math inline">\(F_0(x)= \frac{x^3}{3}\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.6</strong></span> Dada la función <span class="math inline">\(f(x)=x^2\)</span>, la función <span class="math inline">\(F_0(x)= \frac{x^3}{3}\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
 <p><span class="math display">\[
 \int_0^1 x^2\, dx = F_0(1)-F_0(0) = \frac{1^3}{3}-\frac{0^3}{3} = \frac{1}{3}.
 \]</span></p>
@@ -1508,14 +1547,14 @@ s(f,P)\leq \sum_{i=1}^n f(t_i)(x_i-x_{i-1}) \leq S(f,P),
 \]</span></p>
 </div>
 <div id="exm-regla-barrow-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.7 </strong></span>Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span>, la función <span class="math inline">\(F(x)= \operatorname{sen}(x)\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.7</strong></span> Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span>, la función <span class="math inline">\(F(x)= \operatorname{sen}(x)\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
 <p><span class="math display">\[
 \int_{\pi/2}^\pi \cos(x)\, dx = F(\pi)-F(\pi/2) = \operatorname{sen}(\pi)-\operatorname{sen}(\pi/2) = 0-1 = -1.
 \]</span></p>
 </div>
 <p>Hemos visto que si <span class="math inline">\(f\)</span> es continua en un intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> tiene primitiva en <span class="math inline">\(I\)</span>, pero no toda función integrable en <span class="math inline">\(I\)</span> tiene primitiva.</p>
 <div id="exm-funcion-integrable-sin-primitiva" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.8 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.8</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -1523,11 +1562,11 @@ f(x) =
 0 &amp; \mbox{si $x\in [0,1]\setminus\{1/2\}$}
 \end{cases}
 \]</span></p>
-<p>es integrable en el intervalo <span class="math inline">\([0,1]\)</span>, y <span class="math inline">\(\int_0^1 f(x)\,dx = 0\)</span>, sin embargo, <span class="math inline">\(f\)</span> no es continua en <span class="math inline">\([0,1]\)</span> y no verifica el teorema de los valores intermedios, ya que para cualquier <span class="math inline">\(y\in(0,1/2)\)</span>, no existe <span class="math inline">\(x\in[0,1/2]\)</span> tal que <span class="math inline">\(f(x)=y\)</span>. Por tanto, según el teorema de Darboux (<a href="07-derivadas.html#thm-darboux">Teorema&nbsp;<span>7.9</span></a>), <span class="math inline">\(f\)</span> no es la derivada de ninguna función en <span class="math inline">\([0,1]\)</span>, por lo que no tiene primitiva.</p>
+<p>es integrable en el intervalo <span class="math inline">\([0,1]\)</span>, y <span class="math inline">\(\int_0^1 f(x)\,dx = 0\)</span>, sin embargo, <span class="math inline">\(f\)</span> no es continua en <span class="math inline">\([0,1]\)</span> y no verifica el teorema de los valores intermedios, ya que para cualquier <span class="math inline">\(y\in(0,1/2)\)</span>, no existe <span class="math inline">\(x\in[0,1/2]\)</span> tal que <span class="math inline">\(f(x)=y\)</span>. Por tanto, según el teorema de Darboux (<a href="07-derivadas.html#thm-darboux" class="quarto-xref">Teorema&nbsp;<span>7.9</span></a>), <span class="math inline">\(f\)</span> no es la derivada de ninguna función en <span class="math inline">\([0,1]\)</span>, por lo que no tiene primitiva.</p>
 </div>
 <p>También puede darse el caso de que <span class="math inline">\(f\)</span> tenga primitiva, y sin embargo, no sea integrable.</p>
 <div id="exm-funcion-no-integrable-con-primitiva" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.9 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.9</strong></span> La función</p>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -1551,11 +1590,11 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-funcion-positiva-negativa-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada por una función positiva y negativa.</figcaption>
+<figcaption>Area encerrada por una función positiva y negativa.</figcaption>
 </figure>
 </div>
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.10 </strong></span>Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.10</strong></span> Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
 <p>Si resolvemos la ecuación <span class="math inline">\(f(x)=0\)</span> obtenemos dos raíces <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span>, de manera que la función es positiva en el intervalo <span class="math inline">\((0,1)\)</span> y <span class="math inline">\((3,4)\)</span> y negativa en el intervalo <span class="math inline">\((1,3)\)</span>. Por tanto, el área encerrada entre la gráfica de la función y el eje <span class="math inline">\(x\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^4 |f(x)|\,dx
@@ -1566,7 +1605,7 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-parabola.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada por la parábola <span class="math inline">\(f(x)=x^2-4x+3\)</span>.</figcaption>
+<figcaption>Area encerrada por la parábola <span class="math inline">\(f(x)=x^2-4x+3\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -1581,11 +1620,11 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-funciones.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada entre dos funciones.</figcaption>
+<figcaption>Area encerrada entre dos funciones.</figcaption>
 </figure>
 </div>
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.11 </strong></span>Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.11</strong></span> Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
 <p>Si resolvemos la ecuación <span class="math inline">\(f(x)-g(x)=0\)</span> obtenemos una raíz en <span class="math inline">\(x=\pi/4\)</span> en el intervalo de integración. Se cumple que <span class="math inline">\(f(x)&lt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(0,\frac{\pi}{4}\right)\)</span> y <span class="math inline">\(f(x)&gt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(\frac{\pi}{4},\pi\right)\)</span>. Por tanto, el área comprendida entre las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^\pi |f(x)-g(x)|\,dx
@@ -1596,7 +1635,7 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-seno-coseno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada entre el seno y el coseno.</figcaption>
+<figcaption>Area encerrada entre el seno y el coseno.</figcaption>
 </figure>
 </div>
 </div>
@@ -1607,7 +1646,7 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/coordenadas-polares.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Coordenadas polares.</figcaption>
+<figcaption>Coordenadas polares.</figcaption>
 </figure>
 </div>
 <p>Para pasar de coordenadas cartesianas a coordenadas polares, primero se obtiene el valor de <span class="math inline">\(r\)</span> aplicando el teorema de Pitágoras</p>
@@ -1641,7 +1680,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/sumas-riemann-polares.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Descomposición en sectores de círculos del area encerrada por una curva en polares.</figcaption>
+<figcaption>Descomposición en sectores de círculos del area encerrada por una curva en polares.</figcaption>
 </figure>
 </div>
 <p>De forma análoga se puede definir <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como <span class="math inline">\(\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}\)</span> y la <em>integral superior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el número <span class="math inline">\(\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}\)</span>, de manera que, si la integral inferior coincide con la superior, la función es integrable y</p>
@@ -1652,17 +1691,17 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/integral-riemann-polares.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada por una curva en coordenadas polares.</figcaption>
+<figcaption>Area encerrada por una curva en coordenadas polares.</figcaption>
 </figure>
 </div>
 <div id="exm-area-semicírculo-polares" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.12 </strong></span>Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.12</strong></span> Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
 <p><span class="math display">\[
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
 \]</span></p>
 </div>
 <div id="exm-area-curva-polar" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.13 </strong></span>Veamos ahora cómo calcular el area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.13</strong></span> Veamos ahora cómo calcular el area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^{2\pi} \frac{r^2}{2}
 &amp;= \frac{1}{2}\int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta
@@ -1676,7 +1715,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-curva-polar.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</figcaption>
+<figcaption>Area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -1691,12 +1730,12 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-curvas-polares.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Area encerrada entre dos curvas polares$.</figcaption>
+<figcaption>Area encerrada entre dos curvas polares$.</figcaption>
 </figure>
 </div>
 <p>En general, cuando <span class="math inline">\(f\)</span> es mayor que <span class="math inline">\(g\)</span> en algunos subintervalos de <span class="math inline">\(I\)</span> y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
 <div id="exm-area-entre-curvas-polares" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.14 </strong></span>Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(f(\theta)=3\cos(\theta)\)</span> y <span class="math inline">\(g(\theta)=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.14</strong></span> Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(f(\theta)=3\cos(\theta)\)</span> y <span class="math inline">\(g(\theta)=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
 <p><span class="math display">\[
 3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{3}
 \]</span></p>
@@ -1713,7 +1752,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/area-entre-curvas-polares-2.svg" class="img-fluid figure-img" width="600"></p>
-<figcaption class="figure-caption">Area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>.</figcaption>
+<figcaption>Area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -1723,7 +1762,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <h2 data-number="8.7" class="anchored" data-anchor-id="integrales-impropias"><span class="header-section-number">8.7</span> Integrales impropias</h2>
 <p>El concepto de integral definida de una función en un intervalo cerrado <span class="math inline">\([a,b\)</span>] y se puede generalizar a intervalos no acotados y también a funciones con discontinuidades de salto infinito.</p>
 <div id="def-integral-impropia-1" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.10 (Integral impropia de primer tipo) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,t]\)</span> para <span class="math inline">\(\forall t&gt;a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,\infty)\)</span> como el límite</p>
+<p><span class="theorem-title"><strong>Definición 8.10 (Integral impropia de primer tipo)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,t]\)</span> para <span class="math inline">\(\forall t&gt;a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,\infty)\)</span> como el límite</p>
 <p><span class="math display">\[
 \int_a^\infty f(x)\,dx = \lim_{t\to\infty} \int_a^t f(x)\,dx
 \]</span></p>
@@ -1739,7 +1778,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 </div>
 <p>Para funciones positivas en los dominios de integración, estas integrales impropias pueden interpretarse también como áreas. En particular, <span class="math inline">\(\int_a^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([a,\infty)\)</span>, <span class="math inline">\(\int_{-\infty}^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\((-\infty,a]\)</span> y <span class="math inline">\(\int_{-\infty}^\infty f(x)\,dx\)</span> es el area encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="exm-integrales-impropias-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.15 </strong></span>La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.15</strong></span> La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
 <p><span class="math display">\[
 \int_1^\infty \frac{1}{x^2}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x^2}\,dx = \lim_{t\to\infty}\left[\frac{-1}{x}\right]_1^t = \lim_{n\to\infty} 1-\frac{1}{t} = 1.
 \]</span></p>
@@ -1752,7 +1791,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 </div>
 <p>En estos casos la región encerrada por la gráfica de la función y el eje <span class="math inline">\(x\)</span> se extiende de manera infinita a lo largo del eje <span class="math inline">\(x\)</span>. La misma idea puede aplicarse para calcular areas de regiones encerradas por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(y\)</span> cuando estas regiones se extienden de manera infinita porque la función no está acotada en algún valor del dominio de integración.</p>
 <div id="def-integral-impropia-2" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8.11 (Integral impropia de segundo tipo) </strong></span>Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> continua en <span class="math inline">\(I=[a,b)\)</span> y discontinua en <span class="math inline">\(b\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el límite</p>
+<p><span class="theorem-title"><strong>Definición 8.11 (Integral impropia de segundo tipo)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> continua en <span class="math inline">\(I=[a,b)\)</span> y discontinua en <span class="math inline">\(b\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el límite</p>
 <p><span class="math display">\[
 \int_a^b f(x)\,dx = \lim_{t\to b^-} \int_a^t f(x)\,dx
 \]</span></p>
@@ -1765,7 +1804,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/seccion-transversal-piramide.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></figcaption>
+<figcaption>Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></figcaption>
 </figure>
 </div>
 <p>En general, si disponemos de una función <span class="math inline">\(A(x)\)</span> que nos da el área de la sección transversal del sólido para cada <span class="math inline">\(x\in[a,b]\)</span>, podemos tomar una partición <span class="math inline">\(P_n=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann</p>
@@ -1808,7 +1847,7 @@ var params = {
 \]</span></p>
 <p>mide el volumen del cuerpo sólido con secciones transversales de área <span class="math inline">\(A(x)\)</span> en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
 <div id="exm-volumen-esfera" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.16 </strong></span>Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.16</strong></span> Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r \pi(r^2-x^2)\,dx
 &amp;= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
@@ -1823,7 +1862,7 @@ var params = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/disco-solido-revolucion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Sólido de revolución.</figcaption>
+<figcaption>Sólido de revolución.</figcaption>
 </figure>
 </div>
 <p>Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
@@ -1831,7 +1870,7 @@ var params = {
 \int_a^b \pi f(x)^2\,dx
 \]</span></p>
 <div id="exm-volumen-cono-revolucion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.17 </strong></span>Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.17</strong></span> Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^2 \pi f(x)^2\,dx
 &amp;= \int_0^2 \pi (2-x)^2\,dx
@@ -1848,7 +1887,7 @@ var params = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/envoltorio-cilindrico-solido-revolucion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Envoltorio cilíndrico de un sólido de revolución.</figcaption>
+<figcaption>Envoltorio cilíndrico de un sólido de revolución.</figcaption>
 </figure>
 </div>
 <p>Los envoltorios se construyen de forma que su base es un círculo de radio <span class="math inline">\(x\in [a,b]\)</span> y perpendicular al eje de rotación del sólido de revolución y su altura es <span class="math inline">\(f(x)\)</span>, de manera que su área (sin contar el área de las bases) es <span class="math inline">\(2\pi x f(x)\)</span>. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada <span class="math inline">\(x\in[a,b]\)</span> se obtiene al volumen del cuerpo sólido de revolución en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
@@ -1884,7 +1923,7 @@ var params = {
 ::: --></p>
 <p><a href="https://www.geogebra.org/classic/bcpdxmpf"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos."> Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos.</a></p>
 <div id="exm-volumen-revolucion-envoltorios" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.18 </strong></span>El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=4-x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.18</strong></span> El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=4-x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
 <p>Si usamos discos discos cilíndricos debemos expresar <span class="math inline">\(x\)</span> en función de <span class="math inline">\(y\)</span>, es decir <span class="math inline">\(x=\sqrt{4-y}\)</span> y calcular la siguiente integral definida en el intervalo <span class="math inline">\([0,4]\)</span></p>
 <p><span class="math display">\[
 \int_0^4 \pi g(y)^2\,dy
@@ -1909,7 +1948,7 @@ var params = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/aproximacion-longitud-curva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aproximación de la longitud de una curva mediante segmentos.</figcaption>
+<figcaption>Aproximación de la longitud de una curva mediante segmentos.</figcaption>
 </figure>
 </div>
 <p>Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> es</p>
@@ -1940,7 +1979,7 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 \]</span></p>
 <p>siempre y cuando <span class="math inline">\(f'(x)\)</span> sea integrable en <span class="math inline">\([a,b]\)</span>.</p>
 <div id="exm-longitud-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.19 </strong></span>Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.19</strong></span> Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
 <p>La derivada de <span class="math inline">\(f\)</span> es <span class="math inline">\(f'(x)=\frac{-x}{\sqrt{1-x^2}}\)</span>, de manera que la longitud de la semicircunferencia es</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 \sqrt{1+\left(\frac{-x}{\sqrt{1-x^2}}\right)^2}\,dx
@@ -1962,21 +2001,24 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 <h2 data-number="8.10" class="anchored" data-anchor-id="cálculo-de-superficies-de-sólidos-de-revolución"><span class="header-section-number">8.10</span> Cálculo de superficies de sólidos de revolución</h2>
 <p>A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje <span class="math inline">\(x\)</span>. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje <span class="math inline">\(x\)</span> cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.</p>
 <p>Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono <span class="math inline">\(l\)</span> y con arco de circunferencia el perímetro del círculo de la base del cono <span class="math inline">\(2\pi r\)</span>.</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/integrales/cono.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Cono con radio <span class="math inline">\(r\)</span> y generatriz <span class="math inline">\(l\)</span>.</figcaption>
+<figcaption>Cono con radio <span class="math inline">\(r\)</span> y generatriz <span class="math inline">\(l\)</span>.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/integrales/superficie-cono.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Superficie del envolvente del cono.</figcaption>
+<figcaption>Superficie del envolvente del cono.</figcaption>
 </figure>
 </div>
 </div>
@@ -1987,7 +2029,7 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/cono-truncado.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</figcaption>
+<figcaption>Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</figcaption>
 </figure>
 </div>
 <p>La superficie del tronco de cono es, por tanto,</p>
@@ -2020,7 +2062,7 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = 
 \]</span></p>
 <p>ya que, cuando los intervalos se hacen infinitamente pequeños, <span class="math inline">\(f(x_{i_1})\)</span> y <span class="math inline">\(f(x_i)\)</span> se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor <span class="math inline">\(f(x)\)</span>, por lo que en la integral se pone <span class="math inline">\(2 f(x)\)</span>.</p>
 <div id="exm-superficie-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.20 </strong></span>Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.20</strong></span> Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
 &amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2}\,dx \\
@@ -2053,7 +2095,7 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo <span class="math inline">\([a, b]\)</span>, es necesario integrar el valor absoluto de la velocidad, tal y como se hizo para el cálculo de áreas en la <a href="#sec-calculo-area-funcion-ejex"><span>Sección&nbsp;8.6.1</span></a>.</p>
+<p>La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo <span class="math inline">\([a, b]\)</span>, es necesario integrar el valor absoluto de la velocidad, tal y como se hizo para el cálculo de áreas en la <a href="#sec-calculo-area-funcion-ejex" class="quarto-xref"><span>Sección 8.6.1</span></a>.</p>
 </div>
 </div>
 <p>En general, suponiendo que el instante inicial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la posición inicial del objeto es <span class="math inline">\(s(0)\)</span>, la posición que ocupa el objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
@@ -2071,7 +2113,7 @@ v(t) = v(0) + \int_{0}^t a(x)\,dx.
 \]</span></p>
 <p>Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.</p>
 <div id="exm-caida-libre" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.21 </strong></span>Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.21</strong></span> Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
 <p>Integrando la aceleración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
 <p><span class="math display">\[
 v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
@@ -2101,7 +2143,7 @@ W = F\cdot d
 <p>Como la fuerza se mide en newtons, la unidad del trabajo en el SI es el <em>julio</em> <span class="math inline">\(J = N\cdot m\)</span>.</p>
 <p>Cuando la fuerza es constante, el trabajo es proporcional a la distancia recorrida.</p>
 <div id="exm-trabajo-gravedad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.22 </strong></span>Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.22</strong></span> Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
 <p><span class="math display">\[
 F = m\cdot g = 1 \mbox{ kg} \cdot 9.81 \mbox{ m/s$^2$} = 9.8 \mbox{ N},
 \]</span></p>
@@ -2132,7 +2174,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-trabajo-fuerza-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.23 </strong></span>La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.23</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 \]</span></p>
@@ -2147,7 +2189,7 @@ m_1d_1 = m_2d_2
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/palanca.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ley de la palanca.</figcaption>
+<figcaption>Ley de la palanca.</figcaption>
 </figure>
 </div>
 <p>Si colocamos las dos masas <span class="math inline">\(m_1\)</span> y <span class="math inline">\(m_2\)</span> sobre el eje <span class="math inline">\(x\)</span> en las posiciones <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> respectivamente, el centro de masas <span class="math inline">\(\bar x\)</span>, que se correspondería con la posición donde habría que poner el punto de apoyo de la palanca para que las dos masas la equilibraran, se puede calcular aplicando la ley de la palanca,</p>
@@ -2171,7 +2213,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
 \]</span></p>
 <div id="exm-centro-masas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.24 </strong></span>El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.24</strong></span> El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar x
 &amp;= \frac{\int_5^{10} xf(x)\,dx}{\int_5^{10} f(x)\,dx}
@@ -2190,7 +2232,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/integrales/suma-riemann-centro-masas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Centroide de los rectángulos de una suma de Riemann.</figcaption>
+<figcaption>Centroide de los rectángulos de una suma de Riemann.</figcaption>
 </figure>
 </div>
 <p>El momento del rectángulo <span class="math inline">\(i\)</span>-ésimo con respecto al eje <span class="math inline">\(y\)</span> es</p>
@@ -2226,7 +2268,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar y = \frac{\frac{1}{2}\delta \int_a^b f(x)^2\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b f(x)^2\, dx,}{2\int_a^b f(x)\, dx,}
 \]</span></p>
 <div id="exm-centroide" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.25 </strong></span>Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.25</strong></span> Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 f(x)\,dx
 &amp;= \int_{-1}^1 \sqrt{1-x^2}\,dx
@@ -2289,7 +2331,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar f[a,b] = \frac{1}{b-a}\int_a^b f(x)\,dx
 \]</span></p>
 <div id="exm-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.26 </strong></span>El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.26</strong></span> El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar f[0,\pi/2]
 &amp;= \frac{1}{\pi/2} \int_0^{\pi/2} f(x)\, dx
@@ -2325,7 +2367,7 @@ P(a\leq X\leq b) = \int_a^b f(x)\,dx
 \]</span></p></li>
 </ol>
 <div id="exm-funcion-densidad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.27 </strong></span>La función <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es una función de densidad de probabilidad para <span class="math inline">\(x\in[-3,3]\)</span>, ya que es no negativa en ese intervalo y se cumple &gt;</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.27</strong></span> La función <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es una función de densidad de probabilidad para <span class="math inline">\(x\in[-3,3]\)</span>, ya que es no negativa en ese intervalo y se cumple &gt;</p>
 <p><span class="math display">\[
 \int_{-3}^{3} \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{3} = \frac{1}{36}(27 - 9 + 27 - 9) = 1.
 \]</span></p>
@@ -2350,7 +2392,7 @@ E(X) = \int_{-\infty}^{\infty} x f(x)\,dx,
 P(X\leq Me) = \int_{-\infty}^{Me} f(x)\,dx = \frac{1}{2}.
 \]</span></p>
 <div id="exm-media-varianza-mediana-variable-aleatoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.28 </strong></span>La media de la variable aleatoria con función de densidad de probabilidad <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.28</strong></span> La media de la variable aleatoria con función de densidad de probabilidad <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 E(X)
 &amp;= \int_{-3}^{3} x \frac{9-x^2}{36}\,dx
@@ -2434,6 +2476,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -2500,13 +2569,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2585,10 +2656,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2598,8 +2686,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2611,7 +2708,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2655,6 +2875,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2680,6 +2901,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2741,17 +2988,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07-derivadas.html" class="pagination-link">
+      <a href="./07-derivadas.html" class="pagination-link" aria-label="Derivadas de funciones">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./09-series.html" class="pagination-link">
+      <a href="./09-series.html" class="pagination-link" aria-label="Series de números reales">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Series de números reales</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

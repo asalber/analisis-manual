@@ -45,68 +45,31 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{area-entre-curvas-polares-2}
+\tikzsetnextfilename{funcion-biyectiva}
 
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
-\begin{tikzpicture}
-    \begin{polaraxis}[
-        scale = 1,
-        samples=360, % How many samples to take
-        grid=major, % Display both major and minor grids
-        ymax=3.7, % Adjust the maximum r value to accommodate your curves
-        xtick={0, 90, 180, 270}, % Positions of the ticks in degrees
-        xticklabels={$0$, $\pi/2$, $\pi$, $3\pi/2$}, % Custom labels for each tick
-        yticklabel style={anchor=north east}, % Adjust label style if necessary
-        clip=false, % Prevent clipping of labels
-        tick label style={font=\small}, % Adjust font size if necessary
-        major grid style={mygray}, % Style for major grids
-        myblack
-    ]
-        % Add the first curve
-        \addplot [
-            data cs=polar,
-            domain=-60:60, % degrees
-            name path=A,
-            thick,
-            myblue
-        ] {3*cos(x)};
-        % Add the second curve
-        \addplot [
-            data cs=polar,
-            domain=-60:60, % degrees
-            name path=B,
-            thick,
-            myred
-        ] {1 + cos(x)};
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+    \filldraw[fill=blue!20, draw=blue!60] (-1.5,0) ellipse (1cm and 1.5cm);
+    \filldraw[fill=red!20, draw=red!60] (1.5,0) ellipse (1cm and 1.5cm);
     
-        % Fill between the paths
-        \addplot [
-            fill=myblue,
-            opacity=0.5
-        ] fill between [
-            of=A and B,
-        ];    
-
-        % Add the first curve
-        \addplot [
-            data cs=polar,
-            domain=0:180, % degrees
-            name path=A,
-            thick,
-            myblue
-        ] {3*cos(x)};
-        \node[myblue] at (axis cs:45,2.7) {$f(\theta) = 3\cos(\theta)$};
-        % Add the second curve
-        \addplot [
-            data cs=polar,
-            domain=0:360, % degrees
-            thick,
-            myred
-        ] {1 + cos(x)};                
-        \node[myred] at (axis cs:135,2) {$g(\theta) = 1 + \cos(\theta)$};
-        \node[myblue] at (axis cs:270,2.5) {$\displaystyle \frac{1}{2}\int_{-\pi/3}^{\pi/3}f(\theta)^2-g(\theta)^2\,d\theta = \pi$};
-    \end{polaraxis}
+        \node at (-1.5,1.8) {$A$};
+        \node at (1.5,1.8) {$B$};
+    
+        \node (x1) at (-1.5,0.9) {$1$};
+        \node (x2) at (-1.5,0.3) {$2$};
+        \node (x3) at (-1.5,-0.3) {$3$};
+        \node (x4) at (-1.5,-0.9) {$4$};
+        \node (y1) at (1.5,0.9) {$a$};
+        \node (y2) at (1.5,0.3) {$b$};
+        \node (y3) at (1.5,-0.3) {$c$};
+        \node (y4) at (1.5,-0.9) {$d$};
+    
+        % draw the arrows
+        \draw[-stealth] (x1) -- (y4);
+        \draw[-stealth] (x2) -- (y2);
+        \draw[-stealth] (x3) -- (y1);
+        \draw[-stealth] (x4) -- (y3);
+    
     \end{tikzpicture}
-   
 
 \end{document}

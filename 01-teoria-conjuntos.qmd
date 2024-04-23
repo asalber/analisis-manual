@@ -449,20 +449,10 @@ La relación binaria $f=\{(1,d), (2,c), (3,a), (4,c)\}$ es una función, pero la
 Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
 :::
 
-::: {.content-visible when-format="html"}
 :::{layout-ncol="2"}
-![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
+![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva)
 
-![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-:::{layout-ncol="2"}
-![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
-
-![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.tex)
-:::
+![Ejemplo de no función](./img/teoria-conjuntos/no-funcion)
 :::
 
 :::{#def-dominio-funcion}
@@ -498,28 +488,14 @@ $$\forall b \in B, \exists a\in A, f(a) = b.$$
 Dada una función $f:A\rightarrow B$, se dice que $f$ es _biyectiva_, si $f$ es, a la vez, inyectiva y sobreyectiva.
 :::
 
-::: {.content-visible when-format="html"}
 :::{layout-ncol="2"}
-![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.png)
+![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva)
 
-![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.png)
+![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva)
 
-![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.png)
+![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva)
 
-![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-:::{layout-ncol="2"}
-![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.tex)
-
-![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.tex)
-
-![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.tex)
-
-![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
-:::
+![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva)
 :::
 
 :::{#def-funcion-identidad}

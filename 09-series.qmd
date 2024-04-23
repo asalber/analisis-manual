@@ -60,7 +60,7 @@ A_n &= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i}
 \end{align*}
 
 Esta serie se conoce como _serie armónica_. En la siguiente gráfica se puede apreciar cómo evoluciona la sucesión de sus sumas parciales.
-
+<!-- 
 ::: {.content-visible when-format="html"}
 <div id="ggb-serie-armonica"></div>
 
@@ -88,6 +88,11 @@ var params = {
     });
 </script>
 :::
+::: -->
+
+![Serie armónica](img/series/serie-armonica){width=60%}
+
+<a href="https://geogebra.org/classic/efjzy9kw" target="_blank">![](img/logos/logo-geogebra.png)</a>
 :::
 
 En ocasiones es posible expresar el valor de la suma parcial de orden $n$ mediante una fórmula explícita que depende de $n$ y que se conoce como _forma cerrada_ de la serie. Si una serie puede expresarse mediante una forma cerrada, resulta más rápido calcular el valor de la suma parcial de orden $n$ mediante la forma cerrada, que haciendo la propia suma de los $n$ primeros términos de la sucesión.
@@ -124,7 +129,7 @@ $$
 \sum_{n=1}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=1}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
 $$
 
-::: {.content-visible when-format="html"}
+<!-- ::: {.content-visible when-format="html"}
 <div id="ggb-series-paradoja-zenon"></div>
 
 <script>
@@ -150,7 +155,11 @@ var params = {
         ggbApplet2.inject('ggb-series-paradoja-zenon');
     });
 </script>
-:::
+::: -->
+
+![Serie de la paradoja de Zenón](img/series/serie-paradoja-zenon){width=60%}
+
+<a href="https://geogebra.org/classic/nh59tcxp" target="_blank">![](img/logos/logo-geogebra.png)</a>
 :::
 
 :::{#exm-serie-divergente}
@@ -165,6 +174,8 @@ A_4 &= -1+ (-1)^2 + (-1)^3 + (-1)^4= 0\\
 \end{align*}
 
 y por tanto, $(A_n)_{n=1}^\infty$ diverge.
+
+![Serie alternada](img/series/serie-alternada){width=60%}
 :::
 
 :::{#exm-divergencia-serie-armonica}
@@ -185,6 +196,8 @@ $$
 que claramente diverge, por lo que la serie armónica también diverge.
 
 Sin embargo, la serie armónica alternada $\sum \frac{(-1)^{n+1}}{n}$ converge. La prueba es una consecuencia de la serie de Taylor para el logaritmo y se deja como ejercicio.
+
+![Serie armónica alternada](img/series/serie-armonica-alternada){width=60%}
 :::
 
 :::{#prp-series-iguales-excepto-n-terminos}
@@ -355,6 +368,7 @@ La demostración es fácil a partir de la proposición anterior y se deja como e
 La serie geométrica $\sum \frac{1}{2^n}$ converge ya que su razón es $\frac{1}{2}<1$. Sin embargo, la serie geométrica $\sum \left(\frac{3}{2}\right)^n$ no converge, ya que $\frac{3}{2}\geq 1$.
 :::
 
+
 ## Series $p$
 
 Otro tipo de series que aparece con bastante frecuencia en contextos reales son las llamadas series $p$, de las que la serie armónica es un caso particular.
@@ -429,7 +443,7 @@ de manera que si existe $\lim_{n\to\infty} a_n=l$, la serie telescópica converg
 :::
 
 :::{#exm-convergencia-series-telescopicas}
-La serie telescópica $\sum \frac{1}{n}-\frac{1}{n+1}$ converge ya que $\lim_{n\to\infty}\frac{1}{n} = 0$, y por tanto, $\sum_{n=1}^\infty \frac{1}{n}\frac{1}{n+1} = 1$.
+La serie telescópica $\sum \frac{1}{n}-\frac{1}{n+1}$ converge ya que $\lim_{n\to\infty}\frac{1}{n} = 0$, y por tanto, $\sum_{n=1}^\infty \frac{1}{n}-\frac{1}{n+1} = 1$.
 :::
 
 ## Convergencia de series de términos positivos
@@ -478,6 +492,86 @@ $$
 $$
 
 Como se ha visto antes, la serie $\sum \frac{1}{2^n}$ converge, de manera que $\sum \frac{3}{2^n}$ también converge, y por el teorema anterior, $\sum \frac{2+\operatorname{sen}(n+1)}{2^n+n^2}$ también converge. 
+:::
+
+Una forma bastante intuitiva de estudiar la convergencia de una serie es mediante la integral impropia del término general de la serie.
+
+:::{#thm-criterio-integral}
+## Criterio de la integral
+Dada una serie $\sum a_n$ de términos positivos, si $a_n=f(n)$ para una función $f$ continua, positiva y decreciente en el intervalo $[1,\infty)$, entonces la serie converge si y solo si la integral impropia $\int_1^\infty f(x)\,dx$ converge.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $f$ una función continua, positiva y decreciente, tal que $a_n=f(n)$ $\forall n\in\mathbb{N}$. Si tomamos la partición $P=\{1,2,\ldots,n\}$ del intervalo $[1,n]$, al ser $f$ decreciente, se tiene que la suma inferior de Riemann de $f$ es 
+
+$$
+s(f,P) = \sum_{i=1}^{n-1} f(i+1)\Delta x_i = f(2)+f(3)+\cdots+f(n) = a_2+a_3+\cdots+a_n,
+$$
+
+y, del mismo modo, la suma superior de Riemann de $f$ es
+
+$$
+S(f,P) = \sum_{i=1}^{n-1} f(i)\Delta x_i = f(1)+f(2)+\cdots+f(n-1) = a_1+a_2+\cdots+a_{n-1},
+$$
+
+por lo que se cumple que 
+
+$$
+s(f,P)= \sum_{i=2}^n a_i \leq \int_1^n f(x)\,dx \leq \sum_{i=1}^{n-1} a_i = S(f,P) \ \forall n\in\mathbb{N}.
+$$
+
+Por tanto, si la integral impropia $\int_1^\infty f(x)dx$ converge, entonces la sucesión de las sumas parciales está acotada, ya que
+
+$$
+A_n = \sum_{i=1}^n a_i = a_1 + \sum_{i=2}^n a_i \leq a_1 + \int_1^n f(x)dx \leq a_1 + \int_1^\infty f(x)\,dx \ \forall n\in\mathbb{N},
+$$
+
+y al ser una sucesión monótona creciente, por ser $a_n>0$ $\forall n\in \mathbb{N}$, se tiene, por el @thm-convergencia-monotona, que $(A_n)_{n=1}^\infty$ converge.
+
+Por otro lado, si la integral impropia diverge, entonces la sucesión de las sumas parciales no está acotada, ya que
+
+$$
+A_n = \sum_{i=1}^n a_i \geq \sum_{i=1}^{n-1} a_i \geq \int_1^n f(x)\,dx\ \forall n\in\mathbb{N},
+$$
+
+y como $\lim_{n\to\infty} \int_1^n f(x)\,dx = \infty$, se tiene que $\lim_{n\to\infty} A_n = \infty$, por lo que la serie diverge.
+:::
+:::
+
+:::{#exm-criterio-integral}
+Veamos cómo podemos probar que la serie $p$ $\sum_{n=1}^\infty \frac{1}{n^p}$ converge para $p>1$ usando el criterio de la integral.
+
+Para ello, consideramos la función $f(x)=\frac{1}{x^p}$, que es continua, positiva y decreciente en el intervalo $[1,\infty)$. Entonces, la integral impropia de $f$ es 
+
+$$
+\int_1^\infty \frac{1}{x^p}dx = \lim_{n\to\infty} \int_1^n \frac{1}{x^p}dx = \lim_{n\to\infty} \left[\frac{x^{1-p}}{1-p}\right]_1^n = \lim_{n\to\infty} \left[\frac{n^{1-p}}{1-p}-\frac{1}{1-p}\right] = \frac{1}{p-1},
+$$
+
+y de acuerdo al criterio de la integral, la serie $\sum_{n=1}^\infty \frac{1}{n^p}$ converge.
+
+Sin embargo, para $p<1$ se tiene que la integral impropia es
+
+$$
+\int_1^\infty \frac{1}{x^p}dx = \lim_{n\to\infty} \left[\frac{n^{1-p}}{1-p}-\frac{1}{1-p}\right] = \infty,
+$$
+
+por lo que, de acuerdo al criterio de la integral, la serie $\sum_{n=1}^\infty \frac{1}{n^p}$ diverge.
+
+Finalmente, para $p=1$, tenemos la serie armónica, y la integral impropia es
+
+$$
+\int_1^\infty \frac{1}{x}dx = \lim_{n\to\infty} \left[\log(x)\right]_1^n = \lim_{n\to\infty} \log(n) = \infty,
+$$
+
+por lo que, de acuerdo al criterio de la integral, la serie armónica $\sum_{n=1}^\infty \frac{1}{n}$ diverge, algo que ya habíamos probado.
+:::
+
+:::{.callout-warning}
+El criterio de la integral permite averiguar si una serie de términos positivos converge o no, pero, cuando la serie converge, no tiene porqué cumplirse que la suma sea el valor de la integral indefinida. 
+
+Por ejemplo, $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}$, pero $\int_1^\infty \frac{1}{x^2}\,dx = 1$.
 :::
 
 :::{#thm-criterio-cociente}

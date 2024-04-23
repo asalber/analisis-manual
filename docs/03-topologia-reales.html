@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 3&nbsp; Topología de la recta real">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/topologia-reales/recta-real.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 3&nbsp; Topología de la recta real">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/topologia-reales/recta-real.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-topologia-reales.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-topologia-reales.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Topología de la recta real</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -275,7 +309,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -297,18 +333,18 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/topologia-reales/recta-real.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">La recta real</figcaption>
+<figcaption>La recta real</figcaption>
 </figure>
 </div>
 <section id="intervalos-y-entornos" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="intervalos-y-entornos"><span class="header-section-number">3.1</span> Intervalos y entornos</h2>
 <div id="def-intervalo-abierto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.1 (Intervalo abierto) </strong></span>Dados dos números reales tales que <span class="math inline">\(a\leq b\)</span>, se llama <em>intervalo abierto</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\((a,b)\)</span> al conjunto de números reales comprendidos entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.1 (Intervalo abierto)</strong></span> Dados dos números reales tales que <span class="math inline">\(a\leq b\)</span>, se llama <em>intervalo abierto</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\((a,b)\)</span> al conjunto de números reales comprendidos entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> <span class="math display">\[
 (a,b) = \{x\in \mathbb{R}: a&lt;x&lt;b\}.
 \]</span></p>
 </div>
 <div id="def-intervalo-cerrado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.2 (Intervalo cerrado) </strong></span>Dados dos números reales tales que <span class="math inline">\(a\leq b\)</span>, se llama <em>intervalo cerrado</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\([a,b]\)</span> al conjunto de números reales que son mayores o iguales que <span class="math inline">\(a\)</span> y menores o iguales que <span class="math inline">\(b\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.2 (Intervalo cerrado)</strong></span> Dados dos números reales tales que <span class="math inline">\(a\leq b\)</span>, se llama <em>intervalo cerrado</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y se denota <span class="math inline">\([a,b]\)</span> al conjunto de números reales que son mayores o iguales que <span class="math inline">\(a\)</span> y menores o iguales que <span class="math inline">\(b\)</span> <span class="math display">\[
 [a,b] = \{x\in \mathbb{R}: a\leq x\leq b\}.
 \]</span></p>
 </div>
@@ -327,29 +363,29 @@ Advertencia
 </div>
 <p>Los intervalos también pueden ser abiertos por un lado y cerrados por el otro.</p>
 <div id="def-intervalo-semiabierto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.3 (Intervalo semiabierto o semicerrado) </strong></span>Dados dos números reales tales que <span class="math inline">\(a&lt;b\)</span>, se definen los <em>intervalos semiabiertos</em> o <em>semicerrados</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> de la siguiente manera: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.3 (Intervalo semiabierto o semicerrado)</strong></span> Dados dos números reales tales que <span class="math inline">\(a&lt;b\)</span>, se definen los <em>intervalos semiabiertos</em> o <em>semicerrados</em> de extremos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> de la siguiente manera: <span class="math display">\[
 (a,b] = \{x\in \mathbb{R}: a&lt; x\leq b\}\quad \mbox{y}\quad [a,b) = \{x\in \mathbb{R}: a\leq x&lt; b\}
 \]</span></p>
 </div>
 <p>Estos intervalos están <em>acotados</em> ya que <span class="math inline">\(a\)</span> es una cota inferior y <span class="math inline">\(b\)</span> una cota superior, pero también existen intervalos no acotados.</p>
 <div id="def-intervalo-abierto-no-acotado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.4 (Intervalo abierto no acotado) </strong></span>Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se definen los siguientes <em>intervalos abiertos no acotados</em>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.4 (Intervalo abierto no acotado)</strong></span> Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se definen los siguientes <em>intervalos abiertos no acotados</em>: <span class="math display">\[
 (-\infty,a) = \{x\in \mathbb{R}: x&lt;a\} \quad \mbox{y}\quad (a,\infty) = \{x\in \mathbb{R}: a&lt; x\}
 \]</span></p>
 </div>
 <div id="def-intervalo-semiabierto-no-acotado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.5 (Intervalo semiabierto no acotado) </strong></span>Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se definen los siguientes <em>intervalos semiabiertos no acotados</em>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.5 (Intervalo semiabierto no acotado)</strong></span> Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se definen los siguientes <em>intervalos semiabiertos no acotados</em>: <span class="math display">\[
 (-\infty,a] = \{x\in \mathbb{R}: x\leq a\} \quad \mbox{y}\quad [a,\infty) = \{x\in \mathbb{R}: a\leq x\}
 \]</span></p>
 </div>
 <div id="def-intervalos-anidados" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.6 (Intervalos anidados) </strong></span>Se dice que una sucesión de intervalos <span class="math inline">\(I_n\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span> es una <em>sucesión de intervalos anidados</em> si se cumple que <span class="math inline">\(I_{n+1}\subseteq I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.6 (Intervalos anidados)</strong></span> Se dice que una sucesión de intervalos <span class="math inline">\(I_n\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span> es una <em>sucesión de intervalos anidados</em> si se cumple que <span class="math inline">\(I_{n+1}\subseteq I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
 </div>
 <div id="exm-sucesion-intervalos-anidados" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.1 </strong></span>La sucesión de intervalos <span class="math inline">\(I_n=[0,\frac{1}{n}]\)</span>, <span class="math inline">\(\forall n\in\mathbb{N}\)</span> es una sucesión de intervalos anidados, ya que para cada <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(n&lt;n+1\)</span> y por tanto <span class="math inline">\(\frac{1}{n}&gt;\frac{1}{n+1}\)</span>, de manera que <span class="math inline">\(I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.1</strong></span> La sucesión de intervalos <span class="math inline">\(I_n=[0,\frac{1}{n}]\)</span>, <span class="math inline">\(\forall n\in\mathbb{N}\)</span> es una sucesión de intervalos anidados, ya que para cada <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(n&lt;n+1\)</span> y por tanto <span class="math inline">\(\frac{1}{n}&gt;\frac{1}{n+1}\)</span>, de manera que <span class="math inline">\(I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n\)</span>.</p>
 </div>
 <div id="thm-intervalos-anidados" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.1 (Intervalos anidados) </strong></span>Dada una sucesión de intervalos cerrados y anidados <span class="math inline">\(I_n=[a_n,b_n]\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>, existe un número <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(a\in I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Además, si el ínfimo de las longitudes <span class="math inline">\(\{b_n-a_n: n\in \mathbb{N}\}\)</span> es <span class="math inline">\(0\)</span>, entonces <span class="math inline">\(a\)</span> es único, es decir, <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 3.1 (Intervalos anidados)</strong></span> Dada una sucesión de intervalos cerrados y anidados <span class="math inline">\(I_n=[a_n,b_n]\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>, existe un número <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(a\in I_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Además, si el ínfimo de las longitudes <span class="math inline">\(\{b_n-a_n: n\in \mathbb{N}\}\)</span> es <span class="math inline">\(0\)</span>, entonces <span class="math inline">\(a\)</span> es único, es decir, <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -373,7 +409,7 @@ Demostración
 </div>
 </div>
 <div id="def-entorno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.7 (Entorno) </strong></span>Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se llama <em>entorno</em> de <span class="math inline">\(a\)</span> a cualquier intervalo abierto <span class="math inline">\((a-\varepsilon, a+\varepsilon)\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
+<p><span class="theorem-title"><strong>Definición 3.7 (Entorno)</strong></span> Dado un número <span class="math inline">\(a\in \mathbb{R}\)</span>, se llama <em>entorno</em> de <span class="math inline">\(a\)</span> a cualquier intervalo abierto <span class="math inline">\((a-\varepsilon, a+\varepsilon)\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
 <p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\((a-\varepsilon, a+\varepsilon)\setminus \{a\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\(a\)</span>.</p>
 </div>
 </section>
@@ -381,22 +417,22 @@ Demostración
 <h2 data-number="3.2" class="anchored" data-anchor-id="clasificación-de-puntos"><span class="header-section-number">3.2</span> Clasificación de puntos</h2>
 <p>Un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> clasifica los puntos de <span class="math inline">\(\mathbb{R}\)</span> en tres clases: puntos interiores, puntos exteriores y puntos fronteras de <span class="math inline">\(A\)</span>.</p>
 <div id="def-punto-interior" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.8 (Punto interior) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto interior</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon) \subseteq A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.8 (Punto interior)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto interior</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon) \subseteq A\)</span>.</p>
 <p>El conjunto de los puntos interiores de <span class="math inline">\(A\)</span> se llama <em>interior</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Int}(A)\)</span>.</p>
 </div>
 <p>Aunque la definición no lo hace explícito, es evidente que si <span class="math inline">\(a\)</span> es un punto interior de <span class="math inline">\(A\)</span> entonces <span class="math inline">\(a\in A\)</span>.</p>
 <p>Intuitivamente, un punto interior de un conjunto es un punto que no está en el borde del conjunto, es decir, que está rodeado por puntos del conjunto, y por tanto, podemos movernos un poco hacia la izquierda o hacia la derecha del punto sin salirnos del conjunto.</p>
 <div id="exm-punto-interior" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.2 </strong></span><span class="math inline">\(0.9\)</span> es un punto interior del intervalo <span class="math inline">\((0,1)\)</span> ya que podemos tomar <span class="math inline">\(\varepsilon = 0.01\)</span> tal que el entorno <span class="math inline">\((0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.2</strong></span> <span class="math inline">\(0.9\)</span> es un punto interior del intervalo <span class="math inline">\((0,1)\)</span> ya que podemos tomar <span class="math inline">\(\varepsilon = 0.01\)</span> tal que el entorno <span class="math inline">\((0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)\)</span>.</p>
 <p>Sin embargo, <span class="math inline">\(1\)</span> no es un punto interior del intervalo <span class="math inline">\((0,1)\)</span> ya que por muy pequeño que tomemos <span class="math inline">\(\varepsilon&gt;0\)</span>, <span class="math inline">\(1+\varepsilon &gt; 1\)</span> y, por tanto, el entorno <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\)</span> siempre tendrá valores mayores que 1, de manera que <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\not \subseteq (0,1)\)</span>.</p>
 </div>
 <div id="def-punto-exterior" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.9 (Punto exterior) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto exterior</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si existe un entorno de <span class="math inline">\(a\)</span> contenido en el complementario de <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((x-\varepsilon, x+\varepsilon) \subseteq \overline A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.9 (Punto exterior)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto exterior</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si existe un entorno de <span class="math inline">\(a\)</span> contenido en el complementario de <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((x-\varepsilon, x+\varepsilon) \subseteq \overline A\)</span>.</p>
 <p>El conjunto de los puntos exteriores de <span class="math inline">\(A\)</span> se llama <em>exterior</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Ext}(A)\)</span>.</p>
 </div>
 <p>Una definición equivalente es que un punto es punto exterior de un conjunto si es un punto interior de su complementario.</p>
 <div id="exm-punto-exterior" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.3 </strong></span><span class="math inline">\(1.01\)</span> es un punto exterior del conjunto <span class="math inline">\((-\infty, 1)\)</span> ya que tomando <span class="math inline">\(\varepsilon=0.001\)</span> el entorno <span class="math inline">\((1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.3</strong></span> <span class="math inline">\(1.01\)</span> es un punto exterior del conjunto <span class="math inline">\((-\infty, 1)\)</span> ya que tomando <span class="math inline">\(\varepsilon=0.001\)</span> el entorno <span class="math inline">\((1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)\)</span>.</p>
 <p>Sin embargo, <span class="math inline">\(1\)</span> no es un punto exterior del intervalo <span class="math inline">\((-\infty, 1)\)</span>, ya que no es un punto interior del intervalo <span class="math inline">\(\overline{(-\infty, 1)}=[1,\infty)\)</span>, ya que <span class="math inline">\(1-\varepsilon &lt; 1\)</span> <span class="math inline">\(\forall \varepsilon&gt;0\)</span>, y, por tanto, el entorno <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\)</span> siempre tendrá valores menores que 1, de manera que <span class="math inline">\((1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -413,15 +449,15 @@ Advertencia
 </div>
 </div>
 <div id="def-punto-frontera" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.10 (Punto frontera) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto frontera</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span> y de su complementario.</p>
+<p><span class="theorem-title"><strong>Definición 3.10 (Punto frontera)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto frontera</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span> y de su complementario.</p>
 <p>El conjunto de los puntos frontera de <span class="math inline">\(A\)</span> se llama <em>frontera</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Fr}(A)\)</span>.</p>
 </div>
 <p>Una definición equivalente es que un punto es un punto frontera de un conjunto si no es un punto interior ni exterior del conjunto.</p>
 <div id="exm-punto-frontera" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.4 </strong></span>El punto <span class="math inline">\(1\)</span> es un punto frontera del intervalo <span class="math inline">\([1,\infty)\)</span> ya que no es un punto interior de <span class="math inline">\([1,\infty)\)</span> ni de su complementario <span class="math inline">\((-\infty,1)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.4</strong></span> El punto <span class="math inline">\(1\)</span> es un punto frontera del intervalo <span class="math inline">\([1,\infty)\)</span> ya que no es un punto interior de <span class="math inline">\([1,\infty)\)</span> ni de su complementario <span class="math inline">\((-\infty,1)\)</span>.</p>
 </div>
 <div id="prp-interior-intervalo-abierto" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.1 </strong></span>Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto <span class="math inline">\((a,b)\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 3.1</strong></span> Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto <span class="math inline">\((a,b)\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -442,7 +478,7 @@ Demostración
 </div>
 </div>
 <div id="prp-interior-intervalo-cerrado" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.2 </strong></span>Todos los puntos de un intervalo cerrado, excepto sus extremos, son puntos interiores suyos, es decir, dado un intervalo cerrado <span class="math inline">\([a,b]\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}([a,b]) = (a,b)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 3.2</strong></span> Todos los puntos de un intervalo cerrado, excepto sus extremos, son puntos interiores suyos, es decir, dado un intervalo cerrado <span class="math inline">\([a,b]\subseteq \mathbb{R}\)</span>, se cumple que <span class="math inline">\(\operatorname{Int}([a,b]) = (a,b)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -465,7 +501,7 @@ Demostración
 </div>
 <p>A partir de estas proposiciones, es fácil ver que que para cualquier intervalo abierto <span class="math inline">\((a,b)\)</span>, <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>, <span class="math inline">\(\operatorname{Ext}((a,b)) = (-\infty,a)\cup (b,\infty)\)</span> y <span class="math inline">\(\operatorname{Fr}((a,b)) = \{a, b\}\)</span>. Y para cualquier intervalo cerrado <span class="math inline">\([a,b]\)</span>, <span class="math inline">\(\operatorname{Int}([a,b]) = (a,b)\)</span>, <span class="math inline">\(\operatorname{Ext}([a,b]) = (-\infty,a)\cup (b,\infty)\)</span> y <span class="math inline">\(\operatorname{Fr}([a,b]) = \{a, b\}\)</span>.</p>
 <div id="prp-clasifiacion-puntos" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.3 </strong></span>Dado un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span>, los conjuntos <span class="math inline">\(\operatorname{Int}(A)\)</span>, <span class="math inline">\(\operatorname{Ext}(A)\)</span> y <span class="math inline">\(\operatorname{Fr}(A)\)</span> forman una partición de <span class="math inline">\(\mathbb{R}\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Proposición 3.3</strong></span> Dado un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span>, los conjuntos <span class="math inline">\(\operatorname{Int}(A)\)</span>, <span class="math inline">\(\operatorname{Ext}(A)\)</span> y <span class="math inline">\(\operatorname{Fr}(A)\)</span> forman una partición de <span class="math inline">\(\mathbb{R}\)</span>, es decir,</p>
 <ol type="a">
 <li><span class="math inline">\(\operatorname{Int}(A)\)</span>, <span class="math inline">\(\operatorname{Ext}(A)\)</span> y <span class="math inline">\(\operatorname{Fr}(A)\)</span> son disjuntos entre sí.</li>
 <li><span class="math inline">\(\operatorname{Int}(A)\cup \operatorname{Ext}(A)\cup \operatorname{Fr}(A) = \mathbb{R}\)</span>.</li>
@@ -491,12 +527,12 @@ Demostración
 </div>
 <p>A continuación se definen otros tipos de puntos que son útiles para definir conceptos que se verán más adelante como el de <em>límite</em>.</p>
 <div id="def-punto-adherente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.11 (Punto adherente) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto adherente</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.11 (Punto adherente)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto adherente</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
 <p>El conjunto de los puntos adherentes de <span class="math inline">\(A\)</span> se llama <em>adherencia</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Adh}(A)\)</span>.</p>
 </div>
 <p>Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente. Resulta evidente también que cualquier punto de un conjunto es un punto adherente, de manera que para cualquier conjunto <span class="math inline">\(A\)</span> se tiene <span class="math inline">\(A\subseteq\operatorname{Adh}(A)\)</span>.</p>
 <div id="def-punto-acumulacion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.12 (Punto de acumulacion) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de acumulación</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno reducido de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.12 (Punto de acumulacion)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de acumulación</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si cualquier entorno reducido de <span class="math inline">\(a\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
 <p>El conjunto de los puntos de acumulación de <span class="math inline">\(A\)</span> se llama <em>conjunto derivado</em> de <span class="math inline">\(A\)</span> y se denota por <span class="math inline">\(\operatorname{Ac}(A)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -509,20 +545,20 @@ Advertencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Resulta obvio de la definición que cualquier punto de acumulación es también un punto de adherencia, es decir, <span class="math inline">\(\operatorname{Ac}(A)\subseteq \operatorname{Adh}(A)\)</span> para cualquier conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span>. Sin embargo no todo punto de adherencia es un punto de acumulación.</p>
+<p>Resulta obvio de la definición que cualquier punto de acumulación es también un punto de adherencia, es decir, <span class="math inline">\(\operatorname{Ac}(A)\subseteq  \operatorname{Adh}(A)\)</span> para cualquier conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span>. Sin embargo no todo punto de adherencia es un punto de acumulación.</p>
 </div>
 </div>
 <p>Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conjunto y otros que no.</p>
 <div id="exm-puntos-adherentes-acumulacion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.5 </strong></span>Dado el conjunto <span class="math inline">\(A=(0,1) \cup \{2\}\)</span>, se tiene que <span class="math inline">\(2\)</span> es un punto de adherencia de <span class="math inline">\(A\)</span>, pues para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno <span class="math inline">\((2-\varepsilon,2+\varepsilon)\)</span> contiene al propio <span class="math inline">\(2\)</span> que es un punto de <span class="math inline">\(A\)</span>. Sin embargo, <span class="math inline">\(2\)</span> no es un punto de acumulación, porque para <span class="math inline">\(\varepsilon=0.5\)</span>, por ejemplo, el entorno reducido <span class="math inline">\((2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)\)</span> no contiene puntos de <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.5</strong></span> Dado el conjunto <span class="math inline">\(A=(0,1) \cup \{2\}\)</span>, se tiene que <span class="math inline">\(2\)</span> es un punto de adherencia de <span class="math inline">\(A\)</span>, pues para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno <span class="math inline">\((2-\varepsilon,2+\varepsilon)\)</span> contiene al propio <span class="math inline">\(2\)</span> que es un punto de <span class="math inline">\(A\)</span>. Sin embargo, <span class="math inline">\(2\)</span> no es un punto de acumulación, porque para <span class="math inline">\(\varepsilon=0.5\)</span>, por ejemplo, el entorno reducido <span class="math inline">\((2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)\)</span> no contiene puntos de <span class="math inline">\(A\)</span>.</p>
 <p>En cambio el punto <span class="math inline">\(0.5\)</span> es tanto un punto de adherencia como un punto de acumulación de <span class="math inline">\(A\)</span> porque para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno reducido <span class="math inline">\((0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}\)</span> siempre contiene puntos de <span class="math inline">\(A\)</span>. De hecho, para cualquier <span class="math inline">\(x\in(a,b)\)</span> y para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, el intervalo <span class="math inline">\((x-\varepsilon,x+\varepsilon)\setminus \{x\}\)</span> contiene puntos de <span class="math inline">\(A\)</span>, y lo mismo ocurre para <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> al ser puntos frontera, de manera que <span class="math inline">\(\operatorname{Ac}(A)=[0,1]\)</span>, mientras que <span class="math inline">\(\operatorname{Adh}(A)=[0,1]\cup\{2\}\)</span>.</p>
 </div>
 <p>Intuitivamente, un punto de acumulación de un conjunto <span class="math inline">\(A\)</span> es un punto para el que podemos encontrar puntos de <span class="math inline">\(A\)</span>, distintos de él mismo, tan próximos a él como queramos. Un punto de acumulación se diferencia de un punto de adherencia en que siempre está rodeado por puntos de <span class="math inline">\(A\)</span>, mientras que un punto de adherencia puede estar aislado de los demás puntos de <span class="math inline">\(A\)</span>.</p>
 <div id="def-punto-aislado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.13 (Punto aislado) </strong></span>Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de aislado</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si es un punto adherente de <span class="math inline">\(A\)</span>, pero no de acumulación.</p>
+<p><span class="theorem-title"><strong>Definición 3.13 (Punto aislado)</strong></span> Se dice que <span class="math inline">\(a\in \mathbb{R}\)</span> es un <em>punto de aislado</em> de un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, si es un punto adherente de <span class="math inline">\(A\)</span>, pero no de acumulación.</p>
 </div>
 <div id="prp-punto-adherente-acumulacion" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.4 </strong></span>Para cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> se tiene que <span class="math inline">\(\operatorname{Adh}((a,b))=\operatorname{Ac}((a,b))=[a,b]\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 3.4</strong></span> Para cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> se tiene que <span class="math inline">\(\operatorname{Adh}((a,b))=\operatorname{Ac}((a,b))=[a,b]\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -543,7 +579,7 @@ Demostración
 </div>
 </div>
 <div id="prp-adherencia-conjunto-mas-acumulacion" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.5 </strong></span>Para cualquier conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, se tiene que <span class="math inline">\(\operatorname{Adh}(A)=A\cup \operatorname{Ac}(A)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 3.5</strong></span> Para cualquier conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, se tiene que <span class="math inline">\(\operatorname{Adh}(A)=A\cup \operatorname{Ac}(A)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -569,7 +605,7 @@ Demostración
 <h2 data-number="3.3" class="anchored" data-anchor-id="conjuntos-abiertos-y-cerrados"><span class="header-section-number">3.3</span> Conjuntos abiertos y cerrados</h2>
 <p>A continuación se generaliza la característica que diferencia los intervalos abiertos y cerrados, a cualquier conjunto.</p>
 <div id="def-conjunto-abierto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.14 (Conjunto abierto) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>abierto</em> cuando para cada <span class="math inline">\(a\in A\)</span> existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon)\subset A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3.14 (Conjunto abierto)</strong></span> Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>abierto</em> cuando para cada <span class="math inline">\(a\in A\)</span> existe un entorno de <span class="math inline">\(a\)</span> contenido en <span class="math inline">\(A\)</span>, es decir, existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que <span class="math inline">\((a-\varepsilon, a+\varepsilon)\subset A\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -585,14 +621,14 @@ Importante
 </div>
 </div>
 <div id="exm-intervalo-abierto-conjunto-abierto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.6 </strong></span>Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto, ya que según se vio en la <a href="#prp-interior-intervalo-abierto">Proposición&nbsp;<span>3.1</span></a> <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.6</strong></span> Cualquier intervalo abierto <span class="math inline">\((a,b)\)</span> es un conjunto abierto, ya que según se vio en la <a href="#prp-interior-intervalo-abierto" class="quarto-xref">Proposición&nbsp;<span>3.1</span></a> <span class="math inline">\(\operatorname{Int}((a,b)) = (a,b)\)</span>. Por otro lado, un intervalo cerrado <span class="math inline">\([a,b]\)</span> no es un conjunto abierto pues cualquier entorno de <span class="math inline">\(a\)</span> o <span class="math inline">\(b\)</span> no está contenido en <span class="math inline">\([a,b]\)</span>.</p>
 </div>
 <p>Una colección de conjuntos abiertos se llama <em>topología</em> y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama <em>propiedad topológica</em>.</p>
 <div id="def-conjunto-cerrado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.15 (Conjunto cerrado) </strong></span>Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>cerrado</em> cuando su complementario <span class="math inline">\(\overline A =\mathbb{R}\setminus A\)</span> es abierto.</p>
+<p><span class="theorem-title"><strong>Definición 3.15 (Conjunto cerrado)</strong></span> Se dice que un conjunto <span class="math inline">\(A\subset \mathbb{R}\)</span> es <em>cerrado</em> cuando su complementario <span class="math inline">\(\overline A =\mathbb{R}\setminus A\)</span> es abierto.</p>
 </div>
 <div id="exm-intervalo-cerrado-conjunto-cerrado" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.7 </strong></span>Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.7</strong></span> Todo intervalo cerrado <span class="math inline">\([a,b]\)</span> es cerrado, pues su complementario <span class="math inline">\((-\infty,a)\cup (b,\infty)\)</span> es abierto.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -609,7 +645,7 @@ Advertencia
 </div>
 </div>
 <div id="prp-union-interseccion-conjuntos-abiertos-cerrados" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3.6 </strong></span>Se cumplen las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 3.6</strong></span> Se cumplen las siguientes propiedades:</p>
 <ol type="1">
 <li>La unión de una colección de conjuntos abiertos es un conjunto abierto.</li>
 <li>La intersección de una colección finita de conjuntos abiertos es un conjunto abierto.</li>
@@ -650,7 +686,7 @@ Advertencia
 </div>
 </div>
 <div id="thm-existencia-maximo-minimo" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.2 (Existencia del máximo y mínimo) </strong></span>Cualquier conjunto no-vacío, cerrado y acotado superiormente tiene un máximo, y cualquier conjunto no-vacío, cerrado y acotado inferiormente tiene un mínimo.</p>
+<p><span class="theorem-title"><strong>Teorema 3.2 (Existencia del máximo y mínimo)</strong></span> Cualquier conjunto no-vacío, cerrado y acotado superiormente tiene un máximo, y cualquier conjunto no-vacío, cerrado y acotado inferiormente tiene un mínimo.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
@@ -672,7 +708,7 @@ Demostración
 </div>
 </div>
 <div id="thm-bolzano-weierstrass" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.3 (Bolzano-Weierstrass) </strong></span>Todo subconjunto infinito de <span class="math inline">\(\mathbb{R}\)</span> acotado tiene al menos un punto de acumulación.</p>
+<p><span class="theorem-title"><strong>Teorema 3.3 (Bolzano-Weierstrass)</strong></span> Todo subconjunto infinito de <span class="math inline">\(\mathbb{R}\)</span> acotado tiene al menos un punto de acumulación.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
@@ -687,15 +723,15 @@ Demostración
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Para demostrar el teorema construiremos una sucesión de intervalos cerrados y anidados y aplicaremos el <a href="#thm-intervalos-anidados">Teorema&nbsp;<span>3.1</span></a>.</p>
-<p>Sea <span class="math inline">\(A\subset \mathbb{R}\)</span> un subconjunto infinito y acotado. Como <span class="math inline">\(A\)</span> está acotado, existe un intervalo cerrado tal que <span class="math inline">\(A\subset I_1=[a_1,b_1]\)</span>. Si <span class="math inline">\(I_1\)</span> se divide en dos intervalos <span class="math inline">\([a_1, \frac{a_1+b_1}{2}]\)</span> y <span class="math inline">\([\frac{a_1+b_1}{2}, b_1]\)</span>, al menos uno de estos intervalos tendrá infinitos puntos de <span class="math inline">\(A\)</span>, ya que de lo contrario <span class="math inline">\(A\)</span> sería finito. Sea <span class="math inline">\(I_2=[a_2,b_2]\)</span> cualquiera de los dos intervalos que tenga infinitos puntos de <span class="math inline">\(A\)</span>. Si <span class="math inline">\(I_2\)</span> se divide en dos intervalos <span class="math inline">\([a_2, \frac{a_2+b_2}{2}]\)</span> y <span class="math inline">\([\frac{a_2+b_2}{2}, b_2]\)</span>, al menos uno de estos intervalos tendrá infinitos puntos de <span class="math inline">\(A\)</span>, ya que de lo contrario <span class="math inline">\(A\)</span> sería finito. Sea <span class="math inline">\(I_3=[a_3,b_3]\)</span> cualquiera de los dos intervalos que tenga infinitos puntos de <span class="math inline">\(A\)</span>. Siguiendo la misma lógica, se puede construir una sucesión de intervalos anidados <span class="math inline">\(I_1\supset I_2\supset I_3 \supset \cdots\)</span>, con tamaños <span class="math inline">\(\frac{b_1-a_1}{2^{n-1}}\)</span>. Como <span class="math inline">\(\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0\)</span>, aplicando el <a href="#thm-intervalos-anidados">Teorema&nbsp;<span>3.1</span></a>, existe un único <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Para demostrar el teorema construiremos una sucesión de intervalos cerrados y anidados y aplicaremos el <a href="#thm-intervalos-anidados" class="quarto-xref">Teorema&nbsp;<span>3.1</span></a>.</p>
+<p>Sea <span class="math inline">\(A\subset \mathbb{R}\)</span> un subconjunto infinito y acotado. Como <span class="math inline">\(A\)</span> está acotado, existe un intervalo cerrado tal que <span class="math inline">\(A\subset I_1=[a_1,b_1]\)</span>. Si <span class="math inline">\(I_1\)</span> se divide en dos intervalos <span class="math inline">\([a_1, \frac{a_1+b_1}{2}]\)</span> y <span class="math inline">\([\frac{a_1+b_1}{2}, b_1]\)</span>, al menos uno de estos intervalos tendrá infinitos puntos de <span class="math inline">\(A\)</span>, ya que de lo contrario <span class="math inline">\(A\)</span> sería finito. Sea <span class="math inline">\(I_2=[a_2,b_2]\)</span> cualquiera de los dos intervalos que tenga infinitos puntos de <span class="math inline">\(A\)</span>. Si <span class="math inline">\(I_2\)</span> se divide en dos intervalos <span class="math inline">\([a_2, \frac{a_2+b_2}{2}]\)</span> y <span class="math inline">\([\frac{a_2+b_2}{2}, b_2]\)</span>, al menos uno de estos intervalos tendrá infinitos puntos de <span class="math inline">\(A\)</span>, ya que de lo contrario <span class="math inline">\(A\)</span> sería finito. Sea <span class="math inline">\(I_3=[a_3,b_3]\)</span> cualquiera de los dos intervalos que tenga infinitos puntos de <span class="math inline">\(A\)</span>. Siguiendo la misma lógica, se puede construir una sucesión de intervalos anidados <span class="math inline">\(I_1\supset I_2\supset I_3 \supset \cdots\)</span>, con tamaños <span class="math inline">\(\frac{b_1-a_1}{2^{n-1}}\)</span>. Como <span class="math inline">\(\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0\)</span>, aplicando el <a href="#thm-intervalos-anidados" class="quarto-xref">Teorema&nbsp;<span>3.1</span></a>, existe un único <span class="math inline">\(a\in\mathbb{R}\)</span> tal que <span class="math inline">\(\cap_{n=1}^\infty I_n=\{a\}\)</span>.</p>
 <p>Veremos ahora que <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(A\)</span>. Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, considérese el entorno reducido de <span class="math inline">\(a\)</span> <span class="math inline">\((a-\varepsilon, a+\varepsilon)\setminus\{a\}\)</span>. Como <span class="math inline">\(\inf\{\frac{b_1-a_1}{2^{n-1}}: n\in\mathbb{N}\} =0\)</span>, existe <span class="math inline">\(m\in\mathbb{N}\)</span> tal que <span class="math inline">\(\frac{b_1-a_1}{2^{m-1}}&lt;\varepsilon\)</span>, y por tanto <span class="math inline">\(I_m\subset (a-\varepsilon, a+\varepsilon)\)</span>, y como <span class="math inline">\(I_m\)</span> contiene infinitos puntos de <span class="math inline">\(A\)</span>, el entorno reducido <span class="math inline">\(a\)</span> también contiene puntos de <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="thm-conjunto-cerrado-puntos-acumulacion" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3.4 </strong></span>Cualquier subconjunto de <span class="math inline">\(\mathbb{R}\)</span> es cerrado si y sólo si contiene a todos sus puntos de acumulación.</p>
+<p><span class="theorem-title"><strong>Teorema 3.4</strong></span> Cualquier subconjunto de <span class="math inline">\(\mathbb{R}\)</span> es cerrado si y sólo si contiene a todos sus puntos de acumulación.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -765,6 +801,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -831,13 +894,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -916,10 +981,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -929,8 +1011,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -942,7 +1033,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -986,6 +1200,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1011,6 +1226,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1072,17 +1313,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-numeros-reales.html" class="pagination-link">
+      <a href="./02-numeros-reales.html" class="pagination-link" aria-label="El sistema de los números reales">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-sucesiones.html" class="pagination-link">
+      <a href="./04-sucesiones.html" class="pagination-link" aria-label="Sucesiones de números reales">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

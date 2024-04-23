@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 5&nbsp; Funciones reales de variable real">
 <meta property="og:description" content="">
-<meta property="og:image" content="./img/funciones/funcion.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 5&nbsp; Funciones reales de variable real">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="./img/funciones/funcion.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-funciones.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-funciones.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funciones reales de variable real</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -328,7 +362,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -350,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="el-concepto-de-función" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="el-concepto-de-función"><span class="header-section-number">5.1</span> El concepto de función</h2>
 <div id="def-funcion-real" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.1 (Función de una variable) </strong></span>Una <em>función</em> <span class="math inline">\(f\)</span> de un conjunto <span class="math inline">\(A\)</span> en otro <span class="math inline">\(B\)</span> es una <em>relación</em> que asocia cada elemento <span class="math inline">\(a\in A\)</span>, con un <em>único</em> elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a)\)</span>, y se llama <em>imagen</em> de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 5.1 (Función de una variable)</strong></span> Una <em>función</em> <span class="math inline">\(f\)</span> de un conjunto <span class="math inline">\(A\)</span> en otro <span class="math inline">\(B\)</span> es una <em>relación</em> que asocia cada elemento <span class="math inline">\(a\in A\)</span>, con un <em>único</em> elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a)\)</span>, y se llama <em>imagen</em> de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 f:\,&amp;A\longrightarrow B\\
 &amp;a\longrightarrow f(a)
@@ -359,7 +395,7 @@ f:\,&amp;A\longrightarrow B\\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ejemplo de función.</figcaption>
+<figcaption>Ejemplo de función.</figcaption>
 </figure>
 </div>
 <p>Cuando el conjunto inicial y final es el de los números reales <span class="math inline">\(\mathbb{R}\)</span>, entonces se dice que <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>función real de variable real</em>.</p>
@@ -384,7 +420,7 @@ f:\,&amp;A\longrightarrow B\\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/grafica-funcion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de una función.</figcaption>
+<figcaption>Gráfica de una función.</figcaption>
 </figure>
 </div>
 </section>
@@ -425,15 +461,15 @@ Precaución
 <section id="dominio-de-una-función" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="dominio-de-una-función"><span class="header-section-number">5.2</span> Dominio de una función</h2>
 <div id="def-dominio-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.2 (Dominio de una función) </strong></span>El <em>dominio</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores para los que la función está definida</p>
+<p><span class="theorem-title"><strong>Definición 5.2 (Dominio de una función)</strong></span> El <em>dominio</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores para los que la función está definida</p>
 <p><span class="math display">\[Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}\]</span></p>
 </div>
 <div id="exm-dominio-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.1 </strong></span>Dada la función <span class="math display">\[f(x)=\frac{1}{\sqrt{x^2-1}}\]</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 5.1</strong></span> Dada la función <span class="math display">\[f(x)=\frac{1}{\sqrt{x^2-1}}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/ejemplo-dominio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Dominio de la función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x^2-1}}\)</span>.</figcaption>
+<figcaption>Dominio de la función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x^2-1}}\)</span>.</figcaption>
 </figure>
 </div>
 <p>Para determinar su dominio hay que eliminar los valores en los que no está definida la función. En este caso hay que eliminar los valores que hacen negativo el radicando de la raíz del denominador, es decir, los valores de <span class="math inline">\(x\)</span> tales que <span class="math inline">\(x^2-1&lt;0\)</span>, que son los valores que cumplen <span class="math inline">\(-1&lt;x&lt;1\)</span>, pero también hay que eliminar del dominio los valores que anulan el denominador, es decir, los valores de <span class="math inline">\(x\)</span> tales que <span class="math inline">\(\sqrt{x^2-1}=0\)</span>, que son <span class="math inline">\(x=-1\)</span> y <span class="math inline">\(x=1\)</span>. Por tanto, su dominio es</p>
@@ -443,15 +479,15 @@ Precaución
 <section id="imagen-de-una-función" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="imagen-de-una-función"><span class="header-section-number">5.3</span> Imagen de una función</h2>
 <div id="def-imagen-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.3 (Imagenñ de una función) </strong></span>La <em>imagen</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores que la función puede tomar</p>
+<p><span class="theorem-title"><strong>Definición 5.3 (Imagenñ de una función)</strong></span> La <em>imagen</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores que la función puede tomar</p>
 <p><span class="math display">\[Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}\]</span></p>
 </div>
 <div id="exm-imagen-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.2 </strong></span>Dada la función <span class="math inline">\(f(x)=x^2-2\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 5.2</strong></span> Dada la función <span class="math inline">\(f(x)=x^2-2\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/ejemplo-imagen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Imagen de la función <span class="math inline">\(f(x)=x^2-2\)</span>.</figcaption>
+<figcaption>Imagen de la función <span class="math inline">\(f(x)=x^2-2\)</span>.</figcaption>
 </figure>
 </div>
 <p>Su imagen es</p>
@@ -464,13 +500,13 @@ Precaución
 <section id="función-constante" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="función-constante"><span class="header-section-number">5.4.1</span> Función constante</h3>
 <div id="def-funcion-constante" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.4 (Función constante) </strong></span>Se dice que una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>funcion constante</em>, cuando asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con el mismo número <span class="math inline">\(c\in\mathbb{R}\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 5.4 (Función constante)</strong></span> Se dice que una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>funcion constante</em>, cuando asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con el mismo número <span class="math inline">\(c\in\mathbb{R}\)</span>, es decir,</p>
 <p><span class="math display">\[f(x)=c\ \forall x\in\mathbb{R}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-constante.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de una función constante.</figcaption>
+<figcaption>Gráfica de una función constante.</figcaption>
 </figure>
 </div>
 <p>El dominio de la función constante <span class="math inline">\(f(x)=c\)</span> es <span class="math inline">\(\mathbb{R}\)</span> y su imagen <span class="math inline">\(\{c\}\)</span>.</p>
@@ -478,18 +514,18 @@ Precaución
 <section id="función-identidad" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="función-identidad"><span class="header-section-number">5.4.2</span> Función identidad</h3>
 <div id="def-funcion-identidad" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.5 (Función Identidad) </strong></span>Se llama <em>función identidad</em>, a la función <span class="math inline">\(Id: \mathbb{R}\rightarrow \mathbb{R}\)</span> que asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con sigo mismo, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 5.5 (Función Identidad)</strong></span> Se llama <em>función identidad</em>, a la función <span class="math inline">\(Id: \mathbb{R}\rightarrow \mathbb{R}\)</span> que asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con sigo mismo, es decir,</p>
 <p><span class="math display">\[Id(x)=x.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-identidad.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función identidad.</figcaption>
+<figcaption>Gráfica de la función identidad.</figcaption>
 </figure>
 </div>
 <p>El dominio y la imagen de la función identidad es <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="def-funcion-suma-resta-producto-cociente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.6 (Funciones suma, resta, producto y cociente) </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen las siguientes funciones:</p>
+<p><span class="theorem-title"><strong>Definición 5.6 (Funciones suma, resta, producto y cociente)</strong></span> Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen las siguientes funciones:</p>
 <ul>
 <li><em>Función suma</em>: <span class="math inline">\((f+g)(x) = f(x)+g(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
 <li><em>Función resta</em>: <span class="math inline">\((f-g)(x) = f(x)-g(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
@@ -498,7 +534,7 @@ Precaución
 </ul>
 </div>
 <div id="prp-dominio-funcion-suma-resta-producto-cociente" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5.1 </strong></span>Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple:</p>
+<p><span class="theorem-title"><strong>Proposición 5.1</strong></span> Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple:</p>
 <ul>
 <li><span class="math inline">\(\operatorname{Dom}(f+g)=\operatorname{Dom}(f)\cap \operatorname{Dom}(g)\)</span></li>
 <li><span class="math inline">\(\operatorname{Dom}(f-g)=\operatorname{Dom}(f)\cap \operatorname{Dom}(g)\)</span></li>
@@ -507,13 +543,13 @@ Precaución
 </ul>
 </div>
 <div id="def-funcion-raiz" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.7 (Función raíz) </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen la _función raíz <span class="math inline">\(n\)</span>-ésima, como</p>
+<p><span class="theorem-title"><strong>Definición 5.7 (Función raíz)</strong></span> Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen la _función raíz <span class="math inline">\(n\)</span>-ésima, como</p>
 <p><span class="math display">\[
 \sqrt[n]{f}(x) = \sqrt[n]{f(x)}\ \forall x \in \mathbb{R}.
 \]</span></p>
 </div>
 <div id="prp-dominio-funcion-raiz" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5.2 </strong></span>Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple que</p>
+<p><span class="theorem-title"><strong>Proposición 5.2</strong></span> Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple que</p>
 <p><span class="math display">\[
 \operatorname{Dom}(\sqrt[n]{f})=
 \begin{cases}
@@ -527,7 +563,7 @@ Precaución
 <section id="composición-de-funciones" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="composición-de-funciones"><span class="header-section-number">5.5</span> Composición de funciones</h2>
 <div id="def-composicion-funciones" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.8 (Composición de funciones) </strong></span>Dadas dos funciones <span class="math inline">\(g:A\rightarrow B\)</span> y <span class="math inline">\(f:B\rightarrow C\)</span>, se define la <em>función compuesta</em> <span class="math inline">\(f\circ g\)</span>, (leído <span class="math inline">\(g\)</span> compuesto con <span class="math inline">\(f\)</span>) como la función</p>
+<p><span class="theorem-title"><strong>Definición 5.8 (Composición de funciones)</strong></span> Dadas dos funciones <span class="math inline">\(g:A\rightarrow B\)</span> y <span class="math inline">\(f:B\rightarrow C\)</span>, se define la <em>función compuesta</em> <span class="math inline">\(f\circ g\)</span>, (leído <span class="math inline">\(g\)</span> compuesto con <span class="math inline">\(f\)</span>) como la función</p>
 <p><span class="math display">\[\begin{aligned}
 f\circ g:\,&amp; A\longrightarrow C\\
 &amp; x\longrightarrow f(g(x))\end{aligned}\]</span></p>
@@ -535,48 +571,51 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <p>Para calcular la función compuesta <span class="math inline">\(f\circ g(x)\)</span>, primero se aplica <span class="math inline">\(g\)</span> sobre <span class="math inline">\(x\)</span> y luego, se aplica <span class="math inline">\(f\)</span> sobre <span class="math inline">\(g(x)\)</span>:</p>
 <p><span class="math display">\[x\stackrel{g}{\longrightarrow}g(x)\stackrel{f}{\longrightarrow}f(g(x))\]</span></p>
 <div id="exm-composicion-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.3 </strong></span>Si <span class="math inline">\(g(x)=\sqrt x\)</span> y <span class="math inline">\(f(x)=\operatorname{sen} x\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.3</strong></span> Si <span class="math inline">\(g(x)=\sqrt x\)</span> y <span class="math inline">\(f(x)=\operatorname{sen} x\)</span>, entonces</p>
 <p><span class="math display">\[f\circ g(x)=f(g(x))=f(\sqrt x)=\operatorname{sen} \sqrt x.\]</span></p>
 </div>
 </section>
 <section id="función-inversa" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="función-inversa"><span class="header-section-number">5.6</span> Función inversa</h2>
 <div id="def-funcion-inversa" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.9 (Función inversa) </strong></span>Se llama <em>función inversa</em> de <span class="math inline">\(f:A\rightarrow B\)</span> a la función <span class="math inline">\(f^{-1}:B\rightarrow A\)</span> (cuando exista) que cumple</p>
+<p><span class="theorem-title"><strong>Definición 5.9 (Función inversa)</strong></span> Se llama <em>función inversa</em> de <span class="math inline">\(f:A\rightarrow B\)</span> a la función <span class="math inline">\(f^{-1}:B\rightarrow A\)</span> (cuando exista) que cumple</p>
 <p><span class="math display">\[f\circ f^{-1}=f^{-1}\circ f=Id(x)\]</span></p>
 </div>
 <p>La función inversa de <span class="math inline">\(f\)</span> deshace o revierte el efecto de <span class="math inline">\(f\)</span>. Es decir, si <span class="math inline">\(f:A\rightarrow B\)</span> asocia un elemento <span class="math inline">\(x\in A\)</span> con otro <span class="math inline">\(y\in B\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> asocia el elemento <span class="math inline">\(y\)</span> con el <span class="math inline">\(x\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-inversa.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función inversa.</figcaption>
+<figcaption>Función inversa.</figcaption>
 </figure>
 </div>
 <div id="exm-funcion-inversa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.4 </strong></span>La inversa de <span class="math inline">\(f(x)=x^3\)</span> es la función <span class="math inline">\(f^{-1}(x)=\sqrt[3]{x}.\)</span> Sin embargo, la inversa de la función <span class="math inline">\(x^2\)</span> no es <span class="math inline">\(\sqrt{x}\)</span> ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="theorem-title"><strong>Ejemplo 5.4</strong></span> La inversa de <span class="math inline">\(f(x)=x^3\)</span> es la función <span class="math inline">\(f^{-1}(x)=\sqrt[3]{x}.\)</span> Sin embargo, la inversa de la función <span class="math inline">\(x^2\)</span> no es <span class="math inline">\(\sqrt{x}\)</span> ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
 </section>
 <section id="crecimiento-de-una-función" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="crecimiento-de-una-función"><span class="header-section-number">5.7</span> Crecimiento de una función</h2>
 <div id="def-crecimiento-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.10 (Función creciente y decreciente) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 5.10 (Función creciente y decreciente)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>decreciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\geq f(x_2)\)</span>.</p>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-creciente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función creciente.</figcaption>
+<figcaption>Función creciente.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-decreciente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función decreciente.</figcaption>
+<figcaption>Función decreciente.</figcaption>
 </figure>
 </div>
 </div>
@@ -586,24 +625,27 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <section id="extremos-de-una-función" class="level2" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="extremos-de-una-función"><span class="header-section-number">5.8</span> Extremos de una función</h2>
 <div id="def-extremos-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.11 (Máximo y mínimo relativo) </strong></span>Se dice que una función <span class="math inline">\(f:\\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 5.11 (Máximo y mínimo relativo)</strong></span> Se dice que una función <span class="math inline">\(f:\\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
 <p>Y se dice que <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\leq f(x)\)</span>.</p>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/maximo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Máximo relativo.</figcaption>
+<figcaption>Máximo relativo.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/minimo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mínimo relativo.</figcaption>
+<figcaption>Mínimo relativo.</figcaption>
 </figure>
 </div>
 </div>
@@ -613,25 +655,28 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <section id="concavidad-de-una-función" class="level2" data-number="5.9">
 <h2 data-number="5.9" class="anchored" data-anchor-id="concavidad-de-una-función"><span class="header-section-number">5.9</span> Concavidad de una función</h2>
 <div id="def-concavidad-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.12 (Función cóncava hacia arriba y hacia abajo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia arriba</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por encima de la gráfica de <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 5.12 (Función cóncava hacia arriba y hacia abajo)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia arriba</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por encima de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia abajo</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por debajo de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Al punto donde cambia la concavidad de una función se le llama <em>punto de inflexión</em>.</p>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-concava-arriba.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función cóncava hacia arriba.</figcaption>
+<figcaption>Función cóncava hacia arriba.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-concava-abajo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función cóncava hacia abajo.</figcaption>
+<figcaption>Función cóncava hacia abajo.</figcaption>
 </figure>
 </div>
 </div>
@@ -641,7 +686,7 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <section id="funciones-periódicas" class="level2" data-number="5.10">
 <h2 data-number="5.10" class="anchored" data-anchor-id="funciones-periódicas"><span class="header-section-number">5.10</span> Funciones periódicas</h2>
 <div id="def-funcion-periodica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.13 (Función periódica y periodo) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> es <em>periódica</em> si existe un valor <span class="math inline">\(h&gt;0\)</span> tal que</p>
+<p><span class="theorem-title"><strong>Definición 5.13 (Función periódica y periodo)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>periódica</em> si existe un valor <span class="math inline">\(h&gt;0\)</span> tal que</p>
 <p><span class="math display">\[f(x+h)=f(x)\]</span></p>
 <p>para todo <span class="math inline">\(x\in \textrm{Dom}(f)\)</span>.</p>
 <p>Al menor valor de <span class="math inline">\(h\)</span> que verifica la igualdad anterior se le llama <em>periodo</em> de <span class="math inline">\(f\)</span>, y a la diferencia entre el máximo y el mínimo de la función se le llama <em>amplitud</em> de <span class="math inline">\(f\)</span>.</p>
@@ -649,23 +694,23 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-periodica.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Periodo y amplitud de una función periódica.</figcaption>
+<figcaption>Periodo y amplitud de una función periódica.</figcaption>
 </figure>
 </div>
 </section>
 <section id="funciones-polinómicas" class="level2" data-number="5.11">
 <h2 data-number="5.11" class="anchored" data-anchor-id="funciones-polinómicas"><span class="header-section-number">5.11</span> Funciones polinómicas</h2>
 <div id="def-funcion-polinomica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.14 (Función polinómica) </strong></span>Una <em>función polinómica</em> es una función de la forma</p>
+<p><span class="theorem-title"><strong>Definición 5.14 (Función polinómica)</strong></span> Una <em>función polinómica</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n,\]</span></p>
 <p>donde <span class="math inline">\(n\)</span> es un entero no negativo que se llama <em>grado del polinomio</em>, y <span class="math inline">\(a_0,\ldots,a_n\)</span> son constantes reales (<span class="math inline">\(a_n\neq 0\)</span>) que se llaman <em>coeficientes del polinomio</em>.</p>
 </div>
 <div id="exm-funcion-polinomica" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.5 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.5</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-polinomica.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráficas de funciones polinómicas.</figcaption>
+<figcaption>Gráficas de funciones polinómicas.</figcaption>
 </figure>
 </div>
 </div>
@@ -683,16 +728,16 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <section id="funciones-racionales" class="level2" data-number="5.12">
 <h2 data-number="5.12" class="anchored" data-anchor-id="funciones-racionales"><span class="header-section-number">5.12</span> Funciones racionales</h2>
 <div id="def-funcion-racional" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.15 (Función racional) </strong></span>Una <em>función racional</em> es una función de la forma</p>
+<p><span class="theorem-title"><strong>Definición 5.15 (Función racional)</strong></span> Una <em>función racional</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=\frac{p(x)}{q(x)}\]</span></p>
 <p>donde <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> son funcione polinómicas con <span class="math inline">\(q(x)\neq 0\)</span>.</p>
 </div>
 <div id="exm-funcion-racional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.6 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.6</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-racional.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráficas de funciones racionales.</figcaption>
+<figcaption>Gráficas de funciones racionales.</figcaption>
 </figure>
 </div>
 </div>
@@ -714,14 +759,14 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <section id="funciones-potenciales" class="level2" data-number="5.13">
 <h2 data-number="5.13" class="anchored" data-anchor-id="funciones-potenciales"><span class="header-section-number">5.13</span> Funciones potenciales</h2>
 <div id="def-funcion-potencial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.16 (Función potencial) </strong></span>Una <em>función potencial</em> es una función de la forma <span class="math display">\[f(x)=x^r,\]</span> donde <span class="math inline">\(r\)</span> es un número real.</p>
+<p><span class="theorem-title"><strong>Definición 5.16 (Función potencial)</strong></span> Una <em>función potencial</em> es una función de la forma <span class="math display">\[f(x)=x^r,\]</span> donde <span class="math inline">\(r\)</span> es un número real.</p>
 </div>
 <div id="exm-funcion-potencial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.7 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.7</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-potencial.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráficas de funciones potenciales.</figcaption>
+<figcaption>Gráficas de funciones potenciales.</figcaption>
 </figure>
 </div>
 </div>
@@ -749,14 +794,14 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="funciones-exponenciales" class="level2" data-number="5.14">
 <h2 data-number="5.14" class="anchored" data-anchor-id="funciones-exponenciales"><span class="header-section-number">5.14</span> Funciones exponenciales</h2>
 <div id="def-funcion-exponencial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.17 (Función exponencial) </strong></span>Una <em>función exponencial</em> de base <span class="math inline">\(a\)</span> es una función de la forma <span class="math display">\[f(x)=a^x,\]</span> donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
+<p><span class="theorem-title"><strong>Definición 5.17 (Función exponencial)</strong></span> Una <em>función exponencial</em> de base <span class="math inline">\(a\)</span> es una función de la forma <span class="math display">\[f(x)=a^x,\]</span> donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
 <div id="exm-funcion-exponencial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.8</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-exponencial.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráficas de funciones exponenciales.</figcaption>
+<figcaption>Gráficas de funciones exponenciales.</figcaption>
 </figure>
 </div>
 </div>
@@ -780,16 +825,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="funciones-logarítmicas" class="level2" data-number="5.15">
 <h2 data-number="5.15" class="anchored" data-anchor-id="funciones-logarítmicas"><span class="header-section-number">5.15</span> Funciones logarítmicas</h2>
 <div id="def-funcion-logaritmica" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.18 (Función logarítmica) </strong></span>Dada una función exponencial <span class="math inline">\(f(x)=a^x\)</span>, se define la <em>función logarítmica</em> de base <span class="math inline">\(a\)</span> como la función inversa de <span class="math inline">\(f\)</span>, y se denota</p>
+<p><span class="theorem-title"><strong>Definición 5.18 (Función logarítmica)</strong></span> Dada una función exponencial <span class="math inline">\(f(x)=a^x\)</span>, se define la <em>función logarítmica</em> de base <span class="math inline">\(a\)</span> como la función inversa de <span class="math inline">\(f\)</span>, y se denota</p>
 <p><span class="math display">\[f^{-1}(x)=\log_a x,\]</span></p>
 <p>donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
 <div id="exm-funcion-logaritmica" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.9 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.9</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-logaritmica.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráficas de funciones logaritmicas.</figcaption>
+<figcaption>Gráficas de funciones logaritmicas.</figcaption>
 </figure>
 </div>
 </div>
@@ -827,12 +872,12 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="seno-de-un-ángulo" class="level3" data-number="5.16.1">
 <h3 data-number="5.16.1" class="anchored" data-anchor-id="seno-de-un-ángulo"><span class="header-section-number">5.16.1</span> Seno de un ángulo</h3>
 <div id="def-seno-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.19 (Seno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
+<p><span class="theorem-title"><strong>Definición 5.19 (Seno de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/seno-triangulo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Seno de un ángulo de un triángulo rectángulo.</figcaption>
+<figcaption>Seno de un ángulo de un triángulo rectángulo.</figcaption>
 </figure>
 </div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.</p>
@@ -841,16 +886,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-seno" class="level3" data-number="5.16.2">
 <h3 data-number="5.16.2" class="anchored" data-anchor-id="función-seno"><span class="header-section-number">5.16.2</span> Función seno</h3>
 <div id="def-funcion-seno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.20 (Función seno) </strong></span>Se define la función <em>seno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.20 (Función seno)</strong></span> Se define la función <em>seno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{sen}(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su seno.</p>
 </div>
 <div id="exm-funcion-seno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.10 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.10</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-seno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función seno.</figcaption>
+<figcaption>Gráfica de la función seno.</figcaption>
 </figure>
 </div>
 </div>
@@ -871,12 +916,12 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="coseno-de-un-ángulo" class="level3" data-number="5.16.4">
 <h3 data-number="5.16.4" class="anchored" data-anchor-id="coseno-de-un-ángulo"><span class="header-section-number">5.16.4</span> Coseno de un ángulo</h3>
 <div id="def-coseno-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.21 (Coseno de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
+<p><span class="theorem-title"><strong>Definición 5.21 (Coseno de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/coseno-triangulo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Coseno de un ángulo de un triángulo rectángulo.</figcaption>
+<figcaption>Coseno de un ángulo de un triángulo rectángulo.</figcaption>
 </figure>
 </div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.</p>
@@ -885,16 +930,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-coseno" class="level3" data-number="5.16.5">
 <h3 data-number="5.16.5" class="anchored" data-anchor-id="función-coseno"><span class="header-section-number">5.16.5</span> Función coseno</h3>
 <div id="def-funcion-coseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.22 (Función coseno) </strong></span>Se define la función <em>coseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.22 (Función coseno)</strong></span> Se define la función <em>coseno</em>,</p>
 <p><span class="math display">\[f(x)=\cos(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su coseno.</p>
 </div>
 <div id="exm-grafica-funcion-coseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.11 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.11</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-coseno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función coseno.</figcaption>
+<figcaption>Gráfica de la función coseno.</figcaption>
 </figure>
 </div>
 </div>
@@ -913,12 +958,12 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="tangente-de-un-ángulo" class="level3" data-number="5.16.7">
 <h3 data-number="5.16.7" class="anchored" data-anchor-id="tangente-de-un-ángulo"><span class="header-section-number">5.16.7</span> Tangente de un ángulo</h3>
 <div id="def-tangente-angulo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.23 (Tangente de un ángulo) </strong></span>Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
+<p><span class="theorem-title"><strong>Definición 5.23 (Tangente de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/tangente-triangulo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tangente de un ángulo de un triángulo rectángulo.</figcaption>
+<figcaption>Tangente de un ángulo de un triángulo rectángulo.</figcaption>
 </figure>
 </div>
 <p>La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje <span class="math inline">\(OX\)</span>, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.</p>
@@ -927,16 +972,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-tangente" class="level3" data-number="5.16.8">
 <h3 data-number="5.16.8" class="anchored" data-anchor-id="función-tangente"><span class="header-section-number">5.16.8</span> Función tangente</h3>
 <div id="def-funcion-tangente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.24 (Función tangente) </strong></span>Se define la función <em>tangente</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.24 (Función tangente)</strong></span> Se define la función <em>tangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su tangente.</p>
 </div>
 <div id="exm-funcion-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.12 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.12</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-tangente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función tangente.</figcaption>
+<figcaption>Gráfica de la función tangente.</figcaption>
 </figure>
 </div>
 </div>
@@ -954,16 +999,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-arcoseno" class="level3" data-number="5.16.10">
 <h3 data-number="5.16.10" class="anchored" data-anchor-id="función-arcoseno"><span class="header-section-number">5.16.10</span> Función arcoseno</h3>
 <div id="def-funcion-arcoseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.25 (Función arcoseno) </strong></span>Se define la función <em>arcoseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.25 (Función arcoseno)</strong></span> Se define la función <em>arcoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arcsen}(x)\]</span></p>
 <p>como la función inversa de la función seno.</p>
 </div>
 <div id="exm-funcion-arcoseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.13 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.13</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcoseno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función arcoseno.</figcaption>
+<figcaption>Gráfica de la función arcoseno.</figcaption>
 </figure>
 </div>
 </div>
@@ -982,16 +1027,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-arcocoseno" class="level3" data-number="5.16.12">
 <h3 data-number="5.16.12" class="anchored" data-anchor-id="función-arcocoseno"><span class="header-section-number">5.16.12</span> Función arcocoseno</h3>
 <div id="def-funcion-arcocoseno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.26 (Función arcocoseno) </strong></span>Se define la función <em>arcocoseno</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.26 (Función arcocoseno)</strong></span> Se define la función <em>arcocoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arccos}(x)\]</span></p>
 <p>como la función inversa de la función coseno.</p>
 </div>
 <div id="exm-funcion-arcocoseno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.14 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.14</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcocoseno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función arcocoseno.</figcaption>
+<figcaption>Gráfica de la función arcocoseno.</figcaption>
 </figure>
 </div>
 </div>
@@ -1010,16 +1055,16 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <section id="función-arcotangente" class="level3" data-number="5.16.14">
 <h3 data-number="5.16.14" class="anchored" data-anchor-id="función-arcotangente"><span class="header-section-number">5.16.14</span> Función arcotangente</h3>
 <div id="def-funcion-arcotangente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.27 (Función arcotangente) </strong></span>Se define la función <em>arcotangente</em>,</p>
+<p><span class="theorem-title"><strong>Definición 5.27 (Función arcotangente)</strong></span> Se define la función <em>arcotangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arctg}(x)\]</span></p>
 <p>como la función inversa de la función tangente.</p>
 </div>
 <div id="exm-funcion-arcotangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.15 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.15</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/funciones/funcion-arcotangente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función arcotangente.</figcaption>
+<figcaption>Gráfica de la función arcotangente.</figcaption>
 </figure>
 </div>
 </div>
@@ -1105,6 +1150,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -1171,13 +1243,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1256,10 +1330,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1269,8 +1360,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1282,7 +1382,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1326,6 +1549,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1351,6 +1575,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1412,17 +1662,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-sucesiones.html" class="pagination-link">
+      <a href="./04-sucesiones.html" class="pagination-link" aria-label="Sucesiones de números reales">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sucesiones de números reales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-limites.html" class="pagination-link">
+      <a href="./06-limites.html" class="pagination-link" aria-label="Límites de funciones">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

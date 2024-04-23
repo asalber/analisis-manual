@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 12&nbsp; Derivadas de funciones de varias variables">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 12&nbsp; Derivadas de funciones de varias variables">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-derivadas-funciones-varias-variables.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-derivadas-funciones-varias-variables.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -305,7 +339,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Hasta ahora hemos estado estudiando funciones que dependían de una sola variable independiente, pero en muchos casos de la vida real aparecen funciones que dependen de más de una variable, como por ejemplo</p>
 <ul>
@@ -318,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="función-de-varias-variables" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="función-de-varias-variables"><span class="header-section-number">12.1</span> Función de varias variables</h2>
 <div id="def-funcion-varias-variables" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.1 (Función de varias variables) </strong></span>Una <em>función de <span class="math inline">\(n\)</span> variables</em> de un conjunto <span class="math inline">\(A_1\times \cdots \times A_n\)</span> en un conjunto <span class="math inline">\(B\)</span>, es una relación que asocia a cada tupla <span class="math inline">\((a_1,\ldots,a_n)\in A_1\times \cdots\times A_n\)</span> un único elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a_1,\ldots,a_n)\)</span>, y se llama imagen de <span class="math inline">\((a_1,\ldots,a_n)\)</span> mediante <span class="math inline">\(f\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 12.1 (Función de varias variables)</strong></span> Una <em>función de <span class="math inline">\(n\)</span> variables</em> de un conjunto <span class="math inline">\(A_1\times \cdots \times A_n\)</span> en un conjunto <span class="math inline">\(B\)</span>, es una relación que asocia a cada tupla <span class="math inline">\((a_1,\ldots,a_n)\in A_1\times \cdots\times A_n\)</span> un único elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a_1,\ldots,a_n)\)</span>, y se llama imagen de <span class="math inline">\((a_1,\ldots,a_n)\)</span> mediante <span class="math inline">\(f\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lccc}
 f: &amp; A_1\times\cdots\times A_n &amp; \longrightarrow &amp; B \\
@@ -328,7 +364,7 @@ f: &amp; A_1\times\cdots\times A_n &amp; \longrightarrow &amp; B \\
 <p>Cuando <span class="math inline">\(A_1,\ldots,A_n,B\subseteq \mathbb{R}\)</span>, entonces se dice que <span class="math inline">\(f\)</span> es una <em>función real de <span class="math inline">\(n\)</span> variables reales</em> o bien un <em>campo escalar</em>.</p>
 </div>
 <div id="exm-funciones-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.1 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.1</strong></span> &nbsp;</p>
 <ul>
 <li>El área de un triángulo es la función real de dos variables reales</li>
 </ul>
@@ -345,22 +381,22 @@ f: &amp; A_1\times\cdots\times A_n &amp; \longrightarrow &amp; B \\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Representación gráfica de una función de dos variables.</figcaption>
+<figcaption>Representación gráfica de una función de dos variables.</figcaption>
 </figure>
 </div>
 <div id="exm-graficas-funciones-dos-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.2 </strong></span>La función <span class="math inline">\(f(x,y)=\dfrac{xy}{2}\)</span> que mide el área de un triángulo de base <span class="math inline">\(x\)</span> y altura <span class="math inline">\(y\)</span> tiene la siguiente representación gráfica:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.2</strong></span> La función <span class="math inline">\(f(x,y)=\dfrac{xy}{2}\)</span> que mide el área de un triángulo de base <span class="math inline">\(x\)</span> y altura <span class="math inline">\(y\)</span> tiene la siguiente representación gráfica:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/superficie-funcion-area-triangulo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función que mide el área de un triángulo.</figcaption>
+<figcaption>Gráfica de la función que mide el área de un triángulo.</figcaption>
 </figure>
 </div>
 <p>Y la función <span class="math inline">\(\displaystyle f(x,y)=\frac{\operatorname{sen}(x^2+y^2)}{\sqrt{x^2+y^2}}\)</span> tiene la siguiente representación gráfica que simula las ondas que produce una gota de agua al caer sobre un líquido.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/superficie-ondas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la función que representa las ondas creadas por una gota de agua.</figcaption>
+<figcaption>Gráfica de la función que representa las ondas creadas por una gota de agua.</figcaption>
 </figure>
 </div>
 </div>
@@ -369,13 +405,13 @@ f: &amp; A_1\times\cdots\times A_n &amp; \longrightarrow &amp; B \\
 <h3 data-number="12.1.2" class="anchored" data-anchor-id="conjunto-de-nivel-de-una-función-de-varias-variables"><span class="header-section-number">12.1.2</span> Conjunto de nivel de una función de varias variables</h3>
 <p>Visualizar la gráfica de una función de dos variables no es fácil, sobre todo si se representa en un papel que, a fin de cuentas, es un plano en dos dimensiones. Un recurso bastante habitual para entender el comportamiento de una función de dos variables son las curvas de nivel, que consisten en representar en el plano euclídeo los puntos <span class="math inline">\((x,y)\)</span> que tienen la misma imagen.</p>
 <div id="def-conjunto-nivel" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.2 (Conjunto de nivel) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>conjunto de nivel</em> <span class="math inline">\(c\)</span> de <span class="math inline">\(f\)</span> al conjunto</p>
+<p><span class="theorem-title"><strong>Definición 12.2 (Conjunto de nivel)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>conjunto de nivel</em> <span class="math inline">\(c\)</span> de <span class="math inline">\(f\)</span> al conjunto</p>
 <p><span class="math display">\[
 C_{f,c}=\{(x_1,\ldots,x_n): f(x_1,\ldots,x_n)=c\}.
 \]</span></p>
 </div>
 <div id="exm-conjunto-nivel" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.3 </strong></span>Si <span class="math inline">\(f(x,y)=x^2+y^2\)</span> y <span class="math inline">\(P=(1,1)\)</span>, el conjunto de nivel de <span class="math inline">\(f\)</span> que incluye al punto <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.3</strong></span> Si <span class="math inline">\(f(x,y)=x^2+y^2\)</span> y <span class="math inline">\(P=(1,1)\)</span>, el conjunto de nivel de <span class="math inline">\(f\)</span> que incluye al punto <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[
 C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 \]</span></p>
@@ -383,7 +419,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/curva-nivel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del conjunto de nivel de un paraboloide.</figcaption>
+<figcaption>Gráfica del conjunto de nivel de un paraboloide.</figcaption>
 </figure>
 </div>
 </div>
@@ -391,25 +427,28 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/curvas-nivel.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica y curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</figcaption>
+<figcaption>Gráfica y curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</figcaption>
 </figure>
 </div>
 <p>Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los mapas topográficos, donde cada curva representa los puntos que están a la misma altura sobre el nivel del mar, o en los mapas meteorológicos, donde cada curva representa los puntos con la misma presión atmosférica.</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/mapa-topografico.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Curvas de nivel de un mapa topográfico.</figcaption>
+<figcaption>Curvas de nivel de un mapa topográfico.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/mapa-isobaras.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Curvas de nivel de un mapa de presión atmosférica.</figcaption>
+<figcaption>Curvas de nivel de un mapa de presión atmosférica.</figcaption>
 </figure>
 </div>
 </div>
@@ -421,36 +460,36 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 <h2 data-number="12.2" class="anchored" data-anchor-id="límites-de-funciones-de-varias-variables"><span class="header-section-number">12.2</span> Límites de funciones de varias variables</h2>
 <p>El concepto de límite de una función de una variable se puede extender fácilmente a funciones de varias variables, pero antes necesitamos introducir, desde un punto de vista topológico, el concepto equivalente a un entorno de un punto en la recta real, en espacios de mayor dimensión.</p>
 <div id="def-entorno-punto-plano" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.3 (Entorno de un punto en el plano real) </strong></span>Dado un punto del plano <span class="math inline">\((a_x,a_y)\in \mathbb{R}^2\)</span>, se llama <em>entorno</em> de <span class="math inline">\((x_0,y_0)\)</span> a cualquier disco abierto <span class="math inline">\(\{(x,y):|(x,y)-(a_x,a_y)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
+<p><span class="theorem-title"><strong>Definición 12.3 (Entorno de un punto en el plano real)</strong></span> Dado un punto del plano <span class="math inline">\((a_x,a_y)\in \mathbb{R}^2\)</span>, se llama <em>entorno</em> de <span class="math inline">\((x_0,y_0)\)</span> a cualquier disco abierto <span class="math inline">\(\{(x,y):|(x,y)-(a_x,a_y)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
 <p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y):|(x,y)-(a_x,a_y)|&lt;\varepsilon\}\setminus \{(a_x,a_y)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((a_x,a_y)\)</span>.</p>
 </div>
 <p>Geométricamente, un entorno de <span class="math inline">\((a_x,a_y)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores del círculo de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((a_x,a_y)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/entorno-punto-plano.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Entorno de un punto en el plano.</figcaption>
+<figcaption>Entorno de un punto en el plano.</figcaption>
 </figure>
 </div>
 <p>De manera similar se define un entorno en el espacio real.</p>
 <div id="def-entorno-punto-espacio" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.4 (Entorno de un punto en el espacio real) </strong></span>Dado un punto del espacio <span class="math inline">\((a_x,a_y,a_z)\in \mathbb{R}^3\)</span>, se llama <em>entorno</em> de <span class="math inline">\((a_x,a_y,a_z)\)</span> a cualquier bola abierta <span class="math inline">\(\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
+<p><span class="theorem-title"><strong>Definición 12.4 (Entorno de un punto en el espacio real)</strong></span> Dado un punto del espacio <span class="math inline">\((a_x,a_y,a_z)\in \mathbb{R}^3\)</span>, se llama <em>entorno</em> de <span class="math inline">\((a_x,a_y,a_z)\)</span> a cualquier bola abierta <span class="math inline">\(\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|&lt;\varepsilon\}\)</span> con <span class="math inline">\(\varepsilon&gt;0\)</span>. El número <span class="math inline">\(\varepsilon\)</span> se conoce como <em>radio del entorno</em>.</p>
 <p>Para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el conjunto <span class="math inline">\(\{(x,y,z):|(x,y,z)-(a_x,a_y,a_z)|&lt;\varepsilon\}\setminus \{(x_0,y_0,z_0)\}\)</span> se llama <em>entorno reducido</em> de <span class="math inline">\((a_x,a_y,a_z)\)</span>.</p>
 </div>
 <p>Geométricamente, un entorno de <span class="math inline">\((a_x,a_y,a_z)\)</span> de radio <span class="math inline">\(\varepsilon\)</span> está formado por todos los puntos interiores de la esfera de radio <span class="math inline">\(\varepsilon\)</span> centrado en <span class="math inline">\((a_x,a_y,a_z)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/entorno-punto-espacio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Entorno de un punto en el espacio.</figcaption>
+<figcaption>Entorno de un punto en el espacio.</figcaption>
 </figure>
 </div>
 <div id="def-limite-funcion-varias-variables" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.5 (Límite de una función de varias variables) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> definida en un entorno reducido del punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(0&lt;|(x_1,\ldots,x_n)-(a_1,\ldots,a_n)|&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x_1,\ldots,x_n)-l|&lt;\varepsilon\)</span>, y en tal caso, se denota</p>
+<p><span class="theorem-title"><strong>Definición 12.5 (Límite de una función de varias variables)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> definida en un entorno reducido del punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(0&lt;|(x_1,\ldots,x_n)-(a_1,\ldots,a_n)|&lt;\delta\)</span>, entonces <span class="math inline">\(|f(x_1,\ldots,x_n)-l|&lt;\varepsilon\)</span>, y en tal caso, se denota</p>
 <p><span class="math display">\[
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = l.
 \]</span></p>
 </div>
 <div id="exm-limite-funcion-dos-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.4 </strong></span>Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.4</strong></span> Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
 <p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como</p>
 <p><span class="math display">\[\begin{align*}
 |f(x,y)-0|
@@ -468,7 +507,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <p>En el caso de una función de una variable <span class="math inline">\(f(x)\)</span>, vimos que para que existiese el límite de la función en el punto <span class="math inline">\(a\)</span>, bastaba con ver que existía el límite por la izquierda (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores menores que <span class="math inline">\(a\)</span>) y el límite por la derecha (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores mayores que <span class="math inline">\(a\)</span>) y que eran iguales. Sin embargo, para funciones de varias variables esto no es así, ya que para demostrar la existencia del límite es necesario probar que el límite existe cuando nos acercamos a <span class="math inline">\((x_0,\ldots,y_0)\)</span> por cualquier posible trayectoria en <span class="math inline">\(\mathbb{R}^n\)</span>, y todos los límites coinciden.</p>
 <div id="exm-no-existencia-limite" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.5 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.5</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 &amp;= \lim_{x\to 0} \frac{xmx}{x^2+(mx)^2}
@@ -492,7 +531,7 @@ Precaución
 </div>
 </div>
 <div id="exm-no-existencia-limite-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.6 </strong></span>Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.6</strong></span> Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
 <p><span class="math display">\[
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 = \lim_{x\to 0} \frac{x(mx)^2}{x^2+(mx)^4}
@@ -507,16 +546,20 @@ Precaución
 = \frac{1}{2}.
 \]</span></p>
 <p>Por consiguiente, no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\((0,0)\)</span>.</p>
-<div id="fig-no-existencia-limite-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="./img/derivadas-funciones-varias-variables/no-existencia-limite.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inline">\((0,0)\)</span>.</figcaption>
+<div id="fig-no-existencia-limite-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-no-existencia-limite-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./img/derivadas-funciones-varias-variables/no-existencia-limite.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-no-existencia-limite-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inline">\((0,0)\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Afortunadamente, el álgebra de límites visto en la <a href="06-limites.html#prp-limite-suma-resta-producto-cociente-funciones">Proposición&nbsp;<span>6.2</span></a> también es válido para funciones de varias variables.</p>
+<p>Afortunadamente, el álgebra de límites visto en la <a href="06-limites.html#prp-limite-suma-resta-producto-cociente-funciones" class="quarto-xref">Proposición&nbsp;<span>6.2</span></a> también es válido para funciones de varias variables.</p>
 <div id="exm-algebra-limites-funciones-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.7 </strong></span>El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.7</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,y)\to(2,1)} f(x,y)
 &amp;= \lim_{(x,y)\to(2,1)} \frac{3xy^2}{x^2+y^3} \\
@@ -531,23 +574,23 @@ Precaución
 <h2 data-number="12.3" class="anchored" data-anchor-id="continuidad-de-funciones-de-varias-variables"><span class="header-section-number">12.3</span> Continuidad de funciones de varias variables</h2>
 <p>Una vez definido el límite de una función de varias variables, el concepto de continuidad se extiende de manera natural a funciones de varias variables.</p>
 <div id="def-funcion-varias-variables-continua" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.6 </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 12.6</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\((a_1, \ldots, a_n)\)</span> si</p>
 <p><span class="math display">\[
 \lim_{(x_1,\ldots,x_n)\rightarrow (a_1,\ldots,a_n)}f(x_1,\ldots,x_n) = f(a_1,\ldots, a_n).
 \]</span></p>
 </div>
 <div id="exr-funcion-varias-variables-discontinua" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 12.1 </strong></span>Hemos visto en el <a href="#exm-limite-funcion-dos-variables">Ejemplo&nbsp;<span>12.4</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
+<p><span class="theorem-title"><strong>Ejercicio 12.1</strong></span> Hemos visto en el <a href="#exm-limite-funcion-dos-variables" class="quarto-xref">Ejemplo&nbsp;<span>12.4</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
 </div>
 <section id="funciones-parciales" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="funciones-parciales"><span class="header-section-number">12.3.1</span> Funciones parciales</h3>
 <div id="def-funcion-parcial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.7 (Función parcial) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>función parcial</em> <span class="math inline">\(i\)</span>-esima de <span class="math inline">\(f\)</span> a cualquier función <span class="math inline">\(f_i:\mathbb{R}\rightarrow \mathbb{R}\)</span> que resulta de fijar todas las variables de <span class="math inline">\(f\)</span> como constantes, excepto la variable <span class="math inline">\(i\)</span>, es decir:</p>
+<p><span class="theorem-title"><strong>Definición 12.7 (Función parcial)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>función parcial</em> <span class="math inline">\(i\)</span>-esima de <span class="math inline">\(f\)</span> a cualquier función <span class="math inline">\(f_i:\mathbb{R}\rightarrow \mathbb{R}\)</span> que resulta de fijar todas las variables de <span class="math inline">\(f\)</span> como constantes, excepto la variable <span class="math inline">\(i\)</span>, es decir:</p>
 <p><span class="math display">\[f_i(x)=f(c_1,\ldots,c_{i-1},x,c_{i+1},\ldots,c_{n}),\]</span></p>
 <p>con <span class="math inline">\(c_j\)</span> <span class="math inline">\((j=1,\ldots, n,\ j\neq i)\)</span> constantes.</p>
 </div>
 <div id="exm-funcion-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.8 </strong></span>Si consideramos la función del área de un triángulo</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.8</strong></span> Si consideramos la función del área de un triángulo</p>
 <p><span class="math display">\[f(x,y)=\frac{xy}{2},\]</span></p>
 <p>y fijamos el valor de la base <span class="math inline">\(x=c\)</span>, entonces el área del triángulo ya sólo depende de la altura y <span class="math inline">\(f\)</span> se convierte en una función de una sola variable, que es la función parcial:</p>
 <p><span class="math display">\[
@@ -580,7 +623,7 @@ f_1(y)=f(c,y)=\frac{cy}{2},
 <p>que cuando existe se conoce como <em>derivada parcial</em> de <span class="math inline">\(f\)</span> con respecto a la variable <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((a,b)\)</span>, y mide la tasa de variación instantánea de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> cuando el punto se mueve en la dirección del eje <span class="math inline">\(Y\)</span>.</p>
 <p>El concepto de derivada parcial puede extenderse fácilmente para funciones de <span class="math inline">\(n\)</span> variables.</p>
 <div id="def-derivada-parcial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.8 (Derivada parcial) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>derivable parcialmente</em> con respecto a la variable <span class="math inline">\(x_i\)</span> en el punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> si existe el límite</p>
+<p><span class="theorem-title"><strong>Definición 12.8 (Derivada parcial)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>derivable parcialmente</em> con respecto a la variable <span class="math inline">\(x_i\)</span> en el punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> si existe el límite</p>
 <p><span class="math display">\[
 \lim_{h\rightarrow 0} \frac{f(a_1,\ldots,a_{i-1},a_i+h,a_{i+1},\ldots,a_n)-f(a_1,\ldots,a_{i-1},a_i,a_{i+1},\ldots,a_n)} {h}.
 \]</span></p>
@@ -595,19 +638,19 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/derivada-parcial-x.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Derivada parcial con respecto a <span class="math inline">\(x\)</span>.</figcaption>
+<figcaption>Derivada parcial con respecto a <span class="math inline">\(x\)</span>.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/derivada-parcial-y.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Derivada parcial con respecto a <span class="math inline">\(y\)</span>.</figcaption>
+<figcaption>Derivada parcial con respecto a <span class="math inline">\(y\)</span>.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.geogebra.org/classic/ywur7vzr"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Ejemplo interactivo con Geogebra</figcaption>
+<p><a href="https://www.geogebra.org/classic/ywur7vzr"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img" alt="Ejemplo interactivo con Geogebra"></a></p>
+<figcaption>Ejemplo interactivo con Geogebra</figcaption>
 </figure>
 </div>
 <p>Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para <span class="math inline">\(n=1\)</span>.</p>
@@ -633,7 +676,7 @@ Regla
 </div>
 </div>
 <div id="exm-calculo-derivada-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.9 </strong></span>En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.9</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
 <p><span class="math display">\[
 v(t,p)=\frac{nRt}{p},
 \]</span></p>
@@ -653,12 +696,12 @@ v(t,p)=\frac{nRt}{p},
 <section id="vector-gradiente" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="vector-gradiente"><span class="header-section-number">12.5</span> Vector gradiente</h2>
 <div id="def-vector-gradiente" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.9 (Vector gradiente) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>gradiente</em> de <span class="math inline">\(f\)</span>, y se escribe <span class="math inline">\(\nabla f\)</span>, a la función que a cada punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> le asigna el vector cuyas componentes son las derivadas parciales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>,</p>
+<p><span class="theorem-title"><strong>Definición 12.9 (Vector gradiente)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>gradiente</em> de <span class="math inline">\(f\)</span>, y se escribe <span class="math inline">\(\nabla f\)</span>, a la función que a cada punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> le asigna el vector cuyas componentes son las derivadas parciales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>,</p>
 <p><span class="math display">\[\nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).\]</span></p>
 </div>
 <p>Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, <span class="math inline">\(\nabla f(a)\)</span> indica la dirección de máximo crecimiento de la función, mientras que <span class="math inline">\(-\nabla f(a)\)</span> indica la dirección de máximo decrecimiento.</p>
 <div id="exm-vector-gradiente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.10 </strong></span>Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.10</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]</span></p>
@@ -694,7 +737,7 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 \end{align*}\]</span></p>
 <p>Usando este vector podemos construir la ecuación de la recta normal a la superficie de <span class="math inline">\(f\)</span>.</p>
 <div id="def-recta-normal-superficie" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.10 (Recta normal a la superficie de una función de dos variables) </strong></span>Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define la <em>recta normal a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como la recta de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 12.10 (Recta normal a la superficie de una función de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define la <em>recta normal a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como la recta de ecuación</p>
 <p><span class="math display">\[
 \begin{gathered}
 (a, b, f(a,b)) + t \left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) \\
@@ -710,13 +753,13 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 \end{gathered}
 \]</span></p>
 <div id="def-plano-tangente-superficie" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.11 (Plano tangente a la superficie de una función de dos variables) </strong></span>Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define el <em>plano tangente a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como el plano de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 12.11 (Plano tangente a la superficie de una función de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define el <em>plano tangente a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como el plano de ecuación</p>
 <p><span class="math display">\[
 z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b)+f(a,b)
 \]</span></p>
 </div>
 <div id="exm-recta-normal-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.11 </strong></span>La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.11</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
 <p><span class="math display">\[
 \begin{gathered}
 (1,1,2)+ t \left(\frac{\partial f}{\partial x}(1,1), \frac{\partial f}{\partial y}(1,1), -1\right) \\
@@ -732,7 +775,7 @@ z
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recta normal y plano tangente a la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span>.</figcaption>
+<figcaption>Recta normal y plano tangente a la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -750,7 +793,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-funcion-sin-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.12 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.12</strong></span> La función</p>
 <p><span class="math display">\[
 f(x,y) =
 \begin{cases}
@@ -758,14 +801,14 @@ f(x,y) =
 0  &amp; \mbox{si $(x,y) = (0,0)$}
 \end{cases}
 \]</span></p>
-<p>Cuando <span class="math inline">\(y=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(x\)</span> es <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Del mismo modo, cuando <span class="math inline">\(x=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(y\)</span> también se anula <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Sin embargo, esta función no tiene plano tangente en el punto <span class="math inline">\((0,0)\)</span> como se puede apreciar en la <a href="#fig-no-existencia-limite-2">Figura&nbsp;<span>12.1</span></a>.</p>
+<p>Cuando <span class="math inline">\(y=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(x\)</span> es <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Del mismo modo, cuando <span class="math inline">\(x=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(y\)</span> también se anula <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Sin embargo, esta función no tiene plano tangente en el punto <span class="math inline">\((0,0)\)</span> como se puede apreciar en la <a href="#fig-no-existencia-limite-2" class="quarto-xref">Figura&nbsp;<span>12.1</span></a>.</p>
 </div>
 </section>
 <section id="diferenciabilidad" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="diferenciabilidad"><span class="header-section-number">12.7</span> Diferenciabilidad</h2>
 <p>En el capítulo de derivadas de funciones de una variable se definió el diferencial de una función <span class="math inline">\(y=f(x)\)</span> como la aplicación lineal <span class="math inline">\(dy = f'(x)dx\)</span> y se vió cómo el diferencial puede utilizarse para aproximar la variación de <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(x\)</span>. La misma idea puede generalizarse a funciones de varias variables.</p>
 <div id="def-diferencial-total" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.12 (Diferencial total) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, se define el <em>diferencial total</em> de la función <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P=(a_1, \ldots, a_n)\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 12.12 (Diferencial total)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, se define el <em>diferencial total</em> de la función <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P=(a_1, \ldots, a_n)\)</span> como</p>
 <p><span class="math display">\[
 dy
 = \nabla f(P)(dx_1, \ldots, dx_n)
@@ -773,7 +816,7 @@ dy
 \]</span></p>
 </div>
 <div id="exm-diferencial-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.13 </strong></span>Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.13</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
 <p><span class="math display">\[
 du
 = \nabla f(1, 1, 1)(dx, dy, dz)
@@ -782,7 +825,7 @@ du
 \]</span></p>
 </div>
 <div id="def-funcion-2-variables-diferenciable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.13 (Función diferenciable de dos variables) </strong></span>Dada una función de dos variables <span class="math inline">\(z=f(x,y)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a,b)\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 12.13 (Función diferenciable de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(z=f(x,y)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a,b)\)</span> si</p>
 <p><span class="math display">\[
 \Delta z = f(a+\Delta x, b+\Delta y) - f(a,b) = \nabla f(a, b) (\Delta x, \Delta y) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
 \]</span></p>
@@ -805,7 +848,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \]</span></p>
 <p>Si se observa bien, el lado derecho de esta igualdad es la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>. De esta manera, si una <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span> podemos aproximar el valor de la función en cualquier punto <span class="math inline">\((x,y)\)</span> de un entorno de <span class="math inline">\((a,b)\)</span>, como el valor del plano tangente en ese punto. El error en la aproximación es <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> que tiende a <span class="math inline">\(0\)</span> cuando <span class="math inline">\((x,y)\)</span> se aproxima a <span class="math inline">\((a,b)\)</span>. Además, dado que <span class="math inline">\(\varepsilon_1\)</span> y <span class="math inline">\(\varepsilon_2 \to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, la cantidad <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> se aproxima a <span class="math inline">\(0\)</span> mucho más rápidamente que <span class="math inline">\(\Delta x\)</span> o <span class="math inline">\(\Delta y\)</span> se aproximan a <span class="math inline">\(0\)</span>, por lo que el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> dará muy buenas aproximaciones de <span class="math inline">\(f\)</span> en un entorno cercano de <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-funcion-dos-variables-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.14 </strong></span>Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 12.14</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a+\Delta x, b+\Delta y) - f(a,b)
@@ -819,14 +862,14 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \Delta z = \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
 \]</span></p>
 <p>y, además <span class="math inline">\(\varepsilon_1\to 0\)</span> y <span class="math inline">\(\varepsilon_2\to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, por lo que la función <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span>.</p>
-<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente">Ejemplo&nbsp;<span>12.11</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
+<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;<span>12.11</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
 <p><span class="math display">\[
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \]</span></p>
 </div>
 <p>El concepto de función diferenciable se generaliza de manera natural para funciones de <span class="math inline">\(n\)</span> variables.</p>
 <div id="def-funcion-varias-variables-diferenciable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.14 (Función diferenciable) </strong></span>Dada una función de n variables <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a_1,\ldots,a_n)\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 12.14 (Función diferenciable)</strong></span> Dada una función de n variables <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a_1,\ldots,a_n)\)</span> si</p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a_1+\Delta x_1, \ldots, a_n+\Delta x_n) - f(a_1,\ldots,a_n) \\
@@ -836,7 +879,7 @@ f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 </div>
 <p>En general, demostrar que una función es diferenciable en un punto puede ser una tarea complicada, pero afortunadamente, el siguiente teorema proporciona una condición suficiente para que una función sea diferenciable.</p>
 <div id="thm-diferenciabilidad-funciones-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.1 </strong></span>Si una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> tiene derivadas parciales continuas en un entorno de <span class="math inline">\((a_1,\ldots,a_n)\)</span>, entonces <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a_1,\ldots,a_n)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 12.1</strong></span> Si una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> tiene derivadas parciales continuas en un entorno de <span class="math inline">\((a_1,\ldots,a_n)\)</span>, entonces <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a_1,\ldots,a_n)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -857,7 +900,7 @@ Demostración
 &amp;= f(a+\Delta x, b+\Delta y) - f(a,b) \\
 &amp;= f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) + f(a+\Delta x, b) - f(a,b)
 \end{align*}\]</span></p>
-<p>Como en los dos primeros términos de esta expresión se mantiene constante <span class="math inline">\(a+\Delta x\)</span>, podemos considerar la función parcial <span class="math inline">\(f_2(y)\)</span> que resulta de fijar el valor de <span class="math inline">\(x\)</span> a <span class="math inline">\(a+\Delta x\)</span>, de manera que <span class="math inline">\(f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = f_2(b+\Delta y)-f_2(b)\)</span>. Entonces, como <span class="math inline">\(f'_2(y)=\frac{\partial f}{\partial y}(a+\Delta x, y)\)</span> existe en el intervalo <span class="math inline">\([b, b+\Delta y]\)</span>, por el teorema del valor medio (<a href="07-derivadas.html#thm-valor-medio">Teorema&nbsp;<span>7.6</span></a>), existe un valor <span class="math inline">\(b_0\in(b, b+\Delta y)\)</span> tal que</p>
+<p>Como en los dos primeros términos de esta expresión se mantiene constante <span class="math inline">\(a+\Delta x\)</span>, podemos considerar la función parcial <span class="math inline">\(f_2(y)\)</span> que resulta de fijar el valor de <span class="math inline">\(x\)</span> a <span class="math inline">\(a+\Delta x\)</span>, de manera que <span class="math inline">\(f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = f_2(b+\Delta y)-f_2(b)\)</span>. Entonces, como <span class="math inline">\(f'_2(y)=\frac{\partial f}{\partial y}(a+\Delta x, y)\)</span> existe en el intervalo <span class="math inline">\([b, b+\Delta y]\)</span>, por el teorema del valor medio (<a href="07-derivadas.html#thm-valor-medio" class="quarto-xref">Teorema&nbsp;<span>7.6</span></a>), existe un valor <span class="math inline">\(b_0\in(b, b+\Delta y)\)</span> tal que</p>
 <p><span class="math display">\[
 f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
 \]</span></p>
@@ -892,10 +935,10 @@ f(a+\Delta x, b) - f(a,b) = \frac{\partial f}{\partial x}(a_0, b) \Delta x.
 </section>
 <section id="regla-de-la-cadena" class="level2" data-number="12.8">
 <h2 data-number="12.8" class="anchored" data-anchor-id="regla-de-la-cadena"><span class="header-section-number">12.8</span> Regla de la cadena</h2>
-<p>En el <a href="07-derivadas.html#thm-regla-cadena">Teorema&nbsp;<span>7.2</span></a> vimos cómo calcular la derivada de una composición de dos funciones de una variable real. Una función de varias variables también puede componerse con otras funciones, y en particular, resulta interesante estudiar la derivada de la composición de una función vectorial con una función de varias variables.</p>
+<p>En el <a href="07-derivadas.html#thm-regla-cadena" class="quarto-xref">Teorema&nbsp;<span>7.2</span></a> vimos cómo calcular la derivada de una composición de dos funciones de una variable real. Una función de varias variables también puede componerse con otras funciones, y en particular, resulta interesante estudiar la derivada de la composición de una función vectorial con una función de varias variables.</p>
 <p>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables y <span class="math inline">\(g:\mathbb{R}\rightarrow \mathbb{R}^n\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces es posible componer <span class="math inline">\(g\)</span> con <span class="math inline">\(f\)</span>, de manera que <span class="math inline">\(f\circ g:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una función real de variable real.</p>
 <div id="thm-regla-cadena-funciones-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.2 (Regla de la cadena) </strong></span>Si <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables diferenciable y <span class="math inline">\(g(t)=(x_1(t),\ldots,x_n(t))\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> diferenciable, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.2 (Regla de la cadena)</strong></span> Si <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables diferenciable y <span class="math inline">\(g(t)=(x_1(t),\ldots,x_n(t))\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> diferenciable, entonces</p>
 <p><span class="math display">\[
 \frac{dz}{dt} = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = \frac{\partial z}{\partial x_1}\frac{dx_1}{dt} + \cdots +\frac{\partial z}{\partial x_n}\frac{dx_n}{dt}
 \]</span></p>
@@ -941,7 +984,7 @@ Demostración
 </div>
 </div>
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.15 </strong></span>Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2xy, x^2),
 \]</span></p>
@@ -993,11 +1036,11 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 <h2 data-number="12.9" class="anchored" data-anchor-id="derivación-implícita"><span class="header-section-number">12.9</span> Derivación implícita</h2>
 <p>Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma <span class="math inline">\(F(x_1,\ldots,x_n, y)=0\)</span>, donde <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>.</p>
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.16 </strong></span>La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.16</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
 <p>El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.</p>
 <div id="thm-funcion-implicita" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.3 (Teorema de la función implícita) </strong></span>Si <span class="math inline">\(F(x_1,\ldots,x_n,y)\)</span> es una función de <span class="math inline">\(n+1\)</span> variables definida sobre un entorno abierto del punto <span class="math inline">\((a_1,\ldots,a_n,b)\)</span> y tal que</p>
+<p><span class="theorem-title"><strong>Teorema 12.3 (Teorema de la función implícita)</strong></span> Si <span class="math inline">\(F(x_1,\ldots,x_n,y)\)</span> es una función de <span class="math inline">\(n+1\)</span> variables definida sobre un entorno abierto del punto <span class="math inline">\((a_1,\ldots,a_n,b)\)</span> y tal que</p>
 <ol type="a">
 <li><span class="math inline">\(F(a_1,\ldots,a_n,b)=0\)</span></li>
 <li>Todas las derivadas parciales de <span class="math inline">\(F\)</span> son continuas en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</li>
@@ -1007,7 +1050,7 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 </div>
 <p>Cuando una ecuación define de manera implícita una de sus variables como función de las otras, no siempre es posible obtener la forma explícita de esa función, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.</p>
 <div id="thm-derivada-implicita-funcion-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.4 </strong></span>Si <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> implícitamente como función derivable de <span class="math inline">\(x_1,\ldots,x_n\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.4</strong></span> Si <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> implícitamente como función derivable de <span class="math inline">\(x_1,\ldots,x_n\)</span>, entonces</p>
 <p><span class="math display">\[
 \frac{\partial y}{\partial x_i} = -\frac{F'_{x_i}(x_1,\ldots,x_n,y)}{F'_{y}(x_1,\ldots,x_n,y)}.
 \]</span></p>
@@ -1039,7 +1082,7 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.17 </strong></span>La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.17</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
 F(x,y) = x^2+y^2-1 = 0.
 \]</span></p>
@@ -1064,7 +1107,7 @@ y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}},
 <p>Pero, <em>¿qué pasa si nos movemos en cualquier otra dirección?</em></p>
 <p>La tasa de variación instantánea de <span class="math inline">\(f\)</span> en un punto <span class="math inline">\((a,b)\)</span> en la dirección de un vector unitario cualquiera <span class="math inline">\(u\)</span> se conoce como <em>derivada direccional</em>.</p>
 <div id="def-derivada-direccional" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.15 (Derivada direccional) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, un punto <span class="math inline">\(P\)</span> y un vector unitario <span class="math inline">\(\mathbf{u}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, el límite</p>
+<p><span class="theorem-title"><strong>Definición 12.15 (Derivada direccional)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, un punto <span class="math inline">\(P\)</span> y un vector unitario <span class="math inline">\(\mathbf{u}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, el límite</p>
 <p><span class="math display">\[
 f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
 \]</span></p>
@@ -1073,7 +1116,7 @@ f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
 <p>Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.</p>
 <p>El siguiente teorema nos permitirá calcular derivadas direccionales de manera más sencilla, sin necesidad de calcular el límite anterior.</p>
 <div id="thm-derivada-direccional" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.5 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\mathbf{u}\)</span> es un vector unitario en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.5</strong></span> Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\mathbf{u}\)</span> es un vector unitario en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
 <p><span class="math display">\[
 f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u}.
 \]</span></p>
@@ -1107,12 +1150,12 @@ g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
 <p>En el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span>, la derivada direccional <span class="math inline">\(f_{\mathbf{u}}(a,b)\)</span> da la tasa de variación de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> cuando empezamos a cambiar <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en la dirección del vector <span class="math inline">\(\mathbf{u}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.geogebra.org/m/xyu2226b"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Ejemplo interactivo con Geogebra</figcaption>
+<p><a href="https://www.geogebra.org/m/xyu2226b"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img" alt="Ejemplo interactivo con Geogebra"></a></p>
+<figcaption>Ejemplo interactivo con Geogebra</figcaption>
 </figure>
 </div>
 <div id="exm-derivada-direccional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.18 </strong></span>Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.18</strong></span> Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2x,2y),
 \]</span></p>
@@ -1126,7 +1169,7 @@ f'_{\mathbf{u}}(1,1) = \nabla f(1,1)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\
 \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
 \]</span></p>
 <div id="thm-gradiente-direccion-maximo-crecimiento" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.6 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> entonces la dirección de máximo crecimiento de <span class="math inline">\(f\)</span> es la del vector gradiente <span class="math inline">\(\nabla f(P)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 12.6</strong></span> Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> entonces la dirección de máximo crecimiento de <span class="math inline">\(f\)</span> es la del vector gradiente <span class="math inline">\(\nabla f(P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -1165,7 +1208,7 @@ f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(\pi)=-|\nabla f(P)|.
 </div>
 </div>
 <div id="thm-gradiente-normal-curvas-nivel" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.7 </strong></span>Sea <span class="math inline">\(C\)</span> el conjunto de nivel de una función de varias variables <span class="math inline">\(f\)</span> que incluye a un punto <span class="math inline">\(P\)</span>. Si <span class="math inline">\(\mathbf{v}\)</span> es un vector tangente a una trayectoria que circule por <span class="math inline">\(C\)</span> en <span class="math inline">\(P\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 12.7</strong></span> Sea <span class="math inline">\(C\)</span> el conjunto de nivel de una función de varias variables <span class="math inline">\(f\)</span> que incluye a un punto <span class="math inline">\(P\)</span>. Si <span class="math inline">\(\mathbf{v}\)</span> es un vector tangente a una trayectoria que circule por <span class="math inline">\(C\)</span> en <span class="math inline">\(P\)</span>, entonces</p>
 <p><span class="math display">\[
 \nabla f(P) \cdot \mathbf{v} = 0.
 \]</span></p>
@@ -1205,7 +1248,7 @@ Demostración
 P+t\nabla f(P) = (a, b) + t \nabla f(a,b).
 \]</span></p>
 <div id="exm-tangente-normal-funcion-implicita-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.19 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.19</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[
 P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 \]</span></p>
@@ -1225,12 +1268,12 @@ P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 <h2 data-number="12.11" class="anchored" data-anchor-id="derivadas-de-segundo-orden"><span class="header-section-number">12.11</span> Derivadas de segundo orden</h2>
 <p>Las derivadas parciales de una función son, a su vez, funciones de varias variables que muchas veces pueden volverse a derivar parcialmente con respecto a alguna de sus variables.</p>
 <div id="def-derivadas-segundo-orden" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.16 (Derivadas parciales de segundo orden) </strong></span>Si una función <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> tiene derivada parcial <span class="math display">\[f'_{x_i}(x_1,\ldots,x_n)\]</span> con respecto a la variable <span class="math inline">\(x_i\)</span> en un conjunto <span class="math inline">\(A\)</span>, entonces podemos derivar de nuevo parcialmente <span class="math inline">\(f'_{x_i}\)</span> con respecto a la variable <span class="math inline">\(x_j\)</span>. Esta segunda derivada, cuando existe, se llama <em>derivada parcial de segundo orden</em> de <span class="math inline">\(f\)</span> con respecto a las variables <span class="math inline">\(x_i\)</span> y <span class="math inline">\(x_j\)</span>, y se nota</p>
+<p><span class="theorem-title"><strong>Definición 12.16 (Derivadas parciales de segundo orden)</strong></span> Si una función <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> tiene derivada parcial <span class="math display">\[f'_{x_i}(x_1,\ldots,x_n)\]</span> con respecto a la variable <span class="math inline">\(x_i\)</span> en un conjunto <span class="math inline">\(A\)</span>, entonces podemos derivar de nuevo parcialmente <span class="math inline">\(f'_{x_i}\)</span> con respecto a la variable <span class="math inline">\(x_j\)</span>. Esta segunda derivada, cuando existe, se llama <em>derivada parcial de segundo orden</em> de <span class="math inline">\(f\)</span> con respecto a las variables <span class="math inline">\(x_i\)</span> y <span class="math inline">\(x_j\)</span>, y se nota</p>
 <p><span class="math display">\[\frac{\partial ^2 f}{\partial x_j \partial x_i}= \frac{\partial}{\partial x_j}\left(\frac{\partial f}{\partial x_i}\right).\]</span></p>
 </div>
 <p>De forma análoga se definen las derivadas de orden superior.</p>
 <div id="exm-derivadas-segundo-orden" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.20 </strong></span>La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.20</strong></span> La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial^2 f}{\partial x^2}(x,y) &amp;=
 \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
@@ -1251,7 +1294,7 @@ x^y(\log x)^2.\end{aligned}\]</span></p>
 </div>
 <p>En el ejemplo anterior se aprecia que las <em>derivadas cruzadas</em> de segundo orden <span class="math inline">\(\frac{\partial^2 f}{\partial y\partial x}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x\partial y}\)</span> coinciden. El siguiente teorema establece bajo qué condiciones el orden de derivación no importa.</p>
 <div id="thm-igualdad-derivadas-cruzadas" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.8 (Igualdad de las derivadas cruzadas) </strong></span>Si <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables tal que sus derivadas parciales <span class="math inline">\(\frac{\partial^2 f}{\partial x_i\partial x_j}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x_j\partial x_i}\)</span> existen y son continuas en un conjunto abierto <span class="math inline">\(A\)</span>, entonces para cualquier <span class="math inline">\((x,y)\in A\)</span></p>
+<p><span class="theorem-title"><strong>Teorema 12.8 (Igualdad de las derivadas cruzadas)</strong></span> Si <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables tal que sus derivadas parciales <span class="math inline">\(\frac{\partial^2 f}{\partial x_i\partial x_j}\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x_j\partial x_i}\)</span> existen y son continuas en un conjunto abierto <span class="math inline">\(A\)</span>, entonces para cualquier <span class="math inline">\((x,y)\in A\)</span></p>
 <p><span class="math display">\[
 \frac{\partial^2 f}{\partial x_i\partial x_j}(x,y)
 = \frac{\partial^2 f}{\partial x_j\partial x_i}(x,y).
@@ -1305,7 +1348,7 @@ Demostración
 <section id="matriz-hessiana" class="level2" data-number="12.12">
 <h2 data-number="12.12" class="anchored" data-anchor-id="matriz-hessiana"><span class="header-section-number">12.12</span> Matriz hessiana</h2>
 <div id="def-matriz-hessiana" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.17 (Matriz hessiana) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, para la que existen todas sus derivadas parciales de segundo orden en un punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span>, se define la <em>matriz hessiana</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(\nabla^2f(a)\)</span>, como la matriz cuadrada cuyos elementos son</p>
+<p><span class="theorem-title"><strong>Definición 12.17 (Matriz hessiana)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, para la que existen todas sus derivadas parciales de segundo orden en un punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span>, se define la <em>matriz hessiana</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(\nabla^2f(a)\)</span>, como la matriz cuadrada cuyos elementos son</p>
 <p><span class="math display">\[\nabla^2f(a)=\left(
 \begin{array}{cccc}
 \dfrac{\partial^2 f}{\partial x_1^2}(a) &amp;
@@ -1326,7 +1369,7 @@ Demostración
 <p>Al determinante de esta matriz se le llama <em>hessiano</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(Hf(a)=\lvert \nabla^2f(a)\rvert\)</span>.</p>
 </div>
 <div id="exm-matriz-hessiana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.21 </strong></span>Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.21</strong></span> Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
 <p><span class="math display">\[\nabla^2f(x,y)=\left(
 \begin{array}{cc}
 \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x \partial y}\\
@@ -1370,7 +1413,7 @@ x^{y-1}(y\log x+1) &amp; x^y(\log x)^2
 <section id="extremos" class="level2" data-number="12.13">
 <h2 data-number="12.13" class="anchored" data-anchor-id="extremos"><span class="header-section-number">12.13</span> Extremos</h2>
 <div id="def-extremos-relativos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12.18 (Máximo y mínimo relativos) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span>, se dice que un punto <span class="math inline">\(P\)</span> es un <em>máximo relativo</em> de <span class="math inline">\(f\)</span> si existe un valor <span class="math inline">\(\epsilon&gt;0\)</span> tal que</p>
+<p><span class="theorem-title"><strong>Definición 12.18 (Máximo y mínimo relativos)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span>, se dice que un punto <span class="math inline">\(P\)</span> es un <em>máximo relativo</em> de <span class="math inline">\(f\)</span> si existe un valor <span class="math inline">\(\epsilon&gt;0\)</span> tal que</p>
 <p><span class="math display">\[
 f(P)\geq f(Q)\ \forall Q, |\vec{PQ}|&lt;\epsilon.
 \]</span></p>
@@ -1382,7 +1425,7 @@ f(P)\leq f(Q)\ \forall Q, |\vec{PQ}|&lt;\epsilon.
 </div>
 <p>Para determinar los extremos de una función de varias variables utilizaremos sus derivadas, de forma parecida a como lo hicimos para funciones de una variable.</p>
 <div id="prp-anulacion-gradiente-extremo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 12.1 </strong></span>Si <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables, con derivadas parciales, que tiene un extremo relativo en el punto <span class="math inline">\(P\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 12.1</strong></span> Si <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables, con derivadas parciales, que tiene un extremo relativo en el punto <span class="math inline">\(P\)</span>, entonces</p>
 <p><span class="math display">\[
 \nabla f(P) = \mathbf{0}.
 \]</span></p>
@@ -1420,7 +1463,7 @@ h'(t)
 </div>
 <p>A los puntos donde se anula el vector gradiente, se les denomina <em>puntos críticos</em>.</p>
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.22 </strong></span>Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.22</strong></span> Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
 <p><span class="math display">\[
 f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 \]</span></p>
@@ -1434,7 +1477,7 @@ f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/punto-silla.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
+<figcaption>Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
 </figure>
 </div>
 <p>De la fórmula de Taylor de segundo grado para un campo escalar <span class="math inline">\(f\)</span> en un punto <span class="math inline">\(P\)</span> se deduce que</p>
@@ -1455,7 +1498,7 @@ f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
 </ul>
 <p>Así pues, dependiendo el signo de <span class="math inline">\(\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}\)</span>, se tiene</p>
 <div id="thm-extremos-funcion-varias-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.9 </strong></span>Dado un punto crítico <span class="math inline">\(P\)</span> de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla^2 f(P)\)</span>, se cumple</p>
+<p><span class="theorem-title"><strong>Teorema 12.9</strong></span> Dado un punto crítico <span class="math inline">\(P\)</span> de una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla^2 f(P)\)</span>, se cumple</p>
 <ul>
 <li>Si <span class="math inline">\(\nabla^2f(P)\)</span> es definido positivo entonces <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(P\)</span>.</li>
 <li>Si <span class="math inline">\(\nabla^2f(P)\)</span> es definido negativo entonces <span class="math inline">\(f\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(P\)</span>.</li>
@@ -1465,7 +1508,7 @@ f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
 </div>
 <p>En el caso particular de una función de dos variables se tiene</p>
 <div id="thm-extremos-funcion-dos-variables" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.10 </strong></span>Dado un punto crítico <span class="math inline">\((a, b)\)</span> de una función de dos variables <span class="math inline">\(f(x,y)\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla^2f(a,b)\)</span>, se cumple</p>
+<p><span class="theorem-title"><strong>Teorema 12.10</strong></span> Dado un punto crítico <span class="math inline">\((a, b)\)</span> de una función de dos variables <span class="math inline">\(f(x,y)\)</span> que tiene matriz hessiana <span class="math inline">\(\nabla^2f(a,b)\)</span>, se cumple</p>
 <ul>
 <li>Si <span class="math inline">\(|\nabla^2 f(a,b)|&gt;0\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x^2}(a,b)&gt;0\)</span> entonces <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\((a,b)\)</span>.</li>
 <li>Si <span class="math inline">\(|\nabla^2 f(a,b)|&gt;0\)</span> y <span class="math inline">\(\frac{\partial^2 f}{\partial x^2}(a,b)&lt;0\)</span> entonces <span class="math inline">\(f\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\((a,b)\)</span>.</li>
@@ -1515,7 +1558,7 @@ f''_{uu}(a,b)
 </div>
 </div>
 <div id="exm-extremos-relativos-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.23 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.23</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
 <p><span class="math display">\[
 \nabla f(x,y)= (x^2-1,-y^2+1),
 \]</span></p>
@@ -1543,7 +1586,7 @@ f''_{uu}(a,b)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/extremos.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
+<figcaption>Punto de silla de la función <span class="math inline">\(f(x,y)=y^2-x^2\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -1553,7 +1596,7 @@ f''_{uu}(a,b)
 <h2 data-number="12.14" class="anchored" data-anchor-id="extremos-condicionados"><span class="header-section-number">12.14</span> Extremos condicionados</h2>
 <p>En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función <span class="math inline">\(f(x,y)\)</span> para los puntos que cumplen la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Cuando es posible despejar una de las variables de la ecuación y expresarla como una función explícita de la otra, se puede sustituir esa variable en <span class="math inline">\(f\)</span> y obtener una función de una variable, de manera que se pueden obtener sus extremos como se vio en el capítulo de derivadas de funciones de una variable.</p>
 <div id="exm-extremos-condicionados" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.24 </strong></span>Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.24</strong></span> Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
 <p><span class="math display">\[
 f(x,y)
 = f(x,-2x)
@@ -1572,7 +1615,7 @@ f(x,y)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Curvas de nivel con restricción.</figcaption>
+<figcaption>Curvas de nivel con restricción.</figcaption>
 </figure>
 </div>
 <p>Como se aprecia en la gráfica el mayor de la curva de nivel de <span class="math inline">\(f\)</span> que se corta con la recta <span class="math inline">\(y+2x=0\)</span> es aproximadamente <span class="math inline">\(1.15\)</span> y ocurre en el punto <span class="math inline">\((-\sqrt{1/3}, 2\sqrt{1/3})\)</span>, y el menor valor de la curva de nivel de <span class="math inline">\(f\)</span> que se corta con la recta es aproximadamente <span class="math inline">\(-1.5\)</span> y ocurre en el punto <span class="math inline">\((\sqrt{1/3}, -2\sqrt{1/3})\)</span>.</p>
@@ -1583,7 +1626,7 @@ f(x,y)
 \]</span></p>
 <p>Al número <span class="math inline">\(k\)</span> de esta ecuación se le llama <em>multiplicador de Lagrange</em>, y este resultado da lugar al siguiente procedimiento para obtener los extremos de una función de varias variables con restricciones.</p>
 <div id="thm-multiplicadores-lagrange" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12.11 (Multiplicadores de Lagrange) </strong></span>Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, los extremos relativos de <span class="math inline">\(f\)</span> sujetos a la restricción <span class="math inline">\(g(x_1,\ldots,x_n)=0\)</span>, si <span class="math inline">\(\nabla g(x_1\ldots,x_n)\neq 0\)</span>, son los puntos que cumplen las ecuaciones</p>
+<p><span class="theorem-title"><strong>Teorema 12.11 (Multiplicadores de Lagrange)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span>, los extremos relativos de <span class="math inline">\(f\)</span> sujetos a la restricción <span class="math inline">\(g(x_1,\ldots,x_n)=0\)</span>, si <span class="math inline">\(\nabla g(x_1\ldots,x_n)\neq 0\)</span>, son los puntos que cumplen las ecuaciones</p>
 <p><span class="math display">\[\begin{align*}
 \nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n) \\
 g(x_1,\ldots, x_n) = 0
@@ -1615,7 +1658,7 @@ h'(0)
 = \nabla f(a,b,c)\mathbf{f}'(0)
 =0,
 \]</span></p>
-<p>de donde se deduce que <span class="math inline">\(\nabla f(a,b,c)\)</span> es ortogonal a vector tangente a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=0\)</span>. Pero como la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> está inscrita en la superficie de nivel de nivel <span class="math inline">\(g(x,y,z)=0\)</span>, por el <a href="#thm-gradiente-normal-curvas-nivel">Teorema&nbsp;<span>12.7</span></a>, si <span class="math inline">\(\nabla g(a,b,c)\neq 0\)</span> entonces también es ortogonal a <span class="math inline">\(\mathbf{f}'(0)\)</span>, por lo que <span class="math inline">\(\nabla f(a,b,c)\)</span> y <span class="math inline">\(\nabla g(a,b,c)\)</span> deben ser paralelos, es decir,</p>
+<p>de donde se deduce que <span class="math inline">\(\nabla f(a,b,c)\)</span> es ortogonal a vector tangente a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=0\)</span>. Pero como la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> está inscrita en la superficie de nivel de nivel <span class="math inline">\(g(x,y,z)=0\)</span>, por el <a href="#thm-gradiente-normal-curvas-nivel" class="quarto-xref">Teorema&nbsp;<span>12.7</span></a>, si <span class="math inline">\(\nabla g(a,b,c)\neq 0\)</span> entonces también es ortogonal a <span class="math inline">\(\mathbf{f}'(0)\)</span>, por lo que <span class="math inline">\(\nabla f(a,b,c)\)</span> y <span class="math inline">\(\nabla g(a,b,c)\)</span> deben ser paralelos, es decir,</p>
 <p><span class="math display">\[
 \nabla f(a,b,c)
 = k\nabla g(a,b,c)
@@ -1626,7 +1669,7 @@ h'(0)
 </div>
 </div>
 <div id="exm-multiplicadores-lagrange" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.25 </strong></span>Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.25</strong></span> Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
 <p>Tomando <span class="math inline">\(g(x,y)=x^2+y^2-1\)</span>, podemos expresar la circunferencia mediante la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Los extremos relativos de <span class="math inline">\(f\)</span> condicionados por <span class="math inline">\(g(x,y)=0\)</span>, deben cumplir la ecuación de los multiplicadores de Lagrange</p>
 <p><span class="math display">\[
 \nabla f(x,y) = k \nabla g(x,y)
@@ -1673,7 +1716,7 @@ P^1_{f,P}(x,y) &amp;= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
 \end{align*}\]</span></p>
 <p>que coincide con el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-lineal-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.26 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.26</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1715,7 +1758,7 @@ P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
 \end{gathered}
 \]</span></p>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.27 </strong></span>Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.27</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1803,6 +1846,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -1869,13 +1939,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1954,10 +2026,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1967,8 +2056,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1980,7 +2078,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2024,6 +2245,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2049,6 +2271,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2110,17 +2358,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./12-funciones-vectoriales.html" class="pagination-link">
+      <a href="./12-funciones-vectoriales.html" class="pagination-link" aria-label="Análisis de funciones vectoriales">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Análisis de funciones vectoriales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./14-integrales-funciones-varias-variables.html" class="pagination-link">
+      <a href="./14-integrales-funciones-varias-variables.html" class="pagination-link" aria-label="Integrales de funciones de varias variables">
         <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Integrales de funciones de varias variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

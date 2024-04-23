@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 11&nbsp; Análisis de funciones vectoriales">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/funciones-vectoriales/trayectoria-plano.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 11&nbsp; Análisis de funciones vectoriales">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/funciones-vectoriales/trayectoria-plano.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-funciones-vectoriales.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Análisis de funciones vectoriales</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-funciones-vectoriales.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Análisis de funciones vectoriales</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -293,7 +327,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -314,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="funciones-vectoriales-de-una-variable-real" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="funciones-vectoriales-de-una-variable-real"><span class="header-section-number">11.1</span> Funciones vectoriales de una variable real</h2>
 <div id="def-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.1 (Función vectorial de una variable real) </strong></span>Una <em>función vectorial de una variable real</em> o <em>campo vectorial de una variable escalar</em> es una función que asocia cada valor escalar <span class="math inline">\(t\in D\subseteq \mathbb{R}\)</span> con un vector <span class="math inline">\((f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>:</p>
+<p><span class="theorem-title"><strong>Definición 11.1 (Función vectorial de una variable real)</strong></span> Una <em>función vectorial de una variable real</em> o <em>campo vectorial de una variable escalar</em> es una función que asocia cada valor escalar <span class="math inline">\(t\in D\subseteq \mathbb{R}\)</span> con un vector <span class="math inline">\((f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{rccl}
 \mathbf{f}: &amp; \mathbb{R} &amp; \longrightarrow &amp; \mathbb{R}^n \\
@@ -338,29 +374,29 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/trayectoria-plano.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Trayectoria de una función vectorial en el plano real.</figcaption>
+<figcaption>Trayectoria de una función vectorial en el plano real.</figcaption>
 </figure>
 </div>
 <p>Y la gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span> es una trayectoria en el espacio real.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/trayectoria-espacio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Trayectoria de una función vectorial en el espacio real.</figcaption>
+<figcaption>Trayectoria de una función vectorial en el espacio real.</figcaption>
 </figure>
 </div>
 <p>Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.</p>
 <div id="exm-parametrizacion-trayectorias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.1 </strong></span>Las función vectorial <span class="math inline">\(\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,2\pi]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))\)</span> en el intervalo <span class="math inline">\(x\in[0,\pi]\)</span>. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=2x\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=t/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.1</strong></span> Las función vectorial <span class="math inline">\(\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,2\pi]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))\)</span> en el intervalo <span class="math inline">\(x\in[0,\pi]\)</span>. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=2x\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=t/2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/parametrizacion-trayectoria-circular.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Parametrización de una trayectoria circular.</figcaption>
+<figcaption>Parametrización de una trayectoria circular.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/parametrizacion-trayectoria-circular-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Otra parametrización de la trayectoria circular.</figcaption>
+<figcaption>Otra parametrización de la trayectoria circular.</figcaption>
 </figure>
 </div>
 </div>
@@ -370,14 +406,14 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="11.2" class="anchored" data-anchor-id="límites-y-continuidad-de-una-función-vectorial"><span class="header-section-number">11.2</span> Límites y continuidad de una función vectorial</h2>
 <p>Puesto que una función vectorial se compone de funciones reales de variable real, muchos de los conceptos vistos para estas funciones se pueden extender fácilmente a las funciones vectoriales. El límite de una función vectorial, por ejemplo, se define mediante el vector de los límites de las funciones componentes.</p>
 <div id="def-limite-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.2 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define el <em>límite</em> de <span class="math inline">\(\mathbf{f}\)</span> cuando <span class="math inline">\(t\)</span> se aproxima a <span class="math inline">\(a\)</span> como el vector</p>
+<p><span class="theorem-title"><strong>Definición 11.2</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define el <em>límite</em> de <span class="math inline">\(\mathbf{f}\)</span> cuando <span class="math inline">\(t\)</span> se aproxima a <span class="math inline">\(a\)</span> como el vector</p>
 <p><span class="math display">\[
 \lim_{t\to a} \mathbf{f}(t) = \left(\lim_{t\to a} f_1(t), \ldots, \lim_{t\to a} f_n(t)\right),
 \]</span></p>
 <p>siempre que existan los límites de las funciones componentes.</p>
 </div>
 <div id="exm-limite-funciones-vectoriales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.2 </strong></span>El límite de la función vectorial <span class="math inline">\(\mathbf{f}(t)=\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.2</strong></span> El límite de la función vectorial <span class="math inline">\(\mathbf{f}(t)=\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{t\to 0} \mathbf{f}(t)
 &amp;= \lim_{t\to 0}\left(t^2+1, \frac{\operatorname{sen}(t)}{t}, t\cos\left(\frac{1}{t}\right)\right) \\
@@ -387,13 +423,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Lo mismo pasa con el concepto de continuidad.</p>
 <div id="def-funcion-vectorial-continua" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.3 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que <span class="math inline">\(\mathbf{f}\)</span> es continua en <span class="math inline">\(t=a\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 11.3</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que <span class="math inline">\(\mathbf{f}\)</span> es continua en <span class="math inline">\(t=a\)</span> si</p>
 <p><span class="math display">\[
 \lim_{t\to a} \mathbf{f}(t) = \mathbf{f}(a).
 \]</span></p>
 </div>
 <div id="prp-funcion-vectorial-continua" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11.1 </strong></span>Una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es continua en <span class="math inline">\(t=a\)</span> si y solo si sus funciones componentes son continuas en <span class="math inline">\(t=a\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 11.1</strong></span> Una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es continua en <span class="math inline">\(t=a\)</span> si y solo si sus funciones componentes son continuas en <span class="math inline">\(t=a\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -418,7 +454,7 @@ Demostración
 <h2 data-number="11.3" class="anchored" data-anchor-id="derivada-de-una-función-vectorial"><span class="header-section-number">11.3</span> Derivada de una función vectorial</h2>
 <p>El concepto de derivada como límite de la tasa de variación instantánea puede extenderse fácilmente a funciones vectoriales.</p>
 <div id="def-derivada-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.4 (Derivada de una función vectorial) </strong></span>Se dice que una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es <em>derivable</em> o <em>diferenciable</em> en un punto <span class="math inline">\(t=a\)</span> si existe el límite</p>
+<p><span class="theorem-title"><strong>Definición 11.4 (Derivada de una función vectorial)</strong></span> Se dice que una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es <em>derivable</em> o <em>diferenciable</em> en un punto <span class="math inline">\(t=a\)</span> si existe el límite</p>
 <p><span class="math display">\[
 \lim_{\Delta t\rightarrow 0} \frac{\mathbf{f}(a+\Delta t)-\mathbf{f}(a)}{\Delta t}.
 \]</span></p>
@@ -426,7 +462,7 @@ Demostración
 </div>
 <p>Muchas de las propiedades de las funciones reales de variable real pueden extenderse a las funciones vectoriales de variable real a través de sus componentes. Así, por ejemplo, la derivada de una función vectorial puede obtenerse a partir de las derivadas de sus funciones componentes.</p>
 <div id="thm-derivada-funciones-vectoriales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.1 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, si <span class="math inline">\(f_i(t)\)</span> es derivable en <span class="math inline">\(t=a\)</span> para cada <span class="math inline">\(i=1,\ldots,n\)</span>, entonces <span class="math inline">\(\mathbf{f}\)</span> es derivable en <span class="math inline">\(a\)</span> y su derivada vale</p>
+<p><span class="theorem-title"><strong>Teorema 11.1</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, si <span class="math inline">\(f_i(t)\)</span> es derivable en <span class="math inline">\(t=a\)</span> para cada <span class="math inline">\(i=1,\ldots,n\)</span>, entonces <span class="math inline">\(\mathbf{f}\)</span> es derivable en <span class="math inline">\(a\)</span> y su derivada vale</p>
 <p><span class="math display">\[
 \mathbf{f}'(a)=(f_1'(a),\ldots,f_n'(a))
 \]</span></p>
@@ -459,7 +495,7 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.3 </strong></span>La derivada de la función vectorial <span class="math inline">\(\mathbf{f}(t)= (\ln(t^2), t^3-t, e^{t/2})\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.3</strong></span> La derivada de la función vectorial <span class="math inline">\(\mathbf{f}(t)= (\ln(t^2), t^3-t, e^{t/2})\)</span> es</p>
 <p><span class="math display">\[
 \mathbf{f}'(t)
 = ((\ln(t^2))', (t^3-t)', (e^{t/2})')
@@ -473,7 +509,7 @@ Demostración
 \]</span></p>
 </div>
 <div id="prp-propiedades-derivada-funciones-vectoriales" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11.2 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{g}(t)\)</span> son dos funciones vectoriales derivables, y <span class="math inline">\(f(t)\)</span> es una función real derivable, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 11.2</strong></span> Si <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{g}(t)\)</span> son dos funciones vectoriales derivables, y <span class="math inline">\(f(t)\)</span> es una función real derivable, entonces</p>
 <ol type="a">
 <li><p><span class="math inline">\((\mathbf{f}(t)+\mathbf{g}(t))' = \mathbf{f}'(t) + \mathbf{g}'(t)\)</span>.</p></li>
 <li><p><span class="math inline">\((c \mathbf{f}(t))' = c \mathbf{f}'(t) \forall c\in\mathbb{R}\)</span>.</p></li>
@@ -501,7 +537,7 @@ Demostración
 </div>
 </div>
 <div id="thm-regla-cadena-funciones-vectoriales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.2 (Regla de la cadena de funciones vectoriales) </strong></span>Si <span class="math inline">\(f(t)\)</span> es una función real derivable en <span class="math inline">\(t=a\)</span> y <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial derivable en <span class="math inline">\(t=f(a)\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 11.2 (Regla de la cadena de funciones vectoriales)</strong></span> Si <span class="math inline">\(f(t)\)</span> es una función real derivable en <span class="math inline">\(t=a\)</span> y <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial derivable en <span class="math inline">\(t=f(a)\)</span>, entonces</p>
 <p><span class="math display">\[
 (\mathbf{f}\circ f)'(a) = \mathbf{f}'(f(a))f'(a).
 \]</span></p>
@@ -519,7 +555,7 @@ Demostración
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(\mathbf{f}(t) = (f_1(t),\ldots,f_n(t))\)</span>. Aplicando el <a href="#thm-derivada-funciones-vectoriales">Teorema&nbsp;<span>11.1</span></a> se tiene</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(\mathbf{f}(t) = (f_1(t),\ldots,f_n(t))\)</span>. Aplicando el <a href="#thm-derivada-funciones-vectoriales" class="quarto-xref">Teorema&nbsp;<span>11.1</span></a> se tiene</p>
 <p><span class="math display">\[\begin{align*}
 (\mathbf{f}\circ f)'(a)
 &amp;= \mathbf{f}(f(a))'
@@ -533,7 +569,7 @@ Demostración
 </div>
 </div>
 <div id="def-curva-suave" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.5 (Curva suave) </strong></span>Se dice que la trayectoria de una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es una <em>curva suave</em> en el intervalo <span class="math inline">\(I=(a,b)\)</span> si <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua y no nula <span class="math inline">\(\forall t\in I\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 11.5 (Curva suave)</strong></span> Se dice que la trayectoria de una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> es una <em>curva suave</em> en el intervalo <span class="math inline">\(I=(a,b)\)</span> si <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua y no nula <span class="math inline">\(\forall t\in I\)</span>.</p>
 </div>
 <section id="recta-tangente-a-una-trayectoria-en-el-plano-real" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="recta-tangente-a-una-trayectoria-en-el-plano-real"><span class="header-section-number">11.3.1</span> Recta tangente a una trayectoria en el plano real</h3>
@@ -541,18 +577,18 @@ Demostración
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/derivada-vectorial-secante.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Vector secante a una trayectoria en el espacio real.</figcaption>
+<figcaption>Vector secante a una trayectoria en el espacio real.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/derivada-vectorial-tangente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Vector derivada tangente a una trayectoria en el espacio real.</figcaption>
+<figcaption>Vector derivada tangente a una trayectoria en el espacio real.</figcaption>
 </figure>
 </div>
 <p>Aprovechando que el vector de la derivada en un punto es tangente a la trayectoria en ese punto, podemos obtener fácilmente la ecuación de la recta tangente a la trayectoria de la función vectorial en el punto.</p>
 <div id="def-tangente-trayectoria-plano" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.6 (Recta tangente a una trayectoria en el plano real) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t))\)</span> en el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta tangente a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, a la recta de ecuación vectorial</p>
+<p><span class="theorem-title"><strong>Definición 11.6 (Recta tangente a una trayectoria en el plano real)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t))\)</span> en el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta tangente a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, a la recta de ecuación vectorial</p>
 <p><span class="math display">\[\begin{align*}
 (x(t),y(t))
 &amp;= \mathbf{f}(a)+t\mathbf{f}'(a) = (x(a),y(a))+t(x'(a),y'(a)) \\
@@ -577,7 +613,7 @@ y(t) = y(a) + ty'(a)
 y-y(a)=\frac{y'(a)}{x'(a)}(x-x(a)).
 \]</span></p>
 <div id="exm-tangente-trayectoria-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.4 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su derivada es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.4</strong></span> Dada la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su derivada es</p>
 <p><span class="math display">\[
 \mathbf{f}'(t) = (x'(t),y'(t)) = (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>
@@ -600,7 +636,7 @@ y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sq
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/tangente-trayectoria-plano.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recta tangente a una trayectoria circular en el plano.</figcaption>
+<figcaption>Recta tangente a una trayectoria circular en el plano.</figcaption>
 </figure>
 </div>
 </div>
@@ -609,7 +645,7 @@ y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sq
 <h3 data-number="11.3.2" class="anchored" data-anchor-id="recta-normal-a-una-trayectoria-en-el-plano-real"><span class="header-section-number">11.3.2</span> Recta normal a una trayectoria en el plano real</h3>
 <p>Como acabamos de ver, la recta tangente a la trayectoria de la función vectorial <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, está dirigida por el vector de la derivada <span class="math inline">\(\mathbf{f}'(a)=(x'(a),y'(a))\)</span>. Si en lugar de tomar ese vector se toma como vector director el vector <span class="math inline">\((y'(a),-x'(a))\)</span>, que es ortogonal a <span class="math inline">\(\mathbf{f}'(a)\)</span>, se obtiene otra recta que se conoce como <em>recta normal a la trayectoria</em>.</p>
 <div id="def-normal-trayectoria-plano" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.7 (Recta normal a una trayectoria en el plano real) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t))\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta normal</em> a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span> a la recta de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 11.7 (Recta normal a una trayectoria en el plano real)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t))\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta normal</em> a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span> a la recta de ecuación</p>
 <p><span class="math display">\[
 (x(t),y(t)) = (x(a),y(a))+t(y'(a),-x'(a)) = (x(a)+ty'(a),y(a)-tx'(a)).
 \]</span></p>
@@ -636,7 +672,7 @@ Nota
 </div>
 </div>
 <div id="exm-normal-tangente-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.5 </strong></span>Siguiendo con el ejemplo de la trayectoria circular de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la ecuación vectorial de la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.5</strong></span> Siguiendo con el ejemplo de la trayectoria circular de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la ecuación vectorial de la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 (x(t),y(t))
 &amp;= (\cos(\pi/4),\operatorname{sen}(\pi/4)) + t(\cos(\pi/4),\operatorname{sen}(\pi/4)) \\
@@ -654,7 +690,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/normal-trayectoria-plano.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recta normal a una trayectoria circular en el plano.</figcaption>
+<figcaption>Recta normal a una trayectoria circular en el plano.</figcaption>
 </figure>
 </div>
 </div>
@@ -674,9 +710,9 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 <p><span class="math display">\[
 \frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 \]</span></p>
-<p>que como se puede comprobar, coinciden con las ecuaciones vistas en <a href="07-derivadas.html#def-tangente-funcion">Definición&nbsp;<span>7.6</span></a> y <a href="07-derivadas.html#def-normal-funcion">Definición&nbsp;<span>7.7</span></a>.</p>
+<p>que como se puede comprobar, coinciden con las ecuaciones vistas en <a href="07-derivadas.html#def-tangente-funcion" class="quarto-xref">Definición&nbsp;<span>7.6</span></a> y <a href="07-derivadas.html#def-normal-funcion" class="quarto-xref">Definición&nbsp;<span>7.7</span></a>.</p>
 <div id="exm-tangente-normal-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.6 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la función vectorial cuya trayectoria traza la gráfica de esta función es <span class="math inline">\(\mathbf{f}(t)=(t,t^2)\)</span> y su vector tangente es <span class="math inline">\(\mathbf{f}'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.6</strong></span> Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la función vectorial cuya trayectoria traza la gráfica de esta función es <span class="math inline">\(\mathbf{f}(t)=(t,t^2)\)</span> y su vector tangente es <span class="math inline">\(\mathbf{f}'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
 <p><span class="math display">\[
 \frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
 \]</span></p>
@@ -690,7 +726,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 <h3 data-number="11.3.3" class="anchored" data-anchor-id="recta-tangente-a-una-trayectoria-en-el-espacio-real"><span class="header-section-number">11.3.3</span> Recta tangente a una trayectoria en el espacio real</h3>
 <p>El concepto de recta tangente a una trayectoria en el plano real puede extenderse fácilmente a trayectorias en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <div id="def-tangente-trayectoria-espacio" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.8 (Recta tangente a una trayectoria en el espacio real) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t),z(t))\)</span> en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, se llama <em>recta tangente a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, a la recta de ecuación vectorial</p>
+<p><span class="theorem-title"><strong>Definición 11.8 (Recta tangente a una trayectoria en el espacio real)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t),z(t))\)</span> en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, se llama <em>recta tangente a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, a la recta de ecuación vectorial</p>
 <p><span class="math display">\[\begin{align*}
 (x(t), y(t), z(t))
 &amp;= f(a)+tf'(a) = (x(a), y(a), z(a)) + t(x'(a), y'(a), z'(a)) \\
@@ -703,7 +739,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 \]</span></p>
 <p>siempre que <span class="math inline">\(x'(a)\neq 0\)</span>, <span class="math inline">\(y'(a)\neq 0\)</span> y <span class="math inline">\(z'(a)\neq 0\)</span>.</p>
 <div id="exm-tangente-trayectoria-espacio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.7 </strong></span>Dada la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span> en el espacio real, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.7</strong></span> Dada la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span> en el espacio real, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
 <p><span class="math display">\[
 \mathbf{f}(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
 \]</span></p>
@@ -718,7 +754,7 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/tangente-trayectoria-espacio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recta tangente a una trayectoria en el espacio.</figcaption>
+<figcaption>Recta tangente a una trayectoria en el espacio.</figcaption>
 </figure>
 </div>
 </div>
@@ -734,13 +770,13 @@ y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 \end{gathered}
 \]</span></p>
 <div id="def-plano-normal-trayectoria-espacio" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.9 (Plano normal a una trayectoria en el espacio real) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t),z(t))\)</span> en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, se llama <em>plano normal a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, al plano de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 11.9 (Plano normal a una trayectoria en el espacio real)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(x(t),y(t),z(t))\)</span> en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, se llama <em>plano normal a la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=a\)</span>, al plano de ecuación</p>
 <p><span class="math display">\[
 x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 \]</span></p>
 </div>
 <div id="exm-plano-normal-trayectoria-espacio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.8 </strong></span>Para la trayectoria de la función vectorial del ejemplo anterior <span class="math inline">\(\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span> la trayectoria pasa por el punto</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.8</strong></span> Para la trayectoria de la función vectorial del ejemplo anterior <span class="math inline">\(\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span> la trayectoria pasa por el punto</p>
 <p><span class="math display">\[
 \mathbf{f}(\pi/2)=(\cos(\pi/2),\operatorname{sen}(\pi/2),\pi/2)=(0,1,\pi/2),
 \]</span></p>
@@ -755,7 +791,7 @@ x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/plano-normal-trayectoria-espacio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Plano normal a una trayectoria en el espacio.</figcaption>
+<figcaption>Plano normal a una trayectoria en el espacio.</figcaption>
 </figure>
 </div>
 <p><a href="https://www.geogebra.org/m/Q2C7EfBn"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Ejemplo interactivo">Ejemplo interactivo</a></p>
@@ -766,7 +802,7 @@ x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 <h2 data-number="11.4" class="anchored" data-anchor-id="integral-de-una-función-vectorial"><span class="header-section-number">11.4</span> Integral de una función vectorial</h2>
 <p>Al igual que la derivada, el concepto de integral se puede extender de funciones reales a funciones vectoriales de forma natural, expresando la integral en términos de las integrales de las funciones componentes. El teorema fundamental del Cálculo también se cumple para funciones vectoriales.</p>
 <div id="def-primitiva-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.10 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que una función vectorial <span class="math inline">\(\mathbf{F}(t)\)</span> es una <em>primitiva</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> si se cumple que <span class="math inline">\(\mathbf{F}'(t) = \mathbf{f}(t)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 11.10</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que una función vectorial <span class="math inline">\(\mathbf{F}(t)\)</span> es una <em>primitiva</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> si se cumple que <span class="math inline">\(\mathbf{F}'(t) = \mathbf{f}(t)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -782,14 +818,14 @@ Observación
 </div>
 </div>
 <div id="def-integral-indefinida-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.11 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.11</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> como</p>
 <p><span class="math display">\[
 \int \mathbf{f}(t)\, dt = \mathbf{F}(t) + \mathbf{C},
 \]</span></p>
 <p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es cualquier función vectorial primitiva de <span class="math inline">\(\mathbf{f}(t)\)</span> y <span class="math inline">\(\mathbf{C}\)</span> es un vector constante en <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 </div>
 <div id="thm-integral-indefinida-funcion-vectorial" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))\)</span> es una función vectorial integrable en <span class="math inline">\(\mathbb{R}^n\)</span> entonces</p>
+<p><span class="theorem-title"><strong>Teorema 11.3</strong></span> Si <span class="math inline">\(\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))\)</span> es una función vectorial integrable en <span class="math inline">\(\mathbb{R}^n\)</span> entonces</p>
 <p><span class="math display">\[
 \int \mathbf{f}(t)\, dt = \left(\int f_1(t)\, dt, \ldots, \int f_n(t)\,dt\right).
 \]</span></p>
@@ -819,7 +855,7 @@ Demostración
 </div>
 </div>
 <div id="exm-integral-indefinida-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.9 </strong></span>La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.9</strong></span> La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int \mathbf{f}(t)\, dt
 &amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
@@ -827,7 +863,7 @@ Demostración
 \end{align*}\]</span></p>
 </div>
 <div id="def-integral-definida-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.12 </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, con <span class="math inline">\(f_1(t),\ldots,f_n(t)\)</span> funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral definida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(I\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.12</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, con <span class="math inline">\(f_1(t),\ldots,f_n(t)\)</span> funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral definida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
 \int_a^b \mathbf{f}(t)\, dt = \left(\int_a^b f_1(t)\, dt, \ldots, \int_a^b f_n(t)\,dt\right).
 \]</span></p>
@@ -843,7 +879,7 @@ Demostración
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/longitud-trayectoria-funcion-vectorial.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aproximación de la longitud de una trayectoria mediante segmentos.</figcaption>
+<figcaption>Aproximación de la longitud de una trayectoria mediante segmentos.</figcaption>
 </figure>
 </div>
 <p>Resulta evidente que a medida que se toman refinamientos sucesivos de la partición, esta aproximación será mejor, de manera que podemos llegar a obtener la longitud exacta de la curva tomando el límite cuando <span class="math inline">\(m\to\infty\)</span>, es decir,</p>
@@ -880,14 +916,14 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 \end{align*}\]</span></p>
 <p>Así pues, podemos definir la longitud de una trayectoria de una función vectorial de esta manera.</p>
 <div id="def-longitud-trayectoria-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.13 (Longitud de la trayectoria de una función vectorial) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>longitud de la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.13 (Longitud de la trayectoria de una función vectorial)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>longitud de la trayectoria</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
 \int_a^b |\mathbf{f}'(t)|\, dt,
 \]</span></p>
 <p>siempre y cuando la trayectoria se recorra exactamente una vez para <span class="math inline">\(t\in[a,b]\)</span>.</p>
 </div>
 <div id="exm-longitud-trayectoria-espiral" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.10 </strong></span>Veamos cuánto mide la trayectoria descrita por la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t), t)\)</span> en el intervalo <span class="math inline">\([0,2\pi]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.10</strong></span> Veamos cuánto mide la trayectoria descrita por la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t), t)\)</span> en el intervalo <span class="math inline">\([0,2\pi]\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^{2\pi} |\mathbf{f}'(t)|\, dt
 &amp;= \int_0^{2\pi} |(-\operatorname{sen}(t), \cos(t), 1)|\, dt \\
@@ -899,7 +935,7 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 </div>
 <p>En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.</p>
 <div id="def-funcion-longitud-arco" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.14 (Función longitud de arco de una trayectoria) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>funcion longitud de arco</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.14 (Función longitud de arco de una trayectoria)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>, se define la <em>funcion longitud de arco</em> de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
 s(t) = \int_a^t |\mathbf{f}'(x)|\, dx,
 \]</span></p>
@@ -907,18 +943,18 @@ s(t) = \int_a^t |\mathbf{f}'(x)|\, dx,
 </div>
 <p>A partir de la función longitud de arco se puede reparametrizar <span class="math inline">\(\mathbf{f}(t)\)</span> como <span class="math inline">\(\mathbf{f}(t(s))\)</span>, donde <span class="math inline">\(t(s)\)</span> es la función inversa de <span class="math inline">\(s(t)\)</span>. A esta parametrización de la trayectoria se le conoce como <em>parametrización de la longitud de arco</em>.</p>
 <div id="def-parametrizacion-longitud-arco-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.15 (Parametrización longitud de arco de una trayectoria) </strong></span>Dada una trayectoria de función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>. Se define la <em>parametrización de la longitud de arco</em> de la trayectoria como la función vectorial</p>
+<p><span class="theorem-title"><strong>Definición 11.15 (Parametrización longitud de arco de una trayectoria)</strong></span> Dada una trayectoria de función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, tal que <span class="math inline">\(\mathbf{f}'(t)\)</span> es continua en el intervalo <span class="math inline">\(I=[a,b]\)</span>. Se define la <em>parametrización de la longitud de arco</em> de la trayectoria como la función vectorial</p>
 <p><span class="math display">\[
 \tilde{\mathbf{f}}(s) = \mathbf{f}(t(s)),
 \]</span></p>
 <p>donde <span class="math inline">\(t(s)\)</span> es la inversa de la función longitud de arco de <span class="math inline">\(\mathbf{f}\)</span>.</p>
 </div>
 <div id="exm-parametrización-longitud-arco" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.11 </strong></span>La función vectorial <span class="math inline">\(\mathbf{f}(t)=(3t+1, 4t-2)\)</span> traza la siguiente gráfica en el intervalo <span class="math inline">\(t\in[0,2]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.11</strong></span> La función vectorial <span class="math inline">\(\mathbf{f}(t)=(3t+1, 4t-2)\)</span> traza la siguiente gráfica en el intervalo <span class="math inline">\(t\in[0,2]\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/parametrizacion-longitud-arco-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Parametrización de una trayectoria recta.</figcaption>
+<figcaption>Parametrización de una trayectoria recta.</figcaption>
 </figure>
 </div>
 <p>La función longitud de arco de esta función vectorial es</p>
@@ -937,7 +973,7 @@ s(t)
 \]</span></p>
 </div>
 <div id="prp-parametrizacion-longitud-arco" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11.3 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial que admite una parametrización de longitud de arco de su trayectoria, entonces <span class="math inline">\(\tilde{\mathbf{f}}'(s)\)</span> es un vector unitario.</p>
+<p><span class="theorem-title"><strong>Proposición 11.3</strong></span> Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial que admite una parametrización de longitud de arco de su trayectoria, entonces <span class="math inline">\(\tilde{\mathbf{f}}'(s)\)</span> es un vector unitario.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -991,25 +1027,25 @@ s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
 <p>Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva si que habrá que girar el volante para trazar la curva. Cuanto mayor sea la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.</p>
 <p>Para estudiar la curvatura de la trayectoria de una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span>, analizaremos la variación que experimenta la dirección del vector tangente a la trayectoria, que recordemos es <span class="math inline">\(\mathbf{f}'(t)\)</span>, y por tanto, vendrá dada por la segunda derivada <span class="math inline">\(\mathbf{f}''(t)\)</span>. Sin embargo, este valor depende de la parametrización de la trayectoria.</p>
 <div id="exm-curvatura-dependiente-parametrizacion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.12 </strong></span>Ya hemos visto que la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))\)</span> describe una trayectoria circular de radio 1 centrada en el origen. Su derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t))\)</span> y su segunda derivada <span class="math inline">\(\mathbf{f}''(t)=(-\cos(t),-\operatorname{sen}(t))\)</span>, que tiene módulo <span class="math inline">\(|\mathbf{f}''(t)| = \sqrt{(-\cos(t))^2+(-\operatorname{sen}(t))^2} = 1\)</span> para cualquier valor de <span class="math inline">\(t\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.12</strong></span> Ya hemos visto que la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))\)</span> describe una trayectoria circular de radio 1 centrada en el origen. Su derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t))\)</span> y su segunda derivada <span class="math inline">\(\mathbf{f}''(t)=(-\cos(t),-\operatorname{sen}(t))\)</span>, que tiene módulo <span class="math inline">\(|\mathbf{f}''(t)| = \sqrt{(-\cos(t))^2+(-\operatorname{sen}(t))^2} = 1\)</span> para cualquier valor de <span class="math inline">\(t\)</span>.</p>
 <p>Sin embargo, si tomamos una parametrización distinta <span class="math inline">\(\mathbf{g}(t)=(\cos(2t), \operatorname{sen}(2t))\)</span> de esta misma trayectoria, se tiene que <span class="math inline">\(\mathbf{g}'(t)=(-2\operatorname{sen}(2t),2\cos(2t))\)</span> y <span class="math inline">\(\mathbf{g}''(t)=(-4\cos(2t), -4\operatorname{sen}(2t))\)</span>, que tiene módulo <span class="math inline">\(|\mathbf{g}''(t)| = \sqrt{(-4\cos(t))^2+(-4\operatorname{sen}(t))^2} = 4\)</span> para cualquier valor de <span class="math inline">\(t\)</span>.</p>
 </div>
 <p>Así pues, para hacer independiente la curvatura de una trayectoria de su parametrización, utilizaremos la parametrización de la longitud de arco.</p>
 <div id="def-curvatura-trayectoria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.16 (Curvatura de una trayectoria) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>curvatura</em> de su trayectoria como</p>
+<p><span class="theorem-title"><strong>Definición 11.16 (Curvatura de una trayectoria)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>curvatura</em> de su trayectoria como</p>
 <p><span class="math display">\[
 \kappa(s) = |\tilde{f}''(s)|
 \]</span></p>
 </div>
 <p>El inconveniente de esta definición es que nos obliga a usar la parametrización longitud de arco, que, a su vez, requiere calcular la longitud de arco de la trayectoria, lo cual no siempre es fácil. Afortunadamente, es posible calcular la curvatura de la trayectoria de cualquier función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> sin necesidad de hacer el cambio a la parametrización longitud de arco. Para ello necesitamos normalizar el vector velocidad.</p>
 <div id="def-vector-tangente-unitario" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.17 (Vector tangente unitario de una función vectorial) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se llama <em>vector tangente unitario</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
+<p><span class="theorem-title"><strong>Definición 11.17 (Vector tangente unitario de una función vectorial)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se llama <em>vector tangente unitario</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
 <p><span class="math display">\[
 \mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}.
 \]</span></p>
 </div>
 <div id="thm-curvatura-trayectoria" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.4 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> entonces la curvatura de su trayectoria es</p>
+<p><span class="theorem-title"><strong>Teorema 11.4</strong></span> Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> entonces la curvatura de su trayectoria es</p>
 <p><span class="math display">\[
 \kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|},
 \]</span></p>
@@ -1052,7 +1088,7 @@ Demostración
 </div>
 </div>
 <div id="exm-curvatura-trayectoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.13 </strong></span>Veamos cuál es la curvatura de la espiral que describe la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)\)</span>. Su primera derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)\)</span>, y su módulo es <span class="math inline">\(|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}\)</span>, de manera que el vector tangente unitario es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.13</strong></span> Veamos cuál es la curvatura de la espiral que describe la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)\)</span>. Su primera derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)\)</span>, y su módulo es <span class="math inline">\(|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}\)</span>, de manera que el vector tangente unitario es</p>
 <p><span class="math display">\[
 T(t)
 = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}
@@ -1069,7 +1105,7 @@ T(t)
 </div>
 <p>En el caso de una trayectoria en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span> se puede utilizar la siguiente fórmula, que suele ser más rápida de calcular, para calcular su curvatura.</p>
 <div id="thm-curvatura-trayectoria-espacio-real" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11.5 </strong></span>Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span>, entonces la curvatura de su trayectoria vale</p>
+<p><span class="theorem-title"><strong>Teorema 11.5</strong></span> Si <span class="math inline">\(\mathbf{f}(t)\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span>, entonces la curvatura de su trayectoria vale</p>
 <p><span class="math display">\[
 \kappa(t)
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
@@ -1157,7 +1193,7 @@ t\in \mbox{Dom}(f)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/movimiento-curvilineo-plano.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Trayectoria de un movimiento curvilíneo en el plano real.</figcaption>
+<figcaption>Trayectoria de un movimiento curvilíneo en el plano real.</figcaption>
 </figure>
 </div>
 <p>En este contexto, para incrementos pequeños de tiempo, el vector <span class="math inline">\(\mathbf{f}(t+\Delta t)-\mathbf{f}(t)\)</span> aproxima la dirección del desplazamiento y su módulo la longitud de la trayectoria desde el punto <span class="math inline">\(\mathbf{f}(t)\)</span> al punto <span class="math inline">\(\mathbf{f}(t+\Delta t)\)</span>, es decir, el espacio recorrido entre estos dos instantes, de manera que el cociente</p>
@@ -1170,7 +1206,7 @@ t\in \mbox{Dom}(f)
 \]</span></p>
 <p>que es el vector derivada de la función vectorial, y que recordemos es tangente a la trayectoria.</p>
 <div id="def-vector-velocidad-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.18 (Vector velocidad) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector velocidad</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
+<p><span class="theorem-title"><strong>Definición 11.18 (Vector velocidad)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector velocidad</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
 <p><span class="math display">\[
 \mathbf{v}(t) = \mathbf{f}'(t).
 \]</span></p>
@@ -1192,7 +1228,7 @@ Advertencia
 </div>
 <p>El vector velocidad explica cómo cambia la posición del objeto con respecto al tiempo. Por ejemplo, si tenemos que en un instante <span class="math inline">\(t=a\)</span> el vector velocidad es <span class="math inline">\(\mathbf{v}=(1,-2)\)</span>, eso indica que la tendencia de cambio del objeto es a avanzar una unidad en eje <span class="math inline">\(x\)</span> y retroceder dos unidades en el eje <span class="math inline">\(y\)</span> por cada unidad de tiempo que pase.</p>
 <div id="exm-movimiento-curvilineo-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.14 </strong></span>El vector velocidad de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.14</strong></span> El vector velocidad de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es</p>
 <p><span class="math display">\[
 \mathbf{v}(t)
 = \mathbf{f}'(t)
@@ -1202,7 +1238,7 @@ Advertencia
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/velocidad-trayectoria-circular.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Velocidad de una trayectoria circular en el plano.</figcaption>
+<figcaption>Velocidad de una trayectoria circular en el plano.</figcaption>
 </figure>
 </div>
 <p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que</p>
@@ -1216,14 +1252,14 @@ Advertencia
 <h3 data-number="11.7.2" class="anchored" data-anchor-id="vector-aceleración"><span class="header-section-number">11.7.2</span> Vector aceleración</h3>
 <p>Del mismo modo que el vector velocidad <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t)\)</span> explica la variación de la posición de un objeto dada por <span class="math inline">\(\mathbf{f}(t)\)</span>, la segunda derivada <span class="math inline">\(\mathbf{f}''(t)\)</span> explica la variación de la velocidad <span class="math inline">\(\mathbf{v}(t)\)</span>.</p>
 <div id="def-vector-aceleracion-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.19 (Vector aceleración) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector derivada del vector velocidad, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 11.19 (Vector aceleración)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector derivada del vector velocidad, es decir,</p>
 <p><span class="math display">\[
 \mathbf{a}(t) = \mathbf{v}'(t) = \mathbf{f}''(t).
 \]</span></p>
 </div>
 <p>El vector aceleración explica cómo cambia la velocidad de un objeto móvil, tanto en dirección como en magnitud. De este modo, la trayectoria que describe el objeto siempre se curva en la dirección que indica el vector aceleración.</p>
 <div id="exm-vector-aceleración-función-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.15 </strong></span>Siguiendo con el ejemplo anterior de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, hemos visto que el vector velocidad es <span class="math inline">\(\mathbf{v}(t)=(-\operatorname{sen}(t), \cos(t))\)</span>, y por tanto el vector aceleración es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.15</strong></span> Siguiendo con el ejemplo anterior de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, hemos visto que el vector velocidad es <span class="math inline">\(\mathbf{v}(t)=(-\operatorname{sen}(t), \cos(t))\)</span>, y por tanto el vector aceleración es</p>
 <p><span class="math display">\[
 \mathbf{a}(t) = (-\cos(t), -\operatorname{sen}(t)),
 \]</span></p>
@@ -1231,7 +1267,7 @@ Advertencia
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/aceleracion-trayectoria-circular.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aceleración de una trayectoria circular en el plano.</figcaption>
+<figcaption>Aceleración de una trayectoria circular en el plano.</figcaption>
 </figure>
 </div>
 </div>
@@ -1252,7 +1288,7 @@ Advertencia
 \]</span></p>
 <p>Esta fórmula descompone el vector aceleración como combinación lineal de los vectores tangente y normal unitarios.</p>
 <div id="def-componente-tangencial-normal-aceleracion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.20 (Componentes tangencial y normal del vector aceleración) </strong></span>Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>componente tangencial del vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> a</p>
+<p><span class="theorem-title"><strong>Definición 11.20 (Componentes tangencial y normal del vector aceleración)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>componente tangencial del vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> a</p>
 <p><span class="math display">\[
 a_T(t) = |\mathbf{v}(t)|',
 \]</span></p>
@@ -1268,7 +1304,7 @@ a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 <p>donde <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.</p>
 <p>Según esto, la componente tangencial <span class="math inline">\(|v(t)|'\)</span>, que apunta al igual que el vector velocidad en la misma dirección del movimiento, depende de cómo varía la rapidez con la que se mueve el objeto, pero no de cómo cambia su dirección. Mientras que la componente normal <span class="math inline">\(\kappa(t)|\mathbf{v}(t)|^2\)</span>, depende de la rapidez con la que se mueve el objeto, pero también de la curvatura de la trayectoria que recorre. Esto es fácil de experimentar al conducir un coche por una carretera curva. Cuanto más cerrada sea la curva o cuanto mayor sea la rapidez con la que se toma, mayor será la aceleración en el sentido normal, lo que, como veremos en la próxima sección, se traduce en una mayor fuerza centrífuga que nos empujará hacia la puerta del exterior de la curva.</p>
 <div id="exm-componente-tangencial-normal-aceleracion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.16 </strong></span>Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial <span class="math inline">\(f(t)=(t^2,2t)\)</span> en el instante <span class="math inline">\(t=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.16</strong></span> Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial <span class="math inline">\(f(t)=(t^2,2t)\)</span> en el instante <span class="math inline">\(t=1\)</span>.</p>
 <p>El vector velocidad es <span class="math inline">\(\mathbf{v}(t) = \mathbf{f}'(t) = (2t,2)\)</span>, y la rapidez</p>
 <p><span class="math display">\[
 |\mathbf{v}(t)|=\sqrt{(2t)^2+2^2} = \sqrt{4t^4+4} = 2\sqrt{t^2+1},
@@ -1321,7 +1357,7 @@ a(1)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/componentes-aceleracion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Componentes tangencial y normal de la aceleración.</figcaption>
+<figcaption>Componentes tangencial y normal de la aceleración.</figcaption>
 </figure>
 </div>
 </div>
@@ -1340,7 +1376,7 @@ a_T(t)
 = \frac{\mathbf{v}(t)\mathbf{a}(t)}{|\mathbf{v}(t)|}
 = \frac{\mathbf{f}'(t)\mathbf{f}''(t)}{|\mathbf{f}'(t)|}.
 \]</span></p>
-<p>Y por otro lado, usando la fórmula de la curvatura del <a href="#thm-curvatura-trayectoria-espacio-real">Teorema&nbsp;<span>11.5</span></a>, se tiene que la componente normal es</p>
+<p>Y por otro lado, usando la fórmula de la curvatura del <a href="#thm-curvatura-trayectoria-espacio-real" class="quarto-xref">Teorema&nbsp;<span>11.5</span></a>, se tiene que la componente normal es</p>
 <p><span class="math display">\[
 a_N
 = \kappa(t)|\mathbf{v}(t)|^2
@@ -1348,7 +1384,7 @@ a_N
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}.
 \]</span></p>
 <div id="exm-componente-tangencial-normal-trayectoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.17 </strong></span>Un objeto se mueve en el espacio real de acuerdo a la función vectorial <span class="math inline">\(\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.17</strong></span> Un objeto se mueve en el espacio real de acuerdo a la función vectorial <span class="math inline">\(\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}\)</span>.</p>
 <p>Su vector velocidad es <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)\)</span> y su vector aceleración <span class="math inline">\(\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)\)</span>.</p>
 <p>Así pues, la componente tangencial de la aceleración es</p>
 <p><span class="math display">\[
@@ -1388,7 +1424,7 @@ a_N
 <p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es fuerza que actúa sobre el objeto en el instante <span class="math inline">\(t\)</span>, <span class="math inline">\(m\)</span> es su masa y <span class="math inline">\(\mathbf{a}(t)\)</span> es la aceleración del objeto en ese instante.</p>
 <p>Como hemos visto, en el caso del movimiento curvilíneo, la aceleración es un vector, y por tanto la fuerza será otro vector proporcional a él.</p>
 <div id="exm-fuerza-centrípeta" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.18 </strong></span>En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.18</strong></span> En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
 <p><span class="math display">\[
 \mathbf{F}(t) = -m(\cos(t), \operatorname{sen}(t)).
 \]</span></p>
@@ -1444,6 +1480,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1512,13 +1575,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1597,10 +1662,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1610,8 +1692,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1623,7 +1714,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1667,6 +1881,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1692,6 +1907,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1753,17 +1994,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11-geometria-plano-espacio.html" class="pagination-link">
+      <a href="./11-geometria-plano-espacio.html" class="pagination-link" aria-label="Geometría vectorial del plano y del espacio reales">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link">
+      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link" aria-label="Derivadas de funciones de varias variables">
         <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

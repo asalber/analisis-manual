@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 1&nbsp; Teoría de conjuntos">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/teoria-conjuntos/union.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 1&nbsp; Teoría de conjuntos">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/teoria-conjuntos/union.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-teoria-conjuntos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-teoria-conjuntos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teoría de conjuntos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -278,7 +312,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -301,10 +337,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="conjuntos" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="conjuntos"><span class="header-section-number">1.1</span> Conjuntos</h2>
 <div id="def-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.1 (Conjunto) </strong></span>Un <em>conjunto</em> es a una colección o agrupación bien definida de objetos que puede considerarse en sí misma otro objeto. Para representar un conjunto se indican sus elementos entre llaves y normalmente se utilizarán letras mayúsculas para referirse a ellos.</p>
+<p><span class="theorem-title"><strong>Definición 1.1 (Conjunto)</strong></span> Un <em>conjunto</em> es a una colección o agrupación bien definida de objetos que puede considerarse en sí misma otro objeto. Para representar un conjunto se indican sus elementos entre llaves y normalmente se utilizarán letras mayúsculas para referirse a ellos.</p>
 </div>
 <div id="exm-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.1 </strong></span>Algunos ejemplos de conjuntos son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.1</strong></span> Algunos ejemplos de conjuntos son:</p>
 <ul>
 <li>El conjunto de los días de la semana es <span class="math inline">\(A = \{\mbox{L, M, X, J, V, S, D}\}\)</span>.</li>
 <li>El conjunto de los colores básicos es <span class="math inline">\(B = \{\mbox{rojo, verde, azul}\}\)</span>.</li>
@@ -313,26 +349,26 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 <div id="def-elemento-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.2 (Elementos) </strong></span>Los objetos que componen un conjunto se llaman <em>elementos</em> o miembros del conjunto.</p>
+<p><span class="theorem-title"><strong>Definición 1.2 (Elementos)</strong></span> Los objetos que componen un conjunto se llaman <em>elementos</em> o miembros del conjunto.</p>
 </div>
 <p>Los elementos de un conjunto pueden ser cualquier cosa (días, colores, personas, etc), pero en este curso nos centraremos los conjuntos numéricos, es decir, los conjuntos cuyos elementos son números, ya que son los que se estudian en el Análisis Matemático.</p>
 <p>Existen dos formas de definir un conjunto: por <em>extensión</em> o por <em>comprensión</em>. La definición extensiva consiste en listar de manera explícita todos sus elementos, como por ejemplo <span class="math inline">\(\{1, 2, 3\}\)</span>, mientras que la intensiva o por comprensión, consiste en dar una propiedad que cumplen los elementos del conjunto y solo ellos, como por ejemplo el conjunto de los números naturales menores que <span class="math inline">\(4\)</span>. En este último caso se suele utilizar la notación <span class="math inline">\(\{x: P(x)\}\)</span>, donde <span class="math inline">\(P(x)\)</span> es la propiedad que cumple <span class="math inline">\(x\)</span>.</p>
 <p>Mientras que las definiciones por extensión no presentan problemas, hay que tener cuidado con las definiciones por comprensión, pues no todas las propiedades definen conjuntos válidos, tal y como demostró <a href="https://es.wikipedia.org/wiki/Bertrand_Russell">Bertrand Russell</a> con su famosa <a href="https://es.wikipedia.org/wiki/Paradoja_de_Russell">paradoja del barbero</a>.</p>
 <div id="def-pertenencia" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.3 (Pertenencia) </strong></span>Si <span class="math inline">\(a\)</span> es un elemento de un conjunto <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(a\)</span> <em>pertenence</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\in A\)</span>. Por el contrario, si <span class="math inline">\(a\)</span> no es un elemento del conjunto <span class="math inline">\(A\)</span>, se dice que <em>no pertenece</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\not \in A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.3 (Pertenencia)</strong></span> Si <span class="math inline">\(a\)</span> es un elemento de un conjunto <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(a\)</span> <em>pertenence</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\in A\)</span>. Por el contrario, si <span class="math inline">\(a\)</span> no es un elemento del conjunto <span class="math inline">\(A\)</span>, se dice que <em>no pertenece</em> a <span class="math inline">\(A\)</span> y se denota <span class="math inline">\(a\not \in A\)</span>.</p>
 </div>
 <div id="exm-pertencia-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.2 </strong></span>Si <span class="math inline">\(A\)</span> es el conjunto de los números naturales pares, <span class="math inline">\(2\in A\)</span>, pero <span class="math inline">\(1\not \in A\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.2</strong></span> Si <span class="math inline">\(A\)</span> es el conjunto de los números naturales pares, <span class="math inline">\(2\in A\)</span>, pero <span class="math inline">\(1\not \in A\)</span>.</p>
 </div>
 <div id="def-igualdad" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.4 (Igualdad) </strong></span>Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son iguales, y se denota <span class="math inline">\(A=B\)</span>, si tienen exactamente los mismos elementos. En caso contrario se escribe <span class="math inline">\(A\neq B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.4 (Igualdad)</strong></span> Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son iguales, y se denota <span class="math inline">\(A=B\)</span>, si tienen exactamente los mismos elementos. En caso contrario se escribe <span class="math inline">\(A\neq B\)</span>.</p>
 </div>
 <p>Conviene remarcar que en un conjunto no puede haber elementos repetidos y tampoco importa el orden en que se listan los elementos.</p>
 <div id="exm-igualdad-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.3 </strong></span><span class="math inline">\(\{1, 2, 3\} = \{3, 1, 2\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.3</strong></span> <span class="math inline">\(\{1, 2, 3\} = \{3, 1, 2\}\)</span>.</p>
 </div>
 <div id="prp-igualdad-relacion-equivalencia" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.1 </strong></span>La igualdad de conjuntos es una <em>relación de equivalencia</em>, es decir, satisface las propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1.1</strong></span> La igualdad de conjuntos es una <em>relación de equivalencia</em>, es decir, satisface las propiedades:</p>
 <ol type="1">
 <li><em>Reflexiva:</em> <span class="math inline">\(A = A\)</span>.</li>
 <li><em>Simétrica:</em> Si <span class="math inline">\(A = B\)</span> entonces <span class="math inline">\(B = A\)</span>.</li>
@@ -340,16 +376,16 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </div>
 <div id="def-subconjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.5 (Subconjunto) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es un <em>subconjunto</em> o está <em>incluído</em> en otro conjunto <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A \subseteq B\)</span>, si todos los elementos de <span class="math inline">\(A\)</span> pertenecen a <span class="math inline">\(B\)</span>, es decir, <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 1.5 (Subconjunto)</strong></span> Se dice que un conjunto <span class="math inline">\(A\)</span> es un <em>subconjunto</em> o está <em>incluído</em> en otro conjunto <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A \subseteq B\)</span>, si todos los elementos de <span class="math inline">\(A\)</span> pertenecen a <span class="math inline">\(B\)</span>, es decir, <span class="math display">\[
 \forall x \in A, x\in B
 \]</span></p>
 <p>Cuando <span class="math inline">\(A\subseteq B\)</span> pero <span class="math inline">\(A\neq B\)</span> se dice que <span class="math inline">\(A\)</span> está <em>estríctamente incluido</em> en <span class="math inline">\(B\)</span> o que <span class="math inline">\(A\)</span> es un <em>subconjunto propio</em> de <span class="math inline">\(B\)</span> y se escribe <span class="math inline">\(A\subsetneq B\)</span>.</p>
 </div>
 <div id="exm-inclusion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.4 </strong></span><span class="math inline">\(\{1, 2, 3\} \subseteq \{3, 1, 2\}\)</span> y <span class="math inline">\(\{1, 3\} \subsetneq \{3, 1, 2\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.4</strong></span> <span class="math inline">\(\{1, 2, 3\} \subseteq \{3, 1, 2\}\)</span> y <span class="math inline">\(\{1, 3\} \subsetneq \{3, 1, 2\}\)</span>.</p>
 </div>
 <div id="prp-inclusion-relacion-orden-parcial" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.2 </strong></span>La inclusión de conjuntos es una <em>relación de orden parcial</em>, es decir, satisface las propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1.2</strong></span> La inclusión de conjuntos es una <em>relación de orden parcial</em>, es decir, satisface las propiedades:</p>
 <ol type="1">
 <li><em>Reflexiva:</em> <span class="math inline">\(A \subseteq A\)</span>.</li>
 <li><em>Antisimétrica:</em> Si <span class="math inline">\(A \subseteq B\)</span> y <span class="math inline">\(B \subseteq A\)</span>, entonces <span class="math inline">\(A = B\)</span>.</li>
@@ -357,66 +393,66 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </div>
 <div id="def-conjunto-vacio" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.6 (Conjunto vacío) </strong></span>El conjunto que no tiene ningún elemento se llama conjunto vacío y se denota <span class="math inline">\(\emptyset\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.6 (Conjunto vacío)</strong></span> El conjunto que no tiene ningún elemento se llama conjunto vacío y se denota <span class="math inline">\(\emptyset\)</span>.</p>
 </div>
 </section>
 <section id="álgebra-de-conjuntos" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="álgebra-de-conjuntos"><span class="header-section-number">1.2</span> Álgebra de conjuntos</h2>
 <p>A continuación se definen las principales operaciones sobre conjuntos y sus propiedades.</p>
 <div id="def-union-conjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.7 (Unión) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>unión</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\cup B\)</span>, al conjunto de todos los elementos que pertenecen al menos a uno de los conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.7 (Unión)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>unión</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\cup B\)</span>, al conjunto de todos los elementos que pertenecen al menos a uno de los conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</p>
 <p><span class="math display">\[A\cup B = \{x\,:\, x\in A\mbox{ o }x\in B\}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/teoria-conjuntos/union.png" class="img-fluid figure-img" style="width:6cm"></p>
-<figcaption class="figure-caption">Unión de conjuntos</figcaption>
+<figcaption>Unión de conjuntos</figcaption>
 </figure>
 </div>
 <div id="exm-union-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.5 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la unión de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cup B=\{1,2,3,4,6\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.5</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la unión de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cup B=\{1,2,3,4,6\}\)</span>.</p>
 </div>
 <div id="def-interseccion-conjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.8 (Intersección) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>intersección</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\cap B\)</span>, al conjunto de todos los elementos comunes a <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.8 (Intersección)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>intersección</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\cap B\)</span>, al conjunto de todos los elementos comunes a <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</p>
 <p><span class="math display">\[A\cap B = \{x\,:\, x\in A\mbox{ y }x\in B\}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/teoria-conjuntos/interseccion.png" class="img-fluid figure-img" style="width:6cm"></p>
-<figcaption class="figure-caption">Intersección de conjuntos</figcaption>
+<figcaption>Intersección de conjuntos</figcaption>
 </figure>
 </div>
 <div id="exm-interseccion-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.6 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cap B=\{2,4\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.6</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\cap B=\{2,4\}\)</span>.</p>
 </div>
 <div id="def-complemento-conjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.9 (Complemento) </strong></span>Dado un conjunto <span class="math inline">\(A\subset \Omega\)</span>, se llama <em>complemento</em> de <span class="math inline">\(A\)</span> con respecto a <span class="math inline">\(\Omega\)</span>, y se denota <span class="math inline">\(\overline A\)</span>, al conjunto de todos los elementos de <span class="math inline">\(\Omega\)</span> que no pertenecen a <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.9 (Complemento)</strong></span> Dado un conjunto <span class="math inline">\(A\subset \Omega\)</span>, se llama <em>complemento</em> de <span class="math inline">\(A\)</span> con respecto a <span class="math inline">\(\Omega\)</span>, y se denota <span class="math inline">\(\overline A\)</span>, al conjunto de todos los elementos de <span class="math inline">\(\Omega\)</span> que no pertenecen a <span class="math inline">\(A\)</span>.</p>
 <p><span class="math display">\[\overline A = \{x\in \Omega\,:\, x\not\in A\}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/teoria-conjuntos/complemento.png" class="img-fluid figure-img" style="width:7cm"></p>
-<figcaption class="figure-caption">Complemento de un conjunto</figcaption>
+<figcaption>Complemento de un conjunto</figcaption>
 </figure>
 </div>
 <div id="exm-complemento-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.7 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>, el contrario de <span class="math inline">\(A\)</span> con respecto a <span class="math inline">\(\Omega\)</span> es <span class="math inline">\(\overline A=\{1,3,5\}\)</span>, y el de <span class="math inline">\(B\)</span> es <span class="math inline">\(\overline B = \{5, 6\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.7</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>, el contrario de <span class="math inline">\(A\)</span> con respecto a <span class="math inline">\(\Omega\)</span> es <span class="math inline">\(\overline A=\{1,3,5\}\)</span>, y el de <span class="math inline">\(B\)</span> es <span class="math inline">\(\overline B = \{5, 6\}\)</span>.</p>
 </div>
 <div id="def-diferencia-conjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.10 (Diferencia) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>diferencia</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A-B\)</span>, al conjunto formado por los elementos de <span class="math inline">\(A\)</span> que no pertenecen a <span class="math inline">\(B\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.10 (Diferencia)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>diferencia</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A-B\)</span>, al conjunto formado por los elementos de <span class="math inline">\(A\)</span> que no pertenecen a <span class="math inline">\(B\)</span>, es decir,</p>
 <p><span class="math display">\[A-B = \{x\,:\, x\in A\mbox{ y }x\not\in B\}.\]</span></p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/teoria-conjuntos/diferencia.png" class="img-fluid figure-img" style="width:6cm"></p>
-<figcaption class="figure-caption">Diferencia de conjuntos</figcaption>
+<figcaption>Diferencia de conjuntos</figcaption>
 </figure>
 </div>
 <div id="exm-diferencia-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.8 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la diferencia de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A-B=\{6\}\)</span>, y la diferencia de <span class="math inline">\(B\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(B-A=\{1,3\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.8</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la diferencia de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A-B=\{6\}\)</span>, y la diferencia de <span class="math inline">\(B\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(B-A=\{1,3\}\)</span>.</p>
 </div>
 <div id="def-diferencia-simetrica-conjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.11 (Diferencia simétrica) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>diferencia simétrica</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\triangle B\)</span>, al conjunto formado por los elementos que pertenecen a <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span>, pero no a ambos a la vez, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.11 (Diferencia simétrica)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>diferencia simétrica</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\triangle B\)</span>, al conjunto formado por los elementos que pertenecen a <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span>, pero no a ambos a la vez, es decir,</p>
 <p><span class="math display">\[\begin{align*}
 A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 &amp;= (A-B) \cup (B-A) = (A\cup B)-(A\cap B)
@@ -425,14 +461,14 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/teoria-conjuntos/diferencia-simetrica.png" class="img-fluid figure-img" style="width:6cm"></p>
-<figcaption class="figure-caption">Diferencia simétrica de conjuntos</figcaption>
+<figcaption>Diferencia simétrica de conjuntos</figcaption>
 </figure>
 </div>
 <div id="exm-diferencia-simetrica-conjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.9 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la diferencia simétrica de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\triangle B = \{1, 3, 6\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.9</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span> y <span class="math inline">\(B=\{1,2,3,4\}\)</span>,la diferencia simétrica de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(A\triangle B = \{1, 3, 6\}\)</span>.</p>
 </div>
 <div id="prp-propiedades-conjuntos" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.3 </strong></span>Dado un conjunto universo <span class="math inline">\(\Omega\)</span> y los conjuntos <span class="math inline">\(A,B,C\subseteq \Omega\)</span>, se cumplen las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1.3</strong></span> Dado un conjunto universo <span class="math inline">\(\Omega\)</span> y los conjuntos <span class="math inline">\(A,B,C\subseteq \Omega\)</span>, se cumplen las siguientes propiedades:</p>
 <ol type="1">
 <li>Idempotencia: <span class="math inline">\(A\cup A=A\)</span> y <span class="math inline">\(A\cap A=A\)</span>.</li>
 <li>Conmutativa: <span class="math inline">\(A\cup B=B\cup A\)</span> y <span class="math inline">\(A\cap B = B\cap A\)</span>.</li>
@@ -451,41 +487,41 @@ A\triangle B &amp;= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 </ol>
 </div>
 <div id="def-conjuntos-disjuntos" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.12 (Conjuntos disjuntos) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que son <em>disjuntos</em> si no tienen ningún elemento en común, es decir, <span class="math inline">\(A\cap B=\emptyset\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.12 (Conjuntos disjuntos)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que son <em>disjuntos</em> si no tienen ningún elemento en común, es decir, <span class="math inline">\(A\cap B=\emptyset\)</span>.</p>
 </div>
 <div id="exm-conjuntos-disjuntos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.10 </strong></span>Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span>, y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span>, <span class="math inline">\(B=\{1,2,3,4\}\)</span> y <span class="math inline">\(C=\{3, 5\}\)</span>, se tiene que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no son disjuntos ya que <span class="math inline">\(A\cap B=\{2, 4\}\neq \emptyset\)</span>, pero <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son disjuntos pues <span class="math inline">\(A\cap C=\emptyset\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.10</strong></span> Dado el conjunto de los números que contiene un dado, <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span>, y sus subconjuntos <span class="math inline">\(A=\{2,4,6\}\)</span>, <span class="math inline">\(B=\{1,2,3,4\}\)</span> y <span class="math inline">\(C=\{3, 5\}\)</span>, se tiene que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no son disjuntos ya que <span class="math inline">\(A\cap B=\{2, 4\}\neq \emptyset\)</span>, pero <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son disjuntos pues <span class="math inline">\(A\cap C=\emptyset\)</span>.</p>
 </div>
 <div id="def-conjunto-potencia" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.13 (Conjunto potencia) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>conjunto potencia</em> o <em>conjunto de las partes</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\mathcal{P}(A)\)</span>, al conjunto de todos los subconjuntos de <span class="math inline">\(A\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.13 (Conjunto potencia)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>conjunto potencia</em> o <em>conjunto de las partes</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\mathcal{P}(A)\)</span>, al conjunto de todos los subconjuntos de <span class="math inline">\(A\)</span>, es decir,</p>
 <p><span class="math display">\[\mathcal{P}(A) = \{ X \, : \,  X \subseteq A \}\]</span></p>
 </div>
 <div id="exm-conjunto-potencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.11 </strong></span>El conjunto potencia del conjunto <span class="math inline">\(A=\{1, 2, 3\}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.11</strong></span> El conjunto potencia del conjunto <span class="math inline">\(A=\{1, 2, 3\}\)</span> es</p>
 </div>
 <p><span class="math display">\[\mathcal{P}(A)=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}\]</span></p>
 </section>
 <section id="relaciones-entre-conjuntos" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="relaciones-entre-conjuntos"><span class="header-section-number">1.3</span> Relaciones entre conjuntos</h2>
 <div id="def-par-ordenado" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.14 (Par ordenado) </strong></span>Dados dos elementos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> se define el <em>par ordenado</em> <span class="math inline">\((a,b)\)</span> como <span class="math display">\[ (a,b) = \{\{a\}, \{a,b\}\} \]</span></p>
+<p><span class="theorem-title"><strong>Definición 1.14 (Par ordenado)</strong></span> Dados dos elementos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> se define el <em>par ordenado</em> <span class="math inline">\((a,b)\)</span> como <span class="math display">\[ (a,b) = \{\{a\}, \{a,b\}\} \]</span></p>
 <p>De manera más general, se define una <em><span class="math inline">\(n\)</span>-tupla ordenada</em> como <span class="math display">\[(a_1, a_2, \ldots, a_n) = ((a_1, a_2, \ldots, a_{n-1}), a_n)\]</span></p>
 </div>
 <p>De forma mas informal, decimos que <span class="math inline">\((a,b)\)</span> es un par ordenado si el primer elemento (<span class="math inline">\(a\)</span>) se distingue del segundo elemento (<span class="math inline">\(b\)</span>). Por eso, se tiene que <span class="math inline">\((a,b) \neq (b,a)\)</span>, mientras que para conjuntos <span class="math inline">\(\{a,b\}=\{b,a\}\)</span>.</p>
 <div id="def-producto-cartesiano" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.15 (Producto cartesiano) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>producto cartesiano</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\times B\)</span>, al conjunto de los pares ordenados</p>
+<p><span class="theorem-title"><strong>Definición 1.15 (Producto cartesiano)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se llama <em>producto cartesiano</em> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\times B\)</span>, al conjunto de los pares ordenados</p>
 <p><span class="math display">\[A \times B = \{ (a,b) \, : \,  a \in A \mbox{ y } b \in B \}\]</span></p>
 <p>De manera más general, si se tienen <span class="math inline">\(n\)</span> conjuntos <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span>, el <em>producto cartesiano generalizado</em> es</p>
 <p><span class="math display">\[A_1 \times A_2 \times \ldots \times A_n = \{ (a_1, \ldots, a_n) \, :\, a_i \in A_i\ \forall i=1, \ldots n\}\]</span></p>
 </div>
 <div id="exm-producto-cartesiano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.12 </strong></span>El producto cartesiano de los conjuntos <span class="math inline">\(A=\{a, b, c\}\)</span> y <span class="math inline">\(B=\{1, 2\}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.12</strong></span> El producto cartesiano de los conjuntos <span class="math inline">\(A=\{a, b, c\}\)</span> y <span class="math inline">\(B=\{1, 2\}\)</span> es</p>
 <p><span class="math display">\[
 A\times B = \{(a,1), (a,2), (b,1), (b,2), (c,1), (c,2)\}
 \]</span></p>
 </div>
 <div id="def-relacion-binaria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.16 (Relación binaria) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que <span class="math inline">\(R\)</span> es una <em>relación binaria</em> sobre <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> si es un subconjunto del producto cartesiano de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 1.16 (Relación binaria)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que <span class="math inline">\(R\)</span> es una <em>relación binaria</em> sobre <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> si es un subconjunto del producto cartesiano de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math display">\[
 R \subseteq A \times B.
 \]</span></p>
 <p>Si <span class="math inline">\((a,b)\in R\)</span> se escribe <span class="math inline">\(a R b\)</span>.</p>
@@ -503,7 +539,7 @@ R \subseteq A \times B.
 <li><strong>Total</strong>: <span class="math inline">\(\forall a, b \in A\)</span>, <span class="math inline">\((a,b) \in R\)</span> o <span class="math inline">\((b,a) \in R\)</span>.</li>
 </ul>
 <div id="def-relacion-equivalencia" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.17 (Relación de equivalencia) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\sim \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\sim\)</span> es una <em>relación de equivalencia</em> si es que cumple que <span class="math inline">\(\sim\)</span> es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades</p>
+<p><span class="theorem-title"><strong>Definición 1.17 (Relación de equivalencia)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\sim \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\sim\)</span> es una <em>relación de equivalencia</em> si es que cumple que <span class="math inline">\(\sim\)</span> es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades</p>
 <ul>
 <li><em>Reflexiva:</em> <span class="math inline">\(\forall a \in A, a \sim a\)</span>.</li>
 <li><em>Simétrica:</em> <span class="math inline">\(\forall a, b \in A\)</span>, si <span class="math inline">\(a\sim b\)</span> entonces <span class="math inline">\(b\sim a\)</span>.</li>
@@ -511,10 +547,10 @@ R \subseteq A \times B.
 </ul>
 </div>
 <div id="exm-relacion-equivalencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.13 </strong></span>Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.13</strong></span> Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.</p>
 </div>
 <div id="def-relacion-orden" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.18 (Relación de orden) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden</em>, si es una relación reflexiva, antisimétrica y transitiva, es decir, si cumple las propiedades</p>
+<p><span class="theorem-title"><strong>Definición 1.18 (Relación de orden)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden</em>, si es una relación reflexiva, antisimétrica y transitiva, es decir, si cumple las propiedades</p>
 <ul>
 <li><em>Reflexiva:</em> <span class="math inline">\(\forall a \in A, a \preceq a\)</span>.</li>
 <li><em>Antisimétrica:</em> <span class="math inline">\(\forall a, b \in A\)</span>, si <span class="math inline">\(a\preceq b\)</span> y <span class="math inline">\(b\preceq a\)</span>, entonces <span class="math inline">\(a = b\)</span>.</li>
@@ -522,60 +558,60 @@ R \subseteq A \times B.
 </ul>
 </div>
 <div id="def-relacion-orden-parcial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.19 (Relación de orden parcial) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden parcial</em>, si es una relación de orden y al menos dos elementos de <span class="math inline">\(A\)</span> están relacionados mediante <span class="math inline">\(\preceq\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.19 (Relación de orden parcial)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden parcial</em>, si es una relación de orden y al menos dos elementos de <span class="math inline">\(A\)</span> están relacionados mediante <span class="math inline">\(\preceq\)</span>, es decir,</p>
 <p><span class="math display">\[\exists x, y\in A,\ x\preceq y \mbox{ o } y\preceq x.\]</span></p>
 <p>Al conjunto <span class="math inline">\(A\)</span> con la relación de orden parcial <span class="math inline">\(\preceq\)</span> se le llama <em>conjunto parcialmente ordenado</em>, y se denota <span class="math inline">\((A,\preceq)\)</span>.</p>
 </div>
 <div id="exm-relacion-orden-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.14 </strong></span>El conjunto potencia de un conjunto <span class="math inline">\(A\)</span> con la relación de inclusión es un conjunto parcialmente ordenado <span class="math inline">\((\mathcal{P}(A),\subseteq)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.14</strong></span> El conjunto potencia de un conjunto <span class="math inline">\(A\)</span> con la relación de inclusión es un conjunto parcialmente ordenado <span class="math inline">\((\mathcal{P}(A),\subseteq)\)</span>.</p>
 </div>
 <div id="def-relacion-orden-total" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.20 (Relación de orden total) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden total</em>, si es una relación de orden y todos los elementos de <span class="math inline">\(A\)</span> se relacionan entre sí mediante <span class="math inline">\(\preceq\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.20 (Relación de orden total)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span> y una relación homogénea <span class="math inline">\(\preceq \subseteq A \times A\)</span>, se dice que <span class="math inline">\(\preceq\)</span> es una <em>relación de orden total</em>, si es una relación de orden y todos los elementos de <span class="math inline">\(A\)</span> se relacionan entre sí mediante <span class="math inline">\(\preceq\)</span>, es decir,</p>
 <p><span class="math display">\[\forall x, y\in A,\ x\preceq y \mbox{ o } y \preceq x.\]</span></p>
 <p>Al conjunto <span class="math inline">\(A\)</span> con la relación de orden total <span class="math inline">\(\preceq\)</span> se le llama <em>conjunto totalmente ordenado</em>, y se denota <span class="math inline">\((A,\preceq)\)</span>.</p>
 </div>
 <div id="exm-relacion-orden-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.15 </strong></span>La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden totalmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.15</strong></span> La relación de orden de los números naturales <span class="math inline">\((\mathbb{N},\leq)\)</span> es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{P}(A),\subseteq\)</span>) no es un orden totalmente ordenado, ya que dados dos elementos <span class="math inline">\(a\neq b\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\{a\}\subsetneq \{b\}\)</span> y <span class="math inline">\(\{b\}\subsetneq \{a\}\)</span>.</p>
 </div>
 </section>
 <section id="cotas-y-extremos" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="cotas-y-extremos"><span class="header-section-number">1.4</span> Cotas y extremos</h2>
 <div id="def-cota-superior-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.21 (Cota superior) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota superior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son menores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.21 (Cota superior)</strong></span> Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota superior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son menores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in B, x\preceq c.\]</span></p>
 <p>El conjunto de todas las cotas superiores de <span class="math inline">\(B\)</span> se denota <span class="math inline">\(\operatorname{CS}(B)\)</span>.</p>
 </div>
 <div id="exm-cota-superior" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.16 </strong></span>Para el conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, <span class="math inline">\(5\)</span> es una cota superior. El conjunto de todas sus cotas superiores es <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.16</strong></span> Para el conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, <span class="math inline">\(5\)</span> es una cota superior. El conjunto de todas sus cotas superiores es <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
 <p>Para el intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span>, cualquier número real <span class="math inline">\(x\geq 1\)</span> es una cota superior, por lo que <span class="math inline">\(\operatorname{CS}([0,1)) = \{x\in \mathbb{R}:x\geq 1\}\)</span>.</p>
 </div>
 <div id="def-cota-inferior-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.22 (Cota inferior) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota inferior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son mayores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.22 (Cota inferior)</strong></span> Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se dice que un elemento <span class="math inline">\(c\in A\)</span> es una <em>cota inferior</em> de <span class="math inline">\(B\)</span>, si todos los elementos de <span class="math inline">\(B\)</span> son mayores o iguales a <span class="math inline">\(c\)</span> según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in B, c\preceq x.\]</span></p>
 <p>El conjunto de todas las cotas inferiores de <span class="math inline">\(B\)</span> se denota <span class="math inline">\(\operatorname{CI}(B)\)</span>.</p>
 </div>
 <div id="exm-cota-inferior" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.17 </strong></span>El conjunto de las cotas inferiores de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span> es <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.17</strong></span> El conjunto de las cotas inferiores de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span> es <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
 <p>El conjunto de las cotas inferiores de <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(\operatorname{CI}([0,1)) = \{x\in \mathbb{R}:x\leq 0\}\)</span>.</p>
 </div>
 <div id="def-maximo-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.23 (Máximo) </strong></span>Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, se dice que un elemento <span class="math inline">\(m\in A\)</span> es un <em>máximo</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\max(A)\)</span>, si cualquier otro elemento de <span class="math inline">\(A\)</span> es menor o igual que él según la relación de orden, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.23 (Máximo)</strong></span> Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, se dice que un elemento <span class="math inline">\(m\in A\)</span> es un <em>máximo</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\max(A)\)</span>, si cualquier otro elemento de <span class="math inline">\(A\)</span> es menor o igual que él según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in A, x\preceq m.\]</span></p>
 </div>
 <div id="exm-maximo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.18 </strong></span>El máximo de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.18</strong></span> El máximo de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span>.</p>
 <p>El intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> no tiene máximo.</p>
 </div>
 <div id="def-minimo-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.24 (Mínimo) </strong></span>Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, se dice que un elemento <span class="math inline">\(m\in A\)</span> es un <em>mínimo</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\min(A)\)</span>, si y cualquier otro elemento de <span class="math inline">\(A\)</span> es mayor o igual que él según la relación de orden, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.24 (Mínimo)</strong></span> Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, se dice que un elemento <span class="math inline">\(m\in A\)</span> es un <em>mínimo</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\min(A)\)</span>, si y cualquier otro elemento de <span class="math inline">\(A\)</span> es mayor o igual que él según la relación de orden, es decir,</p>
 <p><span class="math display">\[\forall x \in A, m\preceq x.\]</span></p>
 </div>
 <div id="exm-maximo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.19 </strong></span>El mínimo de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.19</strong></span> El mínimo de <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span>.</p>
 <p>El mínimo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(0\)</span>.</p>
 </div>
 <div id="thm-unicidad-extremos" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1.1 (Unicidad de los extremos) </strong></span>Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, si existe el máximo de <span class="math inline">\(A\)</span> entonces es único. Lo mismo es cierto para el mínimo.</p>
+<p><span class="theorem-title"><strong>Teorema 1.1 (Unicidad de los extremos)</strong></span> Dado un conjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span>, si existe el máximo de <span class="math inline">\(A\)</span> entonces es único. Lo mismo es cierto para el mínimo.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -596,17 +632,17 @@ Demostración
 </div>
 </div>
 <div id="def-supremo-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.25 (Supremo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>supremo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\sup(B)\)</span>, a la menor de las cotas superiores de <span class="math inline">\(B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.25 (Supremo)</strong></span> Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>supremo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\sup(B)\)</span>, a la menor de las cotas superiores de <span class="math inline">\(B\)</span>.</p>
 </div>
 <div id="exm-supremo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.20 </strong></span>El supremo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.20</strong></span> El supremo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(5\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}\)</span>.</p>
 <p>El supremo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(1\)</span> ya que es el mínimo del conjunto de sus cotas superiores <span class="math inline">\(\operatorname{CS}([0,1)) = \{x\in \mathbb{R}:x\geq 1\}\)</span>.</p>
 </div>
 <div id="def-infimo-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.26 (Ínfimo) </strong></span>Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>ínfimo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\inf(B)\)</span>, a la mayor de las cotas inferiores de <span class="math inline">\(B\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.26 (Ínfimo)</strong></span> Dado un subconjunto con una relación de orden parcial <span class="math inline">\((A,\preceq)\)</span> y un subconjunto <span class="math inline">\(B\subseteq A\)</span>, se llama <em>ínfimo</em> de <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(\inf(B)\)</span>, a la mayor de las cotas inferiores de <span class="math inline">\(B\)</span>.</p>
 </div>
 <div id="exm-infimo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.21 </strong></span>El ínfimo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.21</strong></span> El ínfimo del conjunto <span class="math inline">\(B=\{3, 4, 5\}\subseteq \mathbb{N}\)</span>, es <span class="math inline">\(3\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}(B)=\{1, 2, 3\}\)</span>.</p>
 <p>El ínfimo del intervalo <span class="math inline">\([0,1)\subseteq \mathbb{R}\)</span> es <span class="math inline">\(0\)</span> ya que es el máximo del conjunto de sus cotas inferiores <span class="math inline">\(\operatorname{CI}([0,1)) = \{x\in \mathbb{R}:x\leq 0\}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -623,14 +659,14 @@ Advertencia
 </div>
 </div>
 <div id="exm-no-supremo-infimio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.22 </strong></span>El conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.22</strong></span> El conjunto <span class="math inline">\(B=\{x\in\mathbb{Z}: x \mbox{ es par}\}\)</span>, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.</p>
 </div>
 </section>
 <section id="funciones" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">1.5</span> Funciones</h2>
 <p>El concepto de función es uno de los más importantes en el Análisis Matemático, ya que muchos de los fenómenos naturales en los que una magnitud depende de otra se modelizan mediante funciones.</p>
 <div id="def-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.27 (Función) </strong></span>Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacíos, es una <em>función parcial</em> o <em>aplicación parcial</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.27 (Función)</strong></span> Se dice que una relación binaria <span class="math inline">\(f \subseteq A \times B\)</span>, con <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> conjuntos no vacíos, es una <em>función parcial</em> o <em>aplicación parcial</em>, y se denota <span class="math inline">\(f:A\rightarrow B\)</span>, si <span class="math inline">\(f\)</span> no contiene dos pares ordenados distintos con la misma primera componente, es decir,</p>
 <p><span class="math display">\[
 \forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.
 \]</span></p>
@@ -639,102 +675,108 @@ Advertencia
 <p>De manera más informal podemos decir que una función es una correspondencia entre los elementos de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> que asocia a cada elemento de <span class="math inline">\(A\)</span> un elemento, y solo uno, de <span class="math inline">\(B\)</span>.</p>
 <p>Es habitual representar los pares de una función con la notación <span class="math inline">\(y=f(x)\)</span> donde <span class="math inline">\(x\)</span> es la primera componente del par e <span class="math inline">\(y\)</span> la segunda.</p>
 <div id="exm-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.23 </strong></span>La relación binaria <span class="math inline">\(f=\{(1,d), (2,c), (3,a), (4,c)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,d), (2,b), (3,a), (3,c)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.23</strong></span> La relación binaria <span class="math inline">\(f=\{(1,d), (2,c), (3,a), (4,c)\}\)</span> es una función, pero la relación <span class="math inline">\(g=\{(1,d), (2,b), (3,a), (3,c)\}\)</span> no lo es porque existen dos pares cuya primera componente es <span class="math inline">\(3\)</span>.</p>
 <p>Del mismo modo la función raíz cuadrada <span class="math inline">\(y=f(x)=\sqrt{x}\)</span> no es una función en el conjunto de los números reales, ya que, por ejemplo <span class="math inline">\(\sqrt{1}=\pm 1\)</span>.</p>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ejemplo de función</figcaption>
+<p><img src="./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.svg" class="img-fluid figure-img"></p>
+<figcaption>Ejemplo de función</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/no-funcion.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ejemplo de no función</figcaption>
+<p><img src="./img/teoria-conjuntos/no-funcion.svg" class="img-fluid figure-img"></p>
+<figcaption>Ejemplo de no función</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <div id="def-dominio-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.28 (Dominio) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>dominio</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(\operatorname{Dom}(f)\)</span> al conjunto de las primeras componentes de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.28 (Dominio)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>dominio</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(\operatorname{Dom}(f)\)</span> al conjunto de las primeras componentes de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
 <p><span class="math display">\[\operatorname{Dom}(f) = \{a\in A: \exists b\in B, (a,b)\in f\}\]</span></p>
 </div>
 <div id="def-imagen-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.29 (Imagen) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>imagen</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(\operatorname{Im}(f)\)</span> al conjunto de las segundas componentes de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.29 (Imagen)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>imagen</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(\operatorname{Im}(f)\)</span> al conjunto de las segundas componentes de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
 <p><span class="math display">\[\operatorname{Im}(f) = \{b\in B: \exists a\in A, (a,b)\in f\}\]</span></p>
 </div>
 <div id="def-funcion-inyectiva" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.30 (Función inyectiva) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>inyectiva</em> si no existen dos elementos de <span class="math inline">\(A\)</span> con la misma imagen, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.30 (Función inyectiva)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>inyectiva</em> si no existen dos elementos de <span class="math inline">\(A\)</span> con la misma imagen, es decir,</p>
 <p><span class="math display">\[\forall a_1, a_2 \in A, \mbox{ si } f(a_1) = f(a_2), \mbox{ entonces } a_1 = a_2.\]</span></p>
 </div>
 <div id="def-funcion-sobreyectiva" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.31 (Función sobreyectiva) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>sobreyectiva</em> si todo elemento de <span class="math inline">\(B\)</span> tiene una preimagen (está relacionado con algún elemento de <span class="math inline">\(A\)</span> mediante <span class="math inline">\(f\)</span>), es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.31 (Función sobreyectiva)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>sobreyectiva</em> si todo elemento de <span class="math inline">\(B\)</span> tiene una preimagen (está relacionado con algún elemento de <span class="math inline">\(A\)</span> mediante <span class="math inline">\(f\)</span>), es decir,</p>
 <p><span class="math display">\[\forall b \in B, \exists a\in A, f(a) = b.\]</span></p>
 </div>
 <div id="def-funcion-biyectiva" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.32 (Función biyectiva) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>biyectiva</em>, si <span class="math inline">\(f\)</span> es, a la vez, inyectiva y sobreyectiva.</p>
+<p><span class="theorem-title"><strong>Definición 1.32 (Función biyectiva)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>biyectiva</em>, si <span class="math inline">\(f\)</span> es, a la vez, inyectiva y sobreyectiva.</p>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/funcion-inyectiva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función inyectiva y no sobreyectiva</figcaption>
+<p><img src="./img/teoria-conjuntos/funcion-inyectiva.svg" class="img-fluid figure-img"></p>
+<figcaption>Función inyectiva y no sobreyectiva</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/funcion-sobreyectiva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función sobreyectiva y no inyectiva</figcaption>
+<p><img src="./img/teoria-conjuntos/funcion-sobreyectiva.svg" class="img-fluid figure-img"></p>
+<figcaption>Función sobreyectiva y no inyectiva</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/funcion-biyectiva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función biyectiva</figcaption>
+<p><img src="./img/teoria-conjuntos/funcion-biyectiva.svg" class="img-fluid figure-img"></p>
+<figcaption>Función biyectiva</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Función no inyectiva y no sobreyectiva</figcaption>
+<p><img src="./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.svg" class="img-fluid figure-img"></p>
+<figcaption>Función no inyectiva y no sobreyectiva</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <div id="def-funcion-identidad" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.33 (Función identidad) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>función identidad</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\operatorname{id}_A:A\rightarrow A\)</span>, a la función que empareja cada elemento de <span class="math inline">\(A\)</span> consigo mismo, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.33 (Función identidad)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>función identidad</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(\operatorname{id}_A:A\rightarrow A\)</span>, a la función que empareja cada elemento de <span class="math inline">\(A\)</span> consigo mismo, es decir,</p>
 <p><span class="math display">\[\operatorname{id}_A (a) = a, \forall a\in A.\]</span></p>
 </div>
 <div id="def-funcion-inversa" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.34 (Función inversa) </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>función inversa</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f^{-1}:B\rightarrow A\)</span>, a la función que resulta de revertir el orden de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.34 (Función inversa)</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, se llama <em>función inversa</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f^{-1}:B\rightarrow A\)</span>, a la función que resulta de revertir el orden de los pares de <span class="math inline">\(f\)</span>, es decir,</p>
 <p><span class="math display">\[f^{-1} = \{ (b,a) : (a,b) \in f \}.\]</span></p>
 </div>
 <p>Obsérvese que para que exista la función inversa de <span class="math inline">\(f\)</span>, <span class="math inline">\(f\)</span> debe ser inyectiva.</p>
 <p>En muchas ocasiones, el valor de salida de una función se puede utilizar como la entrada de otra función, concatenando la aplicación de las dos funciones.</p>
 <div id="def-composicion-funciones" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.35 (Composición de funciones) </strong></span>Dadas dos funciones <span class="math inline">\(f:A\rightarrow B\)</span> y <span class="math inline">\(g:C\rightarrow D\)</span>, tales que <span class="math inline">\(\operatorname{Im}(f)\subseteq \operatorname{Dom}(g)\)</span>, se llama <em>composición</em> de <span class="math inline">\(f\)</span> con <span class="math inline">\(g\)</span>, y se denota <span class="math inline">\(g\circ f:A\rightarrow D\)</span>, a la funcion que a cada elemento del dominio de <span class="math inline">\(A\)</span> le asocia el elemento que resulta de aplicar <span class="math inline">\(g\)</span> a la imagen de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1.35 (Composición de funciones)</strong></span> Dadas dos funciones <span class="math inline">\(f:A\rightarrow B\)</span> y <span class="math inline">\(g:C\rightarrow D\)</span>, tales que <span class="math inline">\(\operatorname{Im}(f)\subseteq \operatorname{Dom}(g)\)</span>, se llama <em>composición</em> de <span class="math inline">\(f\)</span> con <span class="math inline">\(g\)</span>, y se denota <span class="math inline">\(g\circ f:A\rightarrow D\)</span>, a la funcion que a cada elemento del dominio de <span class="math inline">\(A\)</span> le asocia el elemento que resulta de aplicar <span class="math inline">\(g\)</span> a la imagen de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>, es decir,</p>
 <p><span class="math display">\[g\circ f(a) = g(f(a)), \forall a\in A.\]</span></p>
 </div>
 <div id="prp-composicion-inversa" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.4 </strong></span>Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, si existe <span class="math inline">\(f^{-1}\)</span>, entonces <span class="math inline">\(f\circ f^{-1} = \operatorname{id}_A\)</span> y <span class="math inline">\(f^{-1}\circ f = \operatorname{id}_B\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 1.4</strong></span> Dada una función <span class="math inline">\(f:A\rightarrow B\)</span>, si existe <span class="math inline">\(f^{-1}\)</span>, entonces <span class="math inline">\(f\circ f^{-1} = \operatorname{id}_A\)</span> y <span class="math inline">\(f^{-1}\circ f = \operatorname{id}_B\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -764,14 +806,14 @@ f\circ f^{-1}(a)
 <section id="cardinalidad-de-un-conjunto" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="cardinalidad-de-un-conjunto"><span class="header-section-number">1.6</span> Cardinalidad de un conjunto</h2>
 <div id="def-cardinal-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.36 (Cardinal) </strong></span>Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.36 (Cardinal)</strong></span> Dado un conjunto <span class="math inline">\(A\)</span>, se llama <em>cardinal</em> de <span class="math inline">\(A\)</span>, y se denota <span class="math inline">\(|A|\)</span>, al número de elementos de <span class="math inline">\(A\)</span>.</p>
 </div>
 <p>De manera informal, se puede decir que el cardinal de un conjunto es su tamaño.</p>
 <div id="exm-cardinal" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.24 </strong></span>El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.24</strong></span> El cardinal del conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es <span class="math inline">\(|A|=3\)</span>.</p>
 </div>
 <div id="prp-cardinal-conjunto-potencia" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.5 </strong></span>El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 1.5</strong></span> El cardinal del conjunto potencia de un conjunto <span class="math inline">\(A\)</span> es <span class="math inline">\(|\mathcal{P}(A)| = 2^{|A|}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -796,10 +838,10 @@ Demostración
 </div>
 </div>
 <div id="def-conjuntos-equipotentes" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.37 (Conjuntos equipotentes) </strong></span>Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <em>equipotentes</em>, y se denota <span class="math inline">\(A\approx B\)</span>, si tienen la misma cantidad de elementos, es decir, si <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.37 (Conjuntos equipotentes)</strong></span> Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <em>equipotentes</em>, y se denota <span class="math inline">\(A\approx B\)</span>, si tienen la misma cantidad de elementos, es decir, si <span class="math inline">\(|A| = |B|\)</span>.</p>
 </div>
 <div id="prp-biyeccion-conjuntos-equipotentes" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.6 </strong></span>Dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes si y solo si cada elemento de <span class="math inline">\(A\)</span> puede emparejarse con uno de <span class="math inline">\(B\)</span>, de manera que todos los elementos de <span class="math inline">\(B\)</span> sean pareja de uno de <span class="math inline">\(A\)</span> y solo de uno, es decir, existe una aplicación biyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 1.6</strong></span> Dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equipotentes si y solo si cada elemento de <span class="math inline">\(A\)</span> puede emparejarse con uno de <span class="math inline">\(B\)</span>, de manera que todos los elementos de <span class="math inline">\(B\)</span> sean pareja de uno de <span class="math inline">\(A\)</span> y solo de uno, es decir, existe una aplicación biyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -821,7 +863,7 @@ Demostración
 </div>
 </div>
 <div id="prp-equipotencia-relacion-equivalencia" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.7 </strong></span>La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1.7</strong></span> La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:</p>
 <ul>
 <li><em>Reflexiva:</em> <span class="math inline">\(A\approx A\)</span> para todo conjunto <span class="math inline">\(A\)</span>.</li>
 <li><em>Simétrica:</em> Si <span class="math inline">\(A\approx B\)</span>, entonces <span class="math inline">\(B\approx A\)</span>, para cualesquiera conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
@@ -851,10 +893,10 @@ Demostración
 </div>
 <p>De igual modo se puede definir una relación que capture la noción de que un conjunto es de menor tamaño que otro.</p>
 <div id="def-conjuntos-minuspotentes" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.38 (Conjunto minuspotente) </strong></span>Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que <span class="math inline">\(A\)</span> es <em>minuspotente</em> a <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\preceq B\)</span>, si el cardinal de <span class="math inline">\(A\)</span> es menor o igual que el de <span class="math inline">\(B\)</span>, es decir, si <span class="math inline">\(|A| \leq |B|\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.38 (Conjunto minuspotente)</strong></span> Dados dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, se dice que <span class="math inline">\(A\)</span> es <em>minuspotente</em> a <span class="math inline">\(B\)</span>, y se denota <span class="math inline">\(A\preceq B\)</span>, si el cardinal de <span class="math inline">\(A\)</span> es menor o igual que el de <span class="math inline">\(B\)</span>, es decir, si <span class="math inline">\(|A| \leq |B|\)</span>.</p>
 </div>
 <div id="prp-inyeccion-conjuntos-minuspotentes" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.8 </strong></span>El conjunto <span class="math inline">\(A\)</span> es minuspotente al conjunto <span class="math inline">\(B\)</span> si y solo si existe una aplicación inyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 1.8</strong></span> El conjunto <span class="math inline">\(A\)</span> es minuspotente al conjunto <span class="math inline">\(B\)</span> si y solo si existe una aplicación inyectiva <span class="math inline">\(f:A\rightarrow B\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -876,7 +918,7 @@ Demostración
 </div>
 </div>
 <div id="prp-minuspotencia-relacion-orden" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1.9 </strong></span>La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1.9</strong></span> La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:</p>
 <ul>
 <li>Reflexiva: <span class="math inline">\(A\preceq A\)</span> para todo conjunto <span class="math inline">\(A\)</span>.</li>
 <li>Antisimétrica: Si <span class="math inline">\(A\preceq B\)</span> y <span class="math inline">\(B\preceq A\)</span>, entonces <span class="math inline">\(A\approx B\)</span>, para cualesquiera conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
@@ -905,10 +947,10 @@ Demostración
 </div>
 </div>
 <div id="def-conjunto-finito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.39 (Conjunto finito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>finito</em> si es que existe un <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(|A| = |\{1,2,3,\ldots,n \}|\)</span>. Cuando esto ocurre, el cardinal de <span class="math inline">\(A\)</span> es <span class="math inline">\(|A|=n\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.39 (Conjunto finito)</strong></span> Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>finito</em> si es que existe un <span class="math inline">\(n\in\mathbb{N}\)</span> tal que <span class="math inline">\(|A| = |\{1,2,3,\ldots,n \}|\)</span>. Cuando esto ocurre, el cardinal de <span class="math inline">\(A\)</span> es <span class="math inline">\(|A|=n\)</span>.</p>
 </div>
 <div id="def-conjunto-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.40 (Conjunto infinito) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>infinito</em> si no es finito. En tal caso su cardinal se denota <span class="math inline">\(|A|=\infty\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.40 (Conjunto infinito)</strong></span> Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>infinito</em> si no es finito. En tal caso su cardinal se denota <span class="math inline">\(|A|=\infty\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -924,19 +966,19 @@ Advertencia
 </div>
 </div>
 <div id="exm-conjunto-finito-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.25 </strong></span>El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.25</strong></span> El conjunto <span class="math inline">\(A=\{a, b, c\}\)</span> es finito ya que puede definirse una aplicación biyectiva <span class="math inline">\(f:A\rightarrow \{1, 2, 3\}\)</span> con los pares <span class="math inline">\(\{(1,a),(2,b), (3,c)\}\)</span>, y por tanto, <span class="math inline">\(|A| = 3\)</span>.</p>
 <p>Por otro lado, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span> para ningún <span class="math inline">\(n\in\mathbb{N}\)</span>, y por tanto, <span class="math inline">\(|\mathbb{N}|=\infty\)</span>.</p>
 </div>
-<p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
+<p>Cabe preguntarse si dos conjuntos infinitos son siempre del mismo tamaño. Para responder a la pregunta basta con aplicar la <a href="#prp-biyeccion-conjuntos-equipotentes" class="quarto-xref">Proposición&nbsp;<span>1.6</span></a>.</p>
 <div id="exm-conjunto-pares-equipotente-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.26 </strong></span>El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.26</strong></span> El conjunto de los números naturales pares <span class="math inline">\(P\)</span> es infinito y también lo es el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>. Además ambos son equipotentes pues se puede definir una aplicación biyectiva <span class="math inline">\(f(n) = 2n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que <span class="math inline">\(\mathbb{N}\approx P\)</span>.</p>
 </div>
 <p>Sin embargo, como se verá más adelante, el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span> no es equipotente al conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>, sino minuspotente. Por tanto, existen conjuntos infinitos de distintos tamaños. Para demostrarlo se necesita introducir un nuevo concepto.</p>
 <div id="def-conjuntos-numerables" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1.41 (Conjunto numerable) </strong></span>Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>numerable</em> si tiene el mismo cardinal que el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 1.41 (Conjunto numerable)</strong></span> Se dice que un conjunto <span class="math inline">\(A\)</span> es <em>numerable</em> si tiene el mismo cardinal que el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>.</p>
 </div>
 <div id="cor-biyeccion-conjunto-numerable" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 1.1 </strong></span>Un conjunto <span class="math inline">\(A\)</span> es numerable si existe una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow A\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 1.1</strong></span> Un conjunto <span class="math inline">\(A\)</span> es numerable si existe una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow A\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -951,22 +993,26 @@ Demostración
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes">Proposición&nbsp;<span>1.6</span></a>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>La prueba de este resultado es inmediata aplicando la <a href="#prp-biyeccion-conjuntos-equipotentes" class="quarto-xref">Proposición&nbsp;<span>1.6</span></a>.</p>
 </div>
 </div>
 </div>
 </div>
 <p>En otras palabras, un conjunto es infinito numerable si tiene correspondencia uno a uno con el conjunto de los números naturales <span class="math inline">\(\mathbb{N}\)</span>, y por tanto, podemos enumerar sus elementos, es decir, hay un primer elemento, un segundo, etc.</p>
 <div id="exm-enteros-equipotentes-naturales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1.27 </strong></span>En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1.27</strong></span> En el ejemplo anterior hemos visto que el conjunto de los números pares es equipotente al conjunto de los números naturales, y por consiguiente, es numerable.</p>
 <p>Del mismo modo se puede probar que el conjunto de los números enteros <span class="math inline">\(\mathbb{Z}\)</span> también es numerable, pues se puede definir una aplicación biyectiva <span class="math inline">\(f:\mathbb{N}\rightarrow \mathbb{Z}\)</span> de la siguiente manera</p>
-<p><span class="math inline">\(f(n)= \begin{cases} (n-1)/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\ -n/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es par}. \end{cases}\)</span></p>
+<p><span class="math inline">\(f(n)=
+\begin{cases}
+(n-1)/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\
+-n/2 &amp;\mbox{si } n\in \mathbb{N} \mbox{ es par}.
+\end{cases}\)</span></p>
 </div>
 <p>Sin embargo, existen conjuntos infinitos que no son numerables, como por ejemplo el conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <p><a href="https://es.wikipedia.org/wiki/David_Hilbert">David Hilbert</a>, propuso una interesante paradoja para probar este hecho, conocida como <a href="https://www.youtube.com/watch?v=4c8vG-mxuao">la paradoja del hotel infinito</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Georg_Cantor">Georg Cantor</a> dio una prueba formal de esto mediante el siguiente teorema.</p>
 <div id="thm-cantor" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1.2 (Cantor) </strong></span>El conjunto potencia de cualquier conjunto <span class="math inline">\(A\)</span> tiene un cardinal estrictamente mayor que el cardinal de <span class="math inline">\(A\)</span>, es decir, <span class="math inline">\(|A| &lt; |\mathcal{P}(A)|\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 1.2 (Cantor)</strong></span> El conjunto potencia de cualquier conjunto <span class="math inline">\(A\)</span> tiene un cardinal estrictamente mayor que el cardinal de <span class="math inline">\(A\)</span>, es decir, <span class="math inline">\(|A| &lt; |\mathcal{P}(A)|\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
@@ -996,7 +1042,7 @@ Demostración
 </div>
 </div>
 <div id="thm-cardinal-reales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1.3 (Cardinalidad del continuo) </strong></span>El conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span> tiene un cardinal igual al del conjunto potencia del conjunto de los números naturales <span class="math inline">\(\mathcal{P}(\mathbb{N})\)</span>, es decir, <span class="math inline">\(|\mathbb{R}|=2^{|\mathbb{N}|}\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 1.3 (Cardinalidad del continuo)</strong></span> El conjunto de los números reales <span class="math inline">\(\mathbb{R}\)</span> tiene un cardinal igual al del conjunto potencia del conjunto de los números naturales <span class="math inline">\(\mathcal{P}(\mathbb{N})\)</span>, es decir, <span class="math inline">\(|\mathbb{R}|=2^{|\mathbb{N}|}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -1016,7 +1062,7 @@ Demostración
 <p>En cuanto a la parte entera, ya se ha visto que el conjunto de los números enteros es equipotente al de los números naturales, por lo que <span class="math inline">\(|\mathbb{Z}|=|\mathbb{N}|\)</span>.</p>
 <p>Así pues, el número total de expansiones decimales infinitas es <span class="math inline">\(|\mathbb{N}|10^{|\mathbb{N}|}\)</span>, y como todo número real tienen una expansión decimal infinita, se tiene</p>
 <p><span class="math display">\[|\mathbb{R}| \leq |\mathbb{N}|10^{|\mathbb{N}|}.\]</span></p>
-<p>Por otro lado, aplicando el <a href="#thm-cantor">Teorema&nbsp;<span>1.2</span></a>, <span class="math inline">\(|\mathbb{N}|\leq 2^{|\mathbb{N}|}\)</span>, por lo que finalmente se tiene</p>
+<p>Por otro lado, aplicando el <a href="#thm-cantor" class="quarto-xref">Teorema&nbsp;<span>1.2</span></a>, <span class="math inline">\(|\mathbb{N}|\leq 2^{|\mathbb{N}|}\)</span>, por lo que finalmente se tiene</p>
 <p><span class="math inline">\(|\mathbb{R}| \leq |\mathbb{N}|10^{|\mathbb{N}|}\leq 2^{|\mathbb{N}|}10^{|\mathbb{N}|} \leq 2^{|\mathbb{N}|}(2^4)^{|\mathbb{N}|}= 2^{|\mathbb{N}|+4|\mathbb{N}|} = 2^{|\mathbb{N}|}\)</span>, ya que por aritmética de las cardinalidades se tiene que <span class="math inline">\(|\mathbb{N}|+4|\mathbb{N}|=|\mathbb{N}|\)</span>.</p>
 <p>Para probar el otro sentido de la desigualdad, basta tomar el conjunto de las fracciones decimales de la forma <span class="math inline">\(0.d_1d_2d_3\ldots\)</span> donde <span class="math inline">\(d_i\in\{0,1\}\)</span> (por ejemplo <span class="math inline">\(0.101000\ldots\)</span>) que claramente es un subconjunto de <span class="math inline">\(\mathbb{R}\)</span>. Puesto que cada número de este conjunto tiene infinitos dígitos decimales, de nuevo, se puede poner en correspondencia biyectiva cada dígito con un número natural, y como para cada posición hay dos posibles dígitos (<span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>), el número total de números en este conjunto es <span class="math inline">\(2^{|\mathbb{N}|}\)</span>, por lo que se tiene que <span class="math inline">\(2^{|\mathbb{N}|}\leq |\mathbb{R}|\)</span>.</p>
 <p>Así pues, como <span class="math inline">\(|\mathbb{R}| \leq 2^{|\mathbb{N}|}\)</span> y <span class="math inline">\(2^{|\mathbb{N}|}\leq |\mathbb{R}|\)</span>, se concluye que <span class="math inline">\(|\mathbb{R}| = 2^{|\mathbb{N}|}\)</span>.</p>
@@ -1024,7 +1070,7 @@ Demostración
 </div>
 </div>
 </div>
-<p></p>
+{{&lt; youtube 206s &gt;}}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EBuOXkSD9sU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>Tomando iterativamente el conjunto potencia de un conjunto infinito y aplicando el teorema de Cantor, obtenemos una jerarquía infinita de cardinales infinitos, cada uno estrictamente mayor que el anterior.</p>
@@ -1074,6 +1120,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1142,13 +1215,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1227,10 +1302,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1240,8 +1332,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1253,7 +1354,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1297,6 +1521,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1322,6 +1547,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1383,17 +1634,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Prefacio">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefacio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-numeros-reales.html" class="pagination-link">
+      <a href="./02-numeros-reales.html" class="pagination-link" aria-label="El sistema de los números reales">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">El sistema de los números reales</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

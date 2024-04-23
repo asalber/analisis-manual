@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,7 +50,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "hay más resultados en este documento",
     "search-more-matches-text": "más resultados en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,13 +78,40 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Manual de Análisis Matemático Real - 7&nbsp; Derivadas de funciones">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/derivadas/variacion_area_cuadrado.png">
-<meta property="og:site-name" content="Manual de Análisis Matemático Real">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Manual de Análisis Matemático Real">
 <meta name="twitter:title" content="Manual de Análisis Matemático Real - 7&nbsp; Derivadas de funciones">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/derivadas/variacion_area_cuadrado.png">
+<meta name="twitter:image" content="img/logos/sticker.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -88,12 +122,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-derivadas.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-derivadas.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://aprendeconalf.es" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -313,7 +347,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="hidden">
 <p><span class="math display">\[
@@ -336,20 +372,20 @@ ul.task-list li input[type="checkbox"] {
 <section id="tasa-de-variación-media" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="tasa-de-variación-media"><span class="header-section-number">7.1.1</span> Tasa de variación media</h3>
 <div id="def-incremento" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.1 (Incremento) </strong></span>Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>incremento</em> de <span class="math inline">\(f\)</span> en un intervalo <span class="math inline">\([a,b]\)</span> a la diferencia entre el valor de <span class="math inline">\(f\)</span> en cada uno de los extremos del intervalo, y se nota</p>
+<p><span class="theorem-title"><strong>Definición 7.1 (Incremento)</strong></span> Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>incremento</em> de <span class="math inline">\(f\)</span> en un intervalo <span class="math inline">\([a,b]\)</span> a la diferencia entre el valor de <span class="math inline">\(f\)</span> en cada uno de los extremos del intervalo, y se nota</p>
 <p><span class="math display">\[\Delta y= f(b)-f(a).\]</span></p>
 </div>
 <p>Cuando <span class="math inline">\(f\)</span> es la función identidad <span class="math inline">\(y=x\)</span>, se cumple que</p>
 <p><span class="math display">\[\Delta x=\Delta y= f(b)-f(a)=b-a,\]</span></p>
 <p>y por tanto, el incremento de <span class="math inline">\(x\)</span> en un intervalo es la amplitud del intervalo. Esto nos permite escribir el intervalo <span class="math inline">\([a,b]\)</span> como <span class="math inline">\([a,a+\Delta x]\)</span>.</p>
 <div id="def-tasa-variacion-media" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.2 (Tasa de variación media) </strong></span>Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>tasa de variación media</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>, al cociente entre el incremento de <span class="math inline">\(y\)</span> y el incremento de <span class="math inline">\(x\)</span> en dicho intervalo, y se escribe</p>
+<p><span class="theorem-title"><strong>Definición 7.2 (Tasa de variación media)</strong></span> Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>tasa de variación media</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>, al cociente entre el incremento de <span class="math inline">\(y\)</span> y el incremento de <span class="math inline">\(x\)</span> en dicho intervalo, y se escribe</p>
 <p><span class="math display">\[
 \operatorname{TVM}(f,[a,a+\Delta x])=\frac{\Delta y}{\Delta x}=\frac{f(a+\Delta x)-f(a)}{\Delta x}.
 \]</span></p>
 </div>
 <div id="exm-tasa-variacion-media" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.1 </strong></span>Consideremos la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.1</strong></span> Consideremos la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
 <p>Si en un determinado instante el lado del cuadrado es <span class="math inline">\(a\)</span>, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado una cantidad <span class="math inline">\(\Delta x\)</span>, ¿en cuánto se incrementará el área del cuadrado?</p>
 <p><span class="math display">\[\begin{align*}
 \Delta y &amp;= f(a+\Delta x)-f(a)=(a+\Delta x)^2-a^2=\\
@@ -360,7 +396,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/variacion_area_cuadrado.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Variación que experimenta el area de un cuadrado al variar el lado</figcaption>
+<figcaption>Variación que experimenta el area de un cuadrado al variar el lado</figcaption>
 </figure>
 </div>
 </div>
@@ -371,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/secante.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la recta secante a una función en dos puntos.</figcaption>
+<figcaption>Gráfica de la recta secante a una función en dos puntos.</figcaption>
 </figure>
 </div>
 </section>
@@ -380,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 <p>En muchas ocasiones, es interesante estudiar la tasa de variación que experimenta una función, no en intervalo, sino en un punto.</p>
 <p>Conocer la tendencia de variación de una función en un instante puede ayudarnos a predecir valores en instantes próximos.</p>
 <div id="def-tasa-variacion-instantanea" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.3 (Tasa de variación instantánea y derivada) </strong></span>Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>tasa de variación instantánea</em> de <span class="math inline">\(f\)</span> en un punto <span class="math inline">\(a\)</span>, al límite de la tasa de variación media de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>, cuando <span class="math inline">\(\Delta x\)</span> tiende a 0, y se denota</p>
+<p><span class="theorem-title"><strong>Definición 7.3 (Tasa de variación instantánea y derivada)</strong></span> Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>tasa de variación instantánea</em> de <span class="math inline">\(f\)</span> en un punto <span class="math inline">\(a\)</span>, al límite de la tasa de variación media de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>, cuando <span class="math inline">\(\Delta x\)</span> tiende a 0, y se denota</p>
 <p><span class="math display">\[\begin{align*}
 \operatorname{TVI}(f,a) &amp;= \lim_{\Delta x\rightarrow 0} \operatorname{TVM}(f,[a,a+\Delta x])=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x} = \\
 &amp;= \lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
@@ -391,7 +427,7 @@ f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 \]</span></p>
 </div>
 <div id="exm-tasa-variacion-instantanea" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.2 </strong></span>Consideremos de nuevo la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.2</strong></span> Consideremos de nuevo la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
 <p>Si en un determinado instante el lado del cuadrado es <span class="math inline">\(a\)</span>, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado, ¿cuál es la tasa de variación instantánea del área del cuadrado en dicho instante?</p>
 <p><span class="math display">\[\begin{align*}
 \operatorname{TVI}(f(a)) &amp;=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} =\\
@@ -411,26 +447,22 @@ f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/tangente.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la recta tangente a una función en un punto.</figcaption>
+<figcaption>Gráfica de la recta tangente a una función en un punto.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/secante-tangente.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Aproximación de la recta secante a la recta tangente en un punto.</figcaption>
+<figcaption>Aproximación de la recta secante a la recta tangente en un punto.</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.geogebra.org/m/TX3ABH6F"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://www.geogebra.org/m/TX3ABH6F"><img src="img/logos/logo-geogebra.png" class="img-fluid"></a></p>
 </section>
 </section>
 <section id="diferenciabilidad" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="diferenciabilidad"><span class="header-section-number">7.2</span> Diferenciabilidad</h2>
 <div id="def-funcion-diferenciable-derivada" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.4 (Función derivable) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> o <em>derivable</em> en <span class="math inline">\(a\)</span>, si existe el límite</p>
+<p><span class="theorem-title"><strong>Definición 7.4 (Función derivable)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> o <em>derivable</em> en <span class="math inline">\(a\)</span>, si existe el límite</p>
 <p><span class="math display">\[
 \lim_{x\to a}\frac{f(x)-f(a)}{x-a}
 \]</span></p>
@@ -454,7 +486,7 @@ f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
 </div>
 </div>
 <div id="def-funcion-derivada" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.5 (Función derivada) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se define la <em>función derivada</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f'\)</span>, a la función cuyo dominio es el conjunto de los puntos de <span class="math inline">\(I\)</span> donde <span class="math inline">\(f\)</span> es diferenciable y el valor de <span class="math inline">\(f'\)</span> es el valor de la derivada en cada uno de esos puntos.</p>
+<p><span class="theorem-title"><strong>Definición 7.5 (Función derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se define la <em>función derivada</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f'\)</span>, a la función cuyo dominio es el conjunto de los puntos de <span class="math inline">\(I\)</span> donde <span class="math inline">\(f\)</span> es diferenciable y el valor de <span class="math inline">\(f'\)</span> es el valor de la derivada en cada uno de esos puntos.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -470,7 +502,7 @@ Nota
 </div>
 </div>
 <div id="exm-derivada-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.3 </strong></span>Sea <span class="math inline">\(f(x)=Id(x)=x\)</span> la función identidad. Entonces, para cualquier <span class="math inline">\(a\in\mathbb{R}\)</span>, se tiene que</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.3</strong></span> Sea <span class="math inline">\(f(x)=Id(x)=x\)</span> la función identidad. Entonces, para cualquier <span class="math inline">\(a\in\mathbb{R}\)</span>, se tiene que</p>
 <p><span class="math display">\[
 \lim_{x\to a}\frac{f(x)-f(a)}{x-a} = \lim_{x\to a}\frac{x-a}{x-a} = \lim_{x\to a}1 = 1.
 \]</span></p>
@@ -486,7 +518,7 @@ Nota
 <p>Por tanto, <span class="math inline">\(f(x)\)</span> es diferenciable en todo <span class="math inline">\(\mathbb{R}\)</span> y <span class="math inline">\(f'(a)=2a\)</span>.</p>
 </div>
 <div id="exm-derivada-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.4 </strong></span>Sea la función <span class="math inline">\(f(x)=|x|\)</span>. Veamos si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(0\)</span>. Para ello calculamos los límites laterales.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.4</strong></span> Sea la función <span class="math inline">\(f(x)=|x|\)</span>. Veamos si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(0\)</span>. Para ello calculamos los límites laterales.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0} &amp;= \lim_{x\to 0^-} \frac{|x|}{x} = \lim_{x\to 0^-} \frac{-x}{x} = -1,\\
 \lim_{x\to 0^+}\frac{f(x)-f(0)}{x-0} &amp;= \lim_{x\to 0^+} \frac{|x|}{x} = \lim_{x\to 0^+} \frac{x}{x} = 1,
@@ -494,19 +526,19 @@ Nota
 <p>Por tanto, como los límites laterales no coinciden, <span class="math inline">\(f\)</span> no es diferenciable en <span class="math inline">\(0\)</span>.</p>
 </div>
 <div id="def-tangente-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.6 (Recta tangente a la gráfica de una función) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta tangente</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> con pendiente <span class="math inline">\(f'(a)\)</span>, es decir, la recta con ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.6 (Recta tangente a la gráfica de una función)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta tangente</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> con pendiente <span class="math inline">\(f'(a)\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
 y=f(a)+f'(a)(x-a)
 \]</span></p>
 </div>
 <div id="def-normal-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.7 (Recta normal a la gráfica de una función) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta normal</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> y es perpendicular a la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, es decir, la recta con ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.7 (Recta normal a la gráfica de una función)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta normal</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> y es perpendicular a la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
 y=f(a)-\frac{1}{f'(a)}(x-a)
 \]</span></p>
 </div>
 <div id="exm-tangente-normal-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.5 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la recta tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\(1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.5</strong></span> Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la recta tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
 y = f(1)+f'(1)(x-1) = 1+2(x-1) = 2x-1,
 \]</span></p>
@@ -516,7 +548,7 @@ y = f(1)-\frac{1}{f'(1)}(x-1) = 1-\frac{1}{2}(x-1) = \frac{-x}{2}+\frac{3}{2}.
 \]</span></p>
 </div>
 <div id="thm-diferenciabilidad-implica-continuidad" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.1 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7.1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -560,7 +592,7 @@ Precaución
 <section id="álgebra-de-derivadas" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="álgebra-de-derivadas"><span class="header-section-number">7.3</span> Álgebra de derivadas</h2>
 <div id="prp-algebra-derivadas" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 7.1 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f,g:I\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son diferenciables en <span class="math inline">\(a\in I\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 7.1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f,g:I\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son diferenciables en <span class="math inline">\(a\in I\)</span>, entonces</p>
 <ol type="a">
 <li><p><span class="math inline">\(f+g\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math inline">\((f+g)'(a)=f'(a)+g'(a)\)</span>.</p></li>
 <li><p><span class="math inline">\(f-g\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math inline">\((f-g)'(a)=f'(a)-g'(a)\)</span>.</p></li>
@@ -617,7 +649,7 @@ Demostración
 </div>
 </div>
 <div id="exm-algebra-derivadas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.6 </strong></span>Veamos cuál es la función derivada de la función racional <span class="math inline">\(f(x)=\dfrac{x^2-2x+1}{x}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.6</strong></span> Veamos cuál es la función derivada de la función racional <span class="math inline">\(f(x)=\dfrac{x^2-2x+1}{x}\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 f'(x) &amp;= \frac{(x^2-2x+1)'x-(x^2-2x+1)x'}{x^2} = \frac{((x^2)'-(2x)'+1')x-(x^2-2x+1)}{x^2} = \\
 &amp;= \frac{(2x-2)x-(x^2-2x+1)}{x^2} =  \frac{2x^2-2x-x^2+2x-1}{x^2} = \frac{x^2-1}{x^2}  \forall x\neq 0.
@@ -628,7 +660,7 @@ f'(x) &amp;= \frac{(x^2-2x+1)'x-(x^2-2x+1)x'}{x^2} = \frac{((x^2)'-(2x)'+1')x-(x
 <h2 data-number="7.4" class="anchored" data-anchor-id="regla-de-la-cadena"><span class="header-section-number">7.4</span> Regla de la cadena</h2>
 <p>El resultado anterior permite calcular la derivada de cualquier función algebraica. A continuación se presenta otro importante resultado que nos permitirá calcular la derivada de una composición de funciones.</p>
 <div id="thm-regla-cadena" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.2 (Regla de la cadena) </strong></span>Dados dos intervalos <span class="math inline">\(I,J\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f:I\to \mathbb{R}\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> tales que <span class="math inline">\(f(I)\subseteq J\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math display">\[
+<p><span class="theorem-title"><strong>Teorema 7.2 (Regla de la cadena)</strong></span> Dados dos intervalos <span class="math inline">\(I,J\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f:I\to \mathbb{R}\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> tales que <span class="math inline">\(f(I)\subseteq J\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math display">\[
 (g\circ f)'(a) = g'(f(a))f'(a).
 \]</span></p>
 </div>
@@ -681,7 +713,7 @@ Nota
 </div>
 </div>
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.7 </strong></span>Si <span class="math inline">\(g(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(f(x)=x^2\)</span>, entonces <span class="math inline">\(g\circ f(x)=\operatorname{sen}(x^2)\)</span> y, aplicando la regla de la cadena, su derivada vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.7</strong></span> Si <span class="math inline">\(g(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(f(x)=x^2\)</span>, entonces <span class="math inline">\(g\circ f(x)=\operatorname{sen}(x^2)\)</span> y, aplicando la regla de la cadena, su derivada vale</p>
 <p><span class="math display">\[
 (g\circ f)'(x)=g'(f(x))f'(x) = \cos(g(x)) 2x = \cos(x^2)2x.
 \]</span></p>
@@ -694,7 +726,7 @@ Nota
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="derivada-de-la-función-inversa"><span class="header-section-number">7.4.1</span> Derivada de la función inversa</h3>
 <p>La regla de la cadena nos permite calcular la derivada de la función inversa de una función.</p>
 <div id="thm-derivada-funcion-inversa" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.3 (Derivada de la función inversa) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> continua e inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\in I\)</span> y <span class="math inline">\(f'(a)\neq 0\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span> y</p>
+<p><span class="theorem-title"><strong>Teorema 7.3 (Derivada de la función inversa)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> continua e inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\in I\)</span> y <span class="math inline">\(f'(a)\neq 0\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span> y</p>
 <p><span class="math display">\[
 (f^{-1})'(f(a)) = \frac{1}{f'(a)}.
 \]</span></p>
@@ -768,7 +800,7 @@ Precaución
 </div>
 </div>
 <div id="cor-derivada-funcion-inversa" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 7.1 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(f'(x)\neq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(\forall y\in J\)</span>,</p>
+<p><span class="theorem-title"><strong>Corolario 7.1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(f'(x)\neq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(\forall y\in J\)</span>,</p>
 <p><span class="math display">\[
 (f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}
 \]</span></p>
@@ -792,12 +824,12 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-funcion-inversa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.8 </strong></span>La inversa de la función exponencial <span class="math inline">\(y=f(x)=e^x\)</span> es el logaritmo neperiano <span class="math inline">\(x=f^{-1}(y)=\ln y\)</span>, de modo que, aplicando el teorema anterior, la función derivada del logaritmo es <span class="math display">\[
+<p><span class="theorem-title"><strong>Ejemplo 7.8</strong></span> La inversa de la función exponencial <span class="math inline">\(y=f(x)=e^x\)</span> es el logaritmo neperiano <span class="math inline">\(x=f^{-1}(y)=\ln y\)</span>, de modo que, aplicando el teorema anterior, la función derivada del logaritmo es <span class="math display">\[
 \left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
 \]</span></p>
 </div>
 <div id="exm-derivada-funcion-inversa-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.9 </strong></span>Si <span class="math inline">\(n\in\mathbb{N}\)</span> es par, la función <span class="math inline">\(f(x)=x^n\)</span> <span class="math inline">\(\forall x\in \mathbb{R}^+\)</span> es inyectiva y derivable, con <span class="math inline">\(f'(x)=nx^{n-1}&gt;0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}^+\)</span>. Por tanto, la función <span class="math inline">\(f^{-1}(y)=\sqrt[n]{y}\)</span> es derivable en <span class="math inline">\(\mathbb{R}^+\)</span> y <span class="math inline">\(\forall y\in \mathbb{R}^+\)</span>,</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.9</strong></span> Si <span class="math inline">\(n\in\mathbb{N}\)</span> es par, la función <span class="math inline">\(f(x)=x^n\)</span> <span class="math inline">\(\forall x\in \mathbb{R}^+\)</span> es inyectiva y derivable, con <span class="math inline">\(f'(x)=nx^{n-1}&gt;0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}^+\)</span>. Por tanto, la función <span class="math inline">\(f^{-1}(y)=\sqrt[n]{y}\)</span> es derivable en <span class="math inline">\(\mathbb{R}^+\)</span> y <span class="math inline">\(\forall y\in \mathbb{R}^+\)</span>,</p>
 <p><span class="math display">\[\begin{align*}
 (f^{-1})'(y) &amp;= \frac{1}{f'(f^{-1}(y))} = \frac{1}{f'(\sqrt[n]{y})} = \frac{1}{n(\sqrt[n]{y})^{n-1}} \\
 &amp;= \frac{1}{n (y^{1/n})^{n-1}} = \frac{1}{ny^{1-\frac{1}{n}}} = \frac{1}{n}y^{\frac{1}{n}-1}.
@@ -811,9 +843,9 @@ Demostración
 </section>
 <section id="derivadas-implícitas" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="derivadas-implícitas"><span class="header-section-number">7.5</span> Derivadas implícitas</h2>
-<p>Hasta hora siempre hemos trabajado con funciones de la forma <span class="math inline">\(y=f(x)\)</span> donde la variable <span class="math inline">\(y\)</span> depende de la variable <span class="math inline">\(x\)</span> según la función <span class="math inline">\(f(x)\)</span>. Esta representación se conoce como explícita, por que la variable dependiente <span class="math inline">\(y\)</span> aparece despejada en el lado izquierdo de la igualdad. Sin embargo, como ya se vió en la <a href="01-teoria-conjuntos.html#def-funcion">Definición&nbsp;<span>1.27</span></a>, una una función real de variable real es una relación formada por pares <span class="math inline">\((x,y)\in \mathbb{R}\times\mathbb{R}\)</span>, de modo que también se puede representar de manera intensiva mediante una ecuación <span class="math inline">\(F(x,y)=0\)</span>, que cumplen los puntos de la función y solo ellos.</p>
+<p>Hasta hora siempre hemos trabajado con funciones de la forma <span class="math inline">\(y=f(x)\)</span> donde la variable <span class="math inline">\(y\)</span> depende de la variable <span class="math inline">\(x\)</span> según la función <span class="math inline">\(f(x)\)</span>. Esta representación se conoce como explícita, por que la variable dependiente <span class="math inline">\(y\)</span> aparece despejada en el lado izquierdo de la igualdad. Sin embargo, como ya se vió en la <a href="01-teoria-conjuntos.html#def-funcion" class="quarto-xref">Definición&nbsp;<span>1.27</span></a>, una una función real de variable real es una relación formada por pares <span class="math inline">\((x,y)\in \mathbb{R}\times\mathbb{R}\)</span>, de modo que también se puede representar de manera intensiva mediante una ecuación <span class="math inline">\(F(x,y)=0\)</span>, que cumplen los puntos de la función y solo ellos.</p>
 <div id="exm-funcion-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.10 </strong></span>La función <span class="math inline">\(y=x^2\)</span> también se puede expresar implícitamente mediante la ecuación <span class="math inline">\(y-x^2=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.10</strong></span> La función <span class="math inline">\(y=x^2\)</span> también se puede expresar implícitamente mediante la ecuación <span class="math inline">\(y-x^2=0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -837,7 +869,7 @@ Precaución
 <li><p>Sustituir <span class="math inline">\(x=x_0\)</span>, <span class="math inline">\(y=y_0\)</span>.</p></li>
 </ol>
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.11 </strong></span>Dada la ecuación <span class="math inline">\(e^y-x^2=0\)</span> que define a <span class="math inline">\(y\)</span> como función implícita de <span class="math inline">\(x\)</span>, veamos cómo calcular su derivada en el punto <span class="math inline">\((1,0)\)</span> implícitamente</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.11</strong></span> Dada la ecuación <span class="math inline">\(e^y-x^2=0\)</span> que define a <span class="math inline">\(y\)</span> como función implícita de <span class="math inline">\(x\)</span>, veamos cómo calcular su derivada en el punto <span class="math inline">\((1,0)\)</span> implícitamente</p>
 <p><span class="math display">\[\begin{align*}
 (e^y-x^2)' = 0' &amp;\Rightarrow e^yy'-2x = 0 \Rightarrow e^yy' = 2x \Rightarrow y' = \frac{2x}{e^y}.
 \end{align*}\]</span></p>
@@ -846,7 +878,7 @@ Precaución
 </div>
 <p>Aún cuando la ecuación <span class="math inline">\(F(x,y)=0\)</span> no defina implícitamente a <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span> en un punto <span class="math inline">\((x_0, y_0)\)</span> que cumpla la ecuación.</p>
 <div id="exm-derivada-implicita-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.12 </strong></span>La ecuación <span class="math inline">\(x^2-xy+y^2=1\)</span> no define a <span class="math inline">\(y\)</span> como función explícita de <span class="math inline">\(x\)</span>, ya que para <span class="math inline">\(x=0\)</span> se obtienen dos posibles valores de <span class="math inline">\(y\)</span>, <span class="math inline">\(0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1\)</span>. No obstante, en el punto <span class="math inline">\((0,1)\)</span>, se puede calcular la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span>,</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.12</strong></span> La ecuación <span class="math inline">\(x^2-xy+y^2=1\)</span> no define a <span class="math inline">\(y\)</span> como función explícita de <span class="math inline">\(x\)</span>, ya que para <span class="math inline">\(x=0\)</span> se obtienen dos posibles valores de <span class="math inline">\(y\)</span>, <span class="math inline">\(0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1\)</span>. No obstante, en el punto <span class="math inline">\((0,1)\)</span>, se puede calcular la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span>,</p>
 <p><span class="math display">\[
 \begin{gathered}
 (x^2-xy+y^2)' = 1' \Rightarrow (x^2)'-(xy)'+(y^2)' = 0 \\ \Rightarrow 2x -(1\cdot y+xy')+2yy' = 0 \Rightarrow 2x-y-xy'+2yy'=0 \\
@@ -858,7 +890,7 @@ Precaución
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas/tangente-curva-implicita.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recta tangente a la curva implícita <span class="math inline">\(x^2-xy+y^2=1\)</span> en el punto <span class="math inline">\((0,1)\)</span>.</figcaption>
+<figcaption>Recta tangente a la curva implícita <span class="math inline">\(x^2-xy+y^2=1\)</span> en el punto <span class="math inline">\((0,1)\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -866,7 +898,7 @@ Precaución
 <section id="teorema-del-valor-medio-y-aplicaciones" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="teorema-del-valor-medio-y-aplicaciones"><span class="header-section-number">7.6</span> Teorema del valor medio y aplicaciones</h2>
 <div id="thm-extremo-interior" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.4 (Extremo interior) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto interior <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f'(a)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7.4 (Extremo interior)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto interior <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -903,18 +935,18 @@ Precaución
 </div>
 </div>
 <div id="cor-extremo-interior" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 7.2 </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto <span class="math inline">\(a\in I\)</span>, entonces <span class="math inline">\(f'(a)\)</span> no existe o <span class="math inline">\(f'(a)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 7.2</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto <span class="math inline">\(a\in I\)</span>, entonces <span class="math inline">\(f'(a)\)</span> no existe o <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
 <div id="exm-extremo-interior-valor-absoluto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.13 </strong></span>La función <span class="math inline">\(f(x)=|x|\)</span> tiene un mínimo relativo en <span class="math inline">\(0\)</span> que es un punto interior de <span class="math inline">\(\mathbb{R}\)</span>. Sin embargo, <span class="math inline">\(f'(0)\)</span> no existe.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.13</strong></span> La función <span class="math inline">\(f(x)=|x|\)</span> tiene un mínimo relativo en <span class="math inline">\(0\)</span> que es un punto interior de <span class="math inline">\(\mathbb{R}\)</span>. Sin embargo, <span class="math inline">\(f'(0)\)</span> no existe.</p>
 </div>
 <div id="def-punto-critico" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.8 (Punto crítico) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se dice que <span class="math inline">\(a\)</span> es un <em>punto crítico</em> o <em>punto singular</em> de <span class="math inline">\(f\)</span>, si <span class="math inline">\(f'(a)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 7.8 (Punto crítico)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se dice que <span class="math inline">\(a\)</span> es un <em>punto crítico</em> o <em>punto singular</em> de <span class="math inline">\(f\)</span>, si <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
 <p>Gráficamente, los puntos críticos son puntos donde la tangente a la gráfica de la función es horizontal.</p>
 <p>Como veremos más adelante, los puntos críticos juegan un papel clave en la determinación de los extremos relativos de una función.</p>
 <div id="thm-rolle" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.5 (Rolle) </strong></span>Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, si <span class="math inline">\(f(a)=f(b)\)</span>, entonces <span class="math inline">\(f\)</span> tiene al menos un punto crítico en <span class="math inline">\((a,b)\)</span>, es decir, existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7.5 (Rolle)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, si <span class="math inline">\(f(a)=f(b)\)</span>, entonces <span class="math inline">\(f\)</span> tiene al menos un punto crítico en <span class="math inline">\((a,b)\)</span>, es decir, existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
@@ -929,13 +961,13 @@ Demostración
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\([a,b]\)</span>, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado">Teorema&nbsp;<span>6.10</span></a> <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\([a,b]\)</span>. Si existe <span class="math inline">\(c\in (a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, por el teorema anterior se tiene <span class="math inline">\(f'(c)=0\)</span>. En caso contrario, si no existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en los extremos del intervalo, pero como <span class="math inline">\(f(a)=f(b)\)</span>, se deduce que que <span class="math inline">\(f\)</span> es constante en <span class="math inline">\([a,b]\)</span> y, por tanto, <span class="math inline">\(f'(x)=0\)</span> <span class="math inline">\(\forall x\in (a,b)\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\([a,b]\)</span>, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a> <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\([a,b]\)</span>. Si existe <span class="math inline">\(c\in (a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, por el teorema anterior se tiene <span class="math inline">\(f'(c)=0\)</span>. En caso contrario, si no existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en los extremos del intervalo, pero como <span class="math inline">\(f(a)=f(b)\)</span>, se deduce que que <span class="math inline">\(f\)</span> es constante en <span class="math inline">\([a,b]\)</span> y, por tanto, <span class="math inline">\(f'(x)=0\)</span> <span class="math inline">\(\forall x\in (a,b)\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="thm-valor-medio" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.6 (Valor medio) </strong></span>Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, entonces existe <span class="math inline">\(c\in (a,b)\)</span> tal que</p>
+<p><span class="theorem-title"><strong>Teorema 7.6 (Valor medio)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, entonces existe <span class="math inline">\(c\in (a,b)\)</span> tal que</p>
 <p><span class="math display">\[
 f'(c) = \frac{f(b)-f(a)}{b-a}.
 \]</span></p>
@@ -978,7 +1010,7 @@ h'(c) = f'(c) - \frac{f(b)-f(a)}{b-a} = 0 \Rightarrow f'(c) = \frac{f(b)-f(a)}{b
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="estudio-del-crecimiento-de-una-función"><span class="header-section-number">7.6.1</span> Estudio del crecimiento de una función</h3>
 <p>La principal aplicación de la derivada es el estudio del crecimiento de una función mediante el signo de la derivada.</p>
 <div id="thm-crecimiento-signo-derivada" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.7 (Signo de la derivada) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> diferenciable en <span class="math inline">\(I\)</span>, entonces:</p>
+<p><span class="theorem-title"><strong>Teorema 7.7 (Signo de la derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> diferenciable en <span class="math inline">\(I\)</span>, entonces:</p>
 <ol type="a">
 <li><span class="math inline">\(f\)</span> es creciente en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f'(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
 <li><span class="math inline">\(f\)</span> es decreciente en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f'(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
@@ -1005,7 +1037,7 @@ Demostración
 </div>
 </div>
 <div id="exm-crecimiento" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.14 </strong></span>La función <span class="math inline">\(f(x)=x^3\)</span> es creciente en todo <span class="math inline">\(\mathbb{R}\)</span> ya que <span class="math inline">\(\forall x\in \mathbb{R}\ f'(x)\geq 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.14</strong></span> La función <span class="math inline">\(f(x)=x^3\)</span> es creciente en todo <span class="math inline">\(\mathbb{R}\)</span> ya que <span class="math inline">\(\forall x\in \mathbb{R}\ f'(x)\geq 0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1021,11 +1053,11 @@ Advertencia
 </div>
 </div>
 <div id="exm-crecimiento-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.15 </strong></span>Consideremos la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.15</strong></span> Consideremos la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/crecimiento.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Estudio del crecimiento de una función.</figcaption>
+<figcaption>Estudio del crecimiento de una función.</figcaption>
 </figure>
 </div>
 </div>
@@ -1034,7 +1066,7 @@ Advertencia
 <h3 data-number="7.6.2" class="anchored" data-anchor-id="determinación-de-los-extremos-relativos-de-una-función"><span class="header-section-number">7.6.2</span> Determinación de los extremos relativos de una función</h3>
 <p>Como consecuencia del resultado anterior, la derivada también sirve para determinar los extremos relativos de una función.</p>
 <div id="thm-extremos-relativos" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.8 (Criterio de la primera derivada) </strong></span>Sea una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y derivable en <span class="math inline">\((a,c)\cup (c,b)\)</span> para un punto <span class="math inline">\(c\in(a,b)\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7.8 (Criterio de la primera derivada)</strong></span> Sea una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y derivable en <span class="math inline">\((a,c)\cup (c,b)\)</span> para un punto <span class="math inline">\(c\in(a,b)\)</span>.</p>
 <ol type="a">
 <li>Si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\((c-\delta, c+\delta)\subseteq[a,b]\)</span> y <span class="math inline">\(f'(x)\geq 0\)</span> y <span class="math inline">\(\forall x\in(c-\delta,c)\)</span> y <span class="math inline">\(f'(x)\leq 0\)</span> <span class="math inline">\(\forall x\in(c,c+\delta)\)</span>, entonces <span class="math inline">\(f\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(c\)</span>.</li>
 <li>Si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\((c-\delta, c+\delta)\subseteq[a,b]\)</span> y <span class="math inline">\(f'(x)\leq 0\)</span> y <span class="math inline">\(\forall x\in(c-\delta,c)\)</span> y <span class="math inline">\(f'(x)\geq 0\)</span> <span class="math inline">\(\forall x\in(c,c+\delta)\)</span>, entonces <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(c\)</span>.</li>
@@ -1061,11 +1093,11 @@ Demostración
 </div>
 </div>
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.16 </strong></span>Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.16</strong></span> Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/extremos.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Estudio de los extremos de una función</figcaption>
+<figcaption>Estudio de los extremos de una función</figcaption>
 </figure>
 </div>
 </div>
@@ -1091,7 +1123,7 @@ f(x)=
 </div>
 </div>
 <div id="thm-darboux" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.9 (Darboux) </strong></span>Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\([a,b]\)</span> y <span class="math inline">\(f'(a)&lt;k&lt;f'(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=k\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7.9 (Darboux)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\([a,b]\)</span> y <span class="math inline">\(f'(a)&lt;k&lt;f'(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=k\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
@@ -1115,7 +1147,7 @@ Demostración
 </section>
 <section id="determinación-de-los-extremos-absolutos-de-una-función" class="level3" data-number="7.6.3">
 <h3 data-number="7.6.3" class="anchored" data-anchor-id="determinación-de-los-extremos-absolutos-de-una-función"><span class="header-section-number">7.6.3</span> Determinación de los extremos absolutos de una función</h3>
-<p>Ya se vió, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado">Teorema&nbsp;<span>6.10</span></a>, que una función continua en un intervalo cerrado <span class="math inline">\([a,b]\)</span> alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función <span class="math inline">\(f\)</span> derivable en <span class="math inline">\([a,b]\)</span>, basta con seguir el siguiente procedimiento:</p>
+<p>Ya se vió, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a>, que una función continua en un intervalo cerrado <span class="math inline">\([a,b]\)</span> alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función <span class="math inline">\(f\)</span> derivable en <span class="math inline">\([a,b]\)</span>, basta con seguir el siguiente procedimiento:</p>
 <ol type="1">
 <li>Calcular los puntos críticos de <span class="math inline">\(f\)</span>.</li>
 <li>Calcular los valores de <span class="math inline">\(f\)</span> en los puntos críticos.</li>
@@ -1123,9 +1155,9 @@ Demostración
 <li>El máximo absoluto será el mayor de los valores obtenidos en los pasos 2 y 3, y el mínimo absoluto será el menor de los valores obtenidos en esos mismos pasos.</li>
 </ol>
 <div id="exm-extremos-absolutos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.17 </strong></span>Veamos cuáles son los extremos absolutos de la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span> en el intervalo <span class="math inline">\([0,2]\)</span>. Seguiremos el procedimiento anterior para la determinación de los extremos absolutos.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.17</strong></span> Veamos cuáles son los extremos absolutos de la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span> en el intervalo <span class="math inline">\([0,2]\)</span>. Seguiremos el procedimiento anterior para la determinación de los extremos absolutos.</p>
 <ol type="1">
-<li><p>En el <a href="13-derivadas-funciones-varias-variables.html#exm-extremos-relativos">Ejemplo&nbsp;<span>12.22</span></a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
+<li><p>En el <a href="13-derivadas-funciones-varias-variables.html#exm-extremos-relativos" class="quarto-xref">Ejemplo&nbsp;<span>12.22</span></a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
 <li><p>El valor de la función en los puntos críticos del intervalo <span class="math inline">\([0,2]\)</span> son <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(1)=0\)</span>.</p></li>
 <li><p>El valor de la función en los extremos del intervalo <span class="math inline">\([0,2]\)</span> es <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(2)=9\)</span>.</p></li>
 <li><p>El máximo absoluto de <span class="math inline">\(f\)</span> en <span class="math inline">\([a,b]\)</span> es <span class="math inline">\(\max\{f(0),f(1),f(2)\}=\max\{1,0,9\}=9\)</span> y el mínimo absoluto es <span class="math inline">\(\min\{f(0),f(1),f(2)\}=\max\{1,0,9\}=0\)</span>.</p></li>
@@ -1139,21 +1171,21 @@ Demostración
 <h4 data-number="7.6.4.1" class="anchored" data-anchor-id="localización-de-raíces"><span class="header-section-number">7.6.4.1</span> Localización de raíces</h4>
 <p>Si una función <span class="math inline">\(g\)</span> es la derivada de otra función <span class="math inline">\(f\)</span>, el teorema de Rolle nos asegura que entre dos raíces cualesquiera de <span class="math inline">\(f\)</span> existe al menos una raíz de <span class="math inline">\(g\)</span>.</p>
 <div id="exm-localizacion-raices-teorema-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.18 </strong></span>La función <span class="math inline">\(g(x)=\cos(x)\)</span> es la derivada de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span>, de manera que, entre dos raíces cualesquiera de <span class="math inline">\(\operatorname{sen}(x)\)</span> existe al menos una raíz de <span class="math inline">\(\cos(x)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.18</strong></span> La función <span class="math inline">\(g(x)=\cos(x)\)</span> es la derivada de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span>, de manera que, entre dos raíces cualesquiera de <span class="math inline">\(\operatorname{sen}(x)\)</span> existe al menos una raíz de <span class="math inline">\(\cos(x)\)</span>.</p>
 </div>
 </section>
 <section id="desigualdades" class="level4" data-number="7.6.4.2">
 <h4 data-number="7.6.4.2" class="anchored" data-anchor-id="desigualdades"><span class="header-section-number">7.6.4.2</span> Desigualdades</h4>
 <p>El teorema del valor medio se puede usar en la obtención de desigualdades tales como <span class="math inline">\(-x\leq \operatorname{sen}(x)\leq x\)</span>, donde la igualdad se da para <span class="math inline">\(x=0\)</span> y la desigualdad se cumple para <span class="math inline">\(x&gt;0\)</span>.</p>
 <div id="exm-desigualdad-teorema-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.19 </strong></span>Sea <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> cuya derivada es <span class="math inline">\(f'(x)=\cos(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Aplicando el teorema del valor medio a <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([0,x]\)</span> para <span class="math inline">\(x&gt;0\)</span>, se tiene que <span class="math inline">\(\frac{\operatorname{sen}(x)-\operatorname{sen}(0)}{x-0} = \cos(c)\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>. Como <span class="math inline">\(\operatorname{sen(0)}=0\)</span> y <span class="math inline">\(-1\leq \cos(x)\leq 1\)</span> <span class="math inline">\(\forall x\in \mathbb{R}\)</span>, se tiene <span class="math inline">\(\operatorname{sen}(x)=\cos(c)x\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>, de lo que se deduce que <span class="math inline">\(-x\leq \operatorname{sen}(x)\leq x\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.19</strong></span> Sea <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> cuya derivada es <span class="math inline">\(f'(x)=\cos(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Aplicando el teorema del valor medio a <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([0,x]\)</span> para <span class="math inline">\(x&gt;0\)</span>, se tiene que <span class="math inline">\(\frac{\operatorname{sen}(x)-\operatorname{sen}(0)}{x-0} = \cos(c)\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>. Como <span class="math inline">\(\operatorname{sen(0)}=0\)</span> y <span class="math inline">\(-1\leq \cos(x)\leq 1\)</span> <span class="math inline">\(\forall x\in \mathbb{R}\)</span>, se tiene <span class="math inline">\(\operatorname{sen}(x)=\cos(c)x\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>, de lo que se deduce que <span class="math inline">\(-x\leq \operatorname{sen}(x)\leq x\)</span>.</p>
 </div>
 </section>
 <section id="estimación-de-errores" class="level4" data-number="7.6.4.3">
 <h4 data-number="7.6.4.3" class="anchored" data-anchor-id="estimación-de-errores"><span class="header-section-number">7.6.4.3</span> Estimación de errores</h4>
 <p>Otra interesante aplicación es el cálculo aproximado del valor de una función en un punto <span class="math inline">\(c\in (a,b)\)</span>, si se conoce el valor de la función en <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p>
 <div id="exm-estimacion-errores-teorema-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.20 </strong></span>Veamos cómo calcular <span class="math inline">\(\sqrt{105}\)</span> de manera aproximada. Para ello tomamos la función <span class="math inline">\(f(x)=\sqrt{x}\)</span> que es derivable en todo <span class="math inline">\(\mathbb{R}\)</span> con derivada <span class="math inline">\(f'(x)=\frac{1}{2\sqrt{x}}\)</span>. Aplicando el teorema del valor medio en el intervalo <span class="math inline">\([100, 105]\)</span> se tiene que <span class="math inline">\(\frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}}\)</span> para algún <span class="math inline">\(c\in(100,105)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.20</strong></span> Veamos cómo calcular <span class="math inline">\(\sqrt{105}\)</span> de manera aproximada. Para ello tomamos la función <span class="math inline">\(f(x)=\sqrt{x}\)</span> que es derivable en todo <span class="math inline">\(\mathbb{R}\)</span> con derivada <span class="math inline">\(f'(x)=\frac{1}{2\sqrt{x}}\)</span>. Aplicando el teorema del valor medio en el intervalo <span class="math inline">\([100, 105]\)</span> se tiene que <span class="math inline">\(\frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}}\)</span> para algún <span class="math inline">\(c\in(100,105)\)</span>.</p>
 <p>Por otro lado, como <span class="math inline">\(f\)</span> es creciente, se tiene que <span class="math inline">\(10=\sqrt{100}&lt;\sqrt{c}&lt;\sqrt{121}=11\)</span>. Así pues, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}} &amp; \Rightarrow \sqrt{105}-10 = \frac{5}{2\sqrt{c}} \\
@@ -1168,7 +1200,7 @@ Demostración
 <h2 data-number="7.7" class="anchored" data-anchor-id="estudio-de-la-concavidad-de-una-función"><span class="header-section-number">7.7</span> Estudio de la concavidad de una función</h2>
 <p>Como se ha visto, la derivada de una función puede utilizarse para estudiar el crecimiento de la función en un intervalo, de manera que si la función es dos veces derivable en el intervalo, es decir, si existe la derivada de la derivada de la función, la segunda derivada puede utilizarse para estudiar el crecimiento de la primera, y esto permite estudiar la concavidad de la función.</p>
 <div id="thm-concavidad" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.10 (Criterio de la segunda derivada) </strong></span>Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> abierto y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> dos veces diferenciable en <span class="math inline">\(I\)</span>. Entonces,</p>
+<p><span class="theorem-title"><strong>Teorema 7.10 (Criterio de la segunda derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> abierto y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> dos veces diferenciable en <span class="math inline">\(I\)</span>. Entonces,</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> es cóncava hacia arriba en <span class="math inline">\(I\)</span>, si y sólo si, <span class="math inline">\(f''(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
 <li><span class="math inline">\(f\)</span> es cóncava hacia abajo en <span class="math inline">\(I\)</span>, si y sólo si, <span class="math inline">\(f''(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
@@ -1210,7 +1242,7 @@ $$ -->
 </div>
 </div>
 <div id="exm-concavidad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.21 </strong></span>La función <span class="math inline">\(f(x)=x^2\)</span> tiene segunda derivada <span class="math inline">\(f''(x)=2&gt;0\)</span> y por tanto es cóncava en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.21</strong></span> La función <span class="math inline">\(f(x)=x^2\)</span> tiene segunda derivada <span class="math inline">\(f''(x)=2&gt;0\)</span> y por tanto es cóncava en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1226,11 +1258,11 @@ Advertencia
 </div>
 </div>
 <div id="exm-concavidad-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.22 </strong></span>Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su segunda derivada <span class="math inline">\(f''(x)=12x^2-4\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.22</strong></span> Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su segunda derivada <span class="math inline">\(f''(x)=12x^2-4\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/concavidad.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Estudio de la concavidad de una función.</figcaption>
+<figcaption>Estudio de la concavidad de una función.</figcaption>
 </figure>
 </div>
 </div>
@@ -1243,14 +1275,14 @@ Advertencia
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/movimiento_rectilineo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Interpretación cinemática del movimiento rectilíneo.</figcaption>
+<figcaption>Interpretación cinemática del movimiento rectilíneo.</figcaption>
 </figure>
 </div>
 <p>En este contexto, si se toman los instantes <span class="math inline">\(t=t_0\)</span> y <span class="math inline">\(t=t_0+\Delta t\)</span>, ambos del dominio <span class="math inline">\(I\)</span> de <span class="math inline">\(f\)</span>, el vector</p>
 <p><span class="math display">\[\mathbf{v}_m=\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\]</span></p>
 <p>que se conoce como <em>velocidad media</em> del espacio recorrido por <span class="math inline">\(f\)</span> entre los instantes <span class="math inline">\(t_0\)</span> y <span class="math inline">\(t_0+\Delta t\)</span>.</p>
 <div id="exm-movimiento-rectilineo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.23 </strong></span>Un vehículo realiza un viaje de Madrid a Barcelona. Sea <span class="math inline">\(f(t)\)</span> la función que da la posición el vehículo en cada instante <span class="math inline">\(t\)</span>. Si el vehículo parte de Madrid (km 0) a las 8 y llega a Barcelona (km 600) a las 14 horas, entonces la velocidad media del vehículo en el trayecto es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.23</strong></span> Un vehículo realiza un viaje de Madrid a Barcelona. Sea <span class="math inline">\(f(t)\)</span> la función que da la posición el vehículo en cada instante <span class="math inline">\(t\)</span>. Si el vehículo parte de Madrid (km 0) a las 8 y llega a Barcelona (km 600) a las 14 horas, entonces la velocidad media del vehículo en el trayecto es</p>
 <p><span class="math display">\[
 \mathbf{v}_m=\frac{f(14)-f(8)}{14-8}=\frac{600-0}{6} = 100 \mbox{ km/h}.
 \]</span></p>
@@ -1292,7 +1324,7 @@ t\in I\subseteq \mathbb{R}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/movimiento_curvilineo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Interpretación cinemática del movimiento curvilineo.</figcaption>
+<figcaption>Interpretación cinemática del movimiento curvilineo.</figcaption>
 </figure>
 </div>
 <section id="velocidad-en-una-trayectoria-curvilínea-en-el-plano" class="level4" data-number="7.8.2.1">
@@ -1316,7 +1348,7 @@ f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\
 \mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
 \]</span></p>
 <div id="exm-movimiento-curvilineo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.24 </strong></span>Dada la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.24</strong></span> Dada la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
 <p><span class="math display">\[
 \mathbf{v}=f'(t)=(x'(t),y'(t))=(-\operatorname{sen}(t), \cos(t).
 \]</span></p>
@@ -1324,7 +1356,7 @@ f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/circunferencia.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Trayectoria de la circunferencia.</figcaption>
+<figcaption>Trayectoria de la circunferencia.</figcaption>
 </figure>
 </div>
 <p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que <span class="math inline">\(\lvert \mathbf{v}\rvert = \sqrt{(-\operatorname{sen}(t))^2+(\cos(t))^2}=1\)</span>.</p>
@@ -1338,14 +1370,14 @@ f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\
 <h3 data-number="7.9.1" class="anchored" data-anchor-id="recta-tangente-a-una-trayectoria-en-el-plano"><span class="header-section-number">7.9.1</span> Recta tangente a una trayectoria en el plano</h3>
 <p>Los vectores paralelos a la velocidad <span class="math inline">\(\mathbf{v}\)</span> se denominan <em>vectores tangentes</em> a la trayectoria <span class="math inline">\(f\)</span> en el instante <span class="math inline">\(t=t_0\)</span>, y la recta que pasa por <span class="math inline">\(P=f(t_0)\)</span> dirigida por <span class="math inline">\(\mathbf{v}\)</span> es la recta tangente a <span class="math inline">\(f\)</span> cuando <span class="math inline">\(t=t_0\)</span>.</p>
 <div id="def-tangente-trayectoria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.9 (Recta tangente a una trayectoria) </strong></span>Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta tangente</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.9 (Recta tangente a una trayectoria)</strong></span> Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta tangente</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
 <p><span class="math display">\[\begin{align*}
 l: (x,y)&amp;= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
 &amp;= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
 \end{align*}\]</span></p>
 </div>
 <div id="exm-tangente-trayectoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.25 </strong></span>Se ha visto que para la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, en el instante <span class="math inline">\(t=\pi/4\)</span> la posición del móvil era <span class="math inline">\(f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)\)</span> y su velocidad <span class="math inline">\(\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>, de modo que la recta tangente a <span class="math inline">\(f\)</span> en ese instante es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.25</strong></span> Se ha visto que para la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, en el instante <span class="math inline">\(t=\pi/4\)</span> la posición del móvil era <span class="math inline">\(f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)\)</span> y su velocidad <span class="math inline">\(\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>, de modo que la recta tangente a <span class="math inline">\(f\)</span> en ese instante es</p>
 <p><span class="math display">\[\begin{align*}
 l &amp;: X=f(\pi/2)+t\mathbf{v} = \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) \\
 &amp;=
@@ -1381,7 +1413,7 @@ y=-x+\sqrt{2}.
 <h3 data-number="7.9.2" class="anchored" data-anchor-id="recta-normal-a-una-trayectoria-en-el-plano"><span class="header-section-number">7.9.2</span> Recta normal a una trayectoria en el plano</h3>
 <p>Se ha visto que la recta tangente a una trayectoria <span class="math inline">\(f\)</span> cuando <span class="math inline">\(t=t_0\)</span> es la recta que pasa por el punto el punto <span class="math inline">\(P=f(t_0)\)</span> dirigida por el vector velocidad <span class="math inline">\(\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))\)</span>. Si en lugar de tomar ese vector se toma como vector director el vector <span class="math inline">\(\mathbf{w}=(y'(t_0),-x'(t_0))\)</span>, que es ortogonal a <span class="math inline">\(\mathbf{v}\)</span>, se obtiene otra recta que se conoce como <em>recta normal</em> a la trayectoria <span class="math inline">\(f\)</span> cuanto <span class="math inline">\(t=t_0\)</span>.</p>
 <div id="def-normal-trayectoria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.10 (Recta normal a una trayectoria) </strong></span>Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta normal</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
+<p><span class="theorem-title"><strong>Definición 7.10 (Recta normal a una trayectoria)</strong></span> Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta normal</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
 <p><span class="math display">\[\begin{align*}
 l: (x,y) &amp;= (x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) =\\
 &amp;= (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
@@ -1409,7 +1441,7 @@ Importante
 </div>
 </div>
 <div id="exm-normal-trayectoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.26 </strong></span>Siguiendo con el ejemplo de la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.26</strong></span> Siguiendo con el ejemplo de la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatorname{sen}(\pi/2)) =\\
 &amp; \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
@@ -1422,14 +1454,14 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/circunferencia_tangente_normal.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tangente y normal a la trayectoria de una circunferencia.</figcaption>
+<figcaption>Tangente y normal a la trayectoria de una circunferencia.</figcaption>
 </figure>
 </div>
 </div>
 </section>
 <section id="rectas-tangente-y-normal-a-una-función" class="level3" data-number="7.9.3">
 <h3 data-number="7.9.3" class="anchored" data-anchor-id="rectas-tangente-y-normal-a-una-función"><span class="header-section-number">7.9.3</span> Rectas tangente y normal a una función</h3>
-<p>Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(x\in I\subseteq \mathbb{R}\)</span>, una trayectoria que traza la gráfica de <span class="math inline">\(f\)</span> es <span class="math inline">\(g(t) = (t,f(t)) \quad t\in I,\)</span> y su velocidad es <span class="math inline">\(g'(t) = (1,f'(t)),\)</span> de modo que la recta tangente para <span class="math inline">\(t=a\)</span> es</p>
+<p>Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(x\in I\subseteq \mathbb{R}\)</span>, una trayectoria que traza la gráfica de <span class="math inline">\(f\)</span> es <span class="math inline">\(g(t) = (t,f(t))  \quad t\in I,\)</span> y su velocidad es <span class="math inline">\(g'(t) = (1,f'(t)),\)</span> de modo que la recta tangente para <span class="math inline">\(t=a\)</span> es</p>
 <p><span class="math display">\[
 \frac{x-a}{1} = \frac{y-f(a)}{f'(a)} \Rightarrow y-f(a) = f'(a)(x-a),
 \]</span></p>
@@ -1438,7 +1470,7 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 \frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 \]</span></p>
 <div id="exm-tangente-normal-funcion-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.27 </strong></span>Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la trayectoria que dibuja la gráfica de esta función es <span class="math inline">\(g(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(g'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.27</strong></span> Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la trayectoria que dibuja la gráfica de esta función es <span class="math inline">\(g(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(g'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
 <p><span class="math display">\[
 \frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
 \]</span></p>
@@ -1462,7 +1494,7 @@ l&amp;: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
 \]</span></p>
 <p>siempre que <span class="math inline">\(x'(t_0)\neq 0\)</span>, <span class="math inline">\(y'(t_0)\neq 0\)</span> y <span class="math inline">\(z'(t_0)\neq 0\)</span>.</p>
 <div id="exm-tangente-tracyectoria-espacio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.28 </strong></span>Dada la trayectoria del espacio <span class="math inline">\(f(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.28</strong></span> Dada la trayectoria del espacio <span class="math inline">\(f(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
 <p><span class="math display">\[
 f(\pi/2)=(\cos(\pi/2),\operatorname{sen}(\pi/2),\pi/2)=(0,1,\pi/2),
 \]</span></p>
@@ -1477,7 +1509,7 @@ l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/tangente_trayectoria_espacio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica de la tangente a una trayectoria en el espacio.</figcaption>
+<figcaption>Gráfica de la tangente a una trayectoria en el espacio.</figcaption>
 </figure>
 </div>
 </div>
@@ -1510,7 +1542,7 @@ p(x) = f(a).
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_grado_0.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del polinomio de Taylor de grado 0</figcaption>
+<figcaption>Gráfica del polinomio de Taylor de grado 0</figcaption>
 </figure>
 </div>
 </section>
@@ -1543,7 +1575,7 @@ p(x) = f(a)+f '(a)(x-a),
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_grado_1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del polinomio de Taylor de grado 1</figcaption>
+<figcaption>Gráfica del polinomio de Taylor de grado 1</figcaption>
 </figure>
 </div>
 </section>
@@ -1577,7 +1609,7 @@ p(x) = f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_grado_2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del polinomio de Taylor de grado 2</figcaption>
+<figcaption>Gráfica del polinomio de Taylor de grado 2</figcaption>
 </figure>
 </div>
 </section>
@@ -1616,7 +1648,7 @@ p^{(n}(x) &amp;= n(n-1)(n-2)\cdots 1c_n = n!c_n.
 <li><span class="math inline">\(p^{(n}(a)=n!c_n=f^{(n}(a)=c_n=\frac{f^{(n}(a)}{n!}\)</span>.</li>
 </ul>
 <div id="def-polinomio-taylor" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.11 (Polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span>) </strong></span>Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(x=a\)</span>, se define el <em>polinomio de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 7.11 (Polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span>)</strong></span> Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(x=a\)</span>, se define el <em>polinomio de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
 <p><span class="math display">\[\begin{align*}
 p_{f,a}^n(x)&amp;=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2+\cdots +\frac{f^{(n}(a)}{n!}(x-a)^n = \\ &amp;=\sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}(x-a)^i,
 \end{align*}\]</span></p>
@@ -1640,7 +1672,7 @@ Importante
 </div>
 </div>
 <div id="exm-polinomio-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.29 </strong></span>Vamos a aproximar la función <span class="math inline">\(f(x)=\log x\)</span> en un entorno del punto <span class="math inline">\(1\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.29</strong></span> Vamos a aproximar la función <span class="math inline">\(f(x)=\log x\)</span> en un entorno del punto <span class="math inline">\(1\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
 <p>La ecuación del polinomio de Taylor de orden <span class="math inline">\(3\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
 p_{f,1}^3(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3.
@@ -1661,7 +1693,7 @@ p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\f
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_taylor_logaritmo.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del polinomio de Taylor del logaritmo</figcaption>
+<figcaption>Gráfica del polinomio de Taylor del logaritmo</figcaption>
 </figure>
 </div>
 </div>
@@ -1671,14 +1703,14 @@ p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\f
 <h3 data-number="7.10.2" class="anchored" data-anchor-id="polinomio-de-maclaurin-de-orden-n"><span class="header-section-number">7.10.2</span> Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span></h3>
 <p>La ecuación del polinomio de Taylor se simplifica cuando el punto en torno al cual queremos aproximar es el <span class="math inline">\(0\)</span>.</p>
 <div id="def-polinomio-maclaurin" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.12 (Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span>) </strong></span>Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(0\)</span>, se define el <em>polinomio de Maclaurin</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 7.12 (Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span>)</strong></span> Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(0\)</span>, se define el <em>polinomio de Maclaurin</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> como</p>
 <p><span class="math display">\[\begin{align*}
 p_{f,0}^n(x) &amp;= f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n}(0)}{n!}x^n =\\
 &amp;= \sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i.
 \end{align*}\]</span></p>
 </div>
 <div id="exm-polinomio-maclaurin" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.30 </strong></span>Vamos a aproximar la función <span class="math inline">\(f(x)=\operatorname{sen} x\)</span> en un entorno del punto <span class="math inline">\(0\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.30</strong></span> Vamos a aproximar la función <span class="math inline">\(f(x)=\operatorname{sen} x\)</span> en un entorno del punto <span class="math inline">\(0\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
 <p>La ecuación del polinomio de Maclaurin de orden <span class="math inline">\(3\)</span> para <span class="math inline">\(f\)</span> es</p>
 <p><span class="math display">\[
 p_{f,0}^3(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\frac{f'''(0)}{3!}x^3.
@@ -1699,7 +1731,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas/polinomio_mclaurin_seno.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfica del polinomio de Maclaurin del seno</figcaption>
+<figcaption>Gráfica del polinomio de Maclaurin del seno</figcaption>
 </figure>
 </div>
 </div>
@@ -1721,7 +1753,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(e^x\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} = \sum_{i=0}^n \frac{x^i}{i!}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!}  = \sum_{i=0}^n \frac{x^i}{i!}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\log(1+x)\)</span></td>
@@ -1729,7 +1761,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\operatorname{sen}(x)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)!}\)</span> si <span class="math inline">\(n=2k\)</span> o <span class="math inline">\(n=2k-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!}  = \sum_{i=0}^k (-1)^i\frac{x^{2i-1}}{(2i-1)!}\)</span> si <span class="math inline">\(n=2k\)</span> o <span class="math inline">\(n=2k-1\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\cos(x)\)</span></td>
@@ -1746,7 +1778,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 <h3 data-number="7.10.4" class="anchored" data-anchor-id="resto-de-taylor"><span class="header-section-number">7.10.4</span> Resto de Taylor</h3>
 <p>Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor <span class="math inline">\(a\)</span>, pero siempre se comete un error en dicha aproximación.</p>
 <div id="def-resto-taylor" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7.13 (Resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span>, <span class="math inline">\(p_{f,a}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 7.13 (Resto de Taylor)</strong></span> Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span>, <span class="math inline">\(p_{f,a}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
 <p><span class="math display">\[
 r_{f,a}^n(x)=f(x)-p_{f,a}^n(x).
 \]</span></p>
@@ -1761,7 +1793,7 @@ f(x)=p_{f,a}^n(x) + r_{f,a}^n(x).
 \]</span></p>
 <p>lo cual indica que el resto <span class="math inline">\(r_{f,a}^n(a+h)\)</span> es mucho menor que <span class="math inline">\(h^n\)</span>.</p>
 <div id="thm-forma-Lagrange-resto" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7.11 (Forma de Lagrange del resto de Taylor) </strong></span>Si <span class="math inline">\(f\)</span> es una función tal que <span class="math inline">\(f^{(n+1}(t)\)</span> es continua en un intervalo que incluye a <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Teorema 7.11 (Forma de Lagrange del resto de Taylor)</strong></span> Si <span class="math inline">\(f\)</span> es una función tal que <span class="math inline">\(f^{(n+1}(t)\)</span> es continua en un intervalo que incluye a <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>, entonces</p>
 <p><span class="math display">\[
 R^n_{f,a}(x)=\frac{f^{(n+1}(c)}{(n+1)!}(x-a)^{n+1}
 \]</span></p>
@@ -1769,7 +1801,7 @@ R^n_{f,a}(x)=\frac{f^{(n+1}(c)}{(n+1)!}(x-a)^{n+1}
 </div>
 <p>La forma de Lagrange del resto de Taylor permite, en muchas ocasiones, dar una cota de las aproximaciones realizadas mediante un polinomio de Taylor.</p>
 <div id="exm-cota-resto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.31 </strong></span>Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span> el polinomio de MacLaurin de cuarto grado de <span class="math inline">\(f\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.31</strong></span> Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span> el polinomio de MacLaurin de cuarto grado de <span class="math inline">\(f\)</span> es</p>
 <p><span class="math display">\[
 P^4_{f,0}(x)=1-\frac{x^2}{2}+\frac{x^4}{4!}.
 \]</span></p>
@@ -1831,6 +1863,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1899,13 +1958,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1984,10 +2045,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1997,8 +2075,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2010,7 +2097,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2054,6 +2264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2079,6 +2290,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2140,17 +2377,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-limites.html" class="pagination-link">
+      <a href="./06-limites.html" class="pagination-link" aria-label="Límites de funciones">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-integrales.html" class="pagination-link">
+      <a href="./08-integrales.html" class="pagination-link" aria-label="Integrales de funciones">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
