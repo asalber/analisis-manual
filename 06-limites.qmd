@@ -49,7 +49,7 @@ Consideremos la función $f(x)=x^2$ y veamos que pasa cuando $x\to 2$:
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Aproximación por defecto} & \qquad & \textrm{Aproximación por exceso}\\
+\mbox{Aproximación por defecto} & \qquad & \mbox{Aproximación por exceso}\\
 \begin{array}{|l|l|}
 \hline
 x       & f(x)=x^2   \\
@@ -98,16 +98,16 @@ Consideremos la función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ y veamos que pasa cuando
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\mbox{Por la izquierda} & \qquad & \mbox{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
 x      & f(x)   \\
 \hline\hline
- -0.1   & \textrm{No exite}      \\
+ -0.1   & \mbox{No exite}      \\
 \hline
- -0.01   & \textrm{No existe}     \\
+ -0.01   & \mbox{No existe}     \\
 \hline
- -0.001  & \textrm{No existe}   \\
+ -0.001  & \mbox{No existe}   \\
 \hline
 \end{array}
 & &
@@ -115,20 +115,20 @@ x      & f(x)   \\
 \hline
 x      & f(x)   \\
 \hline\hline
- 0.1    &  \textrm{No existe}      \\
+ 0.1    &  \mbox{No existe}      \\
 \hline
- 0.01   & \textrm{No existe}    \\
+ 0.01   & \mbox{No existe}    \\
 \hline
- 0.001  & \textrm{No existe}   \\
+ 0.001  & \mbox{No existe}   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \textrm{No existe } \lim_{x\to 0^-}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \mbox{No existe } \lim_{x\to 0^-}\frac{1}{\sqrt{x^2-1}}
 & &
-\displaystyle \textrm{No existe } \lim_{x\to 0^+}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \mbox{No existe } \lim_{x\to 0^+}\frac{1}{\sqrt{x^2-1}}
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{\sqrt{x^2-1}}
+\displaystyle \mbox{No existe }\lim_{x\to 0}\frac{1}{\sqrt{x^2-1}}
 \end{array}$$
 
 ::: {.content-visible when-format="html"}
@@ -149,7 +149,7 @@ Consideremos la función $f(x)=\dfrac{\lvert x\rvert}{x}$ y veamos que pasa cuan
 
 $$\begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\mbox{Por la izquierda} & \qquad & \mbox{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
 x      & f(x)   \\
@@ -179,7 +179,7 @@ x      & f(x)   \\
 \displaystyle \lim_{x\to 0^+}\frac{|x|}{x}=1
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{|x|}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0}\frac{|x|}{x}
 \end{array}
 $$
 
@@ -204,7 +204,7 @@ Veamos la tendencia de la función $f(x)=\dfrac{1}{x^2}$ cuando $x\to 0$:
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\mbox{Por la izquierda} & \qquad & \mbox{Por la derecha }\\
 \begin{array}{|l|r|}
 \hline
 x      & f(x)   \\
@@ -234,7 +234,7 @@ x      & f(x)   \\
 \displaystyle \lim_{x\to 0^+}\frac{1}{x^2}=+\infty
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\to 0}\frac{1}{x^2}=\infty
+\displaystyle \mbox{No existe }\lim_{x\to 0}\frac{1}{x^2}=\infty
 \end{array}
 $$
 
@@ -257,7 +257,7 @@ Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pas
 $$
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
-\textrm{Por la izquierda} & \qquad & \textrm{Por la derecha }\\
+\mbox{Por la izquierda} & \qquad & \mbox{Por la derecha }\\
 \begin{array}{|l|l|}
 \hline
 x      & f(x)   \\
@@ -294,12 +294,12 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\to 0^-}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0^-}\operatorname{sen} \frac{1}{x}
 & &
-\displaystyle \textrm{No existe }\lim_{x\to 0^+}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0^+}\operatorname{sen} \frac{1}{x}
 \end{array}}\\
 \Downarrow\\
-\displaystyle \textrm{No existe }\lim_{x\to 0}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0}\operatorname{sen} \frac{1}{x}
 \end{array}
 $$
 
@@ -814,7 +814,7 @@ Se deja como ejercicio.
 
 :::{#prp-limite-funcion-potencial}
 ## Límite de una función potencial
-Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \textrm{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\to a}f(x)=f(a)$.
+Si $f(x)=x^r$ con $r\in \mathbb{R}$, entonces existe el límite de $f$ en cualquier punto $a$ tal que exista un intervalo $(a-\delta,a+\delta)\subset \mbox{Dom}(f)$ para algún $\delta >0$, y en ese caso, $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -849,7 +849,7 @@ Se deja como ejercicio.
 :::
 
 :::{#prp-limite-funcion-trigonometrica}
-Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \textrm{Dom}(f)$ y $\lim_{x\to a}f(x)=f(a)$.
+Si $f(x)$ es una función trigonométrica, entonces existe el límite de $f$ en cualquier punto $a\in \mbox{Dom}(f)$ y $\lim_{x\to a}f(x)=f(a)$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -1138,7 +1138,7 @@ Existen tres tipos de asíntotas:
 ## Asíntota vertical
 Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
 
-$$\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty$$
+$$\lim_{x\to a^-}f(x)=\pm \infty \quad \mbox{o} \quad \lim_{x\to a^-}f(x)=\pm \infty$$
 :::
 
 Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
@@ -1162,14 +1162,14 @@ $$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{
 ## Asíntota horizontal
 Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
 
-$$\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a$$
+$$\lim_{x\to +\infty}f(x)=a \quad \mbox{o} \quad \lim_{x\to \infty}f(x)=a$$
 :::
 
 :::{#exm-asintota-horizontal}
 La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
 \begin{align*}
-\lim_{x\to -\infty}\frac{x+1}{x-2}&= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
+\lim_{x\to -\infty}\frac{x+1}{x-2}&= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \mbox{ y}\\
 \lim_{x\to +\infty}\frac{x+1}{x-2}&= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
 \end{align*}
 
@@ -1188,7 +1188,7 @@ La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 ## Asíntota oblicua
 Se dice que una recta $y=a+bx$ es una *asíntota oblicua* de una función $f$ si se cumple
 
-$$\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.$$
+$$\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \mbox{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.$$
 :::
 
 :::{#exm-asintota-oblicua}
@@ -1196,7 +1196,7 @@ La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
 \begin{align*}
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
-\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
+\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \mbox{ y}\\
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &=
 \lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
 \end{align*}
@@ -1329,7 +1329,7 @@ Salto $= 1-(-1)=2$.
 ## Discontinuidad de 1ª especie de salto infinito
 Se dice que una función $f$ tiene una *discontinuidad de 1ª especie de salto infinito* en el punto $a$ si
 
-$$\lim_{x\to a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm\infty.$$
+$$\lim_{x\to a^-}f(x)=\pm\infty \quad \mbox{o} \quad \lim_{x\to a^+}f(x)=\pm\infty.$$
 :::
 
 Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a$, entonces $f$ tienen una asíntota vertical $x=a$.
@@ -1364,7 +1364,7 @@ Normalmente la discontinuidades de 2ª especie se dan en puntos donde la funció
 La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 
 \begin{align*}
-& \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}  \\
+& \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \mbox{ no existe}  \\
 & \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
 \end{align*}
 

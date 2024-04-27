@@ -26,13 +26,7 @@ f:\,&A\longrightarrow B\\
 \end{align*}
 :::
 
-::: {.content-visible when-format="html"}
-  ![Ejemplo de función.](./img/funciones/funcion.png)
-:::
-
-::: {.content-visible unless-format="html"}
-  ![Ejemplo de función.](./img/funciones/funcion.tex)
-:::
+![Ejemplo de función.](./img/funciones/funcion){width=300}
 
 Cuando el conjunto inicial y final es el de los números reales $\mathbb{R}$, entonces se dice que $f:\mathbb{R}\rightarrow \mathbb{R}$ es una *función real de variable real*.
 
@@ -56,13 +50,7 @@ Existen distintas formas de representar los pares de elementos que forman parte 
 
 - **Representación gráfica**. Se representan los pares $(x,y)$ de la función mediante puntos con las correspondientes coordenadas en el plano Real cartesiano.
 
-::: {.content-visible when-format="html"}
-  ![Gráfica de una función.](./img/funciones/grafica-funcion.png)
-:::
-
-::: {.content-visible unless-format="html"}
-  ![Gráfica de una función.](./img/funciones/grafica-funcion.tex)
-:::
+![Gráfica de una función.](./img/funciones/grafica-funcion){width=400}
 
 #### Por Intensión {.unnumbered}
 
@@ -104,13 +92,7 @@ $$Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}$$
 :::{#exm-dominio-funcion}
 Dada la función $$f(x)=\frac{1}{\sqrt{x^2-1}}$$
 
-::: {.content-visible when-format="html"}
-![Dominio de la función $f(x)=\frac{1}{\sqrt{x^2-1}}$.](./img/funciones/ejemplo-dominio.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Dominio de la función $f(x)=\frac{1}{\sqrt{x^2-1}}$.](./img/funciones/ejemplo-dominio.tex)
-:::
+![Dominio de la función $f(x)=\frac{1}{\sqrt{x^2-1}}$.](./img/funciones/ejemplo-dominio){width=400}
 
 Para determinar su dominio hay que eliminar los valores en los que no está definida la función. En este caso hay que eliminar los valores que hacen negativo el radicando de la raíz del denominador, es decir, los valores de $x$ tales que $x^2-1<0$, que son los valores que cumplen $-1<x<1$, pero también hay que eliminar del dominio los valores que anulan el denominador, es decir, los valores de $x$ tales que $\sqrt{x^2-1}=0$, que son $x=-1$ y $x=1$. Por tanto, su dominio es
 
@@ -129,14 +111,7 @@ $$Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}$$
 :::{#exm-imagen-funcion}
 Dada la función $f(x)=x^2-2$
 
-::: {.content-visible when-format="html"}
-![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen.tex)
-:::
-
+![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen){width=400}
 
 Su imagen es
 
@@ -156,13 +131,7 @@ Se dice que una función $f: \mathbb{R}\rightarrow \mathbb{R}$ es una _funcion c
 $$f(x)=c\ \forall x\in\mathbb{R}.$$
 :::
 
-::: {.content-visible when-format="html"}
-![Gráfica de una función constante.](./img/funciones/funcion-constante.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de una función constante.](./img/funciones/funcion-constante.tex)
-:::
+![Gráfica de una función constante.](./img/funciones/funcion-constante){width=400}
 
 El dominio de la función constante $f(x)=c$ es $\mathbb{R}$ y su imagen $\{c\}$.
 
@@ -175,13 +144,7 @@ Se llama *función identidad*, a la función $Id: \mathbb{R}\rightarrow \mathbb{
 $$Id(x)=x.$$
 :::
 
-::: {.content-visible when-format="html"}
-![Gráfica de la función identidad.](./img/funciones/funcion-identidad.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función identidad.](./img/funciones/funcion-identidad.tex)
-:::
+![Gráfica de la función identidad.](./img/funciones/funcion-identidad){width=400}
 
 El dominio y la imagen de la función identidad es $\mathbb{R}$.
 
@@ -257,13 +220,7 @@ $$f\circ f^{-1}=f^{-1}\circ f=Id(x)$$
 
 La función inversa de $f$ deshace o revierte el efecto de $f$. Es decir, si $f:A\rightarrow B$ asocia un elemento $x\in A$ con otro $y\in B$, entonces $f^{-1}$ asocia el elemento $y$ con el $x$.
 
-::: {.content-visible when-format="html"}
-  ![Función inversa.](./img/funciones/funcion-inversa.png)
-:::
-
-::: {.content-visible unless-format="html"}
-  ![Función inversa.](./img/funciones/funcion-inversa.tex)
-:::
+![Función inversa.](./img/funciones/funcion-inversa){width=300}
 
 :::{#exm-funcion-inversa}
 La inversa de $f(x)=x^3$ es la función $f^{-1}(x)=\sqrt[3]{x}.$ Sin embargo, la inversa de la función $x^2$ no es $\sqrt{x}$ ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función. [^0]
@@ -278,20 +235,10 @@ Se dice que una función $f$ es *creciente* en un intervalo $I$, si para todo $x
 Se dice que una función $f$ es *decreciente* en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple $f(x_1)\geq f(x_2)$.
 :::
 
-::: {.content-visible when-format="html"}
 ::: {layout-ncol=2}
-  ![Función creciente.](./img/funciones/funcion-creciente.png)
+![Función creciente.](./img/funciones/funcion-creciente){width=400}
 
-  ![Función decreciente.](./img/funciones/funcion-decreciente.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-::: {layout-ncol=2}
-  ![Función creciente.](./img/funciones/funcion-creciente.tex)
-
-  ![Función decreciente.](./img/funciones/funcion-decreciente.tex)
-:::
+![Función decreciente.](./img/funciones/funcion-decreciente){width=400}
 :::
 
 ## Extremos de una función
@@ -303,20 +250,10 @@ Se dice que una función $f:\\mathbb{R}\rightarrow\mathbb{R}$ tiene un *máximo 
 Y se dice que $f$ tiene un *mínimo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\leq f(x)$.
 :::
 
-::: {.content-visible when-format="html"}
 ::: {layout-ncol=2}
-  ![Máximo relativo.](./img/funciones/maximo.png)
+![Máximo relativo.](./img/funciones/maximo){width=400}
 
-  ![Mínimo relativo.](./img/funciones/minimo.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-::: {layout-ncol=2}
-  ![Máximo relativo.](./img/funciones/maximo.tex)
-
-  ![Mínimo relativo.](./img/funciones/minimo.tex)
-:::
+![Mínimo relativo.](./img/funciones/minimo){width=400}
 :::
 
 ## Concavidad de una función
@@ -331,20 +268,10 @@ los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por debajo de la gráfica de $f
 Al punto donde cambia la concavidad de una función se le llama *punto de inflexión*.
 :::
 
-::: {.content-visible when-format="html"}
 ::: {layout-ncol=2}
-  ![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba.png)
+![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba){width=400}
 
-  ![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-::: {layout-ncol=2}
-  ![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba.tex)
-
-  ![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo.tex)
-:::
+![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo){width=400}
 :::
 
 ## Funciones periódicas
@@ -355,18 +282,12 @@ Se dice que una función $f$ es *periódica* si existe un valor $h>0$ tal que
 
 $$f(x+h)=f(x)$$
 
-para todo $x\in \textrm{Dom}(f)$.
+para todo $x\in \mbox{Dom}(f)$.
 
 Al menor valor de $h$ que verifica la igualdad anterior se le llama *periodo* de $f$, y a la diferencia entre el máximo y el mínimo de la función se le llama *amplitud* de $f$.
 :::
 
-::: {.content-visible when-format="html"}
-![Periodo y amplitud de una función periódica.](./img/funciones/funcion-periodica.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Periodo y amplitud de una función periódica.](./img/funciones/funcion-periodica.tex)
-:::
+![Periodo y amplitud de una función periódica.](./img/funciones/funcion-periodica){width=600}
 
 ## Funciones polinómicas
 
@@ -380,13 +301,7 @@ donde $n$ es un entero no negativo que se llama *grado del polinomio*, y $a_0,\l
 :::
 
 :::{#exm-funcion-polinomica}
-::: {.content-visible when-format="html"}
-![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica.tex)
-:::
+![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica){width=400}
 :::
 
 ### Propiedades de las funciones polinómicas
@@ -409,14 +324,7 @@ donde $p(x)$ y $q(x)$ son funcione polinómicas con $q(x)\neq 0$.
 :::
 
 :::{#exm-funcion-racional}
-
-::: {.content-visible when-format="html"}
-![Gráficas de funciones racionales.](./img/funciones/funcion-racional.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráficas de funciones racionales.](./img/funciones/funcion-racional.tex)
-:::
+![Gráficas de funciones racionales.](./img/funciones/funcion-racional){width=400}
 :::
 
 ### Propiedades de las funciones racionales
@@ -438,14 +346,7 @@ Una *función potencial* es una función de la forma $$f(x)=x^r,$$ donde $r$ es 
 :::
 
 :::{#exm-funcion-potencial}
-
-::: {.content-visible when-format="html"}
-![Gráficas de funciones potenciales.](./img/funciones/funcion-potencial.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráficas de funciones potenciales.](./img/funciones/funcion-potencial.tex)
-:::
+![Gráficas de funciones potenciales.](./img/funciones/funcion-potencial){width=400}
 :::
 
 ### Propiedades de las funciones potenciales
@@ -471,14 +372,7 @@ Una *función exponencial* de base $a$ es una función de la forma $$f(x)=a^x,$$
 :::
 
 :::{#exm-funcion-exponencial}
-
-::: {.content-visible when-format="html"}
-![Gráficas de funciones exponenciales.](./img/funciones/funcion-exponencial.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráficas de funciones exponenciales.](./img/funciones/funcion-exponencial.tex)
-:::
+![Gráficas de funciones exponenciales.](./img/funciones/funcion-exponencial){width=400}
 :::
 
 
@@ -507,13 +401,7 @@ donde $a$ es un valor real positivo distinto de 1.
 :::
 
 :::{#exm-funcion-logaritmica}
-::: {.content-visible when-format="html"}
-![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica.tex)
-:::
+![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica){width=400}
 :::
 
 ### Propiedades de las funciones logarítmicas
@@ -549,13 +437,7 @@ hipotenusa de dicho triángulo. No obstante, esta no es la única definición po
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el *seno* de $\alpha$, y se nota $\operatorname{sen} \alpha$, como el cociente entre el cateto opuesto y la hipotenusa.
 :::
 
-::: {.content-visible when-format="html"}
-![Seno de un ángulo de un triángulo rectángulo.](./img/funciones/seno-triangulo.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Seno de un ángulo de un triángulo rectángulo.](./img/funciones/seno-triangulo.tex)
-:::
+![Seno de un ángulo de un triángulo rectángulo.](./img/funciones/seno-triangulo){width=250}
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.
 
@@ -573,13 +455,7 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 :::
 
 :::{#exm-funcion-seno}
-::: {.content-visible when-format="html"}
-![Gráfica de la función seno.](./img/funciones/funcion-seno.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función seno.](./img/funciones/funcion-seno.tex)
-:::
+![Gráfica de la función seno.](./img/funciones/funcion-seno){width=500}
 :::
 
 ### Propiedades de la función seno
@@ -600,13 +476,7 @@ $$\operatorname{sen} (x+2k\pi)= \operatorname{sen} x\quad \forall k\in \mathbb{Z
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el *coseno* de $\alpha$, y se nota $\cos \alpha$, como el cociente entre el cateto contiguo y la hipotenusa.
 :::
 
-::: {.content-visible when-format="html"}
-![Coseno de un ángulo de un triángulo rectángulo.](./img/funciones/coseno-triangulo.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Coseno de un ángulo de un triángulo rectángulo.](./img/funciones/coseno-triangulo.tex)
-:::
+![Coseno de un ángulo de un triángulo rectángulo.](./img/funciones/coseno-triangulo){width=250}
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.
 
@@ -624,13 +494,7 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 :::
 
 :::{#exm-grafica-funcion-coseno}
-::: {.content-visible when-format="html"}
-![Gráfica de la función coseno.](./img/funciones/funcion-coseno.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función coseno.](./img/funciones/funcion-coseno.tex)
-:::
+![Gráfica de la función coseno.](./img/funciones/funcion-coseno){width=500}
 :::
 
 ### Propiedades de la función coseno
@@ -651,13 +515,7 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define la *tangente* de $\alpha$, y se nota $\operatorname{tg} \alpha$, como el cociente entre el cateto opuesto y el cateto contiguo.
 :::
 
-::: {.content-visible when-format="html"}
-![Tangente de un ángulo de un triángulo rectángulo.](./img/funciones/tangente-triangulo.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Tangente de un ángulo de un triángulo rectángulo.](./img/funciones/tangente-triangulo.tex)
-:::
+![Tangente de un ángulo de un triángulo rectángulo.](./img/funciones/tangente-triangulo){width=250}
 
 La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.
 
@@ -675,13 +533,7 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 :::
 
 :::{#exm-funcion-tangente}
-::: {.content-visible when-format="html"}
-![Gráfica de la función tangente.](./img/funciones/funcion-tangente.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función tangente.](./img/funciones/funcion-tangente.tex)
-:::
+![Gráfica de la función tangente.](./img/funciones/funcion-tangente){width=500}
 :::
 
 
@@ -707,13 +559,7 @@ como la función inversa de la función seno.
 :::
 
 :::{#exm-funcion-arcoseno}
-::: {.content-visible when-format="html"}
-![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno.tex)
-:::
+![Gráfica de la función arcoseno.](./img/funciones/funcion-arcoseno){width=200}
 :::
 
 ### Propiedades de la función arcoseno
@@ -735,13 +581,7 @@ como la función inversa de la función coseno.
 :::
 
 :::{#exm-funcion-arcocoseno}
-::: {.content-visible when-format="html"}
-![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno.tex)
-:::
+![Gráfica de la función arcocoseno.](./img/funciones/funcion-arcocoseno){width=200}
 :::
 
 ### Propiedades de la función arcoseno
@@ -763,13 +603,7 @@ como la función inversa de la función tangente.
 :::
 
 :::{#exm-funcion-arcotangente}
-::: {.content-visible when-format="html"}
-![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.png)
-:::
-
-::: {.content-visible unless-format="html"}
-![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente.tex)
-:::
+![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente){width=400}
 :::
 
 ### Propiedades de la función arcotangente
