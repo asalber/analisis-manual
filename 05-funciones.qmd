@@ -50,7 +50,7 @@ Existen distintas formas de representar los pares de elementos que forman parte 
 
 - **Representación gráfica**. Se representan los pares $(x,y)$ de la función mediante puntos con las correspondientes coordenadas en el plano Real cartesiano.
 
-![Gráfica de una función.](./img/funciones/grafica-funcion){width=400}
+![Gráfica de una función.](./img/funciones/grafica-funcion)
 
 #### Por Intensión {.unnumbered}
 
@@ -92,7 +92,7 @@ $$Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}$$
 :::{#exm-dominio-funcion}
 Dada la función $$f(x)=\frac{1}{\sqrt{x^2-1}}$$
 
-![Dominio de la función $f(x)=\frac{1}{\sqrt{x^2-1}}$.](./img/funciones/ejemplo-dominio){width=400}
+![Dominio de la función $f(x)=\frac{1}{\sqrt{x^2-1}}$.](./img/funciones/ejemplo-dominio)
 
 Para determinar su dominio hay que eliminar los valores en los que no está definida la función. En este caso hay que eliminar los valores que hacen negativo el radicando de la raíz del denominador, es decir, los valores de $x$ tales que $x^2-1<0$, que son los valores que cumplen $-1<x<1$, pero también hay que eliminar del dominio los valores que anulan el denominador, es decir, los valores de $x$ tales que $\sqrt{x^2-1}=0$, que son $x=-1$ y $x=1$. Por tanto, su dominio es
 
@@ -111,7 +111,7 @@ $$Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}$$
 :::{#exm-imagen-funcion}
 Dada la función $f(x)=x^2-2$
 
-![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen){width=400}
+![Imagen de la función $f(x)=x^2-2$.](./img/funciones/ejemplo-imagen)
 
 Su imagen es
 
@@ -131,7 +131,7 @@ Se dice que una función $f: \mathbb{R}\rightarrow \mathbb{R}$ es una _funcion c
 $$f(x)=c\ \forall x\in\mathbb{R}.$$
 :::
 
-![Gráfica de una función constante.](./img/funciones/funcion-constante){width=400}
+![Gráfica de una función constante.](./img/funciones/funcion-constante)
 
 El dominio de la función constante $f(x)=c$ es $\mathbb{R}$ y su imagen $\{c\}$.
 
@@ -144,7 +144,7 @@ Se llama *función identidad*, a la función $Id: \mathbb{R}\rightarrow \mathbb{
 $$Id(x)=x.$$
 :::
 
-![Gráfica de la función identidad.](./img/funciones/funcion-identidad){width=400}
+![Gráfica de la función identidad.](./img/funciones/funcion-identidad)
 
 El dominio y la imagen de la función identidad es $\mathbb{R}$.
 
@@ -236,9 +236,9 @@ Se dice que una función $f$ es *decreciente* en un intervalo $I$, si para todo 
 :::
 
 ::: {layout-ncol=2}
-![Función creciente.](./img/funciones/funcion-creciente){width=400}
+![Función creciente.](./img/funciones/funcion-creciente)
 
-![Función decreciente.](./img/funciones/funcion-decreciente){width=400}
+![Función decreciente.](./img/funciones/funcion-decreciente)
 :::
 
 ## Extremos de una función
@@ -251,9 +251,9 @@ Y se dice que $f$ tiene un *mínimo relativo* en $a$, si existe un $\delta>0$ ta
 :::
 
 ::: {layout-ncol=2}
-![Máximo relativo.](./img/funciones/maximo){width=400}
+![Máximo relativo.](./img/funciones/maximo)
 
-![Mínimo relativo.](./img/funciones/minimo){width=400}
+![Mínimo relativo.](./img/funciones/minimo)
 :::
 
 ## Concavidad de una función
@@ -269,9 +269,9 @@ Al punto donde cambia la concavidad de una función se le llama *punto de inflex
 :::
 
 ::: {layout-ncol=2}
-![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba){width=400}
+![Función cóncava hacia arriba.](./img/funciones/funcion-concava-arriba)
 
-![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo){width=400}
+![Función cóncava hacia abajo.](./img/funciones/funcion-concava-abajo)
 :::
 
 ## Funciones periódicas
@@ -301,7 +301,7 @@ donde $n$ es un entero no negativo que se llama *grado del polinomio*, y $a_0,\l
 :::
 
 :::{#exm-funcion-polinomica}
-![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica){width=400}
+![Gráficas de funciones polinómicas.](./img/funciones/funcion-polinomica)
 :::
 
 ### Propiedades de las funciones polinómicas
@@ -324,7 +324,7 @@ donde $p(x)$ y $q(x)$ son funcione polinómicas con $q(x)\neq 0$.
 :::
 
 :::{#exm-funcion-racional}
-![Gráficas de funciones racionales.](./img/funciones/funcion-racional){width=400}
+![Gráficas de funciones racionales.](./img/funciones/funcion-racional)
 :::
 
 ### Propiedades de las funciones racionales
@@ -346,7 +346,7 @@ Una *función potencial* es una función de la forma $$f(x)=x^r,$$ donde $r$ es 
 :::
 
 :::{#exm-funcion-potencial}
-![Gráficas de funciones potenciales.](./img/funciones/funcion-potencial){width=400}
+![Gráficas de funciones potenciales.](./img/funciones/funcion-potencial)
 :::
 
 ### Propiedades de las funciones potenciales
@@ -372,7 +372,7 @@ Una *función exponencial* de base $a$ es una función de la forma $$f(x)=a^x,$$
 :::
 
 :::{#exm-funcion-exponencial}
-![Gráficas de funciones exponenciales.](./img/funciones/funcion-exponencial){width=400}
+![Gráficas de funciones exponenciales.](./img/funciones/funcion-exponencial)
 :::
 
 
@@ -401,7 +401,7 @@ donde $a$ es un valor real positivo distinto de 1.
 :::
 
 :::{#exm-funcion-logaritmica}
-![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica){width=400}
+![Gráficas de funciones logaritmicas.](./img/funciones/funcion-logaritmica)
 :::
 
 ### Propiedades de las funciones logarítmicas
@@ -603,7 +603,7 @@ como la función inversa de la función tangente.
 :::
 
 :::{#exm-funcion-arcotangente}
-![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente){width=400}
+![Gráfica de la función arcotangente.](./img/funciones/funcion-arcotangente)
 :::
 
 ### Propiedades de la función arcotangente
