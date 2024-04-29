@@ -952,12 +952,17 @@ Advertencia
 <p>Por ejemplo, <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}\)</span>, pero <span class="math inline">\(\int_1^\infty \frac{1}{x^2}\,dx = 1\)</span>.</p>
 </div>
 </div>
-<div id="thm-criterio-cociente" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9.6 (Criterio del cociente)</strong></span> Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span>, si existe el límite</p>
+<p>Aunque la integral impropia no siempre coincide con la suma de la serie, podemos usarla para calcular la suma de la serie de manera aproximada.</p>
+<p>Si tomamos la suma parcial <span class="math inline">\(A_n = \sum_{i=1}^n a_i\)</span> como una aproximación de la suma <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span>, entonces el error de la aproximación viene dado por</p>
 <p><span class="math display">\[
-\lim_{n\to\infty} \frac{a_n}{b_n} = l
+R_n = \sum_{n=1}^\infty a_n - A_n= a_{n+1}+a_{n+2}+\cdots,
 \]</span></p>
-<p>con <span class="math inline">\(l&gt;0\)</span>, entonces <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\(\sum b_n\)</span> converge.</p>
+<p>que se conoce también como <em>residuo</em> de la serie.</p>
+<div id="prp-residuo-acotado" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 9.6</strong></span> Dada una serie <span class="math inline">\(\sum a_n\)</span> de términos positivos, si <span class="math inline">\(a_n=f(n)\)</span> para una función <span class="math inline">\(f\)</span> continua, positiva y decreciente en el intervalo <span class="math inline">\([n,\infty)\)</span>, y <span class="math inline">\(\sum a_n\)</span> converge, entonces</p>
+<p><span class="math display">\[
+\int_{n+1}^\infty f(x)\,dx \leq R_n \leq \int_n^\infty f(x)\,dx.
+\]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -972,6 +977,56 @@ Demostración
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Si <span class="math inline">\(f\)</span> es decreciente en el intervalo <span class="math inline">\([n,\infty)\)</span>, entonces, tal y como se aprecia en la siguiente figura, el residuo se puede acotar superiormente por la integral impropia de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([n,\infty)\)</span>, es decir,</p>
+<p><span class="math display">\[
+R_n = a_{n+1}+a_{n+2}+\cdots \leq \int_n^\infty f(x)\,dx.
+\]</span></p>
+<p>Y del mismo modo, puede acortarse inferiormente por la integral impropia de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([n+1,\infty]\)</span>, es decir,</p>
+<p><span class="math display">\[
+R_n = a_{n+1}+a_{n+2}+\cdots \geq \int_{n+1}^\infty f(x)\,dx.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-residuo-acotado" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9.16</strong></span> Vamos a dar una aproximación para la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> usando la suma parcial de orden 5, que vale</p>
+<p><span class="math display">\[
+A_5 = \sum_{i=1}^5 \frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{1}{25} = 1.4636111111.
+\]</span></p>
+<p>Usando la proposición anterior se puede obtener una cota para el residuo de la serie, que es</p>
+<p><span class="math display">\[
+\begin{gathered}
+\int_6^\infty \frac{1}{x^2}\,dx \leq R_5 \leq \int_5^\infty \frac{1}{x^2}\,dx, \Leftrightarrow \\
+\left[-\frac{1}{x}\right]_6^\infty \leq R_5 \leq \left[-\frac{1}{x}\right]_5^\infty, \Leftrightarrow \\
+\frac{1}{6} \leq R_5 \leq \frac{1}{5}.
+\end{gathered}
+\]</span></p>
+<p>Por tanto, la suma de la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> está acotada por</p>
+<p><span class="math display">\[
+1.4636111111 + \frac{1}{6} \leq \sum_{n=1}^\infty \frac{1}{n^2} \leq 1.4636111111 + \frac{1}{5}.
+\]</span></p>
+</div>
+<div id="thm-criterio-cociente" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 9.6 (Criterio del cociente)</strong></span> Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span>, si existe el límite</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \frac{a_n}{b_n} = l
+\]</span></p>
+<p>con <span class="math inline">\(l&gt;0\)</span>, entonces <span class="math inline">\(\sum a_n\)</span> converge si y solo si <span class="math inline">\(\sum b_n\)</span> converge.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(\lim_{n\to\infty} \frac{a_n}{b_n} = l&gt;0\)</span>. Entonces, por la definición de límite, dado un <span class="math inline">\(\varepsilon=l/2\)</span> existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(\forall n\geq k\)</span> se tiene</p>
 <p><span class="math display">\[
 \left|\frac{a_n}{b_n}-l\right|&lt;\frac{l}{2} \Leftrightarrow \frac{l}{2}&lt; \frac{a_n}{b_n}&lt;\frac{3l}{2} \Leftrightarrow \frac{l}{2}b_n&lt;a_n&lt;\frac{3l}{2}b_n.
@@ -983,7 +1038,7 @@ Demostración
 </div>
 </div>
 <div id="exm-criterio-cociente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.16</strong></span> Veamos que la serie <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> converge. Ya hemos visto que la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, pero no podemos usar directamente el criterio de comparación de series porque <span class="math inline">\(\frac{1}{2^n-n}&gt;\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Sin embargo, usando el criterio del cociente se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.17</strong></span> Veamos que la serie <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> converge. Ya hemos visto que la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, pero no podemos usar directamente el criterio de comparación de series porque <span class="math inline">\(\frac{1}{2^n-n}&gt;\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Sin embargo, usando el criterio del cociente se tiene</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} \frac{\frac{1}{2^n-n}}{\frac{1}{2^n}} = \lim_{n\to\infty} \frac{2^n}{2^n-n} = \lim_{n\to\infty}\frac{1}{1-\frac{n}{2^n}} = 1&gt;0,
 \]</span></p>
@@ -1003,7 +1058,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-no-aplicacion-criterio-cociente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.17</strong></span> Si tomamos la serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> y la serie armónica <span class="math inline">\(\frac{1}{n}\)</span>, se cumple que</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.18</strong></span> Si tomamos la serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> y la serie armónica <span class="math inline">\(\frac{1}{n}\)</span>, se cumple que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}\frac{\frac{1}{2^n}}{\frac{1}{n}} = \lim_{n\to\infty}\frac{n}{2^n} = 0.
 \]</span></p>
@@ -1017,7 +1072,7 @@ Advertencia
 <p><span class="theorem-title"><strong>Teorema 9.7 (Criterio de la serie alternada (Leibniz))</strong></span> Dada una serie alternada <span class="math inline">\(\sum (-1)^{n-1} a_n\)</span>, con <span class="math inline">\(a_n&gt;0\)</span>, si <span class="math inline">\((a_n)_{n=1}^\infty\)</span> es monótona decreciente y <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>, entonces la serie converge.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1026,7 +1081,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\((a_n)_{n=1}^\infty\)</span> es monótona decreciente, es decir, <span class="math inline">\(a_{n+1}\leq a_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>. Entonces, si construimos la sucesión de las sumas parciales de orden par, se tiene</p>
@@ -1053,7 +1108,7 @@ A_{2n} = a_1 -(a_2-a_3)-(a_4-a_5)-\cdots -(a_{2n-2}-a_{2n-1})-a_{2n},
 </div>
 </div>
 <div id="exm-criterio-serie-alternada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.18</strong></span> La serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> cumple las condiciones del teorema anterior, ya que, <span class="math inline">\(\frac{1}{n+1}\leq \frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=0\)</span>, por lo que converge.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.19</strong></span> La serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> cumple las condiciones del teorema anterior, ya que, <span class="math inline">\(\frac{1}{n+1}\leq \frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=0\)</span>, por lo que converge.</p>
 <p>Veamos ahora que la serie <span class="math inline">\(\sum (-1)^{n-1}\frac{n}{n^2+1}\)</span> también cumple las condiciones del teorema. La primera condición se cumple ya que,</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -1076,20 +1131,20 @@ A_{2n} = a_1 -(a_2-a_3)-(a_4-a_5)-\cdots -(a_{2n-2}-a_{2n-1})-a_{2n},
 </div>
 <p>Si la serie es de términos positivos, entonces <span class="math inline">\(|a_n|=a_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y, por tanto, la convergencia y la convergencia absoluta son equivalentes. Pero si la serie es alternante o tiene tanto términos positivos como negativos, puede ocurrir que la serie sea convergente pero no absolutamente convergente.</p>
 <div id="exm-serie-absolutamente-convergente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.19</strong></span> La serie <span class="math inline">\(\sum \frac{(-1)^n}{n^2}\)</span> es absolutamente convergente ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}\)</span>, que es convergente al ser una serie <span class="math inline">\(p\)</span> con <span class="math inline">\(p=2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.20</strong></span> La serie <span class="math inline">\(\sum \frac{(-1)^n}{n^2}\)</span> es absolutamente convergente ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}\)</span>, que es convergente al ser una serie <span class="math inline">\(p\)</span> con <span class="math inline">\(p=2\)</span>.</p>
 </div>
 <p>Que una serie sea absolutamente convergente quiere decir que sus términos se hacen pequeños (en valor absoluto) lo suficientemente rápido para garantizar que la suma converge sin tener en cuenta su signo.</p>
 <div id="def-serie-condicionalmente-convergente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.7 (Serie condicionalmente convergente)</strong></span> Una serie <span class="math inline">\(\sum a_n\)</span> es <em>condicionalmente convergente</em> si es convergente pero no absolutamente convergente.</p>
 </div>
 <div id="exm-serie-condicionalmente-convergente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.20</strong></span> Ya hemos visto que la serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> es convergente, pero no es absolutamente convergente, ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n}\right|=\sum \frac{1}{n}\)</span>, que se trata de la serie armónica, y por tanto, no converge. Por tanto la serie armónica alternada es condicionalmente convergente.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.21</strong></span> Ya hemos visto que la serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> es convergente, pero no es absolutamente convergente, ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n}\right|=\sum \frac{1}{n}\)</span>, que se trata de la serie armónica, y por tanto, no converge. Por tanto la serie armónica alternada es condicionalmente convergente.</p>
 </div>
 <div id="thm-condicion-convergencia-absoluta" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9.8</strong></span> Si una serie es absolutamente convergente, entonces es convergente.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1098,7 +1153,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Partimos del hecho de que <span class="math inline">\(a_n=|a_n|\)</span> o <span class="math inline">\(a_n=-|a_n|\)</span>, y por tanto, <span class="math inline">\(a_n+|a_n|= 2|a_n|\)</span> o <span class="math inline">\(a_n+|a_n|=0\)</span>, y se tiene que <span class="math inline">\(0\leq a_n+|a_n|\leq 2|a_n|\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Como <span class="math inline">\(\sum |a_n|\)</span> converge, <span class="math inline">\(\sum 2|a_n|\)</span> también converge, y por el criterio de comparación de series se tiene que <span class="math inline">\(\sum a_n+|a_n|\)</span> converge. De aquí se deduce fácilmente que</p>
@@ -1117,7 +1172,7 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1126,7 +1181,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada caso.</p>
@@ -1148,7 +1203,7 @@ Demostración
 </div>
 </div>
 <div id="exm-criterio-razon" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.21</strong></span> Veamos que la serie <span class="math inline">\(\sum (-1)^n \frac{n^2}{2^n}\)</span> es absolutamente convergente aplicando el criterio de la razón.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.22</strong></span> Veamos que la serie <span class="math inline">\(\sum (-1)^n \frac{n^2}{2^n}\)</span> es absolutamente convergente aplicando el criterio de la razón.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| &amp;= \lim_{n\to\infty} \left|\frac{\frac{(-1)^{n+1}(n+1)^2}{2^{n+1}}}{\frac{(-1)^n n^2}{2^n}}\right| = \lim_{n\to\infty} \frac{(n+1)^2}{2^{n+1}}\frac{2^n}{n^2}\\
 &amp;= \lim_{n\to\infty}\frac{1}{2}\left(\frac{n+1}{n}\right)^2 = \frac{1}{2}\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^2 = \frac{1}{2}&lt;1,
@@ -1175,7 +1230,7 @@ Advertencia
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1184,7 +1239,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>La demostración es similar a la del criterio de la razón.</p>
@@ -1197,7 +1252,7 @@ Demostración
 </div>
 </div>
 <div id="exm-criterio-raíz" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.22</strong></span> Veamos que la serie <span class="math inline">\(\sum \left(\frac{3n}{2n+1}\right)^n\)</span> diverge aplicando el criterio de la raíz. Para ello basta ver que</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.23</strong></span> Veamos que la serie <span class="math inline">\(\sum \left(\frac{3n}{2n+1}\right)^n\)</span> diverge aplicando el criterio de la raíz. Para ello basta ver que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} \sqrt[n]{\left(\frac{3n}{2n+1}\right)^n} = \lim_{n\to\infty} \frac{3n}{2n+1} = \lim_{n\to\infty} \frac{3}{2+\frac{1}{n}} = \frac{3}{2} &gt;1.
 \]</span></p>
@@ -1267,7 +1322,7 @@ Importante
 </div>
 <p>Una serie funcional puede ser convergente para algunos valores de <span class="math inline">\(x\)</span> y divergente para otros.</p>
 <div id="exm-convergencia-puntual" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.23</strong></span> La serie funcional <span class="math inline">\(\sum x^n\)</span> es una serie geométrica de razón <span class="math inline">\(x\)</span>, de modo que, será convergente cuando <span class="math inline">\(|x|&lt;1\)</span> y divergente en caso contrario.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.24</strong></span> La serie funcional <span class="math inline">\(\sum x^n\)</span> es una serie geométrica de razón <span class="math inline">\(x\)</span>, de modo que, será convergente cuando <span class="math inline">\(|x|&lt;1\)</span> y divergente en caso contrario.</p>
 </div>
 <div id="def-dominio-convergencia-puntual-serie-funcional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9.9 (Dominio de convergencia puntual de una serie funcional)</strong></span> Dada una serie funcional <span class="math inline">\(\sum f_n\)</span>, se llama <em>dominio de convergencia puntual</em> de las serie al conjunto <span class="math inline">\(\mathcal{C}=\{x\in\mathbb{R}: \sum f_n(x) \mbox{ converge}\}\)</span></p>
@@ -1278,7 +1333,7 @@ F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 \]</span></p>
 </div>
 <div id="exm-funcion-suma" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.24</strong></span> El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.25</strong></span> El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
 </div>
 <p>De particular interés son las series que se obtienen a partir de sucesiones de la forma <span class="math inline">\((c_nx^n)_{n=1}^\infty\)</span> que dan lugar a polinomios. Como ya vimos con los <a href="./07-derivadas.html#polinomios-de-taylor">polinomios de Taylor</a>, estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.</p>
 <div id="def-serie-potencias" class="theorem definition">
@@ -1286,7 +1341,7 @@ F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 <p>La sucesión <span class="math inline">\((c_n)_{n=0}^\infty\)</span> se llama <em>sucesión de coeficientes de la serie</em>, y al término <span class="math inline">\(c_0\)</span> se le llama <em>término independiente</em>.</p>
 </div>
 <div id="exm-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.25</strong></span> Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.26</strong></span> Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
 <p><span class="math display">\[\begin{align*}
 F_1 &amp;= x\\
 F_2 &amp;= x+\frac{x^2}{2}\\
@@ -1297,14 +1352,14 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 </div>
 <p>Para cualquier serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, está claro que <span class="math inline">\(a\)</span> pertenece al dominio de convergencia puntual de la serie, pues para <span class="math inline">\(x=a\)</span> se tiene <span class="math inline">\(\sum_{n=1}^\infty c_n(a-a)^n = c_0\)</span>. Veremos a continuación un par resultados que nos ayudarán a ver para qué otros valores de <span class="math inline">\(x\)</span> la serie de potencias converge.</p>
 <div id="prp-intervalo-convergencia-serie-potencias" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 9.6</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
+<p><span class="theorem-title"><strong>Proposición 9.7</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
 <ol type="a">
 <li>Si la serie converge para <span class="math inline">\(x=b\neq 0\)</span>, entonces converge para cualquier <span class="math inline">\(x\)</span> tal que <span class="math inline">\(|x|&lt;|b|\)</span>.</li>
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq 0\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x|&gt;|d|\)</span>.</li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1313,7 +1368,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada parte.</p>
@@ -1330,7 +1385,7 @@ Demostración
 </div>
 </div>
 <div id="exm-intervalo-convergencia-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.26</strong></span> Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.27</strong></span> Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
 <p><span class="math display">\[
 \sum \frac{\left(\frac{1}{2}\right)^n}{n} = \sum \frac{1}{n2^n},
 \]</span></p>
@@ -1345,7 +1400,7 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1354,7 +1409,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>La demostración es sencilla a partir de la proposición anterior haciendo el cambio de variable <span class="math inline">\(y=x-a\)</span>, y se deja como ejercicio.</p>
@@ -1367,7 +1422,7 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 9.11 (Radio de convergencia)</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, se cumple que, o bien el dominio de convergencia puntual es <span class="math inline">\(\mathbb{R}\)</span>, o bien existe un número <span class="math inline">\(R\geq 0\)</span>, llamado <em>radio de convergencia</em> tal que la serie converge si <span class="math inline">\(|x-a|&lt;R\)</span> y diverge si <span class="math inline">\(|x-a|&gt;R\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1376,7 +1431,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea el conjunto <span class="math inline">\(A=\{x-a: \sum c_n(x-a)^n \mbox{ converge}\}\)</span>. Entonces <span class="math inline">\(A\neq \emptyset\)</span> ya que <span class="math inline">\(\sum c_n(x-a)^n\)</span> converge, al menos, para <span class="math inline">\(x=a\)</span>, y por tanto <span class="math inline">\(0\in A\)</span>. Supongamos además que <span class="math inline">\(A\neq \mathbb{R}\)</span>. Entonces existe un número <span class="math inline">\(d\neq a\)</span> tal que la serie <span class="math inline">\(\sum c_n(d-a)^n\)</span> diverge, y por el corolario anterior, también diverge para <span class="math inline">\(|x-a|&gt;|d-a|\)</span>, de manera que <span class="math inline">\(|x-a|\leq |d-a|\)</span> <span class="math inline">\(\forall (x-a) \in A\)</span>, y por el axioma de completitud se tiene que existe el supremo de <span class="math inline">\(A\)</span>.</p>
@@ -1405,7 +1460,7 @@ R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1414,7 +1469,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio de la raíz.</p>
@@ -1423,7 +1478,7 @@ Demostración
 </div>
 </div>
 <div id="exm-radio-convergencia-raiz" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.27</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.28</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
 R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
 \]</span></p>
@@ -1437,7 +1492,7 @@ R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1446,7 +1501,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio de la razón.</p>
@@ -1455,7 +1510,7 @@ Demostración
 </div>
 </div>
 <div id="exm-radio-convergencia-razon" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.28</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.29</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
 R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 \]</span></p>
@@ -1469,7 +1524,7 @@ R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 <p>para cualquier <span class="math inline">\(x\)</span> en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="exm-funciones-analiticas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.29</strong></span> Cualquier polinomio de grado <span class="math inline">\(n\)</span> es una función analítica en todo <span class="math inline">\(\mathbb{R}\)</span> ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que <span class="math inline">\(n\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.30</strong></span> Cualquier polinomio de grado <span class="math inline">\(n\)</span> es una función analítica en todo <span class="math inline">\(\mathbb{R}\)</span> ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que <span class="math inline">\(n\)</span>.</p>
 <p>Otras funciones elementales como la función exponencial, la función logarítmica y las trigonométricas son también analíticas en cualquier intervalo abierto de su dominio.</p>
 </div>
 </section>
@@ -1483,7 +1538,7 @@ R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 \]</span></p>
 </div>
 <div id="exm-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.30</strong></span> Veamos cuál es la serie de Taylor de la función <span class="math inline">\(f(x)=\ln(x)\)</span> en <span class="math inline">\(a=1\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.31</strong></span> Veamos cuál es la serie de Taylor de la función <span class="math inline">\(f(x)=\ln(x)\)</span> en <span class="math inline">\(a=1\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 f(x)=\ln x &amp; \quad &amp; f(1)=\ln 1 =0,\\
@@ -1514,7 +1569,7 @@ A_n(x) &amp;= \sum_{i=1}^n \frac{(-1)^{i-1}}{i}(x-1)^i\\
 \]</span></p>
 </div>
 <div id="exm-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.31</strong></span> Veamos cuál es la serie de Maclaurin de la función <span class="math inline">\(f(x)=\frac{1}{1-x}\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.32</strong></span> Veamos cuál es la serie de Maclaurin de la función <span class="math inline">\(f(x)=\frac{1}{1-x}\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 f(x)=\frac{1}{1-x} &amp; \quad &amp; f(0)= 1,\\
@@ -1539,7 +1594,7 @@ f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n
 <p><span class="math inline">\(\forall x\in\mathcal{C}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1548,7 +1603,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es analítica en el intervalo <span class="math inline">\(I\)</span>. Entonces, para cualquier <span class="math inline">\(a\in I\)</span>, <span class="math inline">\(f\)</span> puede expresarse mediante una serie de potencias centrada en <span class="math inline">\(a\)</span>,</p>
@@ -1610,7 +1665,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-funcion-no-coincidente-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.32</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.33</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -1630,7 +1685,7 @@ e^{-1/x^2} &amp; \mbox{si $x\neq 0$}\\
 <p>para <span class="math inline">\(|x-a|&lt;R\)</span>, entonces <span class="math inline">\(f(x)\)</span> es igual a la suma de su serie de Taylor centrada en <span class="math inline">\(a\)</span> en el intervalo <span class="math inline">\(|x-a|&lt;R\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1639,7 +1694,7 @@ Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(f(x)=p_{f,a}^n(x) + r_{f,a}^n(x)\)</span> y supongamos que <span class="math inline">\(\lim_{n\to\infty} r_{f,a}^n(x) = 0\)</span>. Entonces <span class="math inline">\(p_{f,a}^n(x) = f(x) - r_{f,a}^n(x)\)</span>, y tomando límites se tiene</p>
@@ -1651,7 +1706,7 @@ Demostración
 </div>
 </div>
 <div id="exm-serie-maclaurin-seno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9.33</strong></span> Veamos que <span class="math inline">\(\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 9.34</strong></span> Veamos que <span class="math inline">\(\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
 <p>El polinomio de Maclaurin de grado <span class="math inline">\(2n+1\)</span> para la función <span class="math inline">\(\operatorname{sen}(x)\)</span> es</p>
 <p><span class="math display">\[
 p_{f,0}^{2n+1}(x) = \sum_{i=0}^n (-1)^i\frac{x^{2i+1}}{(2i+1)!}
