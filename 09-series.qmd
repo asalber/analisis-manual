@@ -510,11 +510,15 @@ $$
 s(f,P) = \sum_{i=1}^{n-1} f(i+1)\Delta x_i = f(2)+f(3)+\cdots+f(n) = a_2+a_3+\cdots+a_n,
 $$
 
+![Serie como suma inferior de Riemann](img/series/integral-cota-superior-serie)
+
 y, del mismo modo, la suma superior de Riemann de $f$ es
 
 $$
 S(f,P) = \sum_{i=1}^{n-1} f(i)\Delta x_i = f(1)+f(2)+\cdots+f(n-1) = a_1+a_2+\cdots+a_{n-1},
 $$
+
+![Serie como suma superior de Riemann](img/series/integral-cota-inferior-serie)
 
 por lo que se cumple que 
 
