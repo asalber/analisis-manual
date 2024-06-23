@@ -1360,7 +1360,7 @@ La siguiente tabla recoge las series de Maclaurin de algunas funciones elemental
 | $f(x)$ | $\sum_{n=1}^\infty \frac{f^{(n)}(0)}{n!}x^n$ | Dominio convergencia |
 |:-:|:-:|:-:|
 | $\frac{1}{1-x}$ | $1 + x + x^2 + x^3 + \cdots = \sum_{n=0}^\infty x^n$ | $(-1,1)$ |
-| $e^x$ | $1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \cdots = \sum_{n=0}^\infty \frac{x^n}{n}$ | $\mathbb{R}$ |
+| $e^x$ | $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^\infty \frac{x^n}{n!}$ | $\mathbb{R}$ |
 | $\ln(1+x)$ | $x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots = \sum_{n=0}^\infty (-1)^{n-1}\frac{x^n}{n}$ | $(-1,1]$ |
 | $\operatorname{sen}(x)$ | $x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}$ | $\mathbb{R}$ |
 | $\cos(x)$ |  $1-\frac{x^2}{2!}+\frac{x^4}{4!}- \cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$ | $\mathbb{R}$ |
