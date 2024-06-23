@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -961,7 +961,7 @@ Advertencia
 </div>
 <div class="callout-body-container callout-body">
 <p>El criterio de la integral permite averiguar si una serie de términos positivos converge o no, pero, cuando la serie converge, no tiene porqué cumplirse que la suma sea el valor de la integral indefinida.</p>
-<p>Por ejemplo, <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}\)</span>, pero <span class="math inline">\(\int_1^\infty \frac{1}{x^2}\,dx = 1\)</span>.</p>
+<p>Por ejemplo, <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}\)</span>, pero <span class="math inline">\(\int_1^\infty \frac{1}{x^2}\,dx = 1\)</span>.</p>
 </div>
 </div>
 <p>Aunque la integral impropia no siempre coincide con la suma de la serie, podemos usarla para calcular la suma de la serie de manera aproximada.</p>
@@ -1589,7 +1589,7 @@ f'(x)=\frac{1}{(1-x)^2} &amp; &amp; f'(0)=1,\\
 f''(x)=\frac{2}{(1-x)^3} &amp; &amp; f''(0)=2,\\
 f'''(x)=\frac{3!}{(1-x)^4} &amp; &amp; f'''(0)=3!,\\
 \vdots &amp; &amp; \vdots\\
-f^{(n)}(x) = \frac{n!}{(1-x)^(n+1)} &amp; &amp; f^{(n)}(0) = n!
+f^{(n)}(x) = \frac{n!}{(1-x)^{(n+1)}} &amp; &amp; f^{(n)}(0) = n!
 \end{array}
 \]</span></p>
 <p>Sustituyendo en la fórmula de la serie de Maclaurin se tiene</p>
@@ -1744,7 +1744,7 @@ r_{f,a}^{2n+1}(x) = (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c),
 <section id="series-de-maclaurin-de-funciones-elementales" class="level3" data-number="9.10.1">
 <h3 data-number="9.10.1" class="anchored" data-anchor-id="series-de-maclaurin-de-funciones-elementales"><span class="header-section-number">9.10.1</span> Series de Maclaurin de funciones elementales</h3>
 <p>La siguiente tabla recoge las series de Maclaurin de algunas funciones elementales habituales.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1753,7 +1753,7 @@ r_{f,a}^{2n+1}(x) = (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c),
 <thead>
 <tr class="header">
 <th style="text-align: center;"><span class="math inline">\(f(x)\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\sum_{n=1}^\infty \frac{f^{(n)}(a)}{n!}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sum_{n=1}^\infty \frac{f^{(n)}(0)}{n!}x^n\)</span></th>
 <th style="text-align: center;">Dominio convergencia</th>
 </tr>
 </thead>

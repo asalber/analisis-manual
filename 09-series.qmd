@@ -575,7 +575,7 @@ por lo que, de acuerdo al criterio de la integral, la serie armónica $\sum_{n=1
 :::{.callout-warning}
 El criterio de la integral permite averiguar si una serie de términos positivos converge o no, pero, cuando la serie converge, no tiene porqué cumplirse que la suma sea el valor de la integral indefinida. 
 
-Por ejemplo, $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}$, pero $\int_1^\infty \frac{1}{x^2}\,dx = 1$.
+Por ejemplo, $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$, pero $\int_1^\infty \frac{1}{x^2}\,dx = 1$.
 :::
 
 Aunque la integral impropia no siempre coincide con la suma de la serie, podemos usarla para calcular la suma de la serie de manera aproximada.
@@ -1184,7 +1184,7 @@ f'(x)=\frac{1}{(1-x)^2} & & f'(0)=1,\\
 f''(x)=\frac{2}{(1-x)^3} & & f''(0)=2,\\
 f'''(x)=\frac{3!}{(1-x)^4} & & f'''(0)=3!,\\
 \vdots & & \vdots\\
-f^{(n)}(x) = \frac{n!}{(1-x)^(n+1)} & & f^{(n)}(0) = n!
+f^{(n)}(x) = \frac{n!}{(1-x)^{(n+1)}} & & f^{(n)}(0) = n!
 \end{array}
 $$
 
@@ -1357,7 +1357,7 @@ $$
 
 La siguiente tabla recoge las series de Maclaurin de algunas funciones elementales habituales.
 
-| $f(x)$ | $\sum_{n=1}^\infty \frac{f^{(n)}(a)}{n!}$ | Dominio convergencia |
+| $f(x)$ | $\sum_{n=1}^\infty \frac{f^{(n)}(0)}{n!}x^n$ | Dominio convergencia |
 |:-:|:-:|:-:|
 | $\frac{1}{1-x}$ | $1 + x + x^2 + x^3 + \cdots = \sum_{n=0}^\infty x^n$ | $(-1,1)$ |
 | $e^x$ | $1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \cdots = \sum_{n=0}^\infty \frac{x^n}{n}$ | $\mathbb{R}$ |
