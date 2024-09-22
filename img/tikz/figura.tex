@@ -46,44 +46,34 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{paraboloide-eliptico}
+\tikzsetnextfilename{curva-suave}
 
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \begin{tikzpicture}
+
+    % Axis settings
     \begin{axis}[
-      view={60}{30},
-      axis lines=center,
-      xlabel={$x$},
-      ylabel={$y$},
-      zlabel={$z$},
-      domain=-3:3,
-      y domain=-2:2,
-      samples= 60,
-      samples y=40,
-      z buffer=sort,
-      %zmax=1,
-      unbounded coords=jump,
-      x filter/.expression={
-        x^2/9 + y^2/4 > 1 ? nan : x
-      },
-      y filter/.expression={
-        x^2/9 + y^2/4 > 1 ? nan : y
-      },
-      ]
-      \addplot3 [
-        surf,
-        shader=faceted interp,
-        colormap/viridis,
-        opacity=0.5,
-    ] {x^2/9 + y^2/4};
-    \addplot3[surf, shader=faceted interp,
-    domain=0:2*pi,
-    samples=50,
-    myred,
-    line width= 3pt,
+        axis equal,
+        axis lines=middle,
+        xlabel=$x$, ylabel=$y$,
+        xmin=-1, xmax=1,
+        ymin=-1, ymax=1,
+        samples=100,
+        domain=0:360,
+        ticks=none,
+        color=myblack
     ]
-    ({3*cos(deg(x))}, {2*sin(deg(x))}, {1});
+    
+    % Parametric plot of a smooth curve (Circle)
+    \addplot [
+        parametric,
+        smooth,
+        myblue,
+        domain=0:360
+    ]({cos(2*x)}, {sin(x)});
+    
     \end{axis}
-  \end{tikzpicture}
+    
+    \end{tikzpicture}
 
 \end{document}

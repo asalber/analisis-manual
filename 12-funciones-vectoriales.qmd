@@ -52,6 +52,10 @@ Las representaciones gráficas de las funciones vectoriales se conocen como _tra
 ![Trayectoria de una función vectorial en el plano real.](img/funciones-vectoriales/trayectoria-plano.pdf)
 :::
 
+Para cada valor de $t$ la función vectorial devuelve un punto de la trayectoria.
+
+![Trayectoria de una función vectorial en el plano real.](img/funciones-vectoriales/trayectoria-funcion-vectorial-plano)
+
 Y la gráfica de una función vectorial en $\mathbb{R}^3$ es una trayectoria en el espacio real.
 
 :::{.content-visible when-format="html"}
@@ -65,7 +69,7 @@ Y la gráfica de una función vectorial en $\mathbb{R}^3$ es una trayectoria en 
 Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.
 
 :::{#exm-parametrizacion-trayectorias}
-Las función vectorial $\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
+Las función vectorial $\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t))$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\cos(2x), \operatorname{sen}(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
 
 :::{.content-visible when-format="html"}
 ![Parametrización de una trayectoria circular.](img/funciones-vectoriales/parametrizacion-trayectoria-circular.png)
@@ -546,6 +550,7 @@ $$
 Al igual que la derivada, el concepto de integral se puede extender de funciones reales a funciones vectoriales de forma natural, expresando la integral en términos de las integrales de las funciones componentes. El teorema fundamental del Cálculo también se cumple para funciones vectoriales.
 
 :::{#def-primitiva-funcion-vectorial}
+### Primitiva de una función vectorial
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se dice que una función vectorial $\mathbf{F}(t)$ es una _primitiva_ de $\mathbf{f}(t)$ si se cumple que $\mathbf{F}'(t) = \mathbf{f}(t)$.
 :::
 
@@ -555,6 +560,7 @@ Si $\mathbf{F}(t)$ es una primitiva de $\mathbf{f}(t)$ en $\mathbb{R}^n$, tambi�
 :::
 
 :::{#def-integral-indefinida-funcion-vectorial}
+### Integral indefinida de una función vectorial
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se define la _integral indefinida_ de $\mathbf{f}(t)$ como
 
 $$
@@ -588,16 +594,17 @@ donde $C_1,\ldots,C_n$ son escalares constantes y $\mathbf{C}=(C_1,\ldots, C_n)$
 :::
 
 :::{#exm-integral-indefinida-funcion-vectorial}
-La integral indefinida de la función $\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}$ es
+La integral indefinida de la función $\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2t} \mathbf{k}$ es
 
 \begin{align*}
 \int \mathbf{f}(t)\, dt
-&= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
-&= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2x}}{2} \mathbf{k}.
+&= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2t}\ dt \mathbf{k} \\
+&= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2t}}{2} \mathbf{k} + \mathbf{C}.
 \end{align*}
 :::
 
 :::{#def-integral-definida-funcion-vectorial}
+### Integral definida de una función vectorial
 Dada una función vectorial $\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))$ en $\mathbb{R}^n$, con $f_1(t),\ldots,f_n(t)$ funciones integrables Riemann en $I=[a,b]$, se define la _integral definida_ de $\mathbf{f}(t)$ en $I$ como
 
 $$
@@ -662,8 +669,8 @@ Esta última suma se parece a una suma de Riemann, aunque los $t_{ij}$, en gener
 
 \begin{align*}
 \lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| 
-&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t))^2}\Delta t. \\
-&= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\, dt \\
+&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\Delta t. \\
+&= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t))^2}\, dt \\
 &= \int_a^b |\mathbf{f}'(t)|\, dt
 \end{align*}
 
@@ -688,7 +695,7 @@ Veamos cuánto mide la trayectoria descrita por la función vectorial $\mathbf{f
 &= \int_0^{2\pi} |(-\operatorname{sen}(t), \cos(t), 1)|\, dt \\ 
 &= \int_0^{2\pi} \sqrt{(-\operatorname{sen}(t))^2 + \cos(t)^2 + 1^2}\,dt \\
 &= \int_0^{2\pi} \sqrt{2}\, dt
-= [\sqrt{2}x]_0^{2\pi} 
+= [\sqrt{2}t]_0^{2\pi} 
 = 2\sqrt{2}\pi.
 \end{align*}
 :::
@@ -870,6 +877,8 @@ $$
 :::
 :::
 
+[![Ejemplo interactivo](/img/logos/logo-geogebra.png)Ejemplo interactivo](https://www.geogebra.org/m/gua3ycdj)
+
 :::{#exm-curvatura-trayectoria}
 Veamos cuál es la curvatura de la espiral que describe la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)$. Su primera derivada vale $\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)$, y su módulo es $|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}$, de manera que el vector tangente unitario es
 
@@ -968,6 +977,7 @@ $$
 $$
 :::
 :::
+
 
 ## Cinemática: Movimiento curvilíneo
 
@@ -1286,6 +1296,8 @@ a_N
 &= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
 \end{align*}
 :::
+
+[![Ejemplo interactivo](/img/logos/logo-geogebra.png)Ejemplo interactivo](https://www.geogebra.org/m/kcnxeccy)
 
 ### Vector fuerza
 

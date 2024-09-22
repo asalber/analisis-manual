@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -377,6 +377,13 @@ window.Quarto = {
 <figcaption>Trayectoria de una función vectorial en el plano real.</figcaption>
 </figure>
 </div>
+<p>Para cada valor de <span class="math inline">\(t\)</span> la función vectorial devuelve un punto de la trayectoria.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/funciones-vectoriales/trayectoria-funcion-vectorial-plano.svg" class="img-fluid figure-img"></p>
+<figcaption>Trayectoria de una función vectorial en el plano real.</figcaption>
+</figure>
+</div>
 <p>Y la gráfica de una función vectorial en <span class="math inline">\(\mathbb{R}^3\)</span> es una trayectoria en el espacio real.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -386,7 +393,7 @@ window.Quarto = {
 </div>
 <p>Una curva puede ser la trayectoria de más de una función vectorial, es decir, una misma trayectoria puede tener distintas parametrizaciones, aunque siempre se puede pasar de una a otra mediante un cambio de variable.</p>
 <div id="exm-parametrizacion-trayectorias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.1</strong></span> Las función vectorial <span class="math inline">\(\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,2\pi]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))\)</span> en el intervalo <span class="math inline">\(x\in[0,\pi]\)</span>. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=2x\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=t/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.1</strong></span> Las función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t), \operatorname{sen}(t))\)</span> describe la misma trayectoria en el intervalo <span class="math inline">\(t\in[0,2\pi]\)</span>, que la función <span class="math inline">\(\mathbf{g}(x) = (\cos(2x), \operatorname{sen}(2x))\)</span> en el intervalo <span class="math inline">\(x\in[0,\pi]\)</span>. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable <span class="math inline">\(t=2x\)</span>, y de la segunda a la primera mediante el cambio de variable <span class="math inline">\(x=t/2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/funciones-vectoriales/parametrizacion-trayectoria-circular.png" class="img-fluid figure-img"></p>
@@ -802,7 +809,7 @@ x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 <h2 data-number="11.4" class="anchored" data-anchor-id="integral-de-una-función-vectorial"><span class="header-section-number">11.4</span> Integral de una función vectorial</h2>
 <p>Al igual que la derivada, el concepto de integral se puede extender de funciones reales a funciones vectoriales de forma natural, expresando la integral en términos de las integrales de las funciones componentes. El teorema fundamental del Cálculo también se cumple para funciones vectoriales.</p>
 <div id="def-primitiva-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.10</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que una función vectorial <span class="math inline">\(\mathbf{F}(t)\)</span> es una <em>primitiva</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> si se cumple que <span class="math inline">\(\mathbf{F}'(t) = \mathbf{f}(t)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 11.10 (Primitiva de una función vectorial)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se dice que una función vectorial <span class="math inline">\(\mathbf{F}(t)\)</span> es una <em>primitiva</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> si se cumple que <span class="math inline">\(\mathbf{F}'(t) = \mathbf{f}(t)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -818,7 +825,7 @@ Observación
 </div>
 </div>
 <div id="def-integral-indefinida-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.11</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.11 (Integral indefinida de una función vectorial)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, se define la <em>integral indefinida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> como</p>
 <p><span class="math display">\[
 \int \mathbf{f}(t)\, dt = \mathbf{F}(t) + \mathbf{C},
 \]</span></p>
@@ -855,15 +862,15 @@ Demostración
 </div>
 </div>
 <div id="exm-integral-indefinida-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11.9</strong></span> La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 11.9</strong></span> La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2t} \mathbf{k}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int \mathbf{f}(t)\, dt
-&amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
-&amp;= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2x}}{2} \mathbf{k}.
+&amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2t}\ dt \mathbf{k} \\
+&amp;= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2t}}{2} \mathbf{k} + \mathbf{C}.
 \end{align*}\]</span></p>
 </div>
 <div id="def-integral-definida-funcion-vectorial" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11.12</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, con <span class="math inline">\(f_1(t),\ldots,f_n(t)\)</span> funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral definida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(I\)</span> como</p>
+<p><span class="theorem-title"><strong>Definición 11.12 (Integral definida de una función vectorial)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, con <span class="math inline">\(f_1(t),\ldots,f_n(t)\)</span> funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span>, se define la <em>integral definida</em> de <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
 \int_a^b \mathbf{f}(t)\, dt = \left(\int_a^b f_1(t)\, dt, \ldots, \int_a^b f_n(t)\,dt\right).
 \]</span></p>
@@ -910,8 +917,8 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 <p>Esta última suma se parece a una suma de Riemann, aunque los <span class="math inline">\(t_{ij}\)</span>, en general, pueden ser distintos para cada función componente <span class="math inline">\(f_j\)</span>. No obstante, al ir tomando particiones cada vez más refinadas, en el límite cuando <span class="math inline">\(n\to\infty\)</span>, los intervalos <span class="math inline">\((t_{i-1},t_i)\)</span> acaban colapsando en un único punto, por lo que este límite puede expresarse como la integral de Riemann</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})|
-&amp;= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t))^2}\Delta t. \\
-&amp;= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\, dt \\
+&amp;= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\Delta t. \\
+&amp;= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t))^2}\, dt \\
 &amp;= \int_a^b |\mathbf{f}'(t)|\, dt
 \end{align*}\]</span></p>
 <p>Así pues, podemos definir la longitud de una trayectoria de una función vectorial de esta manera.</p>
@@ -929,7 +936,7 @@ f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
 &amp;= \int_0^{2\pi} |(-\operatorname{sen}(t), \cos(t), 1)|\, dt \\
 &amp;= \int_0^{2\pi} \sqrt{(-\operatorname{sen}(t))^2 + \cos(t)^2 + 1^2}\,dt \\
 &amp;= \int_0^{2\pi} \sqrt{2}\, dt
-= [\sqrt{2}x]_0^{2\pi}
+= [\sqrt{2}t]_0^{2\pi}
 = 2\sqrt{2}\pi.
 \end{align*}\]</span></p>
 </div>
@@ -1087,6 +1094,7 @@ Demostración
 </div>
 </div>
 </div>
+<p><a href="https://www.geogebra.org/m/gua3ycdj"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Ejemplo interactivo">Ejemplo interactivo</a></p>
 <div id="exm-curvatura-trayectoria" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11.13</strong></span> Veamos cuál es la curvatura de la espiral que describe la función vectorial <span class="math inline">\(\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)\)</span>. Su primera derivada vale <span class="math inline">\(\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)\)</span>, y su módulo es <span class="math inline">\(|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}\)</span>, de manera que el vector tangente unitario es</p>
 <p><span class="math display">\[
@@ -1414,6 +1422,7 @@ a_N
 &amp;= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
 \end{align*}\]</span></p>
 </div>
+<p><a href="https://www.geogebra.org/m/kcnxeccy"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Ejemplo interactivo">Ejemplo interactivo</a></p>
 </section>
 <section id="vector-fuerza" class="level3" data-number="11.7.3">
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="vector-fuerza"><span class="header-section-number">11.7.3</span> Vector fuerza</h3>
@@ -1662,24 +1671,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1714,11 +1705,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1994,12 +1981,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11-geometria-plano-espacio.html" class="pagination-link" aria-label="Geometría vectorial del plano y del espacio reales">
+      <a href="./11-geometria-plano-espacio.html" class="pagination-link  aria-label=" &lt;span="" vectorial="" del="" plano="" y="" espacio="" reales&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geometría vectorial del plano y del espacio reales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link" aria-label="Derivadas de funciones de varias variables">
+      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link" aria-label="<span class='chapter-number'>12</span>&nbsp; <span class='chapter-title'>Derivadas de funciones de varias variables</span>">
         <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
