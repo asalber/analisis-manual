@@ -512,7 +512,7 @@ Para obtener la ecuación del plano tangente a la superficie de $f$ también pod
 $$
 \begin{gathered}
 ((x,y,z)-(a,b,f(a,b)))\left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) = 0 \\
-\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(ab)) = 0.
+\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(a,b)) = 0.
 \end{gathered}
 $$
 
@@ -607,7 +607,7 @@ $$
 con $\varepsilon_1$ y $\varepsilon_2 \to 0$ cuanto $(x,y)\to (a,b)$.
 :::
 
-Si una función de dos variables es diferenciable en un punto $(a,b)$, podemos usar el diferencial total $dz$ como una aproximación de la variación $\Delta z$ que experimenta la función en cualquier punto $(x,y)$ en un entorno de $(a,b)$, ya que $\varepsilon_1 \Delta x + \varepsilon_2 \Delta \to 0$ cuando $(x,y)\to (a,b)$, es decir, 
+Si una función de dos variables es diferenciable en un punto $(a,b)$, podemos usar el diferencial total $dz$ como una aproximación de la variación $\Delta z$ que experimenta la función en cualquier punto $(x,y)$ en un entorno de $(a,b)$, ya que $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y \to 0$ cuando $(x,y)\to (a,b)$, es decir, 
 
 $$
 \Delta z \approx dz = \nabla f(a, b) (\Delta x, \Delta y)
@@ -784,7 +784,7 @@ $$
 :::
 
 :::{#exm-regla-cadena}
-Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos t,\operatorname{sen} t)$ $t\in [0,2\pi]$ del mismo plano, entonces
+Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos(t),\operatorname{sen}(t))$ $t\in [0,2\pi]$ del mismo plano, entonces
 
 $$
 \nabla f(x,y) = (2xy, x^2),
@@ -867,7 +867,7 @@ a.  $F(a_1,\ldots,a_n,b)=0$
 a.  Todas las derivadas parciales de $F$ son continuas en el entorno de $(a_1,\ldots,a_n,b)$.
 a.  $\frac{\partial F}{\partial y}\neq 0$.
 
-Entonces la ecuación $F(a_1,\ldots,a_n,b)=0$ define a $y$ como una función de $x$ en el entorno de $(a_1,\ldots,a_n,b)$.
+Entonces la ecuación $F(x_1,\ldots,x_n,y)=0$ define a $y$ como una función de $x_1, .\ldots, x_n$ en el entorno de $(a_1,\ldots,a_n,b)$.
 ::: 
 
 Cuando una ecuación define de manera implícita una de sus variables como función de las otras, no siempre es posible obtener la forma explícita de esa función, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.
@@ -1186,6 +1186,8 @@ $$
 :::
 :::
 
+Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, *¡el orden en que se realicen las derivadas parciales no importa!*
+
 ## Matriz hessiana
 
 :::{#def-matriz-hessiana}
@@ -1258,9 +1260,7 @@ $$Hf(1,2)=\left|
 $$
 :::
 
-Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, *¡el orden en que se realicen las derivadas parciales no importa!*
-
-Si el teorema se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica.
+Si el teorema de la igualdad de las derivadas cruzadas se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica..
 
 ## Extremos
 
@@ -1492,7 +1492,7 @@ Ahora bien, cuando no es posible despejar una de las variables de la restricció
 
 Dada una función de dos variables $f(x,y)$, si se quieren obtener los extremos de esta función sujetos a la restricción $g(x,y)=0$, en realidad, se trata de encontrar los extremos relativos de $f$ entre los puntos $(x,y)$ que están en la curva de nivel $g(x,y)=0$. Si dibujamos en el plano la curva de nivel de la ecuación junto a las curvas de nivel de $f$, el problema se reduce a encontrar el menor y el mayor valor de $k$ para el que la curva de nivel $f(x,y)=k$ se corta con la curva de nivel $g(x,y)=0$. 
 
-:::{exm-curvas-nivel-restricciones}
+:::{#exm-curvas-nivel-restricciones}
 La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$ junto a la curva de nivel de la restricción $g(x,y)=y+2x=0$.
 
 :::{.content-visible when-format="html"}
@@ -1503,7 +1503,7 @@ La siguiente gráfica muestra las curvas de nivel de la función del ejemplo ant
 ![Curvas de nivel con restricción.](img/derivadas-funciones-varias-variables/multiplicadores-lagrange.pdf)
 :::
 
-Como se aprecia en la gráfica el mayor de la curva de nivel de $f$ que se corta con la recta $y+2x=0$ es aproximadamente $1.15$ y ocurre en el punto $(-\sqrt{1/3}, 2\sqrt{1/3})$, y el menor valor de la curva de nivel de $f$ que se corta con la recta es aproximadamente $-1.5$ y ocurre en el punto $(\sqrt{1/3}, -2\sqrt{1/3})$.
+Como se aprecia en la gráfica el mayor valor de la curva de nivel de $f$ que se corta con la recta $y+2x=0$ es aproximadamente $1.15$ y ocurre en el punto $(-\sqrt{1/3}, 2\sqrt{1/3})$, y el menor valor de la curva de nivel de $f$ que se corta con la recta es aproximadamente $-1.5$ y ocurre en el punto $(\sqrt{1/3}, -2\sqrt{1/3})$.
 :::
 
 En el ejemplo anterior se observa que los valores extremos se obtienen donde las curvas de nivel de la función y de la restricción son tangentes, y por tanto, sus vectores gradientes en los puntos de tangencia tendrán la misma dirección, es decir, si $(a,b)$ es un punto donde las curvas de nivel son tangentes, se tiene que
@@ -1519,8 +1519,8 @@ Al número $k$ de esta ecuación se le llama _multiplicador de Lagrange_, y este
 Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, los extremos relativos de $f$ sujetos a la restricción $g(x_1,\ldots,x_n)=0$, si $\nabla g(x_1\ldots,x_n)\neq 0$, son los puntos que cumplen las ecuaciones
 
 \begin{align*}
-\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n) \\
-g(x_1,\ldots, x_n) = 0 
+\nabla F(x_1,\ldots,x_n) &= k\nabla g(x_1,\ldots,x_n) \\
+g(x_1,\ldots, x_n) &= 0 
 \end{align*}
 :::
 
@@ -1575,7 +1575,7 @@ x^2+y^2-1=0
 \end{cases}
 $$
 
-Resolviendo el sistema se obtienen cuatro soluciones en lso puntos $(0,1)$, $(0,-1)$, $(1,0)$ y $(-1,0)$, y si evaluamos $f$ en cada uno de estos puntos se tiene
+Resolviendo el sistema se obtienen cuatro soluciones en los puntos $(0,1)$, $(0,-1)$, $(1,0)$ y $(-1,0)$, y si evaluamos $f$ en cada uno de estos puntos se tiene
 
 $$
 f(0,1) = 1 \quad f(0,-1) = 1 \quad f(1,0)=2 \quad f(-1,0)=2,
