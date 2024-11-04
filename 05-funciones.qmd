@@ -65,16 +65,16 @@ Existen distintas formas de representar los pares de elementos que forman parte 
 - **Representación algebraica paramétrica**
 
     $$\begin{cases}
-    y=t^2\\
-    x=t
+    x = t \\
+    y=t^2
     \end{cases}
     $$
 
 :::{.callout-caution}
   La representación algebraica paramétrica puede dar lugar a relaciones que no son funciones. Por ejemplo 
   $$\begin{cases}
-  y=t\\
-  x=t^2
+  x = t^2 \\
+  y=t
   \end{cases}
   $$
   que no es una función al asignar a los valores de $x$ dos imágenes distintas.
@@ -102,7 +102,7 @@ $$\mbox{Dom}(f)=(-\infty,-1)\cup(1,\infty)$$
 ## Imagen de una función
 
 :::{#def-imagen-funcion}
-## Imagenñ de una función
+## Imagen de una función
 La *imagen* de una función $f$ es el conjunto de valores que la función puede tomar
 
 $$Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}$$
@@ -245,7 +245,7 @@ Se dice que una función $f$ es *decreciente* en un intervalo $I$, si para todo 
 
 :::{#def-extremos-funcion}
 ## Máximo y mínimo relativo
-Se dice que una función $f:\\mathbb{R}\rightarrow\mathbb{R}$ tiene un *máximo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\geq f(x)$.
+Se dice que una función $f:\mathbb{R}\rightarrow\mathbb{R}$ tiene un *máximo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\geq f(x)$.
 
 Y se dice que $f$ tiene un *mínimo relativo* en $a$, si existe un $\delta>0$ tal que para todo $x\in (a-\delta,a+\delta)$ se cumple $f(a)\leq f(x)$.
 :::

@@ -1006,9 +1006,11 @@ La función $f(x)=\dfrac{\operatorname{sen}(x)(1- \cos(x))}{x^3}\to \dfrac{0}{0}
 Como $\operatorname{sen}(x) \approx x$ y $1-\cos(x)\approx \dfrac{x^2}{2}$ cuando $x\to 0$, para resolver la indeterminación sustituimos $\operatorname{sen}(x)$ por $x$ y $1-\cos(x)$ por $\dfrac{x^2}{2}$:
 
 \begin{align*}
-\lim_{x\to 0}\frac{\operatorname{sen}(x)(1- \cos (x))}{x^3}&=
-\lim_{x\to 0}\dfrac{x\frac{x^2}{2}}{x^3} =
-\lim_{x\to 0}\dfrac{\frac{x^3}{2}}{x^3} = \lim_{x\to 0}\dfrac{1}{2} =0.5.
+\lim_{x\to 0}\frac{\operatorname{sen}(x)(1- \cos(x))}{x^3}
+&= \lim_{x\to 0}\dfrac{x\frac{x^2}{2}}{x^3} 
+= \lim_{x\to 0}\dfrac{\frac{x^3}{2}}{x^3}
+= \lim_{x\to 0}\dfrac{1}{2}
+= 0.5.
 \end{align*}
 :::
 
@@ -1079,11 +1081,10 @@ $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty$ cuando $x\to 0$.
 
 \begin{align*}
-\lim_{x\to 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\to
-0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\ 
-&= \exp\left(\lim_{x\to
-0}x\log\left(1+\frac{1}{x}\right)\right)\\
-&= \exp\left(\lim_{x\to 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
+\lim_{x\to \infty}\left(1+\dfrac{1}{x}\right)^{x} 
+&= \lim_{x\to \infty}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\ 
+&= \exp\left(\lim_{x\to \infty}x\log\left(1+\frac{1}{x}\right)\right)\\
+&= \exp\left(\lim_{x\to \infty}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
 \end{align*}
 
 Aplicando ahora la regla de L´Hôpital tenemos:
