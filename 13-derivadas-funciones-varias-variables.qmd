@@ -125,7 +125,7 @@ La siguiente gráfica representa algunas de las curvas de nivel de la función $
 :::{.content-visible unless-format="html"}
 ![Gráfica y curvas de nivel de la función $f(x,y) = y^2-x^2$.](./img/derivadas-funciones-varias-variables/curvas-nivel.pdf)
 :::
-
+:::
 
 Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los mapas topográficos, donde cada curva representa los puntos que están a la misma altura sobre el nivel del mar, o en los mapas meteorológicos, donde cada curva representa los puntos con la misma presión atmosférica.
 
@@ -144,7 +144,6 @@ Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los m
 ![Curvas de nivel de un mapa de presión atmosférica.](./img/derivadas-funciones-varias-variables/mapa-isobaras.jpg)
 :::
 :::
-
 
 ## Límites de funciones de varias variables
 

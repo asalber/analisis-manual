@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.0">
+<meta name="generator" content="quarto-1.7.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual de Análisis Matemático Real - 7&nbsp; Derivadas de funciones</title>
+<title>7&nbsp; Derivadas de funciones – Manual de Análisis Matemático Real</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,12 +38,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20113cbb85fc39cad5b8d615ed7b1347.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8d84315e6ae7d8f2232a6ca32c2f4107.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5d1b1ba557887e5f1d4bbad99eae9a0a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d86157c79eec6db07655adc349cf15c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -105,13 +105,13 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Manual de Análisis Matemático Real - 7&nbsp; Derivadas de funciones">
+<meta property="og:title" content="7&nbsp; Derivadas de funciones – Manual de Análisis Matemático Real">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:image" content="img/derivadas/variacion_area_cuadrado.png">
 <meta property="og:site_name" content="Manual de Análisis Matemático Real">
-<meta name="twitter:title" content="Manual de Análisis Matemático Real - 7&nbsp; Derivadas de funciones">
+<meta name="twitter:title" content="7&nbsp; Derivadas de funciones – Manual de Análisis Matemático Real">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/logos/sticker.png">
+<meta name="twitter:image" content="img/derivadas/variacion_area_cuadrado.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -122,13 +122,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-derivadas.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Derivadas de funciones</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -147,34 +147,34 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -961,7 +961,7 @@ Demostración
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\([a,b]\)</span>, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a> <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\([a,b]\)</span>. Si existe <span class="math inline">\(c\in (a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, por el teorema anterior se tiene <span class="math inline">\(f'(c)=0\)</span>. En caso contrario, si no existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en los extremos del intervalo, pero como <span class="math inline">\(f(a)=f(b)\)</span>, se deduce que que <span class="math inline">\(f\)</span> es constante en <span class="math inline">\([a,b]\)</span> y, por tanto, <span class="math inline">\(f'(x)=0\)</span> <span class="math inline">\(\forall x\in (a,b)\)</span>.</p>
+<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\([a,b]\)</span>, por el <a href="06-limites.html#thm-weierstrass" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a> <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\([a,b]\)</span>. Si existe <span class="math inline">\(c\in (a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, por el teorema anterior se tiene <span class="math inline">\(f'(c)=0\)</span>. En caso contrario, si no existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en <span class="math inline">\(c\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo o el mínimo en los extremos del intervalo, pero como <span class="math inline">\(f(a)=f(b)\)</span>, se deduce que que <span class="math inline">\(f\)</span> es constante en <span class="math inline">\([a,b]\)</span> y, por tanto, <span class="math inline">\(f'(x)=0\)</span> <span class="math inline">\(\forall x\in (a,b)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1147,7 +1147,7 @@ Demostración
 </section>
 <section id="determinación-de-los-extremos-absolutos-de-una-función" class="level3" data-number="7.6.3">
 <h3 data-number="7.6.3" class="anchored" data-anchor-id="determinación-de-los-extremos-absolutos-de-una-función"><span class="header-section-number">7.6.3</span> Determinación de los extremos absolutos de una función</h3>
-<p>Ya se vió, por el <a href="06-limites.html#thm-extremos-funcion-continua-intervalo-cerrado" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a>, que una función continua en un intervalo cerrado <span class="math inline">\([a,b]\)</span> alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función <span class="math inline">\(f\)</span> derivable en <span class="math inline">\([a,b]\)</span>, basta con seguir el siguiente procedimiento:</p>
+<p>Ya se vió, por el <a href="06-limites.html#thm-weierstrass" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a>, que una función continua en un intervalo cerrado <span class="math inline">\([a,b]\)</span> alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función <span class="math inline">\(f\)</span> derivable en <span class="math inline">\([a,b]\)</span>, basta con seguir el siguiente procedimiento:</p>
 <ol type="1">
 <li>Calcular los puntos críticos de <span class="math inline">\(f\)</span>.</li>
 <li>Calcular los valores de <span class="math inline">\(f\)</span> en los puntos críticos.</li>
@@ -1157,7 +1157,7 @@ Demostración
 <div id="exm-extremos-absolutos" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.17</strong></span> Veamos cuáles son los extremos absolutos de la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span> en el intervalo <span class="math inline">\([0,2]\)</span>. Seguiremos el procedimiento anterior para la determinación de los extremos absolutos.</p>
 <ol type="1">
-<li><p>En el <a href="13-derivadas-funciones-varias-variables.html#exm-extremos-relativos" class="quarto-xref">Ejemplo&nbsp;<span>12.22</span></a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
+<li><p>En el <a href="13-derivadas-funciones-varias-variables.html#exm-extremos-relativos" class="quarto-xref">Ejemplo&nbsp;<span>12.23</span></a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
 <li><p>El valor de la función en los puntos críticos del intervalo <span class="math inline">\([0,2]\)</span> son <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(1)=0\)</span>.</p></li>
 <li><p>El valor de la función en los extremos del intervalo <span class="math inline">\([0,2]\)</span> es <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(2)=9\)</span>.</p></li>
 <li><p>El máximo absoluto de <span class="math inline">\(f\)</span> en <span class="math inline">\([a,b]\)</span> es <span class="math inline">\(\max\{f(0),f(1),f(2)\}=\max\{1,0,9\}=9\)</span> y el mínimo absoluto es <span class="math inline">\(\min\{f(0),f(1),f(2)\}=\max\{1,0,9\}=0\)</span>.</p></li>
@@ -1739,7 +1739,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 <section id="polinomios-de-maclaurin-de-funciones-elementales" class="level3" data-number="7.10.3">
 <h3 data-number="7.10.3" class="anchored" data-anchor-id="polinomios-de-maclaurin-de-funciones-elementales"><span class="header-section-number">7.10.3</span> Polinomios de Maclaurin de funciones elementales</h3>
 <p>La siguiente tabla recoge los polinomios de Taylor de orden <span class="math inline">\(n\)</span> de algunas funciones elementales habituales.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -2001,18 +2001,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2044,7 +2033,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2079,7 +2106,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2127,7 +2158,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2355,12 +2385,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-limites.html" class="pagination-link  aria-label=" &lt;span="" de="" funciones&lt;="" span&gt;"="">
+      <a href="./06-limites.html" class="pagination-link" aria-label="Límites de funciones">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Límites de funciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-integrales.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Integrales de funciones</span>">
+      <a href="./08-integrales.html" class="pagination-link" aria-label="Integrales de funciones">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Integrales de funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

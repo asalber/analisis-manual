@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.0">
+<meta name="generator" content="quarto-1.7.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual de Análisis Matemático Real - 12&nbsp; Derivadas de funciones de varias variables</title>
+<title>12&nbsp; Derivadas de funciones de varias variables – Manual de Análisis Matemático Real</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,12 +38,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20113cbb85fc39cad5b8d615ed7b1347.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8d84315e6ae7d8f2232a6ca32c2f4107.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5d1b1ba557887e5f1d4bbad99eae9a0a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d86157c79eec6db07655adc349cf15c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -105,13 +105,13 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Manual de Análisis Matemático Real - 12&nbsp; Derivadas de funciones de varias variables">
+<meta property="og:title" content="12&nbsp; Derivadas de funciones de varias variables – Manual de Análisis Matemático Real">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:image" content="img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png">
 <meta property="og:site_name" content="Manual de Análisis Matemático Real">
-<meta name="twitter:title" content="Manual de Análisis Matemático Real - 12&nbsp; Derivadas de funciones de varias variables">
+<meta name="twitter:title" content="12&nbsp; Derivadas de funciones de varias variables – Manual de Análisis Matemático Real">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/logos/sticker.png">
+<meta name="twitter:image" content="img/derivadas-funciones-varias-variables/grafica-funcion-dos-variables.png">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -122,13 +122,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-derivadas-funciones-varias-variables.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -147,34 +147,34 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -423,12 +423,14 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </figure>
 </div>
 </div>
-<p>:::{#exm-curvas-nivel} La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
+<div id="exm-curvas-nivel" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12.4</strong></span> La siguiente gráfica representa algunas de las curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/derivadas-funciones-varias-variables/curvas-nivel.svg" class="img-fluid figure-img"></p>
 <figcaption>Gráfica y curvas de nivel de la función <span class="math inline">\(f(x,y) = y^2-x^2\)</span>.</figcaption>
 </figure>
+</div>
 </div>
 <p>Las curvas de nivel se utilizan en muchas aplicaciones como por ejemplo en los mapas topográficos, donde cada curva representa los puntos que están a la misma altura sobre el nivel del mar, o en los mapas meteorológicos, donde cada curva representa los puntos con la misma presión atmosférica.</p>
 <div>
@@ -489,7 +491,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 \]</span></p>
 </div>
 <div id="exm-limite-funcion-dos-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.4</strong></span> Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.5</strong></span> Veamos que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>.</p>
 <p>Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, como</p>
 <p><span class="math display">\[\begin{align*}
 |f(x,y)-0|
@@ -507,7 +509,7 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </div>
 <p>En el caso de una función de una variable <span class="math inline">\(f(x)\)</span>, vimos que para que existiese el límite de la función en el punto <span class="math inline">\(a\)</span>, bastaba con ver que existía el límite por la izquierda (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores menores que <span class="math inline">\(a\)</span>) y el límite por la derecha (cuando nos aproximamos a <span class="math inline">\(a\)</span> con valores mayores que <span class="math inline">\(a\)</span>) y que eran iguales. Sin embargo, para funciones de varias variables esto no es así, ya que para demostrar la existencia del límite es necesario probar que el límite existe cuando nos acercamos a <span class="math inline">\((x_0,\ldots,y_0)\)</span> por cualquier posible trayectoria en <span class="math inline">\(\mathbb{R}^n\)</span>, y todos los límites coinciden.</p>
 <div id="exm-no-existencia-limite" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.5</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.6</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\dfrac{xy}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> no existe, ya que si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando puntos de la recta <span class="math inline">\(y=mx\)</span>, tenemos</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 &amp;= \lim_{x\to 0} \frac{xmx}{x^2+(mx)^2}
@@ -531,7 +533,7 @@ Precaución
 </div>
 </div>
 <div id="exm-no-existencia-limite-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.6</strong></span> Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.7</strong></span> Para la función <span class="math inline">\(f(x,y)=\frac{xy^2}{x^2+y^4}\)</span>, si nos aproximamos a <span class="math inline">\((0,0)\)</span> tomando los puntos de la recta <span class="math inline">\(y=mx\)</span>, se tiene</p>
 <p><span class="math display">\[
 \lim_{(x,mx)\to(0,0)} f(x,mx)
 = \lim_{x\to 0} \frac{x(mx)^2}{x^2+(mx)^4}
@@ -546,7 +548,7 @@ Precaución
 = \frac{1}{2}.
 \]</span></p>
 <p>Por consiguiente, no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\((0,0)\)</span>.</p>
-<div id="fig-no-existencia-limite-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-no-existencia-limite-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-no-existencia-limite-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/derivadas-funciones-varias-variables/no-existencia-limite.svg" class="img-fluid figure-img">
@@ -559,7 +561,7 @@ Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inl
 </div>
 <p>Afortunadamente, el álgebra de límites visto en la <a href="06-limites.html#prp-limite-suma-resta-producto-cociente-funciones" class="quarto-xref">Proposición&nbsp;<span>6.2</span></a> también es válido para funciones de varias variables.</p>
 <div id="exm-algebra-limites-funciones-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.7</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.8</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,y)\to(2,1)} f(x,y)
 &amp;= \lim_{(x,y)\to(2,1)} \frac{3xy^2}{x^2+y^3} \\
@@ -580,7 +582,7 @@ Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inl
 \]</span></p>
 </div>
 <div id="exr-funcion-varias-variables-discontinua" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 12.1</strong></span> Hemos visto en el <a href="#exm-limite-funcion-dos-variables" class="quarto-xref">Ejemplo&nbsp;<span>12.4</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
+<p><span class="theorem-title"><strong>Ejercicio 12.1</strong></span> Hemos visto en el <a href="#exm-limite-funcion-dos-variables" class="quarto-xref">Ejemplo&nbsp;<span>12.5</span></a> que el límite de la función <span class="math inline">\(f(x,y)=\frac{2xy^2}{x^2+y^2}\)</span> en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\(0\)</span>. Sin embargo, esta función no está definida en <span class="math inline">\((0,0)\)</span>, por lo que es discontinua en este punto.</p>
 </div>
 <section id="funciones-parciales" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="funciones-parciales"><span class="header-section-number">12.3.1</span> Funciones parciales</h3>
@@ -590,7 +592,7 @@ Figura&nbsp;12.1: Función de dos variables sin límite en <span class="math inl
 <p>con <span class="math inline">\(c_j\)</span> <span class="math inline">\((j=1,\ldots, n,\ j\neq i)\)</span> constantes.</p>
 </div>
 <div id="exm-funcion-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.8</strong></span> Si consideramos la función del área de un triángulo</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.9</strong></span> Si consideramos la función del área de un triángulo</p>
 <p><span class="math display">\[f(x,y)=\frac{xy}{2},\]</span></p>
 <p>y fijamos el valor de la base <span class="math inline">\(x=c\)</span>, entonces el área del triángulo ya sólo depende de la altura y <span class="math inline">\(f\)</span> se convierte en una función de una sola variable, que es la función parcial:</p>
 <p><span class="math display">\[
@@ -649,7 +651,7 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.geogebra.org/classic/ywur7vzr"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img" alt="Ejemplo interactivo con Geogebra"></a></p>
+<p><a href="https://www.geogebra.org/classic/ywur7vzr"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
 <figcaption>Ejemplo interactivo con Geogebra</figcaption>
 </figure>
 </div>
@@ -676,7 +678,7 @@ Regla
 </div>
 </div>
 <div id="exm-calculo-derivada-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.9</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.10</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
 <p><span class="math display">\[
 v(t,p)=\frac{nRt}{p},
 \]</span></p>
@@ -701,7 +703,7 @@ v(t,p)=\frac{nRt}{p},
 </div>
 <p>Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, <span class="math inline">\(\nabla f(a)\)</span> indica la dirección de máximo crecimiento de la función, mientras que <span class="math inline">\(-\nabla f(a)\)</span> indica la dirección de máximo decrecimiento.</p>
 <div id="exm-vector-gradiente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.10</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.11</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]</span></p>
@@ -759,7 +761,7 @@ z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)
 \]</span></p>
 </div>
 <div id="exm-recta-normal-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.11</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.12</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
 <p><span class="math display">\[
 \begin{gathered}
 (1,1,2)+ t \left(\frac{\partial f}{\partial x}(1,1), \frac{\partial f}{\partial y}(1,1), -1\right) \\
@@ -793,7 +795,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-funcion-sin-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.12</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.13</strong></span> La función</p>
 <p><span class="math display">\[
 f(x,y) =
 \begin{cases}
@@ -816,7 +818,7 @@ dy
 \]</span></p>
 </div>
 <div id="exm-diferencial-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.13</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.14</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
 <p><span class="math display">\[
 du
 = \nabla f(1, 1, 1)(dx, dy, dz)
@@ -848,7 +850,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \]</span></p>
 <p>Si se observa bien, el lado derecho de esta igualdad es la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>. De esta manera, si una <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span> podemos aproximar el valor de la función en cualquier punto <span class="math inline">\((x,y)\)</span> de un entorno de <span class="math inline">\((a,b)\)</span>, como el valor del plano tangente en ese punto. El error en la aproximación es <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> que tiende a <span class="math inline">\(0\)</span> cuando <span class="math inline">\((x,y)\)</span> se aproxima a <span class="math inline">\((a,b)\)</span>. Además, dado que <span class="math inline">\(\varepsilon_1\)</span> y <span class="math inline">\(\varepsilon_2 \to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, la cantidad <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> se aproxima a <span class="math inline">\(0\)</span> mucho más rápidamente que <span class="math inline">\(\Delta x\)</span> o <span class="math inline">\(\Delta y\)</span> se aproximan a <span class="math inline">\(0\)</span>, por lo que el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> dará muy buenas aproximaciones de <span class="math inline">\(f\)</span> en un entorno cercano de <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-funcion-dos-variables-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.14</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 12.15</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a+\Delta x, b+\Delta y) - f(a,b)
@@ -862,7 +864,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \Delta z = \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
 \]</span></p>
 <p>y, además <span class="math inline">\(\varepsilon_1\to 0\)</span> y <span class="math inline">\(\varepsilon_2\to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, por lo que la función <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span>.</p>
-<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;<span>12.11</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
+<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;<span>12.12</span></a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
 <p><span class="math display">\[
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \]</span></p>
@@ -984,7 +986,7 @@ Demostración
 </div>
 </div>
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos(t),\operatorname{sen}(t))\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.16</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos(t),\operatorname{sen}(t))\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2xy, x^2),
 \]</span></p>
@@ -1036,7 +1038,7 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 <h2 data-number="12.9" class="anchored" data-anchor-id="derivación-implícita"><span class="header-section-number">12.9</span> Derivación implícita</h2>
 <p>Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma <span class="math inline">\(F(x_1,\ldots,x_n, y)=0\)</span>, donde <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>.</p>
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.16</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.17</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
 <p>El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.</p>
 <div id="thm-funcion-implicita" class="theorem">
@@ -1082,7 +1084,7 @@ Demostración
 </div>
 </div>
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.17</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.18</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
 F(x,y) = x^2+y^2-1 = 0.
 \]</span></p>
@@ -1150,12 +1152,12 @@ g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
 <p>En el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span>, la derivada direccional <span class="math inline">\(f_{\mathbf{u}}(a,b)\)</span> da la tasa de variación de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> cuando empezamos a cambiar <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en la dirección del vector <span class="math inline">\(\mathbf{u}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.geogebra.org/m/xyu2226b"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img" alt="Ejemplo interactivo con Geogebra"></a></p>
+<p><a href="https://www.geogebra.org/m/xyu2226b"><img src="img/logos/logo-geogebra.png" class="img-fluid figure-img"></a></p>
 <figcaption>Ejemplo interactivo con Geogebra</figcaption>
 </figure>
 </div>
 <div id="exm-derivada-direccional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.18</strong></span> Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.19</strong></span> Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2x,2y),
 \]</span></p>
@@ -1248,7 +1250,7 @@ Demostración
 P+t\nabla f(P) = (a, b) + t \nabla f(a,b).
 \]</span></p>
 <div id="exm-tangente-normal-funcion-implicita-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.19</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.20</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[
 P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 \]</span></p>
@@ -1273,7 +1275,7 @@ P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 </div>
 <p>De forma análoga se definen las derivadas de orden superior.</p>
 <div id="exm-derivadas-segundo-orden" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.20</strong></span> La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.21</strong></span> La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial^2 f}{\partial x^2}(x,y) &amp;=
 \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
@@ -1370,7 +1372,7 @@ Demostración
 <p>Al determinante de esta matriz se le llama <em>hessiano</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, y se nota <span class="math inline">\(Hf(a)=\lvert \nabla^2f(a)\rvert\)</span>.</p>
 </div>
 <div id="exm-matriz-hessiana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.21</strong></span> Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.22</strong></span> Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
 <p><span class="math display">\[\nabla^2f(x,y)=\left(
 \begin{array}{cc}
 \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x \partial y}\\
@@ -1463,7 +1465,7 @@ h'(t)
 </div>
 <p>A los puntos donde se anula el vector gradiente, se les denomina <em>puntos críticos</em>.</p>
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.22</strong></span> Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.23</strong></span> Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
 <p><span class="math display">\[
 f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 \]</span></p>
@@ -1558,7 +1560,7 @@ f''_{uu}(a,b)
 </div>
 </div>
 <div id="exm-extremos-relativos-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.23</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.24</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
 <p><span class="math display">\[
 \nabla f(x,y)= (x^2-1,-y^2+1),
 \]</span></p>
@@ -1596,7 +1598,7 @@ f''_{uu}(a,b)
 <h2 data-number="12.14" class="anchored" data-anchor-id="extremos-condicionados"><span class="header-section-number">12.14</span> Extremos condicionados</h2>
 <p>En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función <span class="math inline">\(f(x,y)\)</span> para los puntos que cumplen la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Cuando es posible despejar una de las variables de la ecuación y expresarla como una función explícita de la otra, se puede sustituir esa variable en <span class="math inline">\(f\)</span> y obtener una función de una variable, de manera que se pueden obtener sus extremos como se vio en el capítulo de derivadas de funciones de una variable.</p>
 <div id="exm-extremos-condicionados" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.24</strong></span> Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.25</strong></span> Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
 <p><span class="math display">\[
 f(x,y)
 = f(x,-2x)
@@ -1611,7 +1613,7 @@ f(x,y)
 <h2 data-number="12.15" class="anchored" data-anchor-id="multiplicadores-de-lagrange"><span class="header-section-number">12.15</span> Multiplicadores de Lagrange</h2>
 <p>Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span>, si se quieren obtener los extremos de esta función sujetos a la restricción <span class="math inline">\(g(x,y)=0\)</span>, en realidad, se trata de encontrar los extremos relativos de <span class="math inline">\(f\)</span> entre los puntos <span class="math inline">\((x,y)\)</span> que están en la curva de nivel <span class="math inline">\(g(x,y)=0\)</span>. Si dibujamos en el plano la curva de nivel de la ecuación junto a las curvas de nivel de <span class="math inline">\(f\)</span>, el problema se reduce a encontrar el menor y el mayor valor de <span class="math inline">\(k\)</span> para el que la curva de nivel <span class="math inline">\(f(x,y)=k\)</span> se corta con la curva de nivel <span class="math inline">\(g(x,y)=0\)</span>.</p>
 <div id="exm-curvas-nivel-restricciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.25</strong></span> La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span> junto a la curva de nivel de la restricción <span class="math inline">\(g(x,y)=y+2x=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.26</strong></span> La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span> junto a la curva de nivel de la restricción <span class="math inline">\(g(x,y)=y+2x=0\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png" class="img-fluid figure-img"></p>
@@ -1669,7 +1671,7 @@ h'(0)
 </div>
 </div>
 <div id="exm-multiplicadores-lagrange" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.26</strong></span> Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.27</strong></span> Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
 <p>Tomando <span class="math inline">\(g(x,y)=x^2+y^2-1\)</span>, podemos expresar la circunferencia mediante la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Los extremos relativos de <span class="math inline">\(f\)</span> condicionados por <span class="math inline">\(g(x,y)=0\)</span>, deben cumplir la ecuación de los multiplicadores de Lagrange</p>
 <p><span class="math display">\[
 \nabla f(x,y) = k \nabla g(x,y)
@@ -1716,7 +1718,7 @@ P^1_{f,P}(x,y) &amp;= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
 \end{align*}\]</span></p>
 <p>que coincide con el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span>.</p>
 <div id="exm-aproximacion-lineal-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.27</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.28</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1758,7 +1760,7 @@ P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
 \end{gathered}
 \]</span></p>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12.28</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 12.29</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1982,18 +1984,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2025,7 +2016,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2060,7 +2089,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2108,7 +2141,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2336,12 +2368,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./12-funciones-vectoriales.html" class="pagination-link  aria-label=" &lt;span="" de="" funciones="" vectoriales&lt;="" span&gt;"="">
+      <a href="./12-funciones-vectoriales.html" class="pagination-link" aria-label="Análisis de funciones vectoriales">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Análisis de funciones vectoriales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./14-integrales-funciones-varias-variables.html" class="pagination-link" aria-label="<span class='chapter-number'>13</span>&nbsp; <span class='chapter-title'>Integrales de funciones de varias variables</span>">
+      <a href="./14-integrales-funciones-varias-variables.html" class="pagination-link" aria-label="Integrales de funciones de varias variables">
         <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Integrales de funciones de varias variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

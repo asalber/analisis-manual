@@ -576,7 +576,7 @@ Dada una función $f:[a,b]\to\mathbb{R}$ continua en $[a,b]$ y diferenciable en 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Como $f$ es continua en $[a,b]$, por el @thm-extremos-funcion-continua-intervalo-cerrado $f$ alcanza el máximo y el mínimo en $[a,b]$. Si existe $c\in (a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, por el teorema anterior se tiene $f'(c)=0$. En caso contrario, si no existe $c\in(a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, entonces $f$ alcanza el máximo o el mínimo en los extremos del intervalo, pero como $f(a)=f(b)$, se deduce que que $f$ es constante en $[a,b]$ y, por tanto, $f'(x)=0$ $\forall x\in (a,b)$.
+Como $f$ es continua en $[a,b]$, por el @thm-weierstrass $f$ alcanza el máximo y el mínimo en $[a,b]$. Si existe $c\in (a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, por el teorema anterior se tiene $f'(c)=0$. En caso contrario, si no existe $c\in(a,b)$ tal que $f$ alcanza el máximo o el mínimo en $c$, entonces $f$ alcanza el máximo o el mínimo en los extremos del intervalo, pero como $f(a)=f(b)$, se deduce que que $f$ es constante en $[a,b]$ y, por tanto, $f'(x)=0$ $\forall x\in (a,b)$.
 :::
 :::
 
@@ -715,7 +715,7 @@ Por otro lado, $g'(a)=k-f'(a)>0$, de manera que $g$ no tiene un máximo relativo
 
 ### Determinación de los extremos absolutos de una función
 
-Ya se vió, por el @thm-extremos-funcion-continua-intervalo-cerrado, que una función continua en un intervalo cerrado $[a,b]$ alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función $f$ derivable en $[a,b]$, basta con seguir el siguiente procedimiento:
+Ya se vió, por el @thm-weierstrass, que una función continua en un intervalo cerrado $[a,b]$ alcanza el máximo y el mínimo absolutos en ese intervalo. Así pues, para encontrar los extremos absolutos de una función $f$ derivable en $[a,b]$, basta con seguir el siguiente procedimiento:
 
 1. Calcular los puntos críticos de $f$.
 2. Calcular los valores de $f$ en los puntos críticos.

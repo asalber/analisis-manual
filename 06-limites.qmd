@@ -1446,7 +1446,7 @@ $$
 no está acotada en el intervalo $[0,1]$, luego no es continua en este intervalo.
 :::
 
-:::{#thm-extremos-funcion-continua-intervalo-cerrado}
+:::{#thm-weierstrass}
 Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $c\leq f(x)\leq d$ $\forall x\in I$.
 :::
 
@@ -1504,7 +1504,7 @@ Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Por el @thm-extremos-funcion-continua-intervalo-cerrado existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$.
+Por el @thm-weierstrass existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$.
 $f(c)=\min(f(I))=\inf(f(I))\leq k\leq \sup(f(I))=\max(f(I))=f(d)$.
 
 Si $k=f(c)$ o $k=f(d)$ el resultado es trivial, y si $f(c)<k<f(d)$, por el teorema de los valores intermedios, existe $e\in I$ entre $c$ y $d$ tal que $f(e)=k$.
@@ -1518,7 +1518,7 @@ Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Por el @thm-extremos-funcion-continua-intervalo-cerrado existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$, por lo que $f(I)\subseteq[f(c), f(d)]$.
+Por el @thm-weierstrass existe $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$, por lo que $f(I)\subseteq[f(c), f(d)]$.
 
 Veamos ahora que también se cumple el otro sentido de la inclusión. Si $k\in[f(c),f(d)]$, por el teorema anterior, se tiene que existe $e\in I$ tal que $f(e)=k$, y por tanto $k\in f(I)$, por lo que $[f(c),f(d)]\subset f(I)$.
 

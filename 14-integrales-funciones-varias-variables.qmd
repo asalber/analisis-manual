@@ -10,7 +10,7 @@ execute:
 lang: es
 ---
 
-En este capítulo extendemos el concepto de integral de Riemann visto en el [capítulo de integrales](09-integrales.qmd) a funciones de varias variables, en particular en $\mathbb{R}^2$ y $\mathbb{R}^3$ donde las integrales múltiples tienen multitud de aplicaciones en Ciencias e Ingenierías.
+En este capítulo extendemos el concepto de integral de Riemann visto en el [capítulo de integrales](08-integrales.qmd) a funciones de varias variables, en particular en $\mathbb{R}^2$ y $\mathbb{R}^3$ donde las integrales múltiples tienen multitud de aplicaciones en Ciencias e Ingenierías.
 
 También veremos que el Teorema Fundamental del Cálculo sigue siendo válido y que el cálculo de integrales con respecto a una variable es el proceso inverso del cálculo de la derivada parcial con respecto a esa misma variable.
 
@@ -176,7 +176,7 @@ para funciones de tres variables.
 
 ## Propiedades de las Integrales de Riemann múltiples
 
-Las [propiedades de la integral de Riemann](http://localhost:1313/09-integrales.html#propiedades-de-la-integral-de-riemann) para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.
+Las [propiedades de la integral de Riemann](http://localhost:1313/08-integrales.html#propiedades-de-la-integral-de-riemann) para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.
 
 :::{#thm-propiedades-integrales-Riemann-multiples}
 Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en un intervalo $n$ dimensional $I$, entonces
@@ -197,7 +197,7 @@ La demostración es similar a la vista para funciones de una variable y se deja 
 
 ## Integrales múltiples iteradas
 
-El cálculo de integrales de Riemann tomando límites de sumas de Riemann resulta poco operativo en la práctica, pero afortunadamente, podemos utilizar el [teorema fundamental del cálculo](http://localhost:1313/09-integrales.html#teorema-fundamental-del-c%C3%A1lculo) para calcular integrales de manera mucho más rápida y sencilla. En esta sección veremos como calcular integrales dobles y triples como integrales iteradas, que se pueden calcular realizando varias integrales simples.
+El cálculo de integrales de Riemann tomando límites de sumas de Riemann resulta poco operativo en la práctica, pero afortunadamente, podemos utilizar el [teorema fundamental del cálculo](http://localhost:1313/08-integrales.html#teorema-fundamental-del-c%C3%A1lculo) para calcular integrales de manera mucho más rápida y sencilla. En esta sección veremos como calcular integrales dobles y triples como integrales iteradas, que se pueden calcular realizando varias integrales simples.
 
 El procedimiento para reducir el cálculo de una integral múltiple al cálculo de varias integrales simples es, en el fondo, el mismo que se utilizó para calcular derivadas parciales, es decir, realizar integrales simples de las funciones parciales que se obtienen al fijar como constantes todas las variables excepto aquella con respecto a la que se integra. 
 

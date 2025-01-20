@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.0">
+<meta name="generator" content="quarto-1.7.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual de Análisis Matemático Real - 13&nbsp; Integrales de funciones de varias variables</title>
+<title>13&nbsp; Integrales de funciones de varias variables – Manual de Análisis Matemático Real</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,12 +37,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20113cbb85fc39cad5b8d615ed7b1347.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8d84315e6ae7d8f2232a6ca32c2f4107.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5d1b1ba557887e5f1d4bbad99eae9a0a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d86157c79eec6db07655adc349cf15c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <meta charset="utf-8">
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script> 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -104,13 +104,13 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Manual de Análisis Matemático Real - 13&nbsp; Integrales de funciones de varias variables">
+<meta property="og:title" content="13&nbsp; Integrales de funciones de varias variables – Manual de Análisis Matemático Real">
 <meta property="og:description" content="">
-<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:image" content="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg">
 <meta property="og:site_name" content="Manual de Análisis Matemático Real">
-<meta name="twitter:title" content="Manual de Análisis Matemático Real - 13&nbsp; Integrales de funciones de varias variables">
+<meta name="twitter:title" content="13&nbsp; Integrales de funciones de varias variables – Manual de Análisis Matemático Real">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="img/logos/sticker.png">
+<meta name="twitter:image" content="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg">
 <meta name="twitter:site" content="@aprendeconalf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -121,13 +121,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-integrales-funciones-varias-variables.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Integrales de funciones de varias variables</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -146,34 +146,34 @@ window.Quarto = {
         <div class="sidebar-tools-main tools-wide">
     <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./manual-analisis.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -325,7 +325,7 @@ window.Quarto = {
 </header>
 
 
-<p>En este capítulo extendemos el concepto de integral de Riemann visto en el <a href="09-integrales.qmd">capítulo de integrales</a> a funciones de varias variables, en particular en <span class="math inline">\(\mathbb{R}^2\)</span> y <span class="math inline">\(\mathbb{R}^3\)</span> donde las integrales múltiples tienen multitud de aplicaciones en Ciencias e Ingenierías.</p>
+<p>En este capítulo extendemos el concepto de integral de Riemann visto en el <a href="./08-integrales.html">capítulo de integrales</a> a funciones de varias variables, en particular en <span class="math inline">\(\mathbb{R}^2\)</span> y <span class="math inline">\(\mathbb{R}^3\)</span> donde las integrales múltiples tienen multitud de aplicaciones en Ciencias e Ingenierías.</p>
 <p>También veremos que el Teorema Fundamental del Cálculo sigue siendo válido y que el cálculo de integrales con respecto a una variable es el proceso inverso del cálculo de la derivada parcial con respecto a esa misma variable.</p>
 <section id="sumas-de-riemann" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="sumas-de-riemann"><span class="header-section-number">13.1</span> Sumas de Riemann</h2>
@@ -459,7 +459,7 @@ Nota
 </section>
 <section id="propiedades-de-las-integrales-de-riemann-múltiples" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="propiedades-de-las-integrales-de-riemann-múltiples"><span class="header-section-number">13.3</span> Propiedades de las Integrales de Riemann múltiples</h2>
-<p>Las <a href="http://localhost:1313/09-integrales.html#propiedades-de-la-integral-de-riemann">propiedades de la integral de Riemann</a> para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.</p>
+<p>Las <a href="http://localhost:1313/08-integrales.html#propiedades-de-la-integral-de-riemann">propiedades de la integral de Riemann</a> para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.</p>
 <div id="thm-propiedades-integrales-Riemann-multiples" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 13.1</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span>, entonces</p>
 <ol type="a">
@@ -489,7 +489,7 @@ Demostración
 </section>
 <section id="integrales-múltiples-iteradas" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="integrales-múltiples-iteradas"><span class="header-section-number">13.4</span> Integrales múltiples iteradas</h2>
-<p>El cálculo de integrales de Riemann tomando límites de sumas de Riemann resulta poco operativo en la práctica, pero afortunadamente, podemos utilizar el <a href="http://localhost:1313/09-integrales.html#teorema-fundamental-del-c%C3%A1lculo">teorema fundamental del cálculo</a> para calcular integrales de manera mucho más rápida y sencilla. En esta sección veremos como calcular integrales dobles y triples como integrales iteradas, que se pueden calcular realizando varias integrales simples.</p>
+<p>El cálculo de integrales de Riemann tomando límites de sumas de Riemann resulta poco operativo en la práctica, pero afortunadamente, podemos utilizar el <a href="http://localhost:1313/08-integrales.html#teorema-fundamental-del-c%C3%A1lculo">teorema fundamental del cálculo</a> para calcular integrales de manera mucho más rápida y sencilla. En esta sección veremos como calcular integrales dobles y triples como integrales iteradas, que se pueden calcular realizando varias integrales simples.</p>
 <p>El procedimiento para reducir el cálculo de una integral múltiple al cálculo de varias integrales simples es, en el fondo, el mismo que se utilizó para calcular derivadas parciales, es decir, realizar integrales simples de las funciones parciales que se obtienen al fijar como constantes todas las variables excepto aquella con respecto a la que se integra.</p>
 <p>Veamos el procedimiento para una función de dos variables. Supongamos que <span class="math inline">\(f(x,y)\)</span> es integrable Riemann en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>. Si mantenemos <span class="math inline">\(x\)</span> constante, podemos calcular la integral definida simple con respecto a <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\([c,d]\)</span>, es decir, <span class="math inline">\(\int_c^d f(x,y)\, dy\)</span>. Para cada valor de <span class="math inline">\(x\)</span>, esta integral tomará un valor distinto, por lo que podemos definir la función</p>
 <p><span class="math display">\[
@@ -1213,18 +1213,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1256,7 +1245,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1291,7 +1318,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1339,7 +1370,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1567,7 +1597,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link  aria-label=" &lt;span="" de="" funciones="" varias="" variables&lt;="" span&gt;"="">
+      <a href="./13-derivadas-funciones-varias-variables.html" class="pagination-link" aria-label="Derivadas de funciones de varias variables">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derivadas de funciones de varias variables</span></span>
       </a>          
   </div>
