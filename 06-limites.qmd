@@ -1447,6 +1447,7 @@ no está acotada en el intervalo $[0,1]$, luego no es continua en este intervalo
 :::
 
 :::{#thm-weierstrass}
+## Weierstrass
 Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $c\leq f(x)\leq d$ $\forall x\in I$.
 :::
 
