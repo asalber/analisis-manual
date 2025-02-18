@@ -589,7 +589,6 @@ En estos casos, el recurso habitual para calcular el área es calcular la integr
 :::
 :::
 
-
 :::{#cor-integral-funcion-mayor-que-otra}
 Si $f,g:I\to\mathbb{R}$ son dos funciones integrables Riemann en $I=[a,b]$ y $f(x)\leq g(x)$ $\forall x\in I$, entonces $\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx$.
 :::
@@ -619,6 +618,34 @@ Por otro lado, como $\int_a^b m\,dx = m(b-a)$ y $\int_a^b M\,dx = M(b-a)$ por tr
 $$
 m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a).
 $$
+:::
+:::
+
+:::[#thm-valor-medio-integral]
+## Teorema del valor medio para integrales
+Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, entonces existe un número $c\in(a,b)$ tal que
+
+$$
+f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx.
+$$
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Dado que $f$ es continua en $I$, por el teorema de Weierstrass (@thm-weierstrass), $f$ alcanza un máximo $M$ y un mínimo $m$ en $I$. Por otro lado, en la siguiente sección se muestra que si una función es continua en un intervalo $[a,b]$ entonces es integrable en dicho intervalo, de manera que por el corolario anterior, se tiene que
+
+$$
+m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a), 
+$$
+
+y por tanto,
+
+$$
+m\leq \frac{1}{b-a}\int_a^b f(x)\,dx \leq M.
+$$
+
+Por el teorema de los valores intermedios (@thm-valores-intermedios), existe $c\in(a,b)$ tal que $f(c)=\frac{1}{b-a}\int_a^b f(x)\,dx$.
 :::
 :::
 
@@ -692,7 +719,6 @@ A pesar de que la demostración es bastante larga, cuando $f$ es positiva, es ob
 ![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral.pdf)
 :::
 
-
 ## Clase de las funciones integrables
 
 A continuación trataremos de estudiar qué tipo de funciones son integrables.
@@ -704,7 +730,7 @@ Si $f:I\to\mathbb{R}$ es una función acotada y monótona en $I=[a,b]$, entonces
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Supongamos que $f$ es creciente en $I$. Dado $\varepsilon>0$ existe un $n\in\mathbb{N}$ tal que
+Supongamos que $f$ es creciente en $I$. Por la propiedad arquimediana, dado $\varepsilon>0$ existe un $n\in\mathbb{N}$ tal que
 
 $$
 \frac{(f(b)-f(a))(b-a)}{n} < \varepsilon.
@@ -721,7 +747,8 @@ M_i &= \sup\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i})
 para $i=1,\ldots,n$, de manera que 
 
 \begin{align*}
-S(f,P_n)-s(f,P_n) &= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
+S(f,P_n)-s(f,P_n) 
+&= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
 &= \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\frac{b-a}{n} \\
 &= \frac{b-a}{n}(f(x_1)-f(x_0))+(f(x_2)-f(x_1))+ \cdots \\ 
 & \cdots + (f(x_{n-1})-f(x_{n-2})+ (f(x_n)-f(x_{n-1}))) \\
@@ -729,6 +756,8 @@ S(f,P_n)-s(f,P_n) &= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) - \sum_{i=1}^n f(x_{i-1})(
 \end{align*}
 
 Así pues, $f$ es integrable en $I$.
+
+El caso de una función decreciente es similar se deja como ejercicio.
 :::
 :::
 
@@ -752,9 +781,12 @@ $$
 y por tanto,
 
 \begin{align*}
-S(f,P)-s(f,P) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \\
+S(f,P)-s(f,P) 
+&= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{i=1}^n m_i(x_i-x_{i-1}) \\
 &= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
-& < \varepsilon' \sum_{i=1}^n (x_i-x_{i-1}) = \varepsilon' (b-a)  = \varepsilon.
+& < \varepsilon' \sum_{i=1}^n (x_i-x_{i-1}) 
+= \varepsilon' (b-a) 
+= \varepsilon.
 \end{align*}
 :::
 :::

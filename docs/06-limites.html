@@ -324,6 +324,7 @@ window.Quarto = {
   <li><a href="#discontinuidad-de-2ª-especie" id="toc-discontinuidad-de-2ª-especie" class="nav-link" data-scroll-target="#discontinuidad-de-2ª-especie"><span class="header-section-number">6.11.4</span> Discontinuidad de 2ª especie</a></li>
   </ul></li>
   <li><a href="#funciones-continuas-en-intervalos" id="toc-funciones-continuas-en-intervalos" class="nav-link" data-scroll-target="#funciones-continuas-en-intervalos"><span class="header-section-number">6.12</span> Funciones continuas en intervalos</a></li>
+  <li><a href="#continuidad-uniforme" id="toc-continuidad-uniforme" class="nav-link" data-scroll-target="#continuidad-uniforme"><span class="header-section-number">6.13</span> Continuidad uniforme</a></li>
   </ul>
 </nav>
     </div>
@@ -1955,6 +1956,96 @@ Demostración
 <p><span class="proof-title"><em>Prueba</em>. </span>Por el <a href="#thm-weierstrass" class="quarto-xref">Teorema&nbsp;<span>6.10</span></a> existe <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(f(c)\leq f(x)\leq f(d)\)</span> <span class="math inline">\(\forall x\in I\)</span>, por lo que <span class="math inline">\(f(I)\subseteq[f(c), f(d)]\)</span>.</p>
 <p>Veamos ahora que también se cumple el otro sentido de la inclusión. Si <span class="math inline">\(k\in[f(c),f(d)]\)</span>, por el teorema anterior, se tiene que existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>, y por tanto <span class="math inline">\(k\in f(I)\)</span>, por lo que <span class="math inline">\([f(c),f(d)]\subset f(I)\)</span>.</p>
 <p>Por consiguiente, <span class="math inline">\(f(I)=[f(c),f(d)]\)</span> que es un intervalo cerrado y acotado.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="continuidad-uniforme" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="continuidad-uniforme"><span class="header-section-number">6.13</span> Continuidad uniforme</h2>
+<div id="def-funcion-continua-uniformemente" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6.19 (Función uniformemente continua)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, se dice que una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> es <em>uniformemente continua</em> en el conjunto <span class="math inline">\(A\)</span> si para cualquier número <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon.\)</span></p>
+</div>
+<div id="exm-funcion-uniformemente-continua" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.41</strong></span> Una función constante <span class="math inline">\(f(x)=c\)</span> es unifórmemente continua en todo <span class="math inline">\(\mathbb{R}\)</span> ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar cualquier <span class="math inline">\(\delta&gt;0\)</span> de manera que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(y)|=0&lt;\varepsilon\)</span>.</p>
+<p>La función <span class="math inline">\(f(x)=2x-1\)</span> es uniformemente continua en todo <span class="math inline">\(\mathbb{R}\)</span> ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\varepsilon/2\)</span> de manera que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(y)|=2|x-y|&lt;2\delta=\varepsilon\)</span>.</p>
+<p>La función <span class="math inline">\(f(x)=\frac{1}{x}\)</span> es uniformemente continua en <span class="math inline">\([1,\infty]\)</span> ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\varepsilon\)</span> de manera que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces</p>
+<p><span class="math display">\[
+|f(x)-f(y)|=\left|\frac{1}{x}-\frac{1}{y}\right|=\frac{|x-y|}{|x||y|}&lt;\frac{\delta}{1\cdot 1}=\varepsilon.
+\]</span></p>
+<p>Sin embargo, esta función no es unifórmemente contínua en <span class="math inline">\((0,1]\)</span> ya que tomando <span class="math inline">\(\varepsilon=1\)</span>, para cualquier <span class="math inline">\(\delta&gt;0\)</span>, se puede encontrar <span class="math inline">\(x,y\in[0,1]\)</span> tales que <span class="math inline">\(|x-y|&lt;\delta\)</span> pero</p>
+<p><span class="math display">\[
+|f(x)-f(y)|=\left|\frac{1}{x}-\frac{1}{y}\right|=\frac{|y-x|}{|xy|}&gt;1,
+\]</span></p>
+<p>ya que cuando <span class="math inline">\(x\to 0\)</span> el cociente se hace tan grande como se quiera.</p>
+</div>
+<p>El concepto de continuidad uniforme es más fuerte que el de continuidad, ya que si una función es uniformemente continua en un conjunto, entonces es continua en ese conjunto, pero no al revés, y tiene que ver con la rapidez con la que cambia la función.</p>
+<div id="thm-funcion-uniformemente-continua" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.15</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(a\in A\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, por la definición de continuidad uniforme, existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(|x-a|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(a)|&lt;\varepsilon\)</span>. Por tanto, <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-funcion-no-uniformemente-continua" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.42</strong></span> Ya hemos visto que la función <span class="math inline">\(f(x)=\frac{1}{x}\)</span> no es uniformemente continua en <span class="math inline">\((0,1]\)</span>, pero sí es continua en <span class="math inline">\((0,1]\)</span>.</p>
+</div>
+<div id="thm-continuidad-uniforme-sucesiones" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.16</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> es uniformemente continua en <span class="math inline">\(A\)</span> si y sólo si para cualesquiera dos sucesiones <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> tales que <span class="math inline">\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(A\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, existe <span class="math inline">\(\delta&gt;0\)</span> tal que si <span class="math inline">\(|x-y|&lt;\delta\)</span> entonces <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span>. Como <span class="math inline">\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n\)</span>, existe <span class="math inline">\(N\in\mathbb{N}\)</span> tal que <span class="math inline">\(|x_n-y_n|&lt;\delta\)</span> <span class="math inline">\(\forall n\geq N\)</span>, de manera que <span class="math inline">\(|f(x_n)-f(y_n)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall n\geq N\)</span>. Por tanto, <span class="math inline">\(\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)\)</span>.</p>
+<p>Supongamos ahora que para cualesquiera dos sucesiones <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> tales que <span class="math inline">\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)\)</span>. Supongamos por reducción al absurdo que <span class="math inline">\(f\)</span> no es uniformemente continua en <span class="math inline">\(A\)</span>. Entonces existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que para cualquier <span class="math inline">\(\delta&gt;0\)</span> se pueden encontrar <span class="math inline">\(x,y\in A\)</span> tales que <span class="math inline">\(|x-y|&lt;\delta\)</span> pero <span class="math inline">\(|f(x)-f(y)|\geq \varepsilon\)</span>. En particular, para <span class="math inline">\(\delta=1/n\)</span> se pueden encontrar <span class="math inline">\(x_n,y_n\in A\)</span> tales que <span class="math inline">\(|x_n-y_n|&lt;1/n\)</span> pero <span class="math inline">\(|f(x_n)-f(y_n)|\geq \varepsilon\)</span>. Por tanto, <span class="math inline">\(\lim_{n\to\infty}f(x_n)\neq\lim_{n\to\infty}f(y_n)\)</span>, lo que contradice la hipótesis. Por consiguiente, <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>El siguiente teorema estable las condiciones para que una función continua sea unifórmemente continua.</p>
+<div id="thm-funcion-uniformemente-continua" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 6.17 (Teorema de Heine-Cantor)</strong></span> Dado un conjunto cerrado y acotado <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(A\)</span> entonces es uniformemente continua en <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Demostración
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> no es uniformemente continua en <span class="math inline">\(A\)</span>. Entonces existe <span class="math inline">\(\varepsilon&gt;0\)</span> tal que para cualquier <span class="math inline">\(\delta&gt;0\)</span> se pueden encontrar <span class="math inline">\(x,y\in A\)</span> tales que <span class="math inline">\(|x-y|&lt;\delta\)</span> pero <span class="math inline">\(|f(x)-f(y)|\geq \varepsilon\)</span>.</p>
+<p>Para cada <span class="math inline">\(n\in\mathbb{N}\)</span>, se puede encontrar <span class="math inline">\(x_n,y_n\in A\)</span> tales que <span class="math inline">\(|x_n-y_n|&lt;1/n\)</span> pero <span class="math inline">\(|f(x_n)-f(y_n)|\geq \varepsilon\)</span>. Por el teorema de Bolzano-Weierstrass (<a href="04-sucesiones.html#thm-bolzano-weierstrass-sucesiones" class="quarto-xref">Teorema&nbsp;<span>4.6</span></a>), existe una subsucesión <span class="math inline">\((x_{n_k})_{k=1}^\infty\)</span> que converge a <span class="math inline">\(c\in A\)</span>. Como <span class="math inline">\(A\)</span> es cerrado, por el <a href="03-topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion" class="quarto-xref">Teorema&nbsp;<span>3.4</span></a>, <span class="math inline">\(c\in A\)</span>.</p>
+<p>Como <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(A\)</span>, <span class="math inline">\(\lim_{k\to\infty}f(x_{n_k})=f(c)\)</span> y <span class="math inline">\(\lim_{k\to\infty}f(y_{n_k})=f(c)\)</span>. Por tanto, <span class="math inline">\(\lim_{k\to\infty}|f(x_{n_k})-f(y_{n_k})|=0\)</span>, lo que contradice que <span class="math inline">\(|f(x_{n_k})-f(y_{n_k})|\geq \varepsilon\)</span> <span class="math inline">\(\forall k\in\mathbb{N}\)</span>. Por consiguiente, <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 </div>

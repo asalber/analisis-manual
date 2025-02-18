@@ -1527,6 +1527,80 @@ Por consiguiente, $f(I)=[f(c),f(d)]$ que es un intervalo cerrado y acotado.
 :::
 :::
 
+## Continuidad uniforme
+
+:::{#def-funcion-continua-uniformemente}
+## Función uniformemente continua
+Dado un conjunto $A\subseteq \mathbb{R}$, se dice que una función $f:A\to \mathbb{R}$ es *uniformemente continua* en el conjunto $A$ si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que si $|x-y|<\delta$ entonces $|f(x)-f(y)|<\varepsilon.$
+:::
+
+:::{#exm-funcion-uniformemente-continua}
+Una función constante $f(x)=c$ es unifórmemente continua en todo $\mathbb{R}$ ya que para cualquier $\varepsilon>0$ se puede tomar cualquier $\delta>0$ de manera que si $|x-y|<\delta$ entonces $|f(x)-f(y)|=0<\varepsilon$.
+
+La función $f(x)=2x-1$ es uniformemente continua en todo $\mathbb{R}$ ya que para cualquier $\varepsilon>0$ se puede tomar $\delta=\varepsilon/2$ de manera que si $|x-y|<\delta$ entonces $|f(x)-f(y)|=2|x-y|<2\delta=\varepsilon$.
+
+La función $f(x)=\frac{1}{x}$ es uniformemente continua en $[1,\infty]$ ya que para cualquier $\varepsilon>0$ se puede tomar $\delta=\varepsilon$ de manera que si $|x-y|<\delta$ entonces 
+
+$$
+|f(x)-f(y)|=\left|\frac{1}{x}-\frac{1}{y}\right|=\frac{|x-y|}{|x||y|}<\frac{\delta}{1\cdot 1}=\varepsilon. 
+$$
+
+Sin embargo, esta función no es unifórmemente contínua en $(0,1]$ ya que tomando $\varepsilon=1$, para cualquier $\delta>0$, se puede encontrar $x,y\in[0,1]$ tales que $|x-y|<\delta$ pero 
+
+$$
+|f(x)-f(y)|=\left|\frac{1}{x}-\frac{1}{y}\right|=\frac{|y-x|}{|xy|}>1,
+$$
+
+ya que cuando $x\to 0$ el cociente se hace tan grande como se quiera.
+:::
+
+El concepto de continuidad uniforme es más fuerte que el de continuidad, ya que si una función es uniformemente continua en un conjunto, entonces es continua en ese conjunto, pero no al revés, y tiene que ver con la rapidez con la que cambia la función.
+
+:::{#thm-funcion-uniformemente-continua}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$, si $f$ es uniformemente continua en $A$, entonces $f$ es continua en $A$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Sea $a\in A$ un punto de acumulación de $A$. Dado $\varepsilon>0$, por la definición de continuidad uniforme, existe $\delta>0$ tal que si $|x-a|<\delta$ entonces $|f(x)-f(a)|<\varepsilon$. Por tanto, $f$ es continua en $a$.
+:::
+:::
+
+:::{#exm-funcion-no-uniformemente-continua}
+Ya hemos visto que la función $f(x)=\frac{1}{x}$ no es uniformemente continua en $(0,1]$, pero sí es continua en $(0,1]$.
+:::
+
+:::{#thm-continuidad-uniforme-sucesiones}
+Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ es uniformemente continua en $A$ si y sólo si para cualesquiera dos sucesiones $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ tales que $\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$, se tiene que $\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $f$ es uniformemente continua en $A$. Dado $\varepsilon>0$, existe $\delta>0$ tal que si $|x-y|<\delta$ entonces $|f(x)-f(y)|<\varepsilon$. Como $\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$, existe $N\in\mathbb{N}$ tal que $|x_n-y_n|<\delta$ $\forall n\geq N$, de manera que $|f(x_n)-f(y_n)|<\varepsilon$ $\forall n\geq N$. Por tanto, $\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)$.
+
+Supongamos ahora que para cualesquiera dos sucesiones $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ tales que $\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$, se tiene que $\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)$. Supongamos por reducción al absurdo que $f$ no es uniformemente continua en $A$. Entonces existe $\varepsilon>0$ tal que para cualquier $\delta>0$ se pueden encontrar $x,y\in A$ tales que $|x-y|<\delta$ pero $|f(x)-f(y)|\geq \varepsilon$. En particular, para $\delta=1/n$ se pueden encontrar $x_n,y_n\in A$ tales que $|x_n-y_n|<1/n$ pero $|f(x_n)-f(y_n)|\geq \varepsilon$. Por tanto, $\lim_{n\to\infty}f(x_n)\neq\lim_{n\to\infty}f(y_n)$, lo que contradice la hipótesis. Por consiguiente, $f$ es uniformemente continua en $A$.
+:::
+:::
+
+El siguiente teorema estable las condiciones para que una función continua sea unifórmemente continua.
+
+:::{#thm-funcion-uniformemente-continua}
+## Teorema de Heine-Cantor
+Dado un conjunto cerrado y acotado $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, si $f$ es continua en $A$ entonces es uniformemente continua en $A$.
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración
+:::{.proof}
+Supongamos que $f$ no es uniformemente continua en $A$. Entonces existe $\varepsilon>0$ tal que para cualquier $\delta>0$ se pueden encontrar $x,y\in A$ tales que $|x-y|<\delta$ pero $|f(x)-f(y)|\geq \varepsilon$.
+
+Para cada $n\in\mathbb{N}$, se puede encontrar $x_n,y_n\in A$ tales que $|x_n-y_n|<1/n$ pero $|f(x_n)-f(y_n)|\geq \varepsilon$. Por el teorema de Bolzano-Weierstrass (@thm-bolzano-weierstrass-sucesiones), existe una subsucesión $(x_{n_k})_{k=1}^\infty$ que converge a $c\in A$. Como $A$ es cerrado, por el @thm-conjunto-cerrado-puntos-acumulacion, $c\in A$.
+
+Como $f$ es continua en $A$, $\lim_{k\to\infty}f(x_{n_k})=f(c)$ y $\lim_{k\to\infty}f(y_{n_k})=f(c)$. Por tanto, $\lim_{k\to\infty}|f(x_{n_k})-f(y_{n_k})|=0$, lo que contradice que $|f(x_{n_k})-f(y_{n_k})|\geq \varepsilon$ $\forall k\in\mathbb{N}$. Por consiguiente, $f$ es uniformemente continua en $A$.
+:::
+:::
 
 **Notas**
 
