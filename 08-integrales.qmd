@@ -621,7 +621,7 @@ $$
 :::
 :::
 
-:::[#thm-valor-medio-integral]
+:::{#thm-valor-medio-integral}
 ## Teorema del valor medio para integrales
 Si $f:I\to\mathbb{R}$ es una función continua en $I=[a,b]$, entonces existe un número $c\in(a,b)$ tal que
 
@@ -1030,7 +1030,7 @@ Dada $f:I\to\mathbb{R}$ integrable en $I=[a,b]$ y $F(x)=\int_a^x f(t)\,dt$ la in
 :::
 
 :::{.callout-note collapse="true"}
-## Demostración
+## Demostración 1
 :::{.proof}
 Dado $\varepsilon>0$, como $f$ es continua en $c$, existe $\delta>0$ tal que si $x\in I$ y $|x-c|<\delta$, entonces $|f(x)-f(c)|<\varepsilon$.
 
@@ -1048,6 +1048,38 @@ Tomando $h\in\mathbb{R}$ con $|h|<\delta$ y tal que $c+h\in I$, se tiene
 \end{align*}
 
 Por tanto, $F'(c) = \lim_{h\to 0} \frac{F(c+h)-F(c)}{h} = f(c)$.
+:::
+:::
+
+:::{.callout-note collapse="true"}
+## Demostración 2
+:::{.proof}
+Existe una segunda demostración del teorema fundamental del cálculo más simple que la anterior, si se supone que $f$ es continua en un entorno de $c$.
+
+Partiendo de la definición de derivada, se tiene
+
+$$
+F'(c) 
+= \lim_{h\to 0} \frac{F(c+h)-F(c)}{h} 
+= \lim_{h\to 0} \frac{\int_a^{c+h}f(t)\,dt - \int_a^c f(t)\,dt}{h} 
+= \lim_{h\to 0} \frac{\int_c^{c+h}f(t)\,dt}{h}.
+$$
+
+Si $f$ es continua en el intervalo $(c, c+h)$, entonces por el teorema del valor medio para integrales (@thm-valor-medio-integral), existe $d\in(c,c+h)$ tal que
+
+$$
+f(d) 
+= \frac{1}{c+h-c}\int_c^{c+h} f(x)\,dx 
+= \frac{1}{h}\int_c^{c+h} f(x)\,dx,
+$$
+
+y por tanto, podemos expresar la derivada de $F$ en $c$ como
+
+$$
+F'(c) = \lim_{h\to 0} f(d)
+$$
+
+para un $d\in(c,c+h)$, y como $d\to c$ cuando $h\to 0$, se tiene que $F'(c) = f(c)$.
 :::
 :::
 
