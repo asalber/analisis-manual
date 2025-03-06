@@ -1817,9 +1817,9 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 \frac{1}{2}\int_{-\pi/3}^{\pi/3}f(\theta)^2-g(\theta)^2\,d\theta
 &amp;= \frac{1}{2} \int_{-\pi/3}^{\pi/3}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
 &amp;= \frac{1}{2} \int_{-\pi/3}^{\pi/3}8\cos(\theta)^2 - 2\cos(\theta) - 1 \,d\theta \\
-&amp;= \frac{1}{2}8\left(\int_{-\pi/3}^{\pi/3}\cos(\theta)^2\,d\theta - 2\int_{-\pi/3}^{\pi/3}\cos(\theta)\,d\theta - \int_{-\pi/3}^{\pi/3}\,d\theta \right) \\
+&amp;= \frac{1}{2}\left(8\int_{-\pi/3}^{\pi/3}\cos(\theta)^2\,d\theta - 2\int_{-\pi/3}^{\pi/3}\cos(\theta)\,d\theta - \int_{-\pi/3}^{\pi/3}\,d\theta \right) \\
 &amp;= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/3}^{\pi/3} - 2[\operatorname{sen}(\theta)]_{-\pi/3}^{\pi/3} - [\theta]_{-\pi/3}^{\pi/3} \right) \\
-&amp;= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{3} +\sqrt{3} -\frac{4\pi}{3}- \sqrt{3} - \sqrt{3} - \frac{\pi}{3} -\frac{\pi}{3}\right)\\
+&amp;= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{3} +\sqrt{3} +\frac{4\pi}{3}- \sqrt{3} - \sqrt{3} - \frac{\pi}{3} -\frac{\pi}{3}\right)\\
 &amp;= \pi.
 \end{align*}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
@@ -1869,6 +1869,21 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 \int_a^b f(x)\,dx = \lim_{t\to b^-} \int_a^t f(x)\,dx
 \]</span></p>
 <p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
+<p>Del mismo modo, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I=(a,b]\)</span> y discontinua en <span class="math inline">\(a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el límite</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = \lim_{t\to a^+} \int_t^b f(x)\,dx.
+\]</span></p>
+<p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
+</div>
+<div id="exm-integrales-impropias-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8.16</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> no está definida en <span class="math inline">\(x=0\)</span>, pero podemos calcular su integral impropia en el intervalo <span class="math inline">\([0,1]\)</span>.</p>
+<p><span class="math display">\[
+\int_0^1 \frac{1}{\sqrt{x}}\,dx
+= \lim_{t\to 0^+} \int_t^1 \frac{1}{\sqrt{x}}\,dx
+= \lim_{t\to 0^+} \left[2\sqrt{x}\right]_t^1
+= \lim_{t\to 0^+} 2-2\sqrt{t}
+= 2.
+\]</span></p>
 </div>
 </section>
 <section id="sec-calculo-volumenes-integral" class="level2" data-number="8.8">
@@ -1920,7 +1935,7 @@ var params = {
 \]</span></p>
 <p>mide el volumen del cuerpo sólido con secciones transversales de área <span class="math inline">\(A(x)\)</span> en el intervalo <span class="math inline">\([a,b]\)</span>.</p>
 <div id="exm-volumen-esfera" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.16</strong></span> Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.17</strong></span> Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r \pi(r^2-x^2)\,dx
 &amp;= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
@@ -1943,7 +1958,7 @@ var params = {
 \int_a^b \pi f(x)^2\,dx
 \]</span></p>
 <div id="exm-volumen-cono-revolucion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.17</strong></span> Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.18</strong></span> Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^2 \pi f(x)^2\,dx
 &amp;= \int_0^2 \pi (2-x)^2\,dx
@@ -1996,7 +2011,7 @@ var params = {
 ::: --></p>
 <p><a href="https://www.geogebra.org/classic/bcpdxmpf"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos."> Calculadora de volúmenes de sólidos de revolución mediante envoltorios cilíndricos.</a></p>
 <div id="exm-volumen-revolucion-envoltorios" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.18</strong></span> El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=4-x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.19</strong></span> El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=4-x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
 <p>Si usamos discos discos cilíndricos debemos expresar <span class="math inline">\(x\)</span> en función de <span class="math inline">\(y\)</span>, es decir <span class="math inline">\(x=\sqrt{4-y}\)</span> y calcular la siguiente integral definida en el intervalo <span class="math inline">\([0,4]\)</span></p>
 <p><span class="math display">\[
 \int_0^4 \pi g(y)^2\,dy
@@ -2052,7 +2067,7 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 \]</span></p>
 <p>siempre y cuando <span class="math inline">\(f'(x)\)</span> sea integrable en <span class="math inline">\([a,b]\)</span>.</p>
 <div id="exm-longitud-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.19</strong></span> Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.20</strong></span> Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
 <p>La derivada de <span class="math inline">\(f\)</span> es <span class="math inline">\(f'(x)=\frac{-x}{\sqrt{1-x^2}}\)</span>, de manera que la longitud de la semicircunferencia es</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 \sqrt{1+\left(\frac{-x}{\sqrt{1-x^2}}\right)^2}\,dx
@@ -2135,7 +2150,7 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = 
 \]</span></p>
 <p>ya que, cuando los intervalos se hacen infinitamente pequeños, <span class="math inline">\(f(x_{i_1})\)</span> y <span class="math inline">\(f(x_i)\)</span> se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor <span class="math inline">\(f(x)\)</span>, por lo que en la integral se pone <span class="math inline">\(2 f(x)\)</span>.</p>
 <div id="exm-superficie-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.20</strong></span> Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.21</strong></span> Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
 &amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2}\,dx \\
@@ -2186,7 +2201,7 @@ v(t) = v(0) + \int_{0}^t a(x)\,dx.
 \]</span></p>
 <p>Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.</p>
 <div id="exm-caida-libre" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.21</strong></span> Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.22</strong></span> Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
 <p>Integrando la aceleración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
 <p><span class="math display">\[
 v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
@@ -2216,7 +2231,7 @@ W = F\cdot d
 <p>Como la fuerza se mide en newtons, la unidad del trabajo en el SI es el <em>julio</em> <span class="math inline">\(J = N\cdot m\)</span>.</p>
 <p>Cuando la fuerza es constante, el trabajo es proporcional a la distancia recorrida.</p>
 <div id="exm-trabajo-gravedad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.22</strong></span> Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.23</strong></span> Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
 <p><span class="math display">\[
 F = m\cdot g = 1 \mbox{ kg} \cdot 9.81 \mbox{ m/s$^2$} = 9.8 \mbox{ N},
 \]</span></p>
@@ -2247,7 +2262,7 @@ Advertencia
 </div>
 </div>
 <div id="exm-trabajo-fuerza-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.23</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.24</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 \]</span></p>
@@ -2286,7 +2301,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
 \]</span></p>
 <div id="exm-centro-masas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.24</strong></span> El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.25</strong></span> El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar x
 &amp;= \frac{\int_5^{10} xf(x)\,dx}{\int_5^{10} f(x)\,dx}
@@ -2341,7 +2356,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar y = \frac{\frac{1}{2}\delta \int_a^b f(x)^2\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b f(x)^2\, dx,}{2\int_a^b f(x)\, dx,}
 \]</span></p>
 <div id="exm-centroide" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.25</strong></span> Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.26</strong></span> Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 f(x)\,dx
 &amp;= \int_{-1}^1 \sqrt{1-x^2}\,dx
@@ -2404,7 +2419,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \bar f[a,b] = \frac{1}{b-a}\int_a^b f(x)\,dx
 \]</span></p>
 <div id="exm-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.26</strong></span> El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.27</strong></span> El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar f[0,\pi/2]
 &amp;= \frac{1}{\pi/2} \int_0^{\pi/2} f(x)\, dx
@@ -2440,7 +2455,7 @@ P(a\leq X\leq b) = \int_a^b f(x)\,dx
 \]</span></p></li>
 </ol>
 <div id="exm-funcion-densidad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.27</strong></span> La función <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es una función de densidad de probabilidad para <span class="math inline">\(x\in[-3,3]\)</span>, ya que es no negativa en ese intervalo y se cumple &gt;</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.28</strong></span> La función <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es una función de densidad de probabilidad para <span class="math inline">\(x\in[-3,3]\)</span>, ya que es no negativa en ese intervalo y se cumple &gt;</p>
 <p><span class="math display">\[
 \int_{-3}^{3} \frac{9-x^2}{36}\,dx = \frac{1}{36}\left[9x-\frac{x^3}{3}\right]_{-3}^{3} = \frac{1}{36}(27 - 9 + 27 - 9) = 1.
 \]</span></p>
@@ -2465,7 +2480,7 @@ E(X) = \int_{-\infty}^{\infty} x f(x)\,dx,
 P(X\leq Me) = \int_{-\infty}^{Me} f(x)\,dx = \frac{1}{2}.
 \]</span></p>
 <div id="exm-media-varianza-mediana-variable-aleatoria" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8.28</strong></span> La media de la variable aleatoria con función de densidad de probabilidad <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 8.29</strong></span> La media de la variable aleatoria con función de densidad de probabilidad <span class="math inline">\(f(x)=\frac{9-x^2}{36}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 E(X)
 &amp;= \int_{-3}^{3} x \frac{9-x^2}{36}\,dx
