@@ -146,7 +146,7 @@ Veamos que la sucesión $\left(\frac{1}{2^n}\right)_{n=1}^\infty$ converge a 0. 
 Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Aplicando el teorema del binomio, para cualquier $n\in\mathbb{N}$, con $n>1$, se tiene que
 
 \begin{align*}
-(1+\sqrt{\frac{2}{n}})^n 
+\left(1+\sqrt{\frac{2}{n}}\right)^n 
 &= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{2}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \tag{1} \\
 & > 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
 = 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\

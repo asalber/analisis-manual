@@ -103,7 +103,7 @@ El módulo de un vector coincide con la longitud del segmento que representa el 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Probaremos primero la proposición para el plano real $\mathbb{R}^2$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $v_1$ y $v2$.
+Probaremos primero la proposición para el plano real $\mathbb{R}^2$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $v_1$ y $v_2$.
 
 :::{.content-visible when-format="html"}
 ![Módulo de un vector en el plano.](img/geometria-plano-espacio/modulo-vector-plano.png)
@@ -116,10 +116,10 @@ Probaremos primero la proposición para el plano real $\mathbb{R}^2$. Supongamos
 Por tanto, aplicando el teorema de Pitágoras, se tiene que la longitud de $\mathbf{v}$ es 
 
 $$
-\sqrt{(v_1^2+v_2^2} = |\mathbf{v}|.
+\sqrt{(v_1^2+v_2^2)} = |\mathbf{v}|.
 $$
 
-Veamos ahora que también es cierto en el espacio real $\mathbb{R}^3$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2,v_3)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $|\mathbf{w}|$ y $v3$, donde $\mathbf{w}$ es el vector que resulta de proyectar $\mathbf{v}$ sobre el plano $xy$, es decir, $\mathbf{w}=(v_1,v_2)$. 
+Veamos ahora que también es cierto en el espacio real $\mathbb{R}^3$. Supongamos que el vector tiene componentes $\mathbf{v}=(v_1,v_2,v_3)$. En este caso, tal y como se puede apreciar en la siguiente figura, el vector es la hipotenusa del triángulo rectángulo con catetos de longitud $|\mathbf{w}|$ y $v_3$, donde $\mathbf{w}$ es el vector que resulta de proyectar $\mathbf{v}$ sobre el plano $xy$, es decir, $\mathbf{w}=(v_1,v_2)$. 
 
 :::{.content-visible when-format="html"}
 ![Módulo de un vector en el espacio.](img/geometria-plano-espacio/modulo-vector-espacio.png)
@@ -297,7 +297,7 @@ a. $\mathbf{0} \cdot \mathbf{v} = 0$.
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sean $$\mathbf{u}=(u_1,\cdots,u_n)$, $\mathbf{v}=(v_1,\ldots,v_n)$ y $\mathbf{w}=(w_1,\cdots,w_n)$. 
+Sean $\mathbf{u}=(u_1,\cdots,u_n)$, $\mathbf{v}=(v_1,\ldots,v_n)$ y $\mathbf{w}=(w_1,\cdots,w_n)$. 
 
 a. $\mathbf{v}\cdot\mathbf{v} = v_1v_1+\cdots+v_nv_n = v_1^2+\cdots+v_n^2 =|\mathbf{v}|^2$.
 
@@ -431,7 +431,7 @@ $$
 
 :::{#def-vectores-paralelos}
 ## Vectores paralelos
-Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un escalar $a\in\mathbb{R}$ tal que
+Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un escalar $a\in\mathbb{R}$ no nulo tal que
 
 $$
 \mathbf{u} = a\mathbf{v}.
@@ -476,7 +476,7 @@ Para probar el otro sentido de la implicación, supongamos que $\mathbf{u}\cdot\
 Los vectores $\mathbf{u}=(2,1)$ y $\mathbf{v}=(-2,4)$ en $\mathbb{R}^2$ son ortogonales, ya que
 
 $$
-\mathbf{u}\mathbf{v} = 2\cdot -2 +1\cdot 4 = 0,
+\mathbf{u}\mathbf{v} = 2\cdot (-2) +1\cdot 4 = 0,
 $$
 
 pero no son ortonormales ya que $\lvert\mathbf{u}\rvert = \sqrt{2^2+1^2} \neq 1$ y $\lvert \mathbf{v}\rvert = \sqrt{-2^2+4^2} \neq 1$.
@@ -510,7 +510,7 @@ $$
 u_2 & u_3 \\
 v_2 & v_3 
 \end{array}
-\right|\mathbf{i} +
+\right|\mathbf{i} -
 \left|
 \begin{array}{cc}
 u_1 & u_3 \\
@@ -543,7 +543,7 @@ El producto vectorial de los vectores $\mathbf{u}=(1,2,0)$ y $\mathbf{v}=(-1,1,0
 
 $$
 \mathbf{u}\times \mathbf{v} 
-= (2\cdot 0-0\cdot 1, 0\cdot (-2)-1\cdot 0, 1\cdot 1-2\cdot (-1) 
+= (2\cdot 0-0\cdot 1, 1\cdot 0-0\cdot (-1), 1\cdot 1-2\cdot (-1) 
 = (0, 0, 3).
 $$
 

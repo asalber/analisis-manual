@@ -103,7 +103,7 @@ $$
 \hline
 x      & f(x)   \\
 \hline\hline
- -0.1   & \mbox{No exite}      \\
+ -0.1   & \mbox{No existe}      \\
 \hline
  -0.01   & \mbox{No existe}     \\
 \hline
@@ -132,7 +132,7 @@ x      & f(x)   \\
 \end{array}$$
 
 ::: {.content-visible when-format="html"}
-![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-1.png)
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-1.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -184,7 +184,7 @@ x      & f(x)   \\
 $$
 
 ::: {.content-visible when-format="html"}
-![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-2.png)
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-2.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -239,7 +239,7 @@ x      & f(x)   \\
 $$
 
 ::: {.content-visible when-format="html"}
-![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-3.png)
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-3.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -252,7 +252,7 @@ $$
 A veces, el límite de un función en un punto puede no existir porque la función oscila rápidamente al acercarnos a dicho punto.
 
 :::{#exm-limites-no-existen-4}
-Consideremos la función $f(x)=\operatorname{sen} \dfrac{1}{x}$ y veamos que pasa cuando $x\to 0$:
+Consideremos la función $f(x)=\operatorname{sen}\left(\dfrac{1}{x}\right)$ y veamos que pasa cuando $x\to 0$:
 
 $$
 \begin{array}{c}
@@ -294,17 +294,17 @@ x      & f(x)   \\
 \hline
 \end{array}\\
 \Downarrow & & \Downarrow\\
-\displaystyle \mbox{No existe }\lim_{x\to 0^-}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0^-}\operatorname{sen}\left(\frac{1}{x}\right)
 & &
-\displaystyle \mbox{No existe }\lim_{x\to 0^+}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0^+}\operatorname{sen}\left(\frac{1}{x}\right)
 \end{array}}\\
 \Downarrow\\
-\displaystyle \mbox{No existe }\lim_{x\to 0}\operatorname{sen} \frac{1}{x}
+\displaystyle \mbox{No existe }\lim_{x\to 0}\operatorname{sen}\left(\frac{1}{x}\right)  
 \end{array}
 $$
 
 ::: {.content-visible when-format="html"}
-![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-4.png)
+![Límite que no existe en $x=0$.](./img/limites/limite-no-existe-4.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -359,7 +359,7 @@ x      & f(x)=1/x   \\
 $$
 
 ::: {.content-visible when-format="html"}
-![Límites en el infinito.](./img/limites/limite-en-infinito.png)
+![Límites en el infinito.](./img/limites/limite-en-infinito.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -379,7 +379,7 @@ si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que $
 :::
 
 ::: {.content-visible when-format="html"}
-![Límite de una función.](./img/limites/definicion-limite.png)
+![Límite de una función.](./img/limites/definicion-limite.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -391,7 +391,7 @@ Obsérvese que en la definición anterior $x\neq a$, es decir, no es necesario q
 :::
 
 :::{#exm-límite-funcion}
-Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
+Sea $f(x)=x^2$. Veamos que $\lim_{x\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
 \begin{align*}
 |f(x)-a^2| &= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\ 
 &< (1+2|a|)\delta < (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
@@ -473,7 +473,7 @@ Por tanto, el límite de la función aplicada a estas dos sucesiones es distinto
 Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$ y un punto de acumulación $a$ de $A$, se dice que $f$ está _acotada_ en el entorno de $a$ si existe un $\delta>0$ y un $c>0$ tal que $|f(x)|<c$ $\forall x\in A$ con $|x-a|<\delta$.
 :::
 
-:::{#def-funcion-acotada-entorno}
+:::{#def-funcion-acotada}
 ## Función acotada
 Dado un conjunto $A\subseteq \mathbb{R}$, una función $f:A\to \mathbb{R}$, se dice que $f$ está _acotada_ en $A$, si existe un $c>0$ tal que $|f(x)|\leq c$ $\forall x\in A$.
 :::
@@ -536,7 +536,7 @@ Sea $f(x)=x^3+x^2-2x-1$, entonces
 \begin{align*}
 \lim_{x\to 2}f(x) &= \lim_{x\to 2}x^3+x^2-2x-1\\  
 &= \lim_{x\to 2}x^3 + \lim_{x\to 2}x^2 - \lim_{x\to 2} 2x - \lim_{x\to 2} 1\\
-&= 2^3 + 2^2 -2*2 -1 = 7.
+&= 2^3 + 2^2 -2\cdot 2 -1 = 7.
 \end{align*}
 
 Sea ahora $g(x)=\frac{x^2-4}{3x-6}$, entonces
@@ -556,7 +556,7 @@ Dado un conjunto $A\subseteq \mathbb{R}$, tres funciones $f,g,h:A\to \mathbb{R}$
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ convergente a $a$. Entonces $f(x_n)\leq g(x_n)\leq h(x_n)$ $\forall n\in\mathbb{N}$ y además $\lim_{n\to\infty} f(x_n)=\lim_{n\to\infty}h(x_n)=l$. Así pues, por el [teorema de compresión de sucesiones](@thm-compresion-sucesiones-convergentes), se tiene que $\lim_{n\to\infty}g(x_n)=l$, y por tanto, $\lim_{x\to a}g(x)=l$.
+Sea $(x_n)_{n=1}^\infty$ una sucesión en $A\setminus\{a\}$ convergente a $a$. Entonces $f(x_n)\leq g(x_n)\leq h(x_n)$ $\forall n\in\mathbb{N}$ y además $\lim_{n\to\infty} f(x_n)=\lim_{n\to\infty}h(x_n)=l$. Así pues, por el teorema  de comprensión de sucesiones (@thm-compresion-sucesiones-convergentes), se tiene que $\lim_{n\to\infty}g(x_n)=l$, y por tanto, $\lim_{x\to a}g(x)=l$.
 :::
 :::
 
@@ -1077,7 +1077,7 @@ Si $f(x)^{g(x)}$ presenta una indeterminación de tipo potencia cuando $x\to a$,
 
 $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 
-:::{#exm-solucion-indeterminacion-producto}
+:::{#exm-solucion-indeterminacion-potencia}
 Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty$ cuando $x\to 0$.
 
 \begin{align*}
@@ -1150,12 +1150,13 @@ La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 $$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.$$
 
 ::: {.content-visible when-format="html"}
-![Asíntota vertical.](./img/limites/asintota-vertical.png)
+![Asíntota vertical.](./img/limites/asintota-vertical.svg){width="600px"}
 :::
 
 ::: {.content-visible unless-format="html"}
 ![Asíntota vertical.](./img/limites/asintota-vertical.tex)
 :::
+
 :::
 
 ### Asíntotas horizontales
@@ -1175,7 +1176,7 @@ La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 \end{align*}
 
 ::: {.content-visible when-format="html"}
-![Asíntota horizontal.](./img/limites/asintota-horizontal.png)
+![Asíntota horizontal.](./img/limites/asintota-horizontal.svg){width="600px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1203,7 +1204,7 @@ La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 \end{align*}
 
 ::: {.content-visible when-format="html"}
-![Asíntota oblicua.](./img/limites/asintota-oblicua.png)
+![Asíntota oblicua.](./img/limites/asintota-oblicua.svg){width="600px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1231,7 +1232,7 @@ Dado un conjunto $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, se 
 
 De manera informal, se puede decir que una una función es continua en un intervalo, si puede dibujarse su gráfica en ese intervalo sin levantar el lápiz.
 
-:::{#exm-funcion-continua}
+:::{#exm-funcion-continua-intervalo}
 La función constante $f(x)=c$ es continua en todo $\mathbb{R}$, ya que $\lim_{x\to a}c = c = f(a)$ $\forall a\in\mathbb{R}$.
 
 La función identidad $\operatorname{Id}(x)=x$ es continua en todo $\mathbb{R}$, ya que $\lim_{x\to a}x = a = \operatorname{Id}(a)$ $\forall a\in\mathbb{R}$.
@@ -1280,13 +1281,13 @@ Dependiendo de la condición de continuidad que se rompa, existen distintos tipo
 Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$ si existe el límite de $f$ en $a$ pero $\displaystyle \lim_{x\to a}f(x)\neq f(a)$.
 :::
 
-:::{#exm-discontinuiada-evitable}
+:::{#exm-discontinuidad-evitable}
 La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$ ya que la función no está definida en $x=1$ pero
 
 $$\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.$$
 
 ::: {.content-visible when-format="html"}
-![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.png)
+![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1316,7 +1317,7 @@ La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª esp
 Salto $= 1-(-1)=2$.
 
 ::: {.content-visible when-format="html"}
-![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.png)
+![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1344,7 +1345,7 @@ La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infi
 \end{align*}
 
 ::: {.content-visible when-format="html"}
-![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.png)
+![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1370,7 +1371,7 @@ La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª espec
 \end{align*}
 
 ::: {.content-visible when-format="html"}
-![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.png)
+![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.svg){width="400px"}
 :::
 
 ::: {.content-visible unless-format="html"}
@@ -1498,7 +1499,7 @@ De forma análoga se procede si $d<c$.
 :::
 :::
 
-:::{#thm-valores-intermedios}
+:::{#thm-valores-intermedios-2}
 Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$ y $k\in\mathbb{R}$ es tal que $\inf(f(I))\leq k\leq \sup(f(I))$, entonces existe $e\in I$ tal que $f(e)=k$.
 :::
 
@@ -1586,7 +1587,7 @@ Supongamos ahora que para cualesquiera dos sucesiones $(x_n)_{n=1}^\infty$, $(y_
 
 El siguiente teorema estable las condiciones para que una función continua sea unifórmemente continua.
 
-:::{#thm-funcion-uniformemente-continua}
+:::{#thm-heine-cantor}
 ## Teorema de Heine-Cantor
 Dado un conjunto cerrado y acotado $A\subseteq \mathbb{R}$ y una función $f:A\to \mathbb{R}$, si $f$ es continua en $A$ entonces es uniformemente continua en $A$.
 :::

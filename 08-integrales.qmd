@@ -1739,7 +1739,7 @@ y la longitud del segmento puede expresarse como
 
 \begin{align*}
 \sqrt{\Delta x^2+(f(x_i)-f(x_{i-1}))^2}
-&= \sqrt{\Delta x^2+(f'(x'_i)\Delta x^2}\\
+&= \sqrt{\Delta x^2+(f'(x'_i)\Delta x)^2}\\
 &= \Delta x\sqrt{1+f'(x'_i)^2},
 \end{align*}
 

@@ -788,8 +788,8 @@ Así pues, $x^2\not < a$ y $x^2\not >a$, por lo que tiene que ser $x^2=a$.
 
 Del mismo modo se puede probar que para cualquier número real $a\in\mathbb{R}$ con $a>0$ y para cualquier número natural $n\in\mathbb{N}$ existe un número real $x\in\mathbb{R}$ tal que $x>0$ y $x^n=a$. A este número se le llama _raíz $n$-ésima_ de $a$.
 
-:::{#thm-densidad-racionales}
-## Densidad de los números racionales
+:::{#thm-densidad-racionales-reales}
+## Densidad de los números racionales en los reales
 Dados dos números reales $a,b\in \mathbb{R}$ con $a<b$, existe un número racional $q\in \mathbb{Q}$ tal que $a<q<b$.
 :::
 
@@ -808,15 +808,15 @@ pero como habíamos visto que $m-1\leq na$ se deduce que $1+m-1<nb$, es decir $m
 :::
 :::
 
-:::{#cor-densidad-irracionales}
-## Densidad de los números irracionales
+:::{#cor-densidad-irracionales-reales}
+## Densidad de los números irracionales en los reales
 Dados dos números reales $a,b\in \mathbb{R}$ con $a<b$, existe un número irracional $p\in \mathbb{R}\setminus \mathbb{Q}$ tal que $a<p<b$.
 :::
 
 :::{.callout-note collapse="true"}
 ## Demostración
 :::{.proof}
-Sabemos que $\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}$ y que $\sqrt{2}>0$, por lo que al aplicar el teorema anterior a los números reales $\frac{a}{\sqrt{2}}$ y $\frac{b}{\sqrt{2}}$ se tiene que existe un número racional $q\in\mathbb{Q}$ tal que $\frac{a}{\sqrt{2}}<q<\frac{b}{\sqrt{2}}$, lo que implica que $a<q\sqrt{2}<b$. Finalmente, si tomamos $p=q\sqrt{2}$, tenemos que es un número irracional que cumple que $a<p<q$.
+Sabemos que $\sqrt{2}\in \mathbb{R}\setminus\mathbb{Q}$ y que $\sqrt{2}>0$, por lo que al aplicar el teorema anterior a los números reales $\frac{a}{\sqrt{2}}$ y $\frac{b}{\sqrt{2}}$ se tiene que existe un número racional $q\in\mathbb{Q}$ tal que $\frac{a}{\sqrt{2}}<q<\frac{b}{\sqrt{2}}$, lo que implica que $a<q\sqrt{2}<b$. Finalmente, si tomamos $p=q\sqrt{2}$, tenemos que es un número irracional que cumple que $a<p<b$.
 :::
 :::
 
