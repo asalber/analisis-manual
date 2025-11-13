@@ -400,7 +400,7 @@ Como además
 
 \begin{align*}
 \frac{f^{-1}(y)-f^{-1}(f(a))}{y-f(a)} &= \frac{f^{-1}(y)-a}{y-f(a)} \\ 
-&= \frac{1}{\frac{y-f(a)}{f^{-1}(y)-a}} = \frac{1}{g(y)} \label{si $y\neq f(a)$}, 
+&= \frac{1}{\frac{y-f(a)}{f^{-1}(y)-a}} = \frac{1}{g(y)} \tag{si $y\neq f(a)$}, 
 \end{align*}
 
 y como $\lim_{y\to f(a)}\frac{1}{g(y)} = \frac{1}{f'(a)}$, finalmente se tiene que 
@@ -416,6 +416,8 @@ $$
 \frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{f'(x)}
 $$
 :::
+:::
+:::
 
 :::{.callout-caution}
 Si en las condiciones del teorema anterior quitamos la condición $f'(a)\neq 0$, el resultado no es cierto y $f^{-1}$ no es diferenciable en $f(a)$. Vamos a probarlo por reducción al absurdo. Supongamos que $f'(a)=0$, entonces, aplicando la regla de la cadena, se tiene
@@ -426,8 +428,7 @@ $$
 
 Pero, por otro lado, $(f^{-1}\circ f)'(a) = \operatorname{Id}'(a) = 1$, lo que supone una contradicción, por lo que $f^{-1}$ no puede ser derivable en $f(a)$.
 :::
-:::
-:::
+
 
 :::{#cor-derivada-funcion-inversa}
 Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$ inyectiva en $I$, y sea $J=f(I)$ y $f^{-1}:J\to\mathbb{R}$ la función inversa de $f$. Si $f$ es derivable en $I$ y $f'(x)\neq 0$ $\forall x\in I$, entonces $f^{-1}$ es derivable en $I$ y $\forall y\in J$,

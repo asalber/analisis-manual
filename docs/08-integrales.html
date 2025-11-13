@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,16 +35,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-54c8f25464f32f8783bd446cee98020d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b070026442d724084d8c8a0dce3bf851.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d15bdcbeac39d2275a6b4bf1331852a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-90e8bc6ca05fc443164fb3797667db0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6dcc31902a2b61f7b025a9897c825a05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,7 +91,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -301,7 +302,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
@@ -622,12 +624,12 @@ var params = {
 <p><span class="theorem-title"><strong>Proposición 8.1</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P=\{x_0, x_1, \cdots, x_n\}\)</span> es una partición de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -658,12 +660,12 @@ s(f,P) = \sum_{i=1}^n m_i(x_i-x_{i-1}) \leq \sum_{i=1}^n M_i(x_i-x_{i-1}) = S(f,
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -694,12 +696,12 @@ s(f,P)\leq s(f,P_2)\leq \cdots \leq s(f,Q).
 <p><span class="theorem-title"><strong>Proposición 8.3</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son dos particiones de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(s(f,P)\leq S(f,Q)\)</span> y <span class="math inline">\(s(f,Q)\leq S(f,P)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -738,12 +740,12 @@ s(f,Q)\leq s(f,P')\leq S(f,P')\leq S(f,P).
 <p><span class="theorem-title"><strong>Proposición 8.4</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(\underline{\int_a^b} f\leq \overline{\int_a^b}f\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -852,12 +854,12 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 <p><span class="theorem-title"><strong>Teorema 8.1 (Criterio de integrabilidad de Riemann)</strong></span> Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -886,12 +888,12 @@ S(f,P)-s(f,P) \leq S(f,P_2)-s(f,P_1) \leq \left(\overline{\int_a^b} f+\frac{\var
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -938,12 +940,12 @@ Importante
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1035,12 +1037,12 @@ S(cf,P) - s(cf,P) &amp;= c s(f,P) - cS(f,P) = c(s(f,P)-S(f,P)) \\
 <p><span class="theorem-title"><strong>Proposición 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1056,12 +1058,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.2</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq 0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1115,12 +1117,12 @@ Precaución
 <p><span class="theorem-title"><strong>Corolario 8.3</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1139,12 +1141,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.4</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(m\leq f(x)\leq M\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(m(b-a)\leq \int_a^b f(x)\,dx \leq M(b-a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1167,12 +1169,12 @@ f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx.
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1199,12 +1201,12 @@ m\leq \frac{1}{b-a}\int_a^b f(x)\,dx \leq M.
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1261,12 +1263,12 @@ S(f,P)-s(f,P) = s(f,P_1) + S(f,P_2) - (s(f,P_1) + s(f,P_2)) &lt; \frac{\varepsil
 <p><span class="theorem-title"><strong>Teorema 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada y monótona en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1301,12 +1303,12 @@ S(f,P_n)-s(f,P_n)
 <p><span class="theorem-title"><strong>Teorema 8.6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1336,12 +1338,12 @@ S(f,P)-s(f,P)
 <p><span class="theorem-title"><strong>Teorema 8.7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1357,12 +1359,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un conjunto finito de puntos de <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1385,12 +1387,12 @@ S(f,P)-s(f,P)\leq S(f,P_1)+S(f,P_2)-s(f,P_1)-s(f,P_2) &lt; \frac{\varepsilon}{2}
 <p><span class="theorem-title"><strong>Teorema 8.8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1438,12 +1440,12 @@ S(g\circ f,P)-s(g\circ f,P) &amp;= \sum_{i\in A}(M_i'-m_i')(x_i-x_{i-1}) + \sum_
 <p><span class="theorem-title"><strong>Corolario 8.6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1459,12 +1461,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1480,12 +1482,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1501,12 +1503,12 @@ Demostración
 <p><span class="theorem-title"><strong>Corolario 8.9</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1540,12 +1542,12 @@ F(x) = \int_a^x f(t)\, dt
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1569,12 +1571,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 8.9</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1620,12 +1622,12 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^x 1 = x.
 <p><span class="theorem-title"><strong>Teorema 8.10 (Teorema fundamental del Cálculo I)</strong></span> Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración 1
+<span class="screen-reader-only">Nota</span>Demostración 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1650,12 +1652,12 @@ Demostración 1
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración 2
+<span class="screen-reader-only">Nota</span>Demostración 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1730,12 +1732,12 @@ Advertencia
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2741,13 +2743,14 @@ P(X\leq Me)
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

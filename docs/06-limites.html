@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,16 +35,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="./img/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-54c8f25464f32f8783bd446cee98020d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b070026442d724084d8c8a0dce3bf851.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d15bdcbeac39d2275a6b4bf1331852a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-90e8bc6ca05fc443164fb3797667db0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6dcc31902a2b61f7b025a9897c825a05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,7 +91,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -301,7 +302,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual de Análisis Matemático Real</a> 
@@ -895,12 +897,12 @@ Advertencia
 <p><span class="theorem-title"><strong>Teorema 6.1 (Unicidad del límite)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces es único.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -919,12 +921,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.2 (Criterio de las sucesiones)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\(A\setminus\{a\}\)</span> que converge a <span class="math inline">\(a\)</span>, se tiene que <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> converge a <span class="math inline">\(l\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -981,12 +983,12 @@ Importante
 <p><span class="theorem-title"><strong>Proposición 6.1</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1019,12 +1021,12 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1059,12 +1061,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.3 (Compresión de funciones)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, tres funciones <span class="math inline">\(f,g,h:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f(x)\leq g(x)\leq h(x)\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g(x)=l\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1083,12 +1085,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.4 (Límite de la composición de funciones)</strong></span> Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y un punto de acumulación <span class="math inline">\(b\)</span> de <span class="math inline">\(B\)</span>, si <span class="math inline">\(\lim_{x\to a}f(x)=b\)</span> y <span class="math inline">\(\lim_{x\to b}g(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g\circ f(x)=l\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1112,12 +1114,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.3</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1134,12 +1136,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.4</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1155,12 +1157,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.5 (Criterio de Cauchy)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1195,12 +1197,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.6 (Límites laterales)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de los conjuntos <span class="math inline">\(\{x\in A: x&gt;a\}\)</span> y <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si <span class="math inline">\(\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1248,12 +1250,12 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1281,12 +1283,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.7 (Criterio de las sucesiones divergentes)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, entonces <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\((a,\infty)\)</span> que diverja a <span class="math inline">\(\infty\)</span>, <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1317,12 +1319,12 @@ Demostración
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1348,12 +1350,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.7 (Límite de una función polinómica)</strong></span> Si <span class="math inline">\(f\)</span> es una función polinómica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1370,12 +1372,12 @@ Demostración
 <p>Si <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(q(x)\)</span> entonces el límite puede existir o no.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1391,12 +1393,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.9 (Límite de una función potencial)</strong></span> Si <span class="math inline">\(f(x)=x^r\)</span> con <span class="math inline">\(r\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\)</span> tal que exista un intervalo <span class="math inline">\((a-\delta,a+\delta)\subset \mbox{Dom}(f)\)</span> para algún <span class="math inline">\(\delta &gt;0\)</span>, y en ese caso, <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1412,12 +1414,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.10 (Límite de una función exponencial)</strong></span> Si <span class="math inline">\(f(x)=c^x\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span> entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1433,12 +1435,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.11 (Límite de una función logarítmica)</strong></span> Si <span class="math inline">\(f(x)=\log_c(x)\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}^+\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1454,12 +1456,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.12</strong></span> Si <span class="math inline">\(f(x)\)</span> es una función trigonométrica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mbox{Dom}(f)\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1560,12 +1562,12 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1616,12 +1618,12 @@ e^x-1 \approx x\\
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1731,9 +1733,9 @@ Advertencia
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="asíntotas-verticales"><span class="header-section-number">6.9.1</span> Asíntotas verticales</h3>
 <div id="def-asintota-vertical" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6.10 (Asíntota vertical)</strong></span> Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
-<p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \mbox{o} \quad \lim_{x\to a^-}f(x)=\pm \infty\]</span></p>
+<p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \mbox{o} \quad \lim_{x\to a^+}f(x)=\pm \infty\]</span></p>
 </div>
-<p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.</p>
+<p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero sí lo está en las proximidades.</p>
 <div id="exm-asintota-vertical" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.28</strong></span> La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
 <p><span class="math display">\[\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.\]</span></p>
@@ -1749,7 +1751,7 @@ Advertencia
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="asíntotas-horizontales"><span class="header-section-number">6.9.2</span> Asíntotas horizontales</h3>
 <div id="def-asintota-horizontal" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6.11 (Asíntota horizontal)</strong></span> Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
-<p><span class="math display">\[\lim_{x\to +\infty}f(x)=a \quad \mbox{o} \quad \lim_{x\to \infty}f(x)=a\]</span></p>
+<p><span class="math display">\[\lim_{x\to -\infty}f(x)=a \quad \mbox{o} \quad \lim_{x\to +\infty}f(x)=a\]</span></p>
 </div>
 <div id="exm-asintota-horizontal" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6.29</strong></span> La recta <span class="math inline">\(y=1\)</span> es una asíntota horizontal de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
@@ -1777,7 +1779,7 @@ Advertencia
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&amp;=
 \lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \mbox{ y}\\
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &amp;=
-\lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
+\lim_{x\to \pm\infty} \frac{x}{x-1} = 1
 \end{align*}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1859,12 +1861,12 @@ Advertencia
 <p>A la diferencia entre ambos límite se le lama <em>salto</em> de la discontinuidad.</p>
 </div>
 <div id="exm-discontinuidad-1-especie-salto-finito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6.35</strong></span> La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 6.35</strong></span> La función <span class="math inline">\(f(x)=\dfrac{2}{1+e^{1/x}}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
-\lim_{x\to 0^-}\frac{|x|}{x}&amp;= -1\\
-\lim_{x\to 0^+}\frac{|x|}{x}&amp;= 1
+\lim_{x\to 0^-}\frac{2}{1+e^{1/x}} &amp;= 2\\
+\lim_{x\to 0^+}\frac{2}{1+e^{1/x}} &amp;= 0
 \end{align*}\]</span></p>
-<p>Salto <span class="math inline">\(= 1-(-1)=2\)</span>.</p>
+<p>Salto <span class="math inline">\(= 2 - 0 = 2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./img/limites/discontinuidad-salto-finito.svg" class="img-fluid figure-img" width="400"></p>
@@ -1919,16 +1921,16 @@ Advertencia
 <li><span class="math inline">\(f\pm g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(f\cdot g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(cf\)</span> es continua en <span class="math inline">\(a\)</span> <span class="math inline">\(\forall c\in\mathbb{R}\)</span>.</li>
-<li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(x)\neq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(a)\neq 0\)</span>.</li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1948,12 +1950,12 @@ Demostración
 <p><span class="theorem-title"><strong>Proposición 6.15</strong></span> Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1976,12 +1978,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.9</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2007,15 +2009,15 @@ f(x)=
 <p>no está acotada en el intervalo <span class="math inline">\([0,1]\)</span>, luego no es continua en este intervalo.</p>
 </div>
 <div id="thm-weierstrass" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 6.10 (Weierstrass)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 6.10 (Weierstrass)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(f(c)\leq f(x)\leq f(d)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2035,12 +2037,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.11 (Bolzano)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, y <span class="math inline">\(f(a)&lt;0&lt;f(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f(c)=0\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2059,12 +2061,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.12 (Valores intermedios)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y si <span class="math inline">\(c,d\in I\)</span>, entonces para cualquier <span class="math inline">\(k\in\mathbb{R}\)</span> con <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2081,12 +2083,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.13</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y <span class="math inline">\(k\in\mathbb{R}\)</span> es tal que <span class="math inline">\(\inf(f(I))\leq k\leq \sup(f(I))\)</span>, entonces existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2103,12 +2105,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.14</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(f(I)\)</span> es un intervalo cerrado y acotado.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2146,12 +2148,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.15</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es uniformemente continua en <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(A\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2170,12 +2172,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.16</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> es uniformemente continua en <span class="math inline">\(A\)</span> si y sólo si para cualesquiera dos sucesiones <span class="math inline">\((x_n)_{n=1}^\infty\)</span>, <span class="math inline">\((y_n)_{n=1}^\infty\)</span> tales que <span class="math inline">\(\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n\)</span>, se tiene que <span class="math inline">\(\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(y_n)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2193,12 +2195,12 @@ Demostración
 <p><span class="theorem-title"><strong>Teorema 6.17 (Teorema de Heine-Cantor)</strong></span> Dado un conjunto cerrado y acotado <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(A\)</span> entonces es uniformemente continua en <span class="math inline">\(A\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Demostración
+<span class="screen-reader-only">Nota</span>Demostración
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2288,13 +2290,14 @@ Demostración
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

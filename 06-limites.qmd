@@ -1139,10 +1139,10 @@ Existen tres tipos de asíntotas:
 ## Asíntota vertical
 Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
 
-$$\lim_{x\to a^-}f(x)=\pm \infty \quad \mbox{o} \quad \lim_{x\to a^-}f(x)=\pm \infty$$
+$$\lim_{x\to a^-}f(x)=\pm \infty \quad \mbox{o} \quad \lim_{x\to a^+}f(x)=\pm \infty$$
 :::
 
-Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
+Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero sí lo está en las proximidades.
 
 :::{#exm-asintota-vertical}
 La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
@@ -1156,7 +1156,6 @@ $$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{
 ::: {.content-visible unless-format="html"}
 ![Asíntota vertical.](./img/limites/asintota-vertical.tex)
 :::
-
 :::
 
 ### Asíntotas horizontales
@@ -1164,7 +1163,7 @@ $$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{
 ## Asíntota horizontal
 Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
 
-$$\lim_{x\to +\infty}f(x)=a \quad \mbox{o} \quad \lim_{x\to \infty}f(x)=a$$
+$$\lim_{x\to -\infty}f(x)=a \quad \mbox{o} \quad \lim_{x\to +\infty}f(x)=a$$
 :::
 
 :::{#exm-asintota-horizontal}
@@ -1200,7 +1199,7 @@ La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
 \lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \mbox{ y}\\
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &=
-\lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
+\lim_{x\to \pm\infty} \frac{x}{x-1} = 1
 \end{align*}
 
 ::: {.content-visible when-format="html"}
@@ -1307,14 +1306,14 @@ A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 :::
 
 :::{#exm-discontinuidad-1-especie-salto-finito}
-La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
+La función $f(x)=\dfrac{2}{1+e^{1/x}}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
 
 \begin{align*}
-\lim_{x\to 0^-}\frac{|x|}{x}&= -1\\
-\lim_{x\to 0^+}\frac{|x|}{x}&= 1
+\lim_{x\to 0^-}\frac{2}{1+e^{1/x}} &= 2\\
+\lim_{x\to 0^+}\frac{2}{1+e^{1/x}} &= 0
 \end{align*}
 
-Salto $= 1-(-1)=2$.
+Salto $= 2 - 0 = 2$.
 
 ::: {.content-visible when-format="html"}
 ![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.svg){width="400px"}
@@ -1385,7 +1384,7 @@ Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$ y 
 a. $f\pm g$ es continua en $a$.
 b. $f\cdot g$ es continua en $a$.
 c. $cf$ es continua en $a$ $\forall c\in\mathbb{R}$.
-d. $\frac{f}{g}$ es continua en $a$ si $g(x)\neq 0$ $\forall x\in\mathbb{R}$.
+d. $\frac{f}{g}$ es continua en $a$ si $g(a)\neq 0$.
 :::
 
 :::{.callout-note collapse="true"}
@@ -1449,7 +1448,7 @@ no está acotada en el intervalo $[0,1]$, luego no es continua en este intervalo
 
 :::{#thm-weierstrass}
 ## Weierstrass
-Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $c\leq f(x)\leq d$ $\forall x\in I$.
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$.
 :::
 
 :::{.callout-note collapse="true"}
