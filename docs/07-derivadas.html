@@ -1078,7 +1078,7 @@ Precaución
 <div class="callout-body-container callout-body">
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> tiene un máximo relativo en <span class="math inline">\(a\in I\)</span>. Por ser <span class="math inline">\(a\)</span> un punto interior de <span class="math inline">\(I\)</span>, existe un <span class="math inline">\(\delta&gt;0\)</span> tal que el entorno <span class="math inline">\((a-\delta, a+\delta)\subset I\)</span> y <span class="math inline">\(f(x)&lt;f(a)\)</span> <span class="math inline">\(\forall x\in (a-\delta,a+\delta)\)</span>.</p>
-<p>Supongamos ahora que <span class="math inline">\(f'(a)&gt;0\)</span>. Como <span class="math inline">\(f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span>, existe un <span class="math inline">\(0&lt;\delta'&lt;\delta\)</span> tal que <span class="math inline">\(\frac{f(x)-f(a)}{x-a}&gt;0\)</span> <span class="math inline">\(\forall x\in (a-\delta',a+\delta')\setminus\{a\}\)</span>. Por tanto, si <span class="math inline">\(x\in (a,a+\delta')\)</span>, <span class="math inline">\(f(x)-f(a)&gt;0\)</span> de donde se deduce que <span class="math inline">\(f(x)&gt;f(a)\)</span> lo que contradice que <span class="math inline">\(f\)</span> tenga un máximo relativo en <span class="math inline">\(a\)</span>. Así que no puede ser <span class="math inline">\(f'(c)&gt;0\)</span>.</p>
+<p>Supongamos ahora que <span class="math inline">\(f'(a)&gt;0\)</span>. Como <span class="math inline">\(f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span>, existe un <span class="math inline">\(0&lt;\delta'&lt;\delta\)</span> tal que <span class="math inline">\(\frac{f(x)-f(a)}{x-a}&gt;0\)</span> <span class="math inline">\(\forall x\in (a-\delta',a+\delta')\setminus\{a\}\)</span>. Por tanto, si <span class="math inline">\(x\in (a,a+\delta')\)</span>, <span class="math inline">\(f(x)-f(a)&gt;0\)</span> de donde se deduce que <span class="math inline">\(f(x)&gt;f(a)\)</span> lo que contradice que <span class="math inline">\(f\)</span> tenga un máximo relativo en <span class="math inline">\(a\)</span>. Así que no puede ser <span class="math inline">\(f'(a)&gt;0\)</span>.</p>
 <p>Del mismo modo se puede probar que no puede ser <span class="math inline">\(f'(a)&lt;0\)</span>. Por lo que necesariamente tiene que ser <span class="math inline">\(f'(a)=0\)</span>.</p>
 <p>Si <span class="math inline">\(f\)</span> tiene un mínimo relativo en <span class="math inline">\(a\)</span>, la demostración es análoga.</p>
 </div>
@@ -1151,14 +1151,14 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 <div class="proof">
 <p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(g(x)\)</span> la recta secante a <span class="math inline">\(f\)</span> en los puntos <span class="math inline">\((a,f(a))\)</span> y <span class="math inline">\((b,f(b))\)</span>. Entonces <span class="math inline">\(g(x)=f(a)+\operatorname{TVM}(f,[a,b])(x-a) = f(a)+\frac{f(b)-f(a)}{b-a}(x-a)\)</span>. Si tomamos la función que mide la distancia entre <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>, es decir, <span class="math inline">\(\forall x\in[a,b]\)</span></p>
 <p><span class="math display">\[
-h(x)=f(x)-g(x)= f(x)-f(a)+\frac{f(b)-f(a)}{b-a}(x-a),
+h(x)=f(x)-g(x)= f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a),
 \]</span></p>
 <p><span class="math inline">\(h\)</span> es continua en <span class="math inline">\([a,b]\)</span> por ser la diferencia de dos funciones continuas en ese intervalo, también es derivable en <span class="math inline">\((a,b)\)</span> al ser <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> derivables en el intervalo. Además</p>
 <p><span class="math display">\[\begin{align*}
-h(a) &amp;= f(a) - f(a)+\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
-h(b) &amp;= f(a) - f(b)+\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
+h(a) &amp;= f(a) - f(a)-\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
+h(b) &amp;= f(a) - f(b)-\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
 \end{align*}\]</span></p>
-<p>Por tanto, aplicando el teorema de Rolle, existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>. Como</p>
+<p>Por tanto, aplicando el teorema de Rolle, existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(h'(c)=0\)</span>. Como</p>
 <p><span class="math display">\[
 h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a} \ \forall x\in (a,b),
 \]</span></p>

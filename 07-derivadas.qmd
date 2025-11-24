@@ -540,7 +540,7 @@ Dado un intervalo $I\subseteq \mathbb{R}$ y una función $f:I\to\mathbb{R}$ con 
 :::{.proof}
 Supongamos que $f$ tiene un máximo relativo en $a\in I$. Por ser $a$ un punto interior de $I$, existe un $\delta>0$ tal que el entorno $(a-\delta, a+\delta)\subset I$ y $f(x)<f(a)$ $\forall x\in (a-\delta,a+\delta)$.
 
-Supongamos ahora que $f'(a)>0$. Como $f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$, existe un $0<\delta'<\delta$ tal que $\frac{f(x)-f(a)}{x-a}>0$ $\forall x\in (a-\delta',a+\delta')\setminus\{a\}$. Por tanto, si $x\in (a,a+\delta')$, $f(x)-f(a)>0$ de donde se deduce que $f(x)>f(a)$ lo que contradice que $f$ tenga un máximo relativo en $a$. Así que no puede ser $f'(c)>0$.
+Supongamos ahora que $f'(a)>0$. Como $f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$, existe un $0<\delta'<\delta$ tal que $\frac{f(x)-f(a)}{x-a}>0$ $\forall x\in (a-\delta',a+\delta')\setminus\{a\}$. Por tanto, si $x\in (a,a+\delta')$, $f(x)-f(a)>0$ de donde se deduce que $f(x)>f(a)$ lo que contradice que $f$ tenga un máximo relativo en $a$. Así que no puede ser $f'(a)>0$.
 
 Del mismo modo se puede probar que no puede ser $f'(a)<0$. Por lo que necesariamente tiene que ser $f'(a)=0$.
 
@@ -596,17 +596,17 @@ $$
 Sea $g(x)$ la recta secante a $f$ en los puntos $(a,f(a))$ y $(b,f(b))$. Entonces $g(x)=f(a)+\operatorname{TVM}(f,[a,b])(x-a) = f(a)+\frac{f(b)-f(a)}{b-a}(x-a)$. Si tomamos la función que mide la distancia entre $f$ y $g$, es decir, $\forall x\in[a,b]$
 
 $$
-h(x)=f(x)-g(x)= f(x)-f(a)+\frac{f(b)-f(a)}{b-a}(x-a),
+h(x)=f(x)-g(x)= f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a),
 $$
 
 $h$ es continua en $[a,b]$ por ser la diferencia de dos funciones continuas en ese intervalo, también es derivable en $(a,b)$ al ser $f$ y $g$ derivables en el intervalo. Además 
 
 \begin{align*}
-h(a) &= f(a) - f(a)+\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
-h(b) &= f(a) - f(b)+\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
+h(a) &= f(a) - f(a)-\frac{f(b)-f(a)}{b-a}(a-a) = 0,\\
+h(b) &= f(a) - f(b)-\frac{f(b)-f(a)}{b-a}(b-a) = 0.\\
 \end{align*}
 
-Por tanto, aplicando el teorema de Rolle, existe $c\in(a,b)$ tal que $f'(c)=0$. Como 
+Por tanto, aplicando el teorema de Rolle, existe $c\in(a,b)$ tal que $h'(c)=0$. Como 
 
 $$
 h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a} \ \forall x\in (a,b),

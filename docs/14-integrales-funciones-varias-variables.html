@@ -511,7 +511,7 @@ Nota
 </div>
 </div>
 <div id="def-particion-n-dimensional" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 13.2 (Partición de un intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dado un intervalo <span class="math inline">\(n\)</span> dimensional cerrado <span class="math inline">\(I=I_1\times\cdots\times I_n\)</span>, con <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1,\ldots,n\)</span>, y una partición <span class="math inline">\(P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}\}\)</span> de cada intervalo <span class="math inline">\(I_i\)</span>, el producto cartesiano <span class="math inline">\(P=P_1\times\cdots\times P_n\)</span> se conoce como <em>partición <span class="math inline">\(n\)</span> dimensional</em> de <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 13.2 (Partición de un intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dado un intervalo <span class="math inline">\(n\)</span> dimensional cerrado <span class="math inline">\(I=I_1\times\cdots\times I_n\)</span>, con <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1,\ldots,n\)</span>, y una partición <span class="math inline">\(P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}=b_i\}\)</span> de cada intervalo <span class="math inline">\(I_i\)</span>, el producto cartesiano <span class="math inline">\(P=P_1\times\cdots\times P_n\)</span> se conoce como <em>partición <span class="math inline">\(n\)</span> dimensional</em> de <span class="math inline">\(I\)</span>.</p>
 <p>El conjunto de todas las particiones <span class="math inline">\(n\)</span> dimensionales de <span class="math inline">\(I\)</span> se denota <span class="math inline">\(\mathcal{P}(I)\)</span>.</p>
 </div>
 <div id="def-suma-inferior-superior-riemann-n-dimensional" class="theorem definition">
@@ -869,9 +869,9 @@ R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
 </div>
 <p>En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.</p>
 <div id="exm-integral-region-irregular-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.6</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y)=e^{-y^2}\)</span> en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}\)</span>, como <span class="math inline">\(y\)</span> está acotada por una función de <span class="math inline">\(x\)</span>, habría que hacer la integral iterada</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.6</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y)=e^{-y^2}\)</span> en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 2x\leq y\leq 2\}\)</span>, como <span class="math inline">\(y\)</span> está acotada por una función de <span class="math inline">\(x\)</span>, habría que hacer la integral iterada</p>
 <p><span class="math display">\[
-\int_0^1\int_0^{2x} e^{-y^2}\,dy\,dx.
+\int_0^1\int_{2x}^2 e^{-y^2}\,dy\,dx.
 \]</span></p>
 <p>Sin embargo, la función <span class="math inline">\(e^{-y^2}\)</span> no tiene primitiva elemental, por lo que necesariamente hay que realizar la integral iterada en el otro orden, pero para ello previamente hay que expresar la región como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq \frac{y}{2}, 0\leq y\leq 2\}\)</span>, con lo que la integral doble sobre esta región es</p>
 <p><span class="math display">\[\begin{align*}
@@ -947,7 +947,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 <p>Cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
 <p>La cosa se complica cuando <span class="math inline">\(f\)</span> puede tomar valores positivos y negativos en el intervalo <span class="math inline">\(I\)</span>. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración <span class="math inline">\(I\)</span> en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.</p>
 <div id="exm-volumen-integral-doble" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13.9</strong></span> Veamos cómo calcular el volumen de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el intervalo <span class="math inline">\(I=[-1,1]\times[-1,1]\)</span>. En el intervalo de integración, la función toma valores negativos en el subintervalo <span class="math inline">\(I_1=[-1,1]\times[-1,0]\)</span> y valores positivos en el intervalo <span class="math inline">\([-1,1]\times[0,1]\)</span>, por lo que el volumen encerrado entre la gráfica de la función y el plano <span class="math inline">\(xy\)</span> viene dado por la suma de las integrales</p>
+<p><span class="theorem-title"><strong>Ejemplo 13.9</strong></span> Veamos cómo calcular el volumen de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el intervalo <span class="math inline">\(I=[-1,1]\times[-1,1]\)</span>. En el intervalo de integración, la función toma valores negativos en el subintervalo <span class="math inline">\(I_1 = [-1,1]\times[-1,0]\)</span> y valores positivos en el subintervalo <span class="math inline">\(I_2 = [-1,1]\times[0,1]\)</span>, por lo que el volumen encerrado entre la gráfica de la función y el plano <span class="math inline">\(xy\)</span> viene dado por la suma de las integrales</p>
 <p><span class="math display">\[\begin{align*}
 \int_{I_1} -f(x,y)\,dA
 &amp;= \int_{-1}^1\int_{-1}^0 -x^2y\,dy\,x
@@ -959,7 +959,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 \end{align*}\]</span></p>
 <p>y</p>
 <p><span class="math display">\[\begin{align*}
-\int_{I_1} f(x,y)\,dA
+\int_{I_2} f(x,y)\,dA
 &amp;= \int_{-1}^1\int_0^1 x^2y\,dy\,x
 = \int_{-1}^1 \left[x^2\frac{y^2}{2}\right]_0^1\,dx \\
 &amp;= \int_{-1}^1 \frac{x^2}{2}\,dx
