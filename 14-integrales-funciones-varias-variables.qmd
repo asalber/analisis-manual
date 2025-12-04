@@ -455,6 +455,36 @@ Sin embargo, la función $e^{-y^2}$ no tiene primitiva elemental, por lo que nec
 \end{align*}  
 :::
 
+## Integrales de línea
+
+Las integrales de línea permiten sumar valores de una función sobre una curva, en lugar de hacerlo sobre una región bidimensional completa. Si la curva $C$ está dada por una parametrización suave $\mathbf{r}(t) = (x(t), y(t))$, $t\in[a,b]$, la integral de línea de una función escalar $f(x,y)$ sobre $C$ es
+
+$$
+\int_C f(x,y)\,ds 
+= \int_a^b f(x(t), y(t))\,\|\mathbf{r}'(t)\|\,dt,
+$$
+
+donde $ds = \|\mathbf{r}'(t)\|\,dt$ representa un elemento diferencial de longitud sobre la curva. El factor $\|\mathbf{r}'(t)\|$ tiene en cuenta cómo se estira o comprime la parametrización.
+
+:::{.callout-note}
+Si $\mathbf{F}(x,y)$ es un campo vectorial, la integral de línea $\int_C \mathbf{F}\cdot d\mathbf{r}$ mide, por ejemplo, el trabajo realizado por el campo al recorrer $C$. En este capítulo nos centraremos en integrales de línea de funciones escalares.
+:::
+
+:::{#exm-integral-linea-segmento}
+Calculemos la integral de línea de $f(x,y)=x^2+y$ sobre el segmento que une los puntos $(0,0)$ y $(1,2)$. Una parametrización sencilla del segmento es $\mathbf{r}(t)=(t,2t)$ con $t\in[0,1]$, para la que $\mathbf{r}'(t)=(1,2)$ y $\|\mathbf{r}'(t)\|=\sqrt{5}$. Aplicando la definición anterior se obtiene
+
+\begin{align*}
+\int_C f(x,y)\,ds 
+&= \int_0^1 f(t,2t)\,\sqrt{5}\,dt 
+= \sqrt{5}\int_0^1 (t^2+2t)\,dt \\
+&= \sqrt{5}\left[\frac{t^3}{3}+t^2\right]_0^1 
+= \sqrt{5}\left(\frac{1}{3}+1\right) 
+= \frac{4\sqrt{5}}{3}.
+\end{align*}
+
+El resultado incorpora la longitud del camino recorrido: si hubiéramos tomado una curva más larga con los mismos extremos, la integral de línea habría cambiado.
+:::
+
 ## Integrales dobles en coordenadas polares
 
 Al que igual que se vio en la @sec-integrales-coordenadas-polares, para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas $(x,y)$ a coordenadas polares $(r,\theta)$ se utilizan las fórmulas
@@ -804,4 +834,3 @@ En el @exm-integral-region-irregular vimos que la integral doble de la función 
  = \frac{1}{4}.
  $$ 
 :::
-
