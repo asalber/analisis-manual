@@ -1,0 +1,41 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-2, xmax=2,
+    ymin=-2, ymax=2,
+    xlabel={$x$},
+    ylabel={$y$},
+    width=10cm,
+    height=10cm,
+    enlargelimits=false,
+    clip=false,
+    color = myblack,
+]
+
+
+% Vectors at specific points
+\addplot[
+    quiver={
+        u={x+y},
+        v={x},
+        scale arrows=1,     % arrow length uses actual vector size
+    },
+    -stealth,
+    myblue,
+] table {
+x   y
+1   0
+0   1
+-1  0
+0  -1
+};
+
+\node[color = myblue] at (-2, -0.5) {$\mathbf{F}(-1,0)$};
+\node[color = myblue] at (-0.5, -1.2) {$\mathbf{F}(0,-1)$};
+\node[color = myblue] at (0.5, 1.2) {$\mathbf{F}(0,1)$};
+\node[color = myblue] at (2, 0.5) {$\mathbf{F}(1,0)$};
+
+\end{axis}
+\end{tikzpicture}
+

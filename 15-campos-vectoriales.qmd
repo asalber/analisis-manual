@@ -1,0 +1,56 @@
+---
+title: Análisis de campos vectoriales
+crossref:
+    chapters: true
+lang: es
+---
+
+::: {.content-visible unless-format="pdf"}
+{{< include macros.qmd >}}
+:::
+
+Después de haber estudiado las funciones reales de variable real $f: \mathbb{R}\to \mathbb{R}$, las funciones vectoriales $\mathbf{f}:\mathbb{R}\to \mathbb{R}^n$, y las funciones de varias variables $f:\mathbb{R}^n\to \mathbb{R}$, en este capítulo estudiaremos las funciones vectoriales de varias variables, también conocidas como _campos vectoriales_ $\mathbf{F}:\mathbb{R}^n\to \mathbb{R}^m$, es decir, funciones que reciben como entrada un vector de $n$ componentes ($n$ variables) y devuelven un vector de $m$ componentes. 
+
+Este tipo de funciones aparecen en multitud de fenómenos naturales como el movimiento de un objeto en el espacio, la distribución de calor, la dinámica de los fluidos, etc. 
+
+En este capítulo veremos, en particular, cómo calcular derivadas de este tipo de funciones a través del _jacobiano_ y como calcular _integrales de linea y de superficie_.
+ 
+
+## Campos vectoriales
+
+:::{#def-campo-vectorial}
+## Campo vectorial
+Un campo vectorial $\mathbf{F}:\mathbb{R}^n\to \mathbb{R}^m$ es una función $\mathbf{F}:\mathbb{R}^n\to \mathbb{R}^m$ que asigna a cada punto $(x_1,\ldots,x_n)\in\mathbb{R}^n$ un vector $\mathbf{F}(x_1,\ldots, x_n)\in \mathbb{R}^m$.
+:::
+
+En este capítulo estudiaremos fundamentalmente campos vectoriales en el plano $\mathbf{F}(x,y):\mathbb{R}^2\to \mathbb{R}^2$, y en el espacio $\mathbf{F}(x,y,z):\mathbb{R}^3\to \mathbb{R}^3$, pero los resultados pueden generalizarse facilmente a espacios de dimensiones mayores.
+
+:::{#exm-campo-vectorial}
+Un ejemplo conocido de campo vectorial es el gradiente de una función de varias variables. Por ejemplo, para la función $f(x,y) = xy\frac{x^2}{2}$, el gradiente es el campo vectorial
+
+$$
+\nabla f(x,y)=\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)=(x+y,x).
+$$
+
+Si recordamos la interpretación del gradiente (@def-vector-gradiente), este campo vectorial nos daría en cada punto del plano $(x,y)$ la dirección de mayor crecimiento de $f$.
+:::
+
+### Representación gráfica de campos vectoriales
+
+Aunque un campo vectorial está formado por infinitos vectores, para darnos una idea aproximada de la forma que tiene el campo en cada punto del plano o espacio, podemos representarlo como una serie de puntos. 
+
+:::{#exm-representación-grafica-campo-vectorial}
+Por ejemplo, si tenemos el campo vectorial del gradiente del ejemplo anterior $\mathbf{F}(x,y)=(x+y,x^2)$, entonces podemos representar los vectores correspondientes a los puntos $(0,0), (1,0),(0,1),(-1,0),(0,-1)$. 
+
+\begin{align*}
+\mathbf{F}(0,0) &= (0, 0) \\
+\mathbf{F}(1,0) &= (1, 1)\\
+\mathbf{F}(0,1) &= (1, 0)\\
+\mathbf{F}(-1,0) &= (-1, -1)\\
+\mathbf{F}(0,-1) &= (-1, 0)
+\end{align*}
+
+![Representación gráfica de un campo vectorial](img/campos-vectoriales/campo-vectorial){width=500}
+:::
+
+

@@ -612,7 +612,7 @@ $$
 $$
 :::
 
-## Longitud de la trayectoria de una función vectorial
+## Longitud de la trayectoria de una función vectorial {#sec-longitud-trayectoria}
 
 Un problema habitual cuando se trabaja con funciones vectoriales es averiguar la longitud de su trayectoria. 
 
