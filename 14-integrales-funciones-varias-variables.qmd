@@ -688,6 +688,7 @@ Esta suma, es una suma de Riemann, y al tomar particiones de mayor tamaño, en e
 Esta idea se puede generalizar espacios de mayor dimensión, dando origen al concepto de _integral de curva_.
 
 :::{#def-integral-de-curva}
+## Integral de curva
 Dado un campo escalar $f(x_1,\ldots,x_n)$ y una curva suave $C$ de longitud finita en $\mathbb{R}^n$, con una parametrización dada por una función vectorial $\mathbf{r}(t)$ $t\in [a,b]$, la _integral de curva_ de $f$ sobre $C$ es 
 
 $$
@@ -710,6 +711,8 @@ $$
 \int_C f(\mathbf{r}(t)) \, ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}'(t)|\, dt. 
 $$
 
+### Integrales sobre curvas en el plano
+
 En el caso de una función de dos variables $f(x,y)$ y una curva $C$ sobre el plano $\mathbb{R}^2$ dada por la función vectorial $\mathbf{r}(t)=(x(t), y(t))$, la integral anterior es
 
 $$
@@ -729,6 +732,8 @@ Calculemos la integral de línea de $f(x,y)=x^2+y$ sobre el segmento que une los
 = \frac{4\sqrt{5}}{3}.
 \end{align*}
 :::
+
+### Integrales sobre curvas en el espacio 
 
 Y en el caso de una función de tres variables $f(x,y,z)$ y una curva $C$ sobre el espacio $\mathbb{R}^3$ dada por la función vectorial $\mathbf{r}(t)=(x(t), y(t), z(t))$, la integral es
 
